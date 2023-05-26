@@ -496,28 +496,27 @@ var hanaUI = {
     formAnimate: function () { 
         var animateFormWrap = $('.cont-form--animate');
         var animateFormFirst = animateFormWrap.find('.form__move').eq(0);
+        // 첫번째 active
         animateFormFirst.closest('.form-area').addClass('active');
         animateFormFirst.focus();
-        $('body').on('focus', '.form__move', function () {
-            console.log('focus');
+        // 클릭 포커스 이벤트
+        $('body').on('focus click', '.form__move', function () {
             var inpIdx = $('.cont-form--animate .form__move').index(this);
             var inpIdxNum = $('.cont-form--animate .form__move').index(this) + 1;
             $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('active')).removeClass('active');
-            console.log('inpIdx', inpIdx);
-            console.log('inpIdxNum', inpIdxNum);
             $('.btnNext').data('inputindex', inpIdxNum);
         })
         
         
     },
-    formAnimateEvent: function (inputObj) { 
+    formNextBtnEvent: function (inputObj) { 
+        // 계속 버튼 이벤트
         var inputThis = $(inputObj);
         var inpActiveNum = inputThis.data('inputindex');
         var nextNum = inpActiveNum + 1;
         var nextInput = $('#' + 'inputMove' + nextNum);
         nextInput.closest('.form-area').addClass('active');
         nextInput.focus();
-        console.log('nextNum', nextNum);
     },
     
     // 툴팁
