@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Guide - [스뱅] 캐나다 법인 확산</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+
+    <style>
+		/* guide*/
+		.guide-depth01 {padding: 2rem; font-size: 2rem; color: #171a1a; font-weight: 700;}        
+    </style>
+</head>
+<body>
+
+	<div class="guide-wrap" id="wrap">
+
+		<h1 class="guide-depth01">Guide - [스뱅] 캐나다 법인 확산</h1>
+        <div class="content">
+            <div class="con-box">
+                <!-- Content Here -->
+                <h1 class="guide-depth01">Modal</h1>
+                <p style="padding: 0 2rem;">button 내 data-target="#modalAlert" 와 modal id="modalAlert" 동일하게 사용</p>
+            
+                <!-- <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalFull"
+                    >
+                        전체화면
+                    </button>
+                </div>
+                <br /> -->
+
+                <br />
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlert"
+                    >
+                        alert
+                    </button>
+                </div>
+                <br />
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertTitle"
+                    >
+                    alert - only title
+                    </button>
+                </div>
+                <br />
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertLong"
+                    >
+                    alert - header
+                    </button>
+                </div>
+                <br />
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlide"
+                    >
+                        slide
+                    </button>
+                </div>
+                <br />
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlideBtn"
+                    >
+                        slide - 버튼 X
+                    </button>
+                </div>
+                <br />
+
+                <div class="form-area">
+                    <div class="select-wrap">
+                        <div class="select">
+                            <div class="select__inner">
+                                <button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlideDate" title="일자 선택" aria-controls="#modalSlide1">
+                                    <!-- <i class="icon-country-canada"></i> -->
+                                    <span>1</span> 
+                                </button>
+                            </div>
+                            <div class="select-label">일자 선택</div>
+                        </div>
+                        <p class="input__error" aria-live="assertive">오류메세지 노출</p>
+                    </div>
+                </div>
+                <br>
+                <div class="form-area">
+                    <div class="select-wrap">
+                        <div class="select">
+                            <div class="select__inner">
+                                <button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlideTerm" title="기간 선택" aria-controls="#modalSlideTerm">
+                                    <!-- <i class="icon-country-canada"></i> -->
+                                    <span>1</span> 
+                                </button>
+                            </div>
+                            <div class="select-label">기간 선택</div>
+                        </div>
+                        <p class="input__error" aria-live="assertive">오류메세지 노출</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 모달레이어 - alert -->
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">title</p>
+                <p class="text-sub">text</p>
+                <p class="text-sub tp-dpink">text</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert -->
+    
+    <!-- 모달레이어 - alert - only title -->
+    <div id="modalAlertTitle" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">title</p>
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert - only title -->
+    
+    <!-- 모달레이어 - alert scroll -->
+    <div id="modalAlertLong" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">					
+            <div class="modal__header">
+                <h1 class="title">제목</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-scroll">
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br></p>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert scroll -->
+
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents">
+                <ul>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio01" title="">
+                            <label for="radio01">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio02" title="">
+                            <label for="radio02">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio03" title="">
+                            <label for="radio03">radio-list</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <div id="modalSlideBtn" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio04" title="" onclick="modalClose(this);">
+                            <label for="radio04">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio05" title="" onclick="modalClose(this);">
+                            <label for="radio05">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio06" title="" onclick="modalClose(this);">
+                            <label for="radio06">radio-list</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 일자 선택 -->
+    <div id="modalSlideDate" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">일자 선택</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <div class="modal-date-wrap">
+                    <ul class="date-list">
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="1">1</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="2">2</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="3">3</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="4">4</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="5">5</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="6">6</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="7">7</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="8">8</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="9">9</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="10">10</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="11">11</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="12">12</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="13">13</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="14">14</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="15">15</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="16">16</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="17">17</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="18">18</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="19">19</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="20">20</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="21">21</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="22">22</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="23">23</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="24">24</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="25">25</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="26">26</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="27">27</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="28">28</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="29">29</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="30">30</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="31">31</button></li>
+                    </ul>
+                </div>
+
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 일자 선택 -->
+
+    <!-- 모달레이어 - 기간 선택 -->
+    <div id="modalSlideTerm" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">기간 선택</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <div class="modal-term-wrap">
+                    <ul class="date-list">
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="31일">31일</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="90일">90일</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="180일">180일</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="1년">1년</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="2년">2년</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="3년">3년</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="4년">4년</button></li>
+                        <li><button type="button" class="btn-date" onclick="modalClose(this);" aria-label="5년">5년</button></li>
+                    </ul>
+                </div>
+
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+     <!-- //모달레이어 - 기간 선택 -->
+
+	<script>
+        /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+        // modalOpen('modalAlertTitle');
+        // modalOpen('modalSlideBtn');
+        // modalOpen('modalSlideDate');
+    </script>
+</body>
+</html>

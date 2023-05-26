@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no"><!-- D: IOS 숫자에 자동 tel링크 걸리는 것 관련하여 추가 되었습니다. -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Layout] KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">타이틀</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <!-- D: footer 관련 class 설명 (관련 JS : common-ui.js 'hanaUI.footer('.app-footer');' 에 있음)
+            * footer(하단 버튼 영역)이 없는경우 : app-main footer-none
+            * footer 하단 버튼이 기본(1개)일 때 : app-main
+            * footer 하단 버튼이 서브+기본(2개)일 때 : app-main footer-sub-btn
+        -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <div class="cont-wrap cont-revers cont-form--animate">
+                        
+                        
+                        <div class="form-area input--error">
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element form__move" id="inputText1" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText1" class="input__label" aria-hidden="true">항목명1</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element form__move" id="inputText2" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText2" class="input__label" aria-hidden="true">항목명2</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element form__move" id="inputText3" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText3" class="input__label" aria-hidden="true">항목명3</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        <div class="form-area">
+                            <button id="inputText4" class="form__move">ddddd</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <!-- D: footer 버튼 관련 JS : common-ui.js 'hanaUI.footer('.app-footer');' -->
+                <div class="btn-group-sub-wrap">
+                    <button type="button" class="btn rd btnNext" aria-label="계속" name="1" onclick="hanaUI.formAnimateEvent(this);">계속</button>
+                </div>
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn gray btn-cancle" aria-label="취소">취소</button>
+                    <button type="button" class="btn" aria-label="확인">확인</button>
+                </div>
+                <!-- 아이콘 + 버튼형 -->
+                <!-- <div class="btn-group-wrap">
+                    <button type="button" class="btn gray btn-icon" aria-label="">
+                        <span class="icon_upload"></span>
+                    </button>
+                    <button type="button" class="btn" aria-label="">Default</button>
+                </div> -->
+            </div>
+        <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 영역 -->
+    <div id="modalSlide1" class="modal popup-wrap modal--slide" data-element="modal__element">
+    <div class="modal__container modal__container--interval" data-element="modal__element-container">
+        <div class="modal__header">
+            <h1 class="title">슬라이드 팝업 제목</h1>
+        </div>
+        <div class="modal__contents">
+            <ul>
+                <li>
+                    <div class="radio-list-wrap">
+                        <input type="radio" name="radio" id="radio01" title="">
+                        <label for="radio01">radio-list</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="radio-list-wrap">
+                        <input type="radio" name="radio" id="radio02" title="">
+                        <label for="radio02">radio-list</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="radio-list-wrap">
+                        <input type="radio" name="radio" id="radio03" title="">
+                        <label for="radio03">radio-list</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="btn-wrap">
+            <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+        </div>
+        <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+    </div>
+    </div>
+    <!-- //모달레이어 영역 -->
+    <script>
+        // $(document).ready(function(){
+        //     $('#inputText01').focus();
+        // });
+
+        document.body.ontouchend = function() { document.querySelector('#inputText01').focus(); };
+
+    </script>
+</body>
+</html>

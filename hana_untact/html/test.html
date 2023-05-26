@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>테스트</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body class="bg-black">
+<div id="wrap" class="wrap"> 
+    <!-- header -->
+    <div id="header" class="app-header">
+        <button class="btn-close-cheque" title="닫기"></button>
+    </div>
+    <!-- //header -->
+    <!-- Content -->
+    <div id="content" class="app-main"> 
+      <div class="form-area">
+        <div class="input">
+          <!--
+            * 오류시 class="input input--error"
+            * 비활성화시 class="input input--disabled" input 에 disabled 추가
+            * 데이터가 초기에 자동으로 입력되어 있을때 class="input input--on"
+          -->
+          <div class="input__inner">
+            <input type="text" id="inputText01" class="input__element" title="입력폼" placeholder="">
+            <label for="inputText01" class="input__label" aria-hidden="true">항목명</label>
+            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+          </div>
+          <!-- 에러 메시지 -->
+          <p class="input__error" aria-live="assertive">오류메세지 노출</p>
+        </div>
+        <!-- 가이드 메세지 -->
+        <div class="input__guide-text input__guide-text--left">
+          가이드 메세지 노출
+        </div>
+      </div>
+    </div>
+    <!-- //Content -->
+
+</div>
+	<!-- 공통 script -->
+	  <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+    <script>
+      $(function(){
+        inpFocus();
+      });
+      function inpFocus(){
+        setTimeout(function(){
+          $('#inputText01').focus();
+          $('#inputText01').trigger('click');
+        }, 300);
+      }
+    </script>
+
+
+
+</body>
+</html>

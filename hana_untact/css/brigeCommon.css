@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+
+/* --- 텍스트 (text) --- */
+/* - 텍스트 : 포인트컬러(point color) */
+.tp-green {color: #00a5a0 !important;}
+.tp-pink {color: #af0035 !important;}
+.tp-dpink {color: #e31e5a !important;}
+.tpsb-green {color: #00a5a0 !important; font-weight: 600;}
+.tpsb-gray {color: #7d8585 !important; font-weight: 600;}
+.tpsb-dgray02 {color: #2f3333 !important; font-weight: 600;}
+.tpsb-pink {color: #af0035 !important; font-weight: 600;}
+.tpsb-dpink {color: #e31e5a !important; font-weight: 600;}
+.tpb-green {color: #00a5a0; font-weight: 700;}
+.tpb-pink {color: #af0035; font-weight: 700;}
+.tpb-dpink {color: #e31e5a; font-weight: 700;}
+.required {color: #00a5a0; font-weight: 400; font-size: 1.4rem;}
+
+/* - 텍스트 : 타이틀(title) */
+.page-tit {font-size: 2rem; color: #171a1a; font-weight: 700;}
+.page-tit-sub {font-size: 1.6rem; color: #171a1a; font-weight: 600;}
+.page-tit-point {padding-bottom: 0.8rem; font-size: 1.8rem; color: #00a5a0; font-weight: 600;}
+.page-txt {font-size: 1.6rem; color: #5e6666; font-weight: 400;}
+.page-tit + .page-tit-sub {margin-top: 0.8rem;}
+.page-tit + .page-txt {margin-top: 0.2rem;}
+
+/* - 텍스트 : 아래 밑줄 */
+.txt_underline {text-decoration: underline;}
+a.txt_underline {text-decoration: underline; cursor: pointer;}
+.txt_underline-b {text-decoration: underline; color: #171a1a; font-weight: 600;}
+a.txt_underline-b {text-decoration: underline; color: #171a1a; font-weight: 600; cursor: pointer;}
+
+/* - 텍스트 : 간격 padding reset */
+.pd-none {padding: 0 !important;}
+.pdt-none {padding-top: 0 !important;}
+.pdb-none {padding-bottom: 0 !important;}
+.pdt32 {padding-top: 3.2rem !important;}
+
+/* - 텍스트 : 간격 margin reset */
+.mg-none {margin: 0 !important;}
+.mgt-none {margin-top: 0 !important;}
+.mgb-none {margin-bottom: 0 !important;}
+.mt8 {margin-top: 0.8rem !important;}
+.mt16 {margin-top: 1.6rem !important;}
+.mt20 {margin-top: 2rem !important;}
+.mt24 {margin-top: 2.4rem !important;}
+.mt28 {margin-top: 2.8rem;}
+.mt32 {margin-top: 3.2rem !important;}
+.mt40 {margin-top: 4rem;}
+.mt48 {margin-top: 4.8rem;}
+.mb16 {margin-bottom: 1.6rem;}
+.pt24 {padding-top: 3.2rem !important;}
+
+
+/* --- 레이아웃 (layout) --- */
+.wrap {height: 100%; min-height: 100%; vertical-align: top; }
+
+/* - 레이아웃 : 컨텐츠 영역 (contents) */
+.app-main {height: 100%;}
+.container {height: 100%; padding: 0;}
+
+.visual-wrap {width: 100%; max-width: 37.5rem; height: 100%; max-height: 77.8rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; background: url(../images/bridge_bg@3x.png) bottom 20.5rem left 50% no-repeat; background-size: 37.5rem auto; position: relative;}
+.visual-wrap .bridge-cont {width: 100%; padding: 2.3rem 4rem 0; text-align: center; background: #fff; box-shadow: 0 -2rem 3.5rem rgba(255, 255, 255, 0.9);}
+.visual-wrap .bridge-cont .tit {font-size: 2.4rem; font-weight: 700; color: #171a1a;}
+.visual-wrap .bridge-cont .txt {margin-top: 1.2rem; font-size: 1.4rem; font-weight: 400; color: #7d8585;}
+
+/* - 컨텐츠 : 버튼 (button) 공통 */ 
+.btn {padding: 0 2rem; width: 100%; height: 5.6rem; line-height: 5.6rem; font-size: 1.8rem; color: #fff; font-weight: 700; text-align: center; background-color: #00a5a0; border-radius: 0.8rem;}
+.btn:hover, .btn:active, .btn:focus {background-color: #008c88;}
+.btn:disabled {background-color: #d0d9d9;}
+.btn.press {background-color: #008c88;}
+.btn.navy {background-color: #4d5980;}
+.btn.navy:hover, .btn.navy:active, .btn.navy:focus {background-color: #2e364d;}
+
+/* - 컨텐츠 : 버튼 정렬 */
+.btn-group-flex {width: 100%; padding: 5.6rem 2rem 3.2rem; display: flex;}
+.btn-group-flex .btn {flex:1;}
+.btn-group-flex .btn + .btn {margin-left: 0.8rem;}
+
+
+
