@@ -120,8 +120,11 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 컨텐츠 (contents) --- */
-
+.page-tit-wrap .label__tit {display: none;}
+.page-tit-wrap .label__tit.active {display: block;}
 .form__move:focus {background: rgba(0, 0, 0, 0.03);}
+.cont-form--animate .form-area {display: none;}
+.cont-form--animate .form-area.active {display: block;}
 
 /* 컨텐츠 상단 양쪽정렬 영역 */
 .cont-top-wrap {display: flex; align-items: center; justify-content: space-between;}

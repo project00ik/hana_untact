@@ -495,13 +495,17 @@ var hanaUI = {
 
     formAnimate: function () { 
         var animateFormWrap = $('.cont-form--animate');
-        var animateForm = animateFormWrap.find('.form-area').find('.input__element');
-        $('body').on('focus', '.input__element', function () {
-            console.log('focus')
-            var inpIdx = $('.cont-form--animate .form__move').index(this) + 1;
-            // $('.title').eq(inpIdx);
+        var animateFormFirst = animateFormWrap.find('.form__move').eq(0);
+        animateFormFirst.closest('.form-area').addClass('active');
+        animateFormFirst.focus();
+        $('body').on('focus', '.form__move', function () {
+            console.log('focus');
+            var inpIdx = $('.cont-form--animate .form__move').index(this);
+            var inpIdxNum = $('.cont-form--animate .form__move').index(this) + 1;
+            $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('active')).removeClass('active');
             console.log('inpIdx', inpIdx);
-            $('.btnNext').data('inputindex', inpIdx);
+            console.log('inpIdxNum', inpIdxNum);
+            $('.btnNext').data('inputindex', inpIdxNum);
         })
         
         
@@ -510,7 +514,7 @@ var hanaUI = {
         var inputThis = $(inputObj);
         var inpActiveNum = inputThis.data('inputindex');
         var nextNum = inpActiveNum + 1;
-        var nextInput = $('#' + 'inputText' + nextNum);
+        var nextInput = $('#' + 'inputMove' + nextNum);
         nextInput.closest('.form-area').addClass('active');
         nextInput.focus();
         console.log('nextNum', nextNum);
