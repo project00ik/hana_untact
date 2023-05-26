@@ -535,7 +535,7 @@ var hanaUI = {
         var nextInput = $('#' + 'inputMove' + nextNum);
         nextInput.closest('.form-area').addClass('active');
         nextInput.focus();
-        nextInput.trigger('click');
+        // nextInput.trigger('click');
     },
     
     
