@@ -10,7 +10,7 @@
     //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
     hanaUI.inputField('.input'); //인풋필드 기능
     hanaUI.placeholder('[data-element=placeholder__textarea]'); //플레이스홀더
-    hanaUI.formAnimateEvent(); //폼 포커스 관련 이벤트
+    hanaUI.formAnimateEvent(); // 폼 포커스 관련 이벤트
     hanaUI.tooltip(); //툴팁 
     hanaUI.sticky('[data-sticky=normal]'); //고정메뉴
     hanaUI.code();  // security code
@@ -495,17 +495,25 @@ var hanaUI = {
 
     formAnimateEvent: function () {  // 폼 포커스 관련 이벤트
         var animateForm = $('.cont-form--animate').find('.form__move');
-        var animateFormFirst = animateForm.eq(0);
         // 첫번째 active
+        // var animateFormFirst = animateForm.eq(0);
         // animateFormFirst.closest('.form-area').addClass('active');
         // animateFormFirst.focus();
-        
+
         // 클릭 포커스 이벤트
         $('body').on('focus click', '.form__move', function () {
             var inpIdx = animateForm.index(this);
             var inpIdxNum = animateForm.index(this) + 1;
             $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('active')).removeClass('active');
-            $('.btnNext').data('inputindex', inpIdxNum);
+            $('.btn__form-next').data('inputindex', inpIdxNum);
+            
+            // 마지막 폼에서 버튼교체
+            var formLeng = $('.cont-form--animate').find('.form-area').length;
+            var formActiveLeng = $('.cont-form--animate').find('.form-area.active').length;
+            if (formLeng <= formActiveLeng) {  
+                $('.btn-next-wrap').hide();
+                $('.btn-last-wrap').show();
+            }
         })
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
@@ -514,8 +522,8 @@ var hanaUI = {
         var nextInput = $('#' + 'inputMove' + nextNum);
         
         $('.label__tit').not($('.label__tit').eq(indexActiveNum).addClass('active')).removeClass('active');
-        $('.form-area:lt(' + num + ')').addClass('active');
-        $('.btnNext').data('inputindex', indexActiveNum);
+        $('.cont-form--animate .form-area:lt(' + num + ')').addClass('active');
+        $('.btn__form-next').data('inputindex', indexActiveNum);
         nextInput.closest('.form-area').addClass('active');
         nextInput.focus();
         
@@ -528,6 +536,7 @@ var hanaUI = {
         nextInput.closest('.form-area').addClass('active');
         nextInput.focus();
     },
+    
     
     // 툴팁
     tooltip : function(){
