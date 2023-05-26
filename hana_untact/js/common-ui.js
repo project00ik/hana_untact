@@ -10,7 +10,7 @@
     //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
     hanaUI.inputField('.input'); //인풋필드 기능
     hanaUI.placeholder('[data-element=placeholder__textarea]'); //플레이스홀더
-    hanaUI.formAnimate(); //폼 애니메이션 
+    hanaUI.formAnimateEvent(); //폼 포커스 관련 이벤트
     hanaUI.tooltip(); //툴팁 
     hanaUI.sticky('[data-sticky=normal]'); //고정메뉴
     hanaUI.code();  // security code
@@ -493,24 +493,34 @@ var hanaUI = {
         event();
     },
 
-    formAnimate: function () { 
-        var animateFormWrap = $('.cont-form--animate');
-        var animateFormFirst = animateFormWrap.find('.form__move').eq(0);
+    formAnimateEvent: function () {  // 폼 포커스 관련 이벤트
+        var animateForm = $('.cont-form--animate').find('.form__move');
+        var animateFormFirst = animateForm.eq(0);
         // 첫번째 active
-        animateFormFirst.closest('.form-area').addClass('active');
-        animateFormFirst.focus();
+        // animateFormFirst.closest('.form-area').addClass('active');
+        // animateFormFirst.focus();
+        
         // 클릭 포커스 이벤트
         $('body').on('focus click', '.form__move', function () {
-            var inpIdx = $('.cont-form--animate .form__move').index(this);
-            var inpIdxNum = $('.cont-form--animate .form__move').index(this) + 1;
+            var inpIdx = animateForm.index(this);
+            var inpIdxNum = animateForm.index(this) + 1;
             $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('active')).removeClass('active');
             $('.btnNext').data('inputindex', inpIdxNum);
         })
+    },
+    formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
+        var indexActiveNum = num;
+        var nextNum = indexActiveNum;
+        var nextInput = $('#' + 'inputMove' + nextNum);
         
+        $('.label__tit').not($('.label__tit').eq(indexActiveNum).addClass('active')).removeClass('active');
+        $('.form-area:lt(' + num + ')').addClass('active');
+        $('.btnNext').data('inputindex', indexActiveNum);
+        nextInput.closest('.form-area').addClass('active');
+        nextInput.focus();
         
     },
-    formNextBtnEvent: function (inputObj) { 
-        // 계속 버튼 이벤트
+    formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
         var inputThis = $(inputObj);
         var inpActiveNum = inputThis.data('inputindex');
         var nextNum = inpActiveNum + 1;
