@@ -231,6 +231,12 @@ var hanaUI = {
                 'blur' : function(e){
                     var $target = $(e.target)
                     hanaUI.native.bottomShow();
+
+                    // 인풋 내용이 있을때 키보드 완료(input blur 상태) 클릭 시 다음 항목으로 이동 
+                    if ($(this).val() !== '') { 
+                        $('.btn__form-next').trigger('click');
+                    }
+
                     if($(this).siblings('input').length || $(this).parent('.native-inner').siblings('.native-inner').length){
                         if($(this).val() == ''){
                             var that = $(this).closest($el).find($input);
@@ -295,6 +301,7 @@ var hanaUI = {
                     }
                 },
                 'keypress': function (e) { 
+                    // 인풋 내용이 있을때 키보드 엔터 클릭 시 다음 항목으로 이동 
                     if (e.keyCode == 13 && $(this).val() !== '') { 
                         $('.btn__form-next').trigger('click');
                     }
