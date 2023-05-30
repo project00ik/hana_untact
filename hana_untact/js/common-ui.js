@@ -233,9 +233,9 @@ var hanaUI = {
                     hanaUI.native.bottomShow();
 
                     // 인풋 내용이 있을때 키보드 완료(input blur 상태) 클릭 시 다음 항목으로 이동 
-                    if ($(this).val() !== '') { 
-                        $('.btn__form-next').trigger('click');
-                    }
+                    // if ($(this).val() !== '') { 
+                    //     $('.btn__form-next').trigger('click');
+                    // }
 
                     if($(this).siblings('input').length || $(this).parent('.native-inner').siblings('.native-inner').length){
                         if($(this).val() == ''){
@@ -520,26 +520,19 @@ var hanaUI = {
     formNextMoveEvent: function (obj) { 
         var animateForm = $('.cont-form--animate').find('.form__move');
         var inpIdx = animateForm.index(obj);
-        var inpIdxNum = animateForm.index(obj) + 1;
-        $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('tit--active')).removeClass('tit--active');
+        var inpIdxNum = inpIdx + 1;
+        $('.label__tit').not($('.label__tit[data-pagetit='+ inpIdxNum + ']').addClass('tit--active')).removeClass('tit--active');
         $('.btn__form-next').data('inputindex', inpIdxNum);
         
-        // 마지막 폼에서 버튼교체
-        var formLeng = $('.cont-form--animate').find('.form-area').length;
-        var formActiveLeng = $('.cont-form--animate').find('.form-area.active').length;
-        if (formLeng <= formActiveLeng) {  
-            $('.btn-next-wrap').hide();
-            $('.btn-last-wrap').show();
-        }
+        
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
-        var indexActiveNum = num;
-        var nextNum = indexActiveNum;
+        var nextNum = num;
         var nextInput = $('[data-inputmove='+ nextNum + ']');
         
-        $('.label__tit').not($('.label__tit').eq(indexActiveNum).addClass('form--active')).removeClass('form--active');
+        $('.label__tit').not($('.label__tit[data-pagetit='+ nextNum + ']').addClass('tit--active')).removeClass('tit--active');
         $('.cont-form--animate .form-area:lt(' + num + ')').addClass('form--active');
-        $('.btn__form-next').data('inputindex', indexActiveNum);
+        $('.btn__form-next').data('inputindex', nextNum);
         nextInput.closest('.form-area').addClass('form--active');
         nextInput.focus();
     },
@@ -549,9 +542,18 @@ var hanaUI = {
         var nextNum = inpActiveNum + 1;
         // var nextInput = $('#' + 'inputMove' + nextNum);
         var nextInput = $('[data-inputmove='+ nextNum + ']');
-        nextInput.closest('.form-area').addClass('form--active');
-        nextInput.focus();
-        nextInput.trigger('click');
+        
+        // 마지막 폼에서 버튼교체
+        var formLeng = $('.cont-form--animate').find('.form-area').length;
+        var formActiveLeng = $('.cont-form--animate').find('.form-area.form--active').length;
+        if (formLeng <= formActiveLeng) {
+            
+            $('.btn-last-wrap').show();
+        } else { 
+            nextInput.closest('.form-area').addClass('form--active');
+            nextInput.focus();
+            nextInput.trigger('click');
+        }
     },
     
     

@@ -56,12 +56,19 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 /* 폼 타입 */
 .form-flex-wrap {display: flex; align-items: flex-end; justify-content: space-between;}
-.form-flex-wrap .select-wrap + .input-wrap {margin-left: 1.6rem;}
-.form-flex-wrap .input-wrap {flex:1;}
+.form-flex-wrap .select-wrap + .input__wrap {margin-left: 1.6rem;}
+.form-flex-wrap .input__wrap {flex:1;}
 
 /* 인풋 스타일 */
-.input-wrap--wide .input:before, .input-wrap--wide2 .input:before {top: -1px;}
+.input__wrap--wide .input:before, .input__wrap--wide2 .input:before {top: -1px;}
 .input {position: relative; width: 100%;}
+.input__wrap .bar {display: none; margin: 0 0.8rem; padding: 2.8rem 0 0.4rem 0; color: #bbb;}
+.input__wrap .bar::before {content: ''; width: 0.8rem; height: 0.1rem; margin-top: 1.1rem; background: #bbb; display: inline-block; vertical-align: top;}
+.input__wrap .bar + .input {display: none;}
+.input.input--on + .bar {display: block;}
+.input.input--on + .bar + .input {display: block;}
+.input .pass-dot-wrap {display: flex; padding: 2.8rem 0 0.4rem 0.4rem; align-items: center;}
+.input .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
 .input .btn-minus,
 .input .btn-plus {margin: 0 0 1.1rem 1.6rem; align-self: flex-end;}
 .input:before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}
@@ -134,7 +141,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input__guide-txt.input__note {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
 .input__guide-txt.input__error {margin-top: 0.9rem;}
-.input-wrap .checkbox-wrap > label {vertical-align: top; margin-top: 2.1rem;}
+.input__wrap .checkbox-wrap > label {vertical-align: top; margin-top: 2.1rem;}
+
 
 
 /* 인풋(박스형) */
@@ -146,8 +154,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input-box + .input__error {display: none;}
 .input-box-wrap.error .input__error {display: block;}
 .input-box.w56 {width: 5.6rem;}
-.input-wrap {display: -webkit-box; display: flex; -webkit-box-align: center; align-items: center; margin: 0 -0.25rem;}
-.input-wrap .input:before {top: -1px;}
+.input__wrap {display: -webkit-box; display: flex; -webkit-box-align: center; align-items: center; margin: 0 -0.25rem;}
+.input__wrap .input:before {top: -1px;}
 
 /* 인풋 - 검색 */
 .search-area {position: relative;}
@@ -189,21 +197,20 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .search-btn-wrap.search--error .input__error {display: block;}
 
 /* 인풋 레이아웃 */
-.input-wrap {margin: 0;}
-.input-wrap .input .input__inner {padding-right: 0}
-.input-wrap .input.input--focus .input__inner .input__label:not(.font-inherit), 
-.input-wrap.input--on .input .input__inner .input__label:not(.font-inherit) {font-size: 1.4rem; top: 0.8rem;}
-.input-wrap .input .btn {min-width: auto; margin: 1.4rem 0 0 1.2rem; white-space: nowrap;}
+.input__wrap {margin: 0;}
+.input__wrap .input .input__inner {padding-right: 0}
+/* .input__wrap .input.input--focus .input__inner .input__label:not(.font-inherit), 
+.input__wrap.input--on .input .input__inner .input__label:not(.font-inherit) {font-size: 1.6rem; top: 0.8rem;} */
+.input__wrap .input .btn {min-width: auto; margin: 1.4rem 0 0 1.2rem; white-space: nowrap;}
 
-.input-wrap .input + .input {margin-top: 0; margin-left: 1.6rem;}
+.input__wrap .input + .input {margin-top: 0; margin-left: 1.6rem;}
 .input__calendar-button {width: 2rem; height: 2rem; min-width: 2rem; max-width: 2rem; margin:1.1rem 0 0 1.6rem; background: url(../images/icon/calendar.svg) 50% 50% no-repeat; background-size: 100% auto;}
-.input-wrap .input .input__inner .input__element {font-size: 1.8rem; line-height: 1.5;}
+.input__wrap .input .input__inner .input__element {font-size: 1.8rem; line-height: 1.5;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 
 .form-area {margin-top: 4rem; position: relative;}
-.form-area:first-child,
-.cont-revers .form-area:last-child {margin-top: 0;}
+
 .form-area:last-child,
 .cont-revers .form-area:first-child {margin-top: 4rem;}
 .form-area .form-label {position: absolute; top: 0; left: 0; z-index: 1; color: #666; font-size: 1.4rem;}
