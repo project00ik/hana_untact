@@ -124,8 +124,8 @@
                 <div class="btn-group-sub-wrap btn-next-wrap">
                     <button type="button" class="btn rd btn__form-next" aria-label="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button>
                 </div>
-                <div class="btn-group-wrap btn-last-wrap" style="display: none">
-                    <button type="button" class="btn" aria-label="확인">본인 인증하기</button>
+                <div class="btn-group-sub-wrap btn-last-wrap" style="display: none">
+                    <button type="button" class="btn rd btn__form-next" data-element="modal__open" data-target="#modalSlide01" aria-label="본인 인증하기">계속</button>
                 </div>
             </div>
         <!-- //footer -->
@@ -191,13 +191,79 @@
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
 
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">본인 인증하려면 동의가 필요해요</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="pricacy-wrap">
+                    <div class="privacy-area">
+                        <div class="item-privacy">
+                            <p class="privacy__label">
+                                <input type="checkbox" id="check-0" class="checkbox-wrap__check">
+                                <label for="check-0" class="checkbox-wrap__label">
+                                    [필수] 이용약관 전체동의
+                                </label>
+                            </p>
+                            <button type="button" class="privacy__more">상세보기</button><!-- //일반버튼일때: 클래스 추가 없음 / text 상세보기 -->
+                        </div>
+                        <!-- 서브목록 -->
+                        <div class="item-sublist type__check">
+                            <div class="item-sublist__inner">
+                                <!-- 목록 -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <input type="checkbox" id="check-0-1-1-1" class="checkbox-wrap__check">
+                                        <label for="check-0-1-1-1" class="checkbox-wrap__label">IRP 운용관리 · 자산관리 신탁 계약서</label>
+                                    </p>
+                                    <button type="button" class="privacy__more">상세보기</button>
+                                </div>
+                                <!-- // -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <input type="checkbox" id="check-0-1-1-2" class="checkbox-wrap__check">
+                                        <label for="check-0-1-1-2" class="checkbox-wrap__label">IRP 핵심설명서 (수수료, 적용세율 등)</label>
+                                    </p>
+                                    <button type="button" class="privacy__more">상세보기</button>
+                                </div>
+                                <!-- // -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <input type="checkbox" id="check-0-1-1-3" class="checkbox-wrap__check">
+                                        <label for="check-0-1-1-3" class="checkbox-wrap__label">불법 탈법 차명거래 금지 설명 확인서</label>
+                                    </p>
+                                    <button type="button" class="privacy__more">상세보기</button>
+                                </div>
+                                <!-- // -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <input type="checkbox" id="check-0-1-1-4" class="checkbox-wrap__check">
+                                        <label for="check-0-1-1-4" class="checkbox-wrap__label">계좌간 자동이체 약관</label>
+                                    </p>
+                                    <button type="button" class="privacy__more">상세보기</button>
+                                </div>
+                                <!-- // -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="동의">동의</button>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
 
 
     <script>
         
         $(function(){
             // D : 유효성검사 후 호출해주세요.
-            hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 index 숫자
+            hanaUI.formFocusEvent(5); // 포커스 하고 싶은 폼 index 숫자
         })
 
     </script>

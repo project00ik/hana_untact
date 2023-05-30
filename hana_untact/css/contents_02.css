@@ -236,6 +236,12 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .no-data .txt {font-size: 1.8rem; color: #171a1a; font-weight: 700;}
 .no-data .sub-txt {margin-top: 0.6rem; font-size: 1.5rem; color: #666;}
 
+/* 약관 */
+.pricacy-wrap {padding: 0.5rem 2.4rem;}
+.privacy-area {border: 0.1rem solid #e7e9ee; border-radius: 1.8rem;}
+
+
+
 /* 카드타입 - 설정(토글레이어) */
 .tg--area .tg--layer {display: none !important;}
 .tg--area .tg--layer.open {display: block !important;}
@@ -294,6 +300,7 @@ i.icon-tel {background: url(../images/icon/tel_gray.svg) 50% 56% no-repeat; back
 i.icon-fax {background: url(../images/icon/print_gray.svg) 50% 56% no-repeat; background-size: 100% auto;}
 i.icon-time {background: url(../images/icon/time_gray.svg) 50% 56% no-repeat; background-size: 100% auto;}
 i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.svg) 50% 50% no-repeat; background-size: 100% auto;}
+
 
 /* 카드타입 정렬 */
 .card-wrap {width: 100%; margin-top: 0.4rem; display: inline-block;}
