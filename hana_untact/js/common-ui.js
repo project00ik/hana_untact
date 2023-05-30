@@ -293,6 +293,11 @@ var hanaUI = {
                         hanaUI.native.bottomHide();
                         hanaUI.keypad($target, 300);
                     }
+                },
+                'keypress': function (e) { 
+                    if (e.keyCode == 13 && $(this).val() !== '') { 
+                        $('.btn__form-next').trigger('click');
+                    }
                 }
             }, '.input__element');
             $label.on('click', function(){
@@ -494,7 +499,7 @@ var hanaUI = {
     },
 
     formAnimateEvent: function () {  // 폼 포커스 관련 이벤트
-        var animateForm = $('.cont-form--animate').find('.form__move');
+        
         // 첫번째 active
         // var animateFormFirst = animateForm.eq(0);
         // animateFormFirst.closest('.form-area').addClass('active');
@@ -502,38 +507,42 @@ var hanaUI = {
 
         // 클릭 포커스 이벤트
         $('body').on('focus click', '.form__move', function () {
-            var inpIdx = animateForm.index(this);
-            var inpIdxNum = animateForm.index(this) + 1;
-            $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('active')).removeClass('active');
-            $('.btn__form-next').data('inputindex', inpIdxNum);
-            
-            // 마지막 폼에서 버튼교체
-            var formLeng = $('.cont-form--animate').find('.form-area').length;
-            var formActiveLeng = $('.cont-form--animate').find('.form-area.active').length;
-            if (formLeng <= formActiveLeng) {  
-                $('.btn-next-wrap').hide();
-                $('.btn-last-wrap').show();
-            }
+            hanaUI.formNextMoveEvent(this);
         })
+    },
+    formNextMoveEvent: function (obj) { 
+        var animateForm = $('.cont-form--animate').find('.form__move');
+        var inpIdx = animateForm.index(obj);
+        var inpIdxNum = animateForm.index(obj) + 1;
+        $('.label__tit').not($('.label__tit').eq(inpIdx).addClass('tit--active')).removeClass('tit--active');
+        $('.btn__form-next').data('inputindex', inpIdxNum);
+        
+        // 마지막 폼에서 버튼교체
+        var formLeng = $('.cont-form--animate').find('.form-area').length;
+        var formActiveLeng = $('.cont-form--animate').find('.form-area.active').length;
+        if (formLeng <= formActiveLeng) {  
+            $('.btn-next-wrap').hide();
+            $('.btn-last-wrap').show();
+        }
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
         var indexActiveNum = num;
         var nextNum = indexActiveNum;
-        var nextInput = $('#' + 'inputMove' + nextNum);
+        var nextInput = $('[data-inputmove='+ nextNum + ']');
         
-        $('.label__tit').not($('.label__tit').eq(indexActiveNum).addClass('active')).removeClass('active');
-        $('.cont-form--animate .form-area:lt(' + num + ')').addClass('active');
+        $('.label__tit').not($('.label__tit').eq(indexActiveNum).addClass('form--active')).removeClass('form--active');
+        $('.cont-form--animate .form-area:lt(' + num + ')').addClass('form--active');
         $('.btn__form-next').data('inputindex', indexActiveNum);
-        nextInput.closest('.form-area').addClass('active');
+        nextInput.closest('.form-area').addClass('form--active');
         nextInput.focus();
-        
     },
     formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
         var inputThis = $(inputObj);
         var inpActiveNum = inputThis.data('inputindex');
         var nextNum = inpActiveNum + 1;
-        var nextInput = $('#' + 'inputMove' + nextNum);
-        nextInput.closest('.form-area').addClass('active');
+        // var nextInput = $('#' + 'inputMove' + nextNum);
+        var nextInput = $('[data-inputmove='+ nextNum + ']');
+        nextInput.closest('.form-area').addClass('form--active');
         nextInput.focus();
         nextInput.trigger('click');
     },
