@@ -115,18 +115,6 @@
                             <p class="input__guide-txt input__note">가이드 텍스트</p>
                         </div>
 
-                        <div class="form-area last-form">
-                            <div class="input__wrap">
-                                <div class="input">
-                                    <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText05" data-inputmove="6" title="휴대폰번호 입력">
-                                        <label for="inputText05" class="input__label" aria-hidden="true">휴대폰번호</label>
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
                     </div>
                 </div>
             </div>
@@ -137,16 +125,8 @@
                     <button type="button" class="btn rd btn__form-next" aria-label="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button>
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none">
-                    <button type="button" class="btn gray btn-cancle" aria-label="취소">취소</button>
-                    <button type="button" class="btn" aria-label="확인">확인</button>
+                    <button type="button" class="btn" aria-label="확인">본인 인증하기</button>
                 </div>
-                <!-- 아이콘 + 버튼형 -->
-                <!-- <div class="btn-group-wrap">
-                    <button type="button" class="btn gray btn-icon" aria-label="">
-                        <span class="icon_upload"></span>
-                    </button>
-                    <button type="button" class="btn" aria-label="">Default</button>
-                </div> -->
             </div>
         <!-- //footer -->
         </div>
@@ -210,11 +190,14 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
+
+
+
     <script>
         
         $(function(){
             // D : 유효성검사 후 호출해주세요.
-            hanaUI.formFocusEvent(2); // 포커스 하고 싶은 폼 index 숫자
+            hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 index 숫자
         })
 
     </script>
