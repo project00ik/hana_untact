@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <!-- <p class="page-tit">본인인증</p> -->
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">문자로 받은<br>인증번호 6자리를 입력해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap">
+                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="number" class="input__element form__move" id="inputText01" data-inputmove="1" title="인증번호 입력">
+                                        <label for="inputText02" class="input__label" aria-hidden="true">인증번호</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        <span class="time">02:25</span>
+                                        <!-- 현업 요청으로 삭제: <button type="button" class="btn gray sm" title="시간연장">시간연장</button> -->
+                                        <button type="button" class="btn gray sm" title="재요청">재요청</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">인증 후, 모든 절차가 완료되면 입력하신 휴대폰 번호가 손님 정보로 등록됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn" title="확인" data-element="modal__open" data-target="#modalAlert">확인</button>
+                </div>
+            </div>
+        <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - alert -->
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">입력한 정보를 다시 확인해 주세요.</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert -->
+
+
+    <script>
+        
+        $(function(){
+            /* 입력폼에 자동 포커스 하기 : 유효성검사 후 호출해주세요.  hanaUI.formFocusEvent('포커스 하고 싶은 폼 data-inputindex 숫자') */
+            hanaUI.formFocusEvent(1);
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalSlide01');
+
+        });
+
+    </script>
+</body>
+</html>

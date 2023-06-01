@@ -521,8 +521,29 @@ var hanaUI = {
         var animateForm = $('.cont-form--animate').find('.form__move');
         var inpIdx = animateForm.index(obj);
         var inpIdxNum = inpIdx + 1;
-        $('.label__tit').not($('.label__tit[data-pagetit='+ inpIdxNum + ']').addClass('tit--active')).removeClass('tit--active');
+        // $('.label__tit').not($('.label__tit[data-pagetit='+ inpIdxNum + ']').addClass('tit--active')).removeClass('tit--active');
         $('.btn__form-next').data('inputindex', inpIdxNum);
+    },
+    formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
+        var inputThis = $(inputObj);
+        var inpActiveNum = inputThis.data('inputindex');
+        var nextNum = inpActiveNum + 1;
+        // var nextInput = $('#' + 'inputMove' + nextNum);
+        var nextInput = $('[data-inputmove='+ nextNum + ']');
+        $('.label__tit').not($('.label__tit[data-pagetit='+ nextNum + ']').addClass('tit--active')).removeClass('tit--active');
+        // 마지막 폼에서 버튼교체
+        var formLeng = $('.cont-form--animate').find('.form-area').length;
+        var formActiveLeng = $('.cont-form--animate').find('.form-area.form--active').length;
+        if (formLeng <= formActiveLeng) {
+            $('.btn-next-wrap').hide();
+            $('.btn-last-wrap').show();
+        } else { 
+            $('.btn-last-wrap').hide();
+            $('.btn-next-wrap').show();
+            nextInput.closest('.form-area').addClass('form--active');
+            nextInput.focus();
+            nextInput.trigger('click');
+        }
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
         var nextNum = num;
@@ -534,30 +555,6 @@ var hanaUI = {
         nextInput.closest('.form-area').addClass('form--active');
         nextInput.focus();
     },
-    formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
-        var inputThis = $(inputObj);
-        var inpActiveNum = inputThis.data('inputindex');
-        var nextNum = inpActiveNum + 1;
-        // var nextInput = $('#' + 'inputMove' + nextNum);
-        var nextInput = $('[data-inputmove='+ nextNum + ']');
-        
-        // 마지막 폼에서 버튼교체
-        var formLeng = $('.cont-form--animate').find('.form-area').length;
-        var formActiveLeng = $('.cont-form--animate').find('.form-area.form--active').length;
-        if (formLeng <= formActiveLeng) {
-            $('.btn-next-wrap').hide();
-            $('.btn-last-wrap').show();
-            
-            $('.label__tit').not($('.label__tit[data-pagetit='+ nextNum + ']').addClass('tit--active')).removeClass('tit--active');
-        } else { 
-            $('.btn-last-wrap').hide();
-            $('.btn-next-wrap').show();
-            nextInput.closest('.form-area').addClass('form--active');
-            nextInput.focus();
-            nextInput.trigger('click');
-        }
-    },
-    
     
     // 툴팁
     tooltip : function(){
