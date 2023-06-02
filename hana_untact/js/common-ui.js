@@ -120,11 +120,11 @@ var hanaUI = {
                 $('.app-main').addClass('footer-none');
             } else {
                 $('.app-main').removeClass('footer-none');
-                if($el.find('[class^=btn-group]').length > 1){
-                    $('.app-main').addClass('footer-sub-btn');
-                } else {
-                    $('.app-main').removeClass('footer-sub-btn');
-                }
+                // if($el.find('[class^=btn-group]').length > 1){
+                //     $('.app-main').addClass('footer-sub-btn');
+                // } else {
+                //     $('.app-main').removeClass('footer-sub-btn');
+                // }
             }
         }
         hasBtn(obj);

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Guide - [스뱅] 캐나다 법인 확산</title>
+    <title>[Modal] KEB하나은행 - 비대면 계좌개설</title>
     <!-- 공통 css -->
     <link rel="stylesheet" href="../css/common.css" type="text/css">
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -25,7 +25,7 @@
 
 	<div class="guide-wrap" id="wrap">
 
-		<h1 class="guide-depth01">Guide - [스뱅] 캐나다 법인 확산</h1>
+		<h1 class="guide-depth01">[Modal] KEB하나은행 - 비대면 계좌개설</h1>
         <div class="content">
             <div class="con-box">
                 <!-- Content Here -->
@@ -57,19 +57,7 @@
                 </div>
                 <br>
 
-                <div class="button-wrap">
-                    <button
-                        type="button"
-                        class="btn"
-                        data-element="modal__open"
-                        data-target="#modalAlertTitle"
-                    >
-                    alert - only title
-                    </button>
-                </div>
-                <br>
-
-                <div class="button-wrap">
+                <!-- <div class="button-wrap">
                     <button
                         type="button"
                         class="btn"
@@ -77,6 +65,18 @@
                         data-target="#modalAlertLong"
                     >
                     alert - header
+                    </button>
+                </div>
+                <br> -->
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlideBtn"
+                    >
+                        slide(기본형 예시)
                     </button>
                 </div>
                 <br>
@@ -88,7 +88,7 @@
                         data-element="modal__open"
                         data-target="#modalSlide"
                     >
-                        slide
+                        slide(버튼형 예시)
                     </button>
                 </div>
                 <br>
@@ -98,61 +98,59 @@
                         type="button"
                         class="btn"
                         data-element="modal__open"
-                        data-target="#modalSlideBtn"
+                        data-target="#modalSlideNoLine"
                     >
-                        slide - 버튼 X
+                        slide(타이틀 라인 없는 형 예시)
                     </button>
                 </div>
                 <br>
 
-                <div class="form-area">
-                    <div class="select-wrap">
-                        <div class="select">
-                            <div class="select__inner">
-                                <button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlideDate" title="일자 선택" aria-controls="#modalSlide1">
-                                    <!-- <i class="icon-country-canada"></i> -->
-                                    <span>1</span> 
-                                </button>
-                            </div>
-                            <div class="select-label">일자 선택</div>
-                        </div>
-                        <p class="input__error" aria-live="assertive">오류메세지 노출</p>
-                    </div>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlidefull"
+                    >
+                        slide(풀팝업 예시)
+                    </button>
                 </div>
                 <br>
-                <div class="form-area">
-                    <div class="select-wrap">
-                        <div class="select">
-                            <div class="select__inner">
-                                <button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlideTerm" title="기간 선택" aria-controls="#modalSlideTerm">
-                                    <!-- <i class="icon-country-canada"></i> -->
-                                    <span>1</span> 
-                                </button>
-                            </div>
-                            <div class="select-label">기간 선택</div>
-                        </div>
-                        <p class="input__error" aria-live="assertive">오류메세지 노출</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
-    <!-- 모달레이어 - alert -->
+    <!-- 모달레이어 - alert(기본형 예시) -->
     <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
-                <p class="con-title">title</p>
-                <p class="text-sub">text</p>
-                <p class="text-sub tp-dpink">text</p>
+                <p class="text-sub">'개인정보 수집 &middot; 이용 동의'에 <br>동의해 주세요.</p>
             </div>
             <div class="btn-wrap">
                 <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
             </div>
         </div>
     </div>
-    <!-- //모달레이어 - alert -->
+    <!-- //모달레이어 - alert(기본형 예시) -->
+
+    <!-- 모달레이어 - alert(왼쪽정렬 예시) -->
+    <div id="modalAlert02" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub txt-align-l">
+                    만 14세 이상~19세 미만의 미성년자의 경우<br>
+                    <span class="tp-green">주민등록증, 여권, 학생증(청소년증)</span>이<br>
+                    필요합니다.
+                </p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(왼쪽정렬 예시) -->
     
-    <!-- 모달레이어 - alert - only title -->
+    <!-- 모달레이어 - alert - title 있음 -->
     <div id="modalAlertTitle" class="modal popup-wrap alert only-title" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
@@ -252,6 +250,102 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlidefull" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                개인정보 수집 &middot; 이용 동의
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+
+    <!-- 모달레이어 - 슬라이드(title no-line) -->
+    <div id="modalSlideNoLine" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">본인 인증하려면 동의가 필요해요</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="privacy-wrap">
+                    <div class="privacy-area chk-all-area">
+                        <div class="item-privacy">
+                            <div class="privacy__label">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" class="chk-all" name="privacy_checkbox00" id="privacy_checkbox00" title="휴대폰 인증 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                    <label for="privacy_checkbox00">휴대폰 인증 이용약관 동의</label>
+                                </div>
+                            </div>
+                            <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="휴대폰 인증 이용약관 동의 상세보기">상세보기</button>
+                        </div>
+                        <!-- 서브목록 -->
+                        <div class="item-sublist">
+                            <div class="item-sublist__inner">
+                                <!-- 목록 -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_1" title="개인정보 수집 &middot; 이용 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_1">개인정보 수집 &middot; 이용 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="개인정보 수집&middot;이용 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_2" title="고객식별정보 처리 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_2">고객식별정보 처리 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="고객식별정보 처리 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_3" title="통신사 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_3">통신사 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="통신사 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_4" title="서비스 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_4">서비스 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="서비스 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="본인 인증">본인 인증</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
 
     <!-- 모달레이어 - 일자 선택 -->
     <div id="modalSlideDate" class="modal popup-wrap modal--slide" data-element="modal__element">

@@ -136,19 +136,16 @@
 						<!--// input  데이터가 초기에 자동으로 입력되어 있을때 -->
 		
 						<!-- input error -->
-						<div class="form-area">
-							<div class="input input--error input--on">
+						<div class="form-area input--error">
+							<div class="input input--on">
 								<div class="input__inner">
 									<input type="text" id="inputText03" class="input__element" title="입력폼" value="입력오류" placeholder="">
 									<label for="inputText03" class="input__label" aria-hidden="true">항목명</label>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
-								<!-- 에러 메시지 -->
 							</div>
-							<!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
-                            <!-- 가이드 텍스트 -->
-                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+							<!-- 에러 메시지 -->
+							<p class="input__guide-txt input__error" aria-live="assertive">오류메세지 노출</p>
 						</div>
 						<!--// input error -->
 		
@@ -189,8 +186,8 @@
 						<div class="form-area input-date-error"> <!--  error 시 class = input-date-error 추가 -->
 							<div class="input input--on error"> <!-- error 시 class = error 추가 -->
 								<div class="input__inner">
-									<input type="text" id="inputText05" class="input__element input-date" title="시작일" value="2023.04.20" placeholder="YYYY.MM.DD" readonly>
-									<label for="inputText05" class="input__label" aria-hidden="true">시작일</label>
+									<input type="text" id="inputText06" class="input__element input-date" title="시작일" value="2023.04.20" placeholder="YYYY.MM.DD" readonly>
+									<label for="inputText06" class="input__label" aria-hidden="true">시작일</label>
 									<button type="button" class="input__calendar-button" aria-label="시작일 선택"></button>
 								</div>
 							</div>

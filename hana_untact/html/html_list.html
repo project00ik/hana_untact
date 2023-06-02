@@ -1,0 +1,596 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>[HTML] KEB하나은행 - 비대면 계좌개설</title>
+
+    <style type="text/css">
+        body {background-color:#f9f9f9;}
+        * {font-size:11px;color:#222; margin: 0; padding: 0; font-weight: 600;}
+        h1 {font-size:20px;}
+        a {text-decoration: none;}
+        li {list-style: none;}
+        table {margin-top: 20px;width:100%;border:1px solid #ddd;border-collapse:collapse;table-layout: fixed;}
+        table th, table td {border:1px solid #ddd;}
+        table th {height:40px;background:#cacaca;font-size:12px;font-weight: bold;}
+        table td {height:30px;padding:0 10px;}
+        table td:nth-child(1) {text-align:right;}
+        table td:nth-child(2) {}
+        table td:nth-child(3) {}
+        table td:nth-child(4) {}
+        table td:nth-child(5) {}
+        table td:nth-child(6) {}
+        table td:nth-child(7) a {color:blue;}
+        table td:nth-child(8) {text-align:center;}
+        table td:nth-child(9) {text-align:center;color:#999}
+        table td:nth-child(10) {text-align:center;}
+        table td:nth-child(11) {text-align:center;}
+        table tr:hover {background:#f1f1f1;}
+        table td .point_col01 {color:#e5005a}
+        table tr td strong {color:#000}
+        .memo {color:#fff; float: right; font-weight: 300;}
+        table tr.depth td {background-color: #eee;}
+
+        .guide-wrap {padding: 20px;}
+        .top-wrap {position: fixed; left: 0; top: 0; padding: 20px; background-color: #fff; width: calc(100% - 40px);}
+        .con-wrap {margin-top: 107px;}
+
+        .tab-list-wrap {margin-top: 20px;}
+        .tab-list {display: flex;}
+        .tab-list li {flex: 1; height: 40px;}
+        .tab-list li a {display: block; height: 40px; line-height: 40px; font-size: 14px; color: #fff; text-align: center; background-color: #9ca6a6;}
+        .tab-list li a:hover {background-color: #7d8585;}
+        .tab-list li + li {border-left: 1px solid #fff;}
+        .tab-list li a.on {background-color: #2f3333;}
+
+        .title-area {display: flex; align-items: flex-end; justify-content: space-between;}
+        .title-area .right-area {text-align: right;}
+    </style>	
+</head>
+<body>
+
+<div class="guide-wrap">
+    <div class="top-wrap">
+        <div class="title-area">
+            <h1>[HTML] KEB하나은행 - 비대면 계좌개설</h1>
+            <div class="right-area">
+                <span>* 개인 진행율 : </span>
+                <span class="page"></span>
+                <span class="total"></span>
+                <span class="percent"></span>
+            </div>
+        </div>
+        <div class="tab-list-wrap">
+            <ul class="tab-list">
+                <li><a href="html_list.html" class="on">HTML</a></li>
+                <li><a href="../guide/guide.html" target="_blank">Guide</a></li>
+                <li><a href="../guide/modal.html" target="_blank">Modal</a></li>
+                <li><a href="../html/layout.html" target="_blank">layout</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="con-wrap">
+        <table>
+            <colgroup>
+                <col style="width:2%" />
+                <col style="width:11%" />
+                <col style="width:11%" />
+                <col style="width:10%" />
+                <col style="width:10%" />
+                <col style="width:8%" />
+                <col style="width:8%" />
+                <col style="width:5%" />
+                <col style="width:8%" />
+                <col style="width:5%" />
+                <col style="width:5%" />
+                <col style="width:auto" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Depth1</th>
+                    <th>Depth2</th>
+                    <th>Depth3</th>
+                    <th>Depth4</th>
+                    <th>Depth5</th>
+                    <th>Depth6</th>
+                    <th>화면명</th>
+                    <th>ID</th>
+                    <th>작업자</th>
+                    <th>완료일</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>     				                
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">준비물안내</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">본인인증</td>
+                    <td class="d2">휴대폰 본인인증</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/NFTF3_1100.html" target="_blank">NFTF3_1100</a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3">휴대폰 인증 약관동의(1/2)</td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/NFTF3_1100_2.html" target="_blank">NFTF3_1100_2</a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3">휴대폰 인증 약관동의(2/2)</td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/NFTF3_1100_3.html" target="_blank">NFTF3_1100_3</a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">휴대폰 인증번호 요청/입력</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/NFTF3_1200.html" target="_blank">NFTF3_1200</a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">약관동의</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/NFTF3_3100.html" target="_blank">NFTF3_3100</a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">마케팅 수신 동의 팝업</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">상품 설명 이해 안내 팝업</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">전체 약관동의 팝업</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">기본정보</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">주소검색(검색 전)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">주소검색(검색 후)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">주소검색(검색 결과 없음)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">필수정보</td>
+                    <td class="d2">[정보1] 직업/직장정보, 우편물 수령처</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">[정보2] 금융거래정보 확인</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">[정보2] 이용한도 안내</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1">필수정보(자영업자)</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td>* 퍼블 참고 : 업종(종목) 서비스명 길어지는 경우</td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">업종검색 팝업(검색 전)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">업종검색 팝업(검색 후)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">업종검색 팝업(검색 결과 없음)</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">입출금</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2">증권저축계좌</td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">예금</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">적금</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">적금 청약</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">외환</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">전자금융</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="">
+                    <td></td>
+                    <td class="d1"></td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">관리점/직원</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+                <tr class="depth">
+                    <td></td>
+                    <td class="d1">이용한도해제코드</td>
+                    <td class="d2"></td>
+                    <td class="d3"></td>
+                    <td class="d4"></td>
+                    <td class="d5"></td>
+                    <td class="d6"></td>
+                    <td></td>
+                    <td><a href="../html/.html" target="_blank"></a></td>
+                    <td></td>
+                    <td><strong></strong></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	$('table tbody td:nth-child(1)').each(function() {
+		$(this).text($(this).parent('tr').index()+1);
+	});
+    $('table tr').each(function(){
+        if ($(this).find('td').eq(10).text() == '') {
+            $(this).removeClass('finish');
+        } else {
+            $(this).addClass('finish');
+        }
+        
+    });
+    var total = $('table tbody tr').length;
+    var page = $('tr.finish').length;
+    var percent = page / total * 100;
+    var percentCalc = percent.toFixed(1);
+    $('.total').text(total + '(page)');
+    $('.page').text(page + ' /');
+    $('.percent').text('('+ percentCalc + '%)');
+</script>
+
+</body>
+</html>
