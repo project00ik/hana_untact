@@ -97,7 +97,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element.input__no-label::placeholder,
 .input__element.input-price::placeholder {color: #d0d9d9; font-size: 1.8rem; font-weight: 700;}
 
-.input__remove-button {display: none; max-width: 2rem; width: 2rem; height: 2rem; margin: 0 0 0.8rem 1.2rem; background: url(../images/C/btn_input_clear.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
+.input__remove-button {display: none; max-width: 1.6rem; width: 1.6rem; height: 1.6rem; margin: 0 0 0.8rem 1rem; background: url(../images/icon/ico-system-input-close.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
 
 .input--disabled:before {border-color: #dddee4 !important; background: #f3f4f5; color: #666 !important; font-weight: 400; box-shadow: none !important;}
 .input--disabled .input__element, .input--disabled .input__optional {color: #666 !important; opacity: 1 !important;}
