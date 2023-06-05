@@ -610,7 +610,7 @@ body.modal-open .app-footer {display: none;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con .pop-tab-wrap.is-btn {padding-bottom: 8.8rem;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con .pop-tab-btn {width: 100%; height: 8.8rem; padding: 1.6rem 2rem; padding-bottom: 1.6rem; padding-bottom: calc(1.6rem + constant(safe-area-inset-bottom)); padding-bottom: calc(1.6rem + env(safe-area-inset-bottom)); position: fixed; bottom: 0; bottom: calc(0rem + constant(safe-area-inset-bottom)); bottom: calc(0rem + env(safe-area-inset-bottom)); left: 0; z-index: 2;}
 
-.modal__btn--close {position: absolute; left: 1.9rem; top: 1.6rem; width: 2.7rem; height: 2.7rem; border: 0; background: 0;}
+.modal__btn--close {position: absolute; left: 1.9rem; top: 1.6rem; z-index: 2; width: 2.7rem; height: 2.7rem; border: 0; background: 0;}
 .modal__btn--close:before { content: ''; display: block; width: 2.7rem; height: 2.7rem; background: url(../images/icon/ico-system-close.png) 50% 50% no-repeat; background-size: 100% auto; }
 .popup-wrap.modal--slide .modal__header .title {height: 5.8rem; padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5;}
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
@@ -678,13 +678,13 @@ body.modal-open .app-footer {display: none;}
 .form-flex-wrap .select::before {top: 1px;}
 .select-wrap .select::after {content: ''; width: 1.6rem; height: 1.6rem; margin-top: -0.4rem; display: inline-block; background: url(../images/icon/ico-system-input-interactive-select-arrow.png) 0 0 no-repeat; background-size: 100% auto; position: absolute; bottom: 0.8rem; right: 0;}
 .select-wrap.select--on .select::before {border-color: #30bfba;}
-.select-wrap .input__error {display: none; font-size: 1.4rem; color: #e31e5a;}
+.select-wrap .input__error {display: none; font-size: 1.4rem;}
 .select-wrap.select--error .input__error {display: block;}
-.select-wrap.select--error .select::before {border-color: #e31e5a;}
+/* .select-wrap.select--error .select::before {border-color: #e31e5a;} */
 .select-wrap.select--on .select::after {transform: rotate(-180deg);}
 .select-wrap .select .select__inner {width: 100%; position: relative; display: flex; align-items: center;}
-.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #2f3333; text-align: left; position: relative; z-index: 1; opacity: 0;}
-.select-wrap .select .button-select__item span {max-width: 100%; display: inline-block; line-height: 1.2; vertical-align: top; font-size: 1.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #009591;}
+.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #009591; text-align: left; position: relative; z-index: 1; opacity: 0;}
+.select-wrap .select .button-select__item span {max-width: 100%; display: inline-block; line-height: 1.2; vertical-align: top; font-size: 1.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .select-wrap .select .button-select__item span a {font-size: inherit;}
 .form-flex-wrap .select-wrap .select .button-select__item span {vertical-align: bottom;}
 .select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left: 0; top: 4rem; z-index: 0; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
@@ -802,3 +802,8 @@ body.modal-open .app-footer {display: none;}
 .caution-list {}
 .caution-list > li {margin-top: 1.2rem; padding: 0 0 0 2rem ; font-size: 12px; font-weight: 400; line-height: 1.5; color: #757575; position: relative;}
 .caution-list > li::before {content: '※'; width: 1.3rem; margin-right: 0.7rem; display: inline-block; position: absolute; top: 0; left: 0;}
+
+/* 약관 */
+.btn-download {width: 2.4rem; height: 2.4rem; display: inline-block; background: url(../images/icon/ico-system-download.png) 50% 50% no-repeat; background-size: 100% auto;}
+.popup-wrap.modal--slide .modal__header {position: relative;}
+.popup-wrap.modal--slide .modal__header .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 2;}
