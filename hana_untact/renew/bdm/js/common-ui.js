@@ -27,7 +27,6 @@
     hanaUI.passwordShow(); // password show/hide
     hanaUI.modalBranch(); // 지점안내 모달 fixed
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
-    hanaUI.toggleLayer(); // 토글레이어
     
 });
 
@@ -519,40 +518,48 @@ var hanaUI = {
         })
     },
     formNextMoveEvent: function (obj) { 
-        var animateForm = $('.cont-form--animate').find('.form__move');
-        var inpIdx = animateForm.index(obj);
-        var inpIdxNum = inpIdx + 1;
+        var focusInp = $(obj);
+        var focusInpNum = focusInp.data('inputmove');
+        var focusInpNextNum = focusInpNum + 1;
         // $('.label__tit').not($('.label__tit[data-pagetit='+ inpIdxNum + ']').addClass('tit--active')).removeClass('tit--active');
-        $('.btn__form-next').data('inputindex', inpIdxNum);
+        $('.btn__form-next').data('inputindex', focusInpNum);
     },
     formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
         var inputThis = $(inputObj);
         var inpActiveNum = inputThis.data('inputindex');
         var nextNum = inpActiveNum + 1;
-        // var nextInput = $('#' + 'inputMove' + nextNum);
-        var nextInput = $('[data-inputmove='+ nextNum + ']');
-        $('.label__tit').not($('.label__tit[data-pagetit='+ nextNum + ']').addClass('tit--active')).removeClass('tit--active');
+        console.log(nextNum);
+        
+        var nextInput = $('[data-inputmove=' + nextNum + ']');
+        
+        $('.label__tit').not($('.label__tit[data-pagetit=' + nextNum + ']').addClass('tit--active')).removeClass('tit--active');
+        
         // 마지막 폼에서 버튼교체
         var formLeng = $('.cont-form--animate').find('.form-area').length;
-        var formActiveLeng = $('.cont-form--animate').find('.form-area.form--active').length;
+        var formActiveLeng = $('.cont-form--animate').find('.form--active').length;
+        console.log('formLeng', formLeng);
+        console.log('formActiveLeng', formActiveLeng);
         if (formLeng <= formActiveLeng) {
             $('.btn-next-wrap').hide();
             $('.btn-last-wrap').show();
         } else { 
             $('.btn-last-wrap').hide();
             $('.btn-next-wrap').show();
+            $('.btn__form-next').data('inputindex', nextNum);
             nextInput.closest('.form-area').addClass('form--active');
             nextInput.focus();
             nextInput.trigger('click');
         }
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
-        var nextNum = num;
-        var nextInput = $('[data-inputmove='+ nextNum + ']');
+        var nextInput = $('[data-inputmove=' + num + ']');
+        var formTotalLeng = $('.cont-form--animate > .form-area').length;
+        var activeForm = formTotalLeng - num;
         
-        $('.label__tit').not($('.label__tit[data-pagetit='+ nextNum + ']').addClass('tit--active')).removeClass('tit--active');
-        $('.cont-form--animate .form-area:lt(' + num + ')').addClass('form--active');
-        $('.btn__form-next').data('inputindex', nextNum);
+        $('.label__tit').not($('.label__tit[data-pagetit='+ num + ']').addClass('tit--active')).removeClass('tit--active');
+        $('.cont-form--animate > .form-area:gt(' + activeForm + ')').addClass('form--active');
+        $('[data-inputmove=' + num + ']').closest('.form-area').addClass('form--active');
+        $('.btn__form-next').data('inputindex', num);
         nextInput.closest('.form-area').addClass('form--active');
         nextInput.focus();
     },
@@ -1343,23 +1350,40 @@ function nowScrollReturn(){
 }
 
 // 토글 레이어
-function toggleLayer(obj){
+function toggleLayer(obj) {
     var toggleBtn = $(obj);
-    toggleBtn.toggleClass('tg--on');
-
-    if(toggleBtn.hasClass('tg--on')){
-        $('.tg--layer').removeClass('open');
-        toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
-        toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기') );
-    } else {
-        toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
-        toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기') );
+    if (toggleBtn.is('.chk-tg-btn')) {
+        if (toggleBtn.find('input[type="checkbox"]').is(':checked')) {
+            toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
+            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '0');
+            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기'));
+        } else { 
+            toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
+            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '-1');
+            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기'));
+        }
+        // toggleBtn.find('input:checkbox').prop('checked', obj.checked);
+        
+    } else { 
+        toggleBtn.toggleClass('tg--on');
+        if (toggleBtn.hasClass('tg--on')) {
+            $('.tg--layer').removeClass('open');
+            toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
+            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '0');
+            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기') );
+        } else {
+            toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
+            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '-1');
+            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기') );
+        }
     }
+    
 }
 // // 토글 레이어 닫기
 function toggleLayerClose(){
     $('.tg--btn').removeClass('tg--on');
     $('.tg--layer').removeClass('open');
+    $('.tg--layer').attr('tabindex', '-1');
     $('.tg--btn').attr('aria-label', $('.tg--btn').attr('aria-label').replace('닫기', '열기') );
 }
 

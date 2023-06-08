@@ -35,46 +35,17 @@
                         <p class="page-tit label__tit" data-pagetit="3">타이틀 타이틀 타이틀3</p>
                         <p class="page-tit label__tit" data-pagetit="4">타이틀 타이틀 타이틀4</p>
                         <p class="page-tit label__tit" data-pagetit="5">타이틀 타이틀 타이틀5</p>
+                        <p class="page-tit label__tit" data-pagetit="6">입력항목을 확인해주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
                     <div class="cont-wrap cont-revers cont-form--animate">
-                        <div class="form-area input--error">
-                            <div class="input__wrap">
-                                <div class="input">
-                                    <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText01" data-inputmove="1" title=" 입력" placeholder=""><!-- .input--on / disabled -->
-                                        <label for="inputText01" class="input__label" aria-hidden="true">항목명1</label>
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
-                            <!-- 가이드 텍스트 -->
-                            <p class="input__guide-txt input__note">가이드 텍스트</p>
-                        </div>
                         <div class="form-area">
                             <div class="input__wrap">
                                 <div class="input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText02" data-inputmove="2" title=" 입력" placeholder=""><!-- .input--on / disabled -->
-                                        <label for="inputText02" class="input__label" aria-hidden="true">항목명2</label>
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
-                            <!-- 가이드 텍스트 -->
-                            <p class="input__guide-txt input__note">가이드 텍스트</p>
-                        </div>
-                        <div class="form-area">
-                            <div class="input__wrap">
-                                <div class="input">
-                                    <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText03" data-inputmove="3" title=" 입력" placeholder=""><!-- .input--on / disabled -->
-                                        <label for="inputText03" class="input__label" aria-hidden="true">항목명3</label>
+                                        <input type="text" class="input__element form__move" id="inputText05" data-inputmove="5" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText05" class="input__label" aria-hidden="true">항목명5</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -106,8 +77,40 @@
                             <div class="input__wrap">
                                 <div class="input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText05" data-inputmove="5" title=" 입력" placeholder=""><!-- .input--on / disabled -->
-                                        <label for="inputText05" class="input__label" aria-hidden="true">항목명5</label>
+                                        <input type="text" class="input__element form__move" id="inputText03" data-inputmove="3" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText03" class="input__label" aria-hidden="true">항목명3</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element form__move" id="inputText02" data-inputmove="2" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText02" class="input__label" aria-hidden="true">항목명2</label>
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element form__move" id="inputText01" data-inputmove="1" title=" 입력" placeholder=""><!-- .input--on / disabled -->
+                                        <label for="inputText01" class="input__label" aria-hidden="true">항목명1</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -186,7 +189,7 @@
         
         $(function(){
             // D : 유효성검사 후 호출해주세요.
-            hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 index 숫자
+            hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 data-inputmove 숫자
         })
 
     </script>

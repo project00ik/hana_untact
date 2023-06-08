@@ -112,7 +112,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .step-header + .container {padding-top: 4.3rem;}
 
 /* - 레이아웃  : 컨텐츠 역순 배열 */
-.cont-revers {display: flex; flex-direction: column-reverse;}
+.cont-revers {display: flex; flex-direction: column;}
 
 /* - 레이아웃 : 컨텐츠 구분선 */
 .con-box {padding: 0 2rem 4.8rem; position: relative;}
