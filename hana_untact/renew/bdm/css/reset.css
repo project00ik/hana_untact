@@ -1,0 +1,95 @@
+@charset "UTF-8";	
+
+/* Font Face */
+@font-face {
+    font-family: 'notosans';
+    font-style: normal;
+    font-weight: 300;
+    src: url('font/notosans/NotoSansKR-Light.eot'); /* IE9 Compat Modes */
+    src: url('font/notosans/NotoSansKR-Light.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */ url('font/notosans/NotoSansKR-Light.woff2') format('woff2'),
+        /* Super Modern Browsers */ url('font/notosans/NotoSansKR-Light.woff') format('woff'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Light.otf') format('opentype'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Light.svg#NotoSansKR')
+        format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'notosans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('font/notosans/NotoSansKR-Regular.eot'); /* IE9 Compat Modes */
+    src: url('font/notosans/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */ url('font/notosans/NotoSansKR-Regular.woff2') format('woff2'),
+        /* Super Modern Browsers */ url('font/notosans/NotoSansKR-Regular.woff') format('woff'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Regular.otf') format('opentype'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Regular.svg#NotoSansKR')
+        format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'notosans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('font/notosans/NotoSansKR-Medium.eot'); /* IE9 Compat Modes */
+    src: url('font/notosans/NotoSansKR-Medium.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */ url('font/notosans/NotoSansKR-Medium.woff2') format('woff2'),
+        /* Super Modern Browsers */ url('font/notosans/NotoSansKR-Medium.woff') format('woff'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Medium.otf') format('opentype'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Medium.svg#NotoSansKR')
+        format('svg'); /* Legacy iOS */
+}
+@font-face {
+    font-family: 'notosans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('font/notosans/NotoSansKR-Bold.eot'); /* IE9 Compat Modes */
+    src: url('font/notosans/NotoSansKR-Bold.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */ url('font/notosans/NotoSansKR-Bold.woff2') format('woff2'),
+        /* Super Modern Browsers */ url('font/notosans/NotoSansKR-Bold.woff') format('woff'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Bold.otf') format('opentype'),
+        /* Safari, Android, iOS */ url('font/notosans/NotoSansKR-Bold.svg#NotoSansKR')
+        format('svg'); /* Legacy iOS */
+}
+/* @font-face { font-family: 'notosans'; src: url(font/notosans/NotoSansKR-Light.woff); font-weight: 300; }
+@font-face { font-family: 'notosans'; src: url(font/notosans/NotoSansKR-Regular.woff); font-weight: 400; }
+@font-face { font-family: 'notosans'; src: url(font/notosans/NotoSansKR-Medium.woff); font-weight: 500; }
+@font-face { font-family: 'notosans'; src: url(font/notosans/NotoSansKR-Bold.woff); font-weight: 700; }
+@font-face { font-family: 'Roboto'; src: url(font/roboto/Roboto-Light.woff); font-weight: 300; }
+@font-face { font-family: 'Roboto'; src: url(font/roboto/Roboto-Regular.woff); font-weight: 400; }
+@font-face { font-family: 'Roboto'; src: url(font/roboto/Roboto-Medium.woff); font-weight: 500; } */
+
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input, button, textarea {margin:0; padding:0; border:0; outline:none; word-break:break-all; font-weight:normal; line-height:1.3; font-family: 'Roboto', 'notosans', sans-serif; font-size: 1.6rem;}
+* {box-sizing:border-box;}
+html {height:100%; font-size:62.5%; min-height: 100vh;}
+body {width:100%; height:100%; min-height: 100vh; color:#666; background: #fbfcfc; font-family: 'Roboto', 'notosans', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: -0.05rem;}
+ul, ol, li {list-style:none;}
+table {width: 100%; border-collapse:collapse; border-spacing:0;}
+input {-webkit-highlight:none; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:transparent; color:#666;}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {-webkit-appearance:none; -moz-appearance:none; appearance:none;}
+input[type="number"] {-moz-appearance: textfield;}
+input::-ms-clear,
+input::-ms-reveal {display: none; width: 0; height: 0;}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {display: none;}
+button {-webkit-highlight:none; -webkit-appearance:none; -moz-appearance:none; appearance:none; background:none; cursor: pointer; color:#666;}
+textarea {resize: none;}
+em {font-style:normal;} 
+img {border:none;}
+a, a:hover, a:focus, a:active {color: inherit; font-weight: inherit; text-decoration:none; -webkit-tap-highlight-color:transparent;}
+legend, hr {font-size:0; height:1px; left:-10000%; line-height:0; overflow:hidden; position:absolute; text-indent:-10000px; top:0; width:1px;}
+.blind, caption {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
+
+input:disabled, textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder {-webkit-text-fill-color: #666; -webkit-opacity: 1; color: #666;}
+
+
+
+@media (max-width: 374px) {
+    html {font-size: 9px;}
+}
+@media (max-width: 321px) {
+    html {font-size: 8.6px;}
+}
