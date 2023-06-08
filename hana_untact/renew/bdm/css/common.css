@@ -582,7 +582,8 @@ body.modal-open .app-footer {display: none;}
 .modal-scroll {max-height: 44.7rem; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch;}
 
 .popup-wrap { position: absolute; width: 100%; height: 100%; height: calc(100% + constant(safe-area-inset-bottom)); height: calc(100% + env(safe-area-inset-bottom));}
-.popup-wrap:before { content: ''; display: block; width: 100%; height: 100%; background: #000; opacity: .5; }
+.popup-wrap:before { content: ''; display: none; width: 100%; height: 100%; background: #000; opacity: .5; }
+.popup-wrap.is-open:before {display: block;}
 
 /* - 모달 팝업 : 얼럿 (alert) */
 .popup-wrap.alert {top: 0; left: 0;}
