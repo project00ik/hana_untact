@@ -105,7 +105,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .stepper > ul {display: flex; align-items: center; justify-content: flex-end;}
 .stepper > ul > li + li {margin-left: 0.4rem}
 .step-header .stepper .stepper__step {width: 1rem; height: 1rem; display: inline-block; font-size: 0; background: #dddee4; border-radius: 50%; text-align: center; font-family: 'roboto';}
-.step-header .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; line-height: 1.5rem; padding: 0 0.5rem0; background-color: #262b45; font-size: 1.1rem; color: #fff;}
+.step-header .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; line-height: 1.6rem; padding: 0 0.5rem 0; background-color: #262b45; font-size: 1.1rem; color: #fff;}
 .scroll--up .step-header .stepper,
 .scroll--down .step-header .stepper {box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);}
 .scroll--top .step-header .stepper {box-shadow: none;}
@@ -325,7 +325,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
 /* -- 폼 (form) : 체크박스 (checkbox) */
 .checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 500; color: #000; line-height: 2.2rem;}
-.checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.2rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
+.checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.1rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
 .checkbox-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png);}
 .checkbox-wrap input:disabled + label::before {opacity: 0.8;}
 .checkbox-wrap.tp-green label {color: #009591;}
@@ -333,7 +333,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .checkbox-wrap label .info-txt-l {margin-top: 0.4rem; display: block; font-size: 1.6rem; font-weight: 500; letter-spacing: -0.11rem;}
 
 .checkbox-wrap.sm label {padding-left: 2.2rem; font-size: 14px; line-height: 2rem; color: #757575; font-weight: 400;}
-.checkbox-wrap.sm label::before {width: 1.8rem; height: 1.8rem; background: url(../images/icon/ico-system-form-check-2-depth-default.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem;} 
+.checkbox-wrap.sm label::before {width: 1.8rem; height: 1.8rem; background: url(../images/icon/ico-system-form-check-2-depth-default.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem; top: 0.2rem;} 
 .checkbox-wrap.sm input:checked + label {color: #333; font-weight: 700;}
 .checkbox-wrap.sm input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-2-depth-active.png);}
 .checkbox-wrap.sm input:disabled + label::before {opacity: 0.8;}
