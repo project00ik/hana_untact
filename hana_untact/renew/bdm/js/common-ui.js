@@ -552,16 +552,16 @@ var hanaUI = {
         }
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
-        var nextInput = $('[data-inputmove=' + num + ']');
-        var formTotalLeng = $('.cont-form--animate > .form-area').length;
+        var nowInput = $('[data-inputmove=' + num + ']');
+        var formTotalLeng = $('.cont-form--animate > .form-item').length;
         var activeForm = formTotalLeng - num;
         
         $('.label__tit').not($('.label__tit[data-pagetit='+ num + ']').addClass('tit--active')).removeClass('tit--active');
         $('.cont-form--animate > .form-area:gt(' + activeForm + ')').addClass('form--active');
         $('[data-inputmove=' + num + ']').closest('.form-area').addClass('form--active');
         $('.btn__form-next').data('inputindex', num);
-        nextInput.closest('.form-area').addClass('form--active');
-        nextInput.focus();
+        nowInput.closest('.form-area').addClass('form--active');
+        nowInput.focus();
     },
     
     // 툴팁
