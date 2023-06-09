@@ -238,7 +238,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn:disabled {background-color: #ced3d9 !important;}
 .btn.press {background-color: #008c88;}
 
-.btn.gray {background-color: #eff0f4; color: #666;}
+.btn.gray {background-color: #9ca7b3; color: #fff;}
 /* .btn.gray:hover, .btn.gray:active, .btn.gray:focus {background-color: #eff0f4;} */
 /* .btn.gray.press {background-color: #7d8585;}
 .btn.gray:disabled {background-color: #d0d9d9;} */
@@ -262,6 +262,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn.sm.line [class^="icon"] {line-height: 3.1rem;}
 .btn.sm.light-gray {height: 4rem; line-height: 4rem; color: #7d8585; font-weight: normal; background-color: #f7fafa;}
 .btn.sm.light-gray:hover, .btn.sm.light-gray:active, .btn.sm.light-gray:focus {background-color: #e7e9ee;}
+.btn.sm.gray {background-color: #eff0f4; color: #666;}
 
 .btn.w164 {min-width: 16.4rem; width: auto;}
 .btn.w-auto {width: auto;}
@@ -304,8 +305,11 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn-group-flex .btn {flex:1;}
 .btn-group-flex .btn + .btn {margin-left: 0.8rem;}
 
+.btn-wrap,
 .btn-group-wrap {display: flex;}
+.btn-wrap .btn,
 .btn-group-wrap .btn {flex: 1; width: 100%;}
+.btn-wrap .btn + .btn,
 .btn-group-wrap .btn + .btn {margin-left: 1.1rem;}
 .btn-group-wrap .btn.btn-cancle {width: 30%; flex: inherit;}
 .btn-group-wrap .btn.btn-icon {width: 6.8rem; flex: inherit; font-size: 0;}
