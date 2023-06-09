@@ -24,6 +24,7 @@
 /* - 텍스트 : 타이틀(title) */
 .page-tit {font-size: 2rem; color: #000; line-height: 1.3; font-weight: 500;}
 .page-tit-sub {margin-bottom: 1.6rem; font-size: 1.6rem; color: #000; font-weight: 500;}
+.sub-tit {margin-bottom: 0.4rem; font-size: 1.4rem; color: #000; font-weight: 500;}
 .page-tit-point {}
 .page-txt {font-size: 1.4rem; color: #666; font-weight: 400;}
 .page-tit + .page-tit-sub {margin-top: 1.6rem;}
@@ -816,3 +817,5 @@ body.modal-open .app-footer {display: none;}
 .chk-tg .chk-tg-btn {}
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
+.phone-agree-wrap {padding-top: 3rem;}
+.phone-agree-wrap .inner-box {padding-bottom: 2rem;}
