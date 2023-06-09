@@ -3,103 +3,46 @@
 <head>
     <!-- 공통 meta -->
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>[Guide] KEB하나은행 - 비대면 계좌개설</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Layout] KEB하나은행 - 비대면 계좌개설</title>
     <!-- 공통 css -->
     <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript" src="../js/slick.js"></script>
-    <script type="text/javascript" src="../js/touch-dnd.js"></script>
-    <script type="text/javascript" src="../js/pualugin.js"></script>
-    <script type="text/javascript" src="../js/common-ui.js"></script>
-	<style>
-		
-		/* guide*/
-		.guide-depth01 {padding: 2rem; font-size: 2rem; color: #171a1a; font-weight: 700;}
-
-		.guide-ly {display: flex; flex-wrap: wrap;}
-
-		.guide-con {margin: 2rem; border: 1px solid #dadada; min-width: 432px;}
-		.guide-scroll {overflow: auto;  height: 700px;}
-		.guide-title {padding: 1rem; height: 44px; font-size: 1.6rem; color: #171a1a; font-weight: 600; background-color: #eee;}
-		.guide-title + .guide-scroll {height: 656px;}
-
-		.guide-box {padding: 2rem; width: 415px;}
-
-		.guide-wrap .btn-wrap + .btn-wrap {margin-top: 1rem;}
-		.guide-wrap .btn-group-wrap + .btn-group-wrap {margin-top: 1rem;}
-
-		.guide-title-sub {font-weight: 700; margin: 4rem 0 1rem;}
-		.guide-title-sub:first-child {margin-top: 0;} 
-		.guide-title-sub + .guide-title-sub {margin-top: 2rem;}
-
-		.guide-flex-wrap {width:100%; margin-top: 4rem; display: flex; flex-wrap: wrap; align-items: stretch;}
-		.guide-flex-cont {flex: 1 2 50%; max-width: 50%; text-align: center;}
-		.guide-flex-cont .guide-title-sub {font-size: 1.2rem; margin: 0.3rem 0 4rem;}
-		.guide-flex-cont i[class^="icon"] {width: 5.6rem; height: 5.6rem; display: inline-block; border-radius: 50%; background-position: 50% 50%; background-repeat: no-repeat; background-size: 4.8rem auto;}
-		.guide-flex-wrap2 {width:100%; display: flex; justify-content: space-between;}
-		.guide-flex {flex: 1;}
-
-	</style>
+    <style>
+        .guide-title-sub {font-weight: 700; padding-top: 4rem; margin: 4rem 0 1rem; border-top: 1rem solid #ededed;}
+    </style>
 </head>
 <body>
-	<div class="guide-wrap wrap" id="wrap">
-
-		<h1 class="guide-depth01">[Guide] KEB하나은행 - 비대면 계좌개설</h1>
-		<!--
-		<div class="guide-ly">
-			<div class="guide-con">
-				<h2 class="guide-title"></h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-
-					</div>
-				</div>
-			</div>
-			<div class="guide-con">
-				<h2 class="guide-title"></h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-
-					</div>
-				</div>
-			</div>
-		</div>
-		-->
-
-		<div class="guide-ly">
-			<div class="guide-con">
-				<h2 class="guide-title">text</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						
-						<p class="page-tit">타이틀(page-tit)</p>
-						<br>
-						<p class="guide-title-sub">서브타이틀</p>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">가이드 모바일용</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <!-- D: footer 관련 class 설명 (관련 JS : common-ui.js 'hanaUI.footer('.app-footer');' 에 있음)
+            * footer(하단 버튼 영역)이 없는경우 : app-main footer-none
+            * footer 하단 버튼이 기본(1개)일 때 : app-main
+            * footer 하단 버튼이 서브+기본(2개)일 때 : app-main footer-sub-btn
+        -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">가이드 모음</p>
+                        <br>
+                        <p class="page-tit">타이틀(page-tit)</p>
 						<p class="page-tit-sub">서브타이틀(page-tit-sub)</p>
-						<br>
-						<p class="guide-title-sub">서브타이틀</p>
 						<p class="sub-tit">서브타이틀2(sub-tit)</p>
-					</div>
-				</div>
-			</div>
-			
-			<!-- // guide-con -->
-
-			<div class="guide-con">
-				<h2 class="guide-title">input</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						<p class="guide-title-sub">form-area(폼 요소 간격 관련 class)</p>
-						
-						<p class="guide-title-sub">form-title</p>
-						<div class="form-area">
-							<p class="form-title">항목명(별도 타이틀)</p>
-						</div>
-
-						<p class="guide-title-sub">input</p>
+                    </div>
+                    <!--// 타이틀 -->
+                    
+                    <div class="cont-wrap">
+                        <p class="guide-title-sub">input</p>
 						<!-- input -->
 						<div class="form-area">
 							<!--
@@ -109,7 +52,7 @@
 							-->
 							<div class="form-item input">
 								<div class="input__inner">
-									<input type="text" id="inputText01" class="input__element" title="입력폼" placeholder="">
+									<input type="text" id="inputText01" class="input__element" title="항목명 입력폼" placeholder="">
 									<label for="inputText01" class="input__label" aria-hidden="true">항목명</label>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
@@ -131,7 +74,7 @@
 							-->
 							<div class="form-item input input--on">
 								<div class="input__inner">
-									<input type="text" id="inputText02" class="input__element" title="입력폼" value="폼 내용" placeholder="">
+									<input type="text" id="inputText02" class="input__element" title="항목명 입력폼" value="폼 내용" placeholder="">
 									<label for="inputText02" class="input__label" aria-hidden="true">항목명</label>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
@@ -153,7 +96,7 @@
 							-->
 							<div class="form-item input input--on">
 								<div class="input__inner">
-									<input type="text" id="inputText03" class="input__element" title="입력폼" value="입력오류" placeholder="">
+									<input type="text" id="inputText03" class="input__element" title="항목명 입력폼" value="입력오류" placeholder="">
 									<label for="inputText03" class="input__label" aria-hidden="true">항목명</label>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
@@ -174,7 +117,7 @@
 							-->
 							<div class="form-item input input--disabled">
 								<div class="input__inner">
-									<input type="text" id="inputText04" class="input__element" title="입력폼" value="disabled" disabled>
+									<input type="text" id="inputText04" class="input__element" title="항목명 입력폼" value="disabled" disabled>
 									<label for="inputText04" class="input__label" aria-hidden="true">항목명</label>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제" style="display: none;"></button>
 								</div>
@@ -185,47 +128,7 @@
                             <p class="input__guide-txt input__note">가이드 텍스트</p>
 						</div>
 						<!--// input disabled -->
-						
-						<p class="guide-title-sub">input : 도움말(툴팁)</p>
-						<div class="form-area">
-							<!--
-								* 오류시 class="form-area input--error"
-								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
-								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
-							-->
-							<div class="form-item input">
-								<div class="input__inner">
-									<input type="text" id="inputTextTooltip" class="input__element" title="SIN 또는 여권 번호 입력">
-									<label for="inputTextTooltip" class="input__label" aria-hidden="true">SIN 또는 여권 번호</label>
-									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-									<!-- input Tooltip -->
-									<div class="input-tooltip-wrap">
-										<div class="tooltip-wrap">
-										<p class="tooltip-title">도움말</p>
-										<div class="tooltip" data-tooltip="paragraph">
-											<button type="button" class="btn-open" data-tooltip-button="open" aria-label="툴팁 열기"></button>
-											<div class="tooltip-con" data-tooltip-panel="false" >
-											<div class="tooltip__column">
-												<div class="tooltip__description" data-tooltip="focus">
-												<!-- tooltip 컨텐츠 영역 -->
-												<div class="inbox">
-													<p class="text">가입 당시 사용하신 Social Insurance number 혹은 여권 번호를 입력해주세요.</p>
-												</div>
-												<!-- // tooltip 컨텐츠 영역 -->
-												</div>
-											</div>
-											<button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
-											</div>
-										</div>
-										</div>
-										<!-- // input Tooltip -->
-									</div>
-								</div>
-								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
-							</div>
-						</div>
-
-						<p class="guide-title-sub">input : 주민등록번호</p>
+                        <p class="guide-title-sub">input : 주민등록번호</p>
                         <div class="form-area">
                             <div class="input__wrap">
                                 <div class="form-item input">
@@ -275,6 +178,45 @@
                             <!-- 가이드 텍스트 -->
                             <p class="input__guide-txt input__note">인증 후, 모든 절차가 완료되면 입력하신 휴대폰 번호가 손님 정보로 등록됩니다.</p>
                         </div>
+						
+						<p class="guide-title-sub">input : 도움말(툴팁)</p>
+						<div class="form-area">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input">
+								<div class="input__inner">
+									<input type="text" id="inputTextTooltip" class="input__element" title="SIN 또는 여권 번호 입력">
+									<label for="inputTextTooltip" class="input__label" aria-hidden="true">SIN 또는 여권 번호</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+									<!-- input Tooltip -->
+									<div class="input-tooltip-wrap">
+										<div class="tooltip-wrap">
+										<p class="tooltip-title">도움말</p>
+										<div class="tooltip" data-tooltip="paragraph">
+											<button type="button" class="btn-open" data-tooltip-button="open" aria-label="툴팁 열기"></button>
+											<div class="tooltip-con" data-tooltip-panel="false" >
+											<div class="tooltip__column">
+												<div class="tooltip__description" data-tooltip="focus">
+												<!-- tooltip 컨텐츠 영역 -->
+												<div class="inbox">
+													<p class="text">가입 당시 사용하신 Social Insurance number 혹은 여권 번호를 입력해주세요.</p>
+												</div>
+												<!-- // tooltip 컨텐츠 영역 -->
+												</div>
+											</div>
+											<button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
+											</div>
+										</div>
+										</div>
+										<!-- // input Tooltip -->
+									</div>
+								</div>
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
 						
 						<p class="guide-title-sub">input : 검색 팝업 버튼</p>
 						<div class="form-area">
@@ -358,8 +300,6 @@
 							</div>
 						</div>
 						
-						
-						
 						<p class="guide-title-sub">input : 검색</p>
 						<div class="form-area">
 							<!-- input : 검색 -->
@@ -371,7 +311,7 @@
 										* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
 									-->
 									<div class="input__inner">
-										<input type="text" class="input__element input--search" title="입력폼" placeholder="검색어를 입력하세요."  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+										<input type="text" class="input__element input--search" title="검색어를 입력폼" placeholder="검색어를 입력하세요."  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
 										<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 										<button type="submit" class="btn-search" aria-label="검색">검색</button>
 									</div>
@@ -391,7 +331,7 @@
 										* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
 									-->
 									<div class="input__inner">
-										<input type="search" class="input__element input--search" title="입력폼" placeholder="검색어를 입력하세요.">
+										<input type="search" class="input__element input--search" title="검색어를 입력폼" placeholder="(오류)검색어를 입력하세요.">
 										<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 										<button type="submit" class="btn-search" aria-label="검색">검색</button>
 									</div>
@@ -400,18 +340,10 @@
 								</div>
 							</div>
 							<!--// input : 검색 (error) -->
-						</div>
-						
-					</div>
-				</div>
-			</div>
-			<!-- // guide-con -->
+                        </div>
 
-			<div class="guide-con">
-				<h2 class="guide-title">textarea</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						<!-- textarea 기본 -->
+                        <p class="guide-title-sub">textarea</p>
+                        <!-- textarea 기본 -->
 						<div class="form-area">
 							<!-- 
 								* 오류시 class="textarea input--error"
@@ -449,17 +381,9 @@
 							</div>
 						</div>
 						<!--// textarea error -->
-					</div>
-					<!-- // guide-box -->
-				</div>
-			</div>
-			<!-- // guide-con -->
 
-			<div class="guide-con">
-				<h2 class="guide-title">select</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						<!-- select -->
+                        <p class="guide-title-sub">select</p>
+                        <!-- select -->
 						<div class="form-area">
 							<!-- 
 								* 오류시 class="form-item select-wrap select--error"
@@ -469,7 +393,7 @@
 							<div class="form-item select-wrap">
 								<div class="select">
 									<div class="select__inner">
-										<button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlide1" title="000 선택">
+										<button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlide1" title="항목명 선택">
 											<span>선택하세요.</span> 
 										</button>
 									</div>
@@ -480,190 +404,6 @@
 						</div>
 						<!--// select -->
 		
-						<!-- select : 내용이 이미 있는 경우 readonly -->
-						<div class="form-area">
-							<div class="form-item select-wrap select--active">
-								<div class="select">
-									<div class="select__inner">
-										<button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlide3" title="000 선택">
-											<span>내용이 이미 있는 경우</span> 
-										</button>
-									</div>
-									<div class="select-label">항목명</div>
-								</div>
-								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
-							</div>
-						</div>
-						<!-- select : 내용이 이미 있는 경우 readonly -->
-		
-						<!-- select : error -->
-						<div class="form-area">
-							<div class="form-item select-wrap select--error">
-								<div class="select">
-									<div class="select__inner">
-										<button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlide1" title="000 선택">
-											<span>선택하세요.</span> 
-										</button>
-									</div>
-									<div class="select-label">항목명</div>
-								</div>
-								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
-							</div>
-						</div>
-						<!--// select : error -->
-		
-						<!-- select : disabled -->
-						<div class="form-area">
-							<div class="form-item select-wrap select--disabled">
-								<div class="select">
-									<div class="select__inner">
-										<button type="button" class="button button-select__item" data-element="modal__open" data-target="#modalSlide5" title="000 선택" disabled="disabled">
-											<span>disabled</span> 
-										</button>
-									</div>
-									<div class="select-label">항목명</div>
-								</div>
-								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
-							</div>
-						</div>
-						<!--// select : disabled -->
-						
-					</div>
-					<!-- // guide-box -->
-				</div>
-			</div>
-			<!-- // guide-con -->
-			<div class="guide-con">
-				<h2 class="guide-title">check / radio</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						<p class="guide-title-sub">check</p>
-					
-						<div class="checkbox-wrap">
-							<input type="checkbox" name="" id="checkbox01" title="">
-							<label for="checkbox01">checkbox</label>
-						</div>
-						<div class="checkbox-wrap">
-							<input type="checkbox" name="" id="checkbox02" title="" checked>
-							<label for="checkbox02">checkbox</label>
-						</div>
-						<div class="checkbox-wrap">
-							<input type="checkbox" name="" id="checkbox03" title="" disabled>
-							<label for="checkbox03">checkbox</label>
-						</div>
-					
-						<br />
-						<div class="checkbox-wrap sm">
-							<input type="checkbox" name="" id="checkbox04" title="">
-							<label for="checkbox04">checkbox</label>
-						</div>
-						<div class="checkbox-wrap sm">
-							<input type="checkbox" name="" id="checkbox05" title="" checked>
-							<label for="checkbox05">checkbox</label>
-						</div>
-						<div class="checkbox-wrap sm">
-							<input type="checkbox" name="" id="checkbox06" title="" disabled>
-							<label for="checkbox06">checkbox</label>
-						</div>						
-
-						<p class="guide-title-sub">tab-radio</p>
-						<!-- tab-radio-wrap -->
-						<div class="tab-radio-wrap">
-							<div class="tab-radio">
-								<input type="radio" name="radio03" id="radio03_1" title="" checked>
-								<label for="radio03_1">네</label>
-							</div>
-							<div class="tab-radio">
-								<input type="radio" name="radio03" id="radio03_2" title="">
-								<label for="radio03_2">아니오</label>
-							</div>
-						</div>
-						<!-- // tab-radio-wrap -->
-						<br />
-						
-						<p class="guide-title-sub">switch : checkbox형</p>
-						<!-- 스위치 예시 -->
-						<label class="asswitch-wrap">
-							<input class="chk-switch" type="checkbox" name="asswitch">
-							<span></span>
-						</label>
-						<label class="asswitch-wrap">
-							<input class="chk-switch" type="checkbox" name="asswitch" checked="checked">
-							<span></span>
-						</label>
-						<!--// 스위치 예시 -->
-					</div>
-				</div>
-				
-			</div>
-
-			<!-- guide-con -->			
-			<div class="guide-con">
-				<h2 class="guide-title">button</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-						
-						<p class="guide-title-sub">컨텐츠 버튼(50)</p>
-						<div class="btn-wrap">
-							<button type="button" class="btn" aria-label="Default">Default</button>
-						</div>
-						<div class="btn-wrap">
-							<button type="button" class="btn" aria-label="" disabled>disabled</button>
-						</div>
-						<div class="btn-wrap">
-							<button type="button" class="btn gray" aria-label="">Default</button>
-						</div>
-						<div class="btn-wrap">
-							<button type="button" class="btn" disabled aria-label="">disabled</button>
-						</div>
-						<br>
-
-						<p class="guide-title-sub">팝업 버튼(50)</p>
-						<div class="btn-wrap">
-							<button type="button" class="btn md" aria-label="">Default</button>
-						</div>
-						<div class="btn-wrap">
-							<button type="button" class="btn md gray" aria-label="">Default</button>
-						</div>
-						<div class="btn-wrap">
-							<button type="button" class="btn md" aria-label="" disabled>disabled</button>
-						</div>
-						<br>
-						<p class="guide-title-sub">작은버튼(인풋 안에 사용)</p>
-						<button type="button" class="btn gray sm" title="재요청">재요청</button>
-						<br>
-						<p class="guide-title-sub">* 버튼 레이아웃</p>
-						<p class="guide-title-sub">btn-wrap(팝업 버튼 정렬)</p>
-						<div class="btn-wrap">
-							<button type="button" class="btn gray" aria-label="">btn-cancle</button>
-							<button type="button" class="btn" aria-label="">Default</button>
-						</div>
-
-						<p class="guide-title-sub">btn-group-wrap(컨텐츠 footer:취소+버튼)</p>
-						<div class="btn-group-wrap">
-							<button type="button" class="btn gray btn-cancle" aria-label="">btn-cancle</button>
-							<button type="button" class="btn" aria-label="">Default</button>
-						</div>
-						
-
-						<p class="guide-title-sub">btn-group-sub-wrap(컨텐츠 footer: 계속 버튼)</p>
-						<div class="btn-group-sub-wrap btn-next-wrap">
-							<button type="button" class="btn rd btn__form-next" aria-label="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button><!-- D: 비활성화 일 때 : disabled -->
-						</div> 
-						
-						
-
-					</div>
-					<!-- // guide-box -->
-				</div>
-			</div>
-			<!-- // guide-con -->
-
-			<div class="guide-con">
-				<h2 class="guide-title">table</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-
 						<p class="guide-title-sub">가로기본형</p>
 						<!-- 테이블 상단 -->
 						<div class="table-top-wrap">
@@ -748,7 +488,7 @@
 						</div>
 						<!-- // 가로 이중테이블 --> 
 
-						<p class="guide-title-sub">세로 기본형</p>
+						<p class="guide-title-sub">테이블 세로 기본형</p>
 						<!-- 세로 기본형 -->		
 						<div class="tbl-wrap">
 							<table class="tbl-row-basic">
@@ -779,7 +519,7 @@
 						</div>						
 						<!-- // 세로 기본형 -->  
 
-						<p class="guide-title-sub">세로 기본형 - scroll</p>
+						<p class="guide-title-sub">테이블 세로 기본형 - scroll</p>
 						<!-- 세로 기본형 -->		
 						<div class="tbl-wrap tbl-scroll">
 							<table class="tbl-row-basic">
@@ -816,7 +556,7 @@
 						<!-- // 세로 기본형 -->  
 						
 						
-						<p class="guide-title-sub">가로세로형</p>
+						<p class="guide-title-sub">테이블 가로세로형</p>
 						<!-- 가로세로형 -->
 						<div class="tbl-wrap">
 							<table class="tbl-all-basic">
@@ -867,7 +607,7 @@
 						</div>
 						<!-- // 가로세로형 -->
 
-						<p class="guide-title-sub">가로세로형(가로스크롤)</p>
+						<p class="guide-title-sub">테이블 가로세로형(가로스크롤)</p>
 						<div class="tbl-wrap tbl-scroll">
 							<table class="tbl-all-basic">
 								<caption>표에 관한 내용 작성</caption>
@@ -917,17 +657,8 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-				</div>
-			</div>
-			<!-- // guide-con -->
 
-			<div class="guide-con">
-				<h2 class="guide-title">toggle</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">
-
-						<p class="guide-title-sub">토글 체크박스 형</p>
+                        <p class="guide-title-sub">토글 체크박스 형</p>
 						<div class="chk-tg tg--area">
 							<div class="chk-tg-btn" role="button" aria-label="열기" aria-expanded="false" onclick="toggleLayer(this);">
 								<div class="checkbox-wrap tp-green">
@@ -972,17 +703,8 @@
 								토글 내용	
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<!-- // guide-con -->
 
-			<div class="guide-con">
-				<h2 class="guide-title">tab</h2>
-				<div class="guide-scroll">
-					
-					<div class="guide-box">
-						<p class="guide-title-sub">탭 기본 형</p>
+                        <p class="guide-title-sub">탭 기본 형</p>
 						<!-- Tab -->
 						<div class="tab-list-wrap" data-element="tab">
 							<ul class="tab-list" role="tablist">
@@ -1018,17 +740,8 @@
 							<div class="tab-con" data-element="tab__panel">con2</div>
 						</div>                     
 						<!-- // Tab -->
-					</div>
-					<!-- // guide-box -->
-				</div>
-			</div>
-			<!-- // guide-con -->
 
-			<div class="guide-con">
-				<h2 class="guide-title">accordion</h2>
-				<div class="guide-scroll">
-					<div class="guide-box">	
-						<p class="guide-title-sub">accordion</p>					
+                        <p class="guide-title-sub">accordion</p>					
 				
 						<!-- accordion-list-wrap -->
 						<div class="accordion-list-wrap">
@@ -1066,19 +779,30 @@
 							</ul>
 						</div>
 						<!-- // accordion-list-wrap -->
-						
-					</div> 
-					<!-- // guide-box -->
-				</div>
-			</div>
-			<!-- // guide-con -->
 
-		</div>
-		<!-- // guide-ly -->
-
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn gray btn-cancle" title="취소">취소</button>
+                    <button type="button" class="btn" title="확인">확인</button>
+                </div>
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
 	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
 
-	<!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 모달레이어 - 슬라이드 버튼X -->
     <div id="modalSlide1" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__header">
@@ -1110,7 +834,5 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
-
-	
 </body>
 </html>
