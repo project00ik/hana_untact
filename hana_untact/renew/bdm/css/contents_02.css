@@ -146,7 +146,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__guide-txt.input__error {margin-top: 0.9rem;}
 .input__wrap .checkbox-wrap > label {vertical-align: top; margin-top: 2.1rem;}
 
-
+/* 인풋(no-label) */
+.no-label .input__element {padding: 0.4rem 0;}
 
 /* 인풋(박스형) */
 .input-box {width: 100%; height: 4rem; padding: 0.8rem; border: 0.1rem solid#dfe6e6; border-radius: 0.8rem; font-size: 2rem; font-weight: 600; color: #2f3333;}

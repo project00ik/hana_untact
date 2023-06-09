@@ -51,8 +51,8 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 /* - 텍스트 : 간격 margin reset */
 .mg-none {margin: 0 !important;}
-.mgt-none {margin-top: 0 !important;}
-.mgb-none {margin-bottom: 0 !important;}
+.mt0 {margin-top: 0 !important;}
+.mb0 {margin-bottom: 0 !important;}
 .mt8 {margin-top: 0.8rem !important;}
 .mt16 {margin-top: 1.6rem !important;}
 .mt20 {margin-top: 2rem !important;}
@@ -815,3 +815,4 @@ body.modal-open .app-footer {display: none;}
 .chk-tg {}
 .chk-tg .chk-tg-btn {}
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
+.chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}

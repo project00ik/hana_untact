@@ -1357,6 +1357,10 @@ function toggleLayer(obj) {
             toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
             toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '0');
             toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기'));
+            if (toggleBtn.closest('.tg--area').find('.tg--layer').find('.input__element').length === 0) {
+            } else { 
+                toggleBtn.closest('.tg--area').find('.tg--layer').find('.input__element').eq(0).focus();
+            }
         } else { 
             toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
             toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '-1');
