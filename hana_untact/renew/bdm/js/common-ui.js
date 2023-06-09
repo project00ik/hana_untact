@@ -533,7 +533,9 @@ var hanaUI = {
         var nextInput = $('[data-inputmove=' + nextNum + ']');
         
         $('.label__tit').not($('.label__tit[data-pagetit=' + nextNum + ']').addClass('tit--active')).removeClass('tit--active');
-        
+        $('.label__tit').attr('aria-hidden', $('.label__tit').attr('aria-hidden').replace(false, true));
+        $('.label__tit[data-pagetit=' + nextNum + ']').attr('aria-hidden', $('.label__tit').attr('aria-hidden').replace(true, false));
+
         // 마지막 폼에서 버튼교체
         var formLeng = $('.cont-form--animate').find('.form-area').length;
         var formActiveLeng = $('.cont-form--animate').find('.form--active').length;
@@ -1352,32 +1354,39 @@ function nowScrollReturn(){
 // 토글 레이어
 function toggleLayer(obj) {
     var toggleBtn = $(obj);
+    var tgBtn = toggleBtn.closest('.tg--area').find('.tg-btn');
+    var tgChkBtn = toggleBtn.closest('.tg--area').find('.chk-tg-btn');
+    var tgly = toggleBtn.closest('.tg--area').find('.tg--layer');
+
     if (toggleBtn.is('.chk-tg-btn')) {
-        if (toggleBtn.find('input[type="checkbox"]').is(':checked')) {
-            toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
-            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '0');
+        
+        if (tgChkBtn.find('input[type="checkbox"]').is(':checked')) {
+            tgChkBtn.addClass('on');
+            tgChkBtn.find('input[type="checkbox"]').prop('checked', true);
+            tgly.addClass('open').attr('tabindex', '0');
             toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기'));
-            if (toggleBtn.closest('.tg--area').find('.tg--layer').find('.input__element').length === 0) {
+
+            if (tgly.find('.input__element').length === 0) {
             } else { 
-                toggleBtn.closest('.tg--area').find('.tg--layer').find('.input__element').eq(0).focus();
+                tgly.find('.input__element').eq(0).focus();
             }
         } else { 
-            toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
-            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '-1');
+            tgChkBtn.removeClass('on');
+            tgChkBtn.find('input[type="checkbox"]').prop('checked', false);
+            tgly.removeClass('open').attr('tabindex', '-1');
             toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기'));
         }
-        // toggleBtn.find('input:checkbox').prop('checked', obj.checked);
         
     } else { 
-        toggleBtn.toggleClass('tg--on');
+        tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
             $('.tg--layer').removeClass('open');
-            toggleBtn.closest('.tg--area').find('.tg--layer').addClass('open');
-            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '0');
+            tgly.addClass('open');
+            tgly.attr('tabindex', '0');
             toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기') );
         } else {
-            toggleBtn.closest('.tg--area').find('.tg--layer').removeClass('open');
-            toggleBtn.closest('.tg--area').find('.tg--layer').attr('tabindex', '-1');
+            tgly.removeClass('open');
+            tgly.attr('tabindex', '-1');
             toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기') );
         }
     }

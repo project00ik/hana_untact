@@ -76,8 +76,12 @@
 					<div class="guide-box">
 						
 						<p class="page-tit">타이틀(page-tit)</p>
-
-						
+						<br>
+						<p class="guide-title-sub">서브타이틀</p>
+						<p class="page-tit-sub">서브타이틀(page-tit-sub)</p>
+						<br>
+						<p class="guide-title-sub">서브타이틀</p>
+						<p class="sub-tit">서브타이틀2(sub-tit)</p>
 					</div>
 				</div>
 			</div>
@@ -364,7 +368,7 @@
 							-->
 							<div class="form-item textarea">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" placeholder="입력하세요."></textarea>
+								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" placeholder="항목명 입력하세요."></textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
 							</div>
@@ -406,6 +410,11 @@
 					<div class="guide-box">
 						<!-- select -->
 						<div class="form-area">
+							<!-- 
+								* 오류시 class="form-item select-wrap select--error"
+								* 비활성화시 class="form-item select-wrap select--disabled", button에 disabled="disabled"속성 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item select-wrap select--active"
+							-->
 							<div class="form-item select-wrap">
 								<div class="select">
 									<div class="select__inner">
@@ -504,42 +513,7 @@
 						<div class="checkbox-wrap sm">
 							<input type="checkbox" name="" id="checkbox06" title="" disabled>
 							<label for="checkbox06">checkbox</label>
-						</div>
-
-						<p class="guide-title-sub">check box</p>
-						<div class="checkbox-wrap box error">	<!-- error 시 클래스 추가 class="checkbox-wrap box error" -->
-							<input type="checkbox" name="" id="checkbox-box01" title="">
-							<label for="checkbox-box01">checkbox checkboxcheckboxcheckboxcheckboxcheckboxcheckbox</label>
-						</div>
-                        <p class="checkbox-error" aria-live="assertive">안내문구를 확인해 주세요.</p>
-						<br />
-
-						<p class="guide-title-sub">radio</p>
-						<div class="radio-wrap">
-							<input type="radio" name="radio01" id="radio01_1" title="">
-							<label for="radio01_1">radio</label>
-						</div>
-						<div class="radio-wrap">
-							<input type="radio" name="radio01" id="radio01_2" title="" checked>
-							<label for="radio01_2">radio</label>
-						</div>
-						<div class="radio-wrap">
-							<input type="radio" name="radio01" id="radio01_3" title="" disabled>
-							<label for="radio01_4">radio</label>
-						</div>
-						<br />
-						<div class="radio-wrap sm">
-							<input type="radio" name="radio02" id="radio02_1" title="">
-							<label for="radio02_1">radio</label>
-						</div>
-						<div class="radio-wrap sm">
-							<input type="radio" name="radio02" id="radio02_2" title="" checked>
-							<label for="radio02_2">radio</label>
-						</div>
-						<div class="radio-wrap sm">
-							<input type="radio" name="radio02" id="radio02_3" title="" disabled>
-							<label for="radio02_3">radio</label>
-						</div>
+						</div>						
 
 						<p class="guide-title-sub">tab-radio</p>
 						<!-- tab-radio-wrap -->
@@ -556,10 +530,20 @@
 						<!-- // tab-radio-wrap -->
 						<br />
 						
-						
+						<p class="guide-title-sub">switch : checkbox형</p>
+						<!-- 스위치 예시 -->
+						<label class="asswitch-wrap">
+							<input class="chk-switch" type="checkbox" name="asswitch">
+							<span></span>
+						</label>
+						<label class="asswitch-wrap">
+							<input class="chk-switch" type="checkbox" name="asswitch" checked="checked">
+							<span></span>
+						</label>
+						<!--// 스위치 예시 -->
 					</div>
 				</div>
-				<!-- // guide-box -->
+				
 			</div>
 
 			<!-- guide-con -->			
@@ -597,10 +581,6 @@
 						<p class="guide-title-sub">작은버튼(인풋 안에 사용)</p>
 						<button type="button" class="btn gray sm" title="재요청">재요청</button>
 						<br>
-						<p class="guide-title-sub">계속버튼(인풋 안에 사용)</p>
-						<button type="button" class="btn rd btn__form-next" aria-label="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button><!-- D: 비활성화 일 때 : disabled -->
-						<br>
-						
 						<p class="guide-title-sub">* 버튼 레이아웃</p>
 						<p class="guide-title-sub">btn-wrap(팝업 버튼 정렬)</p>
 						<div class="btn-wrap">
@@ -890,6 +870,158 @@
 				</div>
 			</div>
 			<!-- // guide-con -->
+
+			<div class="guide-con">
+				<h2 class="guide-title">toggle</h2>
+				<div class="guide-scroll">
+					<div class="guide-box">
+
+						<p class="guide-title-sub">토글 체크박스 형</p>
+						<div class="chk-tg tg--area">
+							<div class="chk-tg-btn" role="button" aria-label="열기" aria-expanded="false" onclick="toggleLayer(this);">
+								<div class="checkbox-wrap tp-green">
+									<input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox06" title="토글 버튼">
+									<label for="privacy_checkbox06">토글 버튼</label>
+								</div>
+							</div>
+							<div class="chk-tg-cont tg--layer">
+								토글 내용	
+							</div>
+						</div>
+
+						<p class="guide-title-sub">토글 체크박스 형(펼침예시)</p>
+						<div class="chk-tg tg--area">
+							<div class="chk-tg-btn on" role="button" aria-label="닫힘" aria-expanded="true" onclick="toggleLayer(this);">
+								<div class="checkbox-wrap tp-green">
+									<input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox06_1" title="토글 버튼" checked="checked">
+									<label for="privacy_checkbox06_1">토글 버튼</label>
+								</div>
+							</div>
+							<div class="chk-tg-cont tg--layer open" tabindex="0">
+								토글 내용	
+							</div>
+						</div>
+
+						<p class="guide-title-sub">토글 버튼 형</p>
+						<div class="chk-tg tg--area">
+							<div class="tg-btn" role="button" aria-label="열기" aria-expanded="false" onclick="toggleLayer(this);">
+								<button type="button" class="btn sm gray">토글버튼</button>
+							</div>
+							<div class="chk-tg-cont tg--layer">
+								토글 내용	
+							</div>
+						</div>
+
+						<p class="guide-title-sub">토글 버튼 형(펼침예시)</p>
+						<div class="chk-tg tg--area">
+							<div class="tg-btn" role="button" aria-label="닫기" aria-expanded="true" onclick="toggleLayer(this);">
+								<button type="button" class="btn sm gray">토글버튼</button>
+							</div>
+							<div class="chk-tg-cont tg--layer open" tabindex="0">
+								토글 내용	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // guide-con -->
+
+			<div class="guide-con">
+				<h2 class="guide-title">tab</h2>
+				<div class="guide-scroll">
+					
+					<div class="guide-box">
+						<p class="guide-title-sub">탭 기본 형</p>
+						<!-- Tab -->
+						<div class="tab-list-wrap" data-element="tab">
+							<ul class="tab-list" role="tablist">
+								<li class="tab" data-element="tab__list" >
+									<a href="javascript:void();" class="text is-active" aria-selected="true" data-element="tab__anchor"><span>tab</span></a>
+								</li>                    
+								<li class="tab" data-element="tab__list">
+									<a href="javascript:void();" class="text" aria-selected="false" data-element="tab__anchor"><span>tab</span></a>
+								</li>                   
+								<li class="tab" data-element="tab__list">
+									<a href="javascript:void();" class="text" aria-selected="false" data-element="tab__anchor"><span>tab</span></a>
+								</li>
+							</ul>
+							<div class="tab-con is-active" data-element="tab__panel">con1</div>
+							<div class="tab-con" data-element="tab__panel">con2</div>
+							<div class="tab-con" data-element="tab__panel">con3</div>
+						</div>                     
+						<!-- // Tab -->
+						<br>
+
+						<p class="guide-title-sub">탭 버튼 형</p>
+						<!-- Tab -->
+						<div class="tab-box-wrap" data-element="tab">
+							<ul class="tab-box-list" role="tablist">
+								<li class="tab-box" data-element="tab__list" >
+									<a href="javascript:void();" class="text is-active" aria-selected="true" data-element="tab__anchor">tab</a>
+								</li>                    
+								<li class="tab-box" data-element="tab__list">
+									<a href="javascript:void();" class="text" aria-selected="false" data-element="tab__anchor">tab</a>
+								</li>  
+							</ul>
+							<div class="tab-con is-active" data-element="tab__panel">con1</div>
+							<div class="tab-con" data-element="tab__panel">con2</div>
+						</div>                     
+						<!-- // Tab -->
+					</div>
+					<!-- // guide-box -->
+				</div>
+			</div>
+			<!-- // guide-con -->
+
+			<div class="guide-con">
+				<h2 class="guide-title">accordion</h2>
+				<div class="guide-scroll">
+					<div class="guide-box">	
+						<p class="guide-title-sub">accordion</p>					
+				
+						<!-- accordion-list-wrap -->
+						<div class="accordion-list-wrap">
+							<ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+								<li data-element="accordion__item">
+									<div class="top" data-element="accordion__anchor">
+										<p class="title">
+											아코디언 타이틀
+										</p>
+									</div>
+									<div class="con" data-element="accordion__panel">
+										아코디언 내용
+									</div>
+								</li>
+								<li data-element="accordion__item">
+									<div class="top" data-element="accordion__anchor">
+										<p class="title">
+											아코디언 타이틀
+										</p>
+									</div>
+									<div class="con" data-element="accordion__panel">
+										아코디언 내용
+									</div>
+								</li>
+								<li data-element="accordion__item">
+									<div class="top" data-element="accordion__anchor">
+										<p class="title">
+											아코디언 타이틀
+										</p>
+									</div>
+									<div class="con" data-element="accordion__panel">
+										아코디언 내용
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- // accordion-list-wrap -->
+						
+					</div> 
+					<!-- // guide-box -->
+				</div>
+			</div>
+			<!-- // guide-con -->
+
 		</div>
 		<!-- // guide-ly -->
 

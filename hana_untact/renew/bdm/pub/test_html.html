@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>[Layout] KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <style>
+        .guide-title-sub {font-weight: 700; padding-top: 4rem; margin: 4rem 0 1rem; border-top: 1rem solid #ededed;}
+    </style>
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">타이틀</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <!-- D: footer 관련 class 설명 (관련 JS : common-ui.js 'hanaUI.footer('.app-footer');' 에 있음)
+            * footer(하단 버튼 영역)이 없는경우 : app-main footer-none
+            * footer 하단 버튼이 기본(1개)일 때 : app-main
+            * footer 하단 버튼이 서브+기본(2개)일 때 : app-main footer-sub-btn
+        -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">가이드 모음</p>
+                        <br>
+                        <p class="page-tit">타이틀(page-tit)</p>
+						<p class="page-tit-sub">서브타이틀(page-tit-sub)</p>
+						<p class="sub-tit">서브타이틀2(sub-tit)</p>
+                    </div>
+                    <!--// 타이틀 -->
+                    
+                    <div class="cont-wrap">
+                        <p class="guide-title-sub">input</p>
+						<!-- input -->
+						<div class="form-area">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input">
+								<div class="input__inner">
+									<input type="text" id="inputText01" class="input__element" title="항목명 입력폼" placeholder="">
+									<label for="inputText01" class="input__label" aria-hidden="true">항목명</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+								</div>
+								<!-- 에러 메시지 -->
+							</div>
+							<!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+						</div>
+						<!--// input -->
+		
+						<!-- input 데이터가 초기에 자동으로 입력되어 있을때 -->
+						<div class="form-area">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input input--on">
+								<div class="input__inner">
+									<input type="text" id="inputText02" class="input__element" title="항목명 입력폼" value="폼 내용" placeholder="">
+									<label for="inputText02" class="input__label" aria-hidden="true">항목명</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+								</div>
+								<!-- 에러 메시지 -->
+							</div>
+							<!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+						</div>
+						<!--// input  데이터가 초기에 자동으로 입력되어 있을때 -->
+		
+						<!-- input error -->
+						<div class="form-area input--error">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input input--on">
+								<div class="input__inner">
+									<input type="text" id="inputText03" class="input__element" title="항목명 입력폼" value="입력오류" placeholder="">
+									<label for="inputText03" class="input__label" aria-hidden="true">항목명</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+								</div>
+							</div>
+							<!-- 에러 메시지 -->
+							<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							<!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+						</div>
+						<!--// input error -->
+		
+						<!-- input disabled -->
+						<div class="form-area">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input input--disabled">
+								<div class="input__inner">
+									<input type="text" id="inputText04" class="input__element" title="항목명 입력폼" value="disabled" disabled>
+									<label for="inputText04" class="input__label" aria-hidden="true">항목명</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제" style="display: none;"></button>
+								</div>
+							</div>
+							<!-- 에러 메시지 -->
+							<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							<!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+						</div>
+						<!--// input disabled -->
+						
+						<p class="guide-title-sub">input : 도움말(툴팁)</p>
+						<div class="form-area">
+							<!--
+								* 오류시 class="form-area input--error"
+								* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+							-->
+							<div class="form-item input">
+								<div class="input__inner">
+									<input type="text" id="inputTextTooltip" class="input__element" title="SIN 또는 여권 번호 입력">
+									<label for="inputTextTooltip" class="input__label" aria-hidden="true">SIN 또는 여권 번호</label>
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+									<!-- input Tooltip -->
+									<div class="input-tooltip-wrap">
+										<div class="tooltip-wrap">
+										<p class="tooltip-title">도움말</p>
+										<div class="tooltip" data-tooltip="paragraph">
+											<button type="button" class="btn-open" data-tooltip-button="open" aria-label="툴팁 열기"></button>
+											<div class="tooltip-con" data-tooltip-panel="false" >
+											<div class="tooltip__column">
+												<div class="tooltip__description" data-tooltip="focus">
+												<!-- tooltip 컨텐츠 영역 -->
+												<div class="inbox">
+													<p class="text">가입 당시 사용하신 Social Insurance number 혹은 여권 번호를 입력해주세요.</p>
+												</div>
+												<!-- // tooltip 컨텐츠 영역 -->
+												</div>
+											</div>
+											<button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
+											</div>
+										</div>
+										</div>
+										<!-- // input Tooltip -->
+									</div>
+								</div>
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
+						
+						<p class="guide-title-sub">input : 검색 팝업 버튼</p>
+						<div class="form-area">
+							<!-- 
+								* 오류시 class="search-btn-wrap search--active input--error"
+								* 비활성화시 class="search-btn-wrap search--active search--disabled"
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="search-btn-wrap search--active"
+							-->
+							<div class="form-item search-btn-wrap">
+								<div class="input-search-btn">
+									<div class="input-search__inner">
+										<button type="button" class="button button-search__btn" title="주소검색 열기">
+											(검색 팝업 열기 전)HANA BANK
+										</button>
+										<div class="search-label">항목명</div>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+								</div>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
+						<div class="form-area">
+							<!-- 
+								* 오류시 class="search-btn-wrap search--active input--error"
+								* 비활성화시 class="search-btn-wrap search--active search--disabled"
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="search-btn-wrap search--active"
+							-->
+							<div class="form-item search-btn-wrap search--active">
+								<div class="input-search-btn">
+									<div class="input-search__inner">
+										<button type="button" class="button button-search__btn" title="주소검색 열기">
+											(검색 팝업 닫은 후)HANA BANK SYDNEY BRANCH
+										</button>
+										<div class="search-label">항목명</div>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+								</div>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
+						<div class="form-area">
+							<!-- 
+								* 오류시 class="search-btn-wrap search--active input--error"
+								* 비활성화시 class="search-btn-wrap search--active search--disabled"
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="search-btn-wrap search--active"
+							-->
+							<div class="form-item search-btn-wrap search--active search--disabled">
+								<div class="input-search-btn">
+									<div class="input-search__inner">
+										<button type="button" class="button button-search__btn" title="주소검색 열기">
+											(비활성)HANA BANK SYDNEY BRANCH
+										</button>
+										<div class="search-label">항목명</div>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+								</div>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
+						<div class="form-area">
+							<!-- 
+								* 오류시 class="search-btn-wrap search--active input--error"
+								* 비활성화시 class="search-btn-wrap search--active search--disabled"
+								* 데이터가 초기에 자동으로 입력되어 있을때 class="search-btn-wrap search--active"
+							-->
+							<div class="form-item search-btn-wrap search--active search--error">
+								<div class="input-search-btn">
+									<div class="input-search__inner">
+										<button type="button" class="button button-search__btn" title="주소검색 열기">
+											(오류)HANA BANK SYDNEY BRANCH
+										</button>
+										<div class="search-label">항목명</div>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+								</div>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+						</div>
+						
+						<p class="guide-title-sub">input : 검색</p>
+						<div class="form-area">
+							<!-- input : 검색 -->
+							<div class="search-area">
+								<div class="form-item input input-search">
+									<!--
+										* 오류시 class="form-item input input--error"
+										* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+										* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+									-->
+									<div class="input__inner">
+										<input type="text" class="input__element input--search" title="검색어를 입력폼" placeholder="검색어를 입력하세요."  style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+										<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+									<!-- 에러 메시지 -->
+									<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+								</div>
+							</div>
+							<!--// input : 검색 -->
+							<br>
+
+							<!-- input : 검색 (error) -->
+							<div class="search-area">
+								<div class="form-item input input-search input--error">
+									<!--
+										* 오류시 class="form-item input input--error"
+										* 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+										* 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+									-->
+									<div class="input__inner">
+										<input type="search" class="input__element input--search" title="검색어를 입력폼" placeholder="(오류)검색어를 입력하세요.">
+										<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+									<!-- 에러 메시지 -->
+									<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+								</div>
+							</div>
+							<!--// input : 검색 (error) -->
+                        </div>
+                        
+                        <p class="guide-title-sub">textarea</p>
+                        <!-- textarea 기본 -->
+						<div class="form-area">
+							<!-- 
+								* 오류시 class="textarea input--error"
+								* 비활성화시 class="textarea__element" disabled="disabled"
+							-->
+							<div class="form-item textarea">
+								<label for="textArea01" class="form__label">항목명</label>
+								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" placeholder="항목명 입력하세요."></textarea>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+							<!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+						</div>
+						<!--// textarea 기본 -->
+		
+						<!-- textarea disabled -->
+						<div class="form-area">
+							<div class="form-item textarea">
+								<label for="textArea01" class="form__label">항목명</label>
+								<textarea class="textarea__element" name="" id="textArea02" cols="30" rows="10" disabled="disabled">disabled</textarea>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
+							</div>
+						</div>
+						<!--// textarea disabled -->
+		
+						<!-- textarea error -->
+						<div class="form-area">
+							<div class="form-item textarea input--error">
+								<label for="textArea01" class="form__label">항목명</label>
+								<textarea class="textarea__element" name="" id="textArea03" cols="30" rows="10">error</textarea>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
+							</div>
+						</div>
+						<!--// textarea error -->
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn gray btn-cancle" title="취소">취소</button>
+                    <button type="button" class="btn" title="확인">확인</button>
+                </div>
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    
+</body>
+</html>

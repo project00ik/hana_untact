@@ -20,45 +20,54 @@
     <!-- Content -->
     <div id="content" class="app-main"> 
       <div class="form-area">
-        <div class="input">
-          <!--
-            * 오류시 class="input input--error"
-            * 비활성화시 class="input input--disabled" input 에 disabled 추가
-            * 데이터가 초기에 자동으로 입력되어 있을때 class="input input--on"
-          -->
-          <div class="input__inner">
-            <input type="text" id="inputText01" class="input__element" title="입력폼" placeholder="">
-            <label for="inputText01" class="input__label" aria-hidden="true">항목명</label>
-            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-          </div>
-          <!-- 에러 메시지 -->
-          <p class="input__error" aria-live="assertive">오류메세지 노출</p>
-        </div>
-        <!-- 가이드 메세지 -->
-        <div class="input__guide-text input__guide-text--left">
-          가이드 메세지 노출
-        </div>
+        <p>3</p>
+        <input type="text" value="">
       </div>
+      <div class="form-area">
+        <p>2</p>
+        <input type="text" value="">
+      </div>
+      <div class="form-area">
+        <p>1</p>
+        <input type="text" value="">
+      </div>
+      <div class="form-area">
+        <p>0</p>
+        <input type="text" value="">
+      </div>
+      <button class="btn-next" data-number="0">계속</button>
     </div>
     <!-- //Content -->
 
 </div>
 	<!-- 공통 script -->
-	  <script src="../js/jquery-3.6.1.min.js"></script>
-    <script src="../js/slick.js"></script>
-    <script src="../js/touch-dnd.js"></script>
-    <script src="../js/pualugin.js"></script>
-    <script src="../js/common-ui.js"></script>
+  <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript" src="../js/slick.js"></script>
+  <script type="text/javascript" src="../js/touch-dnd.js"></script>
+  <script type="text/javascript" src="../js/pualugin.js"></script>
+  <script type="text/javascript" src="../js/common-ui.js"></script>
     <script>
       $(function(){
-        inpFocus();
+        // $('.form-area').eq(2).hide();
+        $('.form-area').each(function(){
+          var index = $(this).index();
+          $(this).find('input').on('focus', function(){
+            $(this).val(index);
+          })
+        });
+        $('.btn-next').on('click', function(){
+          var num = $(this).data('number');
+          console.log(num);
+          $('.form-area').eq(num).next().find('input').focus();
+          $('.form-area').eq(num).next().addClass('is-focus');
+          console.log($('.form-area').eq(num))
+          var nextNum = $('.form-area.is-focus').index();
+          console.log('nextNum', nextNum);
+          var btnN = $('[data-number=' + nextNum + ']');
+          console.log('btnN', btnN);
+        });
       });
-      function inpFocus(){
-        setTimeout(function(){
-          $('#inputText01').focus();
-          $('#inputText01').trigger('click');
-        }, 300);
-      }
+      
     </script>
 
 
