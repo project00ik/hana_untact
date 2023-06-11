@@ -27,6 +27,7 @@
     hanaUI.passwordShow(); // password show/hide
     hanaUI.modalBranch(); // 지점안내 모달 fixed
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
+    // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
     
 });
 
@@ -513,57 +514,184 @@ var hanaUI = {
         // animateFormFirst.focus();
 
         // 클릭 포커스 이벤트
-        $('body').on('focus click', '.form__move', function () {
-            hanaUI.formNextMoveEvent(this);
-        })
+        // $('body').on('focus click', '.form__move', function () {
+            
+        //     hanaUI.formNextBtnEvent();
+        // })
     },
-    formNextMoveEvent: function (obj) { 
-        var focusInp = $(obj);
-        var focusInpNum = focusInp.data('inputmove');
-        var focusInpNextNum = focusInpNum + 1;
-        // $('.label__tit').not($('.label__tit[data-pagetit='+ inpIdxNum + ']').addClass('tit--active')).removeClass('tit--active');
-        $('.btn__form-next').data('inputindex', focusInpNum);
-    },
-    formNextBtnEvent: function (inputObj) { // 계속 버튼 이벤트
-        var inputThis = $(inputObj);
-        var inpActiveNum = inputThis.data('inputindex');
-        var nextNum = inpActiveNum + 1;
-        console.log(nextNum);
-        
-        var nextInput = $('[data-inputmove=' + nextNum + ']');
-        
-        $('.label__tit').not($('.label__tit[data-pagetit=' + nextNum + ']').addClass('tit--active')).removeClass('tit--active');
-        $('.label__tit').attr('aria-hidden', $('.label__tit').attr('aria-hidden').replace(false, true));
-        $('.label__tit[data-pagetit=' + nextNum + ']').attr('aria-hidden', $('.label__tit').attr('aria-hidden').replace(true, false));
+    
+    formNextBtnEvent: function () { // 계속 버튼 이벤트
+        // var inputArrIndex = 0;
+        // var inputArr = [];
+        // var pageTitArr = [];
 
-        // 마지막 폼에서 버튼교체
-        var formLeng = $('.cont-form--animate').find('.form-area').length;
-        var formActiveLeng = $('.cont-form--animate').find('.form--active').length;
-        console.log('formLeng', formLeng);
-        console.log('formActiveLeng', formActiveLeng);
-        if (formLeng <= formActiveLeng) {
-            $('.btn-next-wrap').hide();
-            $('.btn-last-wrap').show();
-        } else { 
-            $('.btn-last-wrap').hide();
-            $('.btn-next-wrap').show();
-            $('.btn__form-next').data('inputindex', nextNum);
-            nextInput.closest('.form-area').addClass('form--active');
-            nextInput.focus();
-            nextInput.trigger('click');
-        }
+        // inputArr = $($('.cont-form--animate > .form-area').get().reverse());
+        // pageTitArr = $($('.page-tit-wrap > .label__tit').get().reverse());
+    
+        // // inputArr.eq(0).addClass('form--active');
+        // // inputArr.eq(0).find('.form__move').focus();
+        
+        // function formNext() {
+        //     inputArrIndex += 1;
+        //     if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+        //         formNext();
+        //         return false;
+        //     }
+        //     if(inputArr.length > inputArrIndex) {
+                
+        //         // 폼 포커스
+        //         inputArr.eq(inputArrIndex).addClass('form--active');
+        //         inputArr.eq(inputArrIndex).find('.form__move').focus();
+                
+        //         // 타이틀
+        //         $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+        //         pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+
+        //         // 마지막 폼에서 버튼교체(계속)
+        //         $('.btn-last-wrap').hide();
+        //         $('.btn-next-wrap').show();
+        //         // $('.btn__form-next').data('inputindex', inputArrIndex);
+                
+        //     } else {
+        //         // 마지막 폼에서 버튼교체(확인)
+        //         $('.btn-next-wrap').hide();
+        //         $('.btn-last-wrap').show();
+        //     }
+        // }
+
+        // $('.btn__form-next').on('click', function(){
+        //     formNext();
+        // });
+        
+        
     },
     formFocusEvent: function (num) {  // 폼 포커스 직접 지정용
-        var nowInput = $('[data-inputmove=' + num + ']');
-        var formTotalLeng = $('.cont-form--animate > .form-item').length;
-        var activeForm = formTotalLeng - num;
+        var inputArrIndex = num;
+        var inputArr = [];
+        var pageTitArr = [];
+
+        inputArr = $($('.cont-form--animate > .form-area').get());
+        pageTitArr = $($('.page-tit-wrap > .label__tit').get());
+    
+        inputArr.eq(inputArrIndex).addClass('form--active');
+        inputArr.eq(inputArrIndex).nextAll().addClass('form--active');
+        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+
+        $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+        pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+
+        function formNext() {
+            inputArrIndex += 1;
+            if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+                formNext();
+                return false;
+            }
+            if(inputArr.length > inputArrIndex) {
+                
+                // 폼 포커스
+                inputArr.eq(inputArrIndex).addClass('form--active');
+                inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+                
+                // 타이틀
+                $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+                pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+
+                // 마지막 폼에서 버튼교체(계속)
+                $('.btn-last-wrap').hide();
+                $('.btn-next-wrap').show();
+                // $('.btn__form-next').data('inputindex', inputArrIndex);
+                
+            } else {
+                // 마지막 폼에서 버튼교체(확인)
+                $('.btn-next-wrap').hide();
+                $('.btn-last-wrap').show();
+            }
+        }
         
-        $('.label__tit').not($('.label__tit[data-pagetit='+ num + ']').addClass('tit--active')).removeClass('tit--active');
-        $('.cont-form--animate > .form-area:gt(' + activeForm + ')').addClass('form--active');
-        $('[data-inputmove=' + num + ']').closest('.form-area').addClass('form--active');
-        $('.btn__form-next').data('inputindex', num);
-        nowInput.closest('.form-area').addClass('form--active');
-        nowInput.focus();
+        $('.btn__form-next').on('click', function(){
+            formNext();
+        });
+
+        // $('.cont-form--animate > .form-area').on('focus click', function(){
+        //     // var focusArrIndex = ;
+        //     var focusArr = [];
+
+        //     focusArr = $($('.cont-form--animate > .form-area').get().reverse());
+        
+        //     var activeFormTotal = $('.cont-form--animate > .form--active').length;
+        //     var activeFormIdx = focusArr;
+        //     console.log('formTotalLeng',activeFormTotal);
+        //     console.log('activeFormIdx',activeFormIdx);
+        //     if(activeFormTotal == activeFormIdx){
+        //         console.log('계속');
+        //     } else {
+        //         console.log('중단');
+        //     }
+        // });
+    },
+    formFocusReversEvent: function (num) {  // 폼 포커스(Revers) 직접 지정용
+        var inputArrIndex = num;
+        var inputArr = [];
+        var pageTitArr = [];
+
+        inputArr = $($('.cont-form--animate > .form-area').get().reverse());
+        pageTitArr = $($('.page-tit-wrap > .label__tit').get().reverse());
+    
+        inputArr.eq(inputArrIndex).addClass('form--active');
+        inputArr.eq(inputArrIndex).nextAll().addClass('form--active');
+        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+
+        $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+        pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+
+        function formNext() {
+            inputArrIndex += 1;
+            if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+                formNext();
+                return false;
+            }
+            if(inputArr.length > inputArrIndex) {
+                
+                // 폼 포커스
+                inputArr.eq(inputArrIndex).addClass('form--active');
+                inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+                
+                // 타이틀
+                $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+                pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+
+                // 마지막 폼에서 버튼교체(계속)
+                $('.btn-last-wrap').hide();
+                $('.btn-next-wrap').show();
+                // $('.btn__form-next').data('inputindex', inputArrIndex);
+                
+            } else {
+                // 마지막 폼에서 버튼교체(확인)
+                $('.btn-next-wrap').hide();
+                $('.btn-last-wrap').show();
+            }
+        }
+        
+        $('.btn__form-next').on('click', function(){
+            formNext();
+        });
+
+        // $('.cont-form--animate > .form-area').on('focus click', function(){
+        //     // var focusArrIndex = ;
+        //     var focusArr = [];
+
+        //     focusArr = $($('.cont-form--animate > .form-area').get().reverse());
+        
+        //     var activeFormTotal = $('.cont-form--animate > .form--active').length;
+        //     var activeFormIdx = focusArr;
+        //     console.log('formTotalLeng',activeFormTotal);
+        //     console.log('activeFormIdx',activeFormIdx);
+        //     if(activeFormTotal == activeFormIdx){
+        //         console.log('계속');
+        //     } else {
+        //         console.log('중단');
+        //     }
+        // });
     },
     
     // 툴팁
@@ -1490,6 +1618,4 @@ function modalClose(target){
         modalClosetarget.closest('.modal').find('[data-element=modal__close]').trigger('click');
     }, 0)
 }
-
-
 

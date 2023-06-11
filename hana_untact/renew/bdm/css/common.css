@@ -805,3 +805,5 @@ body.modal-open .app-footer {display: none;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
 .phone-agree-wrap {padding-top: 3rem;}
 .phone-agree-wrap .inner-box {padding-bottom: 2rem;}
+
+.formHide {display:none !important;}

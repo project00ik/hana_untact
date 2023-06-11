@@ -30,12 +30,12 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" data-pagetit="6" aria-hidden="true">입력항목을 확인해주세요</p>
-                        <p class="page-tit label__tit" data-pagetit="5" aria-hidden="true">타이틀 타이틀 타이틀5</p>
-                        <p class="page-tit label__tit" data-pagetit="4" aria-hidden="true">타이틀 타이틀 타이틀4</p>
-                        <p class="page-tit label__tit" data-pagetit="3" aria-hidden="true">타이틀 타이틀 타이틀3</p>
-                        <p class="page-tit label__tit" data-pagetit="2" aria-hidden="true">타이틀 타이틀 타이틀2</p>
-                        <p class="page-tit label__tit tit--active" data-pagetit="1" aria-hidden="false">본인 확인을 할게요<br>이름을 입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">입력항목을 확인해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">타이틀 타이틀 타이틀5</p>
+                        <p class="page-tit label__tit" aria-hidden="true">타이틀 타이틀 타이틀4</p>
+                        <p class="page-tit label__tit" aria-hidden="true">타이틀 타이틀 타이틀3</p>
+                        <p class="page-tit label__tit" aria-hidden="true">타이틀 타이틀 타이틀2</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">본인 확인을 할게요<br>이름을 입력해주세요</p>
                     </div>
                     <!--// 타이틀 -->
                     <!-- 
@@ -59,7 +59,7 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText05" data-inputmove="5" title=" 입력" placeholder="">
+                                        <input type="text" class="input__element form__move" id="inputText05" title="항목명5 입력" placeholder="">
                                         <label for="inputText05" class="input__label" aria-hidden="true">항목명5</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
@@ -81,7 +81,7 @@
 							<div class="form-item select-wrap">
 								<div class="select">
 									<div class="select__inner">
-										<button type="button" class="button button-select__item form__move" data-inputmove="4" data-element="modal__open" data-target="#modalSlideBtn" title="000 선택">
+										<button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideBtn" title="항목명4 선택">
 											<!-- <i class="icon-country-canada"></i> -->
 											<span>선택하세요.</span> 
 										</button>
@@ -93,11 +93,11 @@
 						</div>
 						<!--// select -->
 
-                        <div class="form-area">
+                        <div class="form-area formHide"><!-- display:none 일 때 : class="form-area formHide" -->
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText03" data-inputmove="3" title=" 입력" placeholder="">
+                                        <input type="text" class="input__element form__move" id="inputText03" title="항목명3 입력" placeholder="">
                                         <label for="inputText03" class="input__label" aria-hidden="true">항목명3</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
@@ -113,7 +113,7 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText02" data-inputmove="2" title=" 입력" placeholder="">
+                                        <input type="text" class="input__element form__move" id="inputText02" title="항목명2 입력" placeholder="">
                                         <label for="inputText02" class="input__label" aria-hidden="true">항목명2</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
@@ -129,7 +129,7 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="text" class="input__element form__move" id="inputText01" data-inputmove="1" title=" 입력" placeholder="">
+                                        <input type="text" class="input__element form__move" id="inputText01" title="항목명1 입력" placeholder="">
                                         <label for="inputText01" class="input__label" aria-hidden="true">항목명1</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
@@ -147,25 +147,23 @@
             <div class="app-footer">
                 <!-- D: footer 버튼 노출 관련 JS(키보드 올라올 때 비노출 관련) : common-ui.js 'hanaUI.footer('.app-footer');' -->
                 <!-- 
-                    D: js관련 class 설명 
+                    (퍼블참고) D: js관련 class 설명 
                     * btn__form-next : 계속 버튼(폼 오토포커스) JS관련 class
                     * btn-next-wrap : 계속 버튼(레이아웃) JS관련 class
                     * btn-last-wrap : 확인 버튼(마지막 폼에서 계속버튼을 눌렀을 때 노출) JS관련 class
                     
-                    D: data관련 설명
-                    * data-inputindex="처음 포커스가 될 data-inputmove 숫자"
 
-                    D: 다음 폼으로 계속버튼과 엔터(Enter)로 오토포커스 됩니다. 
+                    (개발참고) D: 다음 폼으로 계속버튼과 엔터(Enter)로 오토포커스 됩니다. 
 
                     - 폼(form) 유효성 검사 후 
-                    1. 'hanaUI.formNextBtnEvent(this);'를 호출 하시거나,
+                    1. 계속 버튼 'formNext()'를 호출 하시거나,
                     2. $('.btn__form-next').trigger('click'); 를 사용.
                     
                     -  페이지 진입시 포커스 지정이 필요할 때 사용 (페이지 하단 script 영역에 예시 있음)
-                    hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 data-inputmove 숫자
+                    hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index); 
                 -->
                 <div class="btn-group-sub-wrap btn-next-wrap">
-                    <button type="button" class="btn rd btn__form-next" title="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button>
+                    <button type="button" class="btn rd btn__form-next" title="계속">계속</button>
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none"><!-- 확인 버튼(.btn-last-wrap) (마지막 폼에서 계속버튼을 눌렀을때 페이지 확인버튼 노출) -->
                     <button type="button" class="btn gray btn-cancle" title="취소">취소</button>
@@ -220,7 +218,7 @@
         
         $(function(){
             // D : 페이지 진입시 포커스 지정이 필요할 때 사용
-            hanaUI.formFocusEvent(1); // 포커스 하고 싶은 폼 data-inputmove 숫자
+            hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index); 
         })
 
     </script>

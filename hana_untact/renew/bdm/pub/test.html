@@ -23,7 +23,7 @@
         <p>3</p>
         <input type="text" value="">
       </div>
-      <div class="form-area">
+      <div class="form-area" style="display: none;">
         <p>2</p>
         <input type="text" value="">
       </div>
@@ -47,26 +47,23 @@
   <script type="text/javascript" src="../js/pualugin.js"></script>
   <script type="text/javascript" src="../js/common-ui.js"></script>
     <script>
-      $(function(){
-        // $('.form-area').eq(2).hide();
-        $('.form-area').each(function(){
-          var index = $(this).index();
-          $(this).find('input').on('focus', function(){
-            $(this).val(index);
-          })
-        });
-        $('.btn-next').on('click', function(){
-          var num = $(this).data('number');
-          console.log(num);
-          $('.form-area').eq(num).next().find('input').focus();
-          $('.form-area').eq(num).next().addClass('is-focus');
-          console.log($('.form-area').eq(num))
-          var nextNum = $('.form-area.is-focus').index();
-          console.log('nextNum', nextNum);
-          var btnN = $('[data-number=' + nextNum + ']');
-          console.log('btnN', btnN);
-        });
-      });
+      
+      var inputArr = [];
+      var inputArrIndex = 0;
+      inputArr = $($(".form-area").get().reverse());
+      inputArr.eq(0).find("input").focus().css("background-color", "red");
+
+      function next () {
+          inputArrIndex += 1;
+          if(inputArr.length > inputArrIndex) {
+              // $.each(inputArr, function(index, item) {
+              //     item.find("input").css("background-color", "none");
+              // });
+              inputArr.eq(inputArrIndex).find("input").focus().css("background-color", "red");
+          }
+      }
+
+      $(".btn-next").on("click", next);
       
     </script>
 
