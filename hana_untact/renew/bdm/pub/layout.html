@@ -44,11 +44,10 @@
                         * cont-revers : 컨텐츠 내용이 역순으로 쌓이는 경우 감싸는 class
                         * form-area : input select textarea등 폼요소를 감싸는 공통 class 
                         * form__move : 오토포커스가 되야하는 폼에 쓰이는 공통 class
-                            - 예시 : 'input__element form__move' 'button-select__item form__move'
-
-                        D: data 설명 (폼요소 공통)
-                        * data-inputmove="폼 순서 숫자"
+                            - 인풋 예시 : 'input__element form__move'
+                            - 셀렉트 예시 : 'button-select__item form__move'
                     -->
+
                     <div class="cont-wrap cont-revers cont-form--animate">
                         <!-- D: 인풋 관련 설명
                             * 오류시 class="form-area input--error"
@@ -217,8 +216,8 @@
     <script>
         
         $(function(){
-            // D : 페이지 진입시 포커스 지정이 필요할 때 사용
-            hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index); 
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
         })
 
     </script>

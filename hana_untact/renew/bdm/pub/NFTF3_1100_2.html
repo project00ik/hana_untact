@@ -26,12 +26,11 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" data-pagetit="6" aria-hidden="true">입력한 정보를<br>확인해주세요</p>
-                        <p class="page-tit label__tit" data-pagetit="5" aria-hidden="true">휴대폰번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" data-pagetit="4" aria-hidden="true">통신사를<br>선택해주세요</p>
-                        <p class="page-tit label__tit" data-pagetit="3" aria-hidden="true">주민등록번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" data-pagetit="2" aria-hidden="true">주민등록번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit tit--active" data-pagetit="1" aria-hidden="false">본인 확인을 할게요<br>이름을 입력해주세요</p>
+                        <p class="page-tit label__tit last__tit" aria-hidden="true">입력한 정보를<br>확인해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">휴대폰번호를<br>입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">통신사를<br>선택해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">주민등록번호를<br>입력해주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">본인 확인을 할게요<br>이름을 입력해주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -482,8 +481,8 @@
     <script>
         
         $(function(){
-            // D : 페이지 진입시 포커스 지정이 필요할 때 사용
-            hanaUI.formFocusReversEvent(5); // hanaUI.formFocusEvent(index); 
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용)
+            hanaUI.formFocusEvent(3, true); // hanaUI.formFocusEvent(index, true);
 
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             modalOpen('modalSlide01');

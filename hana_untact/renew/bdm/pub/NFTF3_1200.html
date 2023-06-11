@@ -25,7 +25,7 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit">문자로 받은<br>인증번호 6자리를 입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="false">문자로 받은<br>인증번호 6자리를 입력해주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -34,8 +34,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element form__move" id="inputText01" data-inputmove="1" title="인증번호 입력">
-                                        <label for="inputText02" class="input__label" aria-hidden="true">인증번호</label>
+                                        <input type="number" class="input__element form__move" id="inputText01" title="인증번호 입력">
+                                        <label for="inputText01" class="input__label" aria-hidden="true">인증번호</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         <span class="time">02:25</span>
                                         <!-- 현업 요청으로 삭제: <button type="button" class="btn gray sm" title="시간연장">시간연장</button> -->
@@ -86,8 +86,8 @@
     <script>
         
         $(function(){
-            // D : 페이지 진입시 포커스 지정이 필요할 때 사용
-            hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index); 
+            // D : 계속 버튼 js (정순) (포커스 지정이 필요할 때 사용)
+            hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index);
 
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSlide01');
