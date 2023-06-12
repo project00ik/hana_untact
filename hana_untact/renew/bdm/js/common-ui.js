@@ -230,7 +230,11 @@ var hanaUI = {
                 },
                 'keydown': function (e) { 
                     // 인풋 내용이 있을때 키보드 엔터 클릭 시 다음 항목으로 이동 
-                    if (e.keyCode == 13) { 
+                    if (e.keyCode === 13) { 
+                        $('.btn__form-next').trigger('click');
+                    }
+                    // 다음 항목으로 이동하는 동작 수행
+                    if (e.keycode === 9) { // Tab 키
                         $('.btn__form-next').trigger('click');
                     }
                 },
@@ -515,6 +519,7 @@ var hanaUI = {
     },
     
     formFocusEvent: function (num, isReverse) {  // 폼 포커스(Revers) 직접 지정용
+
         var inputArrIndex = num;
         var inputArr = [];
         var pageTitArr = [];
@@ -536,25 +541,26 @@ var hanaUI = {
         pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
 
         function formNext() {
-            // inputArrIndex += 1;
-            // if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
-            //     formNext();
-            //     return false;
-            // }
-            var idx = null;
-            var nowEl = $(".blurChk").closest(".form-area");
-
-            inputArr.each((i,o)=>{
-                if(o == nowEl[0]){
-                idx = i;
-                }
-            });
-            
-            if(idx == null){
-                inputArrIndex += 1
-            }else{
-                inputArrIndex = idx + 1
+            inputArrIndex += 1;
+            if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+                formNext();
+                return false;
             }
+
+            // krcode
+            // var idx = null;
+            // var nowEl = $(".blurChk").closest(".form-area");
+            // inputArr.each((i,o)=>{
+            //     if(o == nowEl[0]){
+            //         idx = i;
+            //     }
+            // });
+            // if(idx == null){
+            //     inputArrIndex += 1
+            // }else{
+            //     inputArrIndex = idx + 1
+            // }
+
             if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
                 formNext();
                 return false;
