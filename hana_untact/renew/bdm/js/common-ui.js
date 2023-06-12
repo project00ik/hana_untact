@@ -536,7 +536,25 @@ var hanaUI = {
         pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
 
         function formNext() {
-            inputArrIndex += 1;
+            // inputArrIndex += 1;
+            // if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+            //     formNext();
+            //     return false;
+            // }
+            var idx = null;
+            var nowEl = $(".blurChk").closest(".form-area");
+
+            inputArr.each((i,o)=>{
+                if(o == nowEl[0]){
+                idx = i;
+                }
+            });
+            
+            if(idx == null){
+                inputArrIndex += 1
+            }else{
+                inputArrIndex = idx + 1
+            }
             if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
                 formNext();
                 return false;
@@ -571,20 +589,20 @@ var hanaUI = {
         $('.btn__form-next').on('click', function(){
             formNext();
         });
-        $('body').on('focus click', '.form__move', function () {
-            hanaUI.formNowEvent(this);
-        });
+        // $('body').on('focus click', '.form__move', function () {
+        //     hanaUI.formNowEvent(this);
+        // });
 
     },
-    formNowEvent : function(obj){
+    // formNowEvent : function(obj){
         
-        var nowForm = $(obj).closest('.form-area');
-        var totalFormLeng = $('.cont-form--animate').find('.form-area').length;
-        var nowIndex = nowForm.index();
-        var nowIndexNum = totalFormLeng - (nowIndex + 1);
-        console.log('inpIdxNum', $('.btn__form-next').data('nowindex'));
-        $('.btn__form-next').data('nowindex', nowIndexNum);
-    },
+    //     var nowForm = $(obj).closest('.form-area');
+    //     var totalFormLeng = $('.cont-form--animate').find('.form-area').length;
+    //     var nowIndex = nowForm.index();
+    //     var nowIndexNum = totalFormLeng - (nowIndex + 1);
+    //     console.log('inpIdxNum', $('.btn__form-next').data('nowindex'));
+    //     $('.btn__form-next').data('nowindex', nowIndexNum);
+    // },
     
     // 툴팁
     tooltip : function(){
