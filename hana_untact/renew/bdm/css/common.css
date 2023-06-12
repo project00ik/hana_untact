@@ -80,7 +80,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .app-header--transparent.is-active { background-color: #fbfcfc !important; }
 .app-header .btn-back {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-backbtn.png) left 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; left: 1.4rem; z-index: 1;}
 .app-header .page-tit {padding: 0 2rem; flex: 1; text-align: center; font-size: 1.8rem; font-weight: 400; color: #000;}
-.app-header .btn-close {width: 3.2rem; height: 3.2rem; background: url(..ba/images/icon/ico-header-close.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
+.app-header .btn-close {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-close.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
 
 /* - 레이아웃 : 푸터 (footer) */
 .app-footer {width:100%; min-height: 9.2rem; min-height: calc(9.2rem + env(safe-area-inset-bottom)); min-height: calc(9.2rem + constant(safe-area-inset-bottom)); position: fixed; bottom: 0; left: 0; z-index: 20; display: block;}
