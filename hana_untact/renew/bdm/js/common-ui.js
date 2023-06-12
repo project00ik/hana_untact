@@ -248,15 +248,15 @@ var hanaUI = {
                             }
 
                             // krcode
-                            setTimeout(()=>{
-                                var input = $(this).closest(".form-area").prev().find("input");
-                                var select = $(this).closest(".form-area").prev().find(".select__inner button");
-                                if(input.length > 0){
-                                    input.focus();
-                                }else if(select.length > 0){
-                                    select.click();
-                                }
-                            },100);
+                            // setTimeout(()=>{
+                            //     var input = $(this).closest(".form-area").prev().find("input").css('background','red');
+                            //     var select = $(this).closest(".form-area").prev().find(".select__inner button");
+                            //     if(input.length > 0){
+                            //         input.focus();
+                            //     }else if(select.length > 0){
+                            //         select.click();
+                            //     }
+                            // },100);
                         }
                     }else{
                         if($(this).val() == ''){
@@ -265,15 +265,7 @@ var hanaUI = {
                             } else {
                                 $(this).closest($el).removeClass('input--on');
                             }
-                            setTimeout(()=>{
-                                var input = $(this).closest(".form-area").next().find("input")
-                                var select = $(this).closest(".form-area").next().find(".select__inner button");
-                                if(input.length > 0){
-                                    input.focus()
-                                }else if(select.length > 0){
-                                    select.click()
-                                }
-                            },100);
+                            
                         }
                     }
                     
@@ -579,23 +571,19 @@ var hanaUI = {
         $('.btn__form-next').on('click', function(){
             formNext();
         });
+        $('body').on('focus click', '.form__move', function () {
+            hanaUI.formNowEvent(this);
+        });
 
-        // $('.cont-form--animate > .form-area').on('focus click', function(){
-        //     // var focusArrIndex = ;
-        //     var focusArr = [];
-
-        //     focusArr = $($('.cont-form--animate > .form-area').get().reverse());
+    },
+    formNowEvent : function(obj){
         
-        //     var activeFormTotal = $('.cont-form--animate > .form--active').length;
-        //     var activeFormIdx = focusArr;
-        //     console.log('formTotalLeng',activeFormTotal);
-        //     console.log('activeFormIdx',activeFormIdx);
-        //     if(activeFormTotal == activeFormIdx){
-        //         console.log('계속');
-        //     } else {
-        //         console.log('중단');
-        //     }
-        // });
+        var nowForm = $(obj).closest('.form-area');
+        var totalFormLeng = $('.cont-form--animate').find('.form-area').length;
+        var nowIndex = nowForm.index();
+        var nowIndexNum = totalFormLeng - (nowIndex + 1);
+        console.log('inpIdxNum', $('.btn__form-next').data('nowindex'));
+        $('.btn__form-next').data('nowindex', nowIndexNum);
     },
     
     // 툴팁
