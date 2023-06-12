@@ -229,7 +229,7 @@ var hanaUI = {
                     
                 },
                 'keydown': function (e) { 
-                    
+                    alert(e.keyCode);
                     if (e.keyCode === 13 || e.keyCode === 9 || e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40) { 
                         $('.btn__form-next').trigger('click');
                         $('.form-area').blur();
