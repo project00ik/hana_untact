@@ -30,7 +30,7 @@
     
 });
 
-
+var inputArrIndex;
 
 var hanaUI = {
 
@@ -254,6 +254,15 @@ var hanaUI = {
                             } else {
                                 $(this).closest($el).removeClass('input--on');
                             }
+                            setTimeout(()=>{
+                                var input = $(this).closest(".form-area").next().find("input")
+                                var select = $(this).closest(".form-area").next().find(".select__inner button");
+                                if(input.length > 0){
+                                    input.focus()
+                                }else if(select.length > 0){
+                                    select.click()
+                                }
+                            },100);
                         }
                     }
                     
