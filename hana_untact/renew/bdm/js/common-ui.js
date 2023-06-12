@@ -129,30 +129,30 @@ var hanaUI = {
         }
         hasBtn(obj);
     },
-    keypad : function(target, setTime){
-        $('.input__element').removeClass('key');
-        target.addClass('key');
-        if($('body').is('.ios') || $('body').is('.isResize')){ return }
+    // keypad : function(target, setTime){
+    //     $('.input__element').removeClass('key');
+    //     target.addClass('key');
+    //     if($('body').is('.ios') || $('body').is('.isResize')){ return }
         
-        if(typeof setTime === "undefined") { setTime = 300 } 
+    //     if(typeof setTime === "undefined") { setTime = 300 } 
 
-        var windowHeight = window.innerHeight;
+    //     var windowHeight = window.innerHeight;
         
-        $(window).on('resize', function(){
-            $('body').addClass('isResize');
-            setTimeout(function(){
-                if(windowHeight == window.innerHeight){
-                    $('.input__element').each(function(i,e){
-                        if($(e).is('.key')){
-                            $(e).removeClass('key').trigger('blur');
-                        }
-                    })
-                    $('body').removeClass('isResize');
-                    $(window).off('resize');
-                }    
-            }, setTime)
-        })
-    },
+    //     $(window).on('resize', function(){
+    //         $('body').addClass('isResize');
+    //         setTimeout(function(){
+    //             if(windowHeight == window.innerHeight){
+    //                 $('.input__element').each(function(i,e){
+    //                     if($(e).is('.key')){
+    //                         $(e).removeClass('key').trigger('blur');
+    //                     }
+    //                 })
+    //                 $('body').removeClass('isResize');
+    //                 $(window).off('resize');
+    //             }    
+    //         }, setTime)
+    //     })
+    // },
     
     inputField : function(obj){
         var $el = null;
@@ -228,14 +228,15 @@ var hanaUI = {
                     }
                     
                 },
+                'keypress': function (e) { 
+                    // 인풋 내용이 있을때 키보드 엔터 클릭 시 다음 항목으로 이동 
+                    if (e.keyCode == 13) { 
+                        $('.btn__form-next').trigger('click');
+                    }
+                },
                 'blur' : function(e){
                     var $target = $(e.target)
                     hanaUI.native.bottomShow();
-
-                    // 인풋 내용이 있을때 키보드 완료(input blur 상태) 클릭 시 다음 항목으로 이동 
-                    // if ($(this).val() !== '') { 
-                    //     $('.btn__form-next').trigger('click');
-                    // }
 
                     if($(this).siblings('input').length || $(this).parent('.native-inner').siblings('.native-inner').length){
                         if($(this).val() == ''){
@@ -298,7 +299,7 @@ var hanaUI = {
                             $target.closest($el).find('.input__remove-button').show();
                         }
                         hanaUI.native.bottomHide();
-                        hanaUI.keypad($target, 300);
+                        // hanaUI.keypad($target, 300);
                     }
                 },
                 
@@ -442,7 +443,7 @@ var hanaUI = {
                     }else{
                         $(this).closest($el).addClass('txtareawrap--on');
                         hanaUI.native.bottomUnfixed();
-                        hanaUI.keypad($target, 300);
+                        // hanaUI.keypad($target, 300);
                     }
                 },
                 'blur' : function(){
