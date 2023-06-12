@@ -303,9 +303,9 @@ var hanaUI = {
                 },
                 'keypress': function (e) { 
                     // 인풋 내용이 있을때 키보드 엔터 클릭 시 다음 항목으로 이동 
-                    // if (e.keyCode == 13 && $(this).val() !== '') { 
-                    //     $('.btn__form-next').trigger('click');
-                    // }
+                    if (e.keyCode == 13) { 
+                        $('.btn__form-next').trigger('click');
+                    }
                 }
             }, '.input__element');
             $label.on('click', function(){
