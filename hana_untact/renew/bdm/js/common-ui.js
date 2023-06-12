@@ -247,6 +247,17 @@ var hanaUI = {
                             if(emptied == that.length){
                                 $(this).closest($el).removeClass('input--on');
                             }
+
+                            // krcode
+                            setTimeout(()=>{
+                                var input = $(this).closest(".form-area").prev().find("input");
+                                var select = $(this).closest(".form-area").prev().find(".select__inner button");
+                                if(input.length > 0){
+                                    input.focus();
+                                }else if(select.length > 0){
+                                    select.click();
+                                }
+                            },100);
                         }
                     }else{
                         if($(this).val() == ''){
