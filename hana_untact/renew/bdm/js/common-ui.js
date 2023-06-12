@@ -229,12 +229,8 @@ var hanaUI = {
                     
                 },
                 'keydown': function (e) { 
-                    // 인풋 내용이 있을때 키보드 엔터 클릭 시 다음 항목으로 이동 
-                    if (e.keyCode === 13) { 
-                        $('.btn__form-next').trigger('click');
-                    }
-                    // 다음 항목으로 이동하는 동작 수행
-                    if (e.keycode === 9) { // Tab 키
+                    
+                    if (e.keyCode === 13 || e.keyCode === 9 || e.keyCode === 39 || e.keyCode === 40) { 
                         $('.btn__form-next').trigger('click');
                     }
                 },
