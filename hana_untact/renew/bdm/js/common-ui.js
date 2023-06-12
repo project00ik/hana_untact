@@ -30,7 +30,7 @@
     
 });
 
-var inputArrIndex;
+window.inputArrIndex = num;
 
 var hanaUI = {
 
