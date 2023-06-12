@@ -31,7 +31,6 @@
     
 });
 
-window.inputArrIndex = 0;
 
 var hanaUI = {
 
