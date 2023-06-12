@@ -28,9 +28,10 @@
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
     // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
     
+    
 });
 
-window.inputArrIndex = num;
+window.inputArrIndex = 0;
 
 var hanaUI = {
 
