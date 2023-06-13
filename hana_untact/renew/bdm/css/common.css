@@ -72,7 +72,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 레이아웃 (layout) --- */
-.wrap {min-height: 100%; height: 100%; vertical-align: top;}
+.wrap {height: 100%; vertical-align: top;}
 
 /* - 레이아웃 : 헤더 (header) */
 .app-header {width: 100%; height: 5.6rem; height: calc(5.6rem + env(safe-area-inset-top)); height: calc(5.6rem + constant(safe-area-inset-top)); display: flex; align-items: center; justify-content: center;  padding: 0; padding: calc(constant(safe-area-inset-top)) 0 0; padding: calc(env(safe-area-inset-top)) 0 0; position: fixed; top: 0; left: 0; z-index: 20; background: #fbfcfc;}
