@@ -245,17 +245,6 @@ var hanaUI = {
                             if(emptied == that.length){
                                 $(this).closest($el).removeClass('input--on');
                             }
-
-                            // krcode
-                            // setTimeout(()=>{
-                            //     var input = $(this).closest(".form-area").prev().find("input").css('background','red');
-                            //     var select = $(this).closest(".form-area").prev().find(".select__inner button");
-                            //     if(input.length > 0){
-                            //         input.focus();
-                            //     }else if(select.length > 0){
-                            //         select.click();
-                            //     }
-                            // },100);
                         }
                     }else{
                         if($(this).val() == ''){
@@ -537,25 +526,6 @@ var hanaUI = {
 
         function formNext() {
             inputArrIndex += 1;
-            if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
-                formNext();
-                return false;
-            }
-
-            // krcode
-            // var idx = null;
-            // var nowEl = $(".blurChk").closest(".form-area");
-            // inputArr.each((i,o)=>{
-            //     if(o == nowEl[0]){
-            //         idx = i;
-            //     }
-            // });
-            // if(idx == null){
-            //     inputArrIndex += 1
-            // }else{
-            //     inputArrIndex = idx + 1
-            // }
-
             if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
                 formNext();
                 return false;
