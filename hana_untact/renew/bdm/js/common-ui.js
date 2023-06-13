@@ -504,37 +504,55 @@ var hanaUI = {
     
     formFocusEvent: function (num, isReverse) {  // 폼 포커스(Revers) 직접 지정용
 
-        var inputArrIndex = num;
+        var inputArrIndex = num; // 페이지하단에 지정한 숫자
         var inputArr = [];
         var pageTitArr = [];
 
         if(isReverse) {
+            // 역순 배열
             inputArr = $($('.cont-form--animate > .form-area').get().reverse());
             pageTitArr = $($('.page-tit-wrap > .label__tit').get().reverse());
             inputArr.eq(inputArrIndex).nextAll().addClass('form--active');
         } else {
+            // 정순 배열
             inputArr = $($('.cont-form--animate > .form-area').get());
             pageTitArr = $($('.page-tit-wrap > .label__tit').get());
             inputArr.eq(inputArrIndex).prevAll().addClass('form--active');
         }
     
         inputArr.eq(inputArrIndex).addClass('form--active');
+        // 폼이 여러개일 때 첫번째에 강제 포커스
         inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+        
 
+        // 타이틀 show/hide
         $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
         pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
 
-        function formNext() {
+        function formNext() { // 계속 버튼
             inputArrIndex += 1;
+            // form-area hide 
             if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
                 formNext();
                 return false;
             }
+            
             if(inputArr.length > inputArrIndex) {
                 
                 // 폼 포커스
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+
+                // 주민등록번호
+                // if(inputArr.eq(inputArrIndex).find('.form-item').length > 1){
+                //     var nowBtnData = $('.btn__form-next').data('nowindex');
+                //     var nextBtnData = nowBtnData + 1;
+                //     var nowNum = inputArr.eq(inputArrIndex).find('.form-item').eq(nowBtnData);
+                //     var nowSiblingsNum = nowNum.siblings('.form-item');
+
+                //     nowNum.css('background','red');
+                //     nowSiblingsNum.css('background','yellow').focus();
+                // }
                 
                 // 타이틀
                 $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
@@ -557,11 +575,20 @@ var hanaUI = {
             }
         }
         
+        // 계속 버튼
         $('.btn__form-next').on('click', function(){
             formNext();
         });
-        // $('body').on('focus click', '.form__move', function () {
-        //     hanaUI.formNowEvent(this);
+        
+        // 주민등록번호
+        // $('body').on('focus click', '.form-area', function () {
+        //     if($(this).find('.form-item').length > 1){
+        //         var nowChildNum = $(this).find('.form-item').eq(0).index();
+        //         // var nowSiblingsNum = $(this).find('.form-item').eq(0).siblings('.form-item').index();
+
+        //         $('.btn__form-next').data('nowindex', nowChildNum);
+                
+        //     }
         // });
 
     },
