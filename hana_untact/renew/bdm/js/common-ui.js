@@ -523,11 +523,11 @@ var hanaUI = {
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
         inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
-        
 
         // 타이틀 show/hide
         $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
-        pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+        $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+        pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
 
         function formNext() { // 계속 버튼
             inputArrIndex += 1;
@@ -543,7 +543,7 @@ var hanaUI = {
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
 
-                // 주민등록번호
+                // 하위 인풋 여러개
                 // if(inputArr.eq(inputArrIndex).find('.form-item').length > 1){
                 //     var nowBtnData = $('.btn__form-next').data('nowindex');
                 //     var nextBtnData = nowBtnData + 1;
@@ -554,9 +554,10 @@ var hanaUI = {
                 //     nowSiblingsNum.css('background','yellow').focus();
                 // }
                 
-                // 타이틀
+                // 타이틀 show/hide
                 $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
-                pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+                $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+                pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
 
                 // 마지막 폼에서 버튼교체(계속)
                 $('.btn-last-wrap').hide();
@@ -570,7 +571,7 @@ var hanaUI = {
                 if($('.label__tit').hasClass('last__tit')){
                     $('.label__tit').removeClass('tit--active');
                     $('.label__tit.last__tit').addClass('tit--active');
-
+                    // pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
                 }
             }
         }
@@ -579,8 +580,8 @@ var hanaUI = {
         $('.btn__form-next').on('click', function(){
             formNext();
         });
-        
-        // 주민등록번호
+
+        // 하위 인풋 여러개
         // $('body').on('focus click', '.form-area', function () {
         //     if($(this).find('.form-item').length > 1){
         //         var nowChildNum = $(this).find('.form-item').eq(0).index();
