@@ -1000,7 +1000,9 @@ var hanaUI = {
             }
 
             function event(){
-                $obj.stop(true).hide();
+                // 웹접근성 관련 footer hide 위반으로 수정
+                // $obj.stop(true).hide();
+                $obj.css('position', 'relative');
             }
 
             init();
@@ -1020,7 +1022,9 @@ var hanaUI = {
             }
 
             function event(){
-                $obj.stop().fadeIn('50');
+                // 웹접근성 관련 footer hide 위반으로 수정
+                // $obj.stop().fadeIn('50');
+                $obj.css('position', 'fixed');
             }
 
             init();
