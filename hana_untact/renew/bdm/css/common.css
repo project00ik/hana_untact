@@ -421,7 +421,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tbl-wrap .tbl-row-basic {table-layout: fixed; border-collapse: separate;}
 .tbl-wrap .tbl-row-basic th,
 .tbl-wrap .tbl-row-basic td {padding: 1rem; border-top: 1px solid #e7e9ee; border-right: 1px solid #e7e9ee;}
-.tbl-wrap .tbl-row-basic th {font-size: 1.4rem; color: #333; font-weight: 700; text-align: center;}
+.tbl-wrap .tbl-row-basic th {font-size: 1.4rem; color: #333; font-weight: 700; text-align: center; background-color: #fbfcfc;}
 .tbl-wrap .tbl-row-basic td:last-child {border-right: none;}
 .tbl-wrap .tbl-row-basic tr:first-child th,
 .tbl-wrap .tbl-row-basic tr:first-child td {border-top: none;}
@@ -431,12 +431,13 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tbl-wrap .tbl-all-basic {table-layout: fixed; position: relative;}
 .tbl-wrap .tbl-all-basic th,
 .tbl-wrap .tbl-all-basic td {padding: 1rem; text-align: center; border-left: 1px solid #e7e9ee;}
+.tbl-wrap .tbl-all-basic tbody th {border-right: 1px solid #e7e9ee;}
 .tbl-wrap .tbl-all-basic td {border-left: 1px solid #e7e9ee;}
 .tbl-wrap .tbl-all-basic tr + tr > td {border-top: 1px solid #e7e9ee;}
 .tbl-wrap .tbl-all-basic th {font-size: 1.4rem; color: #333; font-weight: 700;}
 .tbl-wrap .tbl-all-basic th:first-child {border-left: none;}
 .tbl-wrap .tbl-all-basic thead th {border-bottom: 1px solid #e7e9ee; background-color: #fbfcfc;}
-.tbl-wrap .tbl-all-basic tbody th {border-top: 1px solid #e7e9ee; background-color: #fbfcfc;}
+.tbl-wrap .tbl-all-basic tbody th {border-top: 1px solid #e7e9ee; border-right: 1px solid #e7e9ee; background-color: #fbfcfc;}
 .tbl-wrap .tbl-all-basic tbody tr:first-child th {border-top: none;}
 .tbl-wrap .tbl-all-basic td .text-bold {font-weight: 600;}
 .tbl-wrap.tbl-scroll .tbl-all-basic th:first-child,
