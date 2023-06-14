@@ -109,8 +109,8 @@
 							-->
 							<div class="form-item input">
 								<div class="input__inner">
-									<input type="text" id="inputText01" class="input__element" title="입력폼" placeholder="">
 									<label for="inputText01" class="input__label" aria-hidden="true">항목명</label>
+									<input type="text" id="inputText01" class="input__element" title="항목명 입력폼" placeholder="">
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
 								<!-- 에러 메시지 -->
@@ -131,8 +131,8 @@
 							-->
 							<div class="form-item input input--on">
 								<div class="input__inner">
-									<input type="text" id="inputText02" class="input__element" title="입력폼" value="폼 내용" placeholder="">
 									<label for="inputText02" class="input__label" aria-hidden="true">항목명</label>
+									<input type="text" id="inputText02" class="input__element" title="항목명 입력폼" value="폼 내용" placeholder="">
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
 								<!-- 에러 메시지 -->
@@ -153,8 +153,8 @@
 							-->
 							<div class="form-item input input--on">
 								<div class="input__inner">
-									<input type="text" id="inputText03" class="input__element" title="입력폼" value="입력오류" placeholder="">
 									<label for="inputText03" class="input__label" aria-hidden="true">항목명</label>
+									<input type="text" id="inputText03" class="input__element" title="항목명 입력폼" value="입력오류" placeholder="">
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
 							</div>
@@ -174,8 +174,8 @@
 							-->
 							<div class="form-item input input--disabled">
 								<div class="input__inner">
-									<input type="text" id="inputText04" class="input__element" title="입력폼" value="disabled" disabled>
 									<label for="inputText04" class="input__label" aria-hidden="true">항목명</label>
+									<input type="text" id="inputText04" class="input__element" title="항목명 입력폼" value="disabled" disabled>
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제" style="display: none;"></button>
 								</div>
 							</div>
@@ -230,8 +230,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element form__move" id="inputText_test01" title="주민등록번호 앞자리 입력">
                                         <label for="inputText_test01" class="input__label" aria-hidden="true">주민등록번호</label>
+                                        <input type="number" class="input__element form__move" id="inputText_test01" title="주민등록번호 앞자리 입력">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -261,8 +261,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element form__move" id="inputText_test02" title="인증번호 입력">
                                         <label for="inputText_test02" class="input__label" aria-hidden="true">인증번호</label>
+                                        <input type="number" class="input__element form__move" id="inputText_test02" title="인증번호 입력">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         <span class="time">02:25</span>
                                         <button type="button" class="btn gray sm" title="시간연장">시간연장</button>
@@ -419,7 +419,7 @@
 							-->
 							<div class="form-item textarea">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" placeholder="항목명 입력하세요."></textarea>
+								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" title="항목명 입력폼" placeholder="항목명 입력하세요."></textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
 							</div>
@@ -432,7 +432,7 @@
 						<div class="form-area">
 							<div class="form-item textarea">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea02" cols="30" rows="10" disabled="disabled">disabled</textarea>
+								<textarea class="textarea__element" name="" id="textArea02" cols="30" rows="10" title="항목명 입력폼" disabled="disabled">disabled</textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
 							</div>
@@ -443,7 +443,7 @@
 						<div class="form-area">
 							<div class="form-item textarea input--error">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea03" cols="30" rows="10">error</textarea>
+								<textarea class="textarea__element" name="" id="textArea03" title="항목명 입력폼" cols="30" rows="10">error</textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
 							</div>
@@ -564,7 +564,21 @@
 						<div class="checkbox-wrap sm">
 							<input type="checkbox" name="" id="checkbox06" title="" disabled>
 							<label for="checkbox06">checkbox</label>
-						</div>						
+						</div>
+						
+						<p class="guide-title-sub">radio</p>
+						<div class="radio-wrap">
+							<input type="radio" name="radio01" id="radio01_1" title="">
+							<label for="radio01_1">radio</label>
+						</div>
+						<div class="radio-wrap">
+							<input type="radio" name="radio01" id="radio01_2" title="" checked>
+							<label for="radio01_2">radio</label>
+						</div>
+						<div class="radio-wrap">
+							<input type="radio" name="radio01" id="radio01_3" title="" disabled>
+							<label for="radio01_4">radio</label>
+						</div>
 
 						<p class="guide-title-sub">tab-radio</p>
 						<!-- tab-radio-wrap -->
@@ -585,11 +599,11 @@
 						<!-- 스위치 예시 -->
 						<label class="asswitch-wrap">
 							<input class="chk-switch" type="checkbox" name="asswitch">
-							<span></span>
+							<span aria-hidden="true"></span>
 						</label>
 						<label class="asswitch-wrap">
 							<input class="chk-switch" type="checkbox" name="asswitch" checked="checked">
-							<span></span>
+							<span aria-hidden="true"></span>
 						</label>
 						<!--// 스위치 예시 -->
 					</div>

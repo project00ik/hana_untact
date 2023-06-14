@@ -169,7 +169,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tooltip-wrap {position: relative; display: flex; align-items: center;}
 .tooltip-title {font-size: 1.4rem; color: #333; font-weight: 600;}
 .tooltip {position: static; margin-left: 0.4rem;}
-.tooltip .btn-open {display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/icon_open_tooltip.png) 50% 50% no-repeat; background-size: 1.6rem auto;}
+.tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
 .tooltip .tooltip-con {display: none; position: absolute; top: 2.3rem; left: auto; z-index: 10; max-width: 33.5rem; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
 .tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666;}
 .tooltip .tooltip-con .inbox .title {font-size: 1.4rem; font-weight: 600;}
@@ -359,9 +359,9 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
 /* -- 폼 (form) : 라디오 (radio) */
 .radio-wrap label {display: inline-block; position: relative; padding-left: 3rem;}
-.radio-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -1.1rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/radio.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
-.radio-wrap input:checked + label::before {background-image: url(../images/icon/radio_on.png);}
-.radio-wrap input:disabled + label::before {background-image: url(../images/icon/radio_disabled.png);}
+.radio-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -1.1rem; width: 2rem; height: 2rem; background: url(../images/icon/ico-system-form-radio-1-depth-default.png) 0 0 no-repeat; background-size: 2rem auto;} 
+.radio-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-radio-1-depth-active.png);}
+.radio-wrap input:disabled + label::before {background-image: url(../images/icon/ico-system-form-radio-1-depth-default.png); opacity: 0.8;}
 
 .radio-wrap.sm label {padding-left: 2.6rem; font-size: 1.5rem;}
 .radio-wrap.sm label::before {width: 1.8rem; height: 1.8rem; margin-top: -0.9rem; background: url(../images/icon/radio_sm.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem;} 
@@ -558,8 +558,8 @@ button.input-info-green {display: block; width: 100%;}
 /* - 컨텐츠 : 스위치 (Switch) checkbox */
 label.asswitch-wrap {width: 4.4rem; height: 2.8rem; padding:0; display: inline-block; position: relative;}
 label.asswitch-wrap input.chk-switch {opacity: 0; position: absolute; top: 0; left:0}
-label.asswitch-wrap > span {width: 100%; height: 100%; overflow:hidden; line-height:2.2rem; white-space:nowrap; font-size: 0; display: inline-block; border-radius: 3.2rem; background-color:#e2e2e8; transition: all 0.3s ease 0s; -webkit-transition: all 0.3s ease 0s;}
-label.asswitch-wrap input:checked + span {background-color:#30bfba;}
+label.asswitch-wrap > span {width: 100%; height: 100%; overflow:hidden; line-height:2.2rem; white-space:nowrap; font-size: 0; display: inline-block; border-radius: 3.2rem; background-color:#9ca7b3; transition: all 0.3s ease 0s; -webkit-transition: all 0.3s ease 0s;}
+label.asswitch-wrap input:checked + span {background-color: #009591;}
 label.asswitch-wrap > span::after {content:''; width:2.2rem; height:2.2rem; background-color:#fff; border-radius:1.4rem; box-shadow:0 4px 8px 0 rgba(0,0,0,0.1); position: absolute; z-index:1; top: 0.3rem; left: 0.3rem; transition: all 0.3s ease 0s; -webkit-transition: all 0.3s ease 0s;}
 label.asswitch-wrap input:checked + span::after {content:''; left: 1.9rem;}
 

@@ -1534,6 +1534,12 @@ function modalOpen(id){
     } else {
         modalOpenId.addClass('is-open');
         $('body').addClass('modal-open');
+        // 모달에 타이틀이 없는 경우 (웹접근성 관련 추가)
+        if (modalOpenId.find('h1').length == 0) { 
+            modalOpenId.find('.modal__contents').attr({
+                'tabindex' : '-1'
+            })
+        }
     }
 }
 // 모달 닫기 js
