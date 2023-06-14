@@ -100,6 +100,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element.input-price::placeholder {color: #d0d9d9; font-size: 1.8rem; font-weight: 700;}
 
 .input__remove-button {display: none; max-width: 1.6rem; width: 1.6rem; height: 1.6rem; margin: 0 0 0.8rem 1rem; background: url(../images/icon/ico-system-input-close.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
+/* 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정 */
+.input--on .input__remove-button {display: inline-block;}
+.input--on .input__element:disabled + .input__remove-button,
+.input--on .input__element:read-only + .input__remove-button {display: none;}
 
 .input--disabled:before {border-color: #dddee4 !important; background: #f3f4f5; color: #666 !important; font-weight: 400; box-shadow: none !important;}
 .input--disabled .input__element, .input--disabled .input__optional {color: #666 !important; opacity: 1 !important;}
@@ -163,6 +167,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 /* 인풋 - 검색 */
 .search-area {position: relative;}
+.search-area.form-area {margin-top: 0;}
 .input.input-search::before {height: 6rem; border: 0.1rem solid #dddee4; border-radius: 1rem; box-sizing: border-box;}
 .input.input-search.input--error::before {border: 0.1rem solid #dddee4 !important; box-shadow: none;}
 .input.input-search.input--focus::before,

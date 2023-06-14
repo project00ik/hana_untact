@@ -321,11 +321,16 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
 /* - 컨텐츠 : 폼 (form) */
 /* -- 폼 (form) : 체크박스 라디오 공통(check / radio) */
+.checkbox-wrap,
+.radio-wrap,
+.radio-list-wrap,
+.tab-radio,
+.tab-radio-rd {position: relative;}
 .checkbox-wrap input,
 .radio-wrap input,
 .radio-list-wrap input,
 .tab-radio input,
-.tab-radio-rd input {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
+.tab-radio-rd input {position: absolute; clip: rect(0 0 0 0); width: 90%; height: 100%; margin: -1px; overflow: hidden;}
 
 /* -- 폼 (form) : 체크박스 (checkbox) */
 .checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 500; color: #000; line-height: 2.2rem;}
@@ -803,6 +808,11 @@ body.modal-open .app-footer {display: none;}
 /* 약관동의 토글 체크박스 */
 .chk-tg {}
 .chk-tg .chk-tg-btn {}
+
+/* 웹접근성 : 체크박스,라디오 토글 버튼으로 사용 시 input hide 처리 */
+.chk-tg .chk-tg-btn input[type="checkbox"],
+.chk-tg .chk-tg-btn input[type="radio"] {display: none;}
+
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
 .phone-agree-wrap {padding-top: 3rem;}

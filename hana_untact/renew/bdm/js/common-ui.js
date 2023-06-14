@@ -173,23 +173,26 @@ var hanaUI = {
 
             windowHeight = window.innerHeight;
 
-            for(var i=0; i<$input.length; i++){
-                var $btn = $input.eq(i).closest($el).find($clear);
-                if($input.eq(i).val() == '' || $input.eq(i).prop('disabled') == true || $input.eq(i).prop('readonly') == true){
-                    $btn.hide();
-                }else if($input.eq(i).val() != "" && $input.eq(i).closest($el).is('.input--on')) {
-                    $btn.hide();
-                }else{
-                    // $btn.show();
-                    $input.eq(i).closest($el).addClass('input--on');
-                }
-                if ($input.eq(i).prop('readonly') == true) {
-                    if(!$input.eq(i).is('.input-date') && !$input.eq(i).closest('.input').is('.input--hybrid')){
-                        $input.eq(i).closest(obj).addClass('readonly')
-                    }
+            // 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정으로 삭제 후 css 처리
 
-                }
-            }
+            // for(var i=0; i<$input.length; i++){
+            //     var $btn = $input.eq(i).closest($el).find($clear);
+            //     if($input.eq(i).val() == '' || $input.eq(i).prop('disabled') == true || $input.eq(i).prop('readonly') == true){
+            //         $btn.hide();
+            //     }
+            //     if ($input.eq(i).val() != "" && $input.eq(i).closest($el).is('.input--on')) {
+            //         $btn.show();
+            //     }else{
+            //         $btn.show();
+            //         $input.eq(i).closest($el).addClass('input--on');
+            //     }
+            //     if ($input.eq(i).prop('readonly') == true) {
+            //         if(!$input.eq(i).is('.input-date') && !$input.eq(i).closest('.input').is('.input--hybrid')){
+            //             $input.eq(i).closest(obj).addClass('readonly')
+            //         }
+
+            //     }
+            // }
             title();
         };
 
@@ -229,14 +232,14 @@ var hanaUI = {
                     
                 },
                 'keydown': function (e) { 
-                    if (e.keyCode === 13 || e.keyCode === 9 || e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40) { 
+                    if (e.keyCode === 13 || e.keyCode === 9) { 
                         $('.btn__form-next').trigger('click');
                     }
                 },
                 'blur' : function(e){
-                    var $target = $(e.target)
+                    var $target = $(e.target);
                     hanaUI.native.bottomShow();
-
+                    
                     if($(this).siblings('input').length || $(this).parent('.native-inner').siblings('.native-inner').length){
                         if($(this).val() == ''){
                             var that = $(this).closest($el).find($input);
@@ -247,13 +250,18 @@ var hanaUI = {
                             }
                         }
                     }else{
-                        if($(this).val() == ''){
-                            if($(this).hasClass('input-date')){
+                        if ($(this).val() == '') {
+                            // 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정으로 삭제 후 css 처리
+                            // $target.closest($el).find('.input__remove-button').hide();
+                            if ($(this).hasClass('input-date')) {
                                 $(this).closest($el).addClass('input--on');
                             } else {
                                 $(this).closest($el).removeClass('input--on');
                             }
                             
+                        } else { 
+                            // 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정으로 삭제 후 css 처리
+                            // $target.closest($el).find('.input__remove-button').show();
                         }
                     }
                     
@@ -282,7 +290,6 @@ var hanaUI = {
                     }
                     
                     setTimeout(function(){
-                        $target.closest($el).find('.input__remove-button').hide();
                         $target.closest($el).removeClass('input--focus');
                     },300)
 
@@ -295,9 +302,10 @@ var hanaUI = {
                         return
                     }else{
                         $(this).closest($el).addClass('input--focus');
-                        if($(this).val() !== ''){
-                            $target.closest($el).find('.input__remove-button').show();
-                        }
+                        // 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정으로 삭제 후 css 처리
+                        // if ($(this).val() !== '') {
+                        //     $target.closest($el).find('.input__remove-button').show();
+                        // }
                         hanaUI.native.bottomHide();
                         // hanaUI.keypad($target, 300);
                     }
@@ -1399,23 +1407,27 @@ function toggleLayer(obj) {
     var tgChkBtn = toggleBtn.closest('.tg--area').find('.chk-tg-btn');
     var tgly = toggleBtn.closest('.tg--area').find('.tg--layer');
 
+    
     if (toggleBtn.is('.chk-tg-btn')) {
-        
+        tgChkBtn.toggleClass('tg--on');
         if (tgChkBtn.find('input[type="checkbox"]').is(':checked')) {
-            tgChkBtn.addClass('on');
+            tgChkBtn.addClass('tg--on');
             tgChkBtn.find('input[type="checkbox"]').prop('checked', true);
             tgly.addClass('open').attr('tabindex', '0');
-            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기'));
+            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
 
             if (tgly.find('.input__element').length === 0) {
+                return;
             } else { 
                 tgly.find('.input__element').eq(0).focus();
             }
         } else { 
-            tgChkBtn.removeClass('on');
+            tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input[type="checkbox"]').prop('checked', false);
             tgly.removeClass('open').attr('tabindex', '-1');
-            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기'));
+            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
         
     } else { 
@@ -1424,11 +1436,11 @@ function toggleLayer(obj) {
             $('.tg--layer').removeClass('open');
             tgly.addClass('open');
             tgly.attr('tabindex', '0');
-            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('열기', '닫기') );
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
         } else {
             tgly.removeClass('open');
             tgly.attr('tabindex', '-1');
-            toggleBtn.attr('aria-label', toggleBtn.attr('aria-label').replace('닫기', '열기') );
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
     }
     
