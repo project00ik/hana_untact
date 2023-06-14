@@ -579,7 +579,8 @@ var hanaUI = {
                 if($('.label__tit').hasClass('last__tit')){
                     $('.label__tit').removeClass('tit--active');
                     $('.label__tit.last__tit').addClass('tit--active');
-                    // pageTitArr.attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+                    $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+                    $('.label__tit.last__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
                 }
             }
         }
