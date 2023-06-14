@@ -229,10 +229,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .form-area .btn-group-flex {margin-top: 1.2rem;}
 .form-area .btn-group-flex .btn + .btn {margin-left: 0.4rem;}
 .form-area .form__label {font-size: 1.4rem; color: #666; font-weight: 400; display: block;}
-.form-area .textarea .textarea__element {width: 100%; max-height: 10.3rem; overflow-y: auto; margin-top: 1.2rem; padding: 1.6rem; border-radius: 0.8rem; border: 0.1rem solid #dddee4; background: #fff; color: #333; font-size: 1.6rem; display: block;}
-
+.form-area .textarea .textarea__element {width: 100%; max-height: 10.3rem; overflow-y: auto; margin-top: 1.2rem; padding: 1.6rem; border-radius: 0.8rem; border: 0.1rem solid #dddee4; background: #fff; color: #333; font-size: 1.8rem; display: block;}
 .form-area .textarea .textarea__element::placeholder,
-.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #bbb;}
+.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #757575;}
 .form-area .textarea .textarea__element:focus {box-shadow: 0 0 8px 0 rgba(0, 149, 145, 0.25); border: solid 0.2rem #009591 !important; color: #000;}
 .form-area .textarea .textarea__element:disabled {border-color: #dddee4; color: #666;}
 .form-area .textarea.input--error .textarea__element {border-color: #e53a4c;}
