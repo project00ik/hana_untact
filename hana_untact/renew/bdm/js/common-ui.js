@@ -202,10 +202,14 @@ var hanaUI = {
             stopEvent();
         };
 
-        function input(){
+        function input() {
+            // 안드로이드 soft keyboard Next 버튼 대응
+            $('.cont-form--animate input').attr('enterkeyhint', 'go');
+
             $el.on({
                 'input' : function(){
                     var $btn = $(this).closest($el).find($clear);
+
                     if($(this).val() == ""){
                         $btn.hide();
                         if(!$(this).hasClass('input--search')){
