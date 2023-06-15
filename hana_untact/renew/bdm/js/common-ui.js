@@ -45,6 +45,7 @@ var hanaUI = {
         var containerHeight = windowHeight - headerHeight - footerHeight;
         $('body').css('min-height', windowHeight + 'px');
         $('.app-content').css('min-height', containerHeight + 'px');
+        $('.popup-wrap').css('min-height', windowHeight + 'px');
 
         // let vh = window.innerHeight * 0.01;
         // document.documentElement.style.setProperty("--vh", `${vh}px`);
