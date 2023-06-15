@@ -1532,8 +1532,8 @@ function slickSlideEvent(obj){
 
 // 모달 오픈 js
 function modalOpen(target) {
-    var modalId = target;
-    $('[data-target="#' + modalId + '"]').trigger('click');
+    var modalBtn = target;
+    $('[data-target="#' + modalBtn + '"]').trigger('click');
 }
 // 모달 닫기 js
 function modalClose(target){
@@ -1544,29 +1544,34 @@ function modalClose(target){
     }, 0)
 }
 
-// 약관 동의하기 버튼
+// 약관 동의하기 버튼 스크롤 시 활성화 이벤트
 function aggreeScroll(target) { 
     var modalOpenId = target;
-    var madalScrollTWrap = modalOpenId.find('.agree-wrap').outerHeight();
-    var madalScrollTCont = modalOpenId.find('.modal__contents').innerHeight();
-    var madalBtn = modalOpenId.find('.btn-aggree');
-    var madalBtnH = modalOpenId.find('.btn-wrap').outerHeight();
-    var madalScrollLast = madalScrollTWrap - madalScrollTCont + madalBtnH;
-    var madalScrollLastNum = Math.floor(madalScrollLast);
+    var modalScrollTWrap = modalOpenId.find('.agree-wrap').outerHeight();
+    var modalScrollTCont = modalOpenId.find('.modal__contents').innerHeight();
+    var modalBtn = modalOpenId.find('.btn-aggree');
+    var modalBtnH = modalOpenId.find('.btn-wrap').outerHeight();
+    var modalScrollLast = modalScrollTWrap - modalScrollTCont + modalBtnH;
+    var modalScrollLastNum = Math.floor(modalScrollLast);
     
     modalOpenId.find('.modal__contents').scroll(function () {
         if($(this).scrollTop() > 0){
             var modalScrollTop = $(this).scrollTop();
             //마지막 컨텐츠
-            if (modalScrollTop >= madalScrollLastNum) {
+            if (modalScrollTop >= modalScrollLastNum) {
                 console.log('마지막');
-                madalBtn.removeAttr('disabled');
+                modalBtn.removeAttr('disabled');
             }else{
                 console.log('마지막 아님');
-                madalBtn.attr('disabled');
+                modalBtn.attr('disabled');
             
             }
         }
+    });
+
+    // 동의하기 팝업 맨하단으로 이동 버튼 이벤트
+    $('.btn-end-agree').on('click', function(){
+        modalOpenId.find('.modal__contents').scrollTop(modalScrollLastNum);
     });
 }
 
