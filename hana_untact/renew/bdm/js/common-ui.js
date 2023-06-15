@@ -1533,11 +1533,7 @@ function slickSlideEvent(obj){
 // 모달 오픈 js
 function modalOpen(target) {
     var modalId = target;
-    // modalId.modal();
-    // $('button[data-target='+ modalId + ']').trigger('click');
-    
-    // console.log('modalId', modalId);
-    // data-target="#modalSlide02"
+    $('[data-target="#' + modalId + '"]').trigger('click');
 }
 // 모달 닫기 js
 function modalClose(target){
