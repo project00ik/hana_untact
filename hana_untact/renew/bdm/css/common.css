@@ -72,7 +72,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 레이아웃 (layout) --- */
-.wrap {height: 100%; vertical-align: top;}
+.wrap {min-height: 100%; vertical-align: top;}
 
 /* - 레이아웃 : 헤더 (header) */
 .app-header {width: 100%; height: 5.6rem; height: calc(5.6rem + env(safe-area-inset-top)); height: calc(5.6rem + constant(safe-area-inset-top)); display: flex; align-items: center; justify-content: center;  padding: 0; padding: calc(constant(safe-area-inset-top)) 0 0; padding: calc(env(safe-area-inset-top)) 0 0; position: fixed; top: 0; left: 0; z-index: 20; background: #fbfcfc;}
@@ -91,7 +91,8 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .app-footer .btn-group-wrap {background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 
 /* - 레이아웃 : 컨텐츠 영역 (contents) */
-.app-main {min-height: 100vh; position: relative; padding-top: calc(5.6rem); 
+.app-main {position: relative; z-index: 1;
+    padding-top: calc(5.6rem); 
     padding-top: calc(5.6rem + constant(safe-area-inset-top)); 
     padding-top: calc(5.6rem + env(safe-area-inset-top)); 
     padding-bottom: calc(9.2rem); 
@@ -623,6 +624,59 @@ body.modal-open .app-footer {display: none;}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
 
+/* 토스트 팝업 */
+.popup-wrap .toast-popup-wrap {
+    opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%); 
+    animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.8s; animation-iteration-count: 1; animation-fill-mode: forwards;
+}
+.toast-popup-wrap .toast-popup {margin-top: -4.1rem; padding: 1.1rem 1.2rem 1.3rem; white-space: nowrap; color: #fff; font-size: 1.4rem; background: #262b45; border-radius: 1rem; position: relative;}
+.toast-popup-wrap .toast-popup::after {content: ''; width: 0; height: 0; display: inline-block; border: 0.6rem solid transparent; border-top: 0.9rem solid #262b45; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); overflow: hidden;}
+
+@keyframes toastPopup {
+    0% {
+        top: 10rem;
+        z-index: -1;
+        opacity: 0;
+    }
+    20%{
+        top: 0;
+        opacity: 1;
+        z-index: 1;
+    }
+    80%{
+        top: 0;
+        opacity: 1;
+        z-index: 1;
+    }
+    100%{
+        top: 0;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@-webkit-keyframes toastPopup {
+    0% {
+        top: 10rem;
+        z-index: -1;
+        opacity: 0;
+    }
+    20%{
+        top: 0;
+        opacity: 1;
+        z-index: 1;
+    }
+    80%{
+        top: 0;
+        opacity: 1;
+        z-index: 1;
+    }
+    100%{
+        top: 0;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
 /* - 모달 팝업 : 컨텐츠 레이아웃 공통 */
 .modal__contents .con-box {padding: 0 2rem 3.2rem;}
 .modal__contents .con-box:last-child {padding-bottom: 3.2rem;}
@@ -811,8 +865,21 @@ body.modal-open .app-footer {display: none;}
 .popup-wrap.modal--slide .modal__header {position: relative;}
 .popup-wrap.modal--slide .modal__header .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 5;}
 .btn-download {width: 2.4rem; height: 2.4rem; display: inline-block; background: url(../images/icon/ico-system-download.png) 50% 50% no-repeat; background-size: 100% auto;}
-.agree-wrap {width:100%;}
-.agree-wrap img {width:100%;}
+.agree-wrap {width:100%; padding-top: 3rem;}
+.popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
+.popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
+.agree-img-area {padding-top: 1rem;}
+.agree-img-area img {width:100%;}
+.modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20;}
+.modal-top-sticky .modal-sticky-cont {
+    width: calc(100% + 4.8rem); height: 3rem; margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fbfcfc;
+    display: flex; justify-content: space-between;
+    box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);
+}
+.modal-sticky-cont .agree-name {flex: 1; font-size: 1.4rem; line-height:1.4; color: #333;}
+.modal-sticky-cont .page {font-size: 1.4rem; font-weight: 500; line-height: 1; color: #999;}
+.modal-sticky-cont .page b {color: #009591;}
+
 
 /* 약관동의 토글 체크박스 */
 .chk-tg {}

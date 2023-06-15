@@ -43,18 +43,17 @@ var hanaUI = {
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
         var containerHeight = windowHeight - headerHeight - footerHeight;
-        $('body').css('min-height', windowHeight + 'px');
+        // $('body').css('min-height', windowHeight + 'px');
         $('.app-content').css('min-height', containerHeight + 'px');
-        $('.popup-wrap').css('min-height', windowHeight + 'px');
 
-        // let vh = window.innerHeight * 0.01;
-        // document.documentElement.style.setProperty("--vh", `${vh}px`);
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
 
-        // window.addEventListener("resize", () => {
-        //     console.log("resize");
-        //     let vh = window.innerHeight * 0.01;
-        //     document.documentElement.style.setProperty("--vh", `${vh}px`);
-        // });
+        window.addEventListener("resize", () => {
+            console.log("resize");
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        });
     },
     header : function(obj){
         var $el = null;
@@ -1377,7 +1376,7 @@ var hanaUI = {
                 } 
                 // - 초기화
                 prevScrollTop = nowScrollTop;
-        
+
                 // 스크롤시 차트 active 처리
                 // var ThisScroll = $(this).scrollTop();
                 // var haederH = $('.app-header').outerHeight();
@@ -1402,7 +1401,12 @@ var hanaUI = {
             nowScrollPosition(); // 현재스크롤 위치 기억
 
         }
+
     },
+
+    btnEndAgreeEvent : function() { 
+        $('.btn-end-agree');
+    }
 
 };
 
@@ -1527,44 +1531,13 @@ function slickSlideEvent(obj){
 }
 
 // 모달 오픈 js
-function modalOpen(id){
-    var modalOpenId = $('#' + id);
+function modalOpen(target) {
+    var modalId = target;
+    // modalId.modal();
+    // $('button[data-target='+ modalId + ']').trigger('click');
     
-    if(modalOpenId.hasClass('modal--slide')){
-        modalOpenId.addClass('is-open');
-        $('body').addClass('modal-open');
-        modalOpenId.css({
-            'bottom' : - modalOpenId.outerHeight(true) + 'px'
-        })
-        .animate({
-            'bottom' : 0
-        }, 0, function(){
-            modalOpenId.attr({
-                'aria-hidden': false,
-                'z-index': 10
-            })
-            .attr('tabindex', '0')
-            .focus();
-        })
-        modalOpenId.find('.modal__container').css({
-            'z-index': 10
-        }).animate({
-            'bottom' : 0
-        }, 300)
-        //슬라이드팝업내 탭이 있는 경우
-        if($('.modal--slide').find('.tab-list-wrap').length){
-            $('.modal--slide').find('.modal__contents').addClass('modal__contents--tabscroll');
-        }
-    } else {
-        modalOpenId.addClass('is-open');
-        $('body').addClass('modal-open');
-        // 모달에 타이틀이 없는 경우 (웹접근성 관련 추가)
-        if (modalOpenId.find('h1').length == 0) { 
-            modalOpenId.find('.modal__contents').attr({
-                'tabindex' : '-1'
-            })
-        }
-    }
+    // console.log('modalId', modalId);
+    // data-target="#modalSlide02"
 }
 // 모달 닫기 js
 function modalClose(target){
@@ -1573,5 +1546,31 @@ function modalClose(target){
     setTimeout(function(){
         modalClosetarget.closest('.modal').find('[data-element=modal__close]').trigger('click');
     }, 0)
+}
+
+// 약관 동의하기 버튼
+function aggreeScroll(target) { 
+    var modalOpenId = target;
+    var madalScrollTWrap = modalOpenId.find('.agree-wrap').outerHeight();
+    var madalScrollTCont = modalOpenId.find('.modal__contents').innerHeight();
+    var madalBtn = modalOpenId.find('.btn-aggree');
+    var madalBtnH = modalOpenId.find('.btn-wrap').outerHeight();
+    var madalScrollLast = madalScrollTWrap - madalScrollTCont + madalBtnH;
+    var madalScrollLastNum = Math.floor(madalScrollLast);
+    
+    modalOpenId.find('.modal__contents').scroll(function () {
+        if($(this).scrollTop() > 0){
+            var modalScrollTop = $(this).scrollTop();
+            //마지막 컨텐츠
+            if (modalScrollTop >= madalScrollLastNum) {
+                console.log('마지막');
+                madalBtn.removeAttr('disabled');
+            }else{
+                console.log('마지막 아님');
+                madalBtn.attr('disabled');
+            
+            }
+        }
+    });
 }
 

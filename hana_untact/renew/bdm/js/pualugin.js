@@ -1966,7 +1966,11 @@
             //슬라이드팝업내 탭이 있는 경우
             if($slideLayer.find('.tab-list-wrap').length){
               $slideLayer.find('.modal__contents').addClass('modal__contents--tabscroll');
-            }
+          }
+          setTimeout(function(){
+            aggreeScroll($target);
+          },200);
+            
           
         }else{
           $target.addClass(plugin.options.activeClassName);
