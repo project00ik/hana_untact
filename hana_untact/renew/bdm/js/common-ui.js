@@ -40,8 +40,7 @@ var hanaUI = {
     *****************************/
     layout: function () { 
         var windowHeight = window.innerHeight;
-        console.log(windowHeight);
-        alert(windowHeight);
+        $('body').css('min-height', windowHeight + 'px');
     },
     header : function(obj){
         var $el = null;
@@ -1021,6 +1020,7 @@ var hanaUI = {
                 // 웹접근성 관련 footer hide 위반으로 수정
                 // $obj.stop(true).hide();
                 $obj.css('position', 'relative');
+                $obj.closest('body').addClass('softkey-up');
             }
 
             init();
@@ -1043,6 +1043,7 @@ var hanaUI = {
                 // 웹접근성 관련 footer hide 위반으로 수정
                 // $obj.stop().fadeIn('50');
                 $obj.css('position', 'fixed');
+                $obj.closest('body').removeClass('softkey-up');
             }
 
             init();

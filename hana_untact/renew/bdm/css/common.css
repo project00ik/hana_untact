@@ -91,15 +91,18 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .app-footer .btn-group-wrap {background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 
 /* - 레이아웃 : 컨텐츠 영역 (contents) */
-.app-main {height: 100%; position: relative; padding-top: calc(5.6rem); padding-top: calc(5.6rem + constant(safe-area-inset-top)); padding-top: calc(5.6rem + env(safe-area-inset-top)); padding-bottom: calc(9.2rem); padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem  + env(safe-area-inset-bottom));}
+.app-main {min-height: 100%; position: relative; padding-top: calc(5.6rem); padding-top: calc(5.6rem + constant(safe-area-inset-top)); padding-top: calc(5.6rem + env(safe-area-inset-top)); padding-bottom: calc(9.2rem); padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem  + env(safe-area-inset-bottom));}
 .app-main.footer-none {padding-bottom:0;padding-bottom:constant(safe-area-inset-bottom);padding-bottom:env(safe-area-inset-bottom);}
 .app-main.footer-sub-btn {padding-bottom: calc(8.8rem + 7.1rem); padding-bottom: calc(8.8rem + 7.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(8.8rem + 7.1rem + env(safe-area-inset-bottom));}
 .app-content {height: 100%}
 
-.container {padding: 2.4rem 2.4rem 9.2rem;}
+.container {padding: 2.4rem 2.4rem 4.2rem;}
 .container.ly-full {padding: 0;}
 .container.ly-full .con-box {padding-bottom: 0;}
 .content-area {margin-top: 4rem;}
+
+.softkey-up .app-main {padding-bottom: 0rem;}
+.softkey-up .app-content {height: auto; padding-bottom: 0rem;}
 
 /* - 레이아웃  : step */
 .step-header {width: 100%; margin-bottom: 0; position: sticky; top: 5.6rem; left:0; top: calc(5.6rem + env(safe-area-inset-top)); z-index: 20; }
