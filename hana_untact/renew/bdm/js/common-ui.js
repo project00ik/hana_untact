@@ -5,6 +5,7 @@
     *****************************/
 
     /* Common UI */
+    hanaUI.layout();
     hanaUI.header('.app-header, .modal__header, .main__header'); //헤더공통
     hanaUI.footer('.app-footer'); //푸터공통
     //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
@@ -37,7 +38,11 @@ var hanaUI = {
     /****************************
         Common UI
     *****************************/
-    
+    layout: function () { 
+        var windowHeight = window.innerHeight;
+        console.log(windowHeight);
+        alert(windowHeight);
+    },
     header : function(obj){
         var $el = null;
         var $title = null;
