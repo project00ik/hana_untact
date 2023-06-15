@@ -46,12 +46,15 @@ var hanaUI = {
         // console.log(headerHeight);
         // $('body').css('min-height', windowHeight + 'px');
         // $('.app-content').css('min-height', containerHeight + 'px');
-        // let vh = window.innerHeight * 0.01
-        // document.documentElement.style.setProperty('--vh', `${vh}px`)
-        // window.addEventListener('resize', () => {
-        //     let vh = window.innerHeight * 0.01
-        //     document.documentElement.style.setProperty('--vh', `${vh}px`)
-        // })
+
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+        window.addEventListener("resize", () => {
+        console.log("resize");
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        });
     },
     header : function(obj){
         var $el = null;
