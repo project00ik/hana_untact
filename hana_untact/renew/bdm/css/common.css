@@ -263,6 +263,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn.line.press {background-color: #e7e9ee; padding-left: 2rem; font-size: 1.6rem; font-weight: 600;}
 
 .btn.md {height: 5rem; line-height: 5rem; font-size: 1.6rem; font-weight: 500;}
+.btn.md.btn-cancle {width: 8.3rem; flex: none;}
 .btn.md [class^="icon"] {line-height: 5rem;}
 .btn.md.line,
 .btn.md.line [class^="icon"] {line-height: 4.7rem;}
@@ -626,7 +627,7 @@ body.modal-open .app-footer {display: none;}
 
 /* 토스트 팝업 */
 .popup-wrap .toast-popup-wrap {
-    opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%); 
+    opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%);
     animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.8s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
 .toast-popup-wrap .toast-popup {margin-top: -4.1rem; padding: 1.1rem 1.2rem 1.3rem; white-space: nowrap; color: #fff; font-size: 1.4rem; background: #262b45; border-radius: 1rem; position: relative;}
@@ -640,18 +641,11 @@ body.modal-open .app-footer {display: none;}
     }
     20%{
         top: 0;
-        opacity: 1;
-        z-index: 1;
-    }
-    80%{
-        top: 0;
-        opacity: 1;
         z-index: 1;
     }
     100%{
         top: 0;
-        opacity: 0;
-        z-index: -1;
+        opacity: 1;
     }
 }
 @-webkit-keyframes toastPopup {
@@ -662,25 +656,20 @@ body.modal-open .app-footer {display: none;}
     }
     20%{
         top: 0;
-        opacity: 1;
-        z-index: 1;
-    }
-    80%{
-        top: 0;
-        opacity: 1;
         z-index: 1;
     }
     100%{
         top: 0;
-        opacity: 0;
-        z-index: -1;
+        opacity: 1;
     }
 }
 
 /* - 모달 팝업 : 컨텐츠 레이아웃 공통 */
-.modal__contents .con-box {padding: 0 2rem 3.2rem;}
-.modal__contents .con-box:last-child {padding-bottom: 3.2rem;}
 .modal__contents .tab-box-wrap .tab-con {padding-top: 2.4rem;}
+
+/* - 모달 팝업 : 텍스트 스타일 */
+.modal-text-wrap {padding-top: 3rem;}
+.modal-text-wrap .text-bold {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 500; color: #000; word-break: keep-all; word-wrap: break-word;}
 
 /* - 모달 팝업 : 일자선택 */
 .modal-date-wrap {padding: 0 1.7rem 2.8rem;}
@@ -860,6 +849,11 @@ body.modal-open .app-footer {display: none;}
 .caution-list {}
 .caution-list > li {margin-top: 1.2rem; padding: 0 0 0 2rem ; font-size: 12px; font-weight: 400; line-height: 1.5; color: #757575; position: relative;}
 .caution-list > li::before {content: '※'; width: 1.3rem; margin-right: 0.7rem; display: inline-block; position: absolute; top: 0; left: 0;}
+
+/* 기호형 - 별표(*) */
+.star-list {}
+.star-list > li {padding: 0 0 0 1.1rem ; font-size: 1.4rem; font-weight: 400; line-height: 1.4; color: #757575; position: relative;}
+.star-list > li::before {content: '*'; width: 1.3rem; margin-right: 0.7rem; display: inline-block; position: absolute; top: 0; left: 0;}
 
 /* 약관 */
 .popup-wrap.modal--slide .modal__header {position: relative;}

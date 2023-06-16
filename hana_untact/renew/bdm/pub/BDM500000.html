@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">기본정보</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="5단계 중 2단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step on">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step">4</li>
+                            <li class="stepper__step">5</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit label__tit last__tit" aria-hidden="true">입력한 정보를<br>확인해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">자녀 휴대폰번호를<br>입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">주소를<br>입력해주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">이메일 주소를<br>입력해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap cont-revers cont-form--animate">
+                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <div class="form-item search-btn-wrap">
+								<div class="input-search-btn">
+									<div class="input-search__inner">
+										<div class="search-label">항목명</div>
+										<button type="button" class="button button-search__btn" title="주소검색 열기">
+											(검색 팝업 열기 전)HANA BANK
+										</button>
+										<button type="submit" class="btn-search" aria-label="검색">검색</button>
+									</div>
+								</div>
+								<!-- 에러 메시지 -->
+								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+							</div>
+                            <div class="form-item input">
+								<div class="input__inner">
+									<input type="text" id="inputText02" class="input__element" title="상세주소 입력폼" placeholder="">
+									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+								</div>
+								<!-- 에러 메시지 -->
+							</div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        
+                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <div class="input__wrap">
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <label for="inputText03" class="input__label" aria-hidden="true">이메일</label>
+                                        <input type="text" class="input__element form__move" id="inputText01" title="휴대폰번호 입력">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-wrap btn-last-wrap">
+                    <button type="button" class="btn" title="다음" disabled="disabled">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                </div>
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide01" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">약관동의</h1>
+                <button type="button" class="btn-download" title="$상품명$ 상품설명서 PDF파일 다운로드 하기"></button>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="modal-top-sticky">
+                    <div class="modal-sticky-cont">
+                        <p class="agree-name">$상품명$ 상품설명서</p>
+                        <p class="page"><b>1</b> / 8</p>
+                    </div>
+                </div>
+                <div class="agree-wrap" aria-label="$상품명$ 상품설명서 이미지 입니다. 자세한내용은 PDF파일 다운로드해서 확인해주세요.">
+                    <div class="agree-img-area">
+                        <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 1">
+                    </div>
+                    <div class="agree-img-area">
+                        <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 2">
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="modal-floating-area">
+                <button type="button" class="btn-end-agree" title="약관 맨 아래로 이동"></button>
+            </div>
+            <div class="btn-wrap">
+                <div class="toast-popup-wrap" aria-hidden="true">
+                    <div class="toast-popup">
+                        <p class="txt">필수동의서를 끝까지 읽어주세요.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn md btn-aggree" data-element="modal__close" title="동의하기" disabled="disabled">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+
+    <script>
+        
+        $(function(){
+            /* 입력폼에 자동 포커스 하기 : 유효성검사 후 호출해주세요.  hanaUI.formFocusEvent('포커스 하고 싶은 폼 index 숫자') */
+            hanaUI.formFocusEvent(0, true);
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalSlide01');
+
+        });
+
+    </script>
+</body>
+</html>

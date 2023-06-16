@@ -813,42 +813,23 @@
     <script type="text/javascript" src="../js/pualugin.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
     
-    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
-    <div id="modalSlide01" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide02" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title no-line">약관동의</h1>
-                <button type="button" class="btn-download" title="$상품명$ 상품설명서 PDF파일 다운로드 하기"></button>
+                <h1 class="title">상품 설명 이해안내</h1>
             </div>
             <div class="modal__contents">
-                <!-- 팝업 내용 -->
-                <div class="modal-top-sticky">
-                    <div class="modal-sticky-cont">
-                        <p class="agree-name">$상품명$ 상품설명서</p>
-                        <p class="page"><b>1</b> / 8</p>
-                    </div>
+                <div class="modal-text-wrap">
+                    <p class="text-bold">본인은 상품의 주요 내용에 대하여 충분히 이해하였습니까?</p>
+                    <ul class="star-list">
+                        <li>충분한 이해없이 확인했을 경우, 추후 소송이나 분쟁에서 불리하게 적용될 수 있습니다.</li>
+                    </ul>
                 </div>
-                <div class="agree-wrap" aria-label="$상품명$ 상품설명서 이미지 입니다. 자세한내용은 PDF파일 다운로드해서 확인해주세요.">
-                    <div class="agree-img-area">
-                        <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 1">
-                    </div>
-                    <div class="agree-img-area">
-                        <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 2">
-                    </div>
-                </div>
-                <!--// 팝업 내용 -->
-            </div>
-            <div class="modal-floating-area">
-                <button type="button" class="btn-end-agree" title="약관 맨 아래로 이동"></button>
             </div>
             <div class="btn-wrap">
-                <div class="toast-popup-wrap" aria-hidden="true">
-                    <div class="toast-popup">
-                        <p class="txt">필수동의서를 끝까지 읽어주세요.</p>
-                    </div>
-                </div>
-                <button type="button" class="btn md btn-aggree" data-element="modal__close" title="동의하기" disabled="disabled">동의하기</button>
+                <button type="button" class="btn md btn-aggree" data-element="modal__close" title="확인">확인</button>
             </div>
         </div>
     </div>
@@ -861,7 +842,7 @@
             // hanaUI.formFocusEvent(6);
 
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            modalOpen('modalSlide01');
+            modalOpen('modalSlide02');
         });
 
     </script>

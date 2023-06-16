@@ -1559,12 +1559,10 @@ function aggreeScroll(target) {
             var modalScrollTop = $(this).scrollTop();
             //마지막 컨텐츠
             if (modalScrollTop >= modalScrollLastNum) {
-                console.log('마지막');
                 modalBtn.removeAttr('disabled');
+                modalOpenId.find('.toast-popup-wrap').stop().fadeOut( 200, 'linear');
             }else{
-                console.log('마지막 아님');
                 modalBtn.attr('disabled');
-            
             }
         }
     });
