@@ -25,8 +25,8 @@
                 <div class="ste-progress step-header">
                     <div class="stepper" role="img" aria-label="5단계 중 2단계" tabindex="0">
                         <ul>
-                            <li class="stepper__step on">1</li>
-                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step on">2</li>
                             <li class="stepper__step">3</li>
                             <li class="stepper__step">4</li>
                             <li class="stepper__step">5</li>
@@ -48,9 +48,9 @@
                             <div class="form-item search-btn-wrap">
 								<div class="input-search-btn">
 									<div class="input-search__inner">
-										<div class="search-label">항목명</div>
-										<button type="button" class="button button-search__btn" title="주소검색 열기">
-											(검색 팝업 열기 전)HANA BANK
+										<div class="search-label">주소</div>
+										<button type="button" class="button button-search__btn form__move" data-element="modal__open" data-target="#modalSlideBtn" title="주소검색 열기">
+											
 										</button>
 										<button type="submit" class="btn-search" aria-label="검색">검색</button>
 									</div>
@@ -76,7 +76,7 @@
                                 <div class="form-item input">
                                     <div class="input__inner">
                                         <label for="inputText03" class="input__label" aria-hidden="true">이메일</label>
-                                        <input type="text" class="input__element form__move" id="inputText01" title="휴대폰번호 입력">
+                                        <input type="text" class="input__element form__move" id="inputText01" title="이메일 입력">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -91,7 +91,10 @@
             </div>
             <!-- footer -->
             <div class="app-footer">
-                <div class="btn-group-wrap btn-last-wrap">
+                <div class="btn-group-sub-wrap btn-next-wrap">
+                    <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
+                </div>
+                <div class="btn-group-wrap btn-last-wrap" style="display: none;">
                     <button type="button" class="btn" title="다음" disabled="disabled">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
                 </div>
             </div>

@@ -571,6 +571,11 @@ var hanaUI = {
                 // 폼 포커스
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+                if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
+                } else { 
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+                }
 
                 // 하위 인풋 여러개
                 // if(inputArr.eq(inputArrIndex).find('.form-item').length > 1){
