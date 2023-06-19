@@ -73,8 +73,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element:not(:readonly):focus ~ .input__label {color: #666; top: 1.0625rem; font-size: 0.8125rem; left: 0.875rem;}
 .input__element::-webkit-input-placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
 .input__element::placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
-.input--on .input__element::-webkit-input-placeholder {color: #d0d9d9;}
-.input--on .input__element::placeholder {color: #d0d9d9;}
+.input--on .input__element::-webkit-input-placeholder {color: #bbb;}
+.input--on .input__element::placeholder {color: #bbb;}
 .input__element--right {text-align: right; padding-right: 0;}
 .input__element--right ~ .input__optional {padding-left: 0.25rem; padding-top: 1.3125rem; line-height: 1.2;}
 .input__element--right.input__no-label + .input__optional {margin-top: 0.25rem;}

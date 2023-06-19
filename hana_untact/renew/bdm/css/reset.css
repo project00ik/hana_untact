@@ -83,6 +83,7 @@ a, a:hover, a:focus, a:active {color: inherit; font-weight: inherit; text-decora
 legend, hr {font-size:0; height:1px; left:-10000%; line-height:0; overflow:hidden; position:absolute; text-indent:-10000px; top:0; width:1px;}
 .blind, caption {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
 
+input::placeholder, textarea::placeholder {-webkit-text-fill-color: #bbb; -webkit-opacity: 1; color: #bbb;}
 input:disabled, textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder {-webkit-text-fill-color: #666; -webkit-opacity: 1; color: #666;}
 
 
