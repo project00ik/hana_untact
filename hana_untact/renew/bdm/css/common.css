@@ -2,6 +2,7 @@
 
 @import url(reset.css);
 @import url(slick.css);
+@import url(swiper.min.css);
 @import url(contents.css);
 @import url(contents_02.css);
 
@@ -116,9 +117,9 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .step-header .stepper {width: 100%; height: 3rem; padding: 0 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fbfcfc;}
 .stepper > ul {display: flex; align-items: center; justify-content: flex-end;}
 .stepper > ul > li + li {margin-left: 0.4rem}
-.step-header .stepper .stepper__step {width: 1rem; height: 1rem; display: inline-block; font-size: 0; background: #dddee4; border-radius: 50%; text-align: center; font-family: 'roboto';}
-.step-header .stepper .stepper__step:first-child,
-.step-header .stepper .stepper__step ~ .stepper__step.on {background: #262b45;}
+.step-header .stepper .stepper__step {width: 1rem; height: 1rem; display: inline-block; font-size: 0; background: #262b45; border-radius: 50%; text-align: center; font-family: 'roboto';}
+.step-header .stepper .stepper__step.on ~ .stepper__step {background: #dddee4;}
+/* .step-header .stepper .stepper__step:first-child {background: #262b45;} */
 .step-header .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; line-height: 1; padding: 0.3rem 0.5rem; background-color: #262b45; font-size: 1.1rem; color: #fff;}
 .scroll--up .step-header .stepper,
 .scroll--down .step-header .stepper {box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);}
@@ -221,6 +222,16 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tab-list.scroll {overflow-x: auto; display: inline-flex; width: 100%;}
 .tab-list.scroll::-webkit-scrollbar {display: none; width: 0; height: 0; background: transparent; -webkit-appearance: none;}
 .tab-list.scroll .tab {flex: none;}
+
+/* - 컨텐츠 : 탭 슬라이드형 (tab) */
+.tab-slide-wrap {width: 100%; margin: 0 -2.4rem;}
+.tab-slide-list {display: flex; position: relative; padding: 0 2.4rem;}
+.tab-slide-list::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #e7e9ee; }
+.tab-slide-list .tab {flex: 1; height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
+.tab-slide-list .tab span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
+.tab-slide-list .tab span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
+.tab-slide-list .tab.swiper-slide-thumb-active span {color: #262b45; background-color: #fff;}
+.tab-slide-list .tab.swiper-slide-thumb-active span:before {border-bottom: 2px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
 
 .tab-box-list {display: flex;}
 .tab-box-list .tab-box {flex: 1; text-align: center;}
