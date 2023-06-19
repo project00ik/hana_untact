@@ -46,10 +46,10 @@
                     <div class="cont-wrap cont-revers cont-form--animate">
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="input__wrap">
-                                <div class="form-item input">
+                                <div class="form-item input input--on">
                                     <div class="input__inner">
                                         <label for="inputText03" class="input__label" aria-hidden="true">자녀 휴대폰번호</label>
-                                        <input type="text" class="input__element form__move" id="inputText03" title="자녀 휴대폰번호 입력">
+                                        <input type="text" class="input__element form__move" id="inputText03" title="자녀 휴대폰번호 입력" value="010-1234-5678">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -60,12 +60,12 @@
                             <p class="input__guide-txt input__note">입력하신 휴대폰 번호로 자녀의 손님 정보가 등록됩니다.</p>
                         </div>
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="form-item search-btn-wrap">
+                            <div class="form-item search-btn-wrap search--active">
 								<div class="input-search-btn">
 									<div class="input-search__inner">
 										<div class="search-label">주소</div>
 										<button type="button" class="button button-search__btn form__move" data-element="modal__open" data-target="#modalSearch01" title="주소검색 열기">
-											
+											서울 강서구 국회대로 53
 										</button>
 										<button type="submit" class="btn-search" aria-label="검색">검색</button>
 									</div>
@@ -73,9 +73,9 @@
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
 							</div>
-                            <div class="form-item input">
+                            <div class="form-item input input--on">
 								<div class="input__inner">
-									<input type="text" id="inputText02" class="input__element" title="상세주소 입력폼" placeholder="">
+									<input type="text" id="inputText02" class="input__element" title="상세주소 입력폼" placeholder="" value="1004동 104호">
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
 								</div>
 								<!-- 에러 메시지 -->
@@ -88,10 +88,10 @@
                         
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="input__wrap">
-                                <div class="form-item input">
+                                <div class="form-item input input--on">
                                     <div class="input__inner">
                                         <label for="inputText03" class="input__label" aria-hidden="true">이메일</label>
-                                        <input type="text" class="input__element form__move" id="inputText01" title="이메일 입력">
+                                        <input type="text" class="input__element form__move" id="inputText01" title="이메일 입력" value="hana123@gmail.com">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -228,10 +228,10 @@
         
         $(function(){
             /* 입력폼에 자동 포커스 하기 : 유효성검사 후 호출해주세요.  hanaUI.formFocusEvent('포커스 하고 싶은 폼 index 숫자') */
-            hanaUI.formFocusEvent(1, true);
+            hanaUI.formFocusEvent(2, true);
 
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            modalOpen('modalSearch01');
+            // modalOpen('modalSearch01');
 
         });
 

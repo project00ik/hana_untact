@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>[Modal] KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <style>
+		/* guide*/
+		.guide-depth01 {padding: 2rem; font-size: 2rem; color: #171a1a; font-weight: 700;}        
+    </style>
+</head>
+<body>
+
+	<div class="guide-wrap" id="wrap">
+
+		<h1 class="guide-depth01">[Modal] KEB하나은행 - 비대면 계좌개설</h1>
+        <div class="content">
+            <div class="con-box">
+                <!-- Content Here -->
+                <h1 class="guide-depth01">Modal</h1>
+                <p style="padding: 0 2rem;">button 내 data-target="#modalAlert" 와 modal id="modalAlert" 동일하게 사용</p>
+            
+                
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlert01"
+                    >
+                        마케팅 이용동의
+                    </button>
+                </div>
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlert02"
+                    >
+                        마케팅 수신 동의 결과
+                    </button>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <!-- 모달레이어 - alert(마케팅 이용동의) -->
+    <div id="modalAlert01" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub txt-align-l">
+                    마케팅 이용동의{개인(신용)정보 수집 이용 및 제공동의(상품서비스 안내 등)} 항목을 모두 동의하지 않는 경우 우대금리가 적용되지 않습니다. 동의를 다시 선택 하시겠습니까?
+                </p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(마케팅 이용동의) -->
+
+    <!-- 모달레이어 - alert(마케팅 수신 동의 결과) -->
+    <div id="modalAlert02" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub txt-align-l">
+                    김하나님, 상품가입완료시<br>
+                    <span class="tp-green">하나은행</span><br>
+                    마케팅 수신 동의여부가 처리됩니다.<br>
+                    <br>
+                    *동의여부 : 수신동의<br>
+                    *처리일자 : 2023.05.10<br>
+                </p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="확인">아니오</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(마케팅 수신 동의 결과) -->
+
+	<script>
+        /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+        // modalOpen('modalAlertTitle');
+    </script>
+</body>
+</html>

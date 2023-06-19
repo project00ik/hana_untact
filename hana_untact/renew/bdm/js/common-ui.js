@@ -1535,20 +1535,6 @@ function slickSlideEvent(obj){
     }
 }
 
-// 모달 오픈 js
-function modalOpen(target) {
-    var modalBtn = target;
-    $('[data-target="#' + modalBtn + '"]').trigger('click');
-}
-// 모달 닫기 js
-function modalClose(target){
-    var modalClosetarget = $(target);
-    modalClosetarget.prop('checked', target.checked);
-    setTimeout(function(){
-        modalClosetarget.closest('.modal').find('[data-element=modal__close]').trigger('click');
-    }, 0)
-}
-
 // 약관 동의하기 버튼 스크롤 시 활성화 이벤트
 function aggreeScroll(target) { 
     var modalOpenId = target;
@@ -1577,4 +1563,19 @@ function aggreeScroll(target) {
         modalOpenId.find('.modal__contents').scrollTop(modalScrollLastNum);
     });
 }
+
+// 모달 오픈 js
+function modalOpen(target) {
+    var modalBtn = target;
+    $('[data-target="#' + modalBtn + '"]').trigger('click');
+}
+// 모달 닫기 js
+function modalClose(target){
+    var modalClosetarget = $(target);
+    modalClosetarget.prop('checked', target.checked);
+    setTimeout(function(){
+        modalClosetarget.closest('.modal').find('[data-element=modal__close]').trigger('click');
+    }, 0)
+}
+
 
