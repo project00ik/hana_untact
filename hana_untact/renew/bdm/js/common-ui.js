@@ -552,6 +552,15 @@ var hanaUI = {
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
         inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+        inputArr.eq(inputArrIndex).addClass('form--active');
+        
+        if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+        } else { 
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+        }
+        
 
         // 타이틀 show/hide
         if ($('.page-tit').hasClass('label__tit')) {
@@ -575,6 +584,7 @@ var hanaUI = {
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
                 if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
                 } else { 
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
                 }
@@ -592,11 +602,9 @@ var hanaUI = {
                 
                 // 타이틀 show/hide
                 if (!$('.page-tit').hasClass('label__tit')) {
-                    console.log('타이틀 없음');
                     return false;
         
                 } else { 
-                    console.log('타이틀 있음');
                     $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
                     $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
                     pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
