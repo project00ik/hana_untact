@@ -44,7 +44,7 @@
 
 						<div class="form-area">
                             <p class="list-title">입출금통장 이용한도 안내</p>
-                            <p class="list-text-sub">입출금통장 이용한도 안내</p>
+                            <p class="list-text-sub">금융사고 방지를 위해 한도가 제한됩니다.</p>
 
                             <!-- list-wrap type01 -->
                             <div class="list-wrap type01">
@@ -331,7 +331,7 @@
                     <li>
                         <div class="radio-list-wrap">
                             <input type="radio" name="radio03" id="radio03-01" title="근로및연금소득" onclick="modalClose(this);">
-                            <label for="radio03-01">근로및연금소득 /  /  /  /  /  /  /  /  </label>
+                            <label for="radio03-01">근로및연금소득</label>
                         </div>
                     </li>
                     <li>
@@ -366,12 +366,6 @@
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-07" title="금융소득(이자및배당)" onclick="modalClose(this);">
-                            <label for="radio03-07">금융소득(이자및배당)</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
                             <input type="radio" name="radio03" id="radio03-08" title="상속/증여" onclick="modalClose(this);">
                             <label for="radio03-08">상속/증여</label>
                         </div>
@@ -386,6 +380,46 @@
                         <div class="radio-list-wrap">
                             <input type="radio" name="radio03" id="radio03-10" title="기타" onclick="modalClose(this);">
                             <label for="radio03-10">기타</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+    
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 자산현황 선택 -->
+    <div id="modalSlideBtn04" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">자산현황</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-01" title="10억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-01">10억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-02" title="10억원~100억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-02">10억원~100억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-03" title="100억원~1,000억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-03">100억원~1,000억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-04" title="1,000억원 이상" onclick="modalClose(this);">
+                            <label for="radio04-04">1,000억원 이상</label>
                         </div>
                     </li>
                 </ul>
