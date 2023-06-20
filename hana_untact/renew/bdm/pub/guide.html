@@ -71,17 +71,20 @@
 
 		<div class="guide-ly">
 			<div class="guide-con">
-				<h2 class="guide-title">text</h2>
+				<h2 class="guide-title">text / 포인트 컬러</h2>
 				<div class="guide-scroll">
 					<div class="guide-box">
 						
+						<p class="guide-title-sub">text</p>
 						<p class="page-tit">타이틀(page-tit)</p>
 						<br>
-						<p class="guide-title-sub">서브타이틀</p>
 						<p class="page-tit-sub">서브타이틀(page-tit-sub)</p>
 						<br>
-						<p class="guide-title-sub">서브타이틀</p>
 						<p class="sub-tit">서브타이틀2(sub-tit)</p>
+
+						<br>
+						<p class="guide-title-sub">포인트 컬러</p>
+						<p class="tp-green">tp-green(#009591)</p>
 					</div>
 				</div>
 			</div>
@@ -984,22 +987,36 @@
 						</div>
 
 						<p class="guide-title-sub">토글 버튼 형</p>
-						<div class="chk-tg tg--area">
+						<div class="tg--area">
 							<div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
 								<button type="button" class="btn sm gray">토글버튼</button>
 							</div>
-							<div class="chk-tg-cont tg--layer">
+							<div class="tg--layer">
 								토글 내용	
 							</div>
 						</div>
 
 						<p class="guide-title-sub">토글 버튼 형(펼침예시)</p>
-						<div class="chk-tg tg--area">
+						<div class="tg--area">
 							<div class="tg-btn" role="button" title="닫기" aria-expanded="true" onclick="toggleLayer(this);">
 								<button type="button" class="btn sm gray">토글버튼</button>
 							</div>
-							<div class="chk-tg-cont tg--layer open" tabindex="0">
+							<div class="tg--layer open" tabindex="0">
 								토글 내용	
+							</div>
+						</div>
+						
+						<p class="guide-title-sub">토글 text 형</p>
+						<div class="tg-text tg--area">
+							<div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
+								<button type="button">한도제한 해제를 위해서는?</button>
+							</div>
+							<div class="tg-text-cont tg--layer">
+								<ul class="bul-bar-wrap">
+									<li>영업점에서 사전문의 후 증빙서류를 지참 하여 방문해 주세요.</li>
+									<li>이 계좌에 대출을 약정(실행)하시는 경우 한도가 자동으로 해제됩니다.</li>
+									<li>대출상품에 따라 다를 수 있으니, 자세한 사항은 고객센터(1599-2111)로 문의바랍니다.</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -1096,6 +1113,66 @@
 							</ul>
 						</div>
 						<!-- // accordion-list-wrap -->
+						
+					</div> 
+					<!-- // guide-box -->
+				</div>
+			</div>
+			<!-- // guide-con -->
+
+			<div class="guide-con">
+				<h2 class="guide-title">step</h2>
+				<div class="guide-scroll">
+					<div class="guide-box">	
+						<p class="guide-title-sub">step</p>						
+						<div class="ste-progress step-header">
+							<div class="stepper" role="img" aria-label="5단계 중 3단계" tabindex="0">
+								<ul>
+									<li class="stepper__step">1</li>
+									<li class="stepper__step">2</li>
+									<li class="stepper__step on">3</li>
+									<li class="stepper__step">4</li>
+									<li class="stepper__step">5</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div> 
+					<!-- // guide-box -->
+				</div>
+			</div>
+			<!-- // guide-con -->
+			
+			<div class="guide-con">
+				<h2 class="guide-title">List</h2>
+				<div class="guide-scroll">
+					<div class="guide-box">	
+						<p class="guide-title-sub">list-wrap.type01</p>
+
+						<!-- list-wrap type01 -->
+						<div class="list-wrap type01">
+							<dl>
+								<dt>영업점 출금/이체</dt>
+								<dd>100만원/일(합산)</dd>
+							</dl>
+							<dl>
+								<dt>ATM 출금/이체</dt>
+								<dd>100만원/일(각각)</dd>
+							</dl>
+							<dl>
+								<dt>전자금융이체</dt>
+								<dd>100만원/일</dd>
+							</dl>
+							<dl>
+								<dt>출금계좌</dt>
+								<dd>하나은행<br>123-123456-12345</dd>
+							</dl>
+							<dl>
+								<dt>현재적용금리<br>(우대금리포함)</dt>
+								<dd class="tp-green">3.75%<br>기본 3.75%</dd>
+							</dl>
+						</div>					
+						<!-- // list-wrap -->					
 						
 					</div> 
 					<!-- // guide-box -->
