@@ -554,9 +554,11 @@ var hanaUI = {
         inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
 
         // 타이틀 show/hide
-        $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
-        $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
-        pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+        if ($('.page-tit').hasClass('label__tit')) {
+            $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+            $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+            pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+        }
 
         function formNext() { // 계속 버튼
             inputArrIndex += 1;
@@ -589,9 +591,16 @@ var hanaUI = {
                 // }
                 
                 // 타이틀 show/hide
-                $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
-                $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
-                pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+                if (!$('.page-tit').hasClass('label__tit')) {
+                    console.log('타이틀 없음');
+                    return false;
+        
+                } else { 
+                    console.log('타이틀 있음');
+                    $('.label__tit').not(pageTitArr.eq(inputArrIndex).addClass('tit--active')).removeClass('tit--active');
+                    $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+                    pageTitArr.eq(inputArrIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+                }
 
                 // 마지막 폼에서 버튼교체(계속)
                 $('.btn-last-wrap').hide();
