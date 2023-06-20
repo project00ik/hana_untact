@@ -735,11 +735,10 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .btn-star {width: 2rem; height: 2rem; font-size: 0; display: inline-block; background: url(../images/icon/favorit.png) 0 0 no-repeat; background-size: 2rem auto;}
 .btn-star.on {background: url(../images/icon/favorit_active.png) 0 0 no-repeat;}
 
-.badge {height: 2rem; padding: 0.1rem 0.8rem; display: inline-block; font-size: 1.2rem; border-radius: 1rem; overflow: hidden;}
-.badge.type-value1 {background: #f7fafa; color: #5e6666;}
-.badge.type-value2 {background: #f2faf2; color: #00a5a0;}
-.badge.type-value3 {background: #f7fafa; color: #9ca6a6;}
-.badge.type-value4 {background: #faf7f8; color: #e53a4c;}
+.badge {height: 2rem; padding: 0.1rem 0.6rem; display: inline-block; font-size: 1.2rem; border-radius: 0.4rem; overflow: hidden;}
+.badge.type-value1 {background: #e3f6ff; color: #147eac;}
+.badge.type-value2 {background: #e6f6f6; color: #009591;}
+.badge.type-value3 {background: #eaedf6; color: #455896;}
 .badge.type-disabled {background: #666; color: #fff;}
 
 .badge-type02 {display: inline-block; padding: 0 1.2rem; height: 3rem; line-height: 3rem; font-size: 1.5rem; font-weight: 600; border-radius: 1.5rem 1.5rem;}
@@ -1046,3 +1045,15 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
     }
 }
 
+/* 상품선택 */
+.product-chk-list {}
+.product-chk-list > li {padding: 1.8rem 0 1.9rem; border-bottom: 0.1rem solid #e7e9ee;}
+.product-chk-list .flex-wrap {align-items: stretch;}
+.product-chk-list .btn-link-arrow {height: auto; flex: 0 0 1.6rem;}
+.list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
+.list-txt-area .txt {font-size: 1.4rem; color: #000; line-height: 1.2;}
+.product-join-wrap {}
+.product-join-list {border-top: 0.1rem solid #e7e9ee;}
+.product-join-list > li {padding: 1.4rem 0.4rem; border-bottom: 0.1rem solid #e7e9ee;}
+.product-join-list .badge {margin-bottom: 0.4rem;}
+.product-join-list .txt {font-size: 1.6rem; font-weight: 500; color: #000;}

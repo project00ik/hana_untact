@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">상품선택</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">상품을 체크한 후,<br>가입해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+                    
+                    <div class="cont-wrap">
+                        <!-- swiper -->
+                        <div class="product-slide-wrap">
+                            <div class="tab-slide-wrap tab--slide">
+                                <div thumbsSlider="swiperTabBtn" class="swiper tab-btn tab--slide_btn">
+                                    <div class="swiper-wrapper tab-slide-list">
+                                        <div class="swiper-slide tab">
+                                            <span>입출금통장</span>
+                                        </div>
+                                        <div class="swiper-slide tab">
+                                            <span>예금</span>
+                                        </div>
+                                        <div class="swiper-slide tab">
+                                            <span>적금</span>
+                                        </div>
+                                        <div class="swiper-slide tab">
+                                            <span>전자금융</span>
+                                        </div>
+                                        <div class="swiper-slide tab">
+                                            <span>외환</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-wrapper tab-slide-cont">
+                                    <div class="swiper-slide">
+                                        <!-- 탭 내용(입출금통장) -->
+                                        <ul class="product-chk-list">
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk01" title="머니박스 통장">
+                                                        <label for="productChk01">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">머니박스 통장</p>
+                                                                <p class="txt">
+                                                                    파킹, 소비, 챌린지 통장 쪼개기
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="머니박스 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk02" title="급여하나 통장">
+                                                        <label for="productChk02">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">급여하나 통장</p>
+                                                                <p class="txt">
+                                                                    급여이체 하나로~<br>
+                                                                    각종 금융수수료가 면제되는 급여 전용통장
+                                                                </p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="급여 하나통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk03" title="주거래하나 통장">
+                                                        <label for="productChk03">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">주거래하나 통장</p>
+                                                                <p class="txt">수수료를 아껴주는 똑똑한 우리집 생활비 통장~</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="주거래하나 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk04" title="하나플러스 통장">
+                                                        <label for="productChk04">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">하나플러스 통장</p>
+                                                                <p class="txt">우대 금리도 받고,<br>수수료는 무제한 면제되는 통장!</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="하나플러스 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk05" title="영하나플러스 통장">
+                                                        <label for="productChk05">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">영하나플러스 통장</p>
+                                                                <p class="txt">만 30세 이하 젊은 그대를 위한!</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="영하나플러스 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk06" title="연금 하나 통장">
+                                                        <label for="productChk06">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">연금 하나 통장</p>
+                                                                <p class="txt">국민연금, 기초(노령)연금 등 각종<br>연금손님에게 금리, 수수료 우대 통장</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="연금 하나 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk07" title="사업자 주거래 우대통장">
+                                                        <label for="productChk07">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">사업자 주거래 우대통장</p>
+                                                                <p class="txt">개인사업자만 누리는 크나큰 혜택</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="사업자 주거래 우대통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk1" id="productChk08" title="증권저축계좌">
+                                                        <label for="productChk08">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">증권저축계좌</p>
+                                                                <p class="txt">제휴증권사 계좌개설 및 연결가능 상품</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="증권저축계좌 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--// 탭 내용(입출금통장) -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- 탭 내용(예금) -->
+                                        <ul class="product-chk-list">
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk2_01" title="하나의 정기예금">
+                                                        <label for="productChk2_01">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">하나의 정기예금</p>
+                                                                <p class="txt">자유롭게 자금관리가 가능한 모바일 전용 정기예금</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="하나의 정기예금 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--// 탭 내용(예금) -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- 탭 내용(적금) -->
+                                        <ul class="product-chk-list">
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk3_01" title="하나 타이밍 적금">
+                                                        <label for="productChk3_01">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">하나 타이밍 적금</p>
+                                                                <p class="txt">지금은 저축할 타이밍!<br>타이밍 버튼을 눌러 재미있게 저축하는 상품</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="하나 타이밍 적금 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk3_02" title="급여하나 월복리적금">
+                                                        <label for="productChk3_02">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">급여하나 월복리적금</p>
+                                                                <p class="txt">급여실적 하나로~<br>이자에 이자가 붙는 급여이체손님 전용 월복리 적금</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="급여하나 월복리적금 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--// 탭 내용(적금) -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- 탭 내용(전자금융) -->
+                                        <ul class="product-chk-list">
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk4_01" title="개인뱅킹">
+                                                        <label for="productChk4_01">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">개인뱅킹</p>
+                                                                <p class="txt">개인용(인터넷/스마트폰/폰뱅킹)</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk4_02" title="기업뱅킹">
+                                                        <label for="productChk4_02">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">기업뱅킹</p>
+                                                                <p class="txt">개인사업자용(인터넷/스마트폰)</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--// 탭 내용(전자금융) -->
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <!-- 탭 내용(외환) -->
+                                        <ul class="product-chk-list">
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk5_01" title="글로벌페이전용통장(원화+외화)">
+                                                        <label for="productChk5_01">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">글로벌페이전용통장(원화+외화)</p>
+                                                                <p class="txt">글로벌페이카드 결제를 위한 전용통장</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="글로벌페이전용통장(원화+외화) 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk5_02" title="일달러 외화적금">
+                                                        <label for="productChk5_02">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">일달러 외화적금</p>
+                                                                <p class="txt">일달러로 시작하는 나의 달러자산, 나의 여행</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="일달러 외화적금 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox-wrap flex-wrap">
+                                                    <div class="flex-cont">
+                                                        <input type="checkbox" name="productChk2" id="productChk5_03" title="하나 밀리언달러">
+                                                        <label for="productChk5_03">
+                                                            <div class="list-txt-area">
+                                                                <p class="tit">하나 밀리언달러 통장</p>
+                                                                <p class="txt">제휴 증권사를 통한 해외주식 매매 및 <br>체크카드 외화결제를 하나의 통장으로</p>
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                    <button type="button" class="btn-link-arrow" title="하나 밀리언달러 통장 상세 페이지 팝업 열림"></button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <!--// 탭 내용(외환) -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--// swiper -->
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn" title="N 건 가입" data-element="modal__open" data-target="#modalAlertTitle">N 건 가입</button>
+                </div>
+            </div>
+        <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 상품선택 가입확인 팝업 -->
+    <div id="modalAlertTitle" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">아래 선택한 상품을<br>가입하시겠습니까?</p>
+                <div class="product-join-wrap">
+                    <ul class="product-join-list">
+                        <li>
+                            <span class="badge type-value1">예금</span>
+                            <p class="txt">하나의 정기예금</p>
+                        </li>
+                        <li>
+                            <span class="badge type-value2">적금</span>
+                            <p class="txt">급여하나 월복리 적금</p>
+                        </li>
+                        <li>
+                            <span class="badge type-value3">전자금융</span>
+                            <p class="txt">개인뱅킹</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="가입">가입</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 상품선택 가입확인 팝업 -->
+
+    <script>
+        
+        $(function(){
+            swiperTabSlide('product-slide-wrap', 5); // swiperTabSlide('슬라이드 이름', 탭 노출 갯수)
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalAlertTitle');
+            
+        })
+
+    </script>
+</body>
+</html>

@@ -224,14 +224,22 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tab-list.scroll .tab {flex: none;}
 
 /* - 컨텐츠 : 탭 슬라이드형 (tab) */
-.tab-slide-wrap {width: 100%; margin: 0 -2.4rem;}
-.tab-slide-list {display: flex; position: relative; padding: 0 2.4rem;}
-.tab-slide-list::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #e7e9ee; }
-.tab-slide-list .tab {flex: 1; height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
-.tab-slide-list .tab span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
-.tab-slide-list .tab span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
-.tab-slide-list .tab.swiper-slide-thumb-active span {color: #262b45; background-color: #fff;}
-.tab-slide-list .tab.swiper-slide-thumb-active span:before {border-bottom: 2px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
+.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem; overflow: hidden;}
+.tab-slide-wrap {width: 100%;}
+.tab-btn {position: relative;}
+.tab-btn::before {content: ''; width: calc(100% + 4.8rem); height: 1px; display: block; position: absolute; left: -2.4rem; bottom: 0; background: #e7e9ee; }
+.tab-slide-wrap .tab-slide-list {width: 100%; display: flex; align-items: stretch;}
+.tab-slide-wrap .tab-slide-list .tab-btn {width: 100%;}
+.tab-slide-wrap .tab-slide-list .tab {width: auto !important; height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
+.tab-slide-wrap .tab-slide-list .tab + .tab {margin-left: 0.8rem;}
+.tab-slide-wrap .tab-slide-list .tab span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
+.tab-slide-wrap .tab-slide-list .tab span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
+.tab-slide-wrap .tab-slide-list .tab.swiper-slide-thumb-active span {color: #262b45; background-color: #fff;}
+.tab-slide-wrap .tab-slide-list .tab.swiper-slide-thumb-active span:before {border-bottom: 2px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
+.tab-slide-wrap .tab-slide-cont {min-height: 40rem;}
+
+.flex-wrap {display: flex;}
+.flex-wrap .flex-cont {flex: 1;}
 
 .tab-box-list {display: flex;}
 .tab-box-list .tab-box {flex: 1; text-align: center;}
@@ -302,6 +310,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 /* - 컨텐츠 : 버튼 (button) 아이콘형 */ 
 .btn [class^="icon"] {padding-left: 2rem; font-weight: 600; vertical-align: top; line-height: 5.6rem;}
 
+.btn-link-arrow {width: 1.6rem; height: 1.6rem; display: inline-block; background: url(../images/icon/ico-system-arrow-right-m.png) 0 50% no-repeat; background-size: 1.6rem auto;}
 .icon_plus {background: url(../images/icon/add.png) 0 center no-repeat; background-size: 1.6rem 1.6rem;}
 .icon-plus-w {background: url(../images/icon/add_ffffff.png) center center no-repeat; background-size: 1.6rem 1.6rem;}
 .icon_upload {background: url(../images/icon/share.png) 0 center no-repeat; background-size: 2rem 2rem;}
@@ -607,10 +616,10 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.alert {top: 0; left: 0;}
 .popup-wrap.alert .modal__container {padding: 0 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom: calc(2.4rem + env(safe-area-inset-bottom)); top: 50%; right: 1.6rem; left: 1.6rem; -webkit-transform: translateY(-50%); transform: translateY(-50%); border-radius: 1.4rem;}
 .popup-wrap.alert .modal__contents {padding: 3rem 0;}
-.popup-wrap.alert .con-title {font-size: 1.8rem; color: #000; font-weight: 700; text-align: center;}
+.popup-wrap.alert .con-title {margin-bottom: 2.4rem; font-size: 1.8rem; color: #000; text-align: center; font-weight: 500;}
 .popup-wrap.alert .text-sub {text-align: center; line-height: 1.3;}
 .popup-wrap.alert .con-title + .text-sub {margin-top: 1.6rem;}
-.popup-wrap.alert.only-title .modal__contents {padding-top: 4.8rem;}
+.popup-wrap.alert.only-title .modal__contents {padding-top: 2.7rem;}
 .popup-wrap.alert .modal__header {border-bottom: 0.1rem solid #e5e5e5;}
 .popup-wrap.alert .modal__header .title {padding: 2rem 0; font-size: 1.8rem; color: #000; text-align: center; font-weight: 500;}
 .popup-wrap.alert .modal__header + .modal__contents {padding: 1.3rem 0 1.6rem; padding: 1.3rem 0 calc(1.6rem + constant(safe-area-inset-bottom)); padding: 1.3rem 0 calc(1.6rem + env(safe-area-inset-bottom));}
@@ -683,6 +692,7 @@ body.modal-open .app-footer {position: relative;}
 /* - 모달 팝업 : 텍스트 스타일 */
 .modal-text-wrap {padding-top: 3rem;}
 .modal-text-wrap .text-bold {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 500; color: #000; word-break: keep-all; word-wrap: break-word;}
+.modal-text-wrap .text-center {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 400; color: #333; word-break: keep-all; word-wrap: break-word; text-align: center;}
 
 /* - 모달 팝업 : 일자선택 */
 .modal-date-wrap {padding: 0 1.7rem 2.8rem;}

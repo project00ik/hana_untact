@@ -1587,4 +1587,20 @@ function modalClose(target){
     }, 0)
 }
 
+// 탭 슬라이드(swiper slide)
+function swiperTabSlide(target , num) { 
+    var slideTarget = '.'+ target;
+    var swiper = new Swiper(slideTarget + " .tab--slide_btn", {
+        spaceBetween: 0,
+        slidesPerView: num,
+        freeMode: false,
+    });
+    var swiperTabBtn = new Swiper(slideTarget + " .tab--slide", {
+        spaceBetween: 40,
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+}
+
 
