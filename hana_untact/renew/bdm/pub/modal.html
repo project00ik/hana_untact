@@ -57,6 +57,29 @@
                 </div>
                 <br>
 
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertTitle"
+                    >
+                        alert(타이틀 + 가운데 정렬)
+                    </button>
+                </div>
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertTitle2"
+                    >
+                        alert(타이틀 + 왼쪽 정렬)
+                    </button>
+                </div>
+                <br>
+
                 <!-- <div class="button-wrap">
                     <button
                         type="button"
@@ -155,14 +178,32 @@
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
                 <p class="con-title">title</p>
+                <p class="text-sub">제휴 증권사의 외화 증권계좌를<br>동시에 가입(연결) 하시겠습니까?</p>
+                
             </div>
             <div class="btn-group-wrap">
-                <button type="button" class="btn md gray" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
                 <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
             </div>
         </div>
     </div>
-    <!-- //모달레이어 - alert - only title -->
+    <!-- //모달레이어 - alert - title 있음 -->
+
+    <!-- 모달레이어 - alert - title 있음(왼쪽) -->
+    <div id="modalAlertTitle2" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">title</p>
+                <p class="text-sub  txt-align-l">제휴 증권사의 외화 증권계좌를<br>동시에 가입(연결) 하시겠습니까?</p>
+                
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert - title 있음(왼쪽) -->
     
     <!-- 모달레이어 - alert scroll -->
     <div id="modalAlertLong" class="modal popup-wrap alert" data-element="modal__element">
