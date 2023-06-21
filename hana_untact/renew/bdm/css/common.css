@@ -160,6 +160,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .cont-form--animate .form-area {display: none;}
 .cont-form--animate .form-area.form--active {display: block;}
 .cont-form--animate .form-area .tab-box-wrap .form-area {display: block;}
+.cont-form--animate .form-area .form-area {display: block;}
 
 /* 컨텐츠 상단 양쪽정렬 영역 */
 .cont-top-wrap {display: flex; align-items: center; justify-content: space-between;}
