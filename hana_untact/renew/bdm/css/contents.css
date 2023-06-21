@@ -27,11 +27,21 @@
 .bul-bar-wrap li::before {content: ''; display: block; width: 0.2rem; height: 0.1rem; background: #4b4b55; position: absolute; left: 0; top: 0.8rem;}
 .bul-bar-wrap li + li {margin-top: 0.8rem;}
 
-/* */
+/* info */
 .info-wrap {margin-top: 1.6rem;}
 .info-wrap + .page-tit-sub {margin-top: 4rem;}
 
-.form-area {display:  !important;}
+/* ik */
+.form-area > .form-area:first-child {margin-top: 0;}
+
+/* 주소검색 */
+.result-total-text,
+.result-total-text * {font-size: 1.4rem; color: #333;}
+.result-total-text + .address-list {margin-top: 1.7rem;}
+
+
+
+
 
 
 
