@@ -643,7 +643,7 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.modal--slide .modal__header .title {height: 5.8rem; padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5;}
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
-.popup-wrap.modal--slide.modal-full .modal__container {height: 80%; max-height: 85%;}
+.popup-wrap.modal--slide.modal-full .modal__container {height: 85%; max-height: 85%;}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
 .popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
