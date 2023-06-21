@@ -157,6 +157,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 /* --- 컨텐츠 (contents) --- */
 .page-tit-wrap .label__tit {display: none;}
 .page-tit-wrap .label__tit.tit--active {display: block;}
+
 .cont-form--animate .form-area {display: none;}
 .cont-form--animate .form-area.form--active {display: block;}
 .cont-form--animate .form-area .tab-box-wrap .form-area {display: block;}
@@ -170,6 +171,10 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .form-area .select--active .select-label .btn-tooltip,
 .form-area .input--on .input__label .btn-tooltip,
 .form-area .input--focus .input__label .btn-tooltip {display: inline-block;}
+
+
+.cont-form--animate .form-hide-wrap .form-area {display: block;}
+.formHide {display:none !important;}
 
 /* 컨텐츠 상단 양쪽정렬 영역 */
 .cont-top-wrap {display: flex; align-items: center; justify-content: space-between;}
@@ -923,4 +928,3 @@ body.modal-open .app-footer {position: relative;}
 .phone-agree-wrap {padding-top: 3rem;}
 .phone-agree-wrap .inner-box {padding-bottom: 2rem;}
 
-.formHide {display:none !important;}

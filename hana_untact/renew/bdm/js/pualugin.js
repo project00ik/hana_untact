@@ -1811,9 +1811,18 @@
 
 				plugin.$open.on('click.' + plugin._name, function(e) {
           e.preventDefault();
-
           var $this = $(this);
-          plugin.open( $this.data('target') );
+          // plugin.open($this.data('target'));
+
+          // 모달 오픈 버튼이 인풋 체크박스/라디오 일 때
+          if ($this.hasClass('modal-btn__chk')) {
+            plugin.open($this.data('target'));
+            setTimeout(function () { 
+              $this.prop('checked', true);
+            } ,100);
+          } else { 
+            plugin.open($this.data('target'));
+          }
           
 				})
         
