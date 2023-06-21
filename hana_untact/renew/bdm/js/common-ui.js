@@ -554,11 +554,19 @@ var hanaUI = {
         inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
         inputArr.eq(inputArrIndex).addClass('form--active');
         
+        // 셀렉트 포커스
         if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
             inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
             inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
         } else { 
             inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+        }
+        // 주소검색 포커스
+        if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-search__btn')) {
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').addClass('search--on');
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+        } else { 
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').removeClass('search--on');
         }
         
 
@@ -582,11 +590,19 @@ var hanaUI = {
                 // 폼 포커스
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+                // 셀렉트 포커스
                 if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
                 } else { 
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+                }
+                // 주소검색 포커스
+                if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-search__btn')) {
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').addClass('search--on');
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+                } else { 
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').removeClass('search--on');
                 }
 
                 // 하위 인풋 여러개
