@@ -121,6 +121,18 @@
                         type="button"
                         class="btn"
                         data-element="modal__open"
+                        data-target="#modalSlideLink"
+                    >
+                        slide(링크형 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
                         data-target="#modalSlideNoLine"
                     >
                         slide(타이틀 라인 없는 형 예시)
@@ -230,7 +242,7 @@
                 <h1 class="title">슬라이드 팝업 제목</h1>
             </div>
             <div class="modal__contents">
-                <ul class="modal-slide-list">
+                <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
                             <input type="radio" name="radio" id="radio01" title="">
@@ -266,7 +278,7 @@
                 <h1 class="title">슬라이드 팝업 제목</h1>
             </div>
             <div class="modal__contents btn-none">                        
-                <ul class="modal-slide-list">
+                <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
                             <input type="radio" name="radio02" id="radio04" title="" onclick="modalClose(this);">
@@ -291,6 +303,25 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드 링크형 -->
+    <div id="modalSlideLink" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 링크형 -->
 
     <!-- 모달레이어 - 슬라이드(title no-line) -->
     <div id="modalSlideNoLine" class="modal popup-wrap modal--slide" data-element="modal__element">

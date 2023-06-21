@@ -631,8 +631,6 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.modal--slide .modal__container { right: 0; left: 0; border-radius: 2.4rem 2.4rem 0 0; padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents {padding: 0 2.4rem; padding-bottom: 9.2rem; padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom)); max-height: calc(100vh - 12rem); overflow-y: auto; overflow-x: hidden;}
 .popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
-.popup-wrap.modal--slide .modal-select-list {padding-bottom: 1.8rem;}
-.popup-wrap.modal--slide .modal-select-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll {min-height: 0; max-height: none; overflow: visible;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .tab-list-wrap .tab-con {max-height: calc(60vh - 4.8rem); overflow-x: hidden; overflow-y: auto;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con {padding: 1.6rem 2rem;}
@@ -648,9 +646,9 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.modal--slide.modal-full .modal__container {height: calc(100vh - 6rem);}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
-.popup-wrap.modal--slide .btn-none .modal-slide-list {padding-bottom: 1.8rem;}
-.popup-wrap.modal--slide .modal-slide-list > li {border-bottom: 0.1rem solid #e7e9ee;}
-.popup-wrap.modal--slide .modal-slide-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
+.popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
+.popup-wrap.modal--slide .modal-select-list > li {border-bottom: 0.1rem solid #e7e9ee;}
+.popup-wrap.modal--slide .modal-select-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
 
 /* 토스트 팝업 */
 .popup-wrap .toast-popup-wrap {
