@@ -135,45 +135,47 @@
                             * 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
                             * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
                         -->
-                        
-                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="input__wrap">
-                                <div class="form-item input input--on">
-                                    <div class="input__inner">
-                                        <label for="inputText06" class="input__label" aria-hidden="true">업태</label>
-                                        <input type="text" class="input__element form__move" id="inputText06" title="업태 입력" value="서비스">
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                        <div class="form-hide-wrap formHide">
+
+                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                <div class="input__wrap">
+                                    <div class="form-item input input--on">
+                                        <div class="input__inner">
+                                            <label for="inputText06" class="input__label" aria-hidden="true">업태</label>
+                                            <input type="text" class="input__element form__move" id="inputText06" title="업태 입력" value="서비스">
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error">에러메세지</p>
                             </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
-                        </div>
-                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="input__wrap">
-                                <div class="form-item input input--on">
-                                    <div class="input__inner">
-                                        <label for="inputText05" class="input__label" aria-hidden="true">개업연월일</label>
-                                        <input type="text" class="input__element form__move" id="inputText05" title="개업연월일 입력" value="2019.01.01">
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                <div class="input__wrap">
+                                    <div class="form-item input input--on">
+                                        <div class="input__inner">
+                                            <label for="inputText05" class="input__label" aria-hidden="true">개업연월일</label>
+                                            <input type="text" class="input__element form__move" id="inputText05" title="개업연월일 입력" value="2019.01.01">
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error">에러메세지</p>
                             </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
-                        </div>
-                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="input__wrap">
-                                <div class="form-item input input--on">
-                                    <div class="input__inner">
-                                        <label for="inputText04" class="input__label" aria-hidden="true">업체명</label>
-                                        <input type="text" class="input__element form__move" id="inputText04" title="업체명 입력" value="하나상회">
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                <div class="input__wrap">
+                                    <div class="form-item input input--on">
+                                        <div class="input__inner">
+                                            <label for="inputText04" class="input__label" aria-hidden="true">업체명</label>
+                                            <input type="text" class="input__element form__move" id="inputText04" title="업체명 입력" value="하나상회">
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        </div>
                                     </div>
                                 </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error">에러메세지</p>
                             </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
                         </div>
 						<div class="form-area">
                             <div class="form-area">
@@ -183,7 +185,7 @@
                                             <label for="inputText_test02" class="input__label" aria-hidden="true">사업자번호</label>
                                             <input type="number" class="input__element form__move" id="inputText_test02" title="사업자번호 입력" value="">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                            <button type="button" class="btn gray sm" title="조회">조회</button>
+                                            <button type="button" class="btn gray sm" title="조회" onclick="formShow()">조회</button>
                                         </div>
                                     </div>
                                     <!-- disabled
@@ -483,7 +485,13 @@
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
             hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
-        })
+
+        });
+
+        // 조회버튼 클릭 시 form 보이는 예시
+        function formShow(){
+            $('.form-hide-wrap').removeClass('formHide');
+        }
 
     </script>
 
