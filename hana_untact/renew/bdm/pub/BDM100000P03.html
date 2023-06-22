@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <!-- <button class="btn-back" title="이전 화면"></button> -->
+            <!-- <p class="page-tit">본인인증</p> -->
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit label__tit last__tit" aria-hidden="true">입력한 정보를<br>확인해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">휴대폰번호를<br>입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">통신사를<br>선택해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">주민등록번호를<br>입력해주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">본인 확인을 할게요<br>이름을 입력해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap cont-revers cont-form--animate">
+                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <div class="input__wrap">
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <label for="inputText03" class="input__label" aria-hidden="true">휴대폰번호</label>
+                                        <input type="text" class="input__element form__move" id="inputText03" title="휴대폰번호 입력">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        <!-- select -->
+						<div class="form-area">
+							<div class="form-item select-wrap">
+								<div class="select">
+                                    <div class="select-label">통신사</div>
+									<div class="select__inner">
+										<button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideSelect" title="통신사 선택">
+											<span>SKT</span> 
+										</button>
+									</div>
+								</div>
+								<p class="input__error" aria-live="assertive">오류메세지 노출</p>
+							</div>
+						</div>
+						<!--// select -->
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <label for="inputText02" class="input__label" aria-hidden="true">주민등록번호</label>
+                                        <input type="text" class="input__element form__move" id="inputText02" title="주민등록번호 앞자리 입력">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                                <span class="bar"></span>
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <input type="text" class="input__element w12 form__move" title="주민등록번호 뒷자리 앞 한자리 수 입력">
+                                        <div class="pass-dot-wrap">
+                                            <span class="pass-dot"></span>
+                                            <span class="pass-dot"></span>
+                                            <span class="pass-dot"></span>
+                                            <span class="pass-dot"></span>
+                                            <span class="pass-dot"></span>
+                                            <span class="pass-dot"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">주민번호 앞자리는 6자리로 입력해주세요</p>
+                            <!-- 가이드 텍스트 -->
+                            <p class="input__guide-txt input__note">가이드 텍스트</p>
+                        </div>
+                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <div class="input__wrap">
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <label for="inputText01" class="input__label" aria-hidden="true">이름</label>
+                                        <input type="text" class="input__element form__move" id="inputText01" title="이름 입력">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <!-- 가이드 텍스트 -->
+                            <!-- <p class="input__guide-txt input__note">가이드 텍스트</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-sub-wrap btn-next-wrap">
+                    <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
+                </div>
+                <div class="btn-group-sub-wrap btn-last-wrap" style="display: none">
+                    <button type="button" class="btn rd" data-element="modal__open" data-target="#modalSlide01" title="본인 인증 동의 팝업열기">계속</button><!-- D: 비활성화 일 때 : disabled -->
+                </div> 
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div> 
+	<!-- 공통 script -->
+	<script src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <div id="modalSlideSelect" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">통신사</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio01" title="" onclick="modalClose(this);">
+                            <label for="radio01">SKT</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio02" title="" onclick="modalClose(this);">
+                            <label for="radio02">KT</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio03" title="" onclick="modalClose(this);">
+                            <label for="radio03">LG U+</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio04" title="" onclick="modalClose(this);">
+                            <label for="radio04">SKT(알뜰폰)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio05" title="" onclick="modalClose(this);">
+                            <label for="radio05">KT(알뜰폰)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio06" title="" onclick="modalClose(this);">
+                            <label for="radio06">LG U+(알뜰폰)</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">본인 인증하려면 동의가 필요해요</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="privacy-wrap">
+                    <div class="privacy-area chk-all-area">
+                        <div class="item-privacy">
+                            <div class="privacy__label">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" class="chk-all" name="privacy_checkbox00" id="privacy_checkbox00" title="휴대폰 인증 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                    <label for="privacy_checkbox00">휴대폰 인증 이용약관 동의</label>
+                                </div>
+                            </div>
+                            <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlide02" title="휴대폰 인증 이용약관 동의 상세보기">상세보기</button>
+                        </div>
+                        <!-- 서브목록 -->
+                        <div class="item-sublist">
+                            <div class="item-sublist__inner">
+                                <!-- 목록 -->
+                                <div class="item-privacy">
+                                    <div class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_1" title="개인정보 수집 &middot; 이용 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_1">개인정보 수집 &middot; 이용 동의</label>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlide02_1" title="개인정보 수집&middot;이용 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_2" title="고객식별정보 처리 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_2">고객식별정보 처리 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlide02_2" title="고객식별정보 처리 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_3" title="통신사 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_3">통신사 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlide02_3" title="통신사 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_4" title="서비스 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_4">서비스 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlide02_4" title="서비스 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="본인 인증">본인 인증</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide02" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="phone-agree-wrap">
+                    <p class="page-tit-sub">개인정보 수집 &middot; 이용 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                    <p class="page-tit-sub">고유식별정보 처리 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                    <p class="page-tit-sub">통신사 이용 약관 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                    <p class="page-tit-sub">서비스 이용약관 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide02_1" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="phone-agree-wrap">
+                    <p class="page-tit-sub">개인정보 수집 &middot; 이용 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 개인정보 수집 &middot; 이용 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide02_2" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="phone-agree-wrap">
+                    <p class="page-tit-sub">고유식별정보 처리 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 고유식별정보 처리 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide02_3" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="phone-agree-wrap">
+                    <p class="page-tit-sub">통신사 이용 약관 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 통신사 이용 약관 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide02_4" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="phone-agree-wrap">
+                    <p class="page-tit-sub">서비스 이용약관 동의</p>
+                    <div class="phone-agree">
+                        <p class="sub-tit">[SKT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="SKT 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[KT]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="KT 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                        <p class="sub-tit">[LG U+]</p>
+                        <div class="inner-box">
+                            <iframe src="" frameborder="0" title="LG U+ 서비스 이용약관 동의 외부링크"></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용)
+            hanaUI.formFocusEvent(3, true); // hanaUI.formFocusEvent(index, true);
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalSlide02_1');
+
+        });
+
+    </script>
+</body>
+</html>
