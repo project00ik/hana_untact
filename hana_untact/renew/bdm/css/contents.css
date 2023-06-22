@@ -26,8 +26,18 @@
 .input__inner .input-tooltip-wrap .tooltip-con {right: 0 !important;}
 
 .tooltip-label.select-label {width: 100%;}
-.tooltip-label.select-label .btn-open {margin-top: 0.1rem;}
+.tooltip-label.select-label .tooltip {opacity: 0;}
+.tooltip-label.select-label .tooltip-title {font-size: 1.8rem; font-weight: 700; color: #bbb;}
 .tooltip-label.select-label .tooltip .tooltip-con {top: 6rem;}
+.tooltip-label.select-label .btn-open {margin-top: 0.1rem;}
+
+.select-wrap.select--on .tooltip-label.select-label .tooltip,
+.select-wrap.select--active .tooltip-label.select-label .tooltip {opacity: 1;}
+.select-wrap .select .tooltip-label.select-label {z-index: 0;}
+.select-wrap.select--on .select .tooltip-label.select-label,
+.select-wrap.select--active .select .tooltip-label.select-label {z-index: 3;}
+.select-wrap.select--on .tooltip-label.select-label .tooltip-title,
+.select-wrap.select--active .tooltip-label.select-label .tooltip-title {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 
 
 
