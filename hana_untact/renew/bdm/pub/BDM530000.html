@@ -71,11 +71,11 @@
                             </div>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck01" title="신청안함" checked="checked">
+                                    <input type="radio" name="radio-02" id="radio-ck02_1" title="신청안함" checked="checked">
                                     <label for="radio-ck01">신청함</label>
                                 </div>
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlidefull">
+                                    <input type="radio" name="radio-02" id="radio-ck02_02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlidefull">
                                     <label for="radio-ck02">신청안함</label>
                                 </div>
                             </div>
@@ -203,11 +203,11 @@
                             <p class="page-tit-sub">체크카드를 신청하시겠습니까?</p>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck01" title="신청안함" checked="checked">
+                                    <input type="radio" name="radio-01" id="radio-ck01" title="신청안함" checked="checked">
                                     <label for="radio-ck01">신청안함</label>
                                 </div>
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlide01">
+                                    <input type="radio" name="radio-01" id="radio-ck02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlide01">
                                     <label for="radio-ck02">신청함</label>
                                 </div>
                             </div>
@@ -421,13 +421,13 @@
                 <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formShow('form-hide-wrap')">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formShowEvent('form-hide-wrap')">
                             <label for="radioSelect03_1">기업 뱅킹</label>
                         </div>
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this);">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formHideEvent('form-hide-wrap')">
                             <label for="radioSelect03_2">추가 안 함</label>
                         </div>
                     </li>
@@ -452,7 +452,7 @@
                 <!--// 팝업 내용 -->
             </div>
             <div class="btn-wrap">
-                <button type="button" class="btn md" data-element="modal__close" title="신청" onclick="formShow('form-hide-wrap2')">신청</button>
+                <button type="button" class="btn md" data-element="modal__close" title="신청" onclick="formShowEvent('form-hide-wrap2')">신청</button>
             </div>
         </div>
     </div>
@@ -466,7 +466,7 @@
             // modalOpen('modalSelect02');
             // 조회버튼 클릭 시 form 보이는 예시
         });
-        function formShow(target){
+        function formShowEvent(target){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
         }
