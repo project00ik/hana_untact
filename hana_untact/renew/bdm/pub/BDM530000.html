@@ -421,7 +421,7 @@
                 <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formShowEvent('form-hide-wrap')">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formShowEvent('form-hide-wrap', 0)">
                             <label for="radioSelect03_1">기업 뱅킹</label>
                         </div>
                     </li>
@@ -530,13 +530,14 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
+            hanaUI.formFocusEvent(6, true); // hanaUI.formFocusEvent(index, true);  
         });
         // form-area show / hide 예시
-        function formShowEvent(target){
+        function formShowEvent(target, num){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
             formTarget.addClass('form--active');
+            formTarget.find('.form__move').eq(num).trigger('focus').css('background','red');
             // formTarget.find('.form__move').focus();
         }
         function formHideEvent(target){
