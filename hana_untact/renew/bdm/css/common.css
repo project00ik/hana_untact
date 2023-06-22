@@ -50,6 +50,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .pdb-none {padding-bottom: 0 !important;}
 .pdt32 {padding-top: 3.2rem !important;}
 .pt24 {padding-top: 3.2rem !important;}
+.pb12 {padding-bottom: 1.2rem !important;}
 
 /* - 텍스트 : 간격 margin reset */
 .mg-none {margin: 0 !important;}
