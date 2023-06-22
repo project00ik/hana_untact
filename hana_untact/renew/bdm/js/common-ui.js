@@ -1470,10 +1470,10 @@ function nowScrollReturn(){
 // 토글 레이어
 function toggleLayer(obj) {
     var toggleBtn = $(obj);
-    var tgBtn = toggleBtn.closest('.tg--area').find('.tg-btn');
-    var tgChkBtn = toggleBtn.closest('.tg--area').find('.chk-tg-btn');
-    var tgly = toggleBtn.closest('.tg--area').find('.tg--layer');
-    
+    var tgBtn = toggleBtn.closest('.tg--area').find('>.tg-btn');
+    var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
+    var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
+
     // 탭 처럼 쓰일 때
     if ($('.tg--area').parents().hasClass('tg--wrap')) {
         var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');;
@@ -1508,7 +1508,6 @@ function toggleLayer(obj) {
     } else { 
         tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
-            $('.tg--layer').removeClass('open');
             tgly.addClass('open');
             tgly.attr('tabindex', '0');
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
