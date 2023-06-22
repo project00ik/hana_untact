@@ -1,7 +1,35 @@
 @charset "UTF-8";
 
-/* list-wrap */
+/* info */
+.info-wrap {margin-top: 1.6rem;}
+.info-wrap + .page-tit-sub {margin-top: 4rem;}
 
+/* 예금 */
+.account-num-wrap {display: flex; align-items: center;}
+
+/* common */
+
+/* - 컨텐츠 : 툴팁 (Tooltip) */
+.tooltip-wrap {position: relative; display: flex; align-items: center;}
+.tooltip-title {font-size: 1.4rem; color: #333; font-weight: 600;}
+.tooltip {position: static; margin-left: 0.4rem;}
+.tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
+.tooltip .tooltip-con {display: none; position: absolute; top: 6rem; left: auto; z-index: 10; width: 100%; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
+.tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666; font-weight: 300;}
+.tooltip .tooltip-con .inbox .title {font-size: 1.4rem; font-weight: 600;}
+.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.4rem;}
+.tooltip .tooltip-con .inbox .title + .text {margin-top: 1rem;}
+.tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.6rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
+
+.input__inner .input-tooltip-wrap {position: absolute; right: 0; top: 0; z-index: 10; width: 100%;}
+.input__inner .input-tooltip-wrap .tooltip-wrap {justify-content: flex-end;}
+.input__inner .input-tooltip-wrap .tooltip-con {right: 0 !important;}
+
+.tooltip-label.select-label {width: 100%;}
+.tooltip-label.select-label .btn-open {margin-top: 0.1rem;}
+
+
+/* List */
 .list-wrap {padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
 
 /* type01 */
@@ -14,30 +42,34 @@
 .list-text-sub {margin-top: 1rem; font-size: 1.4rem;}
 .list-text-sub + .list-wrap.type01 {margin-top: 1.6rem;}
 
+/* type02 */
+.list-line-wrap li {padding: 1.9rem 0; border-bottom: 1px solid #e7e9ee;}
+.list-line-wrap .title {color: #333; font-weight: 500;}
+.list-line-wrap .text {margin-top: 0.4rem; color: #666;}
 
 /* toggle */
 .tg-text .tg-btn button {font-size: 1.4rem; color: #333; padding-right: 2rem; background: url(../images/icon/ico-system-arrow-down.png) 100% 50% no-repeat; background-size: 1.6rem 1.6rem;}
 .tg-text .tg-btn.tg--on button {background: url(../images/icon/ico-system-arrow-up.png) 100% 50% no-repeat; background-size: 1.6rem 1.6rem;}
 .tg-text-cont {margin-top: 1rem;}
 
-
-
 /* bullet */
 .bul-bar-wrap li {padding-left: 0.6rem; position: relative; font-size: 1.4rem; color: #333; font-weight: 300;}
 .bul-bar-wrap li::before {content: ''; display: block; width: 0.2rem; height: 0.1rem; background: #4b4b55; position: absolute; left: 0; top: 0.8rem;}
 .bul-bar-wrap li + li {margin-top: 0.8rem;}
 
-/* info */
-.info-wrap {margin-top: 1.6rem;}
-.info-wrap + .page-tit-sub {margin-top: 4rem;}
-
-/* ik */
-.form-area > .form-area:first-child {margin-top: 0;}
-
 /* 주소검색 */
 .result-total-text,
 .result-total-text * {font-size: 1.4rem; color: #333;}
 .result-total-text + .address-list {margin-top: 1.7rem;}
+
+
+/* popup - date */
+.btn-date-wrap {margin-top: 1rem;}
+
+/* ik */
+.form-area > .form-area:first-child {margin-top: 0;}
+.form-area .btn-group-flex .btn + .btn {margin-left: 0.8rem !important;} /* important 삭제*/
+
 
 
 
