@@ -221,8 +221,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input__wrap .input + .input {margin-top: 0; margin-left: 1.6rem;}
 .input__calendar-button {width: 2rem; height: 2rem; min-width: 2rem; max-width: 2rem; margin:1.1rem 0 0 1.6rem; background: url(../images/icon/calendar.png) 50% 50% no-repeat; background-size: 100% auto;}
-.input__wrap .input .input__inner .input__element {font-size: 1.8rem; line-height: 1.5;}
+.input__wrap .input .input__inner .input__element {font-size: 1.8rem; line-height: 1.5; opacity: 0;}
 .input__wrap .input .input__inner .input__element.w12 {width: 1.2rem; flex: none;}
+.input__wrap .input.input--on .input__inner .input__element,
+.input__wrap .input.input--focus .input__inner .input__element {opacity: 1;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 
