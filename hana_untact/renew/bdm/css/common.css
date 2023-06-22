@@ -195,21 +195,6 @@ i.icon-country-cad {background-image: url(../images/country/flag-canada.png);}
 i.icon-country-usa {background-image: url(../images/country/flag-usa.png);}
 i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
-/* - 컨텐츠 : 툴팁 (Tooltip) */
-.tooltip-wrap {position: relative; display: flex; align-items: center;}
-.tooltip-title {font-size: 1.4rem; color: #333; font-weight: 600;}
-.tooltip {position: static; margin-left: 0.4rem;}
-.tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
-.tooltip .tooltip-con {display: none; position: absolute; top: 2.3rem; left: auto; z-index: 10; max-width: 33.5rem; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
-.tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666;}
-.tooltip .tooltip-con .inbox .title {font-size: 1.4rem; font-weight: 600;}
-.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.4rem;}
-.tooltip .tooltip-con .inbox .title + .text {margin-top: 1rem;}
-.tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.6rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
-
-.input__inner .input-tooltip-wrap {position: absolute; right: 0; top: 0; z-index: 10; width: 100%;}
-.input__inner .input-tooltip-wrap .tooltip-wrap {justify-content: flex-end;}
-.input__inner .input-tooltip-wrap .tooltip-con {right: 0 !important;}
 
 /* - 컨텐츠 : 카드타입 안 토글(설정) */
 .set-area {width: 2rem; height: 2rem; position: static; display: inline-block; vertical-align: top;}
