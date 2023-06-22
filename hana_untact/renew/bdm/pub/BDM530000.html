@@ -530,15 +530,17 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(6, true); // hanaUI.formFocusEvent(index, true);  
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
         });
         // form-area show / hide 예시
         function formShowEvent(target, num){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
             formTarget.addClass('form--active');
-            formTarget.find('.form__move').eq(num).trigger('focus').css('background','red');
-            // formTarget.find('.form__move').focus();
+            setTimeout(function(){
+                formTarget.find('.form__move').eq(num).focus().css('background','red');
+            }, 100)
+            
         }
         function formHideEvent(target){
             var formTarget = $('.'+ target);
