@@ -57,6 +57,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input--on + .bar {display: block;}
 .input.input--focus + .bar + .input,
 .input.input--on + .bar + .input {display: block;}
+.pass-dot-wrap {height: 5.7rem; display: inline-flex; padding: 2.8rem 0 0.4rem 0.4rem; align-items: center;}
+.pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #666;}
 .input .pass-dot-wrap {height: 5.7rem; display: flex; padding: 2.8rem 0 0.4rem 0.4rem; align-items: center;}
 .input .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
 .input .btn-minus,
