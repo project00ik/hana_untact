@@ -764,27 +764,29 @@ body.modal-open .app-footer {position: relative;}
 /* .select-wrap.select--error .select::before {border-color: #e31e5a;} */
 .select-wrap.select--on .select::after {transform: rotate(-180deg);}
 .select-wrap .select .select__inner {width: 100%; position: relative; display: flex; align-items: center;}
-.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #009591; text-align: left; position: relative; z-index: 1; opacity: 0;}
+.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #bbb; text-align: left; position: relative; z-index: 1; opacity: 0;}
 .select-wrap .select .button-select__item span {max-width: 100%; display: inline-block; line-height: 1.2; vertical-align: top; font-size: 1.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .select-wrap .select .button-select__item span a {font-size: inherit;}
+.select-wrap.btn-date .select::after {display: none;}
+.select-wrap.btn-date .select .button-select__item {padding: 2.8rem 0 0.4rem;}
 .form-flex-wrap .select-wrap .select .button-select__item span {vertical-align: bottom;}
-.select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left: 0; top: 4rem; z-index: 3; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
+.select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left: 0; top: 4rem; z-index: 0; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
 .select-wrap i[class^="icon-country"] {display: none; width: 2.4rem; height: 2.4rem; margin-right: 0.8rem;}
 .select-wrap.select--on .select-label,
 .select-wrap.select--error .select-label,
 .select-wrap.select--disabled .select-label,
-.select-wrap.select--active .select-label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
+.select-wrap.select--active .select-label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem; z-index: 2;}
 .select-wrap.select--disabled .select .button-select__item,
-.select-wrap.select--active .select .button-select__item {opacity: 1;}
+.select-wrap.select--active .select .button-select__item {opacity: 1; color: #009591;}
 .select-wrap.select--disabled .select .button-select__item i[class^="icon-country"],
 .select-wrap.select--active .select .button-select__item i[class^="icon-country"] {display: inline-block;}
 .select-wrap.select--disabled .select .button-select__item,
 .select-wrap.select--disabled.select--no-label .select .button-select__item{color: #666; cursor: default;}
 .select-wrap.select--disabled .select::after {opacity: 0.3;}
 .select-wrap.select--no-label .select .button-select__item {opacity: 1;}
-.select-wrap.select--on .select .button-select__item {opacity: 0;}
-.select-wrap.select--on .select .button-select__item {color: #d0d9d9;}
-.select-wrap.select--no-label .select .button-select__item {color: #d0d9d9;}
+.select-wrap.select--on .select .button-select__item {opacity: 1;}
+.select-wrap.select--on .select .button-select__item {color: #bbb;}
+.select-wrap.select--no-label .select .button-select__item {color: #bbb;}
 .select-wrap.select--no-label.select--active .select .button-select__item {color: #333;}
 
 .select-wrap .select.select-box {min-height: auto;}

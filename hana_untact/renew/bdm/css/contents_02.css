@@ -127,8 +127,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input.readonly .input__element {color: #2f3333;}
 .input.readonly:before {border-color: #dddee4 !important; color: #2f3333 !important; font-weight: 400; box-shadow: none !important;}
-.input.readonly::-webkit-input-placeholder {color: #d0d9d9; font-weight: 300;}
-.input.readonly::placeholder {color: #d0d9d9; font-weight: 300;}
+.input.readonly::-webkit-input-placeholder {color: #bbb; font-weight: 300;}
+.input.readonly::placeholder {color: #bbb; font-weight: 300;}
 
 .input--disabled:before {background: none; border-color: #dddee4 !important;}
 .input--disabled .input__label {top: 0.8rem; font-size: 1.4rem; color: #666; font-weight: 400;}
