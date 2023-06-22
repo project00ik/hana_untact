@@ -14,7 +14,7 @@
 .tooltip-title {font-size: 1.4rem; color: #333; font-weight: 600;}
 .tooltip {position: static; margin-left: 0.4rem;}
 .tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
-.tooltip .tooltip-con {display: none; position: absolute; top: 6rem; left: auto; z-index: 10; width: 100%; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
+.tooltip .tooltip-con {display: none; position: absolute; top: 2.3rem; left: auto; z-index: 10; width: 100%; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
 .tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666; font-weight: 300;}
 .tooltip .tooltip-con .inbox .title {font-size: 1.4rem; font-weight: 600;}
 .tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.4rem;}
@@ -27,6 +27,8 @@
 
 .tooltip-label.select-label {width: 100%;}
 .tooltip-label.select-label .btn-open {margin-top: 0.1rem;}
+.tooltip-label.select-label .tooltip .tooltip-con {top: 6rem;}
+
 
 
 /* List */
