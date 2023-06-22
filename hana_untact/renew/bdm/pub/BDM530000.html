@@ -193,7 +193,7 @@
                                     <div class="tg-text-cont tg--layer">
                                         <ul class="bul-bar-wrap">
                                             <li>숫자 4자리로 입력하세요.</li>
-                                            <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는<br>등록할 수 없습니다.</li>
+                                            <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
                                             <li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다.<br>(ex. 1111, 1234)</li>
                                         </ul>
                                     </div>
@@ -448,7 +448,75 @@
             </div>
             <div class="modal__contents">
                 <!-- 팝업 내용 -->
-                평생계좌번호 신청
+                <div class="modal-text-wrap">
+                    <ul class="form-radio-list tg--wrap">
+                        <li>
+                            <div class="chk-tg tg--area">
+                                <div class="chk-tg-btn tg--on" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                    <div class="radio-wrap">
+                                        <input type="radio" name="modal-radio01" id="modal-radio01_1" title="휴대폰번호로 신청" checked="checked">
+                                        <label for="modal-radio01_1">휴대폰번호로 신청</label>
+                                    </div>
+                                </div>
+                                <div class="chk-tg-cont depth2 tg--layer open">
+                                    <div class="form-area mt0"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                        <div class="input__wrap">
+                                            <div class="form-item input no-label">
+                                                <div class="input__inner">
+                                                    <input type="text" class="input__element" title="휴대폰번호로 입력" placeholder="" value="010-1234-5678" disabled="disabled">
+                                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 에러메세지 -->
+                                        <p class="input__guide-txt input__error">에러메세지</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="chk-tg tg--area">
+                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                    <div class="radio-wrap">
+                                        <input type="radio" name="modal-radio01" id="modal-radio01_2" title="계좌번호 직접 입력">
+                                        <label for="modal-radio01_2">계좌번호 직접 입력</label>
+                                    </div>
+                                </div>
+                                <div class="chk-tg-cont depth2 tg--layer">
+                                    <div class="form-area mt0"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                        <div class="input__wrap">
+                                            <div class="form-item input no-label">
+                                                <div class="input__inner">
+                                                    <input type="text" class="input__element" title="계좌번호 직접 입력" placeholder="숫자 11~12자리 입력">
+                                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 에러메세지 -->
+                                        <p class="input__guide-txt input__error">에러메세지</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="info-wrap mt80">
+                        <div class="tg-text tg--area">
+                            <div class="tg-btn tg--on" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
+                                <button type="button">알아두세요</button>
+                            </div>
+                            <div class="tg-text-cont tg--layer open">
+                                <ul class="bul-bar-wrap">
+                                    <li>일부 번호는 이용하실 수 없습니다.<br>(ex. 주민등록번호, 사용중인 계좌번호 등)</li>
+                                    <li>입금 시에만 이용 가능하며 이외에는 일반 계좌번호를 이용하시기 바랍니다.<br>(ex. 휴대폰요금, 공과금 납부 등을 위한 자동이체 신청)</li>
+                                    <li>이미 사용한 평생계좌번호는 등록 해제 후 다른 계좌에 재사용이 불가능합니다. (기존 등록했던 계좌에 재등록은 가능)</li>
+                                    <li>평생계좌번호가 등록된 계좌는 양도 등에 의한 명의 변경이 제한됩니다.</li>
+                                    <li>평생계좌번호 신청 후에 최종 등록이 실패한 경우에는 하나원큐 앱에서 재신청이 가능합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--// 팝업 내용 -->
             </div>
             <div class="btn-wrap">
@@ -463,12 +531,13 @@
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
             hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
-            // modalOpen('modalSelect02');
-            // 조회버튼 클릭 시 form 보이는 예시
         });
+        // form-area show / hide 예시
         function formShowEvent(target){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
+            formTarget.addClass('form--active');
+            // formTarget.find('.form__move').focus();
         }
         function formHideEvent(target){
             var formTarget = $('.'+ target);
