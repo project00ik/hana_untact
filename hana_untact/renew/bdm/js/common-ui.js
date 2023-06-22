@@ -1473,13 +1473,21 @@ function toggleLayer(obj) {
     var tgBtn = toggleBtn.closest('.tg--area').find('.tg-btn');
     var tgChkBtn = toggleBtn.closest('.tg--area').find('.chk-tg-btn');
     var tgly = toggleBtn.closest('.tg--area').find('.tg--layer');
-
+    
+    // 탭 처럼 쓰일 때
+    if ($('.tg--area').parents().hasClass('tg--wrap')) {
+        var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');;
+        tgTabBtn.removeClass('tg--on');
+        tgTabBtn.attr('aria-checked', tgTabBtn.attr('aria-checked').replace(true, false));
+        tgTabBtn.attr('aria-expanded', tgTabBtn.attr('aria-expanded').replace(true, false));
+        $('.tg--wrap').find('.tg--layer').removeClass('open');
+    }
     
     if (toggleBtn.is('.chk-tg-btn')) {
         tgChkBtn.toggleClass('tg--on');
-        if (tgChkBtn.find('input[type="checkbox"]').is(':checked')) {
+        if (tgChkBtn.find('input').is(':checked')) {
             tgChkBtn.addClass('tg--on');
-            tgChkBtn.find('input[type="checkbox"]').prop('checked', true);
+            tgChkBtn.find('input').prop('checked', true);
             tgly.addClass('open').attr('tabindex', '0');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
@@ -1491,7 +1499,7 @@ function toggleLayer(obj) {
             }
         } else { 
             tgChkBtn.removeClass('tg--on');
-            tgChkBtn.find('input[type="checkbox"]').prop('checked', false);
+            tgChkBtn.find('input').prop('checked', false);
             tgly.removeClass('open').attr('tabindex', '-1');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
