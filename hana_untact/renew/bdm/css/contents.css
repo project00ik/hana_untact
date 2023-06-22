@@ -23,9 +23,10 @@
 .tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
 .tooltip .tooltip-con {display: none; position: absolute; top: 2.3rem; left: auto; z-index: 10; width: 100%; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
 .tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666; font-weight: 300;}
-.tooltip .tooltip-con .inbox .title {font-size: 1.4rem; color: #009591; font-weight: 500;}
+.tooltip .tooltip-con .inbox .title {margin-top: 0.8rem; font-size: 1.4rem; color: #009591; font-weight: 500;}
+.tooltip .tooltip-con .inbox .title:first-child {margin-top: 0;}
 .tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.3rem; color: #666; font-weight: 300;}
-.tooltip .tooltip-con .inbox .title + .text {margin-top: 1rem;}
+.tooltip .tooltip-con .inbox .title + .text {margin-top: 0.1rem;}
 .tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.4rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
 
 .input__inner .input-tooltip-wrap {position: absolute; right: 0; top: 0; z-index: 10; width: 100%;}
@@ -35,7 +36,7 @@
 .tooltip-label.select-label {width: 100%;}
 .tooltip-label.select-label .tooltip {opacity: 0;}
 .tooltip-label.select-label .tooltip-title {font-size: 1.8rem; font-weight: 700; color: #bbb;}
-.tooltip-label.select-label .tooltip .tooltip-con {top: 6rem;}
+.tooltip-label.select-label .tooltip .tooltip-con {top: 6.2rem;}
 .tooltip-label.select-label .btn-open {margin-top: 0.1rem;}
 
 .select-wrap.select--on .tooltip-label.select-label .tooltip,

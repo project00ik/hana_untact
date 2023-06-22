@@ -23,12 +23,12 @@
         <div id="content" class="app-main"> 
             <div class="app-content">
                 <div class="ste-progress step-header">
-                    <div class="stepper" role="img" aria-label="5단계 중 3단계" tabindex="0">
+                    <div class="stepper" role="img" aria-label="5단계 중 4단계" tabindex="0">
                         <ul>
                             <li class="stepper__step">1</li>
                             <li class="stepper__step">2</li>
-                            <li class="stepper__step on">3</li>
-                            <li class="stepper__step">4</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step on">4</li>
                             <li class="stepper__step">5</li>
                         </ul>
                     </div>
@@ -36,7 +36,8 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit last__tit" aria-hidden="true">우편물 받을 곳을<br>선택해주세요</p>
+                        <p class="page-tit label__tit last__tit" aria-hidden="true">만기시 해지 방법을<br>선택해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">만기시 해지 방법을<br>선택해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">만기시 해지 방법을<br>선택해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">출금 계좌를<br>확인해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">출금 계좌를<br>확인해주세요</p>
@@ -45,50 +46,54 @@
                     </div>
                     <!--// 타이틀 -->
 
-                    <div class="cont-wrap cont-revers "> <!-- cont-form--animate -->
+                    <div class="cont-wrap cont-revers cont-form--animate">
 
                         <!-- select -->
                         <!-- D: 셀렉트 관련 설명
                             * 오류시 class="form-item select-wrap select--error"
                             * 비활성화시 class="form-item select-wrap select--disabled", button에 disabled="disabled"속성 추가
                             * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item select-wrap select--active"
-                        -->
-						
+                        -->						
 						<!--// select -->      
+                        
+                        <!-- input -->
+                        <!--
+                            * 오류시 class="input input--error"
+                            * 비활성화시 class="input input--disabled" input 에 disabled 추가
+                            * 데이터가 초기에 자동으로 입력되어 있을때 class="input input--on"
+                        -->
+                        <!-- // input -->
 
-                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="input__wrap">
-                                <div class="form-item input">
-                                    <div class="input__inner">
-                                        <label for="inputText03" class="input__label" aria-hidden="true">만기일자</label>
-                                        <input type="text" class="input__element form__move" id="inputText03" title="만기일자 입력">
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                    </div>
+                        <div class="form-area form-hide-wrap2 formHide"><!-- display:none 필요할 때 class="form-area formHide" -->
+                            <p class="page-tit-sub">만기 SMS 안내를 신청하시겠습니까?</p>
+                            <div class="tab-radio-wrap">
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio02-01" id="radio02-ck01" title="신청안함">
+                                    <label for="radio02-ck01">신청안함</label>
+                                </div>
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio02-01" id="radio02-ck02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlide01" checked="checked">
+                                    <label for="radio02-ck02">신청함</label>
                                 </div>
                             </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <p class="input__guide-txt input__note">만기 1주일 전 휴대폰번호로 1회 발송됩니다.</p>
                         </div>
-                        
-                        <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                            <div class="input__wrap">
-                                <div class="form-item input">
-                                    <div class="input__inner">
-                                        <label for="inputText03" class="input__label" aria-hidden="true">신규 가입금액</label>
-                                        <input type="text" class="input__element form__move" id="inputText01" title="신규 가입금액 입력">
-                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                    </div>
+
+                        <div class="form-area form-hide-wrap formHide"><!-- display:none 필요할 때 class="form-area formHide" -->
+                            <p class="page-tit-sub">만기 자동 재예치 방법을 선택해주세요</p>
+                            <div class="tab-radio-wrap">
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio01-01" id="radio01-ck01" title="원리금재예치" checked="checked">
+                                    <label for="radio01-ck01">원리금재예치</label>
+                                </div>
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio01-01" id="radio01-ck02" class="modal-btn__chk" title="원금재예치" data-element="modal__open" data-target="#modalSlide01">
+                                    <label for="radio01-ck02">원금재예치</label>
                                 </div>
                             </div>
-                            <!-- 에러메세지 -->
-                            <p class="input__guide-txt input__error">에러메세지</p>
+                            <p class="input__guide-txt input__note">해지 시까지 자동 재예치 되며, 재예치 시 세후 이자금액은 최초 상품가입 시 출금한 계좌로 자동 입금됩니다.</p>
                         </div>
-
-
                         
-
-
-
 						<div class="form-area">
 							<div class="form-item select-wrap">
 								<div class="select">
@@ -106,8 +111,13 @@
                                                                 <p class="text">
                                                                     해지 시까지 자동 재예치 되며, 원리금재예치 또는 원금재예치를 선택할 수 있습니다.
                                                                 </p>
+                                                                <p class="title">자동해지</p>
                                                                 <p class="text">
-                                                                    출금계좌 잔액은 가입금액 이상이어야 하며 부족한 경우 추가 입금이 필요합니다.
+                                                                    만기 시 원리금이 자동 해지되어 가입 시 출금계좌로 자동 입금됩니다.
+                                                                </p>
+                                                                <p class="title">직접해지</p>
+                                                                <p class="text">
+                                                                    만기 후 직접 해지 신청을 해야만 원리금이 가입 시 출금계좌로 입금됩니다. (해지 시 본인인증 필요)
                                                                 </p>
                                                             </div>
                                                             <!-- // tooltip 컨텐츠 영역 -->
@@ -125,6 +135,7 @@
 									</div>
 								</div>
 								<p class="input__guide-txt input__error">에러메세지</p>
+                                <p class="input__guide-txt input__note">입출금 통장으로 자동 입금됩니다.</p>
 							</div>
 						</div>
 						<!--// select -->
@@ -181,9 +192,9 @@
                                             </div>
                                             <div class="tg-text-cont tg--layer">
                                                 <ul class="bul-bar-wrap">
-                                                    <li>영업점에서 사전문의 후 증빙서류를 지참 하여 방문해 주세요.</li>
-                                                    <li>이 계좌에 대출을 약정(실행)하시는 경우 한도가 자동으로 해제됩니다.</li>
-                                                    <li>대출상품에 따라 다를 수 있으니, 자세한 사항은 고객센터(1599-2111)로 문의바랍니다.</li>
+                                                    <li>숫자 4자리로 입력하세요.</li>
+                                                    <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
+                                                    <li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다. (ex. 1111, 1234)</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -192,12 +203,6 @@
                             </div>
                         </div>
 
-                        <!-- select -->
-                        <!-- D: 셀렉트 관련 설명
-                            * 오류시 class="form-item select-wrap select--error"
-                            * 비활성화시 class="form-item select-wrap select--disabled", button에 disabled="disabled"속성 추가
-                            * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item select-wrap select--active"
-                        -->
 						<div class="form-area">
 							<div class="form-item select-wrap">
 								<div class="select">
@@ -281,8 +286,8 @@
                 <div class="btn-group-sub-wrap btn-next-wrap">
                     <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
                 </div>
-                <div class="btn-group-sub-wrap btn-last-wrap" style="display: none;">
-                    <button type="button" class="btn rd" title="계속">계속</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                <div class="btn-group-wrap btn-last-wrap" style="display: none;">
+                    <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
                 </div>
             </div>
             <!-- //footer -->
@@ -400,77 +405,20 @@
                 <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-01" title="자동 재예치" onclick="modalClose(this);">
+                            <input type="radio" name="radio01" id="radio01-01" title="자동 재예치" onclick="modalClose(this); formHideEvent('form-hide-wrap2'); formShowEvent('form-hide-wrap')">
                             <label for="radio01-01">자동 재예치</label>
                         </div>
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-03" title="자동해지" onclick="modalClose(this);">
+                            <input type="radio" name="radio01" id="radio01-03" title="자동해지" onclick="modalClose(this); formHideEvent('form-hide-wrap'); formShowEvent('form-hide-wrap2')">
                             <label for="radio01-03">자동해지</label>
                         </div>
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-02" title="직접해지" onclick="modalClose(this);">
+                            <input type="radio" name="radio01" id="radio01-02" title="직접해지" onclick="modalClose(this); formHideEvent('form-hide-wrap'); formShowEvent('form-hide-wrap2')">
                             <label for="radio01-02">직접해지</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
-        </div>
-    </div>
-    <!-- //모달레이어 - 슬라이드 버튼X -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 우편물 수령처 선택 -->
-    <div id="modalSlideBtn02" class="modal popup-wrap modal--slide" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__header">
-                <h1 class="title">우편물 수령처</h1>
-            </div>
-            <div class="modal__contents btn-none">                        
-                <ul class="modal-select-list">
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-01" title="집 선택" onclick="modalClose(this);">
-                            <label for="radio01-01">집</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-03" title="직장 선택" onclick="modalClose(this);">
-                            <label for="radio01-03">직장</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-02" title="수령안함 선택" onclick="modalClose(this);">
-                            <label for="radio01-02">수령안함</label>
                         </div>
                     </li>
                 </ul>
@@ -489,6 +437,14 @@
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSearch01');
         })
+        function formShowEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('formHide');
+        }
+        function formHideEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.addClass('formHide');
+        }
 
     </script>
 
