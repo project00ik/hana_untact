@@ -6,6 +6,13 @@
 
 /* 예금 */
 .account-num-wrap {display: flex; align-items: center;}
+.new-password-wrap {margin-top: 2rem;}
+.new-password-wrap .checkbox-wrap label {font-size: 1.6rem; color: #666; font-weight: 400;}
+.new-password-wrap .checkbox-wrap label .text-sub {display: block; margin-top: 0.4rem; font-size: 1.4rem;}
+
+.new-password-wrap .chk-tg .chk-tg-cont {margin-left: 2.4rem; padding-top: 0;}
+.new-password-wrap .chk-tg-cont .form-area {margin-top: 2rem;}
+.new-password-wrap .tg-text {margin-top: 1.6rem;}
 
 /* common */
 
@@ -16,10 +23,10 @@
 .tooltip .btn-open {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
 .tooltip .tooltip-con {display: none; position: absolute; top: 2.3rem; left: auto; z-index: 10; width: 100%; background-color: #fff; border: 0.1rem solid #666; border-radius: 1rem;}
 .tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666; font-weight: 300;}
-.tooltip .tooltip-con .inbox .title {font-size: 1.4rem; font-weight: 600;}
-.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.4rem;}
+.tooltip .tooltip-con .inbox .title {font-size: 1.4rem; color: #009591; font-weight: 500;}
+.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.3rem; color: #666; font-weight: 300;}
 .tooltip .tooltip-con .inbox .title + .text {margin-top: 1rem;}
-.tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.6rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
+.tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.4rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
 
 .input__inner .input-tooltip-wrap {position: absolute; right: 0; top: 0; z-index: 10; width: 100%;}
 .input__inner .input-tooltip-wrap .tooltip-wrap {justify-content: flex-end;}

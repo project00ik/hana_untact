@@ -45,7 +45,7 @@
                     </div>
                     <!--// 타이틀 -->
 
-                    <div class="cont-wrap cont-revers cont-form--animate">
+                    <div class="cont-wrap cont-revers "> <!-- cont-form--animate -->
 
                         <!-- select -->
                         <!-- D: 셀렉트 관련 설명
@@ -70,8 +70,6 @@
                             <p class="input__guide-txt input__error">에러메세지</p>
                         </div>
                         
-                        
-                        
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="input__wrap">
                                 <div class="form-item input">
@@ -87,7 +85,112 @@
                         </div>
 
 
+                        
 
+
+
+						<div class="form-area">
+							<div class="form-item select-wrap">
+								<div class="select">
+                                    <div class="select-label tooltip-label">
+                                        <div class="tooltip-wrap">
+                                            <p class="tooltip-title">만기해지 방법</p>
+                                            <div class="tooltip" data-tooltip="paragraph">
+                                                <button type="button" class="btn-open" data-tooltip-button="open" aria-label="툴팁 열기"></button>
+                                                <div class="tooltip-con" data-tooltip-panel="false" >
+                                                    <div class="tooltip__column">
+                                                        <div class="tooltip__description" data-tooltip="focus">
+                                                            <!-- tooltip 컨텐츠 영역 -->
+                                                            <div class="inbox">
+                                                                <p class="title">자동 재예치</p>
+                                                                <p class="text">
+                                                                    해지 시까지 자동 재예치 되며, 원리금재예치 또는 원금재예치를 선택할 수 있습니다.
+                                                                </p>
+                                                                <p class="text">
+                                                                    출금계좌 잔액은 가입금액 이상이어야 하며 부족한 경우 추가 입금이 필요합니다.
+                                                                </p>
+                                                            </div>
+                                                            <!-- // tooltip 컨텐츠 영역 -->
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+									<div class="select__inner">
+										<button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modal02" title="만기해지 방법 선택">
+											<span>선택하세요.</span> 
+										</button>
+									</div>
+								</div>
+								<p class="input__guide-txt input__error">에러메세지</p>
+							</div>
+						</div>
+						<!--// select -->
+
+                        <div class="form-area">
+                            <div class="input__wrap">
+                                <div class="form-item input">
+                                    <div class="input__inner">
+                                        <label for="inputText_test02" class="input__label" aria-hidden="true">출금 계좌 비밀번호</label>
+                                        <input type="password" class="input__element form__move" id="inputText_test02" title="출금 계좌 비밀번호 입력" value="">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        <button type="button" class="btn gray sm" title="비밀번호 확인">비밀번호 확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-password-wrap">
+                                <div class="chk-tg tg--area">
+                                    <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                        <div class="checkbox-wrap">
+                                            <input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox06" title="신규 계좌 비밀번호 등록 (선택)">
+                                            <label for="privacy_checkbox06">신규 계좌 비밀번호 등록 (선택)<span class="text-sub">(미선택시 출금 계좌 비밀번호로 설정)</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="chk-tg-cont tg--layer">
+                                        <div class="form-area">
+                                            <div class="form-item input">
+                                                <div class="input__inner">
+                                                    <label for="inputText05" class="input__label" aria-hidden="true">신규 비밀번호</label>
+                                                    <input type="password" id="inputText05" class="input__element" title="신규 비밀번호 입력폼" placeholder="">
+                                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                                </div>
+                                                <!-- 에러 메시지 -->
+                                            </div>
+                                            <!-- 에러메세지 -->
+                                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                            <!--// input -->
+                                        </div>
+                                        <div class="form-area">
+                                            <div class="form-item input">
+                                                <div class="input__inner">
+                                                    <label for="inputText05_01" class="input__label" aria-hidden="true">비밀번호 확인</label>
+                                                    <input type="password" id="inputText05_01" class="input__element" title="비밀번호 확인 입력폼" placeholder="">
+                                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                                </div>
+                                                <!-- 에러 메시지 -->
+                                            </div>
+                                            <!-- 에러메세지 -->
+                                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                            <!--// input -->
+                                        </div>
+                                        <div class="tg-text tg--area">
+                                            <div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
+                                                <button type="button">알아두세요</button>
+                                            </div>
+                                            <div class="tg-text-cont tg--layer">
+                                                <ul class="bul-bar-wrap">
+                                                    <li>영업점에서 사전문의 후 증빙서류를 지참 하여 방문해 주세요.</li>
+                                                    <li>이 계좌에 대출을 약정(실행)하시는 경우 한도가 자동으로 해제됩니다.</li>
+                                                    <li>대출상품에 따라 다를 수 있으니, 자세한 사항은 고객센터(1599-2111)로 문의바랍니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- select -->
                         <!-- D: 셀렉트 관련 설명
@@ -286,6 +389,39 @@
     </div>
     <!-- //모달레이어 - 출금계좌 선택 -->
 
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 만기해지 방법 선택 -->
+    <div id="modal02" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">만기해지 방법</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-01" title="자동 재예치" onclick="modalClose(this);">
+                            <label for="radio01-01">자동 재예치</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-03" title="자동해지" onclick="modalClose(this);">
+                            <label for="radio01-03">자동해지</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-02" title="직접해지" onclick="modalClose(this);">
+                            <label for="radio01-02">직접해지</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
 
 
 
