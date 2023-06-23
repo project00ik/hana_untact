@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.ck-next-box {display: none;}
+.form-show {display: block;}
+.form-hide {display: none;}
+
 /* info */
 .info-wrap {margin-top: 1.6rem;}
 .info-wrap + .page-tit-sub {margin-top: 4rem;}
