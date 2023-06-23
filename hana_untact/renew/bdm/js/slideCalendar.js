@@ -243,12 +243,12 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             if(_this.is('.active-item')) { return false;}
             if(_this.next('.active-item').length){//이전항목이라면
                 scrollContainer.animate({
-                    scrollTop:scrTop - 50
+                    scrollTop:scrTop - 55
                 }, 100);
             }
             if(_this.prev('.active-item').length){//다음항목이라면
                 scrollContainer.animate({
-                    scrollTop:scrTop + 50
+                    scrollTop:scrTop + 55
                 }, 100);
             } 
         });
@@ -298,7 +298,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             scrollContainer.off('scroll').on('scroll',function(){
                 var me = $(this);
                 var items = me.find('.list-wrap__item');
-                var _height = 60;// items.height() + margin;
+                var _height = 55;// items.height() + margin;
                 var scrTop = this.scrollTop + (_height/2);
                 var activeTargetIdx =  (Math.floor(scrTop/_height));
                 if(activeTargetIdx > items.length -1) {
