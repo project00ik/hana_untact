@@ -1973,7 +1973,7 @@
             })
 
             //슬라이드팝업내 탭이 있는 경우
-            if($slideLayer.find('.tab-list-wrap').length){
+            if($slideLayer.find('.tab-list-wrap').length || $slideLayer.find('[data-element=tab]').length){
               $slideLayer.find('.modal__contents').addClass('modal__contents--tabscroll');
           }
           setTimeout(function(){

@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/touch-dnd.js"></script>
     <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
 
     <style>
@@ -152,6 +153,61 @@
                 </div>
                 <br>
 
+                <!--계좌선택버튼-->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar01"
+                        id="dialOpenBtn"
+                    >
+                        달력(탭 유형)
+                    </button>
+                </div>
+                <!--//계좌선택버튼-->
+                <br>
+
+                <!-- 기간 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar02"
+                        id="dialOpenBtn2"
+                    >
+                        달력(싱글 유형)
+                    </button>
+                </div>
+                <!--// 기간 선택 -->
+                <br>
+                <!-- 직접 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar03"
+                        id="dialOpenBtn3"
+                    >
+                        달력(직접선택 유형)
+                    </button>
+                </div>
+                <!--// 직접 선택 -->
+
             </div>
         </div>
     </div>
@@ -238,6 +294,7 @@
     <!-- 모달레이어 - 슬라이드 -->
     <div id="modalSlide" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
                 <h1 class="title">슬라이드 팝업 제목</h1>
             </div>
@@ -266,7 +323,6 @@
             <div class="btn-wrap">
                 <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
             </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 -->
@@ -274,6 +330,7 @@
     <!-- 모달레이어 - 슬라이드 버튼X -->
     <div id="modalSlideBtn" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
                 <h1 class="title">슬라이드 팝업 제목</h1>
             </div>
@@ -299,7 +356,6 @@
                     </li>
                 </ul>
             </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
@@ -307,6 +363,7 @@
     <!-- 모달레이어 - 슬라이드 링크형 -->
     <div id="modalSlideLink" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
                 <h1 class="title">슬라이드 팝업 제목</h1>
             </div>
@@ -318,7 +375,6 @@
                     <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
                 </ul>
             </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 링크형 -->
@@ -419,15 +475,237 @@
     </div>
     <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
 
-    
+    <!-- 모달레이어 - 달력(탭 있는 유형) -->
+    <div id="slideCalendar01" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--inner-tab">
+                <!-- 
+                    2022-08-10 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다.
+                -->
+                <div data-element="tab" data-options='{"initIndex":0}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-wrap__menu">
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button is-active" data-element="tab__anchor"><span>간편 설정</span></a>
+                            </li>
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직접 설정</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel  col-1">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel col-3">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(탭 있는 유형)-->
+
+    <!-- 모달레이어 - 달력(싱글 유형) -->
+    <div id="slideCalendar02" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--multiple">
+                <!-- 달력 -->
+                <div class="container__panel  col-1">
+                    <div class="list-section">
+                        <!-- 옵션 아이템 동적 생성 -->
+                    </div>
+                </div>
+                <!--// 달력 -->
+            </div>
+
+
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(싱글 유형) -->
+
+    <!-- 모달레이어 - 달력(직접선택 유형) -->
+    <div id="slideCalendar03" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--inner-tab">
+                <!-- 
+                    2022-08-10 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다.
+                -->
+                <div class="tab-list-wrap" data-element="tab" data-options='{"initIndex":1}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-list tab-wrap__menu">
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">간편 설정</a>
+                            </li>
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">직접 설정</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel  col-1">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                    <div class="pualugin-tab__panel is-active" data-element="tab__panel">
+                        <div class="btn-group-flex btn-date-wrap">
+                            <button tyle="button" class="btn sm light-gray" aria-label="6개월">6개월</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="1년">1년</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="3년">3년</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="5년">5년</button>
+                        </div>
+                        
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel col-3">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+            
+
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(직접선택 유형) -->
 
 	<script>
-    $(function(){
-        /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-        // modalOpen('modalAlertTitle');
-        // modalOpen('modalSlideBtn');
-        // modalOpen('modalSlideDate');
-    });
+        $(function(){
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalAlertTitle');
+            // modalOpen('modalSlideBtn');
+        });
+    </script>
+    <script type="text/javascript" aria-hidden="true">
+
+        //퍼블 화면 확인용
+        $(function(){
+            hanaProdUI.savgJoinPageInit();
+            $('#dialOpenBtn').click(function(){
+                //멀티 다이얼 호출
+                var param = {
+                    min : 0,
+                    max : 48,
+                    /* 간편설정이 존재할경우 */
+                    items : [{
+                        "code" : 1,
+                        "codeName" : "1개월"
+                    },{
+                        "code" : 2,
+                        "codeName" : "2개월"
+                    },{
+                        "code" : 3,
+                        "codeName" : "3개월"
+                    }]
+                };
+        
+                hanaProdUI.dialSelect('#slideCalendar01', param , function(ui){
+                    console.log('callback', ui)
+                });
+
+            })
+            modalOpen('slideCalendar01');
+        
+            
+            $('#dialOpenBtn2').click(function(){
+                var param = [{
+                                "code" : 1,
+                                "codeName" : "1개월"
+                            },{
+                                "code" : 2,
+                                "codeName" : "2개월"
+                            },{
+                                "code" : 3,
+                                "codeName" : "3개월"
+                            },{
+                                "code" : 4,
+                                "codeName" : "4개월"
+                            }];
+        
+                //싱글 다이얼 호출
+                hanaProdUI.dialSelect('#slideCalendar02', param, function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar02');
+        
+            //2022-08-10 직접 선택만 있는 케이스
+            $('#dialOpenBtn3').click(function(){
+                //멀티 다이얼 호출
+                var param = {
+                    min : 6,
+                    max : 48
+                };
+        
+                hanaProdUI.dialSelect('#slideCalendar03', param , function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar03');
+        });
     </script>
 </body>
 </html>

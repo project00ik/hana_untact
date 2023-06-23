@@ -1633,5 +1633,3 @@ function swiperTabSlide(target , num) {
         },
     });
 }
-
-
