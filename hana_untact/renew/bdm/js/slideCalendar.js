@@ -324,11 +324,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
-                    "aria-expanded": true,
                     "role": "button",
                     "title": "선택됨"
                 }).siblings().attr({
-                    "aria-expanded": false,
                     "role": "button",
                     "title": "선택안됨"
                 });
