@@ -153,18 +153,18 @@
                             </div>
                             <div class="new-password-wrap">
                                 <div class="chk-tg tg--area">
-                                    <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                    <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this); hanaUI.formDepthEvent(0)">
                                         <div class="checkbox-wrap">
                                             <input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox06" title="신규 계좌 비밀번호 등록 (선택)">
                                             <label for="privacy_checkbox06">신규 계좌 비밀번호 등록 (선택)<span class="text-sub">(미선택시 출금 계좌 비밀번호로 설정)</span></label>
                                         </div>
                                     </div>
-                                    <div class="chk-tg-cont tg--layer">
+                                    <div class="chk-tg-cont tg--layer form-move-wrap">
                                         <div class="form-area">
                                             <div class="form-item input">
                                                 <div class="input__inner">
                                                     <label for="inputText05" class="input__label" aria-hidden="true">신규 비밀번호</label>
-                                                    <input type="password" id="inputText05" class="input__element" title="신규 비밀번호 입력폼" placeholder="">
+                                                    <input type="password" id="inputText05" class="input__element form__move" title="신규 비밀번호 입력폼" placeholder="">
                                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                                 </div>
                                                 <!-- 에러 메시지 -->
@@ -173,11 +173,11 @@
                                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                             <!--// input -->
                                         </div>
-                                        <div class="form-area">
+                                        <div class="form-area last_form-area">
                                             <div class="form-item input">
                                                 <div class="input__inner">
                                                     <label for="inputText05_01" class="input__label" aria-hidden="true">비밀번호 확인</label>
-                                                    <input type="password" id="inputText05_01" class="input__element" title="비밀번호 확인 입력폼" placeholder="">
+                                                    <input type="password" id="inputText05_01" class="input__element form__move" title="비밀번호 확인 입력폼" placeholder="">
                                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                                 </div>
                                                 <!-- 에러 메시지 -->
@@ -298,6 +298,8 @@
             <div class="app-footer">
                 <div class="btn-group-sub-wrap btn-next-wrap">
                     <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
+                    <!-- 2depth 폼 이동 용 버튼 -->
+                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속2</button>
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none;">
                     <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->

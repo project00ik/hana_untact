@@ -253,8 +253,21 @@ var hanaUI = {
                     
                 },
                 'keydown': function (e) { 
-                    if (e.keyCode === 13 || e.keyCode === 9) { 
-                        $('.btn__form-next').trigger('click');
+                    var $target = $(e.target);
+                    if($target.closest('.form-area').parents().hasClass('form-move-wrap')){
+                        if (e.keyCode === 13 || e.keyCode === 9) { 
+                            console.log('form-move-wrap')
+                            $('.btn__form-next-depth').trigger('click');
+                        }
+                    } else {
+                        if (e.keyCode === 13 || e.keyCode === 9) { 
+                            $('.btn__form-next').trigger('click');
+                        }
+                    }
+                    if($target.closest('.form-area').hasClass('last_form-area')){
+                        if (e.keyCode === 13 || e.keyCode === 9) { 
+                            $('.btn__form-next').trigger('click');
+                        }
                     }
                 },
                 'blur' : function(e){
@@ -548,6 +561,8 @@ var hanaUI = {
             pageTitArr = $($('.page-tit-wrap > .label__tit').get());
             inputArr.eq(inputArrIndex).prevAll().addClass('form--active');
         }
+
+        $('.btn__form-next-depth').hide();
     
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
@@ -661,15 +676,89 @@ var hanaUI = {
         // });
 
     },
-    // formNowEvent : function(obj){
+
+    formDepthEvent: function (num, isReverse) {  // 폼 포커스(Revers) 직접 지정용
+        var inputArrIndex = num; // 페이지하단에 지정한 숫자
+        var inputArr = [];
+
+        if(isReverse) {
+            // 역순 배열
+            inputArr = $($('.form-move-wrap > .form-area').get().reverse());
+            inputArr.eq(inputArrIndex).nextAll().addClass('form--active');
+        } else {
+            // 정순 배열
+            inputArr = $($('.form-move-wrap > .form-area').get());
+            inputArr.eq(inputArrIndex).prevAll().addClass('form--active');
+        }
+        inputArr.eq(inputArrIndex).addClass('form--active');
+        // 폼이 여러개일 때 첫번째에 강제 포커스
+        setTimeout(function(){
+            inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+            
+            $('.btn__form-next').hide();
+            $('.btn__form-next-depth').show();
+        }, 100)
         
-    //     var nowForm = $(obj).closest('.form-area');
-    //     var totalFormLeng = $('.cont-form--animate').find('.form-area').length;
-    //     var nowIndex = nowForm.index();
-    //     var nowIndexNum = totalFormLeng - (nowIndex + 1);
-    //     console.log('inpIdxNum', $('.btn__form-next').data('nowindex'));
-    //     $('.btn__form-next').data('nowindex', nowIndexNum);
-    // },
+        // 셀렉트 포커스
+        if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+        } else { 
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+        }
+        // 주소검색 포커스
+        if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-search__btn')) {
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').addClass('search--on');
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+        } else { 
+            inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').removeClass('search--on');
+        }
+        
+
+        function formNextDepth() { // 계속 버튼
+            inputArrIndex += 1;
+            // form-area hide 
+            if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
+                formNextDepth();
+                return false;
+            }
+            
+            if(inputArr.length > inputArrIndex) {
+                
+                // 폼 포커스
+                inputArr.eq(inputArrIndex).addClass('form--active');
+                inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
+                // 셀렉트 포커스
+                if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+                } else { 
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
+                }
+                // 주소검색 포커스
+                if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-search__btn')) {
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').addClass('search--on');
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+                } else { 
+                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').removeClass('search--on');
+                }
+
+                
+                // 마지막 폼에서 버튼교체(계속)
+                $('.btn__form-next-depth').hide();
+                $('.btn__form-next').show();
+                
+            } 
+        }
+        
+        // 계속 버튼
+        $('.btn__form-next-depth').on('click', function(){
+            formNextDepth();
+        });
+
+        
+
+    },
     
     // 툴팁
     tooltip : function(){
