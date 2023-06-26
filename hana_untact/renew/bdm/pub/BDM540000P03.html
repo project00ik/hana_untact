@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body class="popup-full-wrap">
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header bg-white">
+            <button class="btn-close" title="이전 화면"></button>
+            <p class="page-tit">약관동의</p>
+            <button class="btn-download" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                
+                <div class="popup-full-con agree-con">                    
+                    <div class="top-sticky">
+                        <div class="sticky-cont">
+                            <p class="agree-name">입출금계좌 지정(변경)신청서<br>(하나의 정기예금 만기 자동재예치용)</p>
+                            <p class="page"><b>1</b> / 2</p>
+                        </div>
+                    </div>
+                    <div class="agree-wrap" aria-label="입출금계좌 지정(변경)신청서(하나의 정기예금 만기 자동재예치용) 이미지 입니다. 자세한내용은 PDF파일 다운로드해서 확인해주세요.">
+                        <div class="agree-img-area">
+                            <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 1">
+                        </div>
+                        <div class="agree-img-area">
+                            <img src="../images/png/no-line@3x.png" alt="$상품명$ 상품설명서 2">
+                        </div>
+                    </div>
+                </div>
+                
+                    
+            </div>
+        </div>        
+        <!-- //Content -->        
+        
+        <div class="floating-area">
+            <button type="button" class="btn-end-agree" title="약관 맨 아래로 이동"></button>
+        </div>
+        <!-- footer -->
+        <div class="app-footer">
+            <div class="btn-wrap">
+                <div class="toast-popup-wrap" aria-hidden="true">
+                    <div class="toast-popup">
+                        <p class="txt">필수동의서를 끝까지 읽어주세요.</p>
+                    </div>
+                </div>
+                <button type="button" class="btn md btn-aggree" data-element="modal__close" title="동의하기" disabled="disabled">동의하기</button>
+            </div>
+        </div>
+        <!-- //footer -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            
+             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalSearch01');
+            
+        })
+      
+    </script>
+
+</body>
+</html>
