@@ -19,6 +19,8 @@
 .new-password-wrap .tg-text {margin-top: 1.6rem;}
 
 /* common */
+/* font-size */
+.font-sm {font-size: 1.3rem;}
 
 /* - 컨텐츠 : 툴팁 (Tooltip) */
 .tooltip-wrap {position: relative; display: flex; align-items: center;}
@@ -59,7 +61,7 @@
 /* type01 */
 .list-wrap.type01 dl {width: 100%; display: flex; justify-content: space-between;}
 .list-wrap.type01 dl + dl {margin-top: 1rem;}
-.list-wrap.type01 dl > dt {font-size: 1.2rem; color: #757575; flex: 1;}
+.list-wrap.type01 dl > dt {font-size: 1.3rem; color: #757575; flex: 1;}
 .list-wrap.type01 dl > dd {font-size: 1.5rem; color: #393939; text-align: right; flex: 2;}
 
 .list-title {color: #000; font-weight: 500;}
@@ -86,9 +88,79 @@
 .result-total-text * {font-size: 1.4rem; color: #333;}
 .result-total-text + .address-list {margin-top: 1.7rem;}
 
-
 /* popup - date */
 .btn-date-wrap {margin-top: 1rem;}
+
+/* popup 예금 가입 확인 */
+.modal__contents .inbox {padding: 3rem 0;}
+.popup-join-con .dot-list {margin-top: 1rem;}
+.popup-join-con .checkbox-wrap {margin-top: 3.2rem;}
+.popup-join-con .checkbox-wrap label {font-weight: 400;}
+
+/* popup-full-wrap */
+.popup-full-wrap,
+.popup-full-wrap .app-header {background-color: #fff;}
+.popup-full-wrap .app-header .btn-close {position: absolute; top: 1.2rem; left: 1.4rem; z-index: 1;}
+.popup-full-wrap .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 5;}
+
+.popup-full-con {position: relative; padding: 0 2.4rem;}
+
+.popup-full-wrap .top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 5.6rem; left:0; z-index: 20;}
+.popup-full-wrap .sticky-cont {
+    width: calc(100% + 4.8rem); margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fff;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);
+}
+.popup-full-wrap .sticky-cont .agree-name {flex: 1; font-size: 1.4rem; line-height:1.4; color: #333;}
+.popup-full-wrap .sticky-cont .page {font-size: 1.4rem; font-weight: 500; line-height: 1; color: #999;}
+.popup-full-wrap .sticky-cont .page b {font-size: 1.4rem; font-weight: 500; color: #009591;}
+
+.popup-full-wrap .agree-wrap {width:100%; padding-top: 5rem;}
+.popup-full-wrap .floating-area {position: fixed; bottom: 11.6rem; right: 2.4rem; z-index: 10;}
+.popup-full-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
+
+.popup-full-wrap .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
+
+
+
+/* 토스트 팝업 */
+.popup-full-wrap .toast-popup-wrap {
+    opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%);
+    animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.8s; animation-iteration-count: 1; animation-fill-mode: forwards;
+}
+.toast-popup-wrap .toast-popup {margin-top: -4.1rem; padding: 1.1rem 1.2rem 1.3rem; white-space: nowrap; color: #fff; font-size: 1.4rem; background: #262b45; border-radius: 1rem; position: relative;}
+.toast-popup-wrap .toast-popup::after {content: ''; width: 0; height: 0; display: inline-block; border: 0.6rem solid transparent; border-top: 0.9rem solid #262b45; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); overflow: hidden;}
+
+@keyframes toastPopup {
+    0% {
+        top: 10rem;
+        z-index: -1;
+        opacity: 0;
+    }
+    20%{
+        top: 0;
+        z-index: 1;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes toastPopup {
+    0% {
+        top: 10rem;
+        z-index: -1;
+        opacity: 0;
+    }
+    20%{
+        top: 0;
+        z-index: 1;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
 
 /* ik */
 .form-area > .form-area:first-child {margin-top: 0;}
