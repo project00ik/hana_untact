@@ -290,7 +290,7 @@
                     <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none;">
-                    <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                    <button type="button" class="btn" title="다음"  data-element="modal__open" data-target="#modalSlideRate" >다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
                 </div>
             </div>
             <!-- //footer -->
@@ -347,7 +347,7 @@
                         
                         <!-- 달력 -->
                         <div class="modal__contents--multiple">
-                            <div class="container__panel col-3" title="년, 월, 일 순으로 순차 선택 시 다음 선택이 가능합니다.">
+                            <div class="container__panel col-3">
                                 <div class="list-section">
                                     <!-- 옵션 아이템 동적 생성 -->
                                 </div>
@@ -470,15 +470,31 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
+    <!-- 모달레이어 - 상품 금리 확인 -->
+    <div id="modalSlideRate" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">이대로 가입하시겠어요?</h1>
+            </div>
+            <div class="modal__contents">
+               
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 상품 금리 확인 -->
 
     <script>
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            hanaUI.formFocusEvent(6, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
             
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            // modalOpen('modalSearch01');
+            modalOpen('modalSlideRate');
         })
         function formShowEvent(target){
             var formTarget = $('.'+ target);
