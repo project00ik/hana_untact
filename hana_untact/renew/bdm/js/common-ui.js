@@ -255,9 +255,8 @@ var hanaUI = {
                 },
                 'keydown': function (e) { 
                     var $target = $(e.target);
-                    if($target.closest('.form-area').parents().hasClass('form-move-wrap')){
+                    if ($target.closest('.form-area').parents().hasClass('form-move-wrap')) {
                         if (e.keyCode === 13 || e.keyCode === 9) { 
-                            console.log('form-move-wrap')
                             $('.btn__form-next-depth').trigger('click');
                         }
                     } else {
@@ -744,7 +743,6 @@ var hanaUI = {
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.search-btn-wrap').removeClass('search--on');
                 }
 
-                
                 // 마지막 폼에서 버튼교체(계속)
                 $('.btn__form-next-depth').hide();
                 $('.btn__form-next').show();
@@ -756,7 +754,6 @@ var hanaUI = {
         $('.btn__form-next-depth').on('click', function(){
             formNextDepth();
         });
-
         
 
     },
@@ -1561,7 +1558,19 @@ var hanaUI = {
             } else {
                 $('.form-hide-wrap').removeClass('formHide');
             }                
-        });     
+        });   
+        // <div class="form-area block">
+        // <div class="tab-radio-wrap ck-show-hide">
+        //     <div class="tab-radio ck-hide">
+        //         <input type="radio" name="radio-02" id="radio-ck01" title="일반 가입" onclick="formHideEvent('form-hide-wrap');">
+        //         <label for="radio-ck01">일반 가입</label>
+        //     </div>
+        //     <div class="tab-radio ck-show">
+        //         <input type="radio" name="radio-02" id="radio-ck02" title="비과세 종합저축 가입" checked="checked" onclick="formShowEvent('form-hide-wrap'); hanaUI.formDepthEvent(0);">
+        //         <label for="radio-ck02">비과세 종합저축 가입</label>
+        //     </div>
+        // </div>
+        // </div>
     }
 };
 
