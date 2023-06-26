@@ -414,33 +414,6 @@
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
             hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
-            
-            $(document).on("click", ".btn-next-wrap button",function(){
-                if ($('.ck-show input').is(':checked') &&  $('.form-hide-wrap').css('display') == 'none') {
-                    $('.btn-last-wrap').hide();
-                    $('.btn-next-wrap').show().addClass('btn-formShow');
-                }                 
-            });
-
-            $(document).on("click", ".ck-show-hide .tab-radio input",function(){
-                var ck_parent = $(this).parent();
-                if ($(ck_parent).hasClass('ck-show')) {
-                    $('.btn-last-wrap').hide();
-                    $('.btn-next-wrap').show().addClass('btn-formShow');
-                } else {
-                    $('.btn-next-wrap').removeClass('btn-formShow');
-                    $('.form-hide-wrap').addClass('formHide');
-                }
-            });
-
-            $(document).on("click", ".btn-next-wrap.btn-formShow button",function(){               
-                if ($('.form-hide-wrap').css('display') == 'block') {                   
-                    $('.btn-formShow').removeClass('btn-formShow');                    
-                } else {
-                    $('.form-hide-wrap').removeClass('formHide');
-                }                
-            });     
-
         });
         
 

@@ -27,6 +27,7 @@
     hanaUI.passwordShow(); // password show/hide
     hanaUI.modalBranch(); // 지점안내 모달 fixed
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
+    hanaUI.ckShowHide(); // check, radio 클릭 다음 영역 show hide
     // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
     
     
@@ -1533,8 +1534,35 @@ var hanaUI = {
 
     btnEndAgreeEvent : function() { 
         $('.btn-end-agree');
-    }
+    },
+    
+    ckShowHide : function() {
+        $('body').on('click', ".btn-next-wrap button",function(){
+            if ($('.ck-show input').is(':checked') &&  $('.form-hide-wrap').css('display') == 'none') {
+                $('.btn-last-wrap').hide();
+                $('.btn-next-wrap').show().addClass('btn-formShow');
+            }                 
+        });
 
+        $('body').on('click', ".ck-show-hide .tab-radio input",function(){
+            var ck_parent = $(this).parent();
+            if ($(ck_parent).hasClass('ck-show')) {
+                $('.btn-last-wrap').hide();
+                $('.btn-next-wrap').show().addClass('btn-formShow');
+            } else {
+                $('.btn-next-wrap').removeClass('btn-formShow');
+                $('.form-hide-wrap').addClass('formHide');
+            }
+        });
+
+        $('body').on('click', ".btn-next-wrap.btn-formShow button",function(){               
+            if ($('.form-hide-wrap').css('display') == 'block') {                   
+                $('.btn-formShow').removeClass('btn-formShow');                    
+            } else {
+                $('.form-hide-wrap').removeClass('formHide');
+            }                
+        });     
+    }
 };
 
 // 스크롤 방향 체크
