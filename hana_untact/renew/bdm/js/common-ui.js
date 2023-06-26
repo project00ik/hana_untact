@@ -27,7 +27,7 @@
     hanaUI.passwordShow(); // password show/hide
     hanaUI.modalBranch(); // 지점안내 모달 fixed
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
-    hanaUI.ckShowHide(); // check, radio 클릭 다음 영역 show hide
+    // hanaUI.ckShowHide(); // check, radio 클릭 다음 영역 show hide
     // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
     
     
@@ -1727,6 +1727,34 @@ function aggreeScroll(target) {
     // 동의하기 팝업 맨하단으로 이동 버튼 이벤트
     $('.btn-end-agree').on('click', function(){
         modalOpenId.find('.modal__contents').scrollTop(modalScrollLastNum);
+    });
+}
+
+// 약관 동의하기 버튼 스크롤 시 활성화 이벤트(페이지형)
+function aggreePageScroll() { 
+    var fullPopPageWrap = $('body.popup-full-wrap');
+    var pageScrollTWrap = fullPopPageWrap.find('.agree-wrap').outerHeight();
+    var pageScrollTCont = $('body, html').innerHeight();
+    var pageBtn = fullPopPageWrap.find('.btn-aggree');
+    var pageBtnH = fullPopPageWrap.find('.app-footer').outerHeight();
+    var pageScrollLast = pageScrollTWrap - pageScrollTCont + pageBtnH ;
+    var pageScrollLastNum = Math.floor(pageScrollLast);
+
+    $(window).on('scroll', function(){
+        if($(this).scrollTop() > 0){
+            //마지막 컨텐츠
+            if ($(this).scrollTop() >= pageScrollLastNum) {
+                pageBtn.removeAttr('disabled');
+                fullPopPageWrap.find('.toast-popup-wrap').stop().fadeOut( 200, 'linear');
+            }else{
+                pageBtn.attr('disabled');
+            }
+        }
+    });
+    
+    // 동의하기 팝업 맨하단으로 이동 버튼 이벤트
+    $('.btn-end-agree').on('click', function(){
+        $('body, html').scrollTop(pageScrollLastNum);
     });
 }
 
