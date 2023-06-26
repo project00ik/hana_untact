@@ -131,7 +131,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.readonly::placeholder {color: #bbb; font-weight: 300;}
 
 .input--disabled:before {background: none; border-color: #dddee4 !important;}
-.input--disabled .input__label {top: 0.8rem; font-size: 1.4rem; color: #666; font-weight: 400;}
+.input--disabled .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 .input--disabled .input__remove-button {display: none !important;}
 .input--disabled .input__optional {color: #666;}
 
