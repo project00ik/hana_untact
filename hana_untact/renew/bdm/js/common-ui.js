@@ -1760,8 +1760,14 @@ function aggreePageScroll() {
 
 // 모달 오픈 js
 function modalOpen(target) {
-    var modalBtn = target;
-    $('[data-target="#' + modalBtn + '"]').trigger('click');
+    // var modalBtn = target;
+    // $('[data-target="#' + modalBtn + '"]').trigger('click');
+    
+    /* 버튼 없는 케이스 강제 오픈 : 모달팝업 ID 값 사용 */
+    var modalBtn = $('#'+ target);
+    modalBtn.modal();
+    var modalOpenNobtn = modalBtn.data('plugin_modal');
+    modalOpenNobtn.open('#'+ target);
 }
 // 모달 닫기 js
 function modalClose(target){
