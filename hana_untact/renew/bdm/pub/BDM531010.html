@@ -45,7 +45,7 @@
                     <!--// 타이틀 -->
                     <div class="cont-wrap cont-revers cont-form--animate">    <!-- cont-form--animate -->
 
-                        <div class="form-area form-hide-wrap formHide case01 case02">
+                        <div class="form-area form-hide-wrap case01">
                             <p class="page-tit-sub">외화적금 필수안내사항을 확인하셨습니까?</p>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
@@ -61,7 +61,7 @@
                             <p class="input__guide-txt input__note">이 적금 신규 시 외화매매가 발생하며, 가입이 완료되면, <span class="tp-green">취소는 불가능</span>합니다.</p>
                         </div>
                         
-                        <div class="form-area form-hide-wrap formHide case01">
+                        <div class="form-area form-hide-wrap case01">
                             <p class="page-tit-sub">만기 SMS 안내를 신청하시겠습니까?</p>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
@@ -210,13 +210,13 @@
                 <ul class="modal-select-list">
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formHideEvent02('case01');" data-element="modal__open" data-target="#modalAlert02">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this);" data-element="modal__open" data-target="#modalAlert02">
                             <label for="radioSelect03_1">만기 재예치</label>
                         </div>
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formShowEvent02('case01');">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formShowEvent('case01', true)">
                             <label for="radioSelect03_2">직접해지</label>
                         </div>
                     </li>
@@ -247,7 +247,7 @@
             </div>
             <div class="btn-group-wrap">
                 <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함">신청 안 함</button>
-                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함">신청함</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함" onclick="formHideEvent('case01', true)">신청함</button>
             </div>
         </div>
     </div>
@@ -317,7 +317,10 @@
         function formShowEvent(target, num){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
-            formTarget.addClass('form--active');
+            $('.btn-last-wrap').hide();
+            $('.btn-next-wrap').show();
+            hanaUI.formFocusEvent(0, true);
+            // formTarget.addClass('form--active');
             // setTimeout(function(){
             //     formTarget.find('.form__move').eq(num).focus();
             // }, 100)
@@ -332,6 +335,7 @@
             var formTarget = $('.'+ target);
             formTarget.removeClass('form-hide-wrap');
             formTarget.removeClass('formHide');
+            
             //$('.case01').addClass('form--active');
 
             //formTarget.addClass('form--active');
