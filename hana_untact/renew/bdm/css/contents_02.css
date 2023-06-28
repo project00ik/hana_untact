@@ -60,7 +60,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .pass-dot-wrap {display: flex; align-items: center; margin-top: 0.1rem;}
 .pass-dot-wrap .pass-dot {width: 1.6rem; height: 1.6rem; margin: 0 0.1rem; border-radius: 50%; background: #666;}
 .input .pass-dot-wrap {height: 5.7rem; display: flex; padding: 2.8rem 0 0.4rem 0.4rem; align-items: center; margin-top: 0;}
-.input .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
+.input .pass-dot-wrap .pass-dot,
+.button-select__item .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
 .input .btn-minus,
 .input .btn-plus {margin: 0 0 1.1rem 1.6rem; align-self: flex-end;}
 .input:before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}
@@ -741,10 +742,12 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .btn-star.on {background: url(../images/icon/favorit_active.png) 0 0 no-repeat;}
 
 .badge {height: 2rem; padding: 0.1rem 0.6rem; display: inline-block; font-size: 1.2rem; border-radius: 0.4rem; overflow: hidden;}
-.badge.type-value1 {background: #e3f6ff; color: #147eac;}
-.badge.type-value2 {background: #e6f6f6; color: #009591;}
-.badge.type-value3 {background: #eaedf6; color: #455896;}
-.badge.type-disabled {background: #666; color: #fff;}
+.badge.type-value1 {background: #eaedf6; color: #455896;} /* 입출금 */
+.badge.type-value2 {background: #e3f6ff; color: #147eac;} /* 예금 */
+.badge.type-value3 {background: #e6f6f6; color: #009591;} /* 적금 */
+.badge.type-value4 {background: #eaf2fe; color: #316fd4;} /* 전자금융 */
+.badge.type-value5 {background: #f9ecef; color: #d2425e;} /* 외환 */
+.badge.type-disabled {background: #9ca6a6; color: #f7fafa;}
 
 .badge-type02 {display: inline-block; padding: 0 1.2rem; height: 3rem; line-height: 3rem; font-size: 1.5rem; font-weight: 600; border-radius: 1.5rem 1.5rem;}
 .badge-type02.type-value1 {background: #f7fafa; color: #5e6666;}
