@@ -796,6 +796,7 @@ var hanaUI = {
                 var type = $el.data('tooltip');
 
                 // 툴팁이 길어졌을 때 다른툴팁과 겹침 현상 추가
+                $('.tooltip-label').css('z-index', '4')
                 $el.closest('.tooltip-label').css('z-index', '5');
            
                 if($panel.attr('data-tooltip-panel') == 'false'){
