@@ -1370,6 +1370,7 @@
 	text-align:center;
 	scroll-snap-type: y mandatory;
 }
+
 .modal__contents--multiple .container__panel.col-3 .list-section:nth-of-type(1) {
 	width:calc(100% / 3);
 	height:100%;
@@ -1492,3 +1493,27 @@
 
 .modal--slide .modal__container--interval .list-wrap--line {padding-top: 0.125rem;}
 
+/* 자동이체 팝업 */
+.direct-debit-slide {}
+.direct-debit-slide .direct-debit-btn {width:calc(100% / 2);}
+.direct-debit-slide .direct-debit-btn .list-section {
+    width:100%;
+	height:100%;
+	padding:55px 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align:center;
+	scroll-snap-type: y mandatory;
+}
+.direct-debit-slide .direct-debit-wrap {width:calc(100% / 2); height:163px; position: relative;}
+.direct-debit-slide .direct-debit-wrap .direct-debit-cont {display: none; width: 100%; height:100%; position: absolute; top: 0; right: 0; z-index: -1;}
+.direct-debit-slide .direct-debit-wrap .direct-debit-cont.open {display: block; z-index: 1;}
+.direct-debit-slide .direct-debit-wrap .direct-debit-cont .list-section {
+    width: 100%;
+	height:100%;
+	padding:55px 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align:center;
+	scroll-snap-type: y mandatory;
+}

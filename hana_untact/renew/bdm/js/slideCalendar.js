@@ -236,7 +236,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var $callBtn = o.$callBtn;
 
         //2022-10-17 이전 다음항목 클릭시
-        $el.on('click', '.modal__contents .list-section .list-wrap__item', function(e){//2022-10-17 update
+        $el.on('click', '.modal__contents .list-section .list-wrap__item', function (e) {//2022-10-17 update
             var _this = $(this);
             var scrollContainer = _this.parents('.list-section');
             var scrTop = scrollContainer.scrollTop();
@@ -336,6 +336,148 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         });        
     }
 
+    init(obj);
+};
+
+hanaProdUI.directDebitSelect = function (obj, cfn) {
+    var $el = null;
+    var dialModal = {
+        scrollWrapper : [
+            /*{
+                $el : null,
+                cols:0,
+                itemHeight : 0,
+                isActive : false,
+                scrollItems:[],
+                scrollTop : 0,
+                val: null
+            }*/
+        ],
+        //setDate : "EE",
+        groupIdx : 0, //dial group의 인덱스 저장
+        min : 0, //최소 가입기간
+        max : 0, //최대 가입기간(만기일)
+        tabs : null,
+        minDate : null,
+        maxDate : null,
+        $callBtn : null,
+        $confirmBtn: null,
+        _callBackFn : null,
+        onlyMulti:false
+    };
+
+    
+    
+    function init(obj){
+        var me = $(obj);
+        if(!me.length){ return false;}
+        var o = new Object(dialModal);            
+        o.$callBtn = $('button[data-target="#'+me.get(0).id+'"]');
+        o.$confirmBtn = me.find('.button-fixed .button--positive');
+        o._callBackFn = cfn; 
+        
+        event(me, o);
+        
+        $('body').data('plugin_modal').open(obj);
+    }
+    
+    function event($el, o){
+        //2022-10-17 이전 다음항목 클릭시
+        $el.on('click', '.direct-debit-slide .list-section .list-wrap__item', function (e) {
+            var _this = $(this);
+            var scrollContainer = _this.closest('.list-section');
+            var scrTop = scrollContainer.scrollTop();
+            if(_this.is('.active-item')) { return false;}
+            if(_this.next('.active-item').length){//이전항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop - 55
+                }, 100);
+            }
+            if(_this.prev('.active-item').length){//다음항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop + 55
+                }, 100);
+            } 
+        });
+        
+        $el.on('click', '.direct-debit-btn .list-section .list-wrap__item', function (e) { 
+            var btnIndex = $(this).index();
+            $('.direct-debit-slide .direct-debit-cont').removeClass('open');
+            $('.direct-debit-slide .direct-debit-cont').eq(btnIndex).addClass('open');
+        });
+
+        //모달내부 확인버튼 이벤트        
+        o.$confirmBtn.off('click').on('click', function(){
+            $('body').data('plugin_modal').close(obj);
+        });
+        
+        $el.find('.direct-debit-btn .list-section').each(function () {
+            var scrollContainer = $(this);   
+            
+            var orgTargetIdx = 0;
+            //스크롤시 이벤트
+            scrollContainer.off('scroll').on('scroll',function(){
+                var me = $(this);
+                var items = me.find('.list-wrap__item');
+                var _height = 55;// items.height() + margin;
+                var scrTop = this.scrollTop + (_height/2);
+                var activeTargetIdx =  (Math.floor(scrTop/_height));
+                if(activeTargetIdx > items.length -1) {
+                    activeTargetIdx = items.length -1;
+                }
+                // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
+                //     window.navigator.vibrate(100);
+                // }
+                items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                var activeItemsIndex = items.eq(activeTargetIdx).index();
+                $('.direct-debit-slide .direct-debit-cont').hide().removeClass('open');
+                $('.direct-debit-slide .direct-debit-cont').eq(activeItemsIndex).show().addClass('open');
+                
+                // 웹접근성 추가
+                items.eq(activeTargetIdx).attr({
+                    "role": "button",
+                    "title": "선택됨"
+                }).siblings().attr({
+                    "role": "button",
+                    "title": "선택안됨"
+                });
+                
+                orgTargetIdx = activeTargetIdx;
+            })
+        });        
+        $el.find('.direct-debit-cont').each(function () { 
+            $(this).find('.list-section').each(function () {
+                var scrollContainer = $(this);      
+                var orgTargetIdx = 0;
+                //스크롤시 이벤트
+                scrollContainer.off('scroll').on('scroll', function () {
+                    var me = $(this);
+                    var items = me.find('.list-wrap__item');
+                    var _height = 55;// items.height() + margin;
+                    var scrTop = this.scrollTop + (_height/2);
+                    var activeTargetIdx =  (Math.floor(scrTop/_height));
+                    if(activeTargetIdx > items.length -1) {
+                        activeTargetIdx = items.length -1;
+                    }
+                    // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
+                    //     window.navigator.vibrate(100);
+                    // }
+                    items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                    
+                    // 웹접근성 추가
+                    items.eq(activeTargetIdx).attr({
+                        "role": "button",
+                        "title": "선택됨"
+                    }).siblings().attr({
+                        "role": "button",
+                        "title": "선택안됨"
+                    });
+                    
+                    orgTargetIdx = activeTargetIdx;
+                })
+            });
+        })
+    }
     init(obj);
 };
 

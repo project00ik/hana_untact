@@ -207,6 +207,24 @@
                     </button>
                 </div>
                 <!--// 직접 선택 -->
+                <br>
+                <!-- 자동이체 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar04"
+                        id="dialOpenBtn4"
+                    >
+                        달력(자동이체 유형)
+                    </button>
+                </div>
+                <!--// 자동이체 선택 -->
 
             </div>
         </div>
@@ -552,8 +570,6 @@
                 </div>
                 <!--// 달력 -->
             </div>
-
-
             <div class="btn-wrap">
                 <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
                 <button type="button" class="btn md" data-element="modal__close">확인</button>
@@ -632,6 +648,138 @@
     </div>
     <!--// 모달레이어 - 달력(직접선택 유형) -->
 
+    <!-- 모달레이어 - 달력(자동이체 유형) -->
+    <div id="slideCalendar04" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">자동이체</h1>
+            </div>
+            <div class="modal__contents modal__contents--multiple">
+                <!-- 달력 -->
+                <div class="container__panel col-2 direct-debit-slide">
+                    <div class="direct-debit-btn">
+                        <div class="list-section">
+                            <ul class="list-wrap">
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매월</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매주</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매일</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="direct-debit-wrap">
+                        <div class="direct-debit-cont open">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">17일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">18일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">19일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">20일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="direct-debit-cont">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">월요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">화요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">수요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">목요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">금요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="direct-debit-cont">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// 달력 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">신청 안 함</button>
+                <button type="button" class="btn md" data-element="modal__close">신청함</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(자동이체 유형) -->
+
 	<script>
         $(function(){
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
@@ -645,7 +793,6 @@
         $(function(){
             hanaProdUI.savgJoinPageInit();
             $('#dialOpenBtn').click(function(){
-                //멀티 다이얼 호출
                 var param = {
                     min : 0,
                     max : 48,
@@ -661,7 +808,7 @@
                         "codeName" : "3개월"
                     }]
                 };
-        
+                //멀티 다이얼 호출
                 hanaProdUI.dialSelect('#slideCalendar01', param , function(ui){
                     console.log('callback', ui)
                 });
@@ -694,17 +841,25 @@
         
             // 직접 선택만 있는 케이스
             $('#dialOpenBtn3').click(function(){
-                //멀티 다이얼 호출
                 var param = {
                     min : 6,
                     max : 48
                 };
-        
+                //멀티 다이얼 호출
                 hanaProdUI.dialSelect('#slideCalendar03', param , function(ui){
                     console.log('callback', ui)
                 });
             });
             // modalOpen('slideCalendar03');
+
+            // 자동이체 
+            $('#dialOpenBtn4').click(function(){
+                //싱글 다이얼 호출
+                hanaProdUI.directDebitSelect('#slideCalendar04', function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar04');
         });
     </script>
 </body>
