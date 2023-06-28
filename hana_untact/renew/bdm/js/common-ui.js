@@ -794,9 +794,10 @@ var hanaUI = {
                 var $el = $(this).closest('[data-tooltip]');
                 var $panel = $el.find('[data-tooltip-panel]');
                 var type = $el.data('tooltip');
+
+                // 툴팁이 길어졌을 때 다른툴팁과 겹침 현상 추가
+                $el.closest('.tooltip-label').css('z-index', '5');
            
-
-
                 if($panel.attr('data-tooltip-panel') == 'false'){
 
                     if($('[data-tooltip-panel=true]').length > 0){
@@ -1762,7 +1763,7 @@ function aggreePageScroll() {
 function modalOpen(target) {
     // var modalBtn = target;
     // $('[data-target="#' + modalBtn + '"]').trigger('click');
-    
+
     /* 버튼 없는 케이스 강제 오픈 : 모달팝업 ID 값 사용 */
     var modalBtn = $('#'+ target);
     modalBtn.modal();
