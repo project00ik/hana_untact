@@ -163,11 +163,11 @@
 /* ik */
 .form-area > .form-area:first-child {margin-top: 0;}
 .form-area .btn-group-flex .btn + .btn {margin-left: 0.8rem !important;} /* important 삭제*/
+.input__guide-txt.input__note * {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
 
+/* 
 
-
-
-
+.cont-form--animate .form-area.form-hide.form--active {display: none;} */
 
 
 

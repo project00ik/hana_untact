@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">계좌정보</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 4단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step on">4</li>
+                            <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit label__tit" aria-hidden="true">전자금융 출금계좌로<br>등록하세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">전자금융 출금계좌로<br>등록하세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">%글로벌페이전용통장(원화+외화)%을<br>만들게요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">%글로벌페이전용통장(원화+외화)%을<br>만들게요</p>
+                    </div>
+                    <!--// 타이틀 -->
+                    <div class="cont-wrap cont-revers cont-form--animate">    <!-- cont-form--animate -->
+
+                        <div class="form-area form-hide-wrap formHide case01 case02">
+                            <p class="page-tit-sub">외화적금 필수안내사항을 확인하셨습니까?</p>
+                            <div class="tab-radio-wrap">
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio03-01" id="radio03-ck01" title="아니오">
+                                    <label for="radio03-ck01">아니오</label>
+                                </div>
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio03-01" id="radio03-ck02" title="예" checked="checked">
+                                    <label for="radio03-ck02">예</label>
+                                </div>
+                            </div>
+                            <p class="input__guide-txt input__note">이 적금을 원화로 인출하는 경우 환율변동으로 인하여 <span class="tp-green">이익 또는 손실</span>이 발생할 수 있습니다.</p>
+                            <p class="input__guide-txt input__note">이 적금 신규 시 외화매매가 발생하며, 가입이 완료되면, <span class="tp-green">취소는 불가능</span>합니다.</p>
+                        </div>
+                        
+                        <div class="form-area form-hide-wrap formHide case01">
+                            <p class="page-tit-sub">만기 SMS 안내를 신청하시겠습니까?</p>
+                            <div class="tab-radio-wrap">
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio02-01" id="radio02-ck01" title="신청안함">
+                                    <label for="radio02-ck01">신청안함</label>
+                                </div>
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio02-01" id="radio02-ck02" title="신청함" checked="checked">
+                                    <label for="radio02-ck02">신청함</label>
+                                </div>
+                            </div>
+                            <p class="input__guide-txt input__note">만기 1주일 전 휴대폰번호로 1회 발송됩니다.</p>
+                        </div>
+                        
+                        <!-- select -->
+                        <div class="form-area">
+                            <div class="form-item select-wrap">
+                                <div class="select">
+                                    <div class="select-label">만기해지 방법</div>
+                                    <div class="select__inner">
+                                        <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSelect03" title="만기해지 방법 선택">
+                                            <span></span> 
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+                            </div>
+                        </div>
+                        <!--// select -->
+
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-sub-wrap btn-next-wrap">
+                    <button type="button" class="btn rd btn__form-next" date-nowindex="0" title="계속">계속</button>
+                    <!-- 2depth 폼 이동 용 버튼 -->
+                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
+                </div>
+                <div class="btn-group-wrap btn-last-wrap" style="display: none"><!-- 확인 버튼(.btn-last-wrap) (마지막 폼에서 계속버튼을 눌렀을때 페이지 확인버튼 노출) -->
+                    <button type="button" class="btn" title="확인">확인</button>
+                </div>
+            </div>
+        <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+   
+    <!-- 모달레이어 - alert -->
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element" >
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">입출금통장과 일달러외화적금을 같이 신규하는 경우 최초 신규 금액은 <span class="tp-green">USD</span> 1만 가능합니다.</p>
+                <p class="text-sub">추가인증(가상계좌이체) 후 남은 잔액은 신규된 하나은행 입출금통장으로 입금됩니다.</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert -->
+
+    <!-- 모달레이어 - 출금계좌 선택 -->
+    <div id="modalSearch01" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">출금계좌</h1>
+            </div>
+            <div class="modal__contents btn-none">
+                <!-- 팝업 내용 -->
+
+                <ul class="list-line-wrap">
+                    <li onclick="modalClose(this);">
+                        <p class="title">%상품명 또는 별칭%</p>
+                        <div class="account-num-wrap">
+                            <span class="num">101-</span>
+                            <div class="pass-dot-wrap">
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                            </div>
+                            <span class="num">-012345</span>
+                        </div>
+                    </li>
+                    <li onclick="modalClose(this);">
+                        <p class="title">%상품명 또는 별칭%</p>
+                        <div class="account-num-wrap">
+                            <span class="num">101-</span>
+                            <div class="pass-dot-wrap">
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                            </div>
+                            <span class="num">-012345</span>
+                        </div>
+                    </li>
+                    <li onclick="modalClose(this);">
+                        <p class="title">%상품명 또는 별칭%</p>
+                        <div class="account-num-wrap">
+                            <span class="num">101-</span>
+                            <div class="pass-dot-wrap">
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                                <span class="pass-dot"></span>
+                            </div>
+                            <span class="num">-012345</span>
+                        </div>
+                    </li>
+                </ul>
+                
+
+                <!--// 팝업 내용 -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 출금계좌 선택 -->
+
+    <!-- 모달레이어 - 만기해지 방법 -->
+    <div id="modalSelect03" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">만기해지 방법</h1>
+            </div>
+            <div class="modal__contents btn-none">
+                <!-- 팝업 내용 -->                     
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_1" title="" onclick="modalClose(this); formHideEvent02('case01');" data-element="modal__open" data-target="#modalAlert02">
+                            <label for="radioSelect03_1">만기 재예치</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formShowEvent02('case01');">
+                            <label for="radioSelect03_2">직접해지</label>
+                        </div>
+                    </li>
+                </ul>
+                <!--// 팝업 내용 -->
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 만기해지 방법  -->
+
+
+    <!-- 모달레이어 - alert -->
+    <div id="modalAlert02" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">만기 재예치 동의서</p>
+                <div class="text-sub txt-align-l">
+                    <p>만기 재예치를 신청하시면,</p>
+                    <ul>
+                        <li>1. 만기일에 납입 원금은 전과 동일한 기간으로 자동 재예치 처리합니다.</li>
+                        <li>2. <span class="tp-green">이때 발생한 이자는 재예치 시점의 전신환매입율로 환전 되어 사전에 지정한 본인명의의 입출금이 자유로운 원화예금으로 입금됩니다.<br>(비대면계좌개설로 적금을 개설하신 경우에는 최초납입금이 출금된 원화예금으로 입금)</span></li>
+                        <li>3. 재예치 신청 시 이 적금에 기존에 등록된 <span class="tp-green">자동이체도 자동 연장됩니다.</span></li>
+                        <li>4. 재예치된 적금의 이율은 재예치일 당시 영업점과 인터넷홈페이지에 고시한 자유적립외화적금이율의 가입기간 해당 이율을 적용합니다.</li>
+                        <li>5. 압류 등 법적으로 지급제한이 있거나 만기일 전에 고객이 자동재예치를 해제하는 등 기타 재예치를 할 수 없는 경우에는 재예치 대상에서 제외됩니다.</li>
+                    </ul>
+                </div>                
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함">신청 안 함</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함">신청함</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert -->
+
+
+
+
+
+
+
+
+
+    
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
+            // modalOpen('modalAlert');
+
+            // $('#modalAlert').modal();
+            // var modalOpenNobtn = $('#modalAlert').data('plugin_modal');
+            // modalOpenNobtn.open('#modalAlert');
+
+
+        });
+
+        function alert(){
+
+            $('#modalAlert02').modal();
+            var modalOpenNobtn = $('#modalAlert02').data('plugin_modal');
+            modalOpenNobtn.open('#modalAlert02');
+
+        }
+
+        
+        function formRemoveClass(){
+
+            $('.form-case').removeClass('formHide');
+            $('.form-case').removeClass('form--active');
+            $('.btn-last-wrap').css('display', 'none');
+            $('.btn-next-wrap').css('display', 'block');
+
+        }
+        
+        function formAddClass(){
+
+            $('.form-case').addClass('formHide');
+
+        }
+
+
+        function formFocusEvent02(){
+            setTimeout(function(){
+                hanaUI.formFocusEvent(0, true);
+            },100);
+        }
+        function formFocusEvent03(){
+            setTimeout(function(){
+                hanaUI.formFocusEvent(3, true);
+            },100);
+        }
+
+        // form-area show / hide 예시
+        function formShowEvent(target, num){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('formHide');
+            formTarget.addClass('form--active');
+            // setTimeout(function(){
+            //     formTarget.find('.form__move').eq(num).focus();
+            // }, 100)
+            
+        }
+        function formHideEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.addClass('formHide');
+        }
+
+        function formShowEvent02(target, num){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('form-hide-wrap');
+            formTarget.removeClass('formHide');
+            //$('.case01').addClass('form--active');
+
+            //formTarget.addClass('form--active');
+            // setTimeout(function(){
+            //     formTarget.find('.form__move').eq(num).focus();
+            // }, 100)
+            
+        }
+        function formHideEvent02(target){
+            var formTarget = $('.'+ target);
+            formTarget.addClass('form-hide-wrap');
+            formTarget.addClass('formHide');
+            formTarget.removeClass('form--active');
+
+        }
+
+
+    </script>
+</body>
+</html>
