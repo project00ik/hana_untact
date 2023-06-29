@@ -227,6 +227,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
 .tab-wrap__menu {display: flex; position: relative; padding: 0 2.4rem;}
 .tab-wrap__menu::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #e7e9ee; }
+.popup-wrap.modal--slide .tab-wrap {margin: 0 -2.4rem; width: calc(100% + 4.8rem);}
 .tab-wrap .tab-wrap__item {flex: 1;}
 .tab-wrap .tab-wrap__item .tab-wrap__button {height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
 .tab-wrap .tab-wrap__item .tab-wrap__button span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
@@ -515,6 +516,10 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 /* -- 테이블 (table) : 공통 텍스트 스타일 */
 .tbl-wrap .text-point {display: block; font-weight: 600;} 
 .bar-list.sm > li .text-point {font-size: 1.4rem; font-weight: 600;} 
+.table-under-area {margin-top: 1rem;}
+.table-under-area .caution-list > li {margin-top: 0; font-size: 1.4rem; color: #666;}
+.table-under-area .caution-list > li::before {color: #666;}
+.table-under-area .caution-list > li + li {margin-top: 1rem;}
 
 /* - 컨텐츠 : 태그 (tag) */
 .tag-usd {display: inline-block; padding: 0 0 0 3.2rem; width: 7.6rem; height: 3.2rem; line-height: 3.2rem; color: #333; font-weight: 600; border-radius: 1.6rem 1.6rem; background: #f7fafa url(../images/icon/usa_small.png) 0.8rem center no-repeat; background-size: 2rem 2rem; text-align: left;}
@@ -670,6 +675,9 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
 .popup-wrap.modal--slide .modal-select-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .popup-wrap.modal--slide .modal-select-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
+
+/* 모달 테스트 타입 컨텐츠 */
+.popup-wrap.modal--slide .pop-text-cont {padding: 3rem 0 1.2rem;}
 
 /* 토스트 팝업 */
 .popup-wrap .toast-popup-wrap {
@@ -910,15 +918,15 @@ body.modal-open .app-footer {position: relative;}
 .popup-wrap.modal--slide .modal__header {position: relative;}
 .popup-wrap.modal--slide .modal__header .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 5;}
 .btn-download {width: 2.4rem; height: 2.4rem; display: inline-block; background: url(../images/icon/ico-system-download.png) 50% 50% no-repeat; background-size: 100% auto;}
-.agree-wrap {width:100%; padding-top: 3rem;}
+.agree-wrap {width:100%; padding-top: 5rem;}
 .popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
 .agree-img-area {padding-top: 1rem;}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20;}
 .modal-top-sticky .modal-sticky-cont {
-    width: calc(100% + 4.8rem); height: 3rem; margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fff;
-    display: flex; justify-content: space-between;
+    width: calc(100% + 4.8rem); min-height: 3rem; margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fff;
+    display: flex; justify-content: space-between; align-items: center;
     box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);
 }
 .modal-sticky-cont .agree-name {flex: 1; font-size: 1.4rem; line-height:1.4; color: #333;}
