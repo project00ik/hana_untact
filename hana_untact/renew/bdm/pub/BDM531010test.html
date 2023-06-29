@@ -37,7 +37,7 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">외화적금 필수안내사항을<br>확인해주세요</p>
+                        <p class="page-tit label__tit last" aria-hidden="true">외화적금 필수안내사항을<br>확인해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">만기시 SMS 수신여부를<br>확인해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">만기시 해지 방법을<br>선택해주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">일달러 외화적금을<br>만들게요</p>
@@ -50,7 +50,7 @@
                     <!--// 타이틀 -->
                     <div class="cont-wrap cont-revers cont-form--animate">    <!--  -->
 
-                        <div class="form-area form-hide-wrap case01">
+                        <div class="form-area form-hide-wrap case01 case02">
                             <p class="page-tit-sub">외화적금 필수안내사항을 확인하셨습니까?</p>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
@@ -516,7 +516,7 @@
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formShowEvent('case01', true);">
+                            <input type="radio" name="radioSelect03" id="radioSelect03_2" title="" onclick="modalClose(this); formShowEvent('case01', true); test()">
                             <label for="radioSelect03_2">직접해지</label>
                         </div>
                     </li> 
@@ -525,7 +525,7 @@
                             <input type="radio" name="radioSelect03" id="radioSelect03_3" title="" onclick="modalClose(this); hanaUI.formFocusEvent(6, true);" data-element="modal__open" data-target="#modalAlert02">
                             <label for="radioSelect03_3">만기 재예치</label>
                         </div>
-                    </li>
+                    </li> 
                     <li>
                         <div class="radio-list-wrap">
                             <input type="radio" name="radioSelect03" id="radioSelect03_4" title="" onclick="modalClose(this); formShowEvent('case01', true);">
@@ -559,7 +559,7 @@
             </div>
             <div class="btn-group-wrap">
                 <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함">신청 안 함</button>
-                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함" onclick="formHideEvent('case01', true)">신청함</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함" onclick="formHideEvent('case01', true);">신청함</button>
             </div>
         </div>
     </div>
@@ -589,13 +589,13 @@
         });
 
 
-        function alert(){
+        // function alert(){
 
-            $('#modalAlert02').modal();
-            var modalOpenNobtn = $('#modalAlert02').data('plugin_modal');
-            modalOpenNobtn.open('#modalAlert02');
+        //     $('#modalAlert02').modal();
+        //     var modalOpenNobtn = $('#modalAlert02').data('plugin_modal');
+        //     modalOpenNobtn.open('#modalAlert02');
 
-        }
+        // }
 
         
         function formRemoveClass(){
@@ -629,27 +629,57 @@
         function formShowEvent(target, num){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
+
             $('.btn-last-wrap').hide();
             $('.btn-next-wrap').show();
-           // hanaUI.formFocusEvent(0, true);
-            // formTarget.addClass('form--active');
-            // setTimeout(function(){
-            //     formTarget.find('.form__move').eq(num).focus();
-            // }, 100)
+            
+            
+           hanaUI.formFocusEvent(6, true);
+            //formTarget.addClass('form--active');
+            setTimeout(function(){
+                formTarget.find('.form__move').eq(num).focus();
+            }, 100)
+
+            // $('.btn__form-next').click(function(){
+                
+            //     if ($('.form-area.case01').hasClass('form--active') && $('.form-area.case02').hasClass('form--active')) {
+            //         alert();
+            //     }
+            // });
             
         }
+        function test(target){
+           
+            if ($('.form-area.case01').hasClass('form--active') && $('.form-area.case02').hasClass('form--active')) {
+                // hanaUI.formFocusEvent(8, true);
+                // $('page-tit.label__tit.last').addClass('.tit--active');
+                
+            $('.case02').removeClass('form--active');
+            hanaUI.formFocusEvent(7, true);
+                }
+            
+        } 
+        
+
         function formHideEvent(target){
             var formTarget = $('.'+ target);
             formTarget.addClass('formHide');
             formTarget.removeClass('form--active');
             formTarget.removeClass('form-hide-wrap');
 
-            if(inputArr.eq(inputArrIndex).hasClass('case01')) {
-                formNext();
-                return false;
-            }
+            
+            $('.btn-last-wrap').hide();
+            $('.btn-next-wrap').show();
+            
+            
 
+            // if(inputArr.eq(inputArrIndex).hasClass('case01')) {
+            //     formNext();
+            //     return false;
+            // }
+            
         }
+
 
         function formShowEvent02(target, num){
             var formTarget = $('.'+ target);
