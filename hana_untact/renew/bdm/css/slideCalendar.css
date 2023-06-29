@@ -314,17 +314,17 @@
     margin-bottom: 1.04167rem;
 }
 
-.list-wrap {
+.list-section .list-wrap {
     padding: 0.625rem 0;
     border-top: 1px solid #e7e9ee;
     border-bottom: 1px solid #e7e9ee;
 }
 
-.list-wrap + .list-wrap {
+.list-section .list-wrap + .list-wrap {
     border-top: 0;
 }
 
-.list-wrap + .list-wrap.list-wrap--thick-top {
+.list-section .list-wrap + .list-wrap.list-wrap--thick-top {
     border-top: 1px solid #bcbcbc;
 }
 
