@@ -685,7 +685,7 @@ body.modal-open .app-footer {position: relative;}
     animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.8s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
 .toast-popup-wrap .toast-popup {margin-top: -4.1rem; padding: 1.1rem 1.2rem 1.3rem; white-space: nowrap; color: #fff; font-size: 1.4rem; background: #262b45; border-radius: 1rem; position: relative;}
-.toast-popup-wrap .toast-popup::after {content: ''; width: 0; height: 0; display: inline-block; border: 0.6rem solid transparent; border-top: 0.9rem solid #262b45; position: absolute; bottom: -14px; left: 50%; transform: translateX(-50%); overflow: hidden;}
+.toast-popup-wrap .toast-popup::after {content: ''; width: 0; height: 0; display: inline-block; border: 0.6rem solid transparent; border-top: 0.9rem solid #262b45; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); overflow: hidden;}
 
 @keyframes toastPopup {
     0% {
