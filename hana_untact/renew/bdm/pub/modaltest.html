@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>[Modal] KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <style>
+		/* guide*/
+		.guide-depth01 {padding: 2rem; font-size: 2rem; color: #171a1a; font-weight: 700;}        
+    </style>
+</head>
+<body>
+
+	<div class="guide-wrap" id="wrap">
+
+		<h1 class="guide-depth01">[Modal] KEB하나은행 - 비대면 계좌개설</h1>
+        <div class="content">
+            <div class="con-box">
+                <!-- Content Here -->
+                <h1 class="guide-depth01">Modal</h1>
+                <p style="padding: 0 2rem;">button 내 data-target="#modalAlert" 와 modal id="modalAlert" 동일하게 사용</p>
+            
+                
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlert"
+                    >
+                        alert(기본형 예시)
+                    </button>
+                </div>
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlert02"
+                    >
+                        alert(왼쪽정렬 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertTitle"
+                    >
+                        alert(타이틀 + 가운데 정렬)
+                    </button>
+                </div>
+                <br>
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertTitle2"
+                    >
+                        alert(타이틀 + 왼쪽 정렬)
+                    </button>
+                </div>
+                <br>
+
+                <!-- <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalAlertLong"
+                    >
+                    alert - header
+                    </button>
+                </div>
+                <br> -->
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlideBtn"
+                    >
+                        slide(기본형 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlide"
+                    >
+                        slide(버튼형 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlideLink"
+                    >
+                        slide(링크형 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlideNoLine"
+                    >
+                        slide(타이틀 라인 없는 형 예시)
+                    </button>
+                </div>
+                <br>
+
+                <div class="button-wrap">
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#modalSlidefull"
+                    >
+                        slide(풀팝업 예시)
+                    </button>
+                </div>
+                <br>
+
+                <!--계좌선택버튼-->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar01"
+                        id="dialOpenBtn"
+                    >
+                        달력(탭 유형)
+                    </button>
+                </div>
+                <!--//계좌선택버튼-->
+                <br>
+
+                <!-- 기간 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar02"
+                        id="dialOpenBtn2"
+                    >
+                        달력(싱글 유형)
+                    </button>
+                </div>
+                <!--// 기간 선택 -->
+                <br>
+                <!-- 직접 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar03"
+                        id="dialOpenBtn3"
+                    >
+                        달력(직접선택 유형)
+                    </button>
+                </div>
+                <!--// 직접 선택 -->
+                <br>
+                <!-- 자동이체 선택 -->
+                <div class="button-wrap">
+                    <!--
+                        기간 선택 스크롤이 화면상에 노출되는 시점에 호출해줘야합니다.
+                        hanaProdUI.multipleSelect('uiDialogMultiple1')
+                    -->
+                    <button
+                        type="button"
+                        class="btn"
+                        data-element="modal__open"
+                        data-target="#slideCalendar04"
+                        id="dialOpenBtn4"
+                    >
+                        달력(자동이체 유형)
+                    </button>
+                </div>
+                <!--// 자동이체 선택 -->
+
+            </div>
+        </div>
+    </div>
+    <!-- 모달레이어 - alert(기본형 예시) -->
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">'개인정보 수집 &middot; 이용 동의'에 <br>동의해 주세요.</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(기본형 예시) -->
+
+    <!-- 모달레이어 - alert(왼쪽정렬 예시) -->
+    <div id="modalAlert02" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub txt-align-l">
+                    만 14세 이상~19세 미만의 미성년자의 경우<br>
+                    <span class="tp-green">주민등록증, 여권, 학생증(청소년증)</span>이<br>
+                    필요합니다.
+                </p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(왼쪽정렬 예시) -->
+    
+    <!-- 모달레이어 - alert - title 있음 -->
+    <div id="modalAlertTitle" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">title</p>
+                <p class="text-sub">제휴 증권사의 외화 증권계좌를<br>동시에 가입(연결) 하시겠습니까?</p>
+                
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert - title 있음 -->
+
+    <!-- 모달레이어 - alert - title 있음(왼쪽) -->
+    <div id="modalAlertTitle2" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">title</p>
+                <p class="text-sub  txt-align-l">제휴 증권사의 외화 증권계좌를<br>동시에 가입(연결) 하시겠습니까?</p>
+                
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert - title 있음(왼쪽) -->
+    
+    <!-- 모달레이어 - alert scroll -->
+    <div id="modalAlertLong" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">					
+            <div class="modal__header">
+                <h1 class="title">제목</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-scroll">
+                    <p>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br></p>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert scroll -->
+
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents">
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio01" title="">
+                            <label for="radio01">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio02" title="">
+                            <label for="radio02">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio" id="radio03" title="">
+                            <label for="radio03">radio-list</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <div id="modalSlideBtn" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio04" title="" onclick="modalClose(this);">
+                            <label for="radio04">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio05" title="" onclick="modalClose(this);">
+                            <label for="radio05">radio-list</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio06" title="" onclick="modalClose(this);">
+                            <label for="radio06">radio-list</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드 링크형 -->
+    <div id="modalSlideLink" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">슬라이드 팝업 제목</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                    <li><a class="link" href="#" onclick="modalClose(this);">링크형</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 링크형 -->
+
+    <!-- 모달레이어 - 슬라이드(title no-line) -->
+    <div id="modalSlideNoLine" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">본인 인증하려면 동의가 필요해요</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="privacy-wrap">
+                    <div class="privacy-area chk-all-area">
+                        <div class="item-privacy">
+                            <div class="privacy__label">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" class="chk-all" name="privacy_checkbox00" id="privacy_checkbox00" title="휴대폰 인증 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                    <label for="privacy_checkbox00">휴대폰 인증 이용약관 동의</label>
+                                </div>
+                            </div>
+                            <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="휴대폰 인증 이용약관 동의 상세보기">상세보기</button>
+                        </div>
+                        <!-- 서브목록 -->
+                        <div class="item-sublist">
+                            <div class="item-sublist__inner">
+                                <!-- 목록 -->
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_1" title="개인정보 수집 &middot; 이용 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_1">개인정보 수집 &middot; 이용 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="개인정보 수집&middot;이용 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_2" title="고객식별정보 처리 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_2">고객식별정보 처리 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="고객식별정보 처리 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_3" title="통신사 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_3">통신사 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="통신사 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                                <div class="item-privacy">
+                                    <p class="privacy__label">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox01" id="privacy_checkbox01_4" title="서비스 이용약관 동의 체크를 하려면 상세보기를 하세요.">
+                                            <label for="privacy_checkbox01_4">서비스 이용약관 동의</label>
+                                        </div>
+                                    </p>
+                                    <button type="button" class="privacy__more" data-element="modal__open" data-target="#modalSlidefull" title="서비스 이용약관 동의 상세보기">상세보기</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="본인 인증">본인 인증</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlidefull" class="modal popup-wrap modal-full modal--slide test" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">휴대폰 인증 이용약관 동의</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                개인정보 수집 &middot; 이용 동의
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의하기">동의하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+
+    <!-- 모달레이어 - 달력(탭 있는 유형) -->
+    <div id="slideCalendar01" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--inner-tab">
+                <!-- 
+                    2022-08-10 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다.
+                -->
+                <div data-element="tab" data-options='{"initIndex":0}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-wrap__menu">
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button is-active" data-element="tab__anchor"><span>간편 설정</span></a>
+                            </li>
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직접 설정</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel  col-1">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel col-3">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(탭 있는 유형)-->
+
+    <!-- 모달레이어 - 달력(싱글 유형) -->
+    <div id="slideCalendar02" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--multiple">
+                <!-- 달력 -->
+                <div class="container__panel  col-1">
+                    <div class="list-section">
+                        <!-- 옵션 아이템 동적 생성 -->
+                    </div>
+                </div>
+                <!--// 달력 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(싱글 유형) -->
+
+    <!-- 모달레이어 - 달력(직접선택 유형) -->
+    <div id="slideCalendar03" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">타이틀</h1>
+            </div>
+            <div class="modal__contents modal__contents--inner-tab">
+                <!-- 
+                    2022-08-10 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다.
+                -->
+                <div class="tab-list-wrap" data-element="tab" data-options='{"initIndex":1}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-list tab-wrap__menu">
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">간편 설정</a>
+                            </li>
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">직접 설정</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel  col-1">
+                                <div class="list-section">
+                                    <!-- 옵션 아 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                    <div class="pualugin-tab__panel is-active" data-element="tab__panel">
+                        <div class="btn-group-flex btn-date-wrap">
+                            <button tyle="button" class="btn sm light-gray" aria-label="6개월">6개월</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="1년">1년</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="3년">3년</button>
+                            <button tyle="button" class="btn sm light-gray" aria-label="5년">5년</button>
+                        </div>
+                        
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel col-3">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">취소</button>
+                <button type="button" class="btn md" data-element="modal__close">확인</button>
+            </div>
+            
+
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(직접선택 유형) -->
+
+    <!-- 모달레이어 - 달력(자동이체 유형) -->
+    <div id="slideCalendar04" class="modal popup-wrap modal--slide multiple-date-slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">자동이체</h1>
+            </div>
+            <div class="modal__contents modal__contents--multiple">
+                <!-- 달력 -->
+                <div class="container__panel col-2 direct-debit-slide">
+                    <div class="direct-debit-btn">
+                        <div class="list-section">
+                            <ul class="list-wrap">
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매월</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매주</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                                <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                    <button type="button" class="list-wrap__anchor">
+                                        <span class="list-wrap__box">
+                                            <strong class="list-wrap__title">매일</strong>
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="direct-debit-wrap">
+                        <div class="direct-debit-cont open">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">17일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">18일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">19일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">20일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="direct-debit-cont">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small active-item" role="button" title="선택됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">월요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">화요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">수요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">목요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                    <li class="list-wrap__item list-button-wrap list-button-wrap--small" role="button" title="선택안됨">
+                                        <button type="button" class="list-wrap__anchor">
+                                            <span class="list-wrap__box">
+                                                <strong class="list-wrap__title list-wrap__title--value">금요일</strong>
+                                            </span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="direct-debit-cont">
+                            <div class="list-section">
+                                <ul class="list-wrap">
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// 달력 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close">신청 안 함</button>
+                <button type="button" class="btn md" data-element="modal__close">신청함</button>
+            </div>
+        </div>
+    </div>
+    <!--// 모달레이어 - 달력(자동이체 유형) -->
+
+	<script>
+        $(function(){
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalAlertTitle');
+            // modalOpen('modalSlideBtn');
+        });
+    </script>
+    <script type="text/javascript" aria-hidden="true">
+        // slideCalendar.js
+        //퍼블 화면 확인용
+        $(function(){
+            hanaProdUI.savgJoinPageInit();
+            $('#dialOpenBtn').click(function(){
+                var param = {
+                    min : 0,
+                    max : 48,
+                    /* 간편설정이 존재할경우 */
+                    items : [{
+                        "code" : 1,
+                        "codeName" : "1개월"
+                    },{
+                        "code" : 2,
+                        "codeName" : "2개월"
+                    },{
+                        "code" : 3,
+                        "codeName" : "3개월"
+                    }]
+                };
+                //멀티 다이얼 호출
+                hanaProdUI.dialSelect('#slideCalendar01', param , function(ui){
+                    console.log('callback', ui)
+                });
+
+            })
+            // modalOpen('slideCalendar01');
+        
+            
+            $('#dialOpenBtn2').click(function(){
+                var param = [{
+                                "code" : 1,
+                                "codeName" : "1개월"
+                            },{
+                                "code" : 2,
+                                "codeName" : "2개월"
+                            },{
+                                "code" : 3,
+                                "codeName" : "3개월"
+                            },{
+                                "code" : 4,
+                                "codeName" : "4개월"
+                            }];
+        
+                //싱글 다이얼 호출
+                hanaProdUI.dialSelect('#slideCalendar02', param, function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar02');
+        
+            // 직접 선택만 있는 케이스
+            $('#dialOpenBtn3').click(function(){
+                var param = {
+                    min : 6,
+                    max : 48
+                };
+                //멀티 다이얼 호출
+                hanaProdUI.dialSelect('#slideCalendar03', param , function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar03');
+
+            // 자동이체 
+            $('#dialOpenBtn4').click(function(){
+                //싱글 다이얼 호출
+                hanaProdUI.directDebitSelect('#slideCalendar04', function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar04');
+        });
+    </script>
+</body>
+</html>

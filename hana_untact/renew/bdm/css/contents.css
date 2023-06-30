@@ -169,8 +169,9 @@
 
 .cont-form--animate .form-area.form-hide.form--active {display: none;} */
 
+.font-normal {font-weight: 400 !important;}
 
-
+.modal-full.test .popup-wrap.modal--slide .modal__container {height: 90%;}
 
 
 
