@@ -2066,20 +2066,20 @@
             */
         }
         
-        var windowHeight = $(window).innerHeight();
-        var headerHeight = $('.app-header').innerHeight();
-        var footerHeight = $('.app-footer').outerHeight();
-        var containerHeight = windowHeight - headerHeight - footerHeight;
-        alert(windowHeight);
+        
+        
         plugin.$wrap
-          .css({
-            "position": "fixed",
-            "width": "100%",
-            "height": containerHeight + "px",
+        .css({
+          "position": "fixed",
+          "width": "100%",
+            "height": "100vh",
             "overflow": "hidden"
           })
           .scrollTop( plugin.currentScrollTop )
         
+        // 팝업 열림 시 주소창 높이 대응
+        var windowHeight = $(window).innerHeight();
+        alert(windowHeight);
         $('body').addClass('modal-open').css('height', windowHeight + 'px');
 
         //plugin.$win.scrollTop(0);
