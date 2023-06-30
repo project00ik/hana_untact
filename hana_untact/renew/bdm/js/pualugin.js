@@ -2070,7 +2070,7 @@
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
         var containerHeight = windowHeight - headerHeight - footerHeight - 70;
-
+        alert(windowHeight);
         plugin.$wrap
           .css({
             "position": "fixed",
