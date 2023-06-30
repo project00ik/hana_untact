@@ -2075,12 +2075,12 @@
           .css({
             "position": "fixed",
             "width": "100%",
-            "height": "100vh",
+            "height": containerHeight + "px",
             "overflow": "hidden"
           })
           .scrollTop( plugin.currentScrollTop )
         
-        $('body').addClass('modal-open');
+        $('body').addClass('modal-open').css('height', windowHeight + 'px');
 
         //plugin.$win.scrollTop(0);
       },
