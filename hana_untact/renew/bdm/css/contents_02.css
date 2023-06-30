@@ -33,6 +33,20 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .qna-list > dt {margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 600; color: #171a1a;}
 .qna-list > dd .txt {font-size: 1.6rem; color: #5e6666; line-height: 1.7;}
 
+/* 리스트 양쪽정렬(type01 contents.css에 있음) */
+/* type02 */
+.use-coupon-wrap {margin-top: 2rem;}
+.use-coupon-wrap .checkbox-wrap label {color: #333; font-weight: 400; line-height: 2rem;}
+.list-wrap.type02 {border-top: 0; padding: 0.5rem 0 1rem;}
+.list-wrap.type02 dl {width: 100%; display: flex; justify-content: space-between;}
+.list-wrap.type02 dl + dl {margin-top: 1rem;}
+.list-wrap.type02 dl > dt {font-size: 1.3rem; color: #757575; flex: 1;}
+.list-wrap.type02 dl > dd {font-size: 1.5rem; color: #393939; text-align: right; flex: 2;}
+.list-wrap.type02 dl.point dt,
+.list-wrap.type02 dl.point dd {color: #e53a4c;}
+
+
+
 /* --- 컨텐츠 --- */
 
 /* 폼 레이아웃 */
