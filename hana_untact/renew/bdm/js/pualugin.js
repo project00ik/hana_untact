@@ -2070,7 +2070,7 @@
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
         var containerHeight = windowHeight - headerHeight - footerHeight;
-
+        alert(windowHeight);
         plugin.$wrap
           .css({
             "position": "fixed",
@@ -2080,7 +2080,7 @@
           })
           .scrollTop( plugin.currentScrollTop )
         
-        $('body').addClass('modal-open');
+        $('body').addClass('modal-open').css('height', windowHeight + 'px');
 
         //plugin.$win.scrollTop(0);
       },
