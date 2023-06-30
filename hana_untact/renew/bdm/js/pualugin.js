@@ -1875,9 +1875,6 @@
 				var plugin = this;
         var $target = $(target);
 
-        // 모바일 웹 팝업 open 시 높이값 적용
-        hanaUI.layout();
-
         // 모달이 이미 열려 있는 경우 return
         if ( $(target).hasClass('is-open') ) return;
 
@@ -2069,11 +2066,16 @@
             */
         }
         
+        var windowHeight = $(window).innerHeight();
+        var headerHeight = $('.app-header').innerHeight();
+        var footerHeight = $('.app-footer').outerHeight();
+        var containerHeight = windowHeight - headerHeight - footerHeight;
+
         plugin.$wrap
           .css({
             "position": "fixed",
             "width": "100%",
-            "height": "100%",
+            "height": containerHeight + "px",
             "overflow": "hidden"
           })
           .scrollTop( plugin.currentScrollTop )

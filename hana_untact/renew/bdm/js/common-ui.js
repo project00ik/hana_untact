@@ -47,7 +47,10 @@ var hanaUI = {
         var popContainerHeight = containerHeight - 70; // 아이폰주소 70
         // $('body').css('min-height', windowHeight + 'px');
         $('.app-content').css('min-height', containerHeight + 'px');
-        // $('.modal-open').closest('.app-content').css('min-height', popContainerHeight + 'px');
+        
+        $('.modal-open').find('.wrap').css('background', 'red');
+        $('.modal-open').find('.wrap').css('height', popContainerHeight + 'px');
+        console.log($('.modal-open').find('.wrap'));
 
 
         let vh = window.innerHeight * 0.01;
