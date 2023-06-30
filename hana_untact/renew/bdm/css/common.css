@@ -624,7 +624,7 @@ label.asswitch-wrap input:checked + span::after {content:''; left: 1.9rem;}
 /* --- 모달 팝업 (modal) --- */
 /* - 모달 팝업 : 공통 */
 body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overflow-scrolling: auto; }
-body.modal-open .app-footer {position: relative;}
+/* body.modal-open .app-footer {position: relative;} */
 .modal { display: none; position: absolute; z-index: -1; }
 .modal .container { margin-top: 0; }
 .modal .container + .container { margin-top: 0.875rem; }
