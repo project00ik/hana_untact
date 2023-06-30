@@ -2066,7 +2066,7 @@
             */
         }
         
-        var windowHeight = $(window).innerHeight() - 70;
+        var windowHeight = $(window).innerHeight();
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
         var containerHeight = windowHeight - headerHeight - footerHeight;
