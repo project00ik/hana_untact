@@ -2066,10 +2066,10 @@
             */
         }
         
-        var windowHeight = $(window).innerHeight();
+        var windowHeight = $(window).innerHeight() - 70;
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
-        var containerHeight = windowHeight - headerHeight - footerHeight - 70;
+        var containerHeight = windowHeight - headerHeight - footerHeight;
         alert(windowHeight);
         plugin.$wrap
           .css({
