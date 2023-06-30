@@ -2069,13 +2069,13 @@
         var windowHeight = $(window).innerHeight();
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
-        var containerHeight = windowHeight - headerHeight - footerHeight;
+        var containerHeight = windowHeight - headerHeight - footerHeight - 70;
 
         plugin.$wrap
           .css({
             "position": "fixed",
             "width": "100%",
-            "height": containerHeight + "px",
+            "height": "100vh",
             "overflow": "hidden"
           })
           .scrollTop( plugin.currentScrollTop )
