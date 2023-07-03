@@ -2067,18 +2067,19 @@
         }
         
         plugin.$wrap
-        .css({
-          "position": "fixed",
-          "width": "100%",
+          .css({
+            "position": "fixed",
+            "width": "100%",
             "height": "100vh",
             "overflow": "hidden"
           })
-          .scrollTop( plugin.currentScrollTop )
+          .scrollTop(plugin.currentScrollTop);
         
-        // 팝업 열림 시 주소창 높이 대응
-        // var windowHeight = $(window).innerHeight();
-        // $('body').addClass('modal-open').css('height', windowHeight + 'px');
-        $('body').addClass('modal-open');
+          // 팝업 열림 시 주소창 높이 대응
+          $('body').addClass('modal-open').css('height', $(window).innerHeight() + 'px').css('min-height', $(window).innerHeight() + 'px');
+          window.addEventListener("resize", () => {
+            $('body').css('height', $(window).innerHeight() + 'px').css('min-height', $(window).innerHeight() + 'px');
+          });
 
         //plugin.$win.scrollTop(0);
       },
