@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">계좌정보</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 4단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step on">4</li>
+                            <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">도움 받을 영업점을<br>확인해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap cont-form--animate">
+
+                        <!-- select -->
+                        <!-- D: 셀렉트 관련 설명
+                            * 오류시 class="form-item select-wrap select--error"
+                            * 비활성화시 class="form-item select-wrap select--disabled", button에 disabled="disabled"속성 추가
+                            * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item select-wrap select--active"
+                        -->						
+						<!--// select -->                             
+                        <!-- input -->
+                        <!-- D: 인풋 관련 설명
+                            * 오류시 class="form-area input--error"
+                            * 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+                            * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+                        -->
+                        <div class="form-area">
+                            <div class="new-password-wrap">
+                                <div class="chk-tg tg--area">
+                                    <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                        <div class="checkbox-wrap">
+                                            <input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox01" title="관리점/직원 찾기">
+                                            <label for="privacy_checkbox01">관리점/직원 찾기</label>
+                                        </div>
+                                    </div>
+                                    <div class="chk-tg-cont tg--layer">
+                                        <div class="form-area last_form-area">
+                                            <div class="form-item search-btn-wrap no-label">
+                                                <div class="input-search-btn">
+                                                    <div class="input-search__inner">
+                                                        <button type="button" class="button button-search__btn" title="관리점/직원 찾기 열기" data-element="modal__open" data-target="#modalSearch01">
+                                                            (검색 팝업 열기 전)HANA BANK
+                                                        </button>
+                                                        <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                                    </div>
+                                                </div>
+                                                <!-- 에러 메시지 -->
+                                                <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--// new-password-wrap -->
+                        </div>
+
+                        <div class="form-area">
+                            <div class="new-password-wrap">
+                                <div class="chk-tg tg--area">
+                                    <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                        <div class="checkbox-wrap">
+                                            <input type="checkbox" name="privacy_checkbox06" id="privacy_checkbox02" title="이용한도 해제 코드 등록(선택)">
+                                            <label for="privacy_checkbox01">이용한도 해제 코드 등록(선택)</label>
+                                        </div>
+                                    </div>
+                                    <div class="chk-tg-cont tg--layer">
+                                        <div class="form-area last_form-area">
+                                            <div class="form-item input no-label">
+                                                <div class="input__inner">
+                                                    <input type="password" id="inputText01" class="input__element form__move" title="이용한도 해제 코드 등록(선택)" placeholder="">
+                                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                                </div>
+                                                <!-- 에러 메시지 -->
+                                            </div>
+                                            <!-- 에러메세지 -->
+                                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                            <!--// input -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--// new-password-wrap -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-sub-wrap btn-next-wrap">
+                    <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
+                    <!-- 2depth 폼 이동 용 버튼 -->
+                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
+                </div>
+                <div class="btn-group-wrap btn-last-wrap" style="display: none;">
+                    <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                </div>
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 관리점/직원 찾기(검색 전) -->
+    <div id="modalSearch01" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">관리점/직원 찾기</h1>
+            </div>
+            <div class="modal__contents btn-none">
+                <!-- 팝업 내용 -->
+                <div data-element="tab" data-options='{"initIndex":0}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-wrap__menu">
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button is-active" data-element="tab__anchor"><span>지점명검색</span></a>
+                            </li>
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직원이름검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel">
+                        <!-- input : 검색 -->
+                        <div class="search-area" data-sticky="wrap">
+                            <div class="input input-search">                        
+                                <!-- input -->
+                                <!-- D: 인풋 관련 설명
+                                    * 오류시 class="form-area input--error"
+                                    * 비활성화시 class="form-item input input--disabled" input 에 disabled 추가
+                                    * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+                                -->
+                                <!-- // input -->
+                                <div class="input__inner">
+                                    <input type="text" id="searchInput" class="input__element input--search" title="검색어 입력폼" placeholder="지점명 또는 지점코드 입력">
+                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                </div>
+                                <!-- 에러 메시지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div>
+                        </div>
+                        <!--// input : 검색 -->
+                        <!-- 검색 전 -->
+                        <div class="branch-search-wrap" style="display: none;">
+                            
+                        </div>
+                        <!--// 검색 전 -->
+                        <!-- 검색 후 -->
+                        <div class="branch-result-wrap">
+                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <div class="accordion-list-wrap">
+                                <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                두산타워
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <ul class="check-list align-justify">
+                                                <li class="big-chk">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_1" title="">
+                                                        <label for="branchCheckbox01_1">
+                                                            <span class="branch-txt">지점으로 선택</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_2" title="">
+                                                        <label for="branchCheckbox01_2">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_3" title="">
+                                                        <label for="branchCheckbox01_3">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_4" title="">
+                                                        <label for="branchCheckbox01_4">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <ul class="check-list align-justify">
+                                                <li class="big-chk">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_1" title="">
+                                                        <label for="branchCheckbox02_1">
+                                                            <span class="branch-txt">지점으로 선택</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_2" title="">
+                                                        <label for="branchCheckbox02_2">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_3" title="">
+                                                        <label for="branchCheckbox02_3">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_4" title="">
+                                                        <label for="branchCheckbox02_4">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부PB센터
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <ul class="check-list align-justify">
+                                                <li class="big-chk">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_1" title="">
+                                                        <label for="branchCheckbox03_1">
+                                                            <span class="branch-txt">지점으로 선택</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_2" title="">
+                                                        <label for="branchCheckbox03_2">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_3" title="">
+                                                        <label for="branchCheckbox03_3">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_4" title="">
+                                                        <label for="branchCheckbox03_4">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부PB센터
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <ul class="check-list align-justify">
+                                                <li class="big-chk">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_1" title="">
+                                                        <label for="branchCheckbox04_1">
+                                                            <span class="branch-txt">지점으로 선택</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_2" title="">
+                                                        <label for="branchCheckbox04_2">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_3" title="">
+                                                        <label for="branchCheckbox04_3">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_4" title="">
+                                                        <label for="branchCheckbox04_4">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_5" title="">
+                                                        <label for="branchCheckbox04_5">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_6" title="">
+                                                        <label for="branchCheckbox04_6">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_7" title="">
+                                                        <label for="branchCheckbox04_7">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_8" title="">
+                                                        <label for="branchCheckbox04_8">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_9" title="">
+                                                        <label for="branchCheckbox04_9">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">홍길동(1010163)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_10" title="">
+                                                        <label for="branchCheckbox04_10">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김하나(1010164)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_11" title="">
+                                                        <label for="branchCheckbox04_11">
+                                                            <span class="branch-name">두산타워</span>
+                                                            <span class="staff-name">김경훈(1010162)</span>
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- // accordion-list-wrap -->
+                        </div>
+                        <!--// 검색 후 -->
+                        <!-- 검색 결과 없음 -->
+                        <div class="branch-result-wrap" style="display: none;">
+                            <div class="no-data">
+                                <p class="txt">검색된 주소가 없습니다.</p>
+                            </div>
+                        </div>
+                        <!--// 검색 결과 없음 -->
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 주소검색(검색 전) -->
+    
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (정순) (포커스 지정이 필요할 때 사용) 
+            hanaUI.formFocusEvent(0); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            
+             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalSearch01');
+        })
+        function formShowEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('formHide');
+            formTarget.addClass('form--active');
+        }
+        function formShowEventPet(target){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('formHide');
+            formTarget.addClass('form--active');
+            $('.btn-last-wrap').hide();
+            $('.btn-next-wrap').show();
+            $('#inputText09').focus();
+        }
+        function formHideEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.addClass('formHide');
+        }
+
+    </script>
+    
+
+</body>
+</html>

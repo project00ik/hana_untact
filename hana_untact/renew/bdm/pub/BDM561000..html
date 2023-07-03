@@ -403,28 +403,11 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(2, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
             
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSearch01');
         })
-        function formShowEvent(target){
-            var formTarget = $('.'+ target);
-            formTarget.removeClass('formHide');
-            formTarget.addClass('form--active');
-        }
-        function formShowEventPet(target){
-            var formTarget = $('.'+ target);
-            formTarget.removeClass('formHide');
-            formTarget.addClass('form--active');
-            $('.btn-last-wrap').hide();
-            $('.btn-next-wrap').show();
-            $('#inputText09').focus();
-        }
-        function formHideEvent(target){
-            var formTarget = $('.'+ target);
-            formTarget.addClass('formHide');
-        }
 
     </script>
     
