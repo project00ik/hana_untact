@@ -54,6 +54,10 @@ var hanaUI = {
             console.log("resize");
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+            var windowHeightResize = $(window).innerHeight();
+            var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
+            $('.app-content').css('min-height', containerHeightResize + 'px');
         });
     },
     header : function(obj){

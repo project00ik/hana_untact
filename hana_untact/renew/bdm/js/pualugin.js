@@ -2076,8 +2076,9 @@
           .scrollTop( plugin.currentScrollTop )
         
         // 팝업 열림 시 주소창 높이 대응
-        var windowHeight = $(window).innerHeight();
-        $('body').addClass('modal-open').css('height', windowHeight + 'px');
+        // var windowHeight = $(window).innerHeight();
+        // $('body').addClass('modal-open').css('height', windowHeight + 'px');
+        $('body').addClass('modal-open');
 
         //plugin.$win.scrollTop(0);
       },
