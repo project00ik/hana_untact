@@ -199,7 +199,7 @@
                         </div>
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
-                        <div class="branch-result-wrap">
+                        <div class="branch-result-wrap" style="display: none;">
                             <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="accordion-list-wrap">
                                 <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
@@ -456,7 +456,7 @@
                         </div>
                         <!--// 검색 후 -->
                         <!-- 검색 결과 없음 -->
-                        <div class="branch-result-wrap" style="display: none;">
+                        <div class="branch-result-wrap">
                             <div class="no-data">
                                 <p class="txt">검색결과가 없습니다.</p>
                             </div>
@@ -490,7 +490,7 @@
                         </div>
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
-                        <div class="branch-result-wrap">
+                        <div class="branch-result-wrap" style="display: none;">
                             <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="staff-list-wrap">
                                 <ul class="line-check-list align-justify">
@@ -534,7 +534,7 @@
                         </div>
                         <!--// 검색 후 -->
                         <!-- 검색 결과 없음 -->
-                        <div class="branch-result-wrap" style="display: none;">
+                        <div class="branch-result-wrap">
                             <div class="no-data">
                                 <p class="txt">검색결과가 없습니다.</p>
                             </div>
@@ -556,7 +556,7 @@
         
         $(function(){
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            // modalOpen('modalSearch01');
+            modalOpen('modalSearch01');
         })
 
     </script>

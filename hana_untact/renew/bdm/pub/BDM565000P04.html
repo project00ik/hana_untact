@@ -165,14 +165,14 @@
                     <div class="tab-wrap">
                         <ul class="tab-wrap__menu">
                             <li class="tab-wrap__item" data-element="tab__list">
-                                <a href="#" class="tab-wrap__button is-active" data-element="tab__anchor"><span>지점명검색</span></a>
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>지점명검색</span></a>
                             </li>
                             <li class="tab-wrap__item" data-element="tab__list">
-                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직원이름검색</span></a>
+                                <a href="#" class="tab-wrap__button is-active" data-element="tab__anchor"><span>직원이름검색</span></a>
                             </li>
                         </ul>
                     </div>
-                    <div class="pualugin-tab__panel" data-element="tab__panel">
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
                         <!-- input : 검색 -->
                         <div class="search-area" data-sticky="wrap">
                             <div class="input input-search">                        
@@ -463,7 +463,7 @@
                         </div>
                         <!--// 검색 결과 없음 -->
                     </div>
-                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                    <div class="pualugin-tab__panel" data-element="tab__panel">
                         <!-- input : 검색 -->
                         <div class="search-area" data-sticky="wrap">
                             <div class="input input-search">                        
@@ -556,7 +556,7 @@
         
         $(function(){
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            // modalOpen('modalSearch01');
+            modalOpen('modalSearch01');
         })
 
     </script>
