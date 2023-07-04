@@ -209,20 +209,33 @@
                         </div>
 
                         <div class="form-area">
-                            <p class="page-tit-sub">주택공급정책 자료 활용 동의 여부를 선택해주세요</p>
-                            <div class="tab-radio-wrap">
-                                <div class="tab-radio">
-                                    <input type="radio" name="radio02-01" id="radio02-ck01" title="동의안함">
-                                    <label for="radio02-ck01">동의안함</label>
+                            <!-- 230704 기획수정 -->
+                            <div class="checkbox-notice-wrap">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" name="" id="checkbox03" title="주택공급정책 자료 활용 동의">
+                                    <label for="checkbox03">주택공급정책 자료 활용 동의</label>
                                 </div>
-                                <div class="tab-radio">
-                                    <input type="radio" name="radio02-01" id="radio02-ck02" class="modal-btn__chk" title="동의함" checked="checked">
-                                    <label for="radio02-ck02">동의함</label>
-                                </div>
+                                <p class="input__guide-txt input__note depth2">
+                                    주택공급정책 자료 활용을 위한 『주택공급에 관한 규칙』 제5조에 따른 조사로, 청약종합저축 가입신청서와는 무관합니다.
+                                </p>
                             </div>
-                            <p class="input__guide-txt input__note">주택공급정책 자료 활용을 위한 『주택공급에 관한 규칙』 제5조에 따른 조사로, 청약종합저축 가입신청서와는 무관합니다.</p>
+                            <!--// 230704 기획수정 -->
+                            <!-- 230704 기획수정으로 삭제
+                                <p class="page-tit-sub">주택공급정책 자료 활용 동의 여부를 선택해주세요</p>
+                                <div class="tab-radio-wrap">
+                                    <div class="tab-radio">
+                                        <input type="radio" name="radio02-01" id="radio02-ck01" title="동의안함">
+                                        <label for="radio02-ck01">동의안함</label>
+                                    </div>
+                                    <div class="tab-radio">
+                                        <input type="radio" name="radio02-01" id="radio02-ck02" class="modal-btn__chk" title="동의함" checked="checked">
+                                        <label for="radio02-ck02">동의함</label>
+                                    </div>
+                                </div>
+                                <p class="input__guide-txt input__note">주택공급정책 자료 활용을 위한 『주택공급에 관한 규칙』 제5조에 따른 조사로, 청약종합저축 가입신청서와는 무관합니다.</p>
+                            -->
 
-                            <div class="info-wrap">
+                            <div class="info-wrap mt40">
                                 <div class="tg-text tg--area">
                                     <div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
                                         <button type="button">알아두세요</button>
@@ -1347,7 +1360,7 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            hanaUI.formFocusEvent(10, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
             
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSearch01');
