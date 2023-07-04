@@ -18,6 +18,22 @@
 .new-password-wrap .chk-tg-cont .form-area {margin-top: 2rem;}
 .new-password-wrap .tg-text {margin-top: 1.6rem;}
 
+/* 전자금융 */
+.select-result-box {padding: 2rem 0; border-bottom: 1px solid #e7e9ee;}
+.select-result-box .title {color: #333; font-weight: 500;}
+.select-result-box .sub-text {color: #666; font-weight: 500;}
+
+
+.account-ck-wrap {margin: 3rem 0;}
+.account-ck-wrap .checkbox-wrap.all label {font-size: 1.8rem;}
+.account-ck-wrap .list-line-wrap {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
+
+.account-ck-wrap .checkbox-wrap.sm label {color: #666;}
+.account-ck-wrap .checkbox-wrap.sm input:checked + label .account-num-wrap {color: #666;}
+
+.checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 2.8rem;}
+
+
 /* common */
 /* font-size */
 .font-sm {font-size: 1.3rem;}
@@ -68,10 +84,14 @@
 .list-text-sub {margin-top: 1rem; font-size: 1.4rem;}
 .list-text-sub + .list-wrap.type01 {margin-top: 1.6rem;}
 
-/* type02 */
+/* list-line-wrap */
 .list-line-wrap li {padding: 1.9rem 0; border-bottom: 1px solid #e7e9ee;}
 .list-line-wrap .title {color: #333; font-weight: 500;}
 .list-line-wrap .text {margin-top: 0.4rem; color: #666;}
+
+/* type02 */
+.list-line-wrap.type02 li .text {color: #333; font-weight: 500;}
+.list-line-wrap.type02 li .sub-text {margin-top: 0.8rem; font-size: 1.4rem;}
 
 /* toggle */
 .tg-text .tg-btn button {font-size: 1.4rem; color: #333; padding-right: 2rem; background: url(../images/icon/ico-system-arrow-down.png) 100% 50% no-repeat; background-size: 1.6rem 1.6rem;}
@@ -82,6 +102,11 @@
 .bul-bar-wrap li {padding-left: 0.6rem; position: relative; font-size: 1.4rem; color: #333; font-weight: 300;}
 .bul-bar-wrap li::before {content: ''; display: block; width: 0.2rem; height: 0.1rem; background: #4b4b55; position: absolute; left: 0; top: 0.8rem;}
 .bul-bar-wrap li + li {margin-top: 0.8rem;}
+
+.dot-list-title {color: #000; font-weight: 500;}
+.dot-list-title + .dot-list.type02 {margin-top: 1.6rem;}
+.dot-list.type02 li {font-size: 1.4rem; color: #333;}
+.dot-list.type02 li + li {margin-top: 0.8rem;}
 
 /* 주소검색 */
 .result-total-text,
@@ -96,6 +121,13 @@
 .popup-join-con .dot-list {margin-top: 1rem;}
 .popup-join-con .checkbox-wrap {margin-top: 3.2rem;}
 .popup-join-con .checkbox-wrap label {font-weight: 400;}
+
+/* popup - 모바일 otp 안내 */
+.otp-info-wrap {margin: 3rem 0;}
+.otp-info-wrap > li {margin-top: 3rem;}
+.otp-info-wrap .dot-list-title + .text {margin-top: 1.6rem; font-size: 1.4rem; color: #333;}
+
+
 
 /* popup-full-wrap */
 .popup-full-wrap,
