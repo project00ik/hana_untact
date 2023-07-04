@@ -1624,12 +1624,12 @@ function toggleLayer(obj) {
             tgly.addClass('open').attr('tabindex', '0');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
-
-            if (tgly.find('.input__element').length === 0) {
-                return;
-            } else { 
+            console.log(tgly.find('.button-search__btn'));
+            
+            if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
-            }
+            } 
+            
         } else { 
             tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input').prop('checked', false);
