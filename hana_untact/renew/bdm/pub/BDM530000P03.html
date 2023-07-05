@@ -23,13 +23,14 @@
         <div id="content" class="app-main"> 
             <div class="app-content">
                 <div class="ste-progress step-header">
-                    <div class="stepper" role="img" aria-label="5단계 중 4단계" tabindex="0">
+                    <div class="stepper" role="img" aria-label="6단계 중 4단계" tabindex="0">
                         <ul>
                             <li class="stepper__step">1</li>
                             <li class="stepper__step">2</li>
                             <li class="stepper__step">3</li>
                             <li class="stepper__step on">4</li>
                             <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
                         </ul>
                     </div>
                 </div>
@@ -71,12 +72,12 @@
                             </div>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck02_1" title="신청함" checked="checked">
-                                    <label for="radio-ck02_1">신청함</label>
+                                    <input type="radio" name="radio-02" id="radio-ck02_1" class="modal-btn__chk" title="신청안함" checked="checked">
+                                    <label for="radio-ck02_1">신청안함</label>
                                 </div>
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck02_02" class="modal-btn__chk" title="신청안함" data-element="modal__open" data-target="#modalSlidefull">
-                                    <label for="radio-ck02_02">신청안함</label>
+                                    <input type="radio" name="radio-02" id="radio-ck02_2" title="신청함" data-element="modal__open" data-target="#modalSlidefull">
+                                    <label for="radio-ck02_2">신청함</label>
                                 </div>
                             </div>
                             <div class="form-hide-wrap2 formHide"><!-- display:none 필요할 때 class="formHide" -->
@@ -124,7 +125,7 @@
                             </div>
                         </div>
                         <!--// select -->
-                        
+
                         <div class="form-area form-hide-wrap">
                             <p class="page-tit-sub">하나카드 결제계좌를 변경하시겠습니까?</p>
                             <div class="tab-radio-wrap">
@@ -175,7 +176,7 @@
                                 <div class="form-item input">
                                     <div class="input__inner">
                                         <label for="inputText01" class="input__label" aria-hidden="true">신규 계좌 비밀번호</label>
-                                        <input type="password" class="input__element form__move" id="inputText01" title="신규 계좌 비밀번호 입력" placeholder="" >
+                                        <input type="password" class="input__element form__move" id="inputText01" title="신규 계좌 비밀번호 입력" placeholder="숯자 4자리 입력" >
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -494,6 +495,8 @@
                                         </div>
                                         <!-- 에러메세지 -->
                                         <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                        <!-- 가이드 텍스트 -->
+                                        <p class="input__guide-txt tp-green">사용 가능한 평생계좌번호 입니다.</p>
                                     </div>
                                 </div>
                             </div>

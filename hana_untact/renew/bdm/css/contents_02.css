@@ -490,7 +490,8 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 
 /* 상품선택 */
-.product-chk-list {}
+.product-slide-wrap .tab-btn {position: sticky; top: 0; left:0; z-index: 10;}
+.product-chk-list {padding-top: 2rem;}
 .product-chk-list > li {padding: 1.8rem 0 1.9rem; border-bottom: 0.1rem solid #e7e9ee;}
 .product-chk-list .flex-wrap {align-items: stretch;}
 .product-chk-list .btn-link-arrow {height: auto; flex: 0 0 1.6rem;}
