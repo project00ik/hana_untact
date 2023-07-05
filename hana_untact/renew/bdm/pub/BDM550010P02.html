@@ -544,7 +544,7 @@
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
                 <p class="con-title">쿠폰 등록</p>
-                <div class="text-sub txt-align-l">
+                <div class="text-sub  txt-align-l">
                     <!-- input -->
                     <div class="form-area mt0">
                         <!--
@@ -573,22 +573,6 @@
         </div>
     </div>
     <!-- //모달레이어 - alert - 쿠폰 등록 -->
-
-    <!-- 모달레이어 - alert - 쿠폰 등록 완료 -->
-    <div id="modalAlert02" class="modal popup-wrap alert" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__contents">
-                <p class="con-title">쿠폰 등록이 완료되었습니다.</p>
-                <p class="text-sub">
-                    <span class="tp-red">※ 쿠폰 사용 하려면 자동이체 등록은 필수예요.</span>
-                </p>
-            </div>
-            <div class="btn-wrap">
-                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
-            </div>
-        </div>
-    </div>
-    <!-- //모달레이어 - alert - 쿠폰 등록 완료 -->
 
     <!-- 모달레이어 - 슬라이드 버튼X -->
     <div id="modalSlide02" class="modal popup-wrap modal--slide" data-element="modal__element">
@@ -1408,9 +1392,8 @@
             hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
             
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
-            // modalOpen('modalSearch01');
+            modalOpen('modalAlertTitle2');
         })
-
         function formShowEvent(target){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
