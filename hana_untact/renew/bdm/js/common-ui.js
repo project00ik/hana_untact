@@ -1514,8 +1514,7 @@ var hanaUI = {
                 var haederH = $('.app-header').outerHeight();
                 var stickyOffset = $('.sticky--wrap').offset().top;
                 var stickyOffsetPoint = stickyOffset - haederH;
-                console.log('ThisScroll',ThisScroll);
-                console.log('stickyOffsetPoint', stickyOffsetPoint);
+                
                 if($('.sticky--wrap').length = 0){
                     return;
                 } else {
@@ -1523,7 +1522,6 @@ var hanaUI = {
                         $('.sticky--point').addClass('fixed');
                     }
                     if (ThisScroll < stickyOffsetPoint) { 
-                        console.log('취소')
                         $('.sticky--point').removeClass('fixed');
                     }
                 }
