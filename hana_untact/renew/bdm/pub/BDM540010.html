@@ -61,83 +61,49 @@
                         <!-- // input -->
 
                         
-                        <div class="form-area form-taxfree-wrap">
-                            <div class="form-hide-wrap"> <!-- form-hide-wrap formHide --> 
-                                <div class="form-area mt0">
-                                    <div class="input__wrap">
-                                        <div class="form-item input input--on">
-                                            <div class="input__inner">
-                                                <label for="inputText06" class="input__label" aria-hidden="true">세금우대 설정액</label>
-                                                <input type="text" class="input__element form__move is-focus" id="inputText06" title="세금우대 설정액 입력" value="100,000원">
-                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                            </div>
+                        <div class="form-hide-wrap formHide"><!-- form-hide-wrap formHide --> 
+                            <div class="form-area">
+                                <div class="input__wrap">
+                                    <div class="form-item input input--on">
+                                        <div class="input__inner">
+                                            <label for="inputText06" class="input__label" aria-hidden="true">세금우대 설정액</label>
+                                            <input type="text" class="input__element form__move is-focus" id="inputText06" title="세금우대 설정액 입력" value="100,000원">
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         </div>
                                     </div>
-                                    <!-- 에러메세지 -->
-                                    <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                 </div>
-                                <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                                    <div class="input__wrap">
-                                        <div class="form-item input input--disabled">
-                                            <div class="input__inner">
-                                                <label for="inputText05" class="input__label" aria-hidden="true">미사용 잔액</label>
-                                                <input type="text" class="input__element form__move" id="inputText05" title="미사용 잔액 입력" value="100,000원" disabled>
-                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                            </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div>
+                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                <div class="input__wrap">
+                                    <div class="form-item input input--disabled">
+                                        <div class="input__inner">
+                                            <label for="inputText05" class="input__label" aria-hidden="true">미사용 잔액</label>
+                                            <input type="text" class="input__element form__move" id="inputText05" title="미사용 잔액 입력" value="100,000원" disabled>
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         </div>
                                     </div>
-                                    <!-- 에러메세지 -->
-                                    <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                 </div>
-                                <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
-                                    <div class="input__wrap">
-                                        <div class="form-item input input--disabled">
-                                            <div class="input__inner">
-                                                <label for="inputText04" class="input__label" aria-hidden="true">비과세 종합저축한도</label>
-                                                <input type="text" class="input__element form__move" id="inputText04" title="비과세 종합저축한도 입력" value="100,000원" disabled>
-                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
-                                            </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div>
+                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                <div class="input__wrap">
+                                    <div class="form-item input input--disabled">
+                                        <div class="input__inner">
+                                            <label for="inputText04" class="input__label" aria-hidden="true">비과세 종합저축한도</label>
+                                            <input type="text" class="input__element form__move" id="inputText04" title="비과세 종합저축한도 입력" value="100,000원" disabled>
+                                            <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         </div>
                                     </div>
-                                    <!-- 에러메세지 -->
-                                    <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                 </div>
+                                <!-- 에러메세지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                             </div>
                             
-                            <p class="page-tit-sub mt40">세금우대혜택을 선택해주세요</p>
-                            
-                            <div class="tab-radio-wrap">
-                                <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck01" title="일반 가입" onclick="formHideEvent('form-hide-wrap');">
-                                    <label for="radio-ck01">일반 가입</label>
-                                </div>
-                                <div class="tab-radio">
-                                    <input type="radio" name="radio-02" id="radio-ck02" title="비과세 종합저축 가입" checked="checked" onclick="formShowEvent('form-hide-wrap');">
-                                    <label for="radio-ck02">비과세 종합저축 가입</label>
-                                </div>
-                            </div>
-                        
-                            <div class="info-wrap">
-                                <div class="tg-text tg--area">
-                                    <div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
-                                        <button type="button">알아두세요</button>
-                                    </div>
-                                    <div class="tg-text-cont tg--layer">
-                                        <ul class="bul-bar-wrap">
-                                            <li>비과세 종합저축 한도에는 세금우대종합저축 가입금액이 포함되어 있습니다.</li>
-                                            <li>정기예금 : 신규가입금액 만큼 세금우대 설정액이 자동으로 입력됩니다.</li>
-                                            <li>적금&#40;자유적립&#41; : 고객님이 세금우대 설정액을 직접 입력하셔야 합니다.</li>
-                                            <li>적금&#40;정액적립&#41; : &#40;월적립액X가입개월수&#41; 만큼 세금우대 설정액이 자동으로 입력됩니다.</li>
-                                            <li>지정하신 세금우대 설정액을 초과하여 입금할 수 없습니다.</li>
-                                            <li>지정하신 세금우대 설정액만큼 비과세종합저축 잔여한도가 차감됩니다.</li>
-                                            <li>자격이 안되는 분이 가입 시 은행 임의로 해지는 물론, 소득공제 및 비과세 혜택에 대해 세금추징 등의 불이익을 받을 수 있습니다.</li>
-                                            <li>세금우대 설정액 변경은 영업점 및 인터넷뱅킹에서 가능합니다.</li>   
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
 						</div>
-                        
+<!--                         
                         <div class="form-area form-basic-wrap">
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
@@ -170,7 +136,51 @@
                             </div>
                         </div>
 
-                        <div class="form-area">
+                         -->
+                        <div class="form-area form-basic-wrap">
+                            <div class="tab-radio-wrap">
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio2-02" id="radio2-ck01" title="일반 가입" class="ck01">
+                                    <label for="radio2-ck01">일반 가입</label>
+                                </div>
+                                <div class="tab-radio">
+                                    <input type="radio" name="radio2-02" id="radio2-ck02" title="비과세 종합저축 가입" disabled="disabled" class="ck02">
+                                    <label for="radio2-ck02">비과세 종합저축 가입</label>
+                                </div>
+                            </div>
+                            <div class="info-wrap">
+                                <div class="tg-text tg--area">
+                                    <div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
+                                        <button type="button">알아두세요</button>
+                                    </div>
+                                    <div class="tg-text-cont tg--layer">
+                                        <ul class="bul-bar-wrap">
+                                            <li>비과세 종합저축 한도에는 세금우대종합저축 가입금액이 포함되어 있습니다.</li>
+                                            <li>정기예금 : 신규가입금액 만큼 세금우대 설정액이 자동으로 입력됩니다.</li>
+                                            <li>적금&#40;자유적립&#41; : 고객님이 세금우대 설정액을 직접 입력하셔야 합니다.</li>
+                                            <li>적금&#40;정액적립&#41; : &#40;월적립액X가입개월수&#41; 만큼 세금우대 설정액이 자동으로 입력됩니다.</li>
+                                            <li>지정하신 세금우대 설정액을 초과하여 입금할 수 없습니다.</li>
+                                            <li>지정하신 세금우대 설정액만큼 비과세종합저축 잔여한도가 차감됩니다.</li>
+                                            <li>자격이 안되는 분이 가입 시 은행 임의로 해지는 물론, 소득공제 및 비과세 혜택에 대해 세금추징 등의 불이익을 받을 수 있습니다.</li>
+                                            <li>세금우대 설정액 변경은 영업점 및 인터넷뱅킹에서 가능합니다.</li>   
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkbox-notice-wrap">
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" name="" id="checkbox03" title="금융정보 조회 동의" class="ck-agree">
+                                    <label for="checkbox03">금융정보 조회 동의</label>
+                                </div>
+                                <p class="input__guide-txt input__note depth2">
+                                    비과세 종합저축으로 상품 가입을 원하시는 분은 한도 조회가 필요합니다.
+                                </p>
+                            </div>
+                            
+                        </div>
+
+                        <!-- <div class="form-area">
                             <p class="page-tit-sub">금융정보 조회 동의 여부를 선택해주세요</p>
                             <div class="tab-radio-wrap">
                                 <div class="tab-radio">
@@ -183,7 +193,7 @@
                                 </div>
                             </div>
                             <p class="input__guide-txt input__note">비과세 종합저축으로 상품 가입을 원하시는 분은 한도 조회가 필요합니다.</p>
-                        </div>
+                        </div> -->
                         
                     </div>
                 </div>
@@ -193,7 +203,7 @@
                 <div class="btn-group-sub-wrap btn-next-wrap">
                     <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
                     <!-- 2depth 폼 이동 용 버튼 -->
-                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
+                    <!-- <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button> -->
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none;">
                     <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
@@ -449,23 +459,33 @@
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
             hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            
+            $('body').on('click', '.ck-agree', function(){
+                //alert();
+                if($(this).is(':checked')){
+                    $('.ck01').prop('checked', false);
+                    $('.ck02').attr('disabled', false).prop('checked', true);
+                    $('.form-hide-wrap').removeClass('formHide').addClass('form--active');
+                    $('.is-focus').focus();
+                   
+                 
+                } else{                
+                    $('.ck01').prop('checked', true);
+                    $('.ck02').attr('disabled', true).prop('checked', false);
+                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+                }
+            });
+
+            $('body').on('click', '.ck01', function(){
+                    $('.ck-agree').prop('checked', false);
+                    $('.ck02').attr('disabled', true).prop('checked', false);
+                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+            });
+
         });
         
-        function formShowEvent(target){
-            var formTarget = $('.'+ target);
-            formTarget.removeClass('formHide');
-            formTarget.addClass('form--active');
-            if($('.'+ target).find('.form__move').hasClass('is-focus')){
-                setTimeout(function(){
-                    $('.is-focus').focus();
-                },100);
-            }
-        }
-        function formHideEvent(target){
-            var formTarget = $('.'+ target);
-            formTarget.addClass('formHide');
-        }
 
+       
     </script>
 
 </body>
