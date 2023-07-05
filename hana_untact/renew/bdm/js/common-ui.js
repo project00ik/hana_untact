@@ -17,7 +17,7 @@
     hanaUI.selectBtnActive(); // 팝업 버튼 on/off
     hanaUI.searchListActive(); // 검색 레이어 목록 active
     hanaUI.searchBtnActive(); // 검색 팝업 버튼
-    hanaUI.postSearch();  // 지점/ATM 안내 검색 인풋
+    // hanaUI.postSearch();  // 지점/ATM 안내 검색 인풋
     hanaUI.cardActive(); // 카드타입 active
     hanaUI.native.bottomInit(); //스크린리더 접근시 하단 버튼 고정 풀기
     hanaUI.inputAuto('[data-element=input-auto]');	//인풋 width 자동
@@ -25,7 +25,7 @@
     hanaUI.allCheck(); // all checked
     hanaUI.allCheckAccordian(); // all checked Accordian
     hanaUI.passwordShow(); // password show/hide
-    hanaUI.modalBranch(); // 지점안내 모달 fixed
+    // hanaUI.modalBranch(); // 지점안내 모달 fixed
     hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
     // hanaUI.ckShowHide(); // check, radio 클릭 다음 영역 show hide
     // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
@@ -1509,18 +1509,24 @@ var hanaUI = {
                 // - 초기화
                 prevScrollTop = nowScrollTop;
 
-                // 스크롤시 차트 active 처리
-                // var ThisScroll = $(this).scrollTop();
-                // var haederH = $('.app-header').outerHeight();
-                // var chartOffset = $('.parallax--point').offset().top;
-                // var parallaxOffset = chartOffset - haederH;
-                // if($('.parallax--point').length = 0){
-                //     return;
-                // } else {
-                //     if(ThisScroll >= parallaxOffset) {
-                //         $('.chart-wrap').addClass('active');
-                //     }
-                // }
+                // 스크롤시 픽시드
+                var ThisScroll = $(this).scrollTop();
+                var haederH = $('.app-header').outerHeight();
+                var stickyOffset = $('.sticky--wrap').offset().top;
+                var stickyOffsetPoint = stickyOffset - haederH;
+                console.log('ThisScroll',ThisScroll);
+                console.log('stickyOffsetPoint', stickyOffsetPoint);
+                if($('.sticky--wrap').length = 0){
+                    return;
+                } else {
+                    if (ThisScroll > stickyOffsetPoint) {
+                        $('.sticky--point').addClass('fixed');
+                    }
+                    if (ThisScroll < stickyOffsetPoint) { 
+                        console.log('취소')
+                        $('.sticky--point').removeClass('fixed');
+                    }
+                }
             });
             // - 스크롤 움직임 감지
             $.fn.scrollStopped = function(callback){

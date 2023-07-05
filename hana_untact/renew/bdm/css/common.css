@@ -285,7 +285,6 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tab-list.scroll .tab {flex: none;}
 
 /* - 컨텐츠 : 탭 슬라이드형 (tab) */
-.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem;}
 .tab-slide-wrap {width: 100%;}
 .tab-btn {position: relative;}
 .tab-btn::before {content: ''; width: calc(100% + 4.8rem); height: 1px; display: block; position: absolute; left: -2.4rem; bottom: 0; background: #e7e9ee; }

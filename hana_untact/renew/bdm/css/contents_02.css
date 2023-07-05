@@ -490,7 +490,11 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 
 /* 상품선택 */
-.product-slide-wrap .tab-btn {position: sticky; top: 0; left:0; z-index: 10;}
+.sticky--point.fixed {width: 100%; padding: 0 2.4rem; position: fixed; top: 5.6rem; left:0; z-index: 11; background: #fbfcfc;}
+
+.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem;}
+.product-slide-wrap .tab-slide-wrap .tab-slide-list {height: 4.5rem;}
+.product-slide-wrap .tab-slide-wrap .swiper-wrapper {z-index: 0;}
 .product-chk-list {padding-top: 2rem;}
 .product-chk-list > li {padding: 1.8rem 0 1.9rem; border-bottom: 0.1rem solid #e7e9ee;}
 .product-chk-list .flex-wrap {align-items: stretch;}
