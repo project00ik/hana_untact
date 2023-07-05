@@ -1519,9 +1519,11 @@ var hanaUI = {
                     return;
                 } else {
                     if (ThisScroll > stickyOffsetPoint) {
+                        $('.sticky--wrap').addClass('fixed-wrap');
                         $('.sticky--point').addClass('fixed');
                     }
                     if (ThisScroll < stickyOffsetPoint) { 
+                        $('.sticky--wrap').removeClass('fixed-wrap');
                         $('.sticky--point').removeClass('fixed');
                     }
                 }
