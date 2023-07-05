@@ -1608,12 +1608,12 @@ function toggleLayer(obj) {
     var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
 
     // 탭 처럼 쓰일 때
-    if ($('.tg--area').parents().hasClass('tg--wrap')) {
-        var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');;
+    if ($('.tg--area').closest('.form-radio-list').hasClass('tg--wrap')) {
+        var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');
         tgTabBtn.removeClass('tg--on');
         tgTabBtn.attr('aria-checked', tgTabBtn.attr('aria-checked').replace(true, false));
         tgTabBtn.attr('aria-expanded', tgTabBtn.attr('aria-expanded').replace(true, false));
-        $('.tg--wrap').find('.tg--layer').removeClass('open');
+        tgChkBtn.closest('.tg--wrap').find('.tg--layer').removeClass('open');
     }
     
     if (toggleBtn.is('.chk-tg-btn')) {
@@ -1624,7 +1624,6 @@ function toggleLayer(obj) {
             tgly.addClass('open').attr('tabindex', '0');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
-            console.log(tgly.find('.button-search__btn'));
             
             if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
