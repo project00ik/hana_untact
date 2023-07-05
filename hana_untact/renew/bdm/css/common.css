@@ -285,11 +285,11 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tab-list.scroll .tab {flex: none;}
 
 /* - 컨텐츠 : 탭 슬라이드형 (tab) */
-.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem; overflow: hidden;}
+.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem;}
 .tab-slide-wrap {width: 100%;}
 .tab-btn {position: relative;}
 .tab-btn::before {content: ''; width: calc(100% + 4.8rem); height: 1px; display: block; position: absolute; left: -2.4rem; bottom: 0; background: #e7e9ee; }
-.tab-slide-wrap .tab-slide-list {width: 100%; display: flex; align-items: stretch;}
+.tab-slide-wrap .tab-slide-list {width: 100%; display: flex; align-items: stretch; justify-content: space-between;}
 .tab-slide-wrap .tab-slide-list .tab-btn {width: 100%;}
 .tab-slide-wrap .tab-slide-list .tab {width: auto !important; height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
 .tab-slide-wrap .tab-slide-list .tab + .tab {margin-left: 0.8rem;}
