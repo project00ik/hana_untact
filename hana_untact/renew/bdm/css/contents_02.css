@@ -497,10 +497,11 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
 .list-txt-area .txt {font-size: 1.4rem; color: #000; line-height: 1.2;}
 .product-join-wrap {}
-.product-join-list {border-top: 0.1rem solid #e7e9ee;}
-.product-join-list > li {padding: 1.4rem 0.4rem; border-bottom: 0.1rem solid #e7e9ee;}
-.product-join-list .badge {margin-bottom: 0.4rem;}
-.product-join-list .txt {font-size: 1.6rem; font-weight: 500; color: #000;}
+.product-join-list {margin-top: 0.4rem; border-top: 0.1rem solid #e7e9ee;}
+.product-join-list > li {padding: 1.4rem 2rem 1.4rem 0; border-bottom: 0.1rem solid #e7e9ee; font-size: 0; position: relative;}
+.product-join-list .badge {margin-right: 0.4rem; display: inline-block; vertical-align: middle;}
+.product-join-list .txt {font-size: 1.4rem; font-weight: 500; color: #000; display: inline-block; line-height: 2rem; vertical-align: middle;}
+.product-join-list .btn-del {width: 1.6rem; height: 1.6rem; margin-top: -0.8rem; display: inline-block; background: url(../images/icon/ico-system-close-s.png) 50% 50% no-repeat; background-size: 100% auto; position: absolute; top: 50%; right:0;}
 
 /* 사랑의 서약서 */
 .love-document-wrap {padding: 3rem 0;}
