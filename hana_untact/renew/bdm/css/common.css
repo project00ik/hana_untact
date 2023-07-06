@@ -1029,7 +1029,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
 .agree-img-area {padding-top: 1rem;}
 .agree-img-area img {width:100%;}
-.modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20;}
+.modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
     width: calc(100% + 4.8rem); min-height: 3rem; margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fff;
     display: flex; justify-content: space-between; align-items: center;
