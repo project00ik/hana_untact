@@ -1510,14 +1510,12 @@ var hanaUI = {
                 prevScrollTop = nowScrollTop;
 
                 // 스크롤시 픽시드
-                var ThisScroll = $(this).scrollTop();
-                var haederH = $('.app-header').outerHeight();
-                var stickyOffset = $('.sticky--wrap').offset().top;
-                var stickyOffsetPoint = stickyOffset - haederH;
-                
-                if($('.sticky--wrap').length = 0){
-                    return;
-                } else {
+                if($('body').find('.sticky--wrap').length > 0){
+                    var ThisScroll = $(this).scrollTop();
+                    var haederH = $('.app-header').outerHeight();
+                    var stickyOffset = $('.sticky--wrap').offset().top;
+                    var stickyOffsetPoint = stickyOffset - haederH;
+
                     if (ThisScroll > stickyOffsetPoint) {
                         $('.sticky--wrap').addClass('fixed-wrap');
                         $('.sticky--point').addClass('fixed');
