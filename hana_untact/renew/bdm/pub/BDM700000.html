@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">추가확인</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 5단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step">4</li>
+                            <li class="stepper__step on">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">추가인증 방식을<br>선택해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap">
+                        <ul class="card-list-wrap mt40">
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="본인명의 계좌 인증">본인명의 계좌 인증</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="가상계좌이체">가상계좌이체</button>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="얼굴인증">얼굴인증</button>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="영상통화">영상통화</button>                                    
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="btn-center-wrap">
+                        </div>
+                 
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 계좌용도 선택 -->
+    <div id="modalSlideBtn" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">계좌용도</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-01" title="일반급여통장" onclick="modalClose(this);">
+                            <label for="radio01-01">일반급여통장</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-02" title="법인/개인사업자통장" onclick="modalClose(this);">
+                            <label for="radio01-02">법인/개인사업자통장</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-03" title="아르바이트통장" onclick="modalClose(this);">
+                            <label for="radio01-03">아르바이트통장</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-04" title="연금수급" onclick="modalClose(this);">
+                            <label for="radio01-04">연금수급</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-05" title="모임통장" onclick="modalClose(this);">
+                            <label for="radio01-05">모임통장</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-06" title="자동이체" onclick="modalClose(this);">
+                            <label for="radio01-06">자동이체</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio01" id="radio01-07" title="기타" onclick="modalClose(this);">
+                            <label for="radio01-07">기타</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 거래목적 선택 -->
+    <div id="modalSlideBtn02" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">거래목적</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-01" title="급여 및 생활비" onclick="modalClose(this);">
+                            <label for="radio02-01">급여 및 생활비</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-02" title="저축및투자" onclick="modalClose(this);">
+                            <label for="radio02-02">저축및투자</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-03" title="보험료납부결제" onclick="modalClose(this);">
+                            <label for="radio02-03">보험료납부결제</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-04" title="공과금납부결제" onclick="modalClose(this);">
+                            <label for="radio02-04">공과금납부결제</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-05" title="카드대금결제" onclick="modalClose(this);">
+                            <label for="radio02-05">카드대금결제</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-06" title="대출원리금상환결제" onclick="modalClose(this);">
+                            <label for="radio02-06">대출원리금상환결제</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-07" title="사업상거래" onclick="modalClose(this);">
+                            <label for="radio02-07">사업상거래</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio02" id="radio02-08" title="기타" onclick="modalClose(this);">
+                            <label for="radio02-08">기타</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 자금출처 선택 -->
+    <div id="modalSlideBtn03" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">자금출처</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-01" title="근로및연금소득" onclick="modalClose(this);">
+                            <label for="radio03-01">근로및연금소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-02" title="퇴직소득" onclick="modalClose(this);">
+                            <label for="radio03-02">퇴직소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-03" title="사업소득" onclick="modalClose(this);">
+                            <label for="radio03-03">사업소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-04" title="부동산임대소득" onclick="modalClose(this);">
+                            <label for="radio03-04">부동산임대소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-05" title="부동산양도소득" onclick="modalClose(this);">
+                            <label for="radio03-05">부동산양도소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-06" title="금융소득(이자및배당)" onclick="modalClose(this);">
+                            <label for="radio03-06">금융소득(이자및배당)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-08" title="상속/증여" onclick="modalClose(this);">
+                            <label for="radio03-08">상속/증여</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-09" title="일시재산양도로인한소득" onclick="modalClose(this);">
+                            <label for="radio03-09">일시재산양도로인한소득</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio03" id="radio03-10" title="기타" onclick="modalClose(this);">
+                            <label for="radio03-10">기타</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+    
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <!-- 자산현황 선택 -->
+    <div id="modalSlideBtn04" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">자산현황</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-01" title="10억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-01">10억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-02" title="10억원~100억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-02">10억원~100억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-03" title="100억원~1,000억원 미만" onclick="modalClose(this);">
+                            <label for="radio04-03">100억원~1,000억원 미만</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="radio04" id="radio04-04" title="1,000억원 이상" onclick="modalClose(this);">
+                            <label for="radio04-04">1,000억원 이상</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+
+    
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
+            
+            $('body').on('click', '.ck-agree', function(){
+                //alert();
+                if($(this).is(':checked')){
+                    $('.ck01').prop('checked', false);
+                    $('.ck02').attr('disabled', false).prop('checked', true);
+                    $('.form-hide-wrap').removeClass('formHide').addClass('form--active');
+                    $('.is-focus').focus();
+                   
+                 
+                } else{                
+                    $('.ck01').prop('checked', true);
+                    $('.ck02').attr('disabled', true).prop('checked', false);
+                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+                }
+            });
+
+            $('body').on('click', '.ck01', function(){
+                    $('.ck-agree').prop('checked', false);
+                    $('.ck02').attr('disabled', true).prop('checked', false);
+                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+            });
+
+        });
+        
+
+       
+    </script>
+
+</body>
+</html>

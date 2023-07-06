@@ -34,10 +34,14 @@
 .checkbox-notice-wrap {margin-top: 4rem;}
 .checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 2.8rem;}
 
+/* 본인인증 */
+.title-under-wrap {margin-top: 1rem;}
+
 
 /* common */
 /* font-size */
 .font-sm {font-size: 1.3rem;}
+.font-normal {font-weight: 400 !important;}
 
 /* - 컨텐츠 : 툴팁 (Tooltip) */
 .tooltip-wrap {position: relative; display: flex; align-items: center;}
@@ -69,8 +73,6 @@
 .select-wrap.select--active .select .tooltip-label.select-label {z-index: 3;}
 .select-wrap.select--on .tooltip-label.select-label .tooltip-title,
 .select-wrap.select--active .tooltip-label.select-label .tooltip-title {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
-
-
 
 /* List */
 .list-wrap {padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
@@ -127,8 +129,6 @@
 .otp-info-wrap {margin: 3rem 0;}
 .otp-info-wrap > li {margin-top: 3rem;}
 .otp-info-wrap .dot-list-title + .text {margin-top: 1.6rem; font-size: 1.4rem; color: #333;}
-
-
 
 /* popup-full-wrap */
 .popup-full-wrap,
@@ -193,16 +193,36 @@
     }
 }
 
+/* card type */
+.card-box {border-radius: 1.8rem; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
+.card-box .radio-wrap label {padding: 2.1rem; width: 100%; height: 100%;}
+.card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
+.card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
+.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-weight: 1.4rem; color : #999;}
+
+.card-list-wrap li {margin-top: 1.6rem;}
+.card-list-wrap li:first-child {margin-top: 0;}
+.card-list-wrap + .btn-center-wrap {margin-top: 2.3rem;}
+
+.card-box .btn-box-arrow {padding: 2.4rem; display: block; width: 100%; background: url(../images/icon/ico-system-arrow-right-m.png) top 2.6rem right 2.4rem no-repeat; background-size: 1.6rem 1.6rem; color: #333; font-weight: 700; text-align: left;}
+
+
+/* btn */
+.btn.sm.light-gray.arrow {padding-right: 2.4rem; background: #eff0f4 url(../images/icon/ico-system-arrow-right-ss.png) top 1rem right 1.1rem no-repeat; background-size: 1.2rem auto;}
+.btn-more {padding-right: 1.8rem; font-size: 1.4rem; color: #333; background: url(../images/icon/ico-system-arrow-down.png) top 0.2rem right 0 no-repeat; background-size: 1.6rem 1.6rem;}
+
+
+
 /* ik */
 .form-area > .form-area:first-child {margin-top: 0;}
 .form-area .btn-group-flex .btn + .btn {margin-left: 0.8rem !important;} /* important 삭제*/
 .input__guide-txt.input__note * {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
 
+
+
 /* 
 
 .cont-form--animate .form-area.form-hide.form--active {display: none;} */
-
-.font-normal {font-weight: 400 !important;}
 
 
 
