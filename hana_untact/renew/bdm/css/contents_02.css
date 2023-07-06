@@ -509,6 +509,9 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .product-join-list .txt {font-size: 1.4rem; font-weight: 500; color: #000; display: inline-block; line-height: 2rem; vertical-align: middle;}
 .product-join-list .btn-del {width: 1.6rem; height: 1.6rem; margin-top: -0.8rem; display: inline-block; background: url(../images/icon/ico-system-close-s.png) 50% 50% no-repeat; background-size: 100% auto; position: absolute; top: 50%; right:0;}
 
+/* 상품상세(아이프레임) */
+.product-detail-wrap {margin: 0 -2.4rem; min-height: 100%;}
+
 /* 사랑의 서약서 */
 .love-document-wrap {padding: 3rem 0;}
 .love-document-wrap .love-document-cont {padding-top: 13.5rem; text-align: center; background: url(../images/icon/img-love-pet-docu.png) 50% 0 no-repeat; background-size: 10.3rem auto;}
@@ -546,3 +549,16 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .line-check-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .line-check-list > li.big-chk {font-size: 1.6rem; color: #333;}
 .line-check-list > li.big-chk + li {margin-top: 1.6rem;}
+
+/* 본인확인(신분증) */
+.id-card-wrap {padding-top: 33.5rem; background: url(../images/png/icon-id-card@3x.png) top 1.6rem right 3.4rem no-repeat; background-size: 17.5rem 25.4rem;}
+
+.app-main.full-video {padding: 0;}
+.app-main.full-video .container {width: 100%; height: 100vh; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
+.app-main.full-video .container .video-area {width: 100%; height: 100vh; background: skyblue;}
+.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; background: rgba(0, 0, 0, 0.75); color: #fff;}
+.app-main.full-video .btn-close {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-close-w@3x.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
+.app-main.full-video .video-tit-wrap {padding: 8rem 2.5rem 4rem; text-align: center;}
+.app-main.full-video .video-tit-wrap .video-tit {font-size: 2rem; font-weight: 500; line-height: 1.3;}
+.app-main.full-video .video-tit-wrap .video-sub-tit {margin-top: 1rem; font-size: 1.6rem; font-weight: 500;}
+.app-main.full-video .video-layer-wrap {width: 100%; background: url(../images/png/combined-shape@3x.png) 0 0 no-repeat; background-size: 100% auto;}
