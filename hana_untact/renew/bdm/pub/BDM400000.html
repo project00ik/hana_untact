@@ -611,7 +611,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <button type="button" class="privacy__more" title="정보활용동의등급 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                        <button type="button" class="privacy__more" title="정보활용동의등급 상세보기" onclick="modalOpen('modalSlide01')">상세보기</button>
                                     </div>
                                     <!-- 서브목록 -->
                                     <div class="item-sublist">
@@ -848,7 +848,7 @@
                         <p class="txt">필수동의서를 끝까지 읽어주세요.</p>
                     </div>
                 </div>
-                <button type="button" class="btn md btn-aggree" data-element="modal__close" title="동의하기" disabled="disabled">동의하기</button>
+                <button type="button" class="btn md btn-aggree" title="동의하기" onclick="modalClose('#modalSlide01')">동의하기</button>
             </div>
         </div>
     </div>
