@@ -995,7 +995,6 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .address-dot-list .sub-txt {font-size: 1.4rem; color: #757575; line-height: 1.5; display: block;}
 
 .dot-list.type02 > li + li {margin-top: 0.9rem;}
-.dot-list.type03 > li + li {margin-top: 2.1rem;}
 
 /* 바형 */
 .bar-list > li {padding-left: 1rem; margin-top: 0.2rem; position: relative; color: #7d8585; font-size: 1.5rem;}
