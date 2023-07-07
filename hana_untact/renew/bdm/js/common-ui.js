@@ -46,6 +46,7 @@ var hanaUI = {
         var containerHeight = windowHeight - headerHeight - footerHeight;
         $('body').css('min-height', windowHeight + 'px');
         $('.app-content').css('min-height', containerHeight + 'px');
+        $('.popup-wrap').css('min-height', windowHeight + 'px');
 
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -59,6 +60,7 @@ var hanaUI = {
             var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
             $('body').css('min-height', windowHeightResize + 'px');
             $('.app-content').css('min-height', containerHeightResize + 'px');
+            $('.popup-wrap').css('min-height', windowHeightResize + 'px');
         });
     },
     header : function(obj){
