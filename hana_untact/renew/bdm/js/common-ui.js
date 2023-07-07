@@ -44,7 +44,7 @@ var hanaUI = {
         var headerHeight = $('.app-header').innerHeight();
         var footerHeight = $('.app-footer').outerHeight();
         var containerHeight = windowHeight - headerHeight - footerHeight;
-        // $('body').css('min-height', windowHeight + 'px');
+        $('body').css('min-height', windowHeight + 'px');
         $('.app-content').css('min-height', containerHeight + 'px');
 
         let vh = window.innerHeight * 0.01;
