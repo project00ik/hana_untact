@@ -249,6 +249,11 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 
+/* 주민등록번호 뒷자리 */
+.social-number-area {flex:1; position: relative;}
+.social-number-area .pass-dot-wrap {position: absolute; bottom: 0; left: 0; z-index: -1;}
+.social-number-area .input__element {opacity: 0 !important;}
+
 .form-area {margin-top: 4rem; position: relative;}
 .form-area .form-label {position: absolute; top: 0; left: 0; z-index: 1; color: #666; font-size: 1.4rem;}
 .form-area .form-title {margin-bottom: 1.2rem; font-size: 1.6rem; color: #666; font-weight: 500;}
@@ -555,13 +560,18 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 .app-main.full-video {padding: 0;}
 .app-main.full-video .container {width: 100%; height: 100vh; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
-.app-main.full-video .container .video-area {width: 100%; height: 100vh; background: skyblue;}
-.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; background: rgba(0, 0, 0, 0.75); color: #fff;}
+.app-main.full-video .container .video-area {width: 100%; height: 100vh; background: transparent;}
+.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; color: #fff; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
 .app-main.full-video .btn-close {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-close-w@3x.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
-.app-main.full-video .video-tit-wrap {padding: 8rem 2.5rem 4rem; text-align: center;}
+.app-main.full-video .video-tit-wrap {padding: 8rem 2.5rem 4rem; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto;}
 .app-main.full-video .video-tit-wrap .video-tit {font-size: 2rem; font-weight: 500; line-height: 1.3;}
-.app-main.full-video .video-tit-wrap .video-sub-tit {margin-top: 1rem; font-size: 1.6rem; font-weight: 500;}
-.app-main.full-video .video-layer-wrap {width: 100%; background: url(../images/png/combined-shape@3x.png) 0 0 no-repeat; background-size: 100% auto;}
+.app-main.full-video .video-tit-wrap .video-sub-tit {margin-top: 1rem; font-size: 1.6rem; font-weight: 400;}
+.app-main.full-video .video-guide-area {width: 100%; height: 62.4vw; background: url(../images/png/video-area.png) 0 0 no-repeat; background-size: 100% auto;}
+.video-layer-wrap .video-info-wrap {padding: 1.7rem 2.5rem 6rem; flex: 1; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto; position: relative;}
+.video-layer-wrap .video-info-wrap .txt {font-size: 1.4rem; font-weight: 400; line-height: 1.2;}
+.video-layer-wrap .video-info-wrap .btn-center-wrap {margin-top: 1.6rem;}
+.video-layer-wrap .video-info-wrap .video-info-link {width: 100%; position: absolute; bottom: 4.8rem; left:0; z-index: 5; text-align: center;}
+.video-layer-wrap .video-info-wrap .video-info-link .txt_underline {font-size: 1.3rem; color: #fff;}
 
 /* 신분증 진위확인 실패 (상세 안내코드 토글) */
 .code-info-wrap {margin-top: 2rem;}
