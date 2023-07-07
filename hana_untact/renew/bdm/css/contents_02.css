@@ -4,8 +4,6 @@
 .content-guide {max-width:37.5rem; padding: 2rem; margin:0 auto;}
 
 /* -- 공통 -- */
-.tooltip-inline {display: inline-flex; align-items: center; position: unset; vertical-align: middle;}
-.tooltip-inline .tooltip .tooltip-con {top: 2.8rem;}
 
 /* 검색 스크롤 관련 플로팅 */
 body.scroll--up .search-con-box,
@@ -159,9 +157,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .checkbox-wrap > label {vertical-align: top; margin-top: 2.1rem;}
 
 /* 인풋(no-label) */
-.no-label .input__element,
-.no-label.search-btn-wrap .input-search-btn .button-search__btn {padding: 0.4rem 0;}
-.no-label.search-btn-wrap .input-search-btn .btn-search {height: 3.2rem;}
+.no-label .input__element {padding: 0.4rem 0;}
 
 /* 인풋(박스형) */
 .input-box {width: 100%; height: 4rem; padding: 0.8rem; border: 0.1rem solid#dfe6e6; border-radius: 0.8rem; font-size: 2rem; font-weight: 600; color: #2f3333;}
@@ -249,11 +245,6 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 
-/* 주민등록번호 뒷자리 */
-.social-number-area {flex:1; position: relative;}
-.social-number-area .pass-dot-wrap {position: absolute; bottom: 0; left: 0; z-index: -1;}
-.social-number-area .input__element {opacity: 0 !important;}
-
 .form-area {margin-top: 4rem; position: relative;}
 .form-area .form-label {position: absolute; top: 0; left: 0; z-index: 1; color: #666; font-size: 1.4rem;}
 .form-area .form-title {margin-bottom: 1.2rem; font-size: 1.6rem; color: #666; font-weight: 500;}
@@ -284,15 +275,12 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .privacy-top-area {margin-bottom: 2.4rem;}
 .privacy-top-area .checkbox-wrap label {font-size: 18px; font-weight: 500;}
 .privacy-area {border: 0.1rem solid #e7e9ee; border-radius: 1.8rem;}
-.privacy-area .item-privacy {padding: 1.9rem 4.6rem 1.7rem 2.4rem; position: relative;}
-.privacy-area .item-privacy .checkbox-wrap {width: 100%;}
+.privacy-area .item-privacy {padding: 1.9rem 4.6rem 1.7rem 2.4rem; border-bottom: 0.1rem solid #e7e9ee; position: relative;}
 .privacy-area .item-privacy .privacy__more {width: 1.6rem; height: 1.6rem; font-size: 0; background: url(../images/icon/ico-system-arrow-right-m.png); background-size: 100% auto; position: absolute; top: 2.4rem; right: 2.3rem; z-index: 1;}
-.privacy-area .item-sublist {border-top: 0.1rem solid #e7e9ee;}
-.privacy-area .item-sublist.close {display: none;}
+.privacy-area .item-sublist {}
 .privacy-area .item-sublist2 {padding: 0 0 1rem 2.4rem;}
 .privacy-area .item-sublist__inner {padding: 0.8rem 0 1.6rem;}
 .privacy-area .item-sublist__inner .item-privacy {padding: 0.8rem 2.3rem 0.8rem 2.4rem; border-bottom: 0;}
-.privacy-area .item-sublist__inner .item-privacy .checkbox-wrap.sm {width: calc(100% - 2.4rem);}
 .privacy-area .item-sublist__inner .item-privacy .privacy__more {background-image: url(../images/icon/ico-system-arrow-right-s-active.png); top: 1.1rem;}
 .privacy-area .privacy__label {letter-spacing: -1;}
 
@@ -495,27 +483,17 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 
 /* 상품선택 */
-.sticky--wrap.fixed-wrap .tab-slide-cont {padding-top: 4.5rem;}
-.sticky--point.fixed {width: 100%; padding: 0 2.4rem; position: fixed; top: 5.6rem; left:0; z-index: 11; background: #fbfcfc;}
-
-.product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem; overflow: hidden;}
-.product-slide-wrap .tab-slide-wrap .tab-slide-list {height: 4.5rem;}
-.product-slide-wrap .tab-slide-wrap .swiper-wrappe r {z-index: 0;}
-.product-chk-list {padding-top: 2rem;}
+.product-chk-list {}
 .product-chk-list > li {padding: 1.8rem 0 1.9rem; border-bottom: 0.1rem solid #e7e9ee;}
 .product-chk-list .flex-wrap {align-items: stretch;}
 .product-chk-list .btn-link-arrow {height: auto; flex: 0 0 1.6rem;}
 .list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
 .list-txt-area .txt {font-size: 1.4rem; color: #000; line-height: 1.2;}
 .product-join-wrap {}
-.product-join-list {margin-top: 0.4rem; border-top: 0.1rem solid #e7e9ee;}
-.product-join-list > li {padding: 1.4rem 2rem 1.4rem 0; border-bottom: 0.1rem solid #e7e9ee; font-size: 0; position: relative;}
-.product-join-list .badge {margin-right: 0.4rem; display: inline-block; vertical-align: middle;}
-.product-join-list .txt {font-size: 1.4rem; font-weight: 500; color: #000; display: inline-block; line-height: 2rem; vertical-align: middle;}
-.product-join-list .btn-del {width: 1.6rem; height: 1.6rem; margin-top: -0.8rem; display: inline-block; background: url(../images/icon/ico-system-close-s.png) 50% 50% no-repeat; background-size: 100% auto; position: absolute; top: 50%; right:0;}
-
-/* 상품상세(아이프레임) */
-.product-detail-wrap {margin: 0 -2.4rem; min-height: 100%;}
+.product-join-list {border-top: 0.1rem solid #e7e9ee;}
+.product-join-list > li {padding: 1.4rem 0.4rem; border-bottom: 0.1rem solid #e7e9ee;}
+.product-join-list .badge {margin-bottom: 0.4rem;}
+.product-join-list .txt {font-size: 1.6rem; font-weight: 500; color: #000;}
 
 /* 사랑의 서약서 */
 .love-document-wrap {padding: 3rem 0;}
@@ -526,53 +504,4 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .love-document-wrap .love-document-bottom {margin-top: 5rem; display: flex; align-items: center; justify-content: center;}
 .love-document-bottom [class^='icon-'] {flex: 1; padding-top: 3.7rem; font-size: 1.4rem; color: #666; font-weight: 700; line-height: 1.2; text-align: center;}
 .love-document-bottom .icon-name {background: url(../images/icon/ico-love-pet.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
-.love-document-bottom .ico n-pet {background: url(../images/icon/ico-love-sign.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
-
-/* 지점(직원)검색 */
-.branch-result-wrap {}
-.branch-result-wrap .accordion-list-wrap {width: calc(100% + 4.8rem); margin: 1.6rem -2.4rem 0;}
-.branch-result-wrap .accordion-list .top {padding: 2.4rem 4.8rem 2.4rem 2.4rem;}
-.branch-result-wrap .accordion-list .top:before {right: 2.4rem;}
-.branch-result-wrap .accordion-list .con {padding: 1.6rem 2.4rem; background: #f9f9fb;}
-.check-list .checkbox-wrap label {display: flex;}
-.check-list.align-justify .checkbox-wrap label {justify-content: space-between;}
-.check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
-.check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
-.check-list .checkbox-wrap input:checked + label * {color: #009591;}
-.check-list > li + li {margin-top: 1.2rem;}
-.check-list > li.big-chk {font-size: 1.6rem; color: #333;}
-.check-list > li.big-chk + li {margin-top: 1.6rem;}
-.staff-list-wrap .line-check-list {margin: 1.6rem -2.4rem 0;}
-.line-check-list .checkbox-wrap label {display: flex;}
-.line-check-list.align-justify .checkbox-wrap label {justify-content: space-between;}
-.line-check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
-.line-check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
-.line-check-list .checkbox-wrap.sm label {padding: 2rem 2.4rem 2rem 4.6rem;}
-.line-check-list .checkbox-wrap.sm label::before {top: 2rem; left: 2.4rem;}
-.line-check-list .checkbox-wrap input:checked + label * {color: #009591;}
-.line-check-list {border-top: 0.1rem solid #e7e9ee;}
-.line-check-list > li {border-bottom: 0.1rem solid #e7e9ee;}
-.line-check-list > li.big-chk {font-size: 1.6rem; color: #333;}
-.line-check-list > li.big-chk + li {margin-top: 1.6rem;}
-
-/* 본인확인(신분증) */
-.id-card-wrap {padding-top: 33.5rem; background: url(../images/png/icon-id-card@3x.png) top 1.6rem right 3.4rem no-repeat; background-size: 17.5rem 25.4rem;}
-
-.app-main.full-video {padding: 0;}
-.app-main.full-video .container {width: 100%; height: 100vh; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
-.app-main.full-video .container .video-area {width: 100%; height: 100vh; background: transparent;}
-.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; color: #fff; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
-.app-main.full-video .btn-close {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-close-w@3x.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
-.app-main.full-video .video-tit-wrap {padding: 8rem 2.5rem 4rem; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto;}
-.app-main.full-video .video-tit-wrap .video-tit {font-size: 2rem; font-weight: 500; line-height: 1.3;}
-.app-main.full-video .video-tit-wrap .video-sub-tit {margin-top: 1rem; font-size: 1.6rem; font-weight: 400;}
-.app-main.full-video .video-guide-area {width: 100%; height: 62.4vw; background: url(../images/png/video-area.png) 0 0 no-repeat; background-size: 100% auto;}
-.video-layer-wrap .video-info-wrap {padding: 1.7rem 2.5rem 6rem; flex: 1; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto; position: relative;}
-.video-layer-wrap .video-info-wrap .txt {font-size: 1.4rem; font-weight: 400; line-height: 1.2;}
-.video-layer-wrap .video-info-wrap .btn-center-wrap {margin-top: 1.6rem;}
-.video-layer-wrap .video-info-wrap .video-info-link {width: 100%; position: absolute; bottom: 4.8rem; left:0; z-index: 5; text-align: center;}
-.video-layer-wrap .video-info-wrap .video-info-link .txt_underline {font-size: 1.3rem; color: #fff;}
-
-/* 신분증 진위확인 실패 (상세 안내코드 토글) */
-.code-info-wrap {margin-top: 2rem;}
-.code-info-wrap .tg-text-cont {margin-top: 1.2rem;}
+.love-document-bottom .icon-pet {background: url(../images/icon/ico-love-sign.png) 50% 0 no-repeat; background-size: 3.2rem auto;}

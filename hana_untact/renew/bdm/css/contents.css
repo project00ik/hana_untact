@@ -18,43 +18,9 @@
 .new-password-wrap .chk-tg-cont .form-area {margin-top: 2rem;}
 .new-password-wrap .tg-text {margin-top: 1.6rem;}
 
-/* 전자금융 */
-.select-result-box {padding: 2rem 0; border-bottom: 1px solid #e7e9ee;}
-.select-result-box .title {color: #333; font-weight: 500;}
-.select-result-box .sub-text {color: #666; font-weight: 500;}
-
-
-.account-ck-wrap {margin: 3rem 0;}
-.account-ck-wrap .checkbox-wrap.all label {font-size: 1.8rem;}
-.account-ck-wrap .list-line-wrap {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
-
-.account-ck-wrap .checkbox-wrap.sm label {color: #666;}
-.account-ck-wrap .checkbox-wrap.sm input:checked + label .account-num-wrap {color: #666;}
-
-.checkbox-notice-wrap {margin-top: 4rem;}
-.checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 2.8rem;}
-
-/* 본인인증 */
-.title-under-wrap {margin-top: 1rem;}
-
-.bank-account-wrap {display: flex; align-items: center;}
-.bank-account-wrap .bank {margin-left: 0.8rem; font-size: 1.8rem; color: #000;}
-.bank-account-wrap .num {margin-left: 0.6rem; color: #757575;}
-.icon-bank {width: 2.4rem; height: 2.4rem; display: inline-block; font-size: 0; background-position: 50% 50%; background-repeat: no-repeat; background-size: 100% auto; vertical-align: middle;}
-.icon-bank img {display: block; width: 2.4rem; height: 2.4rem;}
-
-.bank-list-wrap {display: flex; flex-wrap: wrap; margin: 2rem 0 2rem -3.2%;}
-.bank-list-wrap li {margin-top: 1.2rem; padding-left: 3.2%; width: 33.33333%; height: 8.4rem; display: flex; justify-content: center; } 
-.bank-list-wrap li .btn-bank {padding: 0 0.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; background-color: #fbfcfc; /* background-color: #ccc;*/ border-radius: 1.4rem 1.4rem;}
-.bank-list-wrap li .btn-bank img {margin-top: 1.5rem; display: block; width: 2.4rem; height: 2.4rem;}
-.bank-list-wrap li .btn-bank .text {display: flex; align-items: center; height: 100%; font-size: 1.3rem; color: #000; font-weight: 500;}
-
-
-
 /* common */
 /* font-size */
 .font-sm {font-size: 1.3rem;}
-.font-normal {font-weight: 400 !important;}
 
 /* - 컨텐츠 : 툴팁 (Tooltip) */
 .tooltip-wrap {position: relative; display: flex; align-items: center;}
@@ -87,6 +53,8 @@
 .select-wrap.select--on .tooltip-label.select-label .tooltip-title,
 .select-wrap.select--active .tooltip-label.select-label .tooltip-title {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 
+
+
 /* List */
 .list-wrap {padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
 
@@ -100,14 +68,10 @@
 .list-text-sub {margin-top: 1rem; font-size: 1.4rem;}
 .list-text-sub + .list-wrap.type01 {margin-top: 1.6rem;}
 
-/* list-line-wrap */
+/* type02 */
 .list-line-wrap li {padding: 1.9rem 0; border-bottom: 1px solid #e7e9ee;}
 .list-line-wrap .title {color: #333; font-weight: 500;}
 .list-line-wrap .text {margin-top: 0.4rem; color: #666;}
-
-/* type02 */
-.list-line-wrap.type02 li .text {color: #333; font-weight: 500;}
-.list-line-wrap.type02 li .sub-text {margin-top: 0.8rem; font-size: 1.4rem;}
 
 /* toggle */
 .tg-text .tg-btn button {font-size: 1.4rem; color: #333; padding-right: 2rem; background: url(../images/icon/ico-system-arrow-down.png) 100% 50% no-repeat; background-size: 1.6rem 1.6rem;}
@@ -118,16 +82,6 @@
 .bul-bar-wrap li {padding-left: 0.6rem; position: relative; font-size: 1.4rem; color: #333; font-weight: 300;}
 .bul-bar-wrap li::before {content: ''; display: block; width: 0.2rem; height: 0.1rem; background: #4b4b55; position: absolute; left: 0; top: 0.8rem;}
 .bul-bar-wrap li + li {margin-top: 0.8rem;}
-
-.dot-list-title {color: #000; font-weight: 500;}
-.dot-list-title + .dot-list.type02 {margin-top: 1.6rem;}
-.dot-list.type02 li {font-size: 1.4rem; color: #333;}
-.dot-list.type02 li + li {margin-top: 0.8rem;}
-
-.dot-list.type03 li {font-size: 1.4rem; color: #666;}
-.dot-list.type03 li .tp-green {font-size: 1.4rem;}
-.dot-list.type03 > li::before {top: 0.7rem;}
-.dot-list.type03 li + li {margin-top: 0.8rem;}
 
 /* 주소검색 */
 .result-total-text,
@@ -142,11 +96,6 @@
 .popup-join-con .dot-list {margin-top: 1rem;}
 .popup-join-con .checkbox-wrap {margin-top: 3.2rem;}
 .popup-join-con .checkbox-wrap label {font-weight: 400;}
-
-/* popup - 모바일 otp 안내 */
-.otp-info-wrap {margin: 3rem 0;}
-.otp-info-wrap > li {margin-top: 3rem;}
-.otp-info-wrap .dot-list-title + .text {margin-top: 1.6rem; font-size: 1.4rem; color: #333;}
 
 /* popup-full-wrap */
 .popup-full-wrap,
@@ -171,11 +120,6 @@
 .popup-full-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
 
 .popup-full-wrap .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff; background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
-
-/* popup text */
-.modal-text-box {padding: 3rem 0 1.2rem;}
-.modal-text-box .text {color: #333;}
-.modal-text-box .text + .text {margin-top: 1.6rem;}
 
 /* 토스트 팝업 */
 .popup-full-wrap .toast-popup-wrap {
@@ -216,36 +160,18 @@
     }
 }
 
-/* card type */
-.card-box {border-radius: 1.8rem; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
-.card-box .radio-wrap label {padding: 2.1rem; width: 100%; height: 100%;}
-.card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
-.card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
-.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-weight: 1.4rem; color : #999;}
-
-.card-list-wrap li {margin-top: 1.6rem;}
-.card-list-wrap li:first-child {margin-top: 0;}
-.card-list-wrap + .btn-center-wrap {margin-top: 2.3rem;}
-
-.card-box .btn-box-arrow {padding: 2.4rem; display: block; width: 100%; background: url(../images/icon/ico-system-arrow-right-m.png) top 2.6rem right 2.4rem no-repeat; background-size: 1.6rem 1.6rem; color: #333; font-weight: 700; text-align: left;}
-
-
-/* btn */
-.btn.sm.light-gray.arrow {padding-right: 2.4rem; background: #eff0f4 url(../images/icon/ico-system-arrow-right-ss.png) top 1rem right 1.1rem no-repeat; background-size: 1.2rem auto;}
-.btn-more {padding-right: 1.8rem; font-size: 1.4rem; color: #333; background: url(../images/icon/ico-system-arrow-down.png) top 0.2rem right 0 no-repeat; background-size: 1.6rem 1.6rem;}
-
-
-
 /* ik */
 .form-area > .form-area:first-child {margin-top: 0;}
 .form-area .btn-group-flex .btn + .btn {margin-left: 0.8rem !important;} /* important 삭제*/
 .input__guide-txt.input__note * {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
 
-
-
 /* 
 
 .cont-form--animate .form-area.form-hide.form--active {display: none;} */
+
+
+
+
 
 
 
