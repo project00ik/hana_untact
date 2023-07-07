@@ -2076,9 +2076,15 @@
           .scrollTop(plugin.currentScrollTop);
         
           // 팝업 열림 시 주소창 높이 대응
-          $('body').addClass('modal-open').css('height', $(window).innerHeight() + 'px').css('min-height', $(window).innerHeight() + 'px');
+          var windowHeight = $(window).innerHeight();
+          $('body').addClass('modal-open').css('height', windowHeight + 'px').css('min-height', windowHeight + 'px');
+          
+          $('.popup-wrap').css('max-height', windowHeight + 'px');
           window.addEventListener("resize", () => {
-            $('body').css('height', $(window).innerHeight() + 'px').css('min-height', $(window).innerHeight() + 'px');
+            $('body').css('height', windowHeight + 'px').css('min-height', windowHeight + 'px');
+
+            var windowHeightResize = $(window).innerHeight();
+            $('.popup-wrap').css('max-height', windowHeightResize + 'px');
           });
 
         //plugin.$win.scrollTop(0);
