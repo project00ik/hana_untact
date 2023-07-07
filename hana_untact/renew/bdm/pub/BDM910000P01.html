@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                </div>
+            </div>
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - alert - title 있음 -->
+    <div id="modalAlertTitle" class="modal popup-wrap alert only-title" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="con-title">신분증 진위확인 실패</p>
+                <div class="text-sub txt-align-l">
+                    <p>발급기관을 통한 진위확인이 실패하여 비대면 실명확인 서비스를 이용하실 수 없습니다.<br>
+                        (주민등록번호 불일치)<br>
+                        <br>
+                        ※ 문의: 고객센터 1599-2111
+                    </p>
+                    <div class="code-info-wrap">
+                        <div class="tg-text tg--area">
+                            <div class="tg-btn" role="button" title="열기" aria-expanded="false" onclick="toggleLayer(this);">
+                                <button type="button">상세안내코드</button>
+                            </div>
+                            <div class="tg-text-cont tg--layer">
+                                <ul class="bul-bar-wrap">
+                                    <li>0000~~ABCDE~~ &gt; ABCDE~~ &gt;</li>
+                                    <li>0000~~ABCDE~~ &gt; ABCDE~~ &gt;</li>
+                                    <li>0000~~ABCDE~~ &gt; ABCDE~~ &gt;</li>
+                                    <li>0000~~ABCDE~~ &gt; ABCDE~~ &gt;</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert - title 있음 -->
+
+    <script>
+        $(function(){
+             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalAlertTitle');
+        });
+    </script>
+
+</body>
+</html>

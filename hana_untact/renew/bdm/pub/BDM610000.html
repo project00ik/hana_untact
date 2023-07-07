@@ -12,56 +12,48 @@
 </head>
 <body>
     <div id="wrap" class="wrap"> 
-        <!-- header -->
-        <div id="header" class="app-header">
-            <button class="btn-back" title="이전 화면"></button>
-            <p class="page-tit">본인확인</p>
-            <button class="btn-close" title="닫기"></button>
-        </div>
-        <!-- //header -->
-        <!-- Content -->
-        <div id="content" class="app-main"> 
+        <div id="content" class="app-main full-video"> 
             <div class="app-content">
-                <div class="ste-progress step-header">
-                    <div class="stepper" role="img" aria-label="6단계 중 5단계" tabindex="0">
-                        <ul>
-                            <li class="stepper__step">1</li>
-                            <li class="stepper__step">2</li>
-                            <li class="stepper__step">3</li>
-                            <li class="stepper__step">4</li>
-                            <li class="stepper__step on">5</li>
-                            <li class="stepper__step">6</li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="container">
-                    <!-- 타이틀 -->
-                    <div class="page-tit-wrap">
-                        <p class="page-tit">촬영할 신분증을<br>선택해 주세요</p>
+                    <!-- 촬영 영역 -->
+                    <div class="video-area">
+                        <video style="width: 100%; height: 100vh;" playsinline muted>Your browser does not support HTML video.</video>
                     </div>
-                    <!--// 타이틀 -->
+                    <!-- 촬영 영역 -->
 
-                    <div class="cont-wrap">
-                        <div class="id-card-wrap">
-                            <ul class="card-list-wrap">
-                                <li>
-                                    <div class="card-box">
-                                        <button type="button" class="btn-box-arrow" aria-label="주민등록증/운전면허증">주민등록증/운전면허증</button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="card-box">
-                                        <button type="button" class="btn-box-arrow" data-element="modal__open" data-target="#modalSlide01" aria-label="여권">여권</button>                                    
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="card-box">
-                                        <button type="button" class="btn-box-arrow" aria-label="모바일 운전면허증">모바일 운전면허증</button>                                    
-                                    </div>
-                                </li>
-                            </ul>
+                    <!-- 촬영 레이어 -->
+                    <div class="video-layer-wrap">
+                        <!-- 타이틀 -->
+                        <button class="btn-close" title="닫기"></button>
+                        <div class="video-tit-wrap">
+                            <p class="video-tit">주민등록증/운전면허증 촬영</p>
+                            <p class="video-sub-tit">사각형에 신분증이 꽉 차도록<br>위치를 맞추면 자동으로 촬영됩니다</p>
                         </div>
+                        <!--// 타이틀 -->
+
+                        <!-- 촬영 가이드 영역 -->
+                        <div class="video-guide-area" title="촬영 가이드 영역 입니다.">
+                            
+                        </div>
+                        <!--// 촬영 가이드 영역 -->
+
+                        <!-- 촬영 안내 -->
+                        <div class="video-info-wrap">
+                            <p class="txt">
+                                복사본이 아닌<br>
+                                <span class="tp-green">주민등록증 또는 운전면허증 원본</span>으로 촬영하고<br>
+                                빛이 반사되지 않도록 주의해 주세요.
+                            </p>
+                            <div class="btn-center-wrap">
+                                <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기">다른 신분증으로 본인확인하기</button>
+                            </div>
+                            <div class="video-info-link">
+                                <button type="button" class="txt_underline">신분증 촬영 하기 전, 확인하세요!</button>
+                            </div>
+                        </div>
+                        <!--// 촬영 안내 -->
                     </div>
+                    <!--// 촬영 레이어 -->
                 </div>
             </div>
             <!-- footer -->
@@ -83,7 +75,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">여권 진위확인 동의사항</h1>
+                <h1 class="title">주민등록증/운전면허증 유의사항</h1>
             </div>
             <div class="modal__contents">
                 <div class="modal-text-wrap pb12">
