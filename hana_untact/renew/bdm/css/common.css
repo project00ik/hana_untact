@@ -716,12 +716,14 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
 .popup-wrap.modal--slide .btn-wrap .btn {width: auto;}
-.popup-wrap.modal--slide.modal-full .modal__contents {max-height: calc(100vh - 12rem); height: 100vh;}
+.popup-wrap.modal--slide.modal-full .modal__contents {height: calc(100vh - 12rem); height: 100vh;}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
 .popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
 .popup-wrap.modal--slide .modal-select-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .popup-wrap.modal--slide .modal-select-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel {height: calc(100vh - 24.1rem); margin: 0 -2.4rem;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel .search-area {width: 100%;}
 
 .popup-wrap.modal--slide.modal-full-page .modal__container {border-radius: 0;}
 .popup-wrap.modal--slide.modal-full-page .modal__contents {max-height: calc(100vh - 6rem);}
