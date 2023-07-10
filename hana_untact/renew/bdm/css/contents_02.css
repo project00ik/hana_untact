@@ -561,7 +561,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .app-main.full-video {padding: 0;}
 .app-main.full-video .container {width: 100%; height: 100%; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
 .app-main.full-video .container .video-area {width: 100%; height: 100vh; background: transparent;}
-.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; color: #fff; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
+.app-main.full-video .container .video-layer-wrap {width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 10; color: #fff; display: flex; flex-direction: column; align-items: stretch; justify-content: space-between;}
 .app-main.full-video .btn-close {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-close-w@3x.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; right: 1.7rem; z-index: 1;}
 .app-main.full-video .video-tit-wrap {padding: 8rem 2.5rem 4rem; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto;}
 .app-main.full-video .video-tit-wrap .video-tit {font-size: 2rem; font-weight: 500; line-height: 1.3;}
