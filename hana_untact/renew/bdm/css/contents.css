@@ -23,7 +23,6 @@
 .select-result-box .title {color: #333; font-weight: 500;}
 .select-result-box .sub-text {color: #666; font-weight: 500;}
 
-
 .account-ck-wrap {margin: 3rem 0;}
 .account-ck-wrap .checkbox-wrap.all label {font-size: 1.8rem;}
 .account-ck-wrap .list-line-wrap {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
@@ -45,7 +44,7 @@
 
 .bank-list-wrap {display: flex; flex-wrap: wrap; margin: 2rem 0 2rem -3.2%; padding: 0 2.4rem; }
 .bank-list-wrap li {margin-top: 1.2rem; padding-left: 3.2%; width: 33.33333%; height: 8.4rem; display: flex; justify-content: center; } 
-.bank-list-wrap li .btn-bank {padding: 0 0.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; background-color: #fbfcfc; background-color: #ccc; border-radius: 1.4rem 1.4rem;}
+.bank-list-wrap li .btn-bank {padding: 0 0.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; background-color: #fbfcfc; border-radius: 1.4rem 1.4rem;}
 .bank-list-wrap li .btn-bank img {margin-top: 1.5rem; display: block; width: 2.4rem; height: 2.4rem;}
 .bank-list-wrap li .btn-bank .text {display: flex; align-items: center; height: 100%; font-size: 1.3rem; color: #000; font-weight: 500;}
 
