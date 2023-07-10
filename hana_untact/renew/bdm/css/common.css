@@ -722,12 +722,13 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
 .popup-wrap.modal--slide .modal-select-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .popup-wrap.modal--slide .modal-select-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
-.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel {height: calc(100vh - 24.1rem); margin: 0 -2.4rem;}
-.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100vh - 16.7rem); margin: 0 -2.4rem;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel {height: calc(100% - 4.7rem); margin: 0 -2.4rem;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll > div {height: 100%;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - 4.7rem); margin: 0 -2.4rem;}
 .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel .search-area {width: 100%;}
 
-.popup-wrap.modal--slide.modal-full-page .modal__container {border-radius: 0;}
-.popup-wrap.modal--slide.modal-full-page .modal__contents {max-height: calc(100vh - 6rem);}
+.popup-wrap.modal--slide.modal-full-page .modal__container {height: 100%; border-radius: 0;}
+.popup-wrap.modal--slide.modal-full-page .modal__contents {max-height: calc(100% - 6rem);}
 
 /* 모달 테스트 타입 컨텐츠 */
 .popup-wrap.modal--slide .pop-text-cont {padding: 3rem 0 1.2rem;}
