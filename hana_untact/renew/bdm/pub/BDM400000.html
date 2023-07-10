@@ -23,13 +23,14 @@
         <div id="content" class="app-main"> 
             <div class="app-content">
                 <div class="ste-progress step-header">
-                    <div class="stepper" role="img" aria-label="5단계 중 1단계" tabindex="0">
+                    <div class="stepper" role="img" aria-label="6단계 중 1단계" tabindex="0">
                         <ul>
                             <li class="stepper__step on">1</li>
                             <li class="stepper__step">2</li>
                             <li class="stepper__step">3</li>
                             <li class="stepper__step">4</li>
                             <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
                         </ul>
                     </div>
                 </div>
@@ -64,7 +65,7 @@
                                         <button type="button" class="privacy__more" title="필수 동의 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                     </div>
                                     <!-- 서브목록 -->
-                                    <div class="item-sublist close">
+                                    <div class="item-sublist"><!-- 닫을 시 class="item-sublist close" -->
                                         <div class="item-sublist__inner">
                                             <!-- 목록 -->
                                             <div class="item-privacy">
@@ -115,6 +116,16 @@
                                                     </div>
                                                 </div>
                                                 <button type="button" class="privacy__more" title="입출금이 자유로운 예금 약관 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_4_2" title="거치식 예금 약관 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_4_2">거치식 예금 약관</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="거치식 예금 약관 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                             </div>
 
                                             <div class="item-privacy">
@@ -316,31 +327,71 @@
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5" title="통장개설 등 금융거래요청 받은 사실 없음 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_3_5">통장개설 등 금융거래요청 받은 사실 없음</label>
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5" title="통장 실소유자 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5">통장 실소유자</label>
                                                     </div>
                                                 </div>
-                                                <button type="button" class="privacy__more" title="통장개설 등 금융거래요청 받은 사실 없음 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                                <button type="button" class="privacy__more" title="통장 실소유자 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                             </div>
 
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_1" title="통장 양도금지 확인 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_3_5_1">통장 양도금지 확인</label>
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_1" title="가상통화 관련 대고객 안내문 확인 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_1">가상통화 관련 대고객 안내문 확인</label>
                                                     </div>
                                                 </div>
-                                                <button type="button" class="privacy__more" title="통장 양도금지 확인 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                                <button type="button" class="privacy__more" title="가상통화 관련 대고객 안내문 확인 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                             </div>
 
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_2" title="불법&middot;탈법 차명거래 금지 설명 확인서 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_3_5_2">불법&middot;탈법 차명거래 금지 설명 확인서</label>
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_2" title="은행 상품 구속행위 규제 제도 안내 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_2">은행 상품 구속행위 규제 제도 안내</label>
                                                     </div>
                                                 </div>
-                                                <button type="button" class="privacy__more" title="불법&middot;탈법 차명거래 금지 설명 확인서 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                                <button type="button" class="privacy__more" title="은행 상품 구속행위 규제 제도 안내 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_3" title="손님정보 취급방침 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_3">손님정보 취급방침</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="손님정보 취급방침 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_4" title="[필수] 개인(신용)정보 수집·이용 동의서 [금융거래 설정용] 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_4">[필수] 개인(신용)정보 수집·이용 동의서<br>[금융거래 설정용]</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="[필수] 개인(신용)정보 수집·이용 동의서 [금융거래 설정용] 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_5" title="증권계좌 개설 확인사항 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_5">증권계좌 개설 확인사항</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="증권계좌 개설 확인사항 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_3_5_6" title="금융거래 정보제공 동의서 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_3_5_6">금융거래 정보제공 동의서</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="금융거래 정보제공 동의서 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                             </div>
 
                                         </div>
@@ -368,8 +419,8 @@
                                     <div class="item-privacy">
                                         <div class="privacy__label">
                                             <div class="checkbox-wrap">
-                                                <input type="checkbox" name="privacy_checkbox40" id="privacy_checkbox40" title="공공마이데이터 활용 동의 체크를 하려면 상세보기를 하세요.">
-                                                <label for="privacy_checkbox40">공공마이데이터 활용 동의</label>
+                                                <input type="checkbox" name="privacy_checkbox40" id="privacy_checkbox41" title="공공마이데이터 활용 동의 체크를 하려면 상세보기를 하세요.">
+                                                <label for="privacy_checkbox41">공공마이데이터 활용 동의</label>
                                             </div>
                                         </div>
                                         <button type="button" class="privacy__more" title="공공마이데이터 활용 동의 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
@@ -381,8 +432,8 @@
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_4_1_1" title="(필수)개인(신용)정보 수집이용제공 동의서 (공공 마이 데이터) 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_4_1">(필수)개인(신용)정보 수집이용제공 동의서 (공공 마이 데이터)</label>
+                                                        <input type="checkbox" name="privacy_checkbox40_2" id="privacy_checkbox04_4_1" title="(필수)개인(신용)정보 수집이용제공 동의서 (공공 마이 데이터) 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox04_4_1">(필수)개인(신용)정보 수집이용제공 동의서 (공공 마이 데이터)</label>
                                                     </div>
                                                 </div>
                                                 <button type="button" class="privacy__more" title="(필수)개인(신용)정보 수집이용제공 동의서 (공공 마이 데이터) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
@@ -391,8 +442,8 @@
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_4_2_1" title="(필수)개인(신용)정보 제3자 제공 동의서(공공 마이데이터) 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_3_2">(필수)개인(신용)정보 제3자 제공 동의서(공공 마이데이터)</label>
+                                                        <input type="checkbox" name="privacy_checkbox40_2" id="privacy_checkbox04_3_2" title="(필수)개인(신용)정보 제3자 제공 동의서(공공 마이데이터) 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox04_3_2">(필수)개인(신용)정보 제3자 제공 동의서(공공 마이데이터)</label>
                                                     </div>
                                                 </div>
                                                 <button type="button" class="privacy__more" title="(필수)개인(신용)정보 제3자 제공 동의서(공공 마이데이터) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
@@ -401,8 +452,8 @@
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox01" id="privacy_checkbox01_4_3_1" title="본인 행정정보 제3자 제공요구서[공공 마이 데이터] 체크를 하려면 상세보기를 하세요.">
-                                                        <label for="privacy_checkbox01_3_3">본인 행정정보 제3자 제공요구서[공공 마이 데이터]</label>
+                                                        <input type="checkbox" name="privacy_checkbox40_2" id="privacy_checkbox04_3_3" title="본인 행정정보 제3자 제공요구서[공공 마이 데이터] 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox04_3_3">본인 행정정보 제3자 제공요구서[공공 마이 데이터]</label>
                                                     </div>
                                                 </div>
                                                 <button type="button" class="privacy__more" title="본인 행정정보 제3자 제공요구서[공공 마이 데이터] 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
@@ -414,6 +465,39 @@
                             </div>
                             <!--// 공공마이데이터 활용 동의 -->
 
+                            <!-- [필수]개인(신용)정보 수집・이용  동의서(얼굴인증서비스용) -->
+                            <div class="privacy-wrap mt24">
+                                <div class="privacy-area">
+                                    <div class="item-privacy">
+                                        <div class="privacy__label">
+                                            <div class="checkbox-wrap">
+                                                <input type="checkbox" name="privacy_checkbox50" id="privacy_checkbox50" title="[필수]개인(신용)정보 수집・이용  동의서(얼굴인증서비스용) 체크를 하려면 상세보기를 하세요.">
+                                                <label for="privacy_checkbox50">[필수]개인(신용)정보 수집・이용  동의서(얼굴인증서비스용)</label>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="privacy__more" title="[필수]개인(신용)정보 수집・이용  동의서(얼굴인증서비스용) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                    </div>
+                                    <!-- 서브목록 -->
+                                    <div class="item-sublist">
+                                        <div class="item-sublist__inner">
+                                            <!-- 목록 -->
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox50_1" id="privacy_checkbox01_5_1_1" title="민감정보 수집・이용  동의 체크를 하려면 상세보기를 하세요.">
+                                                        <label for="privacy_checkbox01_5_1_1">민감정보 수집・이용  동의</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="privacy__more" title="민감정보 수집・이용  동의 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                            </div>
+                                            <!--// 목록 -->
+                                        </div>
+                                    </div>
+                                    <!--// 서브목록 -->
+                                </div>
+                            </div>
+                            <!--// [필수]개인(신용)정보 수집・이용  동의서(얼굴인증서비스용) -->
+
                             <div class="info-txt-wrap">
                                 <p class="page-tit-sub">마케팅 이용동의 0.20% 우대금리</p>
                                 <p class="page-txt">이 상품에서 제공하는 우대금리(0.20%)는 아래 내용의 각 항목들에 대해 모두 동의를 하시는 경우에만 제공됩니다.</p>
@@ -423,11 +507,11 @@
                                     <div class="item-privacy">
                                         <div class="privacy__label">
                                             <div class="checkbox-wrap">
-                                                <input type="checkbox" name="privacy_checkbox03" id="privacy_checkbox03" title="[선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등) 체크를 하려면 상세보기를 하세요.">
-                                                <label for="privacy_checkbox03">[선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등)</label>
+                                                <input type="checkbox" name="privacy_checkbox03" id="privacy_checkbox03" title="(선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서 (상품서비스 안내 등) 체크를 하려면 상세보기를 하세요.">
+                                                <label for="privacy_checkbox03">(선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서 (상품서비스 안내 등)</label>
                                             </div>
                                         </div>
-                                        <button type="button" class="privacy__more" title="[선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                        <button type="button" class="privacy__more" title="(선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서 (상품서비스 안내 등) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                     </div>
                                     <!-- 서브목록 -->
                                     <div class="item-sublist">
@@ -457,7 +541,7 @@
                                                         <div class="privacy__label">
                                                             <div class="checkbox-wrap sm">
                                                                 <input type="checkbox" class="chk" name="privacy_checkbox03_2_1" id="privacy_checkbox03_2_1" title="문자메시지(SMS,LMS등)">
-                                                                <label for="privacy_checkbox03_2_1">문자메시지(SMS,LMS,모바일메세지등)</label>
+                                                                <label for="privacy_checkbox03_2_1">문자메시지 (SMS,LMS 등)</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -491,7 +575,16 @@
                                             <div class="item-privacy">
                                                 <div class="privacy__label">
                                                     <div class="checkbox-wrap sm">
-                                                        <input type="checkbox" name="privacy_checkbox03_1" id="privacy_checkbox03_3" title="개인(신용)정보 제공 동의[선택]">
+                                                        <input type="checkbox" name="privacy_checkbox03_1" id="privacy_checkbox03_3_2" title="개인(신용)정보 제공 동의[선택]">
+                                                        <label for="privacy_checkbox03_3_2">개인(신용)정보 제공 동의 <span class="attention-stage stage1">안심</span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="item-privacy">
+                                                <div class="privacy__label">
+                                                    <div class="checkbox-wrap sm">
+                                                        <input type="checkbox" name="privacy_checkbox03_1" id="privacy_checkbox03_3" title="손님권리 안내문 확인">
                                                         <label for="privacy_checkbox03_3">손님권리 안내문 확인</label>
                                                     </div>
                                                 </div>
@@ -507,14 +600,14 @@
                                     <div class="item-privacy">
                                         <div class="privacy__label">
                                             <div class="checkbox-wrap">
-                                                <input type="checkbox" name="privacy_checkbox04" id="privacy_checkbox04" title="[선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등) 체크를 하려면 상세보기를 하세요.">
+                                                <input type="checkbox" name="privacy_checkbox04" id="privacy_checkbox04" title="(선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서 체크를 하려면 상세보기를 하세요.">
                                                 <label for="privacy_checkbox04">
-                                                    [선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등)
+                                                    (선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서
                                                     <span class="info-txt-s">(하나금융그룹 계열사 상품서비스 안내 및 공동마케팅용)</span>
                                                 </label>
                                             </div>
                                         </div>
-                                        <button type="button" class="privacy__more" title="[선택 동의] 개인정보 수집 &middot;이용 및 제공 동의 (상품서비스 안내 등) 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
+                                        <button type="button" class="privacy__more" title="(선택) 개인(신용)정보수집 &middot; 이용 및 제공 동의서 상세보기" data-element="modal__open" data-target="#modalSlide01">상세보기</button>
                                     </div>
                                     <!-- 서브목록 -->
                                     <div class="item-sublist">
@@ -553,7 +646,7 @@
                                                         <div class="privacy__label">
                                                             <div class="checkbox-wrap sm">
                                                                 <input type="checkbox" class="chk" name="privacy_checkbox04_2_1" id="privacy_checkbox04_2_1" title="문자메시지(SMS,LMS등)">
-                                                                <label for="privacy_checkbox04_2_1">문자메시지(SMS,LMS,모바일메시지 등)</label>
+                                                                <label for="privacy_checkbox04_2_1">문자메시지<br>(SMS,LMS,모바일메시지 등)</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -641,7 +734,7 @@
                                                         <div class="privacy__label">
                                                             <div class="checkbox-wrap sm">
                                                                 <input type="checkbox" class="chk" name="privacy_checkbox05_2_1" id="privacy_checkbox05_2_1" title="문자메시지(SMS,LMS등)">
-                                                                <label for="privacy_checkbox05_2_1">문자메시지(SMS)</label>
+                                                                <label for="privacy_checkbox05_2_1">문자메시지(SMS,LMS등)</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -678,6 +771,7 @@
                             </div>
 
                             <ul class="caution-list">
+                                <li>그룹계열사 상품서비스 안내 동의는 우대금리 제공요건이 아니며, 선택하여 동의하실 수 있습니다.</li>
                                 <li>본 동의는 계약체결에 필수적이지 않으며, 동의하셨더라도 언제든 철회 가능합니다.</li>
                                 <li>위 등급은 사생활 침해 위협, 혜택, 명확성 등을 종합적으로 고려하여 동의내용의 평가등급을 제공하는 제도입니다.</li>
                             </ul>
@@ -754,7 +848,7 @@
                                 <ul class="info-chk-list sub">
                                     <li>
                                         <div class="checkbox-wrap sm">
-                                            <input type="checkbox" class="chk" name="privacy_checkbox08" id="privacy_checkbox08" title="전체계좌조회&gt;계좌관리&gt;계약서/설명서/약관보기에서 확인">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox08" id="privacy_checkbox08" title="하나원큐 계좌관리 조회(필수) 전체계좌조회&gt;계좌관리&gt;계약서/설명서/약관보기에서 확인">
                                             <label for="privacy_checkbox08">
                                                 하나원큐 계좌관리 조회(필수)
                                                 <span class="info-txt-s">전체계좌조회&gt;계좌관리&gt;계약서/설명서/약관보기에서 확인</span>
@@ -762,6 +856,12 @@
                                         </div>
                                     </li>
                                     <li>
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" class="chk" name="privacy_checkbox08" id="privacy_checkbox09" title="이메일(선택)">
+                                            <label for="privacy_checkbox09">이메일(선택)</label>
+                                        </div>
+                                    </li>
+                                    <!-- <li>
                                         <div class="chk-tg tg--area">
                                             <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
                                                 <div class="checkbox-wrap sm">
@@ -770,23 +870,21 @@
                                                 </div>
                                             </div>
                                             <div class="chk-tg-cont depth2 tg--layer">
-                                                <div class="form-area mt0"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                                <div class="form-area mt0">
                                                     <div class="input__wrap">
                                                         <div class="form-item input no-label">
                                                             <div class="input__inner">
-                                                                <input type="text" class="input__element" title="이메일(선택) 입력">
+                                                                <input type="text" class="input__eleme
+                                                                nt" title="이메일(선택) 입력">
                                                                 <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!-- 에러메세지 -->
                                                     <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
-                                                    <!-- 가이드 텍스트 -->
-                                                    <!-- <p class="input__guide-txt input__note">가이드 텍스트</p> -->
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <!--// 약관동의 -->
