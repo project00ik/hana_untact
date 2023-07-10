@@ -354,7 +354,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn.sm.light-gray {padding: 0 1.1rem; height: 3rem; line-height: 3rem; color: #666; font-weight: normal; background-color: #eff0f4; font-size: 1.4rem; font-weight: 500;}
 .btn-group-flex .btn.sm.light-gray {font-size: 1.3rem;}
 .btn.sm.reset {height: 3rem; line-height: 3rem; color: #fff; font-weight: normal; background-color: #373a4d; font-size: 1.3rem; font-weight: 500;}
-.btn.sm.light-gray:hover, .btn.sm.light-gray:active, .btn.sm.light-gray:focus {background-color: #e7e9ee;}
+/* .btn.sm.light-gray:hover, .btn.sm.light-gray:active, .btn.sm.light-gray:focus {background-color: #e7e9ee;} */
 .btn.sm.gray {background-color: #eff0f4; color: #666;}
 
 .btn.w164 {min-width: 16.4rem; width: auto;}
@@ -381,6 +381,8 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn-plus {width: 3.2rem; height: 3.2rem; display: inline-block; font-size: 0; border: 0.1rem solid #30bfba; border-radius: 0.4rem; background: url(../images/icon/add.png) 50% 50% no-repeat; background-size: 2rem auto;}
 .btn-minus {width: 3.2rem; height: 3.2rem; display: inline-block; font-size: 0; border: 0.1rem solid #d2d9d2; border-radius: 0.4rem; background: url(../images/icon/minus.png) 50% 50% no-repeat; background-size: 2rem auto;}
 .icon-map {background: url(../images/icon/map.png) 0 50% no-repeat; background-size: 1.6rem auto;}
+.btn-refresh {width: auto; height: 3.5rem; line-height: 1.1; padding: 1rem 1.6rem; border-radius: 1rem; background: #eff0f4; color: #666; font-size: 1.5rem; font-weight: 400;}
+.btn-refresh:before {content: ''; width: 1.6rem; height: 1.6rem; margin-right: 0.4rem; display: inline-block; background: url(../images/icon/ico-system-refresh-s.svg) 50% 50% no-repeat; background-size: 100% auto; vertical-align: top;}
 
 /* - 컨텐츠 : 버튼 (button) 도움말(arrow) */
 .btn-info {padding-right: 1.8rem; font-size: 1.4rem; color: #333; font-weight: 600; display: inline-block; background: url(../images/icon/chevron_next2.png) top 0.2rem right 0 no-repeat; background-size: 1.6rem auto;}
