@@ -10,6 +10,7 @@
     hanaUI.footer('.app-footer'); //푸터공통
     //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
     hanaUI.inputField('.input'); //인풋필드 기능
+    hanaUI.textArea('.textarea');
     hanaUI.placeholder('[data-element=placeholder__textarea]'); //플레이스홀더
     hanaUI.tooltip(); //툴팁 
     hanaUI.sticky('[data-sticky=normal]'); //고정메뉴
@@ -481,16 +482,17 @@ var hanaUI = {
         function init(obj){
             $el = $(obj);
             $textarea = 'textarea';
-            $label = '.txtareawrap__label';
+            $label = '.form__label';
 
             title();
         };
-
+        
         function event(){
-            input();
+            textarea();
+            textAreaAutoSize();
         };
 
-        function input(){
+        function textarea() {
             $el.on({
                 'focus' : function(e) {
                     $target = $(e.target);
@@ -498,14 +500,16 @@ var hanaUI = {
                     if($(this).prop('readonly') == true){
                         return
                     }else{
-                        $(this).closest($el).addClass('txtareawrap--on');
+                        $(this).closest($el).addClass('textarea--on textarea--focus');
                         hanaUI.native.bottomUnfixed();
                         // hanaUI.keypad($target, 300);
                     }
                 },
                 'blur' : function(){
-                    if($(this).val() == ''){
-                        $(this).closest($el).removeClass('txtareawrap--on');
+                    if ($(this).val() == '') {
+                        $(this).closest($el).removeClass('textarea--on');
+                    } else { 
+                        $(this).closest($el).addClass('textarea--on');
                     }
                     hanaUI.native.bottomFixed();
                 }
@@ -513,6 +517,24 @@ var hanaUI = {
             $el.on('click', $label, function(){
                 $(this).closest($el).find($textarea).focus();
             });
+        };
+
+        function textAreaAutoSize() { 
+            var textAreaAuto = $('.textarea__element');
+
+            textAreaAuto.each(function(){
+                $(this).attr('rows',1);
+                textareaResize($(this));
+            });
+
+            textAreaAuto.on('input', function(){
+                textareaResize($(this));
+            });
+
+            function textareaResize($textAreaEl) {
+                $textAreaEl.css('height', 'auto');
+                $textAreaEl.css('height', $textAreaEl[0].scrollHeight+'px');
+            }
         };
 
         function title() {

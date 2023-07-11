@@ -485,12 +485,12 @@
 						<!-- textarea 기본 -->
 						<div class="form-area">
 							<!-- 
-								* 오류시 class="textarea input--error"
+								* 오류시 class="form-area input--error"
 								* 비활성화시 class="textarea__element" disabled="disabled"
 							-->
 							<div class="form-item textarea">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea01" cols="30" rows="10" title="항목명 입력폼" placeholder="항목명 입력하세요."></textarea>
+								<textarea class="textarea__element" name="" id="textArea01" cols="30" title="항목명 입력폼" placeholder="항목명 입력하세요."></textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
 							</div>
@@ -501,9 +501,9 @@
 		
 						<!-- textarea disabled -->
 						<div class="form-area">
-							<div class="form-item textarea">
+							<div class="form-item textarea textarea--disabled">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea02" cols="30" rows="10" title="항목명 입력폼" disabled="disabled">disabled</textarea>
+								<textarea class="textarea__element" name="" id="textArea02" cols="30" title="항목명 입력폼" disabled="disabled">disabled</textarea>
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
 							</div>
@@ -511,13 +511,13 @@
 						<!--// textarea disabled -->
 		
 						<!-- textarea error -->
-						<div class="form-area">
-							<div class="form-item textarea input--error">
+						<div class="form-area input--error">
+							<div class="form-item textarea">
 								<label for="textArea01" class="form__label">항목명</label>
-								<textarea class="textarea__element" name="" id="textArea03" title="항목명 입력폼" cols="30" rows="10">error</textarea>
-								<!-- 에러 메시지 -->
-								<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
+								<textarea class="textarea__element" name="" id="textArea03" title="항목명 입력폼" cols="30">error</textarea>
 							</div>
+							<!-- 에러 메시지 -->
+							<p class="input__guide-txt input__error" aria-live="assertive">오류메시지</p>
 						</div>
 						<!--// textarea error -->
 					</div>
@@ -1538,7 +1538,5 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
-
-	
 </body>
 </html>

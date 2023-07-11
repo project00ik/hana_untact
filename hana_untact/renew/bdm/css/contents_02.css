@@ -73,11 +73,15 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input--on + .bar {display: block;}
 .input.input--focus + .bar + .input,
 .input.input--on + .bar + .input {display: block;}
+.input.input--on + .bar + .input + .bar,
+.input.input--on + .bar + .input + .bar + .input {display: block;}
 .pass-dot-wrap {display: flex; align-items: center; margin-top: 0.1rem;}
 .pass-dot-wrap .pass-dot {width: 1.6rem; height: 1.6rem; margin: 0 0.1rem; border-radius: 50%; background: #666;}
 .input .pass-dot-wrap {height: 5.7rem; display: flex; padding: 2.8rem 0 0.4rem 0.4rem; align-items: center; margin-top: 0;}
 .input .pass-dot-wrap .pass-dot,
 .button-select__item .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
+.input.input--disabled .pass-dot-wrap .pass-dot,
+.select--disable .button-select__item .pass-dot-wrap .pass-dot {background: #666;}
 .input .btn-minus,
 .input .btn-plus {margin: 0 0 1.1rem 1.6rem; align-self: flex-end;}
 .input:before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}
@@ -108,6 +112,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input__remove-button {display: none; max-width: 1.6rem; width: 1.6rem; height: 1.6rem; margin: 0 0 0.8rem 1rem; background: url(../images/icon/ico-system-input-close.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
 /* 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정 */
+.textarea--on .input__remove-button,
 .input--on .input__remove-button {display: inline-block;}
 .input--on .input__element:disabled + .input__remove-button,
 .input--on .input__element:read-only + .input__remove-button {display: none;}
@@ -140,7 +145,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--focus .input__optional {display: block;}
 .input--focus .input__remove-button {display: inline-block;}
 .input--focus .input__label, 
-.input--on .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
+.input--on .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem; white-space: nowrap;}
 
 .input.readonly .input__element {color: #2f3333;}
 .input.readonly:before {border-color: #dddee4 !important; color: #2f3333 !important; font-weight: 400; box-shadow: none !important;}
@@ -243,6 +248,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__calendar-button {width: 2rem; height: 2rem; min-width: 2rem; max-width: 2rem; margin:1.1rem 0 0 1.6rem; background: url(../images/icon/calendar.png) 50% 50% no-repeat; background-size: 100% auto;}
 .input__wrap .input .input__inner .input__element {font-size: 1.8rem; line-height: 1.5; opacity: 0;}
 .input__wrap .input .input__inner .input__element.w12 {width: 1.2rem; flex: none;}
+.input__wrap .input.w30,
+.input__wrap .input .input__inner .input__element.w30 {width: 3rem; flex: none; text-align: center;}
+.input__wrap .input.w30 .input__inner .input__element {text-align: center;}
 .input__wrap .input.no-label .input__inner .input__element,
 .input__wrap .input.input--on .input__inner .input__element,
 .input__wrap .input.input--focus .input__inner .input__element {opacity: 1;}
@@ -252,6 +260,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 /* 주민등록번호 뒷자리 */
 .social-number-area {flex:1; position: relative;}
 .social-number-area .pass-dot-wrap {position: absolute; bottom: 0; left: 0; z-index: -1;}
+.form-area .input__wrap .input .only-pw {flex: 1;}
+.only-pw .social-number-area .pass-dot-wrap {width: 100%; justify-content: center;}
 .social-number-area .input__element {opacity: 0 !important;}
 
 .form-area {margin-top: 4rem; position: relative;}
@@ -259,13 +269,21 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .form-area .form-title {margin-bottom: 1.2rem; font-size: 1.6rem; color: #666; font-weight: 500;}
 .form-area .btn-group-flex {margin-top: 1.2rem;}
 .form-area .btn-group-flex .btn + .btn {margin-left: 0.4rem;}
-.form-area .form__label {font-size: 1.4rem; color: #666; font-weight: 400; display: block;}
-.form-area .textarea .textarea__element {width: 100%; max-height: 10.3rem; overflow-y: auto; margin-top: 1.2rem; padding: 1.6rem; border-radius: 0.8rem; border: 0.1rem solid #dddee4; background: #fff; color: #333; font-size: 1.8rem; display: block;}
+.form-area .textarea {position: relative;}
+.form-area .textarea::before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}
+.form-area .textarea.textarea--focus::before {border-bottom-color: #30bfba;}
+.form-area .textarea .form__label {white-space: nowrap; font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left:0; top: 4rem; -webkit-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: all .3s ease; transition: all .3s ease;}
+.form-area .textarea.textarea--focus .form__label,
+.form-area .textarea.textarea--on .form__label,
+.form-area .textarea.textarea--disabled .form__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
+.form-area .textarea .textarea__element {width: 100%; flex: 1; padding: 2.8rem 0 0.4rem 0; outline: none; line-height: 2.4rem; background: none; position: relative; text-align: left; font-size: 1.8rem; font-weight: 700; color: #009591; z-index: 1; opacity: 0; overflow: hidden;}
 .form-area .textarea .textarea__element::placeholder,
-.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #757575;}
-.form-area .textarea .textarea__element:focus {box-shadow: 0 0 8px 0 rgba(0, 149, 145, 0.25); border: solid 0.2rem #009591 !important; color: #000;}
-.form-area .textarea .textarea__element:disabled {border-color: #dddee4; color: #666;}
-.form-area .textarea.input--error .textarea__element {border-color: #e53a4c;}
+.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #d0d9d9; font-weight: 600;}
+.form-area .textarea.textarea--disabled .textarea__element:disabled {color: #666;}
+.form-area .textarea.textarea--disabled .textarea__element,
+.form-area .textarea.textarea--focus .textarea__element,
+.form-area .textarea.textarea--on .textarea__element {opacity: 1;}
+
 .form-area .btn-info {position: absolute; top: -0.2rem; right: 0; z-index:2;}
 .popup-wrap .form-area {margin-top: 0;}
 .popup-wrap .form-area + .form-area {margin-top: 3.2rem;}
@@ -569,7 +587,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .app-main.full-video .video-guide-area {width: 100%; height: 62.4vw; background: url(../images/png/video-area.png) 0 0 no-repeat; background-size: 100% auto; position: relative;}
 .app-main.full-video .video-guide-area .video-guide-info {width: calc(100% - 12.8vw); height: 8.6vw; line-height: 8.6vw; border-radius: 0 0 4.8vw 4.8vw; background: rgba(0, 0, 0, 0.55); font-size: 1.2rem; color: #fff; text-align: center; position: absolute; bottom: 2.5vw; left: 6.4vw; z-index: -1;}
 .video-layer-wrap .video-info-wrap {padding: 1.7rem 2.5rem 6rem; flex: 1; text-align: center; background: url(../images/png/video-dim.png) 0 0 repeat; background-size: 10rem auto; position: relative;}
-.video-layer-wrap .video-info-wrap .txt {font-size: 1.4rem; font-weight: 400; line-height: 1.2;}
+.video-layer-wrap .video-info-wrap .txt {font-size: 1.4rem; font-weight: 400;}
 .video-layer-wrap .video-info-wrap .btn-center-wrap {margin-top: 1.6rem;}
 .video-layer-wrap .video-info-wrap .video-info-link {width: 100%; position: absolute; bottom: 4.8rem; left:0; z-index: 5; text-align: center;}
 .video-layer-wrap .video-info-wrap .video-info-link .txt_underline {font-size: 1.3rem; color: #fff;}
@@ -577,3 +595,12 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 /* 신분증 진위확인 실패 (상세 안내코드 토글) */
 .code-info-wrap {margin-top: 2rem;}
 .code-info-wrap .tg-text-cont {margin-top: 1.2rem;}
+
+/* 신분증 정보 확인 */
+.id-photo-wrap {margin-top: 3rem;}
+.id-photo-wrap .id-photo {width: 100%; overflow: hidden; border-radius: 2rem; font-size: 0;}
+.id-photo-wrap .id-photo img {width: 100%; height: auto;}
+.id-photo-wrap .id-photo-info {width: 100%; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between;}
+.id-photo-wrap .id-photo-info .txt {flex: 1; word-break: keep-all; word-wrap: break-word; color: #333; font-size: 1.6rem;}
+.id-photo-wrap .id-photo-info .btn {margin-left: 2rem;}
+.id-photo-wrap .page-tit-sub {margin-top: 2rem;}
