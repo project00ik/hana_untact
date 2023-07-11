@@ -42,6 +42,11 @@
 .icon-bank {width: 2.4rem; height: 2.4rem; display: inline-block; font-size: 0; background-position: 50% 50%; background-repeat: no-repeat; background-size: 100% auto; vertical-align: middle;}
 .icon-bank img {display: block; width: 2.4rem; height: 2.4rem;}
 
+.bank-account-box {display: flex; align-items: center;}
+.bank-account-box .bank {margin-left: 0.6rem; font-size: 1.6rem; color: #333;}
+.bank-account-box .num {margin-left: 0.6rem; font-size: 1.4rem; color: #999;}
+.bank-account-box .icon-bank {width: 2rem; height: 2rem;}
+
 .bank-list-wrap {display: flex; flex-wrap: wrap; margin: 2rem 0 2rem -3.2%; padding: 0 2.4rem; }
 .bank-list-wrap li {margin-top: 1.2rem; padding-left: 3.2%; width: 33.33333%; height: 8.4rem; display: flex; justify-content: center; } 
 .bank-list-wrap li .btn-bank {padding: 0 0.8rem; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; background-color: #fbfcfc; border-radius: 1.4rem 1.4rem;}
@@ -59,6 +64,8 @@
 /* font-size */
 .font-sm {font-size: 1.3rem;}
 .font-normal {font-weight: 400 !important;}
+.font-medium {font-weight: 500 !important;}
+.font-bold {font-weight: 700 !important;}
 .page-tit .text-point {font-size: 2rem; font-weight: 500; color: #009591;}
 
 /* - 컨텐츠 : 툴팁 (Tooltip) */
@@ -94,6 +101,8 @@
 
 /* List */
 .list-wrap {padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
+.card-box .list-wrap {padding: 0; border: none;}
+.list-wrap.align-c dl {align-items: center;}
 
 /* type01 */
 .list-wrap.type01 dl {width: 100%; display: flex; justify-content: space-between;}
@@ -133,6 +142,9 @@
 .dot-list.type03 li .tp-green {font-size: 1.4rem;}
 .dot-list.type03 > li::before {top: 0.7rem;}
 .dot-list.type03 li + li {margin-top: 0.8rem;}
+
+.bul-star {position: relative; padding-left: 0.9rem; font-size: 1.4rem; color: #757575;}
+.bul-star::before {content: '*'; display: block; width: 0.3rem; height: 0.3rem; position: absolute; left: 0; top: 0.3rem;} 
 
 /* 주소검색 */
 .result-total-text,
@@ -233,6 +245,7 @@
 
 /* card type */
 .card-box {border-radius: 1.8rem; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
+.card-box .inbox {padding: 2.4rem;}
 .card-box .radio-wrap label {padding: 2.1rem; width: 100%; height: 100%;}
 .card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
 .card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
@@ -244,6 +257,8 @@
 
 .card-box .btn-box-arrow {padding: 2.4rem; display: block; width: 100%; background: url(../images/icon/ico-system-arrow-right-m.png) top 2.6rem right 2.4rem no-repeat; background-size: 1.6rem 1.6rem; color: #333; font-weight: 700; text-align: left;}
 
+.card-box-green {border-radius: 1.8rem; border: 1px solid #009591; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
+.card-box-green .inbox {padding: 2.4rem;}
 
 /* btn */
 .btn.sm.light-gray.arrow {padding-right: 2.4rem; background: #eff0f4 url(../images/icon/ico-system-arrow-right-ss.png) top 1rem right 1.1rem no-repeat; background-size: 1.2rem auto;}
