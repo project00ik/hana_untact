@@ -107,6 +107,7 @@
 /* .popup-wrap .list-wrap {border-top: none;} */
 .card-box .list-wrap {padding: 0; border: none;}
 .list-wrap.align-c dl {align-items: center;}
+.list-wrap.align-c dt {max-width: 6rem;}
 
 /* type01 */
 .list-wrap.type01 dl {width: 100%; display: flex; justify-content: space-between;}
