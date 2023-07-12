@@ -279,7 +279,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .form-area .textarea .textarea__element {width: 100%; flex: 1; padding: 2.8rem 0 0.4rem 0; outline: none; line-height: 2.4rem; background: none; position: relative; text-align: left; font-size: 1.8rem; font-weight: 700; color: #009591; z-index: 1; opacity: 0; overflow: hidden;}
 .form-area .textarea .textarea__element::placeholder,
 .form-area .textarea .textarea__element::-webkit-input-placeholder {color: #d0d9d9; font-weight: 600;}
-.form-area .textarea.textarea--disabled .textarea__element:disabled {color: #666;}
+.form-area .textarea.textarea--disabled .textarea__element:disabled,
+.form-area .textarea.textarea--disabled .textarea__element:read-only {color: #666;}
 .form-area .textarea.textarea--disabled .textarea__element,
 .form-area .textarea.textarea--focus .textarea__element,
 .form-area .textarea.textarea--on .textarea__element {opacity: 1;}
