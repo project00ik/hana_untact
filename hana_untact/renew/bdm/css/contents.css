@@ -103,19 +103,20 @@
 .select-wrap.select--active .tooltip-label.select-label .tooltip-title {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 
 /* List */
-.list-wrap {padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
+.list-wrap {padding: 1.9rem 0; /*border-top: 1px solid #e7e9ee;*/ border-bottom: 1px solid #e7e9ee;}
+/* .popup-wrap .list-wrap {border-top: none;} */
 .card-box .list-wrap {padding: 0; border: none;}
 .list-wrap.align-c dl {align-items: center;}
 
 /* type01 */
 .list-wrap.type01 dl {width: 100%; display: flex; justify-content: space-between;}
 .list-wrap.type01 dl + dl {margin-top: 1rem;}
-.list-wrap.type01 dl > dt {font-size: 1.3rem; color: #757575; flex: 1; max-width: 6rem;}
+.list-wrap.type01 dl > dt {font-size: 1.4rem; color: #757575; flex: 1;/* max-width: 6rem;*/}
 .list-wrap.type01 dl > dd {font-size: 1.5rem; color: #393939; text-align: right; flex: 2;}
 
 .list-title {color: #000; font-weight: 500;}
 .list-text-sub {margin-top: 1rem; font-size: 1.4rem;}
-.list-text-sub + .list-wrap.type01 {margin-top: 1.6rem;}
+.list-text-sub + .list-wrap.type01 {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
 
 /* list-line-wrap */
 .list-line-wrap li {padding: 1.9rem 0; border-bottom: 1px solid #e7e9ee;}
@@ -158,7 +159,7 @@
 .btn-date-wrap {margin-top: 1rem;}
 
 /* popup 예금 가입 확인 */
-.modal__contents .inbox {padding: 3rem 0;}
+/*.modal__contents .inbox {padding: 3rem 0;}*/
 .popup-join-con .dot-list {margin-top: 1rem;}
 .popup-join-con .checkbox-wrap {margin-top: 3.2rem;}
 .popup-join-con .checkbox-wrap label {font-weight: 400;}
