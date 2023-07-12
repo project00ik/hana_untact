@@ -407,7 +407,8 @@
 .currency-wrap .input__element::placeholder {color: #d0d9d9; font-weight: 600;}
 
 .currency-dollar {height: 4.3rem; line-height: 4.3rem; font-size: 3.6rem; font-weight: 600; display: inline-block; vertical-align: middle;}
-.input-amount-alba:disabled {border-bottom:2px solid #000 !important;color:#000 !important;background-color:#fff;}
+.input-amount-alba:disabled,
+.input-amount-alba:read-only {border-bottom:2px solid #000 !important;color:#000 !important;background-color:#fff;}
 
 .currency-wrap .input__remove-button {display: inline-block; margin: 0 0 0 0.8rem; vertical-align: middle;}
 
