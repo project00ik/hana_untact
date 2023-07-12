@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">추가확인</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 5단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step">4</li>
+                            <li class="stepper__step on">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">추가인증 방식을<br>선택해주세요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap">
+                        <ul class="card-list-wrap mt40">
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="본인명의 계좌 인증" data-element="modal__open" data-target="#modalSlide01">본인명의 계좌 인증</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="가상계좌이체" data-element="modal__open" data-target="#modalSlide02">가상계좌이체</button>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="얼굴인증">얼굴인증</button>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="영상통화" data-element="modal__open" data-target="#modalSlide03">영상통화</button>                                    
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 본인명의 계좌 인증 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">본인명의 계좌 인증</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-box">
+                    <p class="text">
+                        하나은행 또는 타 금융기관의 본인명의 계좌의 계좌번호와 비밀번호를 입력하면, 1원을 이체하여 계좌검증을 진행합니다.
+                    </p>
+                    <p class="text">
+                        계좌 비밀번호 오류 시 하나은행에서 입금 받은 1원의 입금자명에 표시된 인증번호 3자리를 확인합니다.
+                    </p>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="인증 시작하기">인증 시작하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 본인명의 계좌 인증 -->
+    
+    <!-- 모달레이어 - 가상계좌 이체 -->
+    <div id="modalSlide02" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">가상계좌 이체</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-box">
+                    <p class="text txt-align-c">
+                        다른 금융기관의 본인계좌에서<br>하나은행 가상계좌로 이체하여 인증합니다.
+                    </p>                   
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="인증 시작하기">인증 시작하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 가상계좌 이체 -->
+    
+    <!-- 모달레이어 - 영상통화 인증 안내 -->
+    <div id="modalSlide03" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">영상통화 인증 안내</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-box">
+                    <p class="text">
+                        추가확인 인증을 위해 상담원과 연결 후 영상통화를 진행합니다.
+                    </p>
+                    <ul class="dot-list type03 mt16">
+                        <li>제출하신 신분증을 미리 준비해 주세요.</li>
+                        <li>어둡거나 네트워크 연결이 불안정할 경우 영상통화 연결 및 본인확인이 어려울 수 있습니다.</li>
+                        <li>상담원 연결 시 대기 상태에 따라 시간이 소요될 수 있습니다.</li>
+                        <li>데이터 사용에 따른 요금이 부과될 수 있습니다.</li>
+                        <li>업무시간 종료 후 신청한 경우 보내드린 SMS 링크를 클릭하여 다음 영업일에 영상통화를 진행해 주세요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="영상통화 시작">영상통화 시작</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 영상통화 인증 안내 -->
+
+
+    
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            //hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
+            // hanaUI.formFocusEvent(index); 
+            modalOpen('modalSlide02');
+            
+
+        });
+        
+
+       
+    </script>
+
+</body>
+</html>

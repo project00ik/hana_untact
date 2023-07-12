@@ -59,8 +59,11 @@
 .code-wrap .input__wrap .input:before {border-bottom: 1px solid #333;}
 .code-wrap .input__wrap .input--focus:before {border-bottom: 1px solid #30bfba;}
 
+.text-arrow {padding: 2.2rem 0 5.6rem; color: #333; text-align: center; background: url(../images/icon/expand-less@3x.png) center 10rem no-repeat; background-size: 2.6rem 1.6rem;}
 
 /* common */
+.mt10 {margin-top: 1rem !important;}
+
 /* font-size */
 .font-sm {font-size: 1.3rem;}
 .font-normal {font-weight: 400 !important;}
@@ -107,7 +110,7 @@
 /* type01 */
 .list-wrap.type01 dl {width: 100%; display: flex; justify-content: space-between;}
 .list-wrap.type01 dl + dl {margin-top: 1rem;}
-.list-wrap.type01 dl > dt {font-size: 1.3rem; color: #757575; flex: 1;}
+.list-wrap.type01 dl > dt {font-size: 1.3rem; color: #757575; flex: 1; max-width: 6rem;}
 .list-wrap.type01 dl > dd {font-size: 1.5rem; color: #393939; text-align: right; flex: 2;}
 
 .list-title {color: #000; font-weight: 500;}
@@ -246,10 +249,16 @@
 /* card type */
 .card-box {border-radius: 1.8rem; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
 .card-box .inbox {padding: 2.4rem;}
+
 .card-box .radio-wrap label {padding: 2.1rem; width: 100%; height: 100%;}
 .card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
 .card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
-.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-weight: 1.4rem; color : #999;}
+.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
+
+.card-box .checkbox-wrap.sm label {padding: 2.1rem 2.1rem 2.1rem 4.8rem; width: 100%; height: 100%;}
+.card-box .checkbox-wrap.sm label::before {left: 2.4rem; top: 50%; margin-top: -0.9rem;}
+.card-box .checkbox-wrap.sm .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
+.card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
 
 .card-list-wrap li {margin-top: 1.6rem;}
 .card-list-wrap li:first-child {margin-top: 0;}
