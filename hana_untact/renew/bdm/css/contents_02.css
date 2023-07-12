@@ -596,7 +596,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .code-info-wrap {margin-top: 2rem;}
 .code-info-wrap .tg-text-cont {margin-top: 1.2rem;}
 
-/* 신분증 정보 확인 */
+/* 본인확인(신분증) - 신분증 정보 확인 */
 .id-photo-wrap {margin-top: 3rem;}
 .id-photo-wrap .id-photo {width: 100%; overflow: hidden; border-radius: 2rem; font-size: 0;}
 .id-photo-wrap .id-photo img {width: 100%; height: auto;}
@@ -604,3 +604,13 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .id-photo-wrap .id-photo-info .txt {flex: 1; word-break: keep-all; word-wrap: break-word; color: #333; font-size: 1.6rem;}
 .id-photo-wrap .id-photo-info .btn {margin-left: 2rem;}
 .id-photo-wrap .page-tit-sub {margin-top: 2rem;}
+
+/* 본인확인(신분증) - 신분증 확인페이지 */
+.checking-wrap {margin-top: 4rem;}
+.checking-wrap .checking-info-area {padding-top: 22rem; position: relative;}
+.checking-wrap .checking-info-area.icon-mobile {padding-top: 20rem; background: url(../images/png/group-2-copy-13@3x.png) 50% 0 no-repeat; background-size: 12rem auto;}
+.checking-wrap .checking-info-area.icon-video {background: url(../images/png/group-2-copy@3x.png) 50% 0 no-repeat; background-size: 12rem auto;}
+.checking-wrap .checking-info-area .checking-txt-area {width: 100%; position: absolute; top: 13.6rem; left: 0; text-align: center;}
+.checking-txt-area .tit {font-size: 1.6rem; font-weight: bold; color: #009591;}
+.checking-txt-area .tit > * {font-weight: bold;}
+.checking-txt-area .txt {margin-top: 0.1rem; font-size: 1.6rem; color: #666;}
