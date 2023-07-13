@@ -487,7 +487,11 @@
         function formShowEvent(target){
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
-            formTarget.addClass('form--active').find('input:checked').focus();
+            formTarget.addClass('form--active');
+            setTimeout(function(){
+                formTarget.find('input:checked').focus();
+            },300);
+            
         }
         function formHideEvent(target){
             var formTarget = $('.'+ target);
