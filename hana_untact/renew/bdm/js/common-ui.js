@@ -1812,8 +1812,10 @@ function modalClose(target){
     modalClosetarget.prop('checked', target.checked);
     setTimeout(function () {
         var modalID = modalClosetarget.closest('.modal').attr('id');
+        var selectTarget = $('[data-target="#' + modalID + '"]');
         var plugin_modal = $('body').data('plugin_modal');
-	    plugin_modal.close('#'+ modalID);
+        plugin_modal.close('#' + modalID);
+        selectTarget.closest('.select-wrap').removeClass('select--on').addClass('select--active');
     }, 0)
 }
 
