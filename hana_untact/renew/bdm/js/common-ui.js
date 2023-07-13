@@ -1808,16 +1808,25 @@ function modalOpen(target) {
 
 // 모달 닫기 js
 function modalClose(target){
-    var modalClosetarget = $(target);
-    modalClosetarget.prop('checked', target.checked);
-    setTimeout(function () {
-        var modalID = modalClosetarget.closest('.modal').attr('id');
-        var selectTarget = $('[data-target="#' + modalID + '"]');
-        var plugin_modal = $('body').data('plugin_modal');
-        plugin_modal.close('#' + modalID);
-        selectTarget.closest('.select-wrap').removeClass('select--on').addClass('select--active');
-    }, 0)
+    if (typeof target === 'string') {
+        var modalCloseId = '#' + target;
+        setTimeout(function () {
+            var plugin_modal = $('body').data('plugin_modal');
+            plugin_modal.close(modalCloseId);
+        }, 0);
+    } else { 
+        var modalClosetarget = $(target);
+        modalClosetarget.prop('checked', target.checked);
+        setTimeout(function () {
+            var modalID = modalClosetarget.closest('.modal').attr('id');
+            var selectTarget = $('[data-target="#' + modalID + '"]');
+            var plugin_modal = $('body').data('plugin_modal');
+            plugin_modal.close('#' + modalID);
+            selectTarget.closest('.select-wrap').removeClass('select--on').addClass('select--active');
+        }, 0);
+    }
 }
+
 
 // 탭 슬라이드(swiper slide)
 function swiperTabSlide(target , num) { 
