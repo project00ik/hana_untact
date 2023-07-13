@@ -325,8 +325,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 /* - 컨텐츠 : 버튼 (button) 공통 */ 
 .btn {padding: 0 1.4rem; width: 100%; height: 5rem; line-height: 5rem; font-size: 1.6rem; color: #fff; font-weight: 500; text-align: center; background-color: #009591; border-radius: 1rem;}
 /* .btn:hover, .btn:active, .btn:focus {background-color: #008c88;} */
-.btn:disabled,
-.btn:read-only {background-color: #ced3d9 !important;}
+.btn:disabled {background-color: #ced3d9 !important;}
 .btn.press {background-color: #008c88;}
 
 .btn.gray {background-color: #9ca7b3; color: #fff;}
@@ -339,8 +338,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 
 .btn.line:hover, .btn.line:active, .btn.line:focus {background-color: #f2fafa;}
 .btn.line.press {background-color: #f2fafa;}
-.btn.line:disabled,
-.btn.line:read-only {color: #fff; background-color: #d0d9d9; border: 1px solid #d0d9d9;}
+.btn.line:disabled {color: #fff; background-color: #d0d9d9; border: 1px solid #d0d9d9;}
 .btn.line.gray {color: #333; border: 1px solid #d0d9d9;}
 .btn.line.gray:hover, .btn.line.gray:active, .btn.line.gray:focus {background-color: #e7e9ee;}
 .btn.line.press {background-color: #e7e9ee; padding-left: 2rem; font-size: 1.6rem; font-weight: 600;}
@@ -436,8 +434,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .checkbox-wrap.chk-type2 label {font-weight: 400; color: #333;}
 .checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.1rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
 .checkbox-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png);}
-.checkbox-wrap input:disabled + label::before,
-.checkbox-wrap input:read-only + label::before {opacity: 0.8;}
+.checkbox-wrap input:disabled + label::before {opacity: 0.8;}
 .checkbox-wrap.tp-green label {color: #009591;}
 .checkbox-wrap label .info-txt-s {margin-top: 0.4rem; display: block;}
 .checkbox-wrap label .info-txt-l {margin-top: 0.4rem; display: block; font-size: 1.6rem; font-weight: 500; letter-spacing: -0.11rem;}
@@ -446,8 +443,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .checkbox-wrap.sm label::before {width: 1.8rem; height: 1.8rem; background: url(../images/icon/ico-system-form-check-2-depth-default.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem; top: 0.2rem;} 
 .checkbox-wrap.sm input:checked + label {color: #333; font-weight: 700;}
 .checkbox-wrap.sm input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-2-depth-active.png);}
-.checkbox-wrap.sm input:disabled + label::before,
-.checkbox-wrap.sm input:read-only + label::before {opacity: 0.8;}
+.checkbox-wrap.sm input:disabled + label::before {opacity: 0.8;}
 
 .checkbox-wrap.box label {padding: 1.3rem 1.6rem 1.3rem 4.6rem; width: 100%; font-size: 1.5rem; color: #7d8585; border: 1px solid #e7e9ee; border-radius: 0.8rem; background-color: #f7fafa;}
 .checkbox-wrap.box label::before {left: 1.6rem; top: 1.3rem; margin-top: 0;}
@@ -463,20 +459,17 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .radio-wrap label {display: inline-block; position: relative; padding-left: 3rem;}
 .radio-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -1.1rem; width: 2rem; height: 2rem; background: url(../images/icon/ico-system-form-radio-1-depth-default.png) 0 0 no-repeat; background-size: 2rem auto;} 
 .radio-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-radio-1-depth-active.png);}
-.radio-wrap input:disabled + label::before,
-.radio-wrap input:read-only + label::before {background-image: url(../images/icon/ico-system-form-radio-1-depth-default.png); opacity: 0.8;}
+.radio-wrap input:disabled + label::before{background-image: url(../images/icon/ico-system-form-radio-1-depth-default.png); opacity: 0.8;}
 
 .radio-wrap.sm label {padding-left: 2.6rem; font-size: 1.5rem;}
 .radio-wrap.sm label::before {width: 1.8rem; height: 1.8rem; margin-top: -0.9rem; background: url(../images/icon/radio_sm.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem;} 
 .radio-wrap.sm input:checked + label::before {background-image: url(../images/icon/radio_sm_on.png);}
-.radio-wrap.sm input:disabled + label::before,
-.radio-wrap.sm input:read-only + label::before {background-image: url(../images/icon/radio_sm_disabled.png);}
+.radio-wrap.sm input:disabled + label::before {background-image: url(../images/icon/radio_sm_disabled.png);}
 
 .tab-radio-wrap {display: flex;}
 .tab-radio {flex: 1; text-align: center;}
 .tab-radio label {display: inline-block; width: 100%; height: 5rem; line-height: 4.8rem; border: 1px solid #dbdbdb; border-radius: 1rem; font-size: 1.6rem; font-weight: 400; color: #333; background: #fff;}
-.tab-radio input:disabled + label,
-.tab-radio input:read-only + label {background: #f6f7f9;}
+.tab-radio input:disabled + label {background: #f6f7f9;}
 .tab-radio + .tab-radio {margin-left: 0.8rem;}
 
 .tab-radio input:checked + label { line-height: 4.6rem; color: #009591; border: solid 0.2rem #009591; font-weight: 500; background-color: #fff;}
