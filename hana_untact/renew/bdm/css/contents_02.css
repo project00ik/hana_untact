@@ -618,3 +618,4 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 /* 계좌정보 - 주택공급정책 자료 활용 동의 */
 .form-area .checkbox-notice-wrap {margin-top: 0;}
+.form-area.form-basic-wrap .checkbox-notice-wrap {margin-top: 4rem;}
