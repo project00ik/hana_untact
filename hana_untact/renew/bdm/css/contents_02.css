@@ -615,3 +615,6 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .checking-txt-area .tit {font-size: 1.6rem; font-weight: bold; color: #009591;}
 .checking-txt-area .tit > * {font-weight: bold;}
 .checking-txt-area .txt {margin-top: 0.1rem; font-size: 1.6rem; color: #666;}
+
+/* 계좌정보 - 주택공급정책 자료 활용 동의 */
+.form-area .checkbox-notice-wrap {margin-top: 0;}
