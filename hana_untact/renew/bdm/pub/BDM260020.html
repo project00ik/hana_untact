@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -27,64 +26,72 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit">증권계좌를 개설할<br>증권사를 선택해 주세요</p>
+                        <p class="page-tit">제휴 증권사와 연결할<br>하나은행 계좌를 선택해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
-                    <div class="cont-wrap">
+                    <div class="cont-wrap cont-revers cont-form--animate">
 
-                        <div class="chk-all-area mt40">
-                            <div class="checkbox-wrap">
-                                <input type="checkbox" name="ckAll" id="checkbox00" title="" class="chk-all">
-                                <label for="checkbox00">전체선택</label>
+                        <div class="form-area">
+                            <div class="form-item select-wrap">
+                                <div class="select">
+                                    <div class="select-label tooltip-label">
+                                        <div class="tooltip-wrap">
+                                            <p class="tooltip-title">연결 계좌</p>
+                                            <div class="tooltip" data-tooltip="paragraph">
+                                                <button type="button" class="btn-open" data-tooltip-button="open" aria-label="툴팁 열기"></button>
+                                                <div class="tooltip-con" data-tooltip-panel="false" >
+                                                    <div class="tooltip__column">
+                                                        <div class="tooltip__description" data-tooltip="focus">
+                                                            <!-- tooltip 컨텐츠 영역 -->
+                                                            <div class="inbox">
+                                                                <p class="text">
+                                                                    증권계좌와 연결 가능한 입출금 상품 보유 시, 보유계좌 등록을 통해 기존 계좌 이용이 가능하며 미 보유 시에는 입출금계좌가 동시에 신규 개설됩니다.
+                                                                </p>
+                                                                <!--    하나 밀리언달러 통장
+                                                                <p class="text">
+                                                                    외화 증권계좌의 연결은 하나 밀리언달러 통장으로만 가능합니다.
+                                                                </p>
+                                                                <p class="text">
+                                                                    기존 외화다통화보통예금을 보유하신 고객은 하나 밀리언달러 통장으로 상품전환 후 증권계좌와 연결 가능합니다. (하나원큐에서 전환가능)
+                                                                </p>
+                                                                <p class="text">
+                                                                    하나 밀리언달러 통장 미 보유시, 증권계좌와 하나 밀리언달러 통장 계좌가 동시 신규됩니다.
+                                                                </p>
+                                                                -->
+                                                            </div>
+                                                            <!-- // tooltip 컨텐츠 영역 -->
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <div class="select__inner">
+                                        <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSearch01" title="출금 계좌 선택">
+                                            <span>
+                                            <!--
+                                                <div class="account-num-wrap">
+                                                    <span class="num">101-</span>
+                                                    <div class="pass-dot-wrap">
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                    </div>
+                                                    <span class="num">-012345</span>
+                                                </div>
+                                            -->
+                                            </span> 
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                             </div>
-                            <ul class="card-list-wrap mt20">
-                                <li>
-                                    <div class="card-box">
-                                        <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="ck" id="checkbox01" title="" class="chk">
-                                            <label for="checkbox01">
-                                                <div class="text-wrap">
-                                                    <span class="title" style="background-image: url(../images/ci/ci-img-bank-01@3x.png);">하나증권</span>
-                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="card-box">
-                                        <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="ck" id="checkbox02" title="" class="chk">
-                                            <label for="checkbox02">
-                                                <div class="text-wrap">
-                                                    <span class="title" style="background-image: url(../images/ci/ci-img-bank-02@3x.png);">KB증권</span>
-                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="card-box">
-                                        <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="ck" id="checkbox03" title="" class="chk">
-                                            <label for="checkbox03">
-                                                <div class="text-wrap">
-                                                    <span class="title" style="background-image: url(../images/ci/ci-img-stock-08@3x.png);">삼성증권</span>
-                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
                         </div>
-                        <ul class="dot-list type02 mt10">
-                            <li>
-                                주식계좌 개설 후, 선택한 증권사의 온라인매체(HTS/MTS/홈페이지)에서 거래가 가능합니다.
-                            </li>
-                        </ul>
                  
                     </div>
                 </div>
@@ -92,7 +99,8 @@
             <!-- footer -->
             <div class="app-footer">
                 <div class="btn-group-wrap">
-                    <button type="button" class="btn" title="다음">다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                    <button type="button" class="btn" title="다음" disabled="disabled">다음</button>
+                    <!-- D: 활성화시 disabled="disabled" 삭제 -->
                 </div>
             </div>
             <!-- //footer -->
@@ -107,267 +115,79 @@
     <script type="text/javascript" src="../js/pualugin.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
 
-    <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 계좌용도 선택 -->
-    <div id="modalSlideBtn" class="modal popup-wrap modal--slide" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__header">
-                <h1 class="title">계좌용도</h1>
-            </div>
-            <div class="modal__contents btn-none">                        
-                <ul class="modal-select-list">
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-01" title="일반급여통장" onclick="modalClose(this);">
-                            <label for="radio01-01">일반급여통장</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-02" title="법인/개인사업자통장" onclick="modalClose(this);">
-                            <label for="radio01-02">법인/개인사업자통장</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-03" title="아르바이트통장" onclick="modalClose(this);">
-                            <label for="radio01-03">아르바이트통장</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-04" title="연금수급" onclick="modalClose(this);">
-                            <label for="radio01-04">연금수급</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-05" title="모임통장" onclick="modalClose(this);">
-                            <label for="radio01-05">모임통장</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-06" title="자동이체" onclick="modalClose(this);">
-                            <label for="radio01-06">자동이체</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio01" id="radio01-07" title="기타" onclick="modalClose(this);">
-                            <label for="radio01-07">기타</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <!-- 모달레이어 - 출금계좌 선택 -->
+    <div id="modalSearch01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">연결 계좌</h1>
+            </div>
+            <div class="modal__contents btn-none">
+                <!-- 팝업 내용 -->
+                <div class="inbox">
+                    <p class="list-title">신규계좌 : 하나플러스 통장</p>
+                    <ul class="list-line-wrap">
+                        <li onclick="modalClose(this);" role="button">
+                            <p class="title">%상품명 또는 별칭%</p>
+                            <div class="account-num-wrap">
+                                <span class="num">101-</span>
+                                <div class="pass-dot-wrap">
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                </div>
+                                <span class="num">-012345</span>
+                            </div>
+                        </li>
+                        <li onclick="modalClose(this);" role="button">
+                            <p class="title">%상품명 또는 별칭%</p>
+                            <div class="account-num-wrap">
+                                <span class="num">101-</span>
+                                <div class="pass-dot-wrap">
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                </div>
+                                <span class="num">-012345</span>
+                            </div>
+                        </li>
+                        <li onclick="modalClose(this);" role="button">
+                            <p class="title">%상품명 또는 별칭%</p>
+                            <div class="account-num-wrap">
+                                <span class="num">101-</span>
+                                <div class="pass-dot-wrap">
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                    <span class="pass-dot" role="img" aria-label="*"></span>
+                                </div>
+                                <span class="num">-012345</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!--// 팝업 내용 -->
+            </div>
         </div>
     </div>
-    <!-- //모달레이어 - 슬라이드 버튼X -->
-
-    <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 거래목적 선택 -->
-    <div id="modalSlideBtn02" class="modal popup-wrap modal--slide" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__header">
-                <h1 class="title">거래목적</h1>
-            </div>
-            <div class="modal__contents btn-none">                        
-                <ul class="modal-select-list">
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-01" title="급여 및 생활비" onclick="modalClose(this);">
-                            <label for="radio02-01">급여 및 생활비</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-02" title="저축및투자" onclick="modalClose(this);">
-                            <label for="radio02-02">저축및투자</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-03" title="보험료납부결제" onclick="modalClose(this);">
-                            <label for="radio02-03">보험료납부결제</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-04" title="공과금납부결제" onclick="modalClose(this);">
-                            <label for="radio02-04">공과금납부결제</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-05" title="카드대금결제" onclick="modalClose(this);">
-                            <label for="radio02-05">카드대금결제</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-06" title="대출원리금상환결제" onclick="modalClose(this);">
-                            <label for="radio02-06">대출원리금상환결제</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-07" title="사업상거래" onclick="modalClose(this);">
-                            <label for="radio02-07">사업상거래</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-08" title="기타" onclick="modalClose(this);">
-                            <label for="radio02-08">기타</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
-        </div>
-    </div>
-    <!-- //모달레이어 - 슬라이드 버튼X -->
-
-    <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 자금출처 선택 -->
-    <div id="modalSlideBtn03" class="modal popup-wrap modal--slide" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__header">
-                <h1 class="title">자금출처</h1>
-            </div>
-            <div class="modal__contents btn-none">                        
-                <ul class="modal-select-list">
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-01" title="근로및연금소득" onclick="modalClose(this);">
-                            <label for="radio03-01">근로및연금소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-02" title="퇴직소득" onclick="modalClose(this);">
-                            <label for="radio03-02">퇴직소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-03" title="사업소득" onclick="modalClose(this);">
-                            <label for="radio03-03">사업소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-04" title="부동산임대소득" onclick="modalClose(this);">
-                            <label for="radio03-04">부동산임대소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-05" title="부동산양도소득" onclick="modalClose(this);">
-                            <label for="radio03-05">부동산양도소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-06" title="금융소득(이자및배당)" onclick="modalClose(this);">
-                            <label for="radio03-06">금융소득(이자및배당)</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-08" title="상속/증여" onclick="modalClose(this);">
-                            <label for="radio03-08">상속/증여</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-09" title="일시재산양도로인한소득" onclick="modalClose(this);">
-                            <label for="radio03-09">일시재산양도로인한소득</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-10" title="기타" onclick="modalClose(this);">
-                            <label for="radio03-10">기타</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
-        </div>
-    </div>
-    <!-- //모달레이어 - 슬라이드 버튼X -->
-    
-    <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 자산현황 선택 -->
-    <div id="modalSlideBtn04" class="modal popup-wrap modal--slide" data-element="modal__element">
-        <div class="modal__container" data-element="modal__element-container">
-            <div class="modal__header">
-                <h1 class="title">자산현황</h1>
-            </div>
-            <div class="modal__contents btn-none">                        
-                <ul class="modal-select-list">
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio04" id="radio04-01" title="10억원 미만" onclick="modalClose(this);">
-                            <label for="radio04-01">10억원 미만</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio04" id="radio04-02" title="10억원~100억원 미만" onclick="modalClose(this);">
-                            <label for="radio04-02">10억원~100억원 미만</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio04" id="radio04-03" title="100억원~1,000억원 미만" onclick="modalClose(this);">
-                            <label for="radio04-03">100억원~1,000억원 미만</label>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="radio-list-wrap">
-                            <input type="radio" name="radio04" id="radio04-04" title="1,000억원 이상" onclick="modalClose(this);">
-                            <label for="radio04-04">1,000억원 이상</label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
-        </div>
-    </div>
-    <!-- //모달레이어 - 슬라이드 버튼X -->
+    <!-- //모달레이어 - 출금계좌 선택 -->
 
     
     <script>
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index); 
-            
-            $('body').on('click', '.ck-agree', function(){
-                //alert();
-                if($(this).is(':checked')){
-                    $('.ck01').prop('checked', false);
-                    $('.ck02').attr('disabled', false).prop('checked', true);
-                    $('.form-hide-wrap').removeClass('formHide').addClass('form--active');
-                    $('.is-focus').focus();
-                   
-                 
-                } else{                
-                    $('.ck01').prop('checked', true);
-                    $('.ck02').attr('disabled', true).prop('checked', false);
-                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
-                }
-            });
-
-            $('body').on('click', '.ck01', function(){
-                    $('.ck-agree').prop('checked', false);
-                    $('.ck02').attr('disabled', true).prop('checked', false);
-                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
-            });
-
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  // hanaUI.formFocusEvent(index);            
+          
         });
         
 
