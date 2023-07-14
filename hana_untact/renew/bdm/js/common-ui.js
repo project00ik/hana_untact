@@ -1659,8 +1659,8 @@ function toggleLayer(obj) {
             tgChkBtn.find('input').prop('checked', true);
             // tgly.attr('tabindex', '0');
             tgly.addClass('open');
-            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
             if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
@@ -1671,8 +1671,8 @@ function toggleLayer(obj) {
             tgChkBtn.find('input').prop('checked', false);
             // tgly.attr('tabindex', '-1');
             tgly.removeClass('open');
-            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
         
     } else { 
