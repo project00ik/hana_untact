@@ -18,7 +18,7 @@
 .tpsb-dgray02 {color: #333 !important; font-weight: 700;}
 .tpsb-red {color: #e53a4c !important; font-weight: 700;}
 .tpsb-dpink {color: #e31e5a !important; font-weight: 700;}
-.tpb-green {color: #009591; font-weight: 700;}
+.tpb-green {color: #009591; font-weight: 700; font-size: inherit;}
 .tpb-pink {color: #af0035; font-weight: 700;}
 .tpb-dpink {color: #e31e5a; font-weight: 700;}
 .required {color: #009591; font-weight: 400; font-size: 1.4rem;}

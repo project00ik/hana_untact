@@ -39,8 +39,8 @@
 .bank-account-wrap {display: flex; align-items: center;}
 .bank-account-wrap .bank {margin-left: 0.8rem; font-size: 1.8rem; color: #000;}
 .bank-account-wrap .num {margin-left: 0.6rem; color: #757575;}
-.icon-bank {width: 2.4rem; height: 2.4rem; display: inline-block; font-size: 0; background-position: 50% 50%; background-repeat: no-repeat; background-size: 100% auto; vertical-align: middle;}
-.icon-bank img {display: block; width: 2.4rem; height: 2.4rem;}
+.icon-bank {width: 2.4rem; height: 2.4rem; display: inline-block; font-size: 0; vertical-align: middle;}
+.icon-bank img {display: block; width: 100%; height: auto;}
 
 .bank-account-box {display: flex; align-items: center;}
 .bank-account-box .bank {margin-left: 0.6rem; font-size: 1.6rem; color: #333;}
@@ -120,6 +120,7 @@
 .list-text-sub + .list-wrap.type01 {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
 
 /* list-line-wrap */
+.list-title + .list-line-wrap {margin-top: 1.6rem; border-top: 1px solid #e7e9ee;}
 .list-line-wrap li {padding: 1.9rem 0; border-bottom: 1px solid #e7e9ee;}
 .list-line-wrap .title {color: #333; font-weight: 500;}
 .list-line-wrap .text {margin-top: 0.4rem; color: #666;}
@@ -160,7 +161,7 @@
 .btn-date-wrap {margin-top: 1rem;}
 
 /* popup 예금 가입 확인 */
-/*.modal__contents .inbox {padding: 3rem 0;}*/
+.modal__contents .inbox {padding: 3rem 0;}
 .popup-join-con .dot-list {margin-top: 1rem;}
 .popup-join-con .checkbox-wrap {margin-top: 3.2rem;}
 .popup-join-con .checkbox-wrap label {font-weight: 400;}
@@ -255,11 +256,17 @@
 .card-box .radio-wrap label {padding: 2.1rem; width: 100%; height: 100%;}
 .card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
 .card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
+.card-box .radio-wrap .account-num-wrap {margin-top: 0.5rem; padding-left: 2.6rem; }
+.card-box .radio-wrap .account-num-wrap .num {font-size: 1.4rem; color : #999;}
+.card-box .radio-wrap .account-num-wrap .pass-dot-wrap .pass-dot {width: 1.4rem; height: 1.4rem; background: #999;}
+/*
 .card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
+*/
 
 .card-box .checkbox-wrap.sm label {padding: 2.1rem 2.1rem 2.1rem 4.8rem; width: 100%; height: 100%;}
 .card-box .checkbox-wrap.sm label::before {left: 2.4rem; top: 50%; margin-top: -0.9rem;}
-.card-box .checkbox-wrap.sm .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ico-bank-symbol-hana@3x.png) 0 0 no-repeat; background-size: 2rem 2rem;}
+.card-box .checkbox-wrap.sm .title {display: inline-block; padding-left: 0.6rem; color : #333;}
+.card-box .checkbox-wrap.sm .icon-bank {width: 2rem; height: 2rem;}
 .card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
 
 .card-list-wrap li {margin-top: 1.6rem;}
@@ -407,8 +414,7 @@
 .currency-wrap .input__element::placeholder {color: #d0d9d9; font-weight: 600;}
 
 .currency-dollar {height: 4.3rem; line-height: 4.3rem; font-size: 3.6rem; font-weight: 600; display: inline-block; vertical-align: middle;}
-.input-amount-alba:disabled,
-.input-amount-alba:read-only {border-bottom:2px solid #000 !important;color:#000 !important;background-color:#fff;}
+.input-amount-alba:disabled {border-bottom:2px solid #000 !important;color:#000 !important;background-color:#fff;}
 
 .currency-wrap .input__remove-button {display: inline-block; margin: 0 0 0 0.8rem; vertical-align: middle;}
 
