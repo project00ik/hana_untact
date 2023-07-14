@@ -490,7 +490,7 @@
             formTarget.removeClass('formHide');
             formTarget.addClass('form--active');
             setTimeout(function(){
-                formTarget.find('input:checked').focus().css('border','1px solid yellow');
+                formTarget.find('input:checked').focus().trigger('click').css('border','1px solid yellow');
             },300);
             
         }
