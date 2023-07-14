@@ -1656,7 +1656,7 @@ function toggleLayer(obj) {
         tgChkBtn.toggleClass('tg--on');
         if (tgChkBtn.find('input').is(':checked')) {
             tgChkBtn.addClass('tg--on');
-            tgChkBtn.find('input').prop('checked', true);
+            tgChkBtn.prop('checked', true);
             // tgly.attr('tabindex', '0');
             tgly.addClass('open');
             // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
@@ -1668,7 +1668,7 @@ function toggleLayer(obj) {
             
         } else { 
             tgChkBtn.removeClass('tg--on');
-            tgChkBtn.find('input').prop('checked', false);
+            tgChkBtn.prop('checked', false);
             // tgly.attr('tabindex', '-1');
             tgly.removeClass('open');
             // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
