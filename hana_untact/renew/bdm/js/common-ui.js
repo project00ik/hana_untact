@@ -1640,7 +1640,8 @@ function nowScrollReturn(){
 function toggleLayer(obj) {
     var toggleBtn = $(obj);
     var tgBtn = toggleBtn.closest('.tg--area').find('>.tg-btn');
-    var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
+    // var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
+    var tgChkBtn = toggleBtn;
     var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
 
     // 탭 처럼 쓰일 때
@@ -1652,9 +1653,9 @@ function toggleLayer(obj) {
         tgChkBtn.closest('.tg--wrap').find('.tg--layer').removeClass('open');
     }
     
-    if (toggleBtn.is('.chk-tg-btn')) {
+    if (toggleBtn.closest('.tg--area').find('> div').is('.chk-tg-btn')) {
         tgChkBtn.toggleClass('tg--on');
-        if (tgChkBtn.find('input').is(':checked')) {
+        if (tgChkBtn.is(':checked')) {
             tgChkBtn.addClass('tg--on');
             tgChkBtn.prop('checked', true);
             // tgly.attr('tabindex', '0');
