@@ -407,8 +407,11 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn-group-wrap .btn {flex: 1; width: 100%;}
 .btn-wrap .btn + .btn,
 .btn-group-wrap .btn + .btn {margin-left: 1.1rem;}
-.btn-group-wrap .btn.btn-cancle {width: auto; flex: inherit;}
+.btn-group-wrap .btn.btn-cancle {width: auto; min-width: 9.5rem; flex: inherit;}
 .btn-group-wrap .btn.btn-icon {width: 6.8rem; flex: inherit; font-size: 0;}
+
+.popup-wrap.modal--slide .btn-wrap .btn.btn-cancle {width: auto; min-width: 9.5rem; flex: inherit;}
+.popup-wrap.alert .btn-group-wrap .btn.btn-cancle {width: auto; min-width: 8.3rem; flex: inherit;}
 
 .btn-center-wrap {text-align: center;}
 
@@ -1058,8 +1061,10 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .chk-tg .chk-tg-btn {}
 
 /* 웹접근성 : 체크박스,라디오 토글 버튼으로 사용 시 input hide 처리 */
+/* .chk-tg .chk-tg-btn input[type="checkbox"],
+.chk-tg .chk-tg-btn input[type="radio"] {display: none;} */
 .chk-tg .chk-tg-btn input[type="checkbox"],
-.chk-tg .chk-tg-btn input[type="radio"] {display: none;}
+.chk-tg .chk-tg-btn input[type="radio"] {outline: 1px solid green; clip: unset;}
 
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
