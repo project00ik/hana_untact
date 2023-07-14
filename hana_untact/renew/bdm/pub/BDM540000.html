@@ -489,9 +489,10 @@
             var formTarget = $('.'+ target);
             formTarget.removeClass('formHide');
             formTarget.addClass('form--active');
+            // 접근성관련 추가
             setTimeout(function(){
-                formTarget.find('input:checked').focus().trigger('click').css('border','1px solid yellow');
-            },400);
+                formTarget.find('input:checked').focus().trigger('click');
+            },350);
             
         }
         function formHideEvent(target){
