@@ -1842,4 +1842,16 @@ function swiperTabSlide(target , num) {
             swiper: swiper,
         },
     });
+
+    // 탭 형 슬라이드 웹접근성 관련 추가
+    var slidetabBtn = $(slideTarget).find('.tab--slide_btn');
+    slidetabBtn.find('.tab').attr('aria-selected', 'false');
+    slidetabBtn.find('.tab').removeAttr('aria-label');
+    slidetabBtn.find('.tab').attr('role', 'tab');
+    slidetabBtn.find('.tab.swiper-slide-thumb-active').attr('aria-selected', 'true');
+
+    $('body').on('click', slideTarget +' .tab--slide_btn .tab', function () {
+        $(this).closest('.tab-slide-list').find('.tab').attr('aria-selected', 'false');
+        $(this).attr('aria-selected', 'true');
+    });
 }
