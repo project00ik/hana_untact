@@ -1657,7 +1657,8 @@ function toggleLayer(obj) {
         if (tgChkBtn.find('input').is(':checked')) {
             tgChkBtn.addClass('tg--on');
             tgChkBtn.find('input').prop('checked', true);
-            tgly.addClass('open').attr('tabindex', '0');
+            // tgly.attr('tabindex', '0');
+            tgly.addClass('open');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
@@ -1668,7 +1669,8 @@ function toggleLayer(obj) {
         } else { 
             tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input').prop('checked', false);
-            tgly.removeClass('open').attr('tabindex', '-1');
+            // tgly.attr('tabindex', '-1');
+            tgly.removeClass('open');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
@@ -1677,11 +1679,11 @@ function toggleLayer(obj) {
         tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
             tgly.addClass('open');
-            tgly.attr('tabindex', '0');
+            // tgly.attr('tabindex', '0');
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
         } else {
             tgly.removeClass('open');
-            tgly.attr('tabindex', '-1');
+            // tgly.attr('tabindex', '-1');
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
     }
