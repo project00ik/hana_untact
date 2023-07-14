@@ -1640,8 +1640,7 @@ function nowScrollReturn(){
 function toggleLayer(obj) {
     var toggleBtn = $(obj);
     var tgBtn = toggleBtn.closest('.tg--area').find('>.tg-btn');
-    // var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
-    var tgChkBtn = toggleBtn;
+    var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
     var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
 
     // 탭 처럼 쓰일 때
@@ -1653,15 +1652,14 @@ function toggleLayer(obj) {
         tgChkBtn.closest('.tg--wrap').find('.tg--layer').removeClass('open');
     }
     
-    if (toggleBtn.closest('.tg--area').find('> div').is('.chk-tg-btn')) {
+    if (toggleBtn.is('.chk-tg-btn')) {
         tgChkBtn.toggleClass('tg--on');
-        if (tgChkBtn.is(':checked')) {
+        if (tgChkBtn.find('input').is(':checked')) {
             tgChkBtn.addClass('tg--on');
-            tgChkBtn.prop('checked', true);
-            // tgly.attr('tabindex', '0');
-            tgly.addClass('open');
-            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            tgChkBtn.find('input').prop('checked', true);
+            tgly.addClass('open').attr('tabindex', '0');
+            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
             if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
@@ -1669,22 +1667,21 @@ function toggleLayer(obj) {
             
         } else { 
             tgChkBtn.removeClass('tg--on');
-            tgChkBtn.prop('checked', false);
-            // tgly.attr('tabindex', '-1');
-            tgly.removeClass('open');
-            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            tgChkBtn.find('input').prop('checked', false);
+            tgly.removeClass('open').attr('tabindex', '-1');
+            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
         
     } else { 
         tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
             tgly.addClass('open');
-            // tgly.attr('tabindex', '0');
+            tgly.attr('tabindex', '0');
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
         } else {
             tgly.removeClass('open');
-            // tgly.attr('tabindex', '-1');
+            tgly.attr('tabindex', '-1');
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
     }
