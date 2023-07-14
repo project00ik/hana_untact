@@ -1061,8 +1061,10 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .chk-tg .chk-tg-btn {}
 
 /* 웹접근성 : 체크박스,라디오 토글 버튼으로 사용 시 input hide 처리 */
+/* .chk-tg .chk-tg-btn input[type="checkbox"],
+.chk-tg .chk-tg-btn input[type="radio"] {display: none;} */
 .chk-tg .chk-tg-btn input[type="checkbox"],
-.chk-tg .chk-tg-btn input[type="radio"] {display: none;}
+.chk-tg .chk-tg-btn input[type="radio"] {outline: 1px solid red; clip: unset;}
 
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
