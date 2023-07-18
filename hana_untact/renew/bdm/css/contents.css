@@ -305,7 +305,7 @@
 .btn.sm.light-gray.arrow {padding-right: 2.4rem; background: #eff0f4 url(../images/icon/ico-system-arrow-right-ss.png) top 1rem right 1.1rem no-repeat; background-size: 1.2rem auto;}
 .btn-more {padding-right: 1.8rem; font-size: 1.4rem; color: #333; background: url(../images/icon/ico-system-arrow-down.png) top 0.2rem right 0 no-repeat; background-size: 1.6rem 1.6rem;}
 a.btn.light-gray {display: inline-block;}
-
+.btn-text-arrow {padding-right: 1.8rem; font-size: 1.4rem; font-weight: 500; background: url(../images/icon/ico-system-arrow-right-s.png) right 0.2rem no-repeat; background-size: 1.6rem 1.6rem;}
 
 /* ik */
 .form-area > .form-area:first-child {margin-top: 0;}

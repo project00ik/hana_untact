@@ -145,6 +145,8 @@
 							<li>이 계좌에 대출을 약정(실행)하시는 경우 한도가 자동으로 해제됩니다.</li>
 							<li>대출상품에 따라 다를 수 있으니, 자세한 사항은 고객센터(1599-2111)로 문의바랍니다.</li>
 						</ul>
+						<p class="guide-title-sub">bul-star</p>
+						<p class="bul-star">이체기한이 지나면 자동 취소됩니다. 이체기한이 지나면 자동 취소됩니다.</p>
 					</div>
 				</div>
 			</div>			
@@ -812,6 +814,8 @@
 							<button type="button" class="btn rd btn__form-next" aria-label="계속" data-inputindex="1" onclick="hanaUI.formNextBtnEvent(this);">계속</button><!-- D: 비활성화 일 때 : disabled -->
 						</div> 
 						
+						<p class="guide-title-sub">btn-text-arrow</p>
+						<button type="button" class="btn-text-arrow">이어서 진행</button>
 						
 
 					</div>
@@ -1314,7 +1318,7 @@
 			<!-- // guide-con -->
 
 			<div class="guide-con">
-				<h2 class="guide-title">step</h2>
+				<h2 class="guide-title">step / badge</h2>
 				<div class="guide-scroll">
 					<div class="guide-box">	
 						<p class="guide-title-sub">step</p>						
@@ -1330,7 +1334,18 @@
 								</ul>
 							</div>
 						</div>
-						
+						<br>
+						<p class="guide-title-sub">badge</p>	
+						<span class="badge type-value1">입출금</span>
+						<span class="badge type-value2">입출금</span>
+						<span class="badge type-value3">입출금</span>
+						<span class="badge type-value4">입출금</span>
+						<span class="badge type-value5">입출금</span>
+						<br>
+						<br>
+						<span class="attention-stage stage1">신중</span>
+						<span class="attention-stage stage2">신중</span>
+						<span class="attention-stage stage3">신중</span>
 					</div> 
 					<!-- // guide-box -->
 				</div>
@@ -1465,16 +1480,41 @@
                             </li>
                         </ul>
 
-						<p class="guide-title-sub">radio type</p>
+						<p class="guide-title-sub">card-list-wrap</p>
 						<ul class="card-list-wrap">
                             <li>
                                 <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="얼굴인증">얼굴인증</button>                                    
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card-box">
+                                    <button type="button" class="btn-box-arrow" aria-label="영상통화" data-element="modal__open" data-target="#modalSlide03">영상통화</button>                                    
+                                </div>
+                            </li>
+                        </ul>
+
+						<p class="guide-title-sub">radio type</p>						
+                        <ul class="card-list-wrap mt40">
+                            <li>
+                                <div class="card-box">
                                     <div class="radio-wrap">
-                                        <input type="radio" name="radio_1" id="radio_1" title="">
-                                        <label for="radio_1">
+                                        <input type="radio" name="radio01" id="radio01_11" title="">
+                                        <label for="radio01_11">
                                             <div class="text-wrap">
-                                                <span class="title">급여하나통장</span>
-                                                <span class="text">123-456789-12111</span>
+                                                <p class="title">급여하나통장</p>
+                                                <div class="account-num-wrap">
+                                                    <span class="num">101-</span>
+                                                    <div class="pass-dot-wrap">
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                    </div>
+                                                    <span class="num">-012345</span>
+                                                </div>
                                             </div>
                                         </label>
                                     </div>
@@ -1483,30 +1523,86 @@
                             <li>
                                 <div class="card-box">
                                     <div class="radio-wrap">
-                                        <input type="radio" name="radio_1" id="radio_2" title="">
-                                        <label for="radio_2">
+                                        <input type="radio" name="radio01" id="radio01_22" title="">
+                                        <label for="radio01_22">
                                             <div class="text-wrap">
-                                                <span class="title">급여하나통장</span>
-                                                <span class="text">123-456789-12111</span>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card-box">
-                                    <div class="radio-wrap">
-                                        <input type="radio" name="radio_1" id="radio_3" title="">
-                                        <label for="radio_3">
-                                            <div class="text-wrap">
-                                                <span class="title">급여하나통장</span>
-                                                <span class="text">123-456789-12111</span>
+                                                <p class="title">급여하나통장</p>
+                                                <div class="account-num-wrap">
+                                                    <span class="num">101-</span>
+                                                    <div class="pass-dot-wrap">
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                        <span class="pass-dot" role="img" aria-label="*"></span>
+                                                    </div>
+                                                    <span class="num">-012345</span>
+                                                </div>
                                             </div>
                                         </label>
                                     </div>
                                 </div>
                             </li>
                         </ul>
+
+						<p class="guide-title-sub">checkbox type</p>		
+						<div class="chk-all-area">
+                            <div class="checkbox-wrap">
+                                <input type="checkbox" name="ckAll" id="checkbox00" title="전체선택" class="chk-all">
+                                <label for="checkbox00">전체선택</label>
+                            </div>
+                            <ul class="card-list-wrap mt20">
+                                <li>
+                                    <div class="card-box">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="ck" id="checkbox011" title="" class="chk">
+                                            <label for="checkbox011">
+                                                <div class="text-wrap">
+                                                    <i class="icon-bank">
+                                                        <img src="../images/ci/ci-img-bank-01@3x.png" alt="하나증권 로고">
+                                                    </i>
+                                                    <span class="title">하나증권</span>
+                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card-box">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="ck" id="checkbox012" title="" class="chk">
+                                            <label for="checkbox012">
+                                                <div class="text-wrap">
+                                                    <i class="icon-bank">
+                                                        <img src="../images/ci/ci-img-bank-02@3x.png" alt="KB증권 로고">
+                                                    </i>
+                                                    <span class="title">KB증권</span>
+                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="card-box">
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="ck" id="checkbox031" title="" class="chk">
+                                            <label for="checkbox031">
+                                                <div class="text-wrap">
+                                                    <i class="icon-bank">
+                                                        <img src="../images/ci/ci-img-stock-08@3x.png" alt="삼성증권 로고">
+                                                    </i>
+                                                    <span class="title">삼성증권</span>
+                                                    <span class="text">개설가능 시간 : 01:00~23:30</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 					</div> 
 					<!-- // guide-box -->
 				</div>
