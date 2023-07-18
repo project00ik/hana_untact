@@ -81,7 +81,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input .pass-dot-wrap .pass-dot,
 .button-select__item .pass-dot-wrap .pass-dot {width: 1.8rem; height: 1.8rem; margin: 0 0.2rem; display: inline-block; border-radius: 50%; background: #009591;}
 .input.input--disabled .pass-dot-wrap .pass-dot,
-.select--disable .button-select__item .pass-dot-wrap .pass-dot {background: #666;}
+.select--disabled .button-select__item .pass-dot-wrap .pass-dot {background: #666;}
 .input .btn-minus,
 .input .btn-plus {margin: 0 0 1.1rem 1.6rem; align-self: flex-end;}
 .input:before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}

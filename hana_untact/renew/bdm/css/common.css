@@ -897,6 +897,8 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .form-flex-wrap .select::before {top: 1px;}
 .select-wrap .select::after {content: ''; width: 1.6rem; height: 1.6rem; margin-top: -0.4rem; display: inline-block; background: url(../images/icon/ico-system-input-interactive-select-arrow.png) 0 0 no-repeat; background-size: 100% auto; position: absolute; bottom: 0.8rem; right: 0;}
 .select-wrap.select--on .select::before {border-color: #30bfba;}
+.select-wrap.select--on.select--disabled .select::before {border-color: #dddee4;}
+.select-wrap.select--on.select--disabled .select::after {transform: rotate(0deg);}
 .select-wrap .input__error {display: none; font-size: 1.4rem;}
 .select-wrap.select--error .input__error {display: block;}
 /* .select-wrap.select--error .select::before {border-color: #e31e5a;} */
