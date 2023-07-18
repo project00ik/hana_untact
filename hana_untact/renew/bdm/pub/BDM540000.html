@@ -72,7 +72,7 @@
                                     <label for="radio02-ck01">신청안함</label>
                                 </div>
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio02-01" id="radio02-ck02" class="modal-btn__chk" title="신청함" data-element="modal__open" data-target="#modalSlide01" checked="checked">
+                                    <input type="radio" name="radio02-01" id="radio02-ck02" class="modal-btn__chk" title="신청함" checked="checked">
                                     <label for="radio02-ck02">신청함</label>
                                 </div>
                             </div>
@@ -492,7 +492,7 @@
             // 접근성관련 추가
             setTimeout(function(){
                 formTarget.find('input:checked').focus().trigger('click');
-            },350);
+            },500);
             
         }
         function formHideEvent(target){
