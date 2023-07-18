@@ -19,84 +19,118 @@
 </head>
 
 <body>
+    <!-- scan-container -->
     <section id="scanContainer" class="scan-container">
-    <video id="scanView" class="scan-view" playsinline muted></video> <!-- help: autoplay 속성 -> muted로 변경 -->
-    <div class="scan-box-wrap">
-        <a class="scan-box__cancel" href="https://fincubeocr.posicube.com/hanabank/">
-            <img src="https://fincubeocr.posicube.com/hanabank/images/cancel_icon.png" alt="닫기" />
-        </a>
-        <div class="scan-box__info-wrap">
-            <p class="scan-box__desc scan-box__tit">주민등록증/운전면허증 촬영</p>
-            <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">사각형에 신분증이 꽉 차도록<br>위치를 맞추면 자동으로 촬영됩니다</p>
-            <!-- <p id="scanBoxDesc" class="scan-box__desc">네모칸 안에 맞추세요.</p> -->
-        </div>
-        <div id="scanBoxMask" class="scan-box__mask--init"></div>
-        <div id="scanBoxGuide" class="scan-box__guide--init">
-            <div id="scanBoxLoading" class="scan-box__loading">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+        <video id="scanView" class="scan-view" playsinline muted></video> <!-- help: autoplay 속성 -> muted로 변경 -->
+        <div class="scan-box-wrap">
+            <a class="scan-box__cancel" href="https://fincubeocr.posicube.com/hanabank/">
+                <img src="https://fincubeocr.posicube.com/hanabank/images/cancel_icon.png" alt="닫기" />
+            </a>
+            <div class="scan-box__info-wrap">
+                <p class="scan-box__desc scan-box__tit">주민등록증/운전면허증 촬영</p>
+                <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">사각형에 신분증이 꽉 차도록<br>위치를 맞추면 자동으로 촬영됩니다</p>
+                <!-- <p id="scanBoxDesc" class="scan-box__desc">네모칸 안에 맞추세요.</p> -->
             </div>
-            <div id="scanBoxPassportPhoto" class="scan-box__passport-photo"></div>
-            <div id="scanBoxPassportMrz" class="scan-box__passport-mrz"></div>
-            <div class="scan-box__tip-wrap">
-                <div class="scan-box__tip video-guide-info">
-                    <!-- <img src="https://fincubeocr.posicube.com/hanabank/images/light_icon.png" alt="" /> -->
-                    <p>사진이 너무 밝을 경우, 빛이 반사됩니다</p>
+            <div id="scanBoxMask" class="scan-box__mask--init"></div>
+            <div id="scanBoxGuide" class="scan-box__guide--init">
+                <div id="scanBoxLoading" class="scan-box__loading">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
                 </div>
-                <!-- <div class="scan-box__tip">
-                <img src="https://fincubeocr.posicube.com/hanabank/images/dark_icon.png" alt="" />
-                <p>어두운 바닥에서 촬영해주세요.</p>
-                </div> -->
+                <div id="scanBoxPassportPhoto" class="scan-box__passport-photo"></div>
+                <div id="scanBoxPassportMrz" class="scan-box__passport-mrz"></div>
+                <div class="scan-box__tip-wrap">
+                    <div class="scan-box__tip video-guide-info">
+                        <!-- <img src="https://fincubeocr.posicube.com/hanabank/images/light_icon.png" alt="" /> -->
+                        <p>사진이 너무 밝을 경우, 빛이 반사됩니다</p>
+                    </div>
+                    <!-- <div class="scan-box__tip">
+                    <img src="https://fincubeocr.posicube.com/hanabank/images/dark_icon.png" alt="" />
+                    <p>어두운 바닥에서 촬영해주세요.</p>
+                    </div> -->
+                </div>
+
+                <div class="video-info-wrap">
+                    <p class="txt">
+                        복사본이 아닌<br>
+                        <span class="tp-green">주민등록증 또는 운전면허증 원본</span>으로 촬영하고<br>
+                        빛이 반사되지 않도록 주의해 주세요.
+                    </p>
+                    <div class="btn-center-wrap">
+                        <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동">다른 신분증으로 본인확인하기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-info-link">
+                <button type="button" class="txt_underline" title="주민등록증/운전면허증 유의사항 보기" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 촬영 하기 전, 확인하세요!</button>
             </div>
 
-            <div class="video-info-wrap">
-                <p class="txt">
-                    복사본이 아닌<br>
-                    <span class="tp-green">주민등록증 또는 운전면허증 원본</span>으로 촬영하고<br>
-                    빛이 반사되지 않도록 주의해 주세요.
-                </p>
-                <div class="btn-center-wrap">
-                    <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동">다른 신분증으로 본인확인하기</button>
+            <div class="scan-box__camera-content">
+                <div class="scan-box__camera-auto-wrap">
+                    <button id="autoCameraToggle" class="camera-toggle__auto"></button>
+                    <div class="scan-box__camera-auto-label">
+                        <p>자동</p>
+                        <p>수동</p>
+                    </div>
                 </div>
+                <button id="takeCameraBtn" class="camera-btn__take"></button>
             </div>
         </div>
-        
-        <div class="video-info-link">
-            <button type="button" class="txt_underline" title="주민등록증/운전면허증 유의사항 보기" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 촬영 하기 전, 확인하세요!</button>
-        </div>
+        <div id="toast" class="toast-wrap" style="display: none">
+            <div class="toast">
 
-        <div class="scan-box__camera-content">
-            <div class="scan-box__camera-auto-wrap">
-                <button id="autoCameraToggle" class="camera-toggle__auto"></button>
-                <div class="scan-box__camera-auto-label">
-                    <p>자동</p>
-                    <p>수동</p>
-                </div>
             </div>
-            <button id="takeCameraBtn" class="camera-btn__take"></button>
         </div>
-    </div>
-    <div id="toast" class="toast-wrap" style="display: none">
-        <div class="toast"></div>
-    </div>
     </section>
+    <!--// scan-container -->
+    <!-- result-container -->
     <section id="resultContainer" class="result-container">
-    <div class="result-canvas-wrap">
-        <canvas id="resultCanvas" class="result-canvas"></canvas> <!-- help: 태그 종료 변경 -->
-    </div>
-    <hr class="result-divider" />
-    <div class="result-box-wrap">
-        <p class="result-box__title">결과값</p>
-        <p id="resultBoxDesc" class="result-box__desc"></p>
-    </div>
-    <div class="result-btn-wrap">
-        <button id="resetBtn" class="result-btn__reset">메인화면</button>
-        <button id="redetectBtn" class="result-btn__redetect">재촬영</button>
-        <button id="sendServerBtn" class="result-btn__reset">서버전송</button>
-    </div>
+        <div class="result-canvas-wrap">
+            <canvas id="resultCanvas" class="result-canvas"></canvas> <!-- help: 태그 종료 변경 -->
+        </div>
+        <hr class="result-divider" />
+        <div class="result-box-wrap">
+            <p class="result-box__title">결과값</p>
+            <p id="resultBoxDesc" class="result-box__desc"></p>
+        </div>
+        <div class="result-btn-wrap">
+            <button id="resetBtn" class="result-btn__reset">메인화면</button>
+            <button id="redetectBtn" class="result-btn__redetect">재촬영</button>
+            <button id="sendServerBtn" class="result-btn__reset">서버전송</button>
+        </div>
+
     </section>
+    <!--// result-container -->
+
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+    
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">주민등록증/운전면허증 유의사항</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-wrap pb12">
+                    <ul class="dot-list2">
+                        <li>하나은행은 『특정금융거래정보의 보고 및 이용 등에 관한 법률』에 의한 고객확인 이행을 위해, 여권 내 정보 (여권번호, 성명, 발급일, 사진정보 등)를 확인하고 외교부를 통해 실명확인 및 신분증 진위확인을 하고 있습니다.</li>
+                        <li>위 내용을 인지하였으며, 진위확인에 동의합니다.  </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
 
     <!-- 서버 이미지 전송을 위한 암호화 스크립트 -->
     <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/blob-util-2.0.2.min.js"></script>
