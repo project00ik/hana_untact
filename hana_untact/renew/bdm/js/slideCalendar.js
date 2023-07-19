@@ -181,7 +181,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         }
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','blue').attr({
             "role": "button",
             // "title": "선택됨",
             "aria-selected": true
