@@ -181,7 +181,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
 
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
+            "role": "button",
+            "title": "선택됨"
+        }).siblings().attr({
+            "role": "button",
+            "title": "선택안됨"
+        });
     }
 
     function createMM(o, selYear, unitText){
@@ -193,7 +199,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].selYY = selYear;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item')
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
+            "role": "button",
+            "title": "선택됨"
+        }).siblings().attr({
+            "role": "button",
+            "title": "선택안됨"
+        });
     }
 
     function createDD(o, selYear, selMonth, unitText){
@@ -218,7 +230,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         o.scrollWrapper[o.groupIdx].selMM = selMonth;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item')
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','pink').attr({
+            "role": "button",
+            "title": "선택됨"
+        }).siblings().attr({
+            "role": "button",
+            "title": "선택안됨"
+        });
         return arrDay;
     }
     
@@ -229,7 +247,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         }
         resultStr += '</ul>';
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item')
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','green').attr({
+            "role": "button",
+            "title": "선택됨"
+        }).siblings().attr({
+            "role": "button",
+            "title": "선택안됨"
+        });
     }
     
     function event($el, o){
