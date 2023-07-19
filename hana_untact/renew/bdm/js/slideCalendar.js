@@ -181,14 +181,14 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         }
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
-            "role": "switch",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
+            "role": "button",
             // "title": "선택됨",
-            "aria-checked": true
+            "aria-pressed": true
         }).siblings().attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택안됨",
-            "aria-checked": false
+            "aria-pressed": false
         });
     }
 
@@ -202,13 +202,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].selYY = selYear;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택됨",
-            "aria-checked": true
+            "aria-pressed": true
         }).siblings().attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택안됨",
-            "aria-checked": false
+            "aria-pressed": false
         });
     }
 
@@ -235,13 +235,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].selMM = selMonth;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','pink').attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택됨",
-            "aria-checked": true
+            "aria-pressed": true
         }).siblings().attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택안됨",
-            "aria-checked": false
+            "aria-pressed": false
         });
         return arrDay;
     }
@@ -254,13 +254,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','green').attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택됨",
-            "aria-checked": true
+            "aria-pressed": true
         }).siblings().attr({
-            "role": "switch",
+            "role": "button",
             // "title": "선택안됨",
-            "aria-checked": false
+            "aria-pressed": false
         });
     }
     
@@ -356,13 +356,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
-                    "role": "switch",
+                    "role": "button",
                     // "title": "선택됨",
-                    "aria-checked": true
+                    "aria-pressed": true
                 }).siblings().attr({
-                    "role": "switch",
+                    "role": "button",
                     // "title": "선택안됨",
-                    "aria-checked": false
+                    "aria-pressed": false
                 });
                 
                 orgTargetIdx = activeTargetIdx;
@@ -469,10 +469,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
-                    "role": "switch",
+                    "role": "button",
                     "title": "선택됨"
                 }).siblings().attr({
-                    "role": "switch",
+                    "role": "button",
                     "title": "선택안됨"
                 });
                 
@@ -500,10 +500,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     
                     // 웹접근성 추가
                     items.eq(activeTargetIdx).attr({
-                        "role": "switch",
+                        "role": "button",
                         "title": "선택됨"
                     }).siblings().attr({
-                        "role": "switch",
+                        "role": "button",
                         "title": "선택안됨"
                     });
                     
