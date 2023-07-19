@@ -183,11 +183,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
             "role": "button",
-            "title": "선택됨",
+            // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
             "role": "button",
-            "title": "선택안됨",
+            // "title": "선택안됨",
             "aria-selected": false
         });
     }
@@ -203,11 +203,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
             "role": "button",
-            "title": "선택됨",
+            // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
             "role": "button",
-            "title": "선택안됨",
+            // "title": "선택안됨",
             "aria-selected": false
         });
     }
@@ -236,11 +236,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','pink').attr({
             "role": "button",
-            "title": "선택됨",
+            // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
             "role": "button",
-            "title": "선택안됨",
+            // "title": "선택안됨",
             "aria-selected": false
         });
         return arrDay;
@@ -255,11 +255,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','green').attr({
             "role": "button",
-            "title": "선택됨",
+            // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
             "role": "button",
-            "title": "선택안됨",
+            // "title": "선택안됨",
             "aria-selected": false
         });
     }
@@ -357,11 +357,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
                     "role": "button",
-                    "title": "선택됨",
+                    // "title": "선택됨",
                     "aria-selected": true
                 }).siblings().attr({
                     "role": "button",
-                    "title": "선택안됨",
+                    // "title": "선택안됨",
                     "aria-selected": false
                 });
                 
