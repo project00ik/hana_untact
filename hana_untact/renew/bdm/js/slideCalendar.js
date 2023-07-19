@@ -181,11 +181,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         }
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
-        var agent = navigator.userAgent.toLowerCase();
 
+        var agent = navigator.userAgent.toLowerCase();
         if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
             // IOS인 경우
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','skyblue').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
                 "role": "button",
                 "aria-pressed": true
             }).siblings().attr({
@@ -195,7 +195,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         }else{
             // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','skyblue').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
                 "role": "button",
                 "title": "선택됨"
             }).siblings().attr({
@@ -377,6 +377,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
 
+                var agent = navigator.userAgent.toLowerCase();
                 if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
                     // IOS인 경우
                     items.eq(activeTargetIdx).attr({
