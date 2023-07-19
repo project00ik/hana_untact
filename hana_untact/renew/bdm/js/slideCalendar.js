@@ -36,7 +36,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     };
 
     var itemTemplate = '\
-        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}">\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-label="{{value}} 선택안됨">\
             <button type="button" class="list-wrap__anchor">\
                 <span class="list-wrap__box">\
                     <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
@@ -175,11 +175,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     function createYY(o, unitText){
         var dateObj = o.dateObj;
         var resultStr = '<ul class="list-wrap">';
-        for(var key in dateObj){
-            resultStr += itemTemplate.replace(/{{value}}/g, key+unitText);
+        for (var key in dateObj) {
+            resultStr += itemTemplate.replace(/{{value}}/g, key + unitText);
+            console.log(key + unitText);
         }
         resultStr += '</ul>';
-
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
             "role": "button",
@@ -188,6 +188,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "button",
             "title": "선택안됨"
         });
+        $('.list-wrap__item.active-item').attr('aria-label', $('.list-wrap__item.active-item').attr('aria-label').replace('선택안됨', '선택됨'));
     }
 
     function createMM(o, selYear, unitText){
@@ -354,6 +355,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     "role": "button",
                     "title": "선택안됨"
                 });
+                items.eq(activeTargetIdx).attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택안됨', '선택됨'));
+                items.eq(activeTargetIdx).siblings().attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택됨', '선택안됨'))
                 
                 orgTargetIdx = activeTargetIdx;
             })
