@@ -355,8 +355,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     "role": "button",
                     "title": "선택안됨"
                 });
-                items.eq(activeTargetIdx).attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택안됨', '선택됨'));
-                items.eq(activeTargetIdx).siblings().attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택됨', '선택안됨'))
+                // items.eq(activeTargetIdx).attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택안됨', '선택됨'));
+                // items.eq(activeTargetIdx).siblings().attr('aria-label', items.eq(activeTargetIdx).attr('aria-label').replace('선택됨', '선택안됨'))
                 
                 orgTargetIdx = activeTargetIdx;
             })
