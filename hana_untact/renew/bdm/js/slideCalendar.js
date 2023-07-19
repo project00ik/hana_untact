@@ -182,11 +182,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','blue').attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택안됨",
             "aria-selected": false
         });
@@ -202,11 +202,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].selYY = selYear;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택안됨",
             "aria-selected": false
         });
@@ -235,11 +235,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].selMM = selMonth;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','pink').attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택안됨",
             "aria-selected": false
         });
@@ -254,11 +254,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','green').attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택됨",
             "aria-selected": true
         }).siblings().attr({
-            "role": "button",
+            "role": "tab",
             // "title": "선택안됨",
             "aria-selected": false
         });
@@ -356,11 +356,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
-                    "role": "button",
+                    "role": "tab",
                     // "title": "선택됨",
                     "aria-selected": true
                 }).siblings().attr({
-                    "role": "button",
+                    "role": "tab",
                     // "title": "선택안됨",
                     "aria-selected": false
                 });
@@ -469,10 +469,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 
                 // 웹접근성 추가
                 items.eq(activeTargetIdx).attr({
-                    "role": "button",
+                    "role": "tab",
                     "title": "선택됨"
                 }).siblings().attr({
-                    "role": "button",
+                    "role": "tab",
                     "title": "선택안됨"
                 });
                 
@@ -500,10 +500,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     
                     // 웹접근성 추가
                     items.eq(activeTargetIdx).attr({
-                        "role": "button",
+                        "role": "tab",
                         "title": "선택됨"
                     }).siblings().attr({
-                        "role": "button",
+                        "role": "tab",
                         "title": "선택안됨"
                     });
                     
