@@ -58,7 +58,7 @@
                         -->
                         <div class="form-area">
                             <div class="chk-tg tg--area">
-                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test1" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
                                         <input type="checkbox" name="search_checkbox" id="search_checkbox01" title="관리점/직원 찾기">
                                         <label for="search_checkbox01">관리점/직원 찾기</label>
@@ -557,6 +557,11 @@
         $(function(){
              /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSearch01');
+
+            // 토글 열기 toggleLayerOpen(id)
+            toggleLayerOpen('toggle_test1');
+            // 토글 닫기 toggleLayerClose(id)
+            // toggleLayerClose('toggle_test1');
         })
 
     </script>

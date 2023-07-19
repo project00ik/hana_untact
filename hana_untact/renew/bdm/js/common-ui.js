@@ -1685,11 +1685,36 @@ function toggleLayer(obj) {
     }
     
 }
-// // 토글 레이어 닫기
-function toggleLayerClose(){
-    $('.tg--btn').removeClass('tg--on');
-    $('.tg--layer').removeClass('open');
-    $('.tg--btn').attr('aria-label', $('.tg--btn').attr('aria-label').replace('닫기', '열기') );
+// 토글 레이어(열기)
+function toggleLayerOpen(obj) { 
+    var tglyId = $('#' + obj);
+    var tgIdly = tglyId.closest('.tg--area').find('>.tg--layer');
+
+    if (tglyId.is('.chk-tg-btn')) {
+
+        tglyId.addClass('tg--on');
+        tglyId.find('input').prop('checked', true);
+        tgIdly.addClass('open');
+        tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
+        tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+        
+        if (tgIdly.find('.input__element').length > 0) {
+            tgIdly.find('.input__element').eq(0).focus();
+        } 
+    } else { 
+        tgIdly.addClass('open');
+        tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
+        tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+    }
+}
+// 토글 레이어 닫기
+function toggleLayerClose(obj) {
+    var tglyCloseId = $('#' + obj);
+    tglyCloseId.removeClass('tg--on');
+    tglyCloseId.closest('.tg--area').find('.tg--layer').removeClass('open');
+
+    tglyCloseId.attr('aria-checked', tglyCloseId.attr('aria-checked').replace(false, true));
+    tglyCloseId.attr('aria-expanded', tglyCloseId.attr('aria-expanded').replace(false, true));
 }
 
 // 지점 안내 탭 클릭 시 레이어 팝업 비노출
