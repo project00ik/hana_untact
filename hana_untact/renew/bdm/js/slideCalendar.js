@@ -197,7 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         }else{
             // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','green').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
                 "role": "button",
                 "title": "선택됨"
             }).siblings().attr({
