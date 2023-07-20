@@ -197,7 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         }else{
             // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
                 "role": "button",
                 "title": "선택됨"
             }).siblings().attr({
@@ -431,11 +431,12 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     setTimeout(function () {
                         items.eq(activeTargetIdx).attr({
                             "role": "button",
-                            "title": "선택됨"
+                            "title": "선택됨",
+                            "aria-selected": true
                         }).siblings().attr({
                             "role": "button",
                             "title": "선택안됨",
-                            "aria-busy": false
+                            "aria-selected": false
                         });
                     }, 400);
                 }
