@@ -183,11 +183,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
         }).siblings().attr({
-            "role": "button",
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -224,11 +222,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
 
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
         }).siblings().attr({
-            "role": "button",
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -278,11 +274,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
         }).siblings().attr({
-            "role": "button",
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -319,11 +313,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-            "role": "button",
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
         }).siblings().attr({
-            "role": "button",
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -442,11 +434,9 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
 
                 // 웹접근성 스크린리더 관련 추가
-                items.eq(activeTargetIdx).attr({
-                    "role": "button",
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "title": "선택됨"
                 }).siblings().attr({
-                    "role": "button",
                     "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
@@ -576,11 +566,9 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 $('.direct-debit-slide .direct-debit-cont').eq(activeItemsIndex).show().addClass('open');
                 
                 // 웹접근성 스크린리더 관련 추가
-                items.eq(activeTargetIdx).attr({
-                    "role": "button",
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "title": "선택됨"
                 }).siblings().attr({
-                    "role": "button",
                     "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
@@ -629,11 +617,9 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     
 
                     // 웹접근성 스크린리더 관련 추가
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
+                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                         "title": "선택됨"
                     }).siblings().attr({
-                        "role": "button",
                         "title": "선택안됨"
                     });
                     // var agent = navigator.userAgent.toLowerCase();
