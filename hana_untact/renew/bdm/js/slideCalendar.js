@@ -197,7 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         }else{
             // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').attr({
                 "role": "button",
                 "title": "선택됨"
             }).siblings().attr({
@@ -436,7 +436,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                             "role": "button",
                             "title": "선택안됨"
                         });
-                    }, 300);
+                    }, 400);
                 }
                 
                 orgTargetIdx = activeTargetIdx;
@@ -563,7 +563,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                             "role": "button",
                             "title": "선택안됨"
                         });
-                    }, 300);
+                    }, 400);
                 }
                 
                 orgTargetIdx = activeTargetIdx;
@@ -611,7 +611,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                                 "role": "button",
                                 "title": "선택안됨"
                             });
-                        }, 300);
+                        }, 400);
                     }
                     
                     orgTargetIdx = activeTargetIdx;
