@@ -36,7 +36,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     };
 
     var itemTemplate = '\
-        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-live= "polite">\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}">\
             <button type="button" class="list-wrap__anchor">\
                 <span class="list-wrap__box">\
                     <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
@@ -255,7 +255,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             arrDay = arrDay.slice(0, limitMaxDate);
         }
             
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" aria-live="polite">';
         for(var i=0; i<arrDay.length; i++){
             resultStr += itemTemplate.replace(/{{value}}/g, arrDay[i] + unitText);
         }
