@@ -36,7 +36,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     };
 
     var itemTemplate = '\
-        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}">\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-busy="true">\
             <button type="button" class="list-wrap__anchor">\
                 <span class="list-wrap__box">\
                     <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
@@ -197,7 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         }else{
             // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','yellow').attr({
                 "role": "button",
                 "title": "선택됨"
             }).siblings().attr({
@@ -255,7 +255,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             arrDay = arrDay.slice(0, limitMaxDate);
         }
             
-        var resultStr = '<ul class="list-wrap" aria-live="polite">';
+        var resultStr = '<ul class="list-wrap">';
         for(var i=0; i<arrDay.length; i++){
             resultStr += itemTemplate.replace(/{{value}}/g, arrDay[i] + unitText);
         }
@@ -434,7 +434,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                             "title": "선택됨"
                         }).siblings().attr({
                             "role": "button",
-                            "title": "선택안됨"
+                            "title": "선택안됨",
+                            "aria-busy": false
                         });
                     }, 400);
                 }
