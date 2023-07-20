@@ -523,8 +523,8 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .product-chk-list {padding-top: 2rem;}
 .product-chk-list > li {padding: 1.8rem 0 1.9rem; border-bottom: 0.1rem solid #e7e9ee;}
 .product-chk-list .flex-wrap {align-items: stretch;}
+.product-chk-list .flex-wrap .flex-cont {position: relative;}
 .product-chk-list .btn-link-arrow {height: auto; flex: 0 0 3rem; background-position: right 50%;}
-.product-chk-list .checkbox-wrap input {width: calc(100% - 3rem);}
 .product-chk-list .checkbox-wrap label {width: 100%;}
 
 .list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
