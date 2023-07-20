@@ -183,7 +183,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').find('.list-wrap__anchor').attr({
             "title": "선택됨"
         })
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
@@ -629,27 +629,6 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                         "title": "선택안됨"
                     });
-                    // var agent = navigator.userAgent.toLowerCase();
-                    // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-                    //     // IOS인 경우
-                    //     items.eq(activeTargetIdx).attr({
-                    //         "role": "button",
-                    //         "aria-pressed": true
-                    //     }).siblings().attr({
-                    //         "role": "button",
-                    //         "aria-pressed": false
-                    //     });
-            
-                    // }else{
-                    //     // 기타
-                    //     items.eq(activeTargetIdx).attr({
-                    //         "role": "button",
-                    //         "title": "선택됨"
-                    //     }).siblings().attr({
-                    //         "role": "button",
-                    //         "title": "선택안됨"
-                    //     });
-                    // }
                     
                     orgTargetIdx = activeTargetIdx;
                 })
