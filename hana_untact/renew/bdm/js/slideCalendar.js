@@ -310,8 +310,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 "aria-pressed": false
             });
 
-        }else{
-            // 기타
+        } else {
+             // 기타
             o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
                 "role": "button",
                 "title": "선택됨"
@@ -428,13 +428,15 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         
                 }else{
                     // 기타
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
-                        "title": "선택됨"
-                    }).siblings().attr({
-                        "role": "button",
-                        "title": "선택안됨"
-                    });
+                    setTimeout(function () {
+                        items.eq(activeTargetIdx).attr({
+                            "role": "button",
+                            "title": "선택됨"
+                        }).siblings().attr({
+                            "role": "button",
+                            "title": "선택안됨"
+                        });
+                    }, 300);
                 }
                 
                 orgTargetIdx = activeTargetIdx;
@@ -553,13 +555,15 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
         
                 }else{
                     // 기타
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
-                        "title": "선택됨"
-                    }).siblings().attr({
-                        "role": "button",
-                        "title": "선택안됨"
-                    });
+                    setTimeout(function () {
+                        items.eq(activeTargetIdx).attr({
+                            "role": "button",
+                            "title": "선택됨"
+                        }).siblings().attr({
+                            "role": "button",
+                            "title": "선택안됨"
+                        });
+                    }, 300);
                 }
                 
                 orgTargetIdx = activeTargetIdx;
@@ -599,13 +603,15 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             
                     }else{
                         // 기타
-                        items.eq(activeTargetIdx).attr({
-                            "role": "button",
-                            "title": "선택됨"
-                        }).siblings().attr({
-                            "role": "button",
-                            "title": "선택안됨"
-                        });
+                        setTimeout(function () {
+                            items.eq(activeTargetIdx).attr({
+                                "role": "button",
+                                "title": "선택됨"
+                            }).siblings().attr({
+                                "role": "button",
+                                "title": "선택안됨"
+                            });
+                        }, 300);
                     }
                     
                     orgTargetIdx = activeTargetIdx;
