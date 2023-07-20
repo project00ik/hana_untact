@@ -185,7 +185,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
-        }).siblings().attr({
+        })
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -224,7 +225,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
-        }).siblings().attr({
+        })
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -276,7 +278,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
-        }).siblings().attr({
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -315,7 +318,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
             "title": "선택됨"
-        }).siblings().attr({
+        });
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
@@ -436,7 +440,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 // 웹접근성 스크린리더 관련 추가
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "title": "선택됨"
-                }).siblings().attr({
+                });
+                items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                     "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
@@ -568,7 +573,8 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 // 웹접근성 스크린리더 관련 추가
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "title": "선택됨"
-                }).siblings().attr({
+                });
+                items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                     "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
@@ -619,7 +625,8 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     // 웹접근성 스크린리더 관련 추가
                     items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                         "title": "선택됨"
-                    }).siblings().attr({
+                    });
+                    items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                         "title": "선택안됨"
                     });
                     // var agent = navigator.userAgent.toLowerCase();
