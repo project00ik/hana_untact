@@ -185,10 +185,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
             "role": "button",
-            "aria-pressed": true
+            "title": "선택됨"
         }).siblings().attr({
             "role": "button",
-            "aria-pressed": false
+            "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -226,10 +226,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
             "role": "button",
-            "aria-pressed": true
+            "title": "선택됨"
         }).siblings().attr({
             "role": "button",
-            "aria-pressed": false
+            "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -280,10 +280,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
             "role": "button",
-            "aria-pressed": true
+            "title": "선택됨"
         }).siblings().attr({
             "role": "button",
-            "aria-pressed": false
+            "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -321,10 +321,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
             "role": "button",
-            "aria-pressed": true
+            "title": "선택됨"
         }).siblings().attr({
             "role": "button",
-            "aria-pressed": false
+            "title": "선택안됨"
         });
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -444,10 +444,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 // 웹접근성 스크린리더 관련 추가
                 items.eq(activeTargetIdx).attr({
                     "role": "button",
-                    "aria-pressed": true
+                    "title": "선택됨"
                 }).siblings().attr({
                     "role": "button",
-                    "aria-pressed": false
+                    "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
                 // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -578,10 +578,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 // 웹접근성 스크린리더 관련 추가
                 items.eq(activeTargetIdx).attr({
                     "role": "button",
-                    "aria-pressed": true
+                    "title": "선택됨"
                 }).siblings().attr({
                     "role": "button",
-                    "aria-pressed": false
+                    "title": "선택안됨"
                 });
                 // var agent = navigator.userAgent.toLowerCase();
                 // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
@@ -631,10 +631,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     // 웹접근성 스크린리더 관련 추가
                     items.eq(activeTargetIdx).attr({
                         "role": "button",
-                        "aria-pressed": true
+                        "title": "선택됨"
                     }).siblings().attr({
                         "role": "button",
-                        "aria-pressed": false
+                        "title": "선택안됨"
                     });
                     // var agent = navigator.userAgent.toLowerCase();
                     // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
