@@ -177,34 +177,40 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var resultStr = '<ul class="list-wrap">';
         for (var key in dateObj) {
             resultStr += itemTemplate.replace(/{{value}}/g, key + unitText);
-            console.log(key + unitText);
         }
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
         
         // 웹접근성 스크린리더 관련 추가
-        var agent = navigator.userAgent.toLowerCase();
-        if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-            // IOS인 경우
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "aria-pressed": true
-            }).siblings().attr({
-                "role": "button",
-                "aria-pressed": false
-            });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+            "role": "button",
+            "aria-pressed": true
+        }).siblings().attr({
+            "role": "button",
+            "aria-pressed": false
+        });
+        // var agent = navigator.userAgent.toLowerCase();
+        // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+        //     // IOS인 경우
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "aria-pressed": true
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "aria-pressed": false
+        //     });
 
-        }else{
-            // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
-                "role": "button",
-                "title": "선택됨"
-            }).siblings().attr({
-                "role": "button",
-                "title": "선택안됨"
-            });
-        }
+        // }else{
+        //     // 기타
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').attr({
+        //         "role": "button",
+        //         "title": "선택됨"
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "title": "선택안됨"
+        //     });
+        // }
     }
 
     function createMM(o, selYear, unitText){
@@ -218,27 +224,34 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
 
         // 웹접근성 스크린리더 관련 추가
-        var agent = navigator.userAgent.toLowerCase();
-        if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-            // IOS인 경우
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "aria-pressed": true
-            }).siblings().attr({
-                "role": "button",
-                "aria-pressed": false
-            });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+            "role": "button",
+            "aria-pressed": true
+        }).siblings().attr({
+            "role": "button",
+            "aria-pressed": false
+        });
+        // var agent = navigator.userAgent.toLowerCase();
+        // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+        //     // IOS인 경우
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "aria-pressed": true
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "aria-pressed": false
+        //     });
 
-        }else{
-            // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "title": "선택됨"
-            }).siblings().attr({
-                "role": "button",
-                "title": "선택안됨"
-            });
-        }
+        // }else{
+        //     // 기타
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "title": "선택됨"
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "title": "선택안됨"
+        //     });
+        // }
     }
 
     function createDD(o, selYear, selMonth, unitText){
@@ -265,27 +278,34 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        var agent = navigator.userAgent.toLowerCase();
-        if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-            // IOS인 경우
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "aria-pressed": true
-            }).siblings().attr({
-                "role": "button",
-                "aria-pressed": false
-            });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+            "role": "button",
+            "aria-pressed": true
+        }).siblings().attr({
+            "role": "button",
+            "aria-pressed": false
+        });
+        // var agent = navigator.userAgent.toLowerCase();
+        // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+        //     // IOS인 경우
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "aria-pressed": true
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "aria-pressed": false
+        //     });
 
-        }else{
-            // 기타
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "title": "선택됨"
-            }).siblings().attr({
-                "role": "button",
-                "title": "선택안됨"
-            });
-        }
+        // }else{
+        //     // 기타
+        //     o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "title": "선택됨"
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "title": "선택안됨"
+        //     });
+        // }
 
         return arrDay;
     }
@@ -299,27 +319,34 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        var agent = navigator.userAgent.toLowerCase();
-        if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-            // IOS인 경우
-            o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "aria-pressed": true
-            }).siblings().attr({
-                "role": "button",
-                "aria-pressed": false
-            });
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+            "role": "button",
+            "aria-pressed": true
+        }).siblings().attr({
+            "role": "button",
+            "aria-pressed": false
+        });
+        // var agent = navigator.userAgent.toLowerCase();
+        // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+        //     // IOS인 경우
+        //     o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "aria-pressed": true
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "aria-pressed": false
+        //     });
 
-        } else {
-             // 기타
-            o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
-                "role": "button",
-                "title": "선택됨"
-            }).siblings().attr({
-                "role": "button",
-                "title": "선택안됨"
-            });
-        }
+        // } else {
+        //      // 기타
+        //     o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').attr({
+        //         "role": "button",
+        //         "title": "선택됨"
+        //     }).siblings().attr({
+        //         "role": "button",
+        //         "title": "선택안됨"
+        //     });
+        // }
 
     }
     
@@ -415,31 +442,36 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
 
                 // 웹접근성 스크린리더 관련 추가
-                var agent = navigator.userAgent.toLowerCase();
-                if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-                    // IOS인 경우
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
-                        "aria-pressed": true
-                    }).siblings().attr({
-                        "role": "button",
-                        "aria-pressed": false
-                    });
+                items.eq(activeTargetIdx).attr({
+                    "role": "button",
+                    "aria-pressed": true
+                }).siblings().attr({
+                    "role": "button",
+                    "aria-pressed": false
+                });
+                // var agent = navigator.userAgent.toLowerCase();
+                // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+                //     // IOS인 경우
+                //     items.eq(activeTargetIdx).attr({
+                //         "role": "button",
+                //         "aria-pressed": true
+                //     }).siblings().attr({
+                //         "role": "button",
+                //         "aria-pressed": false
+                //     });
         
-                }else{
-                    // 기타
-                    setTimeout(function () {
-                        items.eq(activeTargetIdx).attr({
-                            "role": "tab",
-                            // "title": "선택됨",
-                            "aria-selected": true
-                        }).siblings().attr({
-                            "role": "tab",
-                            // "title": "선택안됨",
-                            "aria-selected": false
-                        });
-                    }, 400);
-                }
+                // }else{
+                //     // 기타
+                //     setTimeout(function () {
+                //         items.eq(activeTargetIdx).attr({
+                //             "role": "tab",
+                //             "title": "선택됨"
+                //         }).siblings().attr({
+                //             "role": "tab",
+                //             "title": "선택안됨"
+                //         });
+                //     }, 400);
+                // }
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -544,27 +576,34 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 $('.direct-debit-slide .direct-debit-cont').eq(activeItemsIndex).show().addClass('open');
                 
                 // 웹접근성 스크린리더 관련 추가
-                var agent = navigator.userAgent.toLowerCase();
-                if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-                    // IOS인 경우
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
-                        "aria-pressed": true
-                    }).siblings().attr({
-                        "role": "button",
-                        "aria-pressed": false
-                    });
+                items.eq(activeTargetIdx).attr({
+                    "role": "button",
+                    "aria-pressed": true
+                }).siblings().attr({
+                    "role": "button",
+                    "aria-pressed": false
+                });
+                // var agent = navigator.userAgent.toLowerCase();
+                // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+                //     // IOS인 경우
+                //     items.eq(activeTargetIdx).attr({
+                //         "role": "button",
+                //         "aria-pressed": true
+                //     }).siblings().attr({
+                //         "role": "button",
+                //         "aria-pressed": false
+                //     });
         
-                }else{
-                    // 기타
-                    items.eq(activeTargetIdx).attr({
-                        "role": "button",
-                        "title": "선택됨"
-                    }).siblings().attr({
-                        "role": "button",
-                        "title": "선택안됨"
-                    });
-                }
+                // }else{
+                //     // 기타
+                //     items.eq(activeTargetIdx).attr({
+                //         "role": "button",
+                //         "title": "선택됨"
+                //     }).siblings().attr({
+                //         "role": "button",
+                //         "title": "선택안됨"
+                //     });
+                // }
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -590,27 +629,34 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     
 
                     // 웹접근성 스크린리더 관련 추가
-                    var agent = navigator.userAgent.toLowerCase();
-                    if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-                        // IOS인 경우
-                        items.eq(activeTargetIdx).attr({
-                            "role": "button",
-                            "aria-pressed": true
-                        }).siblings().attr({
-                            "role": "button",
-                            "aria-pressed": false
-                        });
+                    items.eq(activeTargetIdx).attr({
+                        "role": "button",
+                        "aria-pressed": true
+                    }).siblings().attr({
+                        "role": "button",
+                        "aria-pressed": false
+                    });
+                    // var agent = navigator.userAgent.toLowerCase();
+                    // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+                    //     // IOS인 경우
+                    //     items.eq(activeTargetIdx).attr({
+                    //         "role": "button",
+                    //         "aria-pressed": true
+                    //     }).siblings().attr({
+                    //         "role": "button",
+                    //         "aria-pressed": false
+                    //     });
             
-                    }else{
-                        // 기타
-                        items.eq(activeTargetIdx).attr({
-                            "role": "button",
-                            "title": "선택됨"
-                        }).siblings().attr({
-                            "role": "button",
-                            "title": "선택안됨"
-                        });
-                    }
+                    // }else{
+                    //     // 기타
+                    //     items.eq(activeTargetIdx).attr({
+                    //         "role": "button",
+                    //         "title": "선택됨"
+                    //     }).siblings().attr({
+                    //         "role": "button",
+                    //         "title": "선택안됨"
+                    //     });
+                    // }
                     
                     orgTargetIdx = activeTargetIdx;
                 })
