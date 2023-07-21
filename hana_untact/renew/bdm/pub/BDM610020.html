@@ -60,19 +60,24 @@
                             <div class="id-photo-form">
                                 <div class="form-area">
                                     <div class="input__wrap">
-                                        <div class="form-item input input--on input--disabled">
+                                        <div class="form-item input w30 input--on">
                                             <div class="input__inner">
-                                                <label for="inputText02" class="input__label" aria-hidden="true">주민등록번호</label>
-                                                <input type="text" class="input__element" id="inputText02" title="주민등록번호 앞자리 입력" value="901230">
+                                                <label for="inputText01" class="input__label" aria-hidden="true">면허번호</label>
+                                                <input type="text" class="input__element" id="inputText01" title="면허번호 앞 두자리 입력" value="11">
                                             </div>
                                         </div>
                                         <span class="bar"></span>
-                                        <div class="form-item input input--on input--disabled">
+                                        <div class="form-item input w30 input--on">
                                             <div class="input__inner">
-                                                <input type="text" class="input__element w12" title="주민등록번호 뒷자리 앞 한자리 수 입력" value="2">
+                                                <input type="text" class="input__element" id="inputText02" title="면허번호 두번째 두자리 입력" value="18">
+                                            </div>
+                                        </div>
+                                        <span class="bar"></span>
+                                        <div class="form-item input input--on only-pw">
+                                            <div class="input__inner">
                                                 <!-- 나머지 뒷자리 -->
                                                 <div class="social-number-area" aria-hidden="true">
-                                                    <input type="password" class="input__element" title="주민등록번호 뒷자리 나머지 6자리 입력">
+                                                    <input type="password" class="input__element" title="면허번호 세번째 6자리 입력">
                                                     <div class="pass-dot-wrap">
                                                         <span class="pass-dot"></span>
                                                         <span class="pass-dot"></span>
@@ -85,6 +90,12 @@
                                                 <!--// 나머지 뒷자리 -->
                                             </div>
                                         </div>
+                                        <span class="bar"></span>
+                                        <div class="form-item input w30 input--on">
+                                            <div class="input__inner">
+                                                <input type="text" class="input__element" id="inputText03" title="면허번호 맨 뒤 두자리 입력" value="40">
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- 에러메세지 -->
                                     <p class="input__guide-txt input__error" aria-live="assertive">주민번호 앞자리는 6자리로 입력해주세요</p>
@@ -94,8 +105,8 @@
                                     <div class="input__wrap">
                                         <div class="form-item input input--on">
                                             <div class="input__inner">
-                                                <label for="inputText01" class="input__label" aria-hidden="true">발급일자</label>
-                                                <input type="text" class="input__element form__move" id="inputText01" title="발급일자 입력" value="2018.04.07">
+                                                <label for="inputText04" class="input__label" aria-hidden="true">발급일자</label>
+                                                <input type="text" class="input__element form__move" id="inputText04" title="발급일자 입력" value="2018.04.07">
                                                 <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             </div>
                                         </div>

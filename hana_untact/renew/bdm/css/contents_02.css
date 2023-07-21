@@ -603,10 +603,10 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 /* 본인확인(신분증) - 신분증 정보 확인 */
 .id-photo-wrap {margin-top: 3rem;}
 .id-photo-wrap .id-photo {width: 100%; overflow: hidden; border-radius: 2rem; font-size: 0;}
-.id-photo-wrap .id-photo img {width: 100%; height: auto;}
-.id-photo-wrap .id-photo-info {width: 100%; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between;}
-.id-photo-wrap .id-photo-info .txt {flex: 1; word-break: keep-all; word-wrap: break-word; color: #333; font-size: 1.6rem;}
-.id-photo-wrap .id-photo-info .btn {margin-left: 2rem;}
+.id-photo img {width: 100%; height: auto;}
+.id-photo-info {width: 100%; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between;}
+.id-photo-info .txt {flex: 1; word-break: keep-all; word-wrap: break-word; color: #333; font-size: 1.6rem;}
+.id-photo-info .btn {margin-left: 2rem;}
 .id-photo-wrap .page-tit-sub {margin-top: 2rem;}
 
 /* 본인확인(신분증) - 신분증 확인페이지 */
@@ -622,3 +622,11 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 /* 계좌정보 - 주택공급정책 자료 활용 동의 */
 .form-area .checkbox-notice-wrap {margin-top: 0;}
 .form-area.form-basic-wrap .checkbox-notice-wrap {margin-top: 4rem;}
+
+/* 사업자등록증 촬영 */
+.business-photo-wrap {margin-top: 1rem;}
+.business-photo-wrap .business-photo-info .txt {font-size: 16px; font-weight: 500; color: #666; word-break: keep-all; word-wrap: break-word;}
+.business-photo-cont {padding-top: 37.7rem; background: url(../images/png/bg_business-photo.png) top 3.2rem left 50% no-repeat; background-size: 23.4rem auto;}
+.business-photo-cont .business-box {padding: 1.3rem; border-radius: 0.9rem; background: rgba(231, 233, 238, 0.5); text-align: center; color: #333; font-size: 1.4rem; font-weight: 500;}
+.business-photo-wrap .dot-list  {margin-top: 2rem;}
+.business-photo-wrap .id-photo {margin-top: 3rem;}
