@@ -733,7 +733,8 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel .search-area {width: 100%;}
 
 .popup-wrap.modal--slide.modal-full-page .modal__container {height: 100%; border-radius: 0;}
-.popup-wrap.modal--slide.modal-full-page .modal__contents {max-height: calc(100% - 6rem);}
+.popup-wrap.modal--slide.modal-full-page .modal__contents {min-height: calc(100% - 6rem); max-height: calc(100% - 6rem);}
+.popup-wrap.modal--slide.modal-full-page .modal__contents .btn-wrap {left:0;}
 
 /* 모달 테스트 타입 컨텐츠 */
 .popup-wrap.modal--slide .pop-text-cont {padding: 3rem 0 1.2rem;}
