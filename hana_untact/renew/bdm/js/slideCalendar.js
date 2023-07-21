@@ -210,7 +210,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
     function createMM(o, selYear, unitText){
         var dateObj = o.dateObj;
-        var resultStr = '<ul class="list-wrap" title="picker 손가락으로 쓸어올려 선택 가능합니다.">';
+        var resultStr = '<ul class="list-wrap">';
         for(var key in dateObj[selYear]){
             resultStr += itemTemplate.replace(/{{value}}/g, dateObj[selYear][key]+unitText);
         }
@@ -451,30 +451,35 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 //     "title": "선택안됨"
                 // });
 
-                var agent = navigator.userAgent.toLowerCase();
-                if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
-                    // IOS인 경우
-                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                        "role": "button",
-                        "aria-pressed": true
-                    });
-                    items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                        "role": "button",
-                        "aria-pressed": false
-                    });
+                var selectNum = activeTargetIdx + 1;
+                var totalBtnNum = items.length;
+                var selectDate = items.eq(activeTargetIdx).data('option-value');
+                items.eq(activeTargetIdx).closest('.list-wrap').attr('aria-label', selectDate + '총' + totalBtnNum +'개 중' + selectNum +'번째 선택 손가락으로 쓸어 선택가능 합니다.');
+                
+                // var agent = navigator.userAgent.toLowerCase();
+                // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
+                //     // IOS인 경우
+                //     items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
+                //         "role": "button",
+                //         "aria-pressed": true
+                //     });
+                //     items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
+                //         "role": "button",
+                //         "aria-pressed": false
+                //     });
         
-                }else{
-                    // 기타
-                    // setTimeout(function () {
-                    //     items.eq(activeTargetIdx).attr({
-                    //         "role": "tab",
-                    //         "title": "선택됨"
-                    //     }).siblings().attr({
-                    //         "role": "tab",
-                    //         "title": "선택안됨"
-                    //     });
-                    // }, 400);
-                }
+                // }else{
+                //     // 기타
+                //     // setTimeout(function () {
+                //     //     items.eq(activeTargetIdx).attr({
+                //     //         "role": "tab",
+                //     //         "title": "선택됨"
+                //     //     }).siblings().attr({
+                //     //         "role": "tab",
+                //     //         "title": "선택안됨"
+                //     //     });
+                //     // }, 400);
+                // }
                 
                 orgTargetIdx = activeTargetIdx;
             })
