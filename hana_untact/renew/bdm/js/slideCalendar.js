@@ -174,7 +174,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
     function createYY(o, unitText){
         var dateObj = o.dateObj;
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" title="picker 손가락으로 쓸어올려 선택 가능합니다.">';
         for (var key in dateObj) {
             resultStr += itemTemplate.replace(/{{value}}/g, key + unitText);
         }
@@ -183,12 +183,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','red').find('.list-wrap__anchor').attr({
-            "title": "선택됨"
-        })
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "title": "선택안됨"
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background','orange').find('.list-wrap__anchor').attr({
+        //     "title": "선택됨"
+        // })
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        //     "title": "선택안됨"
+        // });
+
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
         //     // IOS인 경우
@@ -214,7 +215,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
     function createMM(o, selYear, unitText){
         var dateObj = o.dateObj;
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" title="picker 손가락으로 쓸어올려 선택 가능합니다.">';
         for(var key in dateObj[selYear]){
             resultStr += itemTemplate.replace(/{{value}}/g, dateObj[selYear][key]+unitText);
         }
@@ -223,12 +224,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
 
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
-            "title": "선택됨"
-        })
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "title": "선택안됨"
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
+        //     "title": "선택됨"
+        // })
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        //     "title": "선택안됨"
+        // });
+
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
         //     // IOS인 경우
@@ -266,7 +268,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             arrDay = arrDay.slice(0, limitMaxDate);
         }
             
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" title="picker 손가락으로 쓸어올려 선택 가능합니다.">';
         for(var i=0; i<arrDay.length; i++){
             resultStr += itemTemplate.replace(/{{value}}/g, arrDay[i] + unitText);
         }
@@ -276,12 +278,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
-            "title": "선택됨"
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "title": "선택안됨"
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
+        //     "title": "선택됨"
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        //     "title": "선택안됨"
+        // });
+
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
         //     // IOS인 경우
@@ -308,7 +311,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     }
     
     function singleCreateMM(o) {
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" title="picker 손가락으로 쓸어올려 선택 가능합니다.">';
         for(var i=0; i<o.items.length; i++){            
             resultStr += itemTemplate.replace(/{{value}}/g, o.items[i]['codeName']);
         }
@@ -316,12 +319,13 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
         
         // 웹접근성 스크린리더 관련 추가
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
-            "title": "선택됨"
-        });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "title": "선택안됨"
-        });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').find('.list-wrap__anchor').attr({
+        //     "title": "선택됨"
+        // });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        //     "title": "선택안됨"
+        // });
+
         // var agent = navigator.userAgent.toLowerCase();
         // if( agent.indexOf("iphone") > -1 || agent.indexOf("ipad") > -1 || agent.indexOf("ipod") > -1 ) {
         //     // IOS인 경우
