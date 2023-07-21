@@ -76,6 +76,7 @@
 .result-wrap .text-box .text + .text-sm {margin-top: 0.8rem;}
 .result-wrap .text-box .bul-star {display: inline-block; margin-top: 1.6rem; color: #666;}
 .result-wrap .btn {margin-top: 1.6rem;}
+.popup-wrap.alert .result-wrap {margin-top: 2.6rem;}
 
 /* 이어하기 */
 .product-join-detail {margin-top: 4rem;}
