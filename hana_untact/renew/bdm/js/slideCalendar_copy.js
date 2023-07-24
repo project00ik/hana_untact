@@ -188,7 +188,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var totalBtnNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).data('option-value');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-wrap').eq(0).attr('role', 'radiogroup');
         
         // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
         //     "role": "radio",
@@ -227,7 +227,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).data('option-value');
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').attr('role', 'radiogroup');
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').attr({
             "role": "radio",
@@ -505,7 +505,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             var totalBtnNum = $('.direct-debit-btn .list-section').length;
             var selectDate = $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__title').text();
             $('.direct-debit-btn .list-section').eq(0).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-            $('.direct-debit-btn .list-section').eq(0).closest('.list-section').attr('role', 'radiogroup');
+            $('.direct-debit-btn .list-section').eq(0).closest('.list-wrap').attr('role', 'radiogroup');
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__anchor').attr({
                 "role": "radio",
                 "aria-checked" : false
@@ -538,7 +538,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 var totalBtnNum = items.length;
                 var selectDate = items.eq(activeTargetIdx).find('.list-wrap__anchor').text();
                 items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-                items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                items.eq(activeTargetIdx).closest('.list-wrap').attr('role', 'radiogroup');
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "role": "radio",
                     "aria-checked" : true
@@ -577,7 +577,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     var totalBtnNum = items.length;
                     var selectDate = items.eq(activeTargetIdx).text();
                     items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-                    items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                    items.eq(activeTargetIdx).closest('.list-wrap').attr('role', 'radiogroup');
                     
                     items.eq(activeTargetIdx).attr({
                         "role": "radio",
