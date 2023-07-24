@@ -269,11 +269,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).data('option-value');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('role', 'radiogroup');
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked" : false
         });
@@ -297,11 +297,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
         
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked" : false
         });
@@ -406,11 +406,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                 items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
+                items.eq(activeTargetIdx).attr({
                     "role": "radio",
                     "aria-checked" : true
                 });
-                items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
+                items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
                     "aria-checked" : false
                 });
@@ -575,15 +575,15 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     // 웹접근성 스크린리더 관련 추가
                     var selectNum = activeTargetIdx + 1;
                     var totalBtnNum = items.length;
-                    var selectDate = items.eq(activeTargetIdx).find('.list-wrap__anchor').text();
+                    var selectDate = items.eq(activeTargetIdx).text();
                     items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                     items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                     
-                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
+                    items.eq(activeTargetIdx).attr({
                         "role": "radio",
                         "aria-checked" : true
                     });
-                    items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
+                    items.eq(activeTargetIdx).siblings().attr({
                         "role": "radio",
                         "aria-checked" : false
                     });
