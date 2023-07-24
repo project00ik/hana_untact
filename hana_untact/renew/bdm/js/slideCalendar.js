@@ -36,7 +36,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     };
 
     var itemTemplate = '\
-        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}">\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-label="{{value}}">\
             <button type="button" class="list-wrap__anchor">\
                 <span class="list-wrap__box">\
                     <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
@@ -181,7 +181,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'orange');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'pink');
         
         // 웹접근성 스크린리더 관련 추가
         // var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
