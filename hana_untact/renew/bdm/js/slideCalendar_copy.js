@@ -174,7 +174,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
     function createYY(o, unitText){
         var dateObj = o.dateObj;
-        var resultStr = '<ul class="list-wrap">';
+        var resultStr = '<ul class="list-wrap" role="group">';
         for (var key in dateObj) {
             resultStr += itemTemplate.replace(/{{value}}/g, key + unitText);
         }
@@ -187,7 +187,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
         var totalBtnNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).data('option-value');
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
 
     
 
