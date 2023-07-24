@@ -190,10 +190,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
         
     }
@@ -217,10 +217,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
     }
 
@@ -255,10 +255,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
 
         return arrDay;
@@ -280,10 +280,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
         
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
-            "area-label": true
+            "area-hidden": true
         });
 
     }
@@ -386,10 +386,10 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).closest('.list-section').attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                 
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                    "area-label": true
+                    "area-hidden": true
                 });
                 items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                    "area-label": true
+                    "area-hidden": true
                 });
 
                 orgTargetIdx = activeTargetIdx;
@@ -513,10 +513,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 var selectDate = items.eq(activeTargetIdx).find('.list-wrap__anchor').text();
                 items.eq(activeTargetIdx).closest('.list-section').attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                    "area-label": true
+                    "area-hidden": true
                 });
                 items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                    "area-label": true
+                    "area-hidden": true
                 });
                 
                 orgTargetIdx = activeTargetIdx;
@@ -550,10 +550,10 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     items.eq(activeTargetIdx).closest('.list-section').attr('aria-label', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                     
                     items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                        "area-label": true
+                        "area-hidden": true
                     });
                     items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                        "area-label": true
+                        "area-hidden": true
                     });
                     
                     orgTargetIdx = activeTargetIdx;
