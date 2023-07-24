@@ -181,20 +181,22 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'yellow');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'skyblue');
         
         // 웹접근성 스크린리더 관련 추가
         var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
         var totalBtnNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).data('option-value');
-        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
         
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
-            "role": "button",
-            "aria-label" : selectDate + '선택됨'
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : false
         });
         
     }
@@ -216,15 +218,16 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var totalBtnNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).data('option-value');
         
-        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
         
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
-            "role": "button",
-            "aria-label" : selectDate + '선택됨'
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : false
         });
     }
 
@@ -256,13 +259,15 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
         var totalBtnNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).data('option-value');
-        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
-            "role": "button",
-            "aria-label" : selectDate + '선택됨'
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
-            "role": "button",
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : false
         });
 
         return arrDay;
@@ -281,15 +286,16 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
         var totalBtnNum = o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').length;
         var selectDate = o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).data('option-value');
-        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
         
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
-            "role": "button",
-            "aria-label" : selectDate + '선택됨'
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : true
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
-            "role": "button",
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
+            "role": "radio",
+            "aria-checked" : false
         });
 
     }
@@ -389,15 +395,16 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 var selectNum = activeTargetIdx + 1;
                 var totalBtnNum = items.length;
                 var selectDate = items.eq(activeTargetIdx).data('option-value');
-                // items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
-                // items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
+                items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 
-                items.eq(activeTargetIdx).attr({
-                    "role": "button",
-                    "aria-label" : selectDate + '선택됨'
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
+                    "role": "radio",
+                    "aria-checked" : true
                 });
-                items.eq(activeTargetIdx).siblings().attr({
-                    "role": "button",
+                items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
+                    "role": "radio",
+                    "aria-checked" : false
                 });
 
                 orgTargetIdx = activeTargetIdx;
@@ -492,11 +499,11 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             $('.direct-debit-btn .list-section').eq(0).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
             $('.direct-debit-btn .list-section').eq(0).closest('.list-section').attr('role', 'radiogroup');
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__anchor').attr({
-                "role": "button",
+                "role": "radio",
                 "aria-checked" : false
             });
             $('.direct-debit-btn .list-section').eq(0).siblings().find('.list-wrap__anchor').attr({
-                "role": "button",
+                "role": "radio",
                 "aria-checked" : true
             });
                 
@@ -513,8 +520,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
                 //     window.navigator.vibrate(100);
                 // }
-
-                // items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
                 var activeItemsIndex = items.eq(activeTargetIdx).index();
                 $('.direct-debit-slide .direct-debit-cont').hide().removeClass('open');
                 $('.direct-debit-slide .direct-debit-cont').eq(activeItemsIndex).show().addClass('open');
@@ -526,11 +532,11 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                 items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                    "role": "button",
+                    "role": "radio",
                     "aria-checked" : true
                 });
                 items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                    "role": "button",
+                    "role": "radio",
                     "aria-checked" : false
                 });
                 
@@ -555,7 +561,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
                     //     window.navigator.vibrate(100);
                     // }
-                    // items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                    items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
                     
 
                     // 웹접근성 스크린리더 관련 추가
@@ -566,11 +572,11 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                     
                     items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
-                        "role": "button",
+                        "role": "radio",
                         "aria-checked" : true
                     });
                     items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
-                        "role": "button",
+                        "role": "radio",
                         "aria-checked" : false
                     });
                     
