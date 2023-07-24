@@ -181,7 +181,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'pink');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'yellow');
         
         // 웹접근성 스크린리더 관련 추가
         // var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
@@ -197,6 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
         
     }
 
@@ -226,6 +227,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
     }
 
     function createDD(o, selYear, selMonth, unitText){
@@ -266,6 +268,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
 
         return arrDay;
     }
@@ -293,6 +296,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
 
     }
     
@@ -401,6 +405,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     "role": "radio",
                     "aria-checked" : false
                 });
+
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -534,6 +540,8 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     "role": "radio",
                     "aria-checked" : false
                 });
+
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -573,6 +581,8 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                         "role": "radio",
                         "aria-checked" : false
                     });
+
+                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
                     
                     orgTargetIdx = activeTargetIdx;
                 })
