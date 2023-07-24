@@ -197,7 +197,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
         
     }
 
@@ -227,7 +227,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
     }
 
     function createDD(o, selYear, selMonth, unitText){
@@ -268,7 +268,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
 
         return arrDay;
     }
@@ -296,7 +296,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden'. true);
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
 
     }
     
@@ -406,7 +406,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     "aria-checked" : false
                 });
 
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -541,7 +541,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     "aria-checked" : false
                 });
 
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -582,7 +582,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                         "aria-checked" : false
                     });
 
-                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden'. true);
+                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                     
                     orgTargetIdx = activeTargetIdx;
                 })
