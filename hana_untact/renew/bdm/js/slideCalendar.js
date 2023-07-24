@@ -181,7 +181,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'skyblue');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item').css('background', 'red');
         
         // 웹접근성 스크린리더 관련 추가
         var selectNum = o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').index() + 1;
@@ -192,11 +192,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked" : true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked" : false
         });
         
     }
@@ -223,11 +223,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked" : true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked" : false
         });
     }
 
@@ -263,11 +263,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('role', 'radiogroup');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked" : true
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked" : false
         });
 
         return arrDay;
@@ -291,11 +291,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked" : true
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().find('.list-wrap__anchor').attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked" : false
         });
 
     }
@@ -400,11 +400,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "role": "radio",
-                    "aria-checked" : false
+                    "aria-checked" : true
                 });
                 items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                     "role": "radio",
-                    "aria-checked" : true
+                    "aria-checked" : false
                 });
 
                 orgTargetIdx = activeTargetIdx;
@@ -533,11 +533,11 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                     "role": "radio",
-                    "aria-checked" : false
+                    "aria-checked" : true
                 });
                 items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                     "role": "radio",
-                    "aria-checked" : true
+                    "aria-checked" : false
                 });
                 
                 orgTargetIdx = activeTargetIdx;
@@ -573,11 +573,11 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     
                     items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
                         "role": "radio",
-                        "aria-checked" : false
+                        "aria-checked" : true
                     });
                     items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
                         "role": "radio",
-                        "aria-checked" : true
+                        "aria-checked" : false
                     });
                     
                     orgTargetIdx = activeTargetIdx;
