@@ -392,11 +392,11 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 // items.eq(activeTargetIdx).closest('.list-section').attr('aria-labelledby', selectDate + ' 총' + totalBtnNum + '개 중' + selectNum + '번째 선택 손가락으로 쓸어 선택가능 합니다.');
                 // items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr({
+                items.eq(activeTargetIdx).attr({
                     "role": "button",
                     "aria-label" : selectDate + '선택됨'
                 });
-                items.eq(activeTargetIdx).siblings().find('.list-wrap__anchor').attr({
+                items.eq(activeTargetIdx).siblings().attr({
                     "role": "button",
                 });
 
