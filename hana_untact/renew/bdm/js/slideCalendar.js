@@ -9,6 +9,7 @@ var hanaProdUI = {};
 
 //2022-08-25 일자 계산 관련 수정
 hanaProdUI.dialSelect = function(obj, param, cfn){
+	
     var $el = null;
     var dialModal = {
         scrollWrapper : [
@@ -52,7 +53,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         o.tabs = me.find('.tab-wrap__menu');
         o.$callBtn = $('button[data-target="#'+me.get(0).id+'"]');
-        o.$confirmBtn = me.find('.button-fixed .button--positive');
+        o.$confirmBtn = me.find('.md.button--positive');
         o._callBackFn = cfn;
 
         
@@ -175,12 +176,12 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     function createYY(o, unitText){
         var dateObj = o.dateObj;
         var resultStr = '<ul class="list-wrap">';
-        for (var key in dateObj) {
-            resultStr += itemTemplate.replace(/{{value}}/g, key + unitText);
+        for(var key in dateObj){
+            resultStr += itemTemplate.replace(/{{value}}/g, key+unitText);
         }
         resultStr += '</ul>';
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
 
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
         
         // 웹접근성 스크린리더 관련 추가
@@ -198,6 +199,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     }
 
     function createMM(o, selYear, unitText){
+
         var dateObj = o.dateObj;
         var resultStr = '<ul class="list-wrap">';
         for(var key in dateObj[selYear]){
@@ -206,9 +208,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         resultStr += '</ul>';
         o.scrollWrapper[o.groupIdx].selYY = selYear;
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
-
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
-
+        
         // 웹접근성 스크린리더 관련 추가
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
@@ -223,6 +224,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
     }
 
     function createDD(o, selYear, selMonth, unitText){
+
         var arrDay = rtArrayNum(31);
         var limitMinDate = o.minDate.getDate();
         var limitMaxDate = o.maxDate.getDate();
@@ -257,7 +259,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "aria-checked" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
-
+        
         return arrDay;
     }
     
@@ -281,7 +283,6 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "aria-checked" : false
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
-
     }
     
     function event($el, o){
@@ -361,12 +362,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     if(orgTargetIdx != activeTargetIdx){
                         
                         createMM(o, Object.keys(o.dateObj)[activeTargetIdx], "월");
+                        if(typeof yearChangeCb == "function") {
+                        	yearChangeCb();
+                        }
                     }
                 }
                 if(isMultiple && scrollContainer.index() === 1){//월
                     if(orgTargetIdx != activeTargetIdx){
                         
                         createDD(o, o.scrollWrapper[o.groupIdx].selYY, parseInt(o.dateObj[o.scrollWrapper[o.groupIdx].selYY][activeTargetIdx]),  "일");
+                        if(typeof monthChangeCb == "function") {
+                        	monthChangeCb();
+                        }
+                        
                     }
                 }
                 if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
@@ -374,7 +382,6 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 }
                 
                 items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
-
                 // 웹접근성 스크린리더 관련 추가
                 items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 items.eq(activeTargetIdx).attr({
@@ -385,9 +392,8 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                     "role": "radio",
                     "aria-checked" : false
                 });
-
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
-
+                
                 orgTargetIdx = activeTargetIdx;
             })
         });        
@@ -430,7 +436,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
         if(!me.length){ return false;}
         var o = new Object(dialModal);            
         o.$callBtn = $('button[data-target="#'+me.get(0).id+'"]');
-        o.$confirmBtn = me.find('.button-fixed .button--positive');
+        o.$confirmBtn = me.find('.md.button--positive');
         o._callBackFn = cfn; 
         
         event(me, o);
@@ -472,7 +478,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             var scrollContainer = $(this);   
             
             var orgTargetIdx = 0;
-
+            
             // 웹접근성 스크린리더 관련 추가
             $('.direct-debit-btn .list-section').eq(0).attr('role', 'radiogroup');
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').attr({
@@ -484,7 +490,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 "aria-checked" : false
             });
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
-                
+            
             //스크롤시 이벤트
             scrollContainer.off('scroll').on('scroll',function(){
                 var me = $(this);
@@ -523,6 +529,288 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 var scrollContainer = $(this);      
                 var orgTargetIdx = 0;
                 
+               // 웹접근성 스크린리더 관련 추가
+                $('.direct-debit-cont .list-section').eq(0).attr('role', 'radiogroup');
+                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').attr({
+                    "role": "radio",
+                    "aria-checked" : true
+                });
+                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').siblings().attr({
+                    "role": "radio",
+                    "aria-checked" : false
+                });
+                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+                
+                //스크롤시 이벤트
+                scrollContainer.off('scroll').on('scroll', function () {
+                    var me = $(this);
+                    var items = me.find('.list-wrap__item');
+                    var _height = 55;// items.height() + margin;
+                    var scrTop = this.scrollTop + (_height/2);
+                    var activeTargetIdx =  (Math.floor(scrTop/_height));
+                    if(activeTargetIdx > items.length -1) {
+                        activeTargetIdx = items.length -1;
+                    }
+                    // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
+                    //     window.navigator.vibrate(100);
+                    // }
+                    items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                    
+                    // 웹접근성 스크린리더 관련 추가
+                    items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                    items.eq(activeTargetIdx).attr({
+                        "role": "radio",
+                        "aria-checked" : true
+                    });
+                    items.eq(activeTargetIdx).siblings().attr({
+                        "role": "radio",
+                        "aria-checked" : false
+                    });
+                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
+                    
+                    orgTargetIdx = activeTargetIdx;
+                })
+            });
+        })
+    }
+    init(obj);
+};
+
+hanaProdUI.poniterChk = true;
+hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
+    var $el = null;
+    var dialModal = {
+        scrollWrapper : [
+            /*{
+                $el : null,
+                cols:0,
+                itemHeight : 0,
+                isActive : false,
+                scrollItems:[],
+                scrollTop : 0,
+                val: null
+            }*/
+        ],
+        //setDate : "EE",
+        groupIdx : 0, //dial group의 인덱스 저장
+        min : 0, //최소 가입기간
+        max : 0, //최대 가입기간(만기일)
+        tabs : null,
+        minDate : null,
+        maxDate : null,
+        $callBtn : null,
+        $confirmBtn: null,
+        $cancleBtn: null, 
+        _callBackFn : null,
+        onlyMulti:false
+    };
+
+    var itemTemplate = '\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-label="{{value}}">\
+            <button type="button" class="list-wrap__anchor">\
+                <span class="list-wrap__box">\
+                    <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
+                </span>\
+            </button>\
+        </li>';
+
+    
+    
+    function init(obj){
+        var me = $(obj);
+        if(!me.length){ return false;}
+        var o = new Object(dialModal);           
+        var container, items;          
+        o.$callBtn = $('button[data-target="#'+me.get(0).id+'"]');
+        o.$confirmBtn = me.find('.md.button--positive');
+        o.$cancleBtn = me.find('.md.btn-cancle');
+        o._callBackFn = cfn; 
+        
+        // 자동이체 중 매월만 선택 시
+        if(param.month == 1) {
+        	me.find(".direct-debit-btn .list-section .list-wrap li").css("display", "none");
+        	me.find(".direct-debit-btn .list-section .list-wrap li.active-item").css("display", "block");
+        }
+        
+        
+        function scrollWrapperExtend(obj, container, items){
+            obj.scrollWrapper.push({
+                $el : container,
+                scrollItems: items
+            });
+            return obj;
+        }
+        
+        container = me.find('.modal__contents--multiple');
+        items = container.find('.direct-debit-cont');// .list-section
+        o = scrollWrapperExtend(o, container, items);
+
+        function createslide(o){
+	        createMM(o, "일");
+        }
+
+        function rtArrayNum(num){
+            var arr = new Array(num);
+            for(var i = 0; i < num; i++){
+                arr[i] = ((i+1)+"").padStart(2, "0");
+            };
+            return arr;
+        }
+
+        function createMM(o, unitText){
+            var arrMonth = rtArrayNum(31);
+            var resultStr = '<ul class="list-wrap">';
+            for(var i=0; i<arrMonth.length; i++){
+                resultStr += itemTemplate.replace(/{{value}}/g, arrMonth[i]+unitText);
+            }
+            resultStr += '</ul>';
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+            
+            // 웹접근성 스크린리더 관련 추가
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
+                "role": "radio",
+                "aria-checked" : true
+            });
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
+                "role": "radio",
+                "aria-checked" : false
+            });
+            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+            
+            return arrMonth;
+        }
+
+        if (hanaProdUI.poniterChk) {
+            createslide(o);
+        	hanaProdUI.poniterChk = false;
+        }
+        event(me, o);
+        
+        $('body').data('plugin_modal').open(obj);
+    }
+    
+    function event($el, o){
+        //2022-10-17 이전 다음항목 클릭시
+        $el.on('click', '.direct-debit-slide .list-section .list-wrap__item', function (e) {
+            var _this = $(this);
+            var scrollContainer = _this.closest('.list-section');
+            var scrTop = scrollContainer.scrollTop();
+            if(_this.is('.active-item')) { return false;}
+            if(_this.next('.active-item').length){//이전항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop - 55
+                }, 100);
+            }
+            if(_this.prev('.active-item').length){//다음항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop + 55
+                }, 100);
+            } 
+        });
+        
+        $el.on('click', '.direct-debit-btn .list-section .list-wrap__item', function (e) { 
+            var btnIndex = $(this).index();
+            $('.direct-debit-slide .direct-debit-cont').removeClass('open');
+            $('.direct-debit-slide .direct-debit-cont').eq(btnIndex).addClass('open');
+        });
+
+        //모달내부 신청함 버튼 이벤트        
+        o.$confirmBtn.off('click').on('click', function(){
+            var _selectVal = '';
+            var _rtnVal = {};
+            var selType = o.scrollWrapper[0].$el.find('.direct-debit-btn .active-item .list-wrap__title').text();
+            var selContent = o.scrollWrapper[0].$el.find('.direct-debit-cont.open .active-item .list-wrap__title').text();
+
+            // 자동이체 시작일 생성
+    		var now = new Date();
+            var dates = parseInt(selContent.padStart(2, "0"));
+            var resultDate = '';
+            if(selContent != '' && !isNaN(dates)) {
+        		var setDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+        		var lastDay = setDay.getDate();
+                var start = new Date();
+                start.setDate(dates);
+                var monthAgo = new Date(start);
+                monthAgo.setMonth(start.getMonth() + 1);
+                if(now > start) {
+                	resultDate = monthAgo;
+                } else {
+                	resultDate = start;
+                }
+        		if(dates > lastDay) {
+        			resultDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+        		}
+            } else {
+            	now.setDate(now.getDate() + 1);
+            	resultDate = now;
+            }
+        	_rtnVal.dates = resultDate.toISOString().substring(0, 10).replaceAll("-", ".");
+
+        	if(selContent) {
+        		_selectVal = selType + " " + selContent;
+        	} else {
+        		_selectVal = selType;
+        	}
+            _rtnVal.datesTxt = _selectVal;
+            _rtnVal.yn = "Y";
+            o._callBackFn(_rtnVal);
+            $('body').data('plugin_modal').close(obj);
+        });
+
+        //모달내부 신청 안 함버튼 이벤트
+        o.$cancleBtn.off('click').on('click', function(){
+            var _rtnVal = {};
+        	_rtnVal.dates = null;
+            _rtnVal.datesTxt = "신청 안 함";
+            _rtnVal.yn = "N";
+            o._callBackFn(_rtnVal);
+            $('body').data('plugin_modal').close(obj);
+        });
+        
+        $el.find('.direct-debit-btn .list-section').each(function () {
+            var scrollContainer = $(this);   
+            
+            var orgTargetIdx = 0;
+            //스크롤시 이벤트
+            scrollContainer.off('scroll').on('scroll',function(){
+                var me = $(this);
+                var items = me.find('.list-wrap__item');
+                var _height = 55;// items.height() + margin;
+                var scrTop = this.scrollTop + (_height/2);
+                var activeTargetIdx =  (Math.floor(scrTop/_height));
+                if(activeTargetIdx > items.length -1) {
+                    activeTargetIdx = items.length -1;
+                }
+                // if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
+                //     window.navigator.vibrate(100);
+                // }
+                items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                var activeItemsIndex = items.eq(activeTargetIdx).index();
+                $('.direct-debit-slide .direct-debit-cont').hide().removeClass('open');
+                $('.direct-debit-slide .direct-debit-cont').eq(activeItemsIndex).show().addClass('open');
+                
+                // 웹접근성 스크린리더 관련 추가
+                items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                items.eq(activeTargetIdx).attr({
+                    "role": "radio",
+                    "aria-checked" : true
+                });
+                items.eq(activeTargetIdx).siblings().attr({
+                    "role": "radio",
+                    "aria-checked" : false
+                });
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
+                
+                orgTargetIdx = activeTargetIdx;
+            })
+        });        
+        $el.find('.direct-debit-cont').each(function () { 
+            $(this).find('.list-section').each(function () {
+                var scrollContainer = $(this);   
+                
+                var orgTargetIdx = 0;
                 //스크롤시 이벤트
                 scrollContainer.off('scroll').on('scroll', function () {
                     var me = $(this);
