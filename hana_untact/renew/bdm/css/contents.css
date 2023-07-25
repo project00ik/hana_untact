@@ -86,7 +86,19 @@
 .product-join-detail .card-box .text {margin-left: 0.4rem; color: #333;}
 .product-join-detail .card-box .btn-r-wrap {margin-top: 3rem;}
 
+/* intro 계좌 개설 절차 */
+.intro-start-wrap {padding: 0 2.4rem;}
+.intro-title {margin-top: 4.4rem; font-size: 3.2rem; color: #000;}
+.intro-step-list {margin-top: 7.2rem;}
+.intro-step-list li {font-size: 1.8rem; color: #666;}
+.intro-step-list li + li {margin-top: 2.4rem;}
+.intro-step-list .num {display: inline-block; margin-right: 0.4rem; width: 2.2rem; height: 2.2rem; line-height: 1.5; font-size: 1.4rem; color: #fff; font-weight: 500; text-align: center; background-color: #262b45; border-radius: 50% 50%; vertical-align: bottom;}
 
+/* 서비스 가이드 */
+.service-guide-wrap .tab-list {padding: 0; margin: 0 -2.4rem;}
+.service-guide-wrap .tab-con {margin-top: 2.4rem;}
+.service-guide-wrap .tab-list .tab .text.is-active span:before {border-bottom: 3px solid #262b45;}
+.service-guide-wrap .accordion-list .con {padding: 1.9rem 1.6rem; font-size: 1.5rem; color: #393939; border-top: 1px solid #e7e9ee;}
 
 
 /* common */
