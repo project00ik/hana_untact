@@ -548,7 +548,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .love-document-wrap .love-document-bottom {margin-top: 5rem; display: flex; align-items: center; justify-content: center;}
 .love-document-bottom [class^='icon-'] {flex: 1; padding-top: 3.7rem; font-size: 1.4rem; color: #666; font-weight: 700; line-height: 1.2; text-align: center;}
 .love-document-bottom .icon-name {background: url(../images/icon/ico-love-pet.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
-.love-document-bottom .ico n-pet {background: url(../images/icon/ico-love-sign.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
+.love-document-bottom .icon-pet {background: url(../images/icon/ico-love-sign.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
 
 /* 지점(직원)검색 */
 .branch-result-wrap {padding: 0 2.4rem;}
