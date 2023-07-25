@@ -61,6 +61,7 @@
                             <p class="input__guide-txt input__error" aria-live="assertive">이미 등록되어 있는 번호입니다.</p>
 						</div>
 
+                        
                         <div class="form-area">
                             <div class="form-item input input--on">
                                 <div class="input__inner">
@@ -99,6 +100,19 @@
                             </div>
                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                             <p class="input__guide-txt tp-green" aria-live="assertive">1,000만원</p>  
+
+                            <div class="tg-text tg--area">
+                                <div class="tg-btn" role="button" aria-expanded="false" onclick="toggleLayer(this);">
+                                    <button type="button">알아두세요</button>
+                                </div>
+                                <div class="tg-text-cont tg--layer">
+                                    <ul class="bul-bar-wrap">
+                                        <li>숫자 4자리로 입력하세요.</li>
+                                        <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
+                                        <li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다. (ex. 1111, 1234)</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-area">
@@ -149,9 +163,9 @@
             <!-- footer -->
             <div class="app-footer">
                 <div class="btn-group-sub-wrap btn-next-wrap">
-                    <button type="button" class="btn rd btn__form-next" date-nowindex="0" title="계속">계속</button>
+                    <button type="button" class="btn rd btn__form-next" title="계속">계속</button>
                     <!-- 2depth 폼 이동 용 버튼 -->
-                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
+                    <!-- <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button> -->
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none"><!-- 확인 버튼(.btn-last-wrap) (마지막 폼에서 계속버튼을 눌렀을때 페이지 확인버튼 노출) -->
                     <button type="button" class="btn" title="확인">확인</button>
@@ -173,9 +187,8 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true);  
+            hanaUI.formFocusEvent(0, true); // hanaUI.formFocusEvent(index, true); 
            // modalOpen('modalselect');
-          
         });
 
         
