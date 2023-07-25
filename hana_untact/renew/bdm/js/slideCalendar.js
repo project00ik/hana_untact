@@ -489,7 +489,6 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 "role": "radio",
                 "aria-checked" : false
             });
-            $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
             
             //스크롤시 이벤트
             scrollContainer.off('scroll').on('scroll',function(){
@@ -519,7 +518,6 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     "role": "radio",
                     "aria-checked" : false
                 });
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -539,7 +537,6 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     "role": "radio",
                     "aria-checked" : false
                 });
-                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 //스크롤시 이벤트
                 scrollContainer.off('scroll').on('scroll', function () {
@@ -566,7 +563,6 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                         "role": "radio",
                         "aria-checked" : false
                     });
-                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                     
                     orgTargetIdx = activeTargetIdx;
                 })
@@ -801,7 +797,6 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
                     "role": "radio",
                     "aria-checked" : false
                 });
-                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -836,7 +831,6 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
                         "role": "radio",
                         "aria-checked" : false
                     });
-                    items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                     
                     orgTargetIdx = activeTargetIdx;
                 })
