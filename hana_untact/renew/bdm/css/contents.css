@@ -95,10 +95,13 @@
 .intro-step-list .num {display: inline-block; margin-right: 0.4rem; width: 2.2rem; height: 2.2rem; line-height: 1.5; font-size: 1.4rem; color: #fff; font-weight: 500; text-align: center; background-color: #262b45; border-radius: 50% 50%; vertical-align: bottom;}
 
 /* 서비스 가이드 */
-.service-guide-wrap .tab-list {padding: 0; margin: 0 -2.4rem;}
+.service-guide-wrap .tab-list {padding: 0 2.4rem; margin: 0 -2.4rem;}
 .service-guide-wrap .tab-con {margin-top: 2.4rem;}
 .service-guide-wrap .tab-list .tab .text.is-active span:before {border-bottom: 3px solid #262b45;}
-.service-guide-wrap .accordion-list .con {padding: 1.9rem 1.6rem; font-size: 1.5rem; color: #393939; border-top: 1px solid #e7e9ee;}
+
+.service-guide-wrap .accordion-list .top .title {font-weight: 500;}
+.service-guide-wrap .accordion-list .con {padding: 0 0 2.4rem 0;}
+.accordion-list .con .inbox {padding: 2.4rem; background-color: #f3f5f6; border-radius: 1.4rem;}
 
 
 /* common */
