@@ -9,7 +9,7 @@
 
 /* --- 텍스트 (text) --- */
 /* - 텍스트 : 포인트컬러(point color) */
-.tp-green {color: #009591 !important;}
+.tp-green {color: #009591 !important; font-size: inherit;}
 .tp-red {color: #e53a4c !important;}
 .tp-dpink {color: #e31e5a !important;}
 .tp-gray {color: #999 !important;}
