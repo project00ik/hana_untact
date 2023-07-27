@@ -262,20 +262,20 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .tab-list::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: #e7e9ee; }
 .tab-list .tab {flex: 1;}
 .tab-list .tab .text {height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
-.tab-list .tab .text span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
+.tab-list .tab .text span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 500; color: #333;}
 .tab-list .tab .text span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
-.tab-list .tab .text.is-active span {color: #262b45; background-color: #fff;}
-.tab-list .tab .text.is-active span:before {border-bottom: 2px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
+.tab-list .tab .text.is-active span {color: #262b45; background-color: #fff; font-weight: 700;}
+.tab-list .tab .text.is-active span:before {border-bottom: 3px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
 
 .tab-wrap__menu {display: flex; position: relative; padding: 0 2.4rem;}
 .tab-wrap__menu::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; z-index: 1; width: 100%; height: 1px; background: #e7e9ee; }
 .popup-wrap.modal--slide .tab-wrap {margin: 0 -2.4rem; width: calc(100% + 4.8rem);}
 .tab-wrap .tab-wrap__item {flex: 1;}
 .tab-wrap .tab-wrap__item .tab-wrap__button {height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
-.tab-wrap .tab-wrap__item .tab-wrap__button span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 700;}
+.tab-wrap .tab-wrap__item .tab-wrap__button span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 500; color: #333;}
 .tab-wrap .tab-wrap__item .tab-wrap__button span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
-.tab-wrap .tab-wrap__item .tab-wrap__button.is-active span {color: #262b45; background-color: #fff;}
-.tab-wrap .tab-wrap__item .tab-wrap__button.is-active span:before {border-bottom: 2px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
+.tab-wrap .tab-wrap__item .tab-wrap__button.is-active span {color: #262b45; background-color: #fff; font-weight: 700;}
+.tab-wrap .tab-wrap__item .tab-wrap__button.is-active span:before {border-bottom: 3px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
 
 .popup-wrap .tab-wrap .tab-wrap__item .tab-wrap__button span {padding: 1.6rem 0.8rem 1rem; line-height: 2.2rem;}
 
@@ -498,13 +498,14 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .input-code-wrap.error .input-code {color: #e31e5a;}
 
 /* - 컨텐츠 : 아코디언 (accordion) */
-.accordion-list {border-top: 1px solid #e7e9ee;}
+/* .accordion-list {border-top: 1px solid #e7e9ee;} */
 .accordion-list > li {border-bottom: 1px solid #e7e9ee;}
 .accordion-list .top {position: relative; padding: 2.4rem 2.4rem 2.4rem 0;}
 .accordion-list .top:before {content: ''; display: block; width: 2rem; height: 2rem; position: absolute; right: 0; top: 2.6rem; background: url(../images/icon/ico-system-accordion-close.png) right 0 no-repeat; background-size: 1.6rem 1.6rem;}
-.accordion-list .top .title {color: #333; font-weight: 400; font-size: 1.6rem;}
+.accordion-list .top .title {color: #333; font-weight: 500; font-size: 1.6rem;}
 .accordion-list .top.is-active:before {background: url(../images/icon/ico-system-accordion-open.png) right 0 no-repeat; background-size: 1.6rem 1.6rem;}
-.accordion-list .con {padding: 0 5.6rem 4rem 2rem; font-size: 1.5rem; color: #7d8585;}
+.accordion-list .con {padding: 0 0 2.4rem 0; font-size: 1.5rem;}
+.accordion-list .con .inbox {padding: 2.4rem; background-color: #f3f5f6; border-radius: 1.4rem;}
 .accordion-list-wrap + .btn-wrap {margin-top: 1.6rem;}
 .accordion-list.w100 {margin-left: -2rem; margin-right: -2rem;}
 

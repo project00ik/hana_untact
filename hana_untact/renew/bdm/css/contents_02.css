@@ -552,26 +552,28 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 /* 지점(직원)검색 */
 .branch-result-wrap {padding: 0 2.4rem;}
-.branch-result-wrap .accordion-list-wrap {width: calc(100% + 4.8rem); margin: 1.6rem -2.4rem 0;}
-.branch-result-wrap .accordion-list .top {padding: 2.4rem 4.8rem 2.4rem 2.4rem;}
+.branch-result-wrap .accordion-list-wrap {margin-top: 0.8rem;}
+/* .branch-result-wrap .accordion-list-wrap {width: calc(100% + 4.8rem); margin: 1.6rem -2.4rem 0;} */
+/* .branch-result-wrap .accordion-list .top {padding: 2.4rem 4.8rem 2.4rem 2.4rem;} */
 .branch-result-wrap .accordion-list .top:before {right: 2.4rem;}
-.branch-result-wrap .accordion-list .con {padding: 1.6rem 2.4rem; background: #f9f9fb;}
+/* .branch-result-wrap .accordion-list .con {padding: 1.6rem 2.4rem; background: #f9f9fb;} */
 .check-list .checkbox-wrap label {display: flex;}
 .check-list.align-justify .checkbox-wrap label {justify-content: space-between;}
 .check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
+.check-list .checkbox-wrap label > span.branch-txt {font-size: 1.6rem; color: #333;}
 .check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
-.check-list .checkbox-wrap input:checked + label * {color: #009591;}
+.check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 500;}
 .check-list > li + li {margin-top: 1.2rem;}
 .check-list > li.big-chk {font-size: 1.6rem; color: #333;}
 .check-list > li.big-chk + li {margin-top: 1.6rem;}
-.staff-list-wrap .line-check-list {margin: 1.6rem -2.4rem 0;}
+.staff-list-wrap .line-check-list {margin: 0.8rem 0 0;}
 .line-check-list .checkbox-wrap label {display: flex;}
 .line-check-list.align-justify .checkbox-wrap label {justify-content: space-between;}
 .line-check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
 .line-check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
-.line-check-list .checkbox-wrap.sm label {padding: 2rem 2.4rem 2rem 4.6rem;}
-.line-check-list .checkbox-wrap.sm label::before {top: 2rem; left: 2.4rem;}
-.line-check-list .checkbox-wrap input:checked + label * {color: #009591;}
+.line-check-list .checkbox-wrap.sm label {padding: 2.4rem 0 2.4rem 2rem;}
+.line-check-list .checkbox-wrap.sm label::before {top: 2.4rem; left: 0;}
+.line-check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 500;}
 .line-check-list {border-top: 0.1rem solid #e7e9ee;}
 .line-check-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .line-check-list > li.big-chk {font-size: 1.6rem; color: #333;}
