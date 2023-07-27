@@ -146,7 +146,7 @@
                                 <!-- 에러메세지 -->
                                 <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                             </div>
-                            <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
+                            <!-- 삭제 select(슬라이드 달력)로 수정 <div class="form-area">
                                 <div class="input__wrap">
                                     <div class="form-item input input--on">
                                         <div class="input__inner">
@@ -156,9 +156,23 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- 에러메세지 -->
                                 <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div> -->
+                            <!-- select -->
+                            <div class="form-area">
+                                <div class="form-item select-wrap btn-date select--active">
+                                    <div class="select">
+                                        <div class="select-label">개업연월일</div>
+                                        <div class="select__inner">
+                                            <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#slideCalendar03" id="dialOpenBtn3" title="개업연월일 선택">
+                                                <span>2019.01.01</span> 
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+                                </div>
                             </div>
+                            <!--// select -->
                             <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                                 <div class="input__wrap">
                                     <div class="form-item input input--on">
@@ -245,6 +259,7 @@
     <script type="text/javascript" src="../js/slick.js"></script>
     <script type="text/javascript" src="../js/touch-dnd.js"></script>
     <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
 
     <!-- 모달레이어 - 주소검색(검색 전) -->
@@ -480,6 +495,64 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
+    <!-- 모달레이어 - 개업연월일 -->
+    <div id="slideCalendar03" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__header">
+                <h1 class="title">개업연월일 선택</h1>
+            </div>
+            <div class="modal__contents modal__contents--inner-tab">
+                <!-- D: 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다. -->
+                <div class="tab-list-wrap" data-element="tab" data-options='{"initIndex":1}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-list tab-wrap__menu">
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">간편 설정</a>
+                            </li>
+                            <li class="tab tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor">직접 설정</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel  col-1">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                    <div class="pualugin-tab__panel is-active" data-element="tab__panel">
+                        
+                        <!-- 달력 -->
+                        <div class="modal__contents--multiple">
+                            <div class="container__panel col-3" title="년, 월, 일 순으로 순차 선택 시 다음 선택이 가능합니다.">
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                                <div class="list-section">
+                                    <!-- 옵션 아이템 동적 생성 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 달력 -->
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+        </div>
+    </div>
+    <!--// 모달레이어 - 개업연월일 -->
     
     <script>
         
@@ -494,6 +567,26 @@
             $('.form-hide-wrap').removeClass('formHide');
         }
 
+    </script>
+    <script type="text/javascript" aria-hidden="true">
+        // slideCalendar.js
+        //퍼블 화면 확인용
+        $(function(){
+        
+            // 직접 선택만 있는 케이스
+            $('#dialOpenBtn3').click(function(){
+                //멀티 다이얼 호출
+                var param = {
+                    min : 6,
+                    max : 48
+                };
+        
+                hanaProdUI.dialSelect('#slideCalendar03', param , function(ui){
+                    console.log('callback', ui)
+                });
+            });
+            // modalOpen('slideCalendar03');
+        });
     </script>
 
 </body>
