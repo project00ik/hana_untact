@@ -269,23 +269,24 @@ var hanaUI = {
                     }
                     
                 },
-                'keydown': function (e) { 
-                    var $target = $(e.target);
-                    if ($target.closest('.form-area').parents().hasClass('form-move-wrap')) {
-                        if (e.keyCode === 13 || e.keyCode === 9) { 
-                            $('.btn__form-next-depth').trigger('click');
-                        }
-                    } else {
-                        if (e.keyCode === 13 || e.keyCode === 9) { 
-                            $('.btn__form-next').trigger('click');
-                        }
-                    }
-                    if($target.closest('.form-area').hasClass('last_form-area')){
-                        if (e.keyCode === 13 || e.keyCode === 9) { 
-                            $('.btn__form-next').trigger('click');
-                        }
-                    }
-                },
+                // 개발 요청 주석처리
+                // 'keydown': function (e) { 
+                //     var $target = $(e.target);
+                //     if ($target.closest('.form-area').parents().hasClass('form-move-wrap')) {
+                //         if (e.keyCode === 13 || e.keyCode === 9) { 
+                //             $('.btn__form-next-depth').trigger('click');
+                //         }
+                //     } else {
+                //         if (e.keyCode === 13 || e.keyCode === 9) { 
+                //             $('.btn__form-next').trigger('click');
+                //         }
+                //     }
+                //     if($target.closest('.form-area').hasClass('last_form-area')){
+                //         if (e.keyCode === 13 || e.keyCode === 9) { 
+                //             $('.btn__form-next').trigger('click');
+                //         }
+                //     }
+                // },
                 'blur' : function(e){
                     var $target = $(e.target);
                     hanaUI.native.bottomShow();
@@ -697,9 +698,11 @@ var hanaUI = {
         }
         
         // 계속 버튼
-        $('.btn__form-next').on('click', function(){
-            formNext();
-        });
+        if (inputArrIndex == 0) { 
+            $('.btn__form-next').on('click', function(){
+                formNext();
+            });
+        }
 
         // 하위 인풋 여러개
         // $('body').on('focus click', '.form-area', function () {
@@ -794,7 +797,7 @@ var hanaUI = {
         
 
     },
-    
+
     // 툴팁
     tooltip : function(){
 
@@ -1876,4 +1879,180 @@ function swiperTabSlide(target , num) {
         $(this).closest('.tab-slide-list').find('.tab').attr('aria-selected', 'false');
         $(this).attr('aria-selected', 'true');
     });
+}
+
+/**
+ * @function pualugin
+ * @definition pualugin 제어
+ * 
+ **/
+pualugin = {
+	/**
+	 * pualugin 
+	 * 
+	 * @example $.pualugin.reInit();		//전체 reinit
+	 * @example $.pualugin.reInit("modal");	//"modal" reinit
+	 */
+	reInit : function(pluginName){
+		
+		if (!isNull(pluginName)){//pluginName NULL이 아닐 경우 테스트필요
+			
+			if (pluginName == "modal"){
+				if ($('body').data('plugin_modal') == null){
+					$('body').modal();
+				}else{
+					//alert가 올라온 상태에서는 modal reInit 하지 않음
+					if ($("div.pualugin-modal div.modal--alert.is-open").length == 0){
+						$('body').data('plugin_modal').reInit();
+					}
+				}
+				//modal--slide 뒤로 modal--alert, modal--confirm 이 위치하도록 이동
+				$(".pualugin-modal").each(function(){
+					if ($(this).html() == ""){
+						$(this).remove();
+					}
+				});
+				$(".pualugin-modal .modal--alert,.modal--confirm").appendTo(".pualugin-modal:last");
+			}else if (pluginName == "toggle" && $("[data-element=toggle]").find("[data-element]").length > 0){
+				$('[data-element=toggle]').each(function(){
+					if ($(this).data('plugin_toggle') == null){
+						$(this).toggle();
+					}else{
+						$(this).data('plugin_toggle').reInit();
+					}
+				});
+			}else if (pluginName == "tooltip" && $("[data-element=tooltip]").find("[data-element]").length > 0){
+				$('[data-element=tooltip]').each(function(){
+					if ($(this).data('plugin_tooltip') == null){
+						$(this).tooltip();
+					}else{
+						$(this).data('plugin_tooltip').reInit();
+					}
+				});
+			}else if (pluginName == "tab" && $("[data-element=tab]").find("[data-element]").length > 0){
+				$('[data-element=tab]').each(function(){
+					if ($(this).data('plugin_tab') == null){
+						$(this).tab();
+					}else{
+						$(this).data('plugin_tab').reInit();
+					}
+				});
+			}else if (pluginName == "accordion" && $("[data-element=accordion]").find("[data-element]").length > 0){
+				$('[data-element=accordion]').each(function(){
+					if ($(this).data('plugin_accordion') == null){
+						$(this).accordion();
+					}else{
+						$(this).data('plugin_accordion').reInit();
+					}
+				});
+			}else if (pluginName == "sticky" && $("[data-element=sticky]").find("[data-element]").length > 0){
+				$('[data-element=sticky]').each(function(){
+					if ($(this).data('plugin_sticky') == null){
+						$(this).sticky();
+					}else{
+						$(this).data('plugin_sticky').reInit();
+					}
+				});
+			}else if (pluginName == "formCtrl" && $("[data-element=form-ctrl]").find("[data-element]").length > 0){
+				$("[data-element=form-ctrl]").formCtrl();
+			}else if (pluginName == "checkbox" && $("[data-element=checkbox]").find("[data-element]").length > 0){
+				$("[data-element="+pluginName+"]").checkbox();
+			}else if (pluginName == "customSlick" && $("[data-element=slick]").find("[data-element]").length > 0){
+				$('[data-element=slick]').customSlick();
+			}else if (pluginName == "select" && $("[data-element=select]").find("[data-element]").length > 0){
+				$("[data-element="+pluginName+"]").select();
+			}
+			
+		}else{
+			if ($('body').data('plugin_modal') == null){
+				$('body').modal();
+			}else{
+				
+				//$(".pualugin-modal")내부 element정리 
+				$(".pualugin-modal").each(function(){
+					$(this).children().each(function() {
+						
+						if($("#" + bdm.HANA_CONTENT + " #" + $(this).attr('id')).length > 0 
+						|| $("#" + bdm.HANA_SUB_CONTENT + " #" + $(this).attr('id')).length > 0) {
+							$(this).remove();
+						}
+					});
+				});
+				
+				
+				//alert가 올라온 상태에서는 modal reInit 하지 않음
+				if ($("div.pualugin-modal div.modal--alert.is-open").length == 0){
+					$('body').data('plugin_modal').reInit();
+				}
+			}
+			
+			$(".pualugin-modal").each(function(){
+				if ($(this).html() == ""){
+					$(this).remove();
+				}
+			});
+			
+			
+			//하위에 data-element 가 있어야 reinit 수행해야 한다.
+			if ($("[data-element=toggle]").find("[data-element]").length > 0){
+				$('[data-element=toggle]').each(function(){
+					if ($(this).data('plugin_toggle') == null){
+						$(this).toggle();
+					}else{
+						$(this).data('plugin_toggle').reInit();
+					}
+				});
+			}
+			if ($("[data-element=tooltip]").find("[data-element]").length > 0){
+				$('[data-element=tooltip]').each(function(){
+					if ($(this).data('plugin_tooltip') == null){
+						$(this).tooltip();
+					}else{
+						$(this).data('plugin_tooltip').reInit();
+					}
+				});
+			}
+			if ($("[data-element=tab]").find("[data-element]").length > 0){
+				$('[data-element=tab]').each(function(){
+					if ($(this).data('plugin_tab') == null){
+						$(this).tab();
+					}else{
+						$(this).data('plugin_tab').reInit();
+					}
+				});
+			}
+			if ($("[data-element=accordion]").find("[data-element]").length > 0){
+				$('[data-element=accordion]').each(function(){
+					if ($(this).data('plugin_accordion') == null){
+						$(this).accordion();
+					}else{
+						$(this).data('plugin_accordion').reInit();
+					}
+				});
+			}
+			if ($("[data-element=sticky]").find("[data-element]").length > 0){
+				$('[data-element=sticky]').each(function(){
+					if ($(this).data('plugin_sticky') == null){
+						$(this).sticky();
+					}else{
+						$(this).data('plugin_sticky').reInit();
+					}
+				});
+			}
+			if ($("[data-element=form-ctrl]").find("[data-element]").length > 0){
+				$("[data-element=form-ctrl]").formCtrl();
+			}
+			if ($("[data-element=checkbox]").find("[data-element]").length > 0){
+				$("[data-element=checkbox]").checkbox();
+			}
+			if ($("[data-element=slick]").find("[data-element]").length > 0){
+				$('[data-element=slick]').customSlick();
+			}
+			if ($("[data-element=select]").find("[data-element]").length > 0){
+				$('[data-element=select]').select();
+			}
+			
+		}
+		
+	}
 }
