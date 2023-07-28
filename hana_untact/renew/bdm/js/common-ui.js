@@ -582,7 +582,7 @@ var hanaUI = {
         event();
     },
     
-    formFocusEvent: function (num, isReverse) {  // 폼 포커스(Revers) 직접 지정용
+    formFocusEvent: function (num, isReverse, isInitIndex) {  // 폼 포커스(Revers) 직접 지정용
 
         var inputArrIndex = num; // 페이지하단에 지정한 숫자
         var inputArr = [];
@@ -698,8 +698,8 @@ var hanaUI = {
         }
         
         // 계속 버튼
-        if (inputArrIndex == 0) { 
-            $('.btn__form-next').on('click', function(){
+        if (isInitIndex) { 
+        	$('.btn__form-next').off('click').on('click', function(){
                 formNext();
             });
         }
@@ -1879,6 +1879,23 @@ function swiperTabSlide(target , num) {
         $(this).closest('.tab-slide-list').find('.tab').attr('aria-selected', 'false');
         $(this).attr('aria-selected', 'true');
     });
+}
+
+//input id의 index
+//inputIdIndex('input id값');
+function inputIdIndex(id) { 
+ var ipId = $('#' + id);
+ var ipIdIndex = ipId.closest('.form-area').index();
+ var ipIdIndex2 = ipId.closest('.form-area').parents('.form-area').index();
+ if (ipId.parents('.form-area').length == 1){
+     console.log(ipIdIndex);
+     $('.cont-form--animate > .form-area').eq(ipIdIndex).css('background','yellow');
+ }
+ 
+ if(ipId.parents('.form-area').length > 1){
+     console.log(ipIdIndex2);
+     $('.form-area').eq(ipIdIndex2).css('background', 'red');
+ }
 }
 
 /**
