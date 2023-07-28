@@ -89,10 +89,11 @@
 /* intro 계좌 개설 절차 */
 .intro-start-wrap {padding: 0 2.4rem;}
 .intro-title {margin-top: 4.4rem; font-size: 3.2rem; color: #000;}
-.intro-step-list {margin-top: 7.2rem;}
-.intro-step-list li {font-size: 1.8rem; color: #666;}
-.intro-step-list li + li {margin-top: 2.4rem;}
-.intro-step-list .num {display: inline-block; margin-right: 0.4rem; width: 2.2rem; height: 2.2rem; line-height: 1.5; font-size: 1.4rem; color: #fff; font-weight: 500; text-align: center; background-color: #262b45; border-radius: 50% 50%; vertical-align: bottom;}
+.intro-step-list {margin-top: 6.4rem;}
+.intro-step-list li {position: relative; font-size: 1.6rem; color: #000; font-weight: 500;}
+.intro-step-list li + li {padding-top: 3.2rem;}
+.intro-step-list li + li::before {content: ''; display: block; position: absolute; left: 1.1rem; top: 0; width: 0.1rem; height: 3.2rem; border-left: 1px dotted #b3b3b3;}
+.intro-step-list .num {display: inline-block; margin-right: 1.6rem; width: 2.4rem; height: 2.4rem; line-height: 2.4rem; font-size: 1.3rem; color: #fff; font-weight: 500; text-align: center; background-color: #262b45; border-radius: 50% 50%;}
 
 /* 서비스 가이드 */
 .service-guide-wrap .tab-con {margin-top: 1.6rem; padding: 0 2.4rem;}
@@ -307,11 +308,13 @@
 .card-box .checkbox-wrap.sm label::before {left: 2.4rem; top: 50%; margin-top: -0.9rem;}
 .card-box .checkbox-wrap.sm .title {display: inline-block; padding-left: 0.6rem; color : #333;}
 .card-box .checkbox-wrap.sm .icon-bank {width: 2rem; height: 2rem;}
-.card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
+.card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; font-size: 1.4rem; color : #999;}
+.card-list-wrap .checkbox-wrap input:checked + label::after {content: ''; display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 2px solid #009591; border-radius: 1.8rem 1.8rem; box-sizing: border-box;}
 
 .card-list-wrap li {margin-top: 1.6rem;}
 .card-list-wrap li:first-child {margin-top: 0;}
 .card-list-wrap + .btn-center-wrap {margin-top: 2.3rem;}
+.card-list-wrap .radio-wrap input:checked + label::after {content: ''; display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 2px solid #009591; border-radius: 1.8rem 1.8rem; box-sizing: border-box;}
 
 .card-box .btn-box-arrow {padding: 2.4rem; display: block; width: 100%; background: url(../images/icon/ico-system-arrow-right-m.png) top 2.6rem right 2.4rem no-repeat; background-size: 1.6rem 1.6rem; color: #333; font-weight: 700; text-align: left;}
 .card-box .btn-card-delete {width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 2.4rem; right: 2.4rem;}
