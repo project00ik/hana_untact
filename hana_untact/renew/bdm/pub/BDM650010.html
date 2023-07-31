@@ -135,7 +135,7 @@
                 <!-- 얼굴 인식 영역 -->
                 <div class="uface-wrap">
                     <!-- D: 활성화 시 : class="loading active" -->
-                    <div class="loading active">
+                    <div class="loading">
                         <div class="spinner">
                             <div></div>
                             <div></div>
@@ -151,7 +151,7 @@
                             <div></div>
                         </div>
                     </div>
-                    
+
                     <div class="uface-content">
                         <!-- 진행단계 안내 -->
                         <div class="face-progress">
@@ -163,11 +163,36 @@
                                 </ul>
                             </div>
                         </div>
+                        <!-- <div class="face-progress">
+                            <div class="stepper" role="img" aria-label="3단계 중 2단계" tabindex="0">
+                                <ul>
+                                    <li class="stepper__step">1</li>
+                                    <li class="stepper__step on">2</li>
+                                    <li class="stepper__step">3</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                        <!-- <div class="face-progress">
+                            <div class="stepper" role="img" aria-label="3단계 중 3단계" tabindex="0">
+                                <ul>
+                                    <li class="stepper__step">1</li>
+                                    <li class="stepper__step">2</li>
+                                    <li class="stepper__step on">3</li>
+                                </ul>
+                            </div>
+                        </div> -->
                         <!--// 진행단계 안내 -->
 
+                        <!-- 
+                            * 얼굴라인 가이드 class 설명 :
+                            video-box : 얼굴 정면 가이드
+                            video-box faceR : 얼굴 오른쪽 가이드 
+                            video-box faceL : 얼굴 왼쪽 가이드
+                         -->
                         <div class="video-box faceR">
                             <!-- 카메라 -->
                             <div class="video-box-inner">
+                                <!-- 가이드라인 영역 -->
                                 <div class="guideline-box">
                                     <!-- 
                                         얼굴인식 성공 / 실패 감지될 때
@@ -182,14 +207,14 @@
                                     <!-- 인식 실패 -->
                                     <!-- <div class="face fail"></div> -->
                                     <!-- //video 위에 얼굴 가이드라인 -->
-        
-                                    <!-- video 위에 신분증 가이드라인 (with가 표시되어야 노출 됨, with가 없다면 삭제 가능)-->
-                                    <div class="idcard"></div>
-                                    <!-- //video 위에 신분증 가이드라인 -->
                                 </div>
+                                <!--// 가이드라인 영역 -->
+                                
+                                <!-- 비디오 영역 -->
                                 <video class="face-view reverse" width="300" height="300" id="face_verify" muted="" playsinline="">
                                     Your browser does not support HTML video.
                                 </video>
+                                <!--// 비디오 영역 -->
                             </div>
                             <!--// 카메라 -->
 
