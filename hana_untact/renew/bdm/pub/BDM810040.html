@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <!-- <button class="btn-back" title="이전 화면"></button> -->
+            <!-- <p class="page-tit">추가확인</p> -->
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="container">
+                    <div class="complete-step-wrap">
+                        
+                        <p class="title-complete">증권계좌 신청하고<br>가상계좌이체를 진행해 주세요</p>
+                        
+                        <ul class="stepper-wrap" role="img" aria-label="5단계 중 5단계 증권계좌 신청" tabindex="0">
+                            <li class="step end">
+                                <i class="dot"></i>
+                                <span class="text">개설<br>신청</span>
+                            </li>
+                            <li class="step end">
+                                <i class="dot"></i>
+                                <span class="text">본인<br>확인</span>
+                            </li>
+                            <li class="step ing">
+                                <i class="dot"></i>
+                                <span class="text">추가<br>인증</span>
+                            </li>
+                            <li class="step">
+                                <i class="dot"></i>
+                                <span class="text">개설<br>완료</span>
+                            </li>
+                            <li class="step ing text-long">
+                                <i class="dot"></i>
+                                <span class="text">증권계좌<br>신청</span>
+                            </li>
+                        </ul>
+
+                        <div class="card-box">
+                            <div class="inbox">
+                                <div class="list-wrap type02">
+                                    <dl>
+                                        <dt>추가인증 상태</dt>
+                                        <dd>가상계좌이체 대기</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>입금마감 예정일</dt>
+                                        <dd>2023.05.31</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>입금가상계좌</dt>
+                                        <dd>하나은행 621-12345-12345</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>입금금액</dt>
+                                        <dd>10,000원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>출금계좌</dt>
+                                        <dd>국민은행 **12345***</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="font-14 mt10">이체기한이 지나면 자동 취소됩니다.</p>
+                        
+                        <div class="tg-text tg--area">
+							<div class="tg-text-cont tg--layer">
+                                <ul class="complete-list-wrap">
+                                    <li>
+                                        <div class="list-wrap type03">
+                                            <p class="title">%하나플러스 통장%<span class="badge red">미승인</span></p>
+                                            <p class="text-sub">
+                                                최종 승인 시 문자메시지로 알려 드립니다.
+                                            </p>                                            
+                                        </div>
+                                    </li>
+                                </ul>
+							</div>
+							<div class="tg-btn" role="button" aria-expanded="false" onclick="toggleLayer(this);">
+								<button type="button" class="off">상세정보 열기</button>                                
+								<button type="button" class="on">상세정보 닫기</button>
+							</div>
+						</div>
+                        <ul class="dot-list3">
+							<li>
+                                금융회사는 <span class="tp-green">「금융소비자보호에 관한 법률(시행일 2021. 03.25)」 제23조(계약서류의 제공의무)</span>를 준수하며 주요 계약 서류는 계약체결 완료 후 선택한 방법으로 제공됩니다.
+                            </li>    
+                            <li>
+                                계약정보는 [메뉴 &gt; 상품관리 &gt; 예금/신탁 &gt; 예금조회/관리 &gt; 계좌정보]에서 확인할 수 있습니다.
+                            </li>    
+                            <li>
+                                적용금리는 현재 시점 기준이며, 실제 기본(우대) 이자율 적용은 제공받은 약관 및 설명서를 따릅니다.
+                            </li>    
+                            <li>
+                                연계 &#183; 제휴서비스 등은 해당 상품의 약관 및 설명서를 따릅니다.
+                            </li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- //Content -->
+            
+        <!-- footer -->
+        <div class="app-footer">
+            <div class="btn-group-wrap">
+                <div class="toast-popup-wrap complete-step">
+                    <div class="toast-popup">
+                        <p class="txt">증권계좌 신청 동의 화면으로 이동해요!</p>
+                    </div>
+                </div>
+                <button type="button" class="btn" title="증권계좌 신청 동의 화면 이동">증권계좌 신청</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+            </div>
+        </div>
+        <!-- //footer -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+</body>
+</html>
