@@ -646,8 +646,15 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .popup-wrap.alert.face-popup .modal__btn--close {z-index: 110;}
 .popup-wrap.alert.face-popup .modal__contents {padding: 0;}
 
-.face-recognition-wrap {padding-top: 154px; text-align: center; position: relative;}
+.face-recognition-wrap {padding-top: 154px; text-align: center; position: relative; font-size: 0;}
 .popup-wrap .face-recognition-wrap .toast-popup-wrap .toast-popup {margin-top: 90px;}
+.content-area .face-recognition-wrap {padding-top: 9.2rem;}
+.content-area .face-recognition-wrap .toast-popup-wrap {
+    opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%);
+    animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.3s; animation-iteration-count: 1; animation-fill-mode: forwards;
+}
+.content-area .face-recognition-wrap .toast-popup-wrap .toast-popup {margin-top: 3rem;}
+
 .face-recognition-wrap .face-icon {width: 9.8rem; height: 9.8rem; display: inline-block;}
 .face-recognition-wrap .info-txt {margin-top: 1.6rem; font-size: 1.8rem; color: #666;}
 .face-recognition-wrap .face-loading {background: url(../images/icon/icon_face_loading.svg) 0 0 no-repeat; background-size: 100% auto;}
