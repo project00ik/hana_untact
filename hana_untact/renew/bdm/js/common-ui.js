@@ -1884,18 +1884,37 @@ function swiperTabSlide(target , num) {
 //input id의 index
 //inputIdIndex('input id값');
 function inputIdIndex(id) { 
- var ipId = $('#' + id);
- var ipIdIndex = ipId.closest('.form-area').index();
- var ipIdIndex2 = ipId.closest('.form-area').parents('.form-area').index();
- if (ipId.parents('.form-area').length == 1){
-     console.log(ipIdIndex);
-     $('.cont-form--animate > .form-area').eq(ipIdIndex).css('background','yellow');
- }
- 
- if(ipId.parents('.form-area').length > 1){
-     console.log(ipIdIndex2);
-     $('.form-area').eq(ipIdIndex2).css('background', 'red');
- }
+    var ipId = $('#' + id);
+    var totalForm = $('.cont-form--animate > .form-area').last().index();
+    var ipIdIndex = totalForm - ipId.closest('.form-area').index();
+    var ipIdIndex2 = totalForm - ipId.closest('.form-area').parents('.form-area').index();
+    var formActiveLastIndex = totalForm - $('.cont-form--animate > .form-area.form--active').first().index();
+    console.log('formActiveLastIndex', formActiveLastIndex)
+    
+    if (ipId.parents('.form-area').length == 1){
+
+        console.log('ipIdIndex', ipIdIndex);
+        hanaUI.formFocusEvent(ipIdIndex, true, true);
+        
+        // id index가 form--active의 마지막 인지 아닌지
+        if (formActiveLastIndex == ipIdIndex) {
+            console.log('active의 마지막');
+        } else { 
+            console.log('active의 마지막이 아님');
+        }
+    }
+    // form-area가 form-area에 감싸져 있는 경우
+    if(ipId.parents('.form-area').length > 1){
+        console.log('ipIdIndex2', ipIdIndex2);
+        hanaUI.formFocusEvent(ipIdIndex2, true, true);
+
+        // id index가 form--active의 마지막 인지 아닌지
+        if (formActiveLastIndex == ipIdIndex2) {
+            console.log('active의 마지막');
+        } else { 
+            console.log('active의 마지막이 아님');
+        }
+    }
 }
 
 /**
