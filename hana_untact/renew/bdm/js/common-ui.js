@@ -1884,38 +1884,75 @@ function swiperTabSlide(target , num) {
 //input id의 index
 //inputIdIndex('input id값');
 function inputIdIndex(id) { 
-    var ipId = $('#' + id);
-    var totalForm = $('.cont-form--animate > .form-area').last().index();
-    var ipIdIndex = totalForm - ipId.closest('.form-area').index();
-    var ipIdIndex2 = totalForm - ipId.closest('.form-area').parents('.form-area').index();
-    var formActiveLastIndex = totalForm - $('.cont-form--animate > .form-area.form--active').first().index();
-    console.log('formActiveLastIndex', formActiveLastIndex)
-    
-    if (ipId.parents('.form-area').length == 1){
-
-        console.log('ipIdIndex', ipIdIndex);
-        hanaUI.formFocusEvent(ipIdIndex, true, true);
-        
-        // id index가 form--active의 마지막 인지 아닌지
-        if (formActiveLastIndex == ipIdIndex) {
-            console.log('active의 마지막');
-        } else { 
-            console.log('active의 마지막이 아님');
-        }
-    }
-    // form-area가 form-area에 감싸져 있는 경우
-    if(ipId.parents('.form-area').length > 1){
-        console.log('ipIdIndex2', ipIdIndex2);
-        hanaUI.formFocusEvent(ipIdIndex2, true, true);
-
-        // id index가 form--active의 마지막 인지 아닌지
-        if (formActiveLastIndex == ipIdIndex2) {
-            console.log('active의 마지막');
-        } else { 
-            console.log('active의 마지막이 아님');
-        }
-    }
+  var ipId = $('#' + id);
+  var totalForm = $('.cont-form--animate > .form-area').last().index();
+  var ipIdIndex = totalForm - ipId.closest('.form-area').index();
+  var ipIdIndex2 = totalForm - ipId.closest('.form-area').parents('.form-area').index();
+  var formActiveLastIndex = totalForm - $('.cont-form--animate > .form-area.form--active').first().index();
+  
+  if (ipId.parents('.form-area').length == 1){
+	  return ipIdIndex;
+      // id index가 form--active의 마지막 인지 아닌지
+      if (formActiveLastIndex == ipIdIndex) {
+          console.log('active의 마지막');
+      } else { 
+          console.log('active의 마지막이 아님');
+      }
+  }
+  
+  // form-area가 form-area에 감싸져 있는 경우
+  if(ipId.parents('.form-area').length > 1){
+      console.log('ipIdIndex2', ipIdIndex2);
+      return ipIdIndex2;
+      // id index가 form--active의 마지막 인지 아닌지
+      if (formActiveLastIndex == ipIdIndex2) {
+          console.log('active의 마지막');
+      } else { 
+          console.log('active의 마지막이 아님');
+      }
+  }
 }
+
+/**
+ * findNextFocusIndex
+ * @desc 다음 포커스 인덱스 찾기
+ * 			선택 값에 따라 formHide되는 경우가 있는데
+ * 			사용자가 입력 도중에 아래로 내려와서 선택 값에 따라 formHide되는 항목을 변경했을 때
+ * 			위쪽항목이 모두 초기화되고 formHide되는 상황이라면 필요함.
+ * 
+ * @param id		현재 요소의 id값
+ * @return number   다음포커스 index  (만약에 다음 포커스가 없으면 -1)*/
+function findNextFocusIndex(id) {
+	var formList = $(".cont-form--animate").find(">.form-area").get().reverse();
+	var currentIndex = inputIdIndex(id);
+	var nextIndex = currentIndex;
+	
+	while( $(list).eq(currentIndex+1).is(".formHide")) {
+		nextIndex++;
+	}
+	
+	if(currentIndex == nextIndex) {
+		return -1;				// 다음포커스가 없으면 -1
+	} else {
+		return nextIndex;		// 다음포커스가 있으면 다음 index
+	}
+}
+
+/**
+ * isLastActiveObj
+ * @desc  활성화 된 것 중 마지막 인지 여부 (form--active 된 것중 마지막에 위치해있는가?)
+ * 			입력 도중 사용자가 아래에 내려가서 이미 입력한 값을 수정하는 경우
+ * 			다음 포커스로 가면 안되는데 다음 포커스로 이벤트 발생시키는 상황이 있어서 만듬.
+ * 
+ * @param id		요소의 id값
+ * @return boolean  활성화 된 항목 중 마지막 항목이면 true 아니면 false */
+function isLastActiveObj(id) {
+	var formActiveList = $(".cont-form--animate").find(">.form--active").get().reverse();
+	var currentIndex = inputIdIndex(id);
+	return $(formActiveList).last().is($(formActiveList).eq(currentIndex));
+}
+
+
 
 /**
  * @function pualugin
