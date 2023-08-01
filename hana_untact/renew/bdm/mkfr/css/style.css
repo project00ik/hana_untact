@@ -298,3 +298,12 @@
 
 .uface-wrap .end {background-color: #fff; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 150; display: none;}
 .uface-wrap .end.active {display: flex;}
+
+/* 추가확인 얼굴인증 */
+.content-area .uface-wrap .uface-content {max-width: 300px; margin: 0 auto; position: relative;}
+.content-area .uface-content .video-box .video-box-inner {border-radius: 1.4rem; overflow: hidden;}
+.content-area .uface-content .textguide-box {height: auto; display: block; padding: 2.4rem; line-height: 1.4;}
+
+@media (max-width: 321px) {
+  .content-area .uface-wrap {margin: 0 -2.4rem;}
+}

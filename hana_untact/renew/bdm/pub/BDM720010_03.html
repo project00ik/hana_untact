@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">추가인증</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 6단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step">4</li>
+                            <li class="stepper__step">5</li>
+                            <li class="stepper__step on">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">얼굴인증을 시작할게요</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap">
+                        <div class="content-area">
+                            <!-- 얼굴 인식 영역 -->
+                            <div class="uface-wrap">
+                                <!-- D: 활성화 시 : class="loading active" -->
+                                <div class="loading">
+                                    <div class="spinner">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+
+                                <div class="uface-content">
+                                    <!-- 진행단계 안내 -->
+                                    <div class="face-progress">
+                                        <div class="stepper" role="img" aria-label="3단계 중 1단계" tabindex="0">
+                                            <ul>
+                                                <li class="stepper__step on">1</li>
+                                                <li class="stepper__step">2</li>
+                                                <li class="stepper__step">3</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="face-progress">
+                                        <div class="stepper" role="img" aria-label="3단계 중 2단계" tabindex="0">
+                                            <ul>
+                                                <li class="stepper__step">1</li>
+                                                <li class="stepper__step on">2</li>
+                                                <li class="stepper__step">3</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                    <!-- <div class="face-progress">
+                                        <div class="stepper" role="img" aria-label="3단계 중 3단계" tabindex="0">
+                                            <ul>
+                                                <li class="stepper__step">1</li>
+                                                <li class="stepper__step">2</li>
+                                                <li class="stepper__step on">3</li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                    <!--// 진행단계 안내 -->
+
+                                    <!-- 
+                                        * 얼굴라인 가이드 class 설명 :
+                                        video-box : 얼굴 정면 가이드
+                                        video-box faceR : 얼굴 오른쪽 가이드 
+                                        video-box faceL : 얼굴 왼쪽 가이드
+                                    -->
+                                    <div class="video-box">
+                                        <!-- 카메라 -->
+                                        <div class="video-box-inner">
+                                            <!-- 가이드라인 영역 -->
+                                            <div class="guideline-box">
+                                                <!-- 
+                                                    얼굴인식 성공 / 실패 감지될 때
+                                                    default: add 값 없음
+                                                    아래 div에 control :/success/ fail
+                                                    -->
+                                                <!-- video 위에 얼굴 가이드라인 -->
+                                                <!-- default -->
+                                                <!-- <div class="face"></div> -->
+                                                <!-- 인식 성공 -->
+                                                <div class="face success"></div>
+                                                <!-- 인식 실패 -->
+                                                <!-- <div class="face fail"></div> -->
+                                                <!-- //video 위에 얼굴 가이드라인 -->
+                                            </div>
+                                            <!--// 가이드라인 영역 -->
+                                            
+                                            <!-- 비디오 영역 -->
+                                            <video class="face-view reverse" width="300" height="300" id="face_verify" muted="" playsinline="" style="background: lightblue">
+                                                Your browser does not support HTML video.
+                                            </video>
+                                            <!--// 비디오 영역 -->
+                                        </div>
+                                        <!--// 카메라 -->
+
+                                        <!-- 가이드 문구 -->
+                                        <div class="face-guide-info textguide-box">
+                                            <!-- 
+                                                얼굴 좌측 감지: faceL
+                                                얼굴 정면 감지: faceF
+                                                얼굴 우측 감지: faceR 
+                                                상위그룹 상태 값에 따라 안내 문구 show/hide
+                                            -->
+                                            <!-- <p class="text">얼굴을 보여 주세요</p> -->
+                                            <!-- <p class="text">눈을 크게 떠 주세요</p> -->
+                                            <p class="text">눈을 깜빡여 주세요</p>
+                                            <!-- default 안내 문구 -->
+                                            <!-- <p class="text front">정확한 얼굴 확인을 위하여<br>마스크와 선글라스를 벗어주세요.</p> -->
+                                            <!-- 좌/우 방향 회전 안내 문구 -->
+                                            <!-- <p class="text side">얼굴을 화살표 방향으로 천천히 돌리고<br>다시 정면으로 원위치 합니다.</p> -->
+                                        </div>
+                                        <!--// 가이드 문구 -->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!--// 얼굴 인식 영역 -->
+
+                            <!-- 얼굴인식 css -->
+                            <link rel="stylesheet" href="../../bdm/mkfr/css/style.css" type="text/css">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            // hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalSlide01');
+
+        });
+
+    </script>
+</body>
+</html>
