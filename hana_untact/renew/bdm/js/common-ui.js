@@ -631,11 +631,26 @@ var hanaUI = {
         }
 
         function formNext() { // 계속 버튼
+        	
+        	// 현재 필드 error 상태 스킵 
+            if(inputArr.eq(inputArrIndex).hasClass('input--error')
+            		|| inputArr.eq(inputArrIndex).hasClass('select--error')) {
+            	return false;
+            }
+        	
             inputArrIndex += 1;
             // form-area hide 
             if(inputArr.eq(inputArrIndex).hasClass('formHide')) {
                 formNext();
                 return false;
+            }
+            
+            // form--active, 유효값 입력된 필드 스킵
+            if(inputArr.eq(inputArrIndex).hasClass('form--active')
+            		&& !inputArr.eq(inputArrIndex).hasClass('input--error')
+            		&& !inputArr.eq(inputArrIndex).hasClass('select--error')) {
+            	formNext();
+            	return false;
             }
             
             if(inputArr.length > inputArrIndex) {
@@ -1925,16 +1940,16 @@ function inputIdIndex(id) {
 function findNextFocusIndex(id) {
 	var formList = $(".cont-form--animate").find(">.form-area").get().reverse();
 	var currentIndex = inputIdIndex(id);
-	var nextIndex = currentIndex;
+	var nextIndex = currentIndex + 1;
 	
-	while( $(list).eq(currentIndex+1).is(".formHide")) {
+	while( $(formList).eq(nextIndex).is(".formHide")) {
 		nextIndex++;
 	}
 	
-	if(currentIndex == nextIndex) {
-		return -1;				// 다음포커스가 없으면 -1
-	} else {
+	if(formList.length -1 > nextIndex) {
 		return nextIndex;		// 다음포커스가 있으면 다음 index
+	} else {
+		return -1;				// 다음포커스가 없으면 -1
 	}
 }
 
@@ -1950,6 +1965,30 @@ function isLastActiveObj(id) {
 	var formActiveList = $(".cont-form--animate").find(">.form--active").get().reverse();
 	var currentIndex = inputIdIndex(id);
 	return $(formActiveList).last().is($(formActiveList).eq(currentIndex));
+}
+
+/**
+ * allActiveObj
+ * @desc  활성화 가능한 입력필드를 모두 노출시킨다
+ * 
+ * @param type 	true : 전체 Active(formHide 제외)
+ * 				false: 첫번째 항목 남기고 전체 Hide
+ * */
+function allActiveObj(type) {
+	
+	if(type == undefined) type = true;
+	
+	if(type){
+		$(".cont-form--animate").find(">:not('.formHide')").addClass("form--active");
+		$('.btn-last-wrap').hide();
+        $('.btn-next-wrap').show();
+	}else{
+		$(".cont-form--animate").find(">.form--active").removeClass("form--active");
+		$('.btn-last-wrap').show();
+		$('.btn-next-wrap').hide();
+		hanaUI.formFocusEvent(0, true, true);
+	}
+	return;
 }
 
 
