@@ -127,7 +127,20 @@
 								<p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
 							</div>
 						</div>
-						<!--// select -->
+						<!--// select -->                       
+                        <div class="form-area formHide">
+                            <div class="input__wrap">
+                                <div class="form-item input input--on">
+                                    <div class="input__inner">
+                                        <label for="inputText02" class="input__label" aria-hidden="true">기타 자금출처 내용</label>
+                                        <input type="text" class="input__element form__move" id="inputText02" title="기타 자금출처 내용 입력" placeholder="" value="세법상기타소득">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                        </div>
                         <!-- select -->
 						<div class="form-area">
 							<div class="form-item select-wrap">
@@ -142,7 +155,20 @@
 								<p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
 							</div>
 						</div>
-						<!--// select -->
+						<!--// select -->                        
+                        <div class="form-area formHide">
+                            <div class="input__wrap">
+                                <div class="form-item input input--on">
+                                    <div class="input__inner">
+                                        <label for="inputText02" class="input__label" aria-hidden="true">기타 거래목적 내용</label>
+                                        <input type="text" class="input__element form__move" id="inputText02" title="기타 거래목적 내용 입력" placeholder="" value="일상적인자금이전거래">
+                                        <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 에러메세지 -->
+                            <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                        </div>
                         <!-- select -->
 						<div class="form-area">
 							<div class="form-item select-wrap">
@@ -309,7 +335,7 @@
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio02" id="radio02-08" title="기타" onclick="modalClose(this);">
+                            <input type="radio" name="radio02" id="radio02-08" title="기타" onclick="modalClose(this); formShowEvent('formHide');">
                             <label for="radio02-08">기타</label>
                         </div>
                     </li>
@@ -379,7 +405,7 @@
                     </li>
                     <li>
                         <div class="radio-list-wrap">
-                            <input type="radio" name="radio03" id="radio03-10" title="기타" onclick="modalClose(this);">
+                            <input type="radio" name="radio03" id="radio03-10" title="기타" onclick="modalClose(this); formShowEvent('formHide');">
                             <label for="radio03-10">기타</label>
                         </div>
                     </li>
@@ -441,6 +467,10 @@
             // modalOpen('modalSearch01');
         })
 
+        function formShowEvent(target){
+            var formTarget = $('.'+ target);
+            formTarget.removeClass('formHide');
+        }
     </script>
 
 </body>
