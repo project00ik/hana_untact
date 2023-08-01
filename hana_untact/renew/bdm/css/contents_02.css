@@ -4,8 +4,10 @@
 .content-guide {max-width:37.5rem; padding: 2rem; margin:0 auto;}
 
 /* -- 공통 -- */
-.tooltip-inline {display: inline-flex; align-items: center; position: unset; vertical-align: middle;}
+.tooltip-inline {display: inline-flex; align-items: center; vertical-align: middle; position: unset;}
+.tooltip-inline .tooltip .btn-open {position: sticky;}
 .tooltip-inline .tooltip .tooltip-con {top: 2.8rem;}
+.tooltip-inline .tooltip .tooltip-con {width: calc(100vw - 4.8rem);}
 
 /* 검색 스크롤 관련 플로팅 */
 body.scroll--up .search-con-box,

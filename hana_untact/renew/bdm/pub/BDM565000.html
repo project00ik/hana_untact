@@ -61,7 +61,14 @@
                                 <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test1" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
                                         <input type="checkbox" name="search_checkbox" id="search_checkbox01" title="관리점/직원 찾기">
-                                        <label for="search_checkbox01">관리점/직원 찾기</label>
+                                        <label for="search_checkbox01" class="toast__label">
+                                            관리점/직원 찾기
+                                            <span class="toast-popup-wrap" aria-hidden="true">
+                                                <span class="toast-popup type02">
+                                                    <span class="txt">해당 영업점의 추천직원을 입력할 수 있어요</span>
+                                                </span>
+                                            </span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="chk-tg-cont tg--layer">
@@ -82,6 +89,33 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- 영업점과 관리직원이 모두 고정값으로 선택되어 있는 경우 추가 -->
+                        <div class="form-area">
+                            <div class="chk-tg tg--area">
+                                <div class="chk-tg-btn tg--on" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test3">
+                                    <div class="checkbox-wrap chk-type2">
+                                        <input type="checkbox" name="search_checkbox03" id="search_checkbox03" title="관리점/직원 찾기" disabled="disabled">
+                                        <label for="search_checkbox03">
+                                            관리점/직원 찾기
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="chk-tg-cont tg--layer open">
+                                    <div class="form-area mt0">
+                                        <div class="form-item input no-label input--disabled">
+                                            <div class="input__inner">
+                                                <input type="text" id="inputText01" class="input__element" title="항목명 입력폼" placeholder="" value="권영웅(1010162)" disabled="disabled">
+                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                            </div>
+                                            <!-- 에러 메시지 -->
+                                        </div>
+                                        <!-- 에러메세지 -->
+                                        <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 영업점과 관리직원이 모두 고정값으로 선택되어 있는 경우 추가 -->
 
                         <div class="form-area mt20">
                             <div class="chk-tg tg--area">
