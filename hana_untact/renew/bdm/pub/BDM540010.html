@@ -61,13 +61,13 @@
                         <!-- // input -->
 
                         
-                        <div class="form-hide-wrap formHide"><!-- form-hide-wrap formHide --> 
+                        <div class="form-area form-hide-wrap formHide"><!-- form-hide-wrap formHide --> 
                             <div class="form-area">
                                 <div class="input__wrap">
-                                    <div class="form-item input input--on">
+                                    <div class="form-item input  input--disabled">
                                         <div class="input__inner">
                                             <label for="inputText06" class="input__label" aria-hidden="true">세금우대 설정액</label>
-                                            <input type="text" class="input__element form__move is-focus" id="inputText06" title="세금우대 설정액 입력" value="100,000원">
+                                            <input type="text" class="input__element form__move is-focus" id="inputText06" title="세금우대 설정액 입력" value="100,000원" readonly="readonly">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                     <label for="radio2-ck01">일반 가입</label>
                                 </div>
                                 <div class="tab-radio">
-                                    <input type="radio" name="radio2-02" id="radio2-ck02" title="금융정보 조회 동의 시 비과세 종합저축 가입으로 선택" disabled="disabled" class="ck02">
+                                    <input type="radio" name="radio2-02" id="radio2-ck02" title="금융정보 조회 동의 시 비과세 종합저축 가입으로 선택" class="ck02">
                                     <label for="radio2-ck02">비과세 종합저축 가입</label>
                                 </div>
                             </div>
@@ -411,32 +411,25 @@
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
             hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));
-            
+
             $('body').on('click', '.ck-agree', function(){
-                //alert();
                 if($(this).is(':checked')){
-                    $('.ck01').prop('checked', false);
-                    $('.ck02').attr('disabled', false).prop('checked', true);
-                    $('.form-hide-wrap').removeClass('formHide').addClass('form--active');
-                    $('.is-focus').focus();
-                   
-                 
-                } else{                
+                    $('.ck02').prop('checked', true);
+                    $('.form-hide-wrap').removeClass('formHide');
+                } else {
                     $('.ck01').prop('checked', true);
-                    $('.ck02').attr('disabled', true).prop('checked', false);
-                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+                    $('.ck02').prop('checked', false);
+                    $('.form-hide-wrap').addClass('formHide');
                 }
+                
             });
 
             $('body').on('click', '.ck01', function(){
-                    $('.ck-agree').prop('checked', false);
-                    $('.ck02').attr('disabled', true).prop('checked', false);
-                    $('.form-hide-wrap').removeClass('form--active').addClass('formHide');
+                $('.ck-agree').prop('checked', false);
+                $('.form-hide-wrap').addClass('formHide');
             });
-
+          
         });
-        
-
        
     </script>
 

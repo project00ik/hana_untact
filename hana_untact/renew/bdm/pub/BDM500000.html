@@ -37,9 +37,10 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">자녀 휴대폰번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">주소를<br>입력해주세요</p>
-                        <p class="page-tit label__tit tit--active" aria-hidden="false">이메일 주소를<br>입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">자녀 휴대폰번호를<br>입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">주소를<br>입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">통신사를<br>선택해 주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">이메일 주소를<br>입력해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -59,6 +60,18 @@
                             <!-- 가이드 텍스트 -->
                             <p class="input__guide-txt input__note">입력하신 휴대폰 번호로 자녀의 손님 정보가 등록됩니다.</p>
                         </div>
+						<div class="form-area">
+							<div class="form-item select-wrap">
+								<div class="select">
+                                    <div class="select-label">통신사</div>
+									<div class="select__inner"><button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideSelect" title="통신사 선택">
+											<span>SKT</span> 
+										</button>
+									</div>
+								</div>
+								<p class="input__error" aria-live="assertive">오류메세지 노출</p>
+							</div>
+						</div>
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="form-item search-btn-wrap">
 								<div class="input-search-btn">
@@ -122,6 +135,57 @@
     <script type="text/javascript" src="../js/pualugin.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
 
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    <div id="modalSlideSelect" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">통신사</h1>
+            </div>
+            <div class="modal__contents btn-none">                        
+                <ul class="modal-select-list">
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio01" title="" onclick="modalClose(this);">
+                            <label for="radio01">SKT</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio02" title="" onclick="modalClose(this);">
+                            <label for="radio02">KT</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio03" title="" onclick="modalClose(this);">
+                            <label for="radio03">LG U+</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio04" title="" onclick="modalClose(this);">
+                            <label for="radio04">SKT(알뜰폰)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio05" title="" onclick="modalClose(this);">
+                            <label for="radio05">KT(알뜰폰)</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="radio-list-wrap">
+                            <input type="radio" name="modal_radio01" id="radio06" title="" onclick="modalClose(this);">
+                            <label for="radio06">LG U+(알뜰폰)</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 버튼X -->
+    
     <!-- 모달레이어 - 주소검색(검색 전) -->
     <div id="modalSearch01" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
