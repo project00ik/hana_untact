@@ -194,7 +194,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
     }
 
@@ -258,7 +258,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
         return arrDay;
     }
@@ -282,7 +282,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
             "role": "radio",
             "aria-checked" : false
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
     }
     
     function event($el, o){
@@ -673,7 +673,7 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
                 "role": "radio",
                 "aria-checked" : false
             });
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+            $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
             
             return arrMonth;
         }
