@@ -261,9 +261,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .input.w30,
 .input__wrap .input .input__inner .input__element.w30 {width: 3rem; flex: none; text-align: center;}
 .input__wrap .input.w30 .input__inner .input__element {text-align: center;}
-.input__wrap .input.no-label .input__inner .input__element,
-.input__wrap .input.input--on .input__inner .input__element,
-.input__wrap .input.input--focus .input__inner .input__element {opacity: 1;}
+.input.no-label .input__inner .input__element,
+.input.input--on .input__inner .input__element,
+.input.input--focus .input__inner .input__element {opacity: 1;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 
