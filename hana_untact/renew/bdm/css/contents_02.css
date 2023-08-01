@@ -225,7 +225,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .search-btn-wrap.search--on .input-search-btn::before {border-color: #30bfba;}
 .search-btn-wrap.search--on .input-search-btn {color: #009591; opacity: 1;}
 .search-btn-wrap.search--active .button-search__btn {color: #009591; opacity: 1;}
-.search-btn-wrap.search--disabled .button-search__btn {color: #666; opacity: 1;}
+.search-btn-wrap.search--disabled .button-search__btn {color: #666; opacity: 1; pointer-events: none;}
+.search-btn-wrap.search--disabled .btn-search {display: none;}
 .search-btn-wrap.search--error .button-search__btn {opacity: 1;}
 /* .search-btn-wrap.search--error .input-search-btn::before {border-color: #e53a4c;} */
 .search-btn-wrap.search--error .input__error {display: block;}

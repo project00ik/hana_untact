@@ -56,12 +56,44 @@
                             * 비활성화시 class="form-item input input--disabled" input 에 readonly="readonly" 추가(접근성관련 스크린리더 인식문제로 disabled를 readonly로 수정)
                             * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
                         -->
+                        <!-- 영업점/직원 찾기 -->
                         <div class="form-area">
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test1" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
                                         <input type="checkbox" name="search_checkbox" id="search_checkbox01" title="관리점/직원 찾기">
                                         <label for="search_checkbox01" class="toast__label">
+                                            관리점/직원 찾기
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="chk-tg-cont tg--layer">
+                                    <div class="form-area mt0">
+                                        <div class="form-item search-btn-wrap no-label search--active">
+                                            <div class="input-search-btn">
+                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 열기">
+                                                    <button type="button" class="button button-search__btn">
+                                                        영업1부PB센터 권영웅(1010162)
+                                                    </button>
+                                                    <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                                </div>
+                                            </div>
+                                            <!-- 에러 메시지 -->
+                                            <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// 영업점/직원 찾기 -->
+
+                        <!-- 영업점선택 불가 관리직원만 선택 -->
+                        <div class="form-area">
+                            <div class="chk-tg tg--area">
+                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test2" onclick="toggleLayer(this);">
+                                    <div class="checkbox-wrap chk-type2">
+                                        <input type="checkbox" name="search_checkbox" id="search_checkbox02" title="관리점/직원 찾기">
+                                        <label for="search_checkbox02" class="toast__label">
                                             관리점/직원 찾기
                                             <span class="toast-popup-wrap" aria-hidden="true">
                                                 <span class="toast-popup type02">
@@ -75,7 +107,7 @@
                                     <div class="form-area mt0">
                                         <div class="form-item search-btn-wrap no-label search--active">
                                             <div class="input-search-btn">
-                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 열기">
+                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch02" title="관리점/직원 찾기 열기">
                                                     <button type="button" class="button button-search__btn">
                                                         영업1부PB센터
                                                     </button>
@@ -89,7 +121,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 영업점과 관리직원이 모두 고정값으로 선택되어 있는 경우 추가 -->
+                        <!--// 영업점선택 불가 관리직원만 선택 -->
+
+                        <!-- 영업점과 관리직원 모두 선택 불가 -->
                         <div class="form-area">
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn tg--on" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test3">
@@ -102,27 +136,30 @@
                                 </div>
                                 <div class="chk-tg-cont tg--layer open">
                                     <div class="form-area mt0">
-                                        <div class="form-item input no-label input--disabled">
-                                            <div class="input__inner">
-                                                <input type="text" id="inputText01" class="input__element" title="항목명 입력폼" placeholder="" value="권영웅(1010162)" disabled="disabled">
-                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                        <div class="form-item search-btn-wrap no-label search--active search--disabled">
+                                            <div class="input-search-btn">
+                                                <div class="input-search__inner" title="관리점/직원 찾기 열기">
+                                                    <button type="button" class="button button-search__btn">
+                                                        권영웅(1010162)
+                                                    </button>
+                                                    <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                                </div>
                                             </div>
                                             <!-- 에러 메시지 -->
+                                            <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
                                         </div>
-                                        <!-- 에러메세지 -->
-                                        <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!--// 영업점과 관리직원이 모두 고정값으로 선택되어 있는 경우 추가 -->
+                        <!--// 영업점과 관리직원 모두 선택 불가 -->
 
                         <div class="form-area mt20">
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
-                                        <input type="checkbox" name="search_checkbox" id="search_checkbox02" title="이용한도 해제 코드 등록(선택)">
-                                        <label for="search_checkbox02" class="tooltip-label">이용한도 해제 코드 등록(선택)</label>
+                                        <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="이용한도 해제 코드 등록(선택)">
+                                        <label for="search_checkbox04" class="tooltip-label">이용한도 해제 코드 등록(선택)</label>
                                         <!-- 툴팁 -->
                                         <div class="tooltip-wrap tooltip-inline">
                                             <p class="tooltip-title"></p>
@@ -506,6 +543,413 @@
                         <!--// 검색 결과 없음 -->
                     </div>
                     <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- input : 검색 -->
+                        <div class="search-area" data-sticky="wrap">
+                            <div class="input input-search">                        
+                                <!-- input -->
+                                <!-- D: 인풋 관련 설명
+                                    * 오류시 class="form-area input--error"
+                                    * 비활성화시 class="form-item input input--disabled" input 에 readonly="readonly" 추가(접근성관련 스크린리더 인식문제로 disabled를 readonly로 수정)
+                                    * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+                                -->
+                                <!-- // input -->
+                                <div class="input__inner">
+                                    <input type="text" id="searchInput2" class="input__element input--search" title="직원이름 검색어 입력폼" placeholder="직원이름 입력">
+                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                </div>
+                                <!-- 에러 메시지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div>
+                        </div>
+                        <!--// input : 검색 -->
+                        <!-- 검색 전 -->
+                        <div class="branch-search-wrap" style="display: none;">
+                            
+                        </div>
+                        <!--// 검색 전 -->
+                        <!-- 검색 후 -->
+                        <div class="branch-result-wrap">
+                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <div class="staff-list-wrap">
+                                <ul class="line-check-list align-justify">
+                                    <li>
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_1" title="">
+                                            <label for="staffCheckbox01_1">
+                                                <span class="branch-txt">지점으로 선택</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_2" title="">
+                                            <label for="staffCheckbox01_2">
+                                                <span class="branch-name">분당PB센터</span>
+                                                <span class="staff-name">김하나(1010164)</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_3" title="">
+                                            <label for="staffCheckbox01_3">
+                                                <span class="branch-name">화서역</span>
+                                                <span class="staff-name">김하나(1010164)</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="checkbox-wrap sm">
+                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_4" title="">
+                                            <label for="staffCheckbox01_4">
+                                                <span class="branch-name">원주혁신도시</span>
+                                                <span class="staff-name">김하나(1010164)</span>
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--// 검색 후 -->
+                        <!-- 검색 결과 없음 -->
+                        <div class="branch-result-wrap" style="display: none;">
+                            <div class="no-data">
+                                <p class="txt">검색결과가 없습니다.</p>
+                            </div>
+                        </div>
+                        <!--// 검색 결과 없음 -->
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="확인">확인</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 관리점/직원 찾기 -->
+
+    <!-- 모달레이어 - 관리점/직원 찾기 -->
+    <div id="modalSearch02" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">관리점/직원 찾기</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div data-element="tab" data-options='{"initIndex":0}'>
+                    <div class="tab-wrap">
+                        <ul class="tab-wrap__menu">
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button disabled" data-element="tab__anchor"><span>지점명검색</span></a>
+                            </li>
+                            <li class="tab-wrap__item" data-element="tab__list">
+                                <a href="#" class="tab-wrap__button is-active" aria-selected="true" data-element="tab__anchor"><span>직원이름검색</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel" style="display: none;">
+                        <!-- input : 검색 -->
+                        <div class="search-area" data-sticky="wrap">
+                            <div class="input input-search">                        
+                                <!-- input -->
+                                <!-- D: 인풋 관련 설명
+                                    * 오류시 class="form-area input--error"
+                                    * 비활성화시 class="form-item input input--disabled" input 에 readonly="readonly" 추가(접근성관련 스크린리더 인식문제로 disabled를 readonly로 수정)
+                                    * 데이터가 초기에 자동으로 입력되어 있을때 class="form-item input input--on"
+                                -->
+                                <!-- // input -->
+                                <div class="input__inner">
+                                    <input type="text" id="searchInput02" class="input__element input--search" title="지점명 또는 지점코드 검색어 입력폼" placeholder="지점명 또는 지점코드 입력">
+                                    <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                    <button type="submit" class="btn-search" aria-label="검색">검색</button>
+                                </div>
+                                <!-- 에러 메시지 -->
+                                <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                            </div>
+                        </div>
+                        <!--// input : 검색 -->
+                        <!-- 검색 전 -->
+                        <div class="branch-search-wrap" style="display: none;">
+                            
+                        </div>
+                        <!--// 검색 전 -->
+                        <!-- 검색 후 -->
+                        <div class="branch-result-wrap">
+                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <div class="accordion-list-wrap">
+                                <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                두산타워
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="check-list align-justify">
+                                                    <li class="big-chk">
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_1" title="">
+                                                            <label for="branchCheckbox01_1">
+                                                                <span class="branch-txt">지점으로 선택</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_2" title="">
+                                                            <label for="branchCheckbox01_2">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_3" title="">
+                                                            <label for="branchCheckbox01_3">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_4" title="">
+                                                            <label for="branchCheckbox01_4">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="check-list align-justify">
+                                                    <li class="big-chk">
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_1" title="">
+                                                            <label for="branchCheckbox02_1">
+                                                                <span class="branch-txt">지점으로 선택</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_2" title="">
+                                                            <label for="branchCheckbox02_2">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_3" title="">
+                                                            <label for="branchCheckbox02_3">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_4" title="">
+                                                            <label for="branchCheckbox02_4">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부PB센터
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="check-list align-justify">
+                                                    <li class="big-chk">
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_1" title="">
+                                                            <label for="branchCheckbox03_1">
+                                                                <span class="branch-txt">지점으로 선택</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_2" title="">
+                                                            <label for="branchCheckbox03_2">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_3" title="">
+                                                            <label for="branchCheckbox03_3">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_4" title="">
+                                                            <label for="branchCheckbox03_4">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">
+                                                영업1부PB센터
+                                            </p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="check-list align-justify">
+                                                    <li class="big-chk">
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_1" title="">
+                                                            <label for="branchCheckbox04_1">
+                                                                <span class="branch-txt">지점으로 선택</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_2" title="">
+                                                            <label for="branchCheckbox04_2">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_3" title="">
+                                                            <label for="branchCheckbox04_3">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_4" title="">
+                                                            <label for="branchCheckbox04_4">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_5" title="">
+                                                            <label for="branchCheckbox04_5">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_6" title="">
+                                                            <label for="branchCheckbox04_6">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_7" title="">
+                                                            <label for="branchCheckbox04_7">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_8" title="">
+                                                            <label for="branchCheckbox04_8">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_9" title="">
+                                                            <label for="branchCheckbox04_9">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">홍길동(1010163)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_10" title="">
+                                                            <label for="branchCheckbox04_10">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김하나(1010164)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="checkbox-wrap sm">
+                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_11" title="">
+                                                            <label for="branchCheckbox04_11">
+                                                                <span class="branch-name">두산타워</span>
+                                                                <span class="staff-name">김경훈(1010162)</span>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- // accordion-list-wrap -->
+                        </div>
+                        <!--// 검색 후 -->
+                        <!-- 검색 결과 없음 -->
+                        <div class="branch-result-wrap" style="display: none;">
+                            <div class="no-data">
+                                <p class="txt">검색결과가 없습니다.</p>
+                            </div>
+                        </div>
+                        <!--// 검색 결과 없음 -->
+                    </div>
+                    <div class="pualugin-tab__panel" data-element="tab__panel">
                         <!-- input : 검색 -->
                         <div class="search-area" data-sticky="wrap">
                             <div class="input input-search">                        
