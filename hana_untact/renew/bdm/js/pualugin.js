@@ -3,7 +3,7 @@
  ** Auth: Pual
  */
 
-(function ($, win, doc, undefined) {
+ (function ($, win, doc, undefined) {
   "use strict";
 
   /*
@@ -2016,8 +2016,13 @@
 					.removeClass(plugin.options.activeClassName)
 					.attr({
             'aria-hidden': true,
-						'z-index': ''
+            'z-index': ''
           });
+        
+        // 모달 닫히고 body 고정 height 삭제
+        if (!$target.closest('body').hasClass('scan-body')) { 
+          $target.closest('body').css('height', '');
+        }
 
         // 모달 호출 버튼으로 포커스 이동
         $targetButton.focus();
@@ -2088,6 +2093,14 @@
           });
 
         //plugin.$win.scrollTop(0);
+      },
+      reInit: function () {
+          var plugin = this;
+
+          plugin.flag = false;
+          plugin.unbindEvents();
+          plugin.remoevCache();
+          plugin.init();
       },
 			unfixedContents: function() {
         var plugin = this;
