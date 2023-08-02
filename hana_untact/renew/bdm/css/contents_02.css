@@ -541,7 +541,8 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .product-join-list .btn-del {width: 1.6rem; height: 1.6rem; margin-top: -0.8rem; display: inline-block; background: url(../images/icon/ico-system-close-s.png) 50% 50% no-repeat; background-size: 100% auto; position: absolute; top: 50%; right:0;}
 
 /* 상품상세(아이프레임) */
-.product-detail-wrap {margin: 0 -2.4rem; min-height: 100%;}
+.popup-wrap.modal--slide.modal-full-page .modal__contents.modal__product-detail {height: 100%; padding: 0; overflow: hidden;}
+.product-detail-wrap {margin: 0;}
 
 /* 사랑의 서약서 */
 .love-document-wrap {padding: 3rem 0;}
