@@ -1393,6 +1393,18 @@
 	display: none;
 
 }
+
+.modal__contents--multiple .container__panel.col-2.direct-debit-slide .list-section:nth-of-type(1) {
+	width:100%;
+	
+}
+.modal__contents--multiple .container__panel.col-2.direct-debit-slide .list-section:nth-of-type(2) {
+    width:100%;
+}
+.modal__contents--multiple .container__panel.col-2.direct-debit-slide .list-section:nth-of-type(3) {
+	display: none;
+
+}
 .modal__contents--multiple .container__panel.col-3 .list-section:nth-of-type(1) {
 	width:calc(100% / 3);
 	height:100%;
