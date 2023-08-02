@@ -542,7 +542,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 /* 상품상세(아이프레임) */
 .popup-wrap.modal--slide.modal-full-page .modal__contents.modal__product-detail {height: 100%; padding: 0; overflow: hidden;}
-.product-detail-wrap {margin: 0;}
+.product-detail-wrap {margin: 0; height: 100%}
 
 /* 사랑의 서약서 */
 .love-document-wrap {padding: 3rem 0;}
