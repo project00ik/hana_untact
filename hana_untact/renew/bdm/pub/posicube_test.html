@@ -31,8 +31,8 @@
                 <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">사각형에 신분증이 꽉 차도록<br>위치를 맞추면 자동으로 촬영됩니다</p>
                 <!-- <p id="scanBoxDesc" class="scan-box__desc">네모칸 안에 맞추세요.</p> -->
             </div>
-            <div id="scanBoxMask" class="scan-box__mask--init"></div>
-            <div id="scanBoxGuide" class="scan-box__guide--init">
+            <div id="scanBoxMask" class="scan-box__mask--ready"></div>
+            <div id="scanBoxGuide" class="scan-box__guide--ready">
                 <div id="scanBoxLoading" class="scan-box__loading">
                     <div></div>
                     <div></div>
@@ -59,13 +59,13 @@
                         빛이 반사되지 않도록 주의해 주세요.
                     </p>
                     <div class="btn-center-wrap">
-                        <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동">다른 신분증으로 본인확인하기</button>
+                        <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동" data-element="modal__open" data-target="#modalAlert">다른 신분증으로 본인확인하기</button>
                     </div>
                 </div>
             </div>
             
             <div class="video-info-link">
-                <button type="button" class="txt_underline" title="주민등록증/운전면허증 유의사항 보기" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 촬영 하기 전, 확인하세요!</button>
+                <button type="button" class="txt_underline" title="주민등록증/운전면허증 유의사항 보기" data-element="modal__open" data-target="#modalSlide01">신분증 촬영 하기 전, 확인하세요!</button>
             </div>
 
             <div class="scan-box__camera-content">
@@ -130,6 +130,17 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 -->
+
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">'개인정보 수집 &middot; 이용 동의'에 <br>동의해 주세요.</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
 
     <!-- 서버 이미지 전송을 위한 암호화 스크립트 -->
     <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/blob-util-2.0.2.min.js"></script>
