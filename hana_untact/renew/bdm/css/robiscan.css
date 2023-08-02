@@ -523,6 +523,9 @@ body {
 .dot-list.type02 > li + li {margin-top: 0.9rem;}
 .dot-list.type03 > li + li {margin-top: 2.1rem;}
 
+/* 레이아웃 */
+body.scan-body {overflow: hidden;}
+
 /* --- 모달 팝업 (modal) --- */
 
 /* - 모달 팝업 : 공통 */
