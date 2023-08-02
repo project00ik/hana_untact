@@ -123,10 +123,10 @@
 
 .stepper-wrap {margin-top: 2rem; display: flex; justify-content: center;}
 .stepper-wrap .step {position: relative; padding-left: 0.8rem; text-align: center; font-size: 0;}
-.stepper-wrap .step::before {content: ''; display: block; position: absolute; left: -0.4rem; top: 0.6rem; z-index: -1; width: 1.8rem; height: auto; border-top: 2px dotted #dddee4;}
+.stepper-wrap .step::before {content: ''; display: block; position: absolute; left: -0.4rem; top: 0.6rem; z-index: -1; width: 1.8rem; height: auto; border-top: 2px dotted #929292;}
 .stepper-wrap .step.text-long::before {width: 2.6rem;}
 .stepper-wrap .step .dot {position: relative; display: inline-block; width: 1.4rem; height: 1.4rem;}
-.stepper-wrap .step .dot::before {content: ''; display: block; position: absolute; left: 50%; top: 0; margin-left: -0.7rem; width: 1.4rem; height: 1.4rem; background-color: #dddee4; border-radius: 50% 50%;}
+.stepper-wrap .step .dot::before {content: ''; display: block; position: absolute; left: 50%; top: 0; margin-left: -0.7rem; width: 1.4rem; height: 1.4rem; background-color: #929292; border-radius: 50% 50%;}
 
 .stepper-wrap .step.end::before {border-top: 2px solid #262b45;}
 .stepper-wrap .step.ing::before {border-top: 2px solid #262b45;}
@@ -151,7 +151,15 @@
 /* .banner-stock-wrap .text-wrap .text-sub {font-size: 1.4rem; color: #666;} */
 .text-line-wrap {margin-top: 4rem; padding: 1.9rem 0; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; color: #333; text-align: center;}
 
+.banner-card-wrap .inbox {display: flex;}
+.banner-card-wrap .icon-bank {width: 4rem; height: 6.3rem; margin-right: 2.4rem;}
+.banner-card-wrap .text {color: #333;}
+.banner-card-wrap .btn-text-arrow {margin-top: 0.8rem;}
 
+/* 신청내용 확인 */
+.edit-con-wrap {margin-top: 4rem;}
+.edit-con-wrap .accordion-list {border-top: 1px solid #e7e9ee;}
+.edit-con-wrap .con .inbox .list-wrap {padding: 0; border-bottom: none;} 
 
 /* 
 
@@ -166,6 +174,7 @@
 
 /* common */
 .mt10 {margin-top: 1rem !important;}
+.mt12 {margin-top: 1.2rem !important;}
 
 /* font-size */
 .font-sm {font-size: 1.3rem;}
