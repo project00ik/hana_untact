@@ -48,6 +48,9 @@ var hanaUI = {
             var innerSlidePopHeight = windowHeight - 120;
             var innerPopHeight = windowHeight - 60;
             $('body').css('min-height', windowHeight + 'px');
+            if ($('body').hasClass('scan-body')) { 
+                $('body').css('height', windowHeight + 'px');
+            }
             $('.app-content').css('min-height', containerHeight + 'px');
             $('.popup-wrap').css('max-height', windowHeight + 'px');
             $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
@@ -340,9 +343,9 @@ var hanaUI = {
                         }
                     }
                     
-                    setTimeout(function(){
-                        $target.closest($el).removeClass('input--focus');
-                    },300)
+                    
+                    $target.closest($el).removeClass('input--focus');
+                    
 
                     $('.search-layer').removeClass('open');
                 },
@@ -2006,6 +2009,33 @@ pualugin = {
 	 * @example $.pualugin.reInit("modal");	//"modal" reinit
 	 */
 	reInit : function(pluginName){
+		
+		/* Common UI */
+	    hanaUI.layout();
+	    hanaUI.header('.app-header, .modal__header, .main__header'); //헤더공통
+	    hanaUI.footer('.app-footer'); //푸터공통
+	    //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
+	    hanaUI.inputField('.input'); //인풋필드 기능
+	    hanaUI.textArea('.textarea');
+	    hanaUI.placeholder('[data-element=placeholder__textarea]'); //플레이스홀더
+	    hanaUI.tooltip(); //툴팁 
+	    hanaUI.sticky('[data-sticky=normal]'); //고정메뉴
+	    hanaUI.code();  // security code
+	    hanaUI.selectBtnActive(); // 팝업 버튼 on/off
+	    hanaUI.searchListActive(); // 검색 레이어 목록 active
+	    hanaUI.searchBtnActive(); // 검색 팝업 버튼
+	    // hanaUI.postSearch();  // 지점/ATM 안내 검색 인풋
+	    hanaUI.cardActive(); // 카드타입 active
+	    hanaUI.native.bottomInit(); //스크린리더 접근시 하단 버튼 고정 풀기
+	    hanaUI.inputAuto('[data-element=input-auto]');	//인풋 width 자동
+	    hanaUI.modalDateActive(); // 일자선택(모달)
+	    hanaUI.allCheck(); // all checked
+	    hanaUI.allCheckAccordian(); // all checked Accordian
+	    hanaUI.passwordShow(); // password show/hide
+	    // hanaUI.modalBranch(); // 지점안내 모달 fixed
+	    hanaUI.scrollEvent(); // 스크롤 방향 체크 (검색 플로팅 관련 js)
+	    // hanaUI.ckShowHide(); // check, radio 클릭 다음 영역 show hide
+	    // hanaUI.formNextBtnEvent(); // 계속버튼 이벤트
 		
 		if (!isNull(pluginName)){//pluginName NULL이 아닐 경우 테스트필요
 			
