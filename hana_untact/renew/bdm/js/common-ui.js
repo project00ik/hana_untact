@@ -1872,7 +1872,7 @@ function modalClose(target){
 
 
 // 탭 슬라이드(swiper slide)
-function swiperTabSlide(target , num, goToNum) { 
+function swiperTabSlide(target , num) { 
     var slideTarget = '.'+ target;
     var swiper = new Swiper(slideTarget + " .tab--slide_btn", {
         spaceBetween: 0,
@@ -1886,8 +1886,8 @@ function swiperTabSlide(target , num, goToNum) {
         },
     });
 
-    swiper.slideTo(goToNum, 0);
-    swiperTabBtn.slideTo(goToNum, 0);
+    //swiper.slideTo(goToNum, 0);
+    //swiperTabBtn.slideTo(goToNum, 0);
 
     // 탭 형 슬라이드 웹접근성 관련 추가
     var slidetabBtn = $(slideTarget).find('.tab--slide_btn');
@@ -1900,6 +1900,8 @@ function swiperTabSlide(target , num, goToNum) {
         $(this).closest('.tab-slide-list').find('.tab').attr('aria-selected', 'false');
         $(this).attr('aria-selected', 'true');
     });
+    
+    return swiperTabBtn;
 }
 
 //input id의 index

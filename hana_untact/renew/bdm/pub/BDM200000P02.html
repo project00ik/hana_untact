@@ -360,12 +360,13 @@
     <script>
         
         $(function(){
-            swiperTabSlide('product-slide-wrap', 5, 5); // swiperTabSlide('슬라이드 이름', 탭 노출 갯수, 첫 노출 슬라이드 index)
-
+            swiperTabSlide('product-slide-wrap', 5); // swiperTabSlide('슬라이드 이름', 탭 노출 갯수, 첫 노출 슬라이드 index)
+            // $('.product-slide-wrap .tab--slide').slideTo(5);
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             modalOpen('modalSlide02');
             
-        })
+        });
+    
 
     </script>
 </body>
