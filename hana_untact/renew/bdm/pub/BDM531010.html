@@ -242,7 +242,7 @@
                                             <div class="form-item input">
                                                 <div class="input__inner">
                                                     <label for="inputText050" class="input__label" aria-hidden="true">신규 비밀번호</label>
-                                                    <input type="password" id="inputText050" class="input__element form__move" title="신규 비밀번호 입력폼" placeholder="">
+                                                    <input type="password" id="inputText050" class="input__element form__move" title="신규 비밀번호 입력폼" placeholder="숫자 4자리 입력">
                                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                                 </div>
                                                 <!-- 에러 메시지 -->
@@ -255,7 +255,7 @@
                                             <div class="form-item input">
                                                 <div class="input__inner">
                                                     <label for="inputText05_01" class="input__label" aria-hidden="true">비밀번호 확인</label>
-                                                    <input type="password" id="inputText05_01" class="input__element form__move" title="비밀번호 확인 입력폼" placeholder="">
+                                                    <input type="password" id="inputText05_01" class="input__element form__move" title="비밀번호 확인 입력폼" placeholder="숫자 4자리 입력">
                                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                                 </div>
                                                 <!-- 에러 메시지 -->
@@ -428,7 +428,7 @@
     <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element" >
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
-                <p class="text-sub txt-align-l">입출금통장과 일달러외화적금을 같이 신규하는 경우 최초 신규 금액은 <span class="tp-green">USD</span> 1만 가능합니다.</p>
+                <p class="text-sub txt-align-l">입출금통장과 일달러외화적금을 같이 신규하는 경우 최초 신규 금액은 <span class="tp-green">1 USD</span>만 가능합니다.</p>
                 <p class="text-sub txt-align-l">추가인증(가상계좌이체) 후 남은 잔액은 신규된 하나은행 입출금통장으로 입금됩니다.</p>
             </div>
             <div class="btn-wrap">
@@ -551,8 +551,9 @@
                 </div>                
             </div>
             <div class="btn-group-wrap">
-                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함" onclick="showReset()">신청 안 함</button>
-                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함" onclick="formHideEvent('case01', true);">신청함</button>
+                <!-- 삭제 <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함" onclick="showReset()">신청 안 함</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="신청함" onclick="formHideEvent('case01', true);">신청함</button> -->
+                <button type="button" class="btn md" data-element="modal__close" aria-label="동의">동의</button>
             </div>
         </div>
     </div>
