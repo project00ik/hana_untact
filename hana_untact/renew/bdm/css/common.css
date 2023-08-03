@@ -355,7 +355,7 @@ i.icon-country-krw {background-image: url(../images/country/flag-korea.png);}
 .btn.sm.line,
 .btn.sm.line [class^="icon"] {line-height: 3.1rem;}
 .btn.sm.light-gray {padding: 0 1.1rem; height: 3rem; line-height: 3rem; color: #666; font-weight: normal; background-color: #eff0f4; font-size: 1.4rem; font-weight: 500;}
-.btn-group-flex .btn.sm.light-gray {font-size: 1.3rem;}
+.btn-group-flex .btn.sm.light-gray {font-size: 1.3rem; white-space: nowrap;}
 .btn.sm.reset {height: 3rem; line-height: 3rem; color: #fff; font-weight: normal; background-color: #373a4d; font-size: 1.3rem; font-weight: 500;}
 /* .btn.sm.light-gray:hover, .btn.sm.light-gray:active, .btn.sm.light-gray:focus {background-color: #e7e9ee;} */
 .btn.sm.gray {background-color: #eff0f4; color: #666;}

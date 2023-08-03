@@ -386,7 +386,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">증권계좌 가입(연결)</h1>
+                <!-- 삭제 <h1 class="title">증권계좌 가입(연결)</h1> -->
             </div>
             <div class="modal__contents">
                 <div class="modal-text-wrap">
@@ -425,7 +425,7 @@
     <script>
         
         $(function(){
-            swiperTabSlide('product-slide-wrap', 5); // swiperTabSlide('슬라이드 이름', 탭 노출 갯수)
+            swiperTabSlide('product-slide-wrap', 5, 0); // swiperTabSlide('슬라이드 이름', 탭 노출 갯수, 첫 노출 슬라이드 index)
 
             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
             // modalOpen('modalSlideProduct');

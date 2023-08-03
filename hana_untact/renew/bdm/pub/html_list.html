@@ -15,12 +15,14 @@
         table {margin-top: 20px;width:100%;border:1px solid #ddd;border-collapse:collapse;table-layout: fixed;}
         table th, table td {border:1px solid #ddd;}
         table th {height:40px;background:#cbd1d1;font-size:12px;font-weight: bold;}
-        table td {height:30px;padding:3px 10px; word-break: keep-all; word-wrap: break-word; line-height: 1.4;}
-        table td:nth-child(1) {text-align:center;}
+        table td {height:30px;padding:3px 10px; line-height: 1.4;}
+        table th:nth-child(1),
+        table td:nth-child(1) {padding: 0; text-align: center;}
         table td:nth-child(8) {text-align: center;}
         table td:nth-child(8) a {color:#6b76b1; text-decoration: underline;}
-        table td:nth-child(9) {text-align:center;}
-        table td:nth-child(10) {text-align:center;}
+        table td:nth-child(9) {text-align:center; white-space: nowrap;}
+        table td:nth-child(10) {text-align:center; white-space: nowrap;}
+        table td:last-child {word-break: keep-all; word-wrap: break-word;}
         table tr:hover td {background:#fffeca !important;}
         table td .point_col01 {color:#e5005a}
         table tr td strong {color:#000}
@@ -69,16 +71,16 @@
     <div class="con-wrap">
         <table>
             <colgroup>
-                <col style="width:2.2%" />
+                <col style="width:40px" />
                 <col style="width:10%" />
                 <col style="width:10%" />
                 <col style="width:10%" />
                 <col style="width:10%" />
                 <col style="width:6%" />
                 <col style="width:6%" />
-                <col style="width:7%" />
-                <col style="width:4%" />
-                <col style="width:4%" />
+                <col style="width:107px" />
+                <col style="width:62px" />
+                <col style="width:62px" />
                 <col style="width:auto" />
             </colgroup>
             <thead>
@@ -274,7 +276,7 @@
                     <td><a href="BDM200000P02.html" target="_blank">BDM200000P02</a></td>
                     <td>이인경</td>
                     <td><strong>230620</strong></td>
-                    <td></td>
+                    <td>230803 수정 : '증권계좌 가입(연결)' 제목 삭제</td>
                 </tr>
                 <tr class="">
                     <td></td>
@@ -1018,6 +1020,8 @@
                     <td>황혜정</td>
                     <td><strong>230704</strong></td>
                     <td>
+                        230803 수정 : 검수 수정사항 (전자금융 출금계좌 등록 '추가 안함'띄어쓰기 수정)<br>
+                        230803 수정 : 검수 수정사항 (신규 계좌 비밀번호, 계좌 비밀번호 확인 '숫자 4자리 입력'placeholder 추가)<br>
                         230802 수정 : list-wrap 수정 / 기업뱅킹 아이디 확인 버튼 추가<br>
                         230713 수정 : 웹접근성 수정 (input disabled을 readonly="readonly"로 수정)<br>
                         230712 수정 : 웹접근성 수정 (알아두세요 title 삭제)</td>
@@ -1050,6 +1054,9 @@
                     <td>황혜정</td>
                     <td><strong>230704</strong></td>
                     <td>
+                        230803 수정 : 검수 수정사항 (만기 재예치 동의서 버튼 명 수정 '신청 안 함+신청함 → 동의')<br>
+                        230803 수정 : 검수 수정사항 (신규 계좌 비밀번호 등록 '숫자 4자리 입력'placeholder 추가)<br>
+                        230803 수정 : 검수 수정사항 (alert 문구 수정 'USD 1 → 1 USD')<br>
                         230728 수정 : text 정렬 수정<br>
                         230717 수정 : tyle="button" -&gt; type="button" 수정<br>
                         230714 수정 : 웹접근성 수정 (신규 계좌 비밀번호 등록 (선택) label안에 span 밖으로 구조 변경과 title 수정)<br>

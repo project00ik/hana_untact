@@ -1872,7 +1872,7 @@ function modalClose(target){
 
 
 // 탭 슬라이드(swiper slide)
-function swiperTabSlide(target , num) { 
+function swiperTabSlide(target , num, goToNum) { 
     var slideTarget = '.'+ target;
     var swiper = new Swiper(slideTarget + " .tab--slide_btn", {
         spaceBetween: 0,
@@ -1885,6 +1885,9 @@ function swiperTabSlide(target , num) {
             swiper: swiper,
         },
     });
+
+    swiper.slideTo(goToNum, 0);
+    swiperTabBtn.slideTo(goToNum, 0);
 
     // 탭 형 슬라이드 웹접근성 관련 추가
     var slidetabBtn = $(slideTarget).find('.tab--slide_btn');

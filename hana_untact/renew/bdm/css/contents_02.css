@@ -92,7 +92,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__inner .input__optional:first-child {padding-left: 0;}
 .input__inner .input__optional:last-child {padding-right: 0;}
 .input__inner .native-inner[role=button] .input__element--right.input__no-label + .input__optional {margin: 0.25rem 0 0 0; padding: 0 0.5625rem 0 0.25rem;}
-.input__inner .btn {margin: 1.4rem 0 0 1.2rem;}
+/* .input__inner .btn {margin: 1.4rem 0 0 1.2rem;} */
 
 .input__label {font-size: 1.8rem; font-weight: 700; color: #929292; position: absolute; left:0; top: 4rem; -webkit-transform: translateY(-50%); transform: translateY(-50%); -webkit-transition: all .3s ease; transition: all .3s ease;}
 .input__element {width: 100%; flex: 1; padding: 2.8rem 0 0.4rem 0; outline: none; line-height: 2.4rem; background: none; position: relative; text-align: left; font-size: 1.8rem; font-weight: 700; color: #009591; z-index: 1;}
@@ -241,7 +241,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .input .input__inner {padding-right: 0}
 /* .input__wrap .input.input--focus .input__inner .input__label:not(.font-inherit), 
 .input__wrap.input--on .input .input__inner .input__label:not(.font-inherit) {font-size: 1.6rem; top: 0.8rem;} */
-.input__wrap .input .btn {display: none; min-width: auto; margin: 0 0 0.3rem 0.8rem; white-space: nowrap;}
+.input__inner .btn,
+.input__wrap .input .btn {margin: 0 0 0.3rem 0.8rem; white-space: nowrap;}
+.input__wrap .input .btn {display: none; min-width: auto;}
 .input__wrap .input .time {display: none; margin: 0 0 0.3rem 0.8rem; white-space: nowrap; font-size: 1.3rem; line-height: 1.2; color: #757575;}
 .input__wrap .input.input--on .btn, 
 .input__wrap .input.input--on .time,
