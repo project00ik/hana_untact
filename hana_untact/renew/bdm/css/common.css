@@ -209,7 +209,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .cont-form--animate .form-area.form--active {display: block;}
 .cont-form--animate .form-area .tab-box-wrap .form-area {display: block;}
 .cont-form--animate .form-area .form-area {display: block;}
-.form-area .btn-tooltip {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem auto;}
+.form-area .btn-tooltip {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem 1.6rem;}
 .form-area .select-label .btn-tooltip,
 .form-area .input__label .btn-tooltip {display: none; position: absolute; top: 0.3rem; right: -2rem; z-index: 3;}
 .form-area .select--on .select-label .btn-tooltip,
