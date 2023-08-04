@@ -1,13 +1,6 @@
 @charset "UTF-8";
 
-/* 가이드 */
-.content-guide {max-width:37.5rem; padding: 2rem; margin:0 auto;}
-
 /* -- 공통 -- */
-.tooltip-inline {display: inline-flex; align-items: center; vertical-align: middle; position: unset;}
-.tooltip-inline .tooltip .btn-open {position: sticky;}
-.tooltip-inline .tooltip .tooltip-con {top: 2.8rem;}
-.tooltip-inline .tooltip .tooltip-con {width: calc(100vw - 4.8rem);}
 
 /* 검색 스크롤 관련 플로팅 */
 body.scroll--up .search-con-box,
@@ -302,7 +295,6 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .no-data-wrap {}
 .no-data {width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;}
 .no-data .txt {font-size: 1.4rem; color: #333; font-weight: 400;}
-/* .no-data .sub-txt {margin-top: 0.6rem; font-size: 1.5rem; color: #666;} */
 
 /* 약관 */
 .popup-wrap .privacy-wrap {padding: 0.5rem 0 1.2rem;}
@@ -327,132 +319,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .attention-stage.stage2 {background: #70a301;} /* 다소안심 */
 .attention-stage.stage3 {background: #f26100;} /* 신중 */
 
-
-/* 카드타입 - 설정(토글레이어) */
-.tg--area .tg--layer {display: none !important;}
-.tg--area .tg--layer.open {display: block !important;}
-.tg--area .tg-text-cont .txt {font-size: 14px; font-weight: 300; color: #333;}
-
-/* 아이콘 공통 */
-/* - 아이콘(원큐 테마) */
-[class^="icon-1q"],
-[class^="icon-product"],
-[class^="icon-menu"],
-[class^="icon-global"] {width: 5.6rem; height: 5.6rem; display: inline-block; border-radius: 50%; background-position: 50% 50%; background-repeat: no-repeat; background-size: 4.8rem auto;}
-i.icon-1q-checking {background-image: url(../images/icon_product/1q_checking.png);}
-i.icon-1q-saving {background-image: url(../images/icon_product/1q_saving.png);}
-i.icon-1q-term {background-image: url(../images/icon_product/1q_term.png);}
-i.icon-1q-dream {background-image: url(../images/icon_product/1q_dream.png);}
-i.icon-1q-tfsa_saving {background-image: url(../images/icon_product/1q_tfsa_saving.png);}
-i.icon-1q-tfsa_term {background-image: url(../images/icon_product/1q_tfsa_term.png);}
-
-/* - 아이콘(상품) */
-i.icon-product-commission {background-image: url(../images/icon_product/commission.png);}
-i.icon-product-online {background-image: url(../images/icon_product/online.png);}
-i.icon-product-fast {background-image: url(../images/icon_product/fast.png);}
-i.icon-product-interest {background-image: url(../images/icon_product/interest.png);}
-i.icon-product-commission_p {background-image: url(../images/icon_product/commission_p.png);}
-i.icon-product-online_o {background-image: url(../images/icon_product/online_o.png);}
-i.icon-product-appointed {background-image: url(../images/icon_product/appointed.png);}
-i.icon-product-division {background-image: url(../images/icon_product/division.png);}
-i.icon-product-split_withdraw {background-image: url(../images/icon_product/split_withdraw.png);}
-i.icon-product-saving {background-image: url(../images/icon_product/saving.png);}
-i.icon-product-money_management {background-image: url(../images/icon_product/money_management.png);}
-i.icon-product-bonus {background-image: url(../images/icon_product/bonus.png);}
-i.icon-product-tax {background-image: url(../images/icon_product/tax.png);}
-i.icon-product-withdraw {background-image: url(../images/icon_product/withdraw.png);}
-
-/* - 아이콘(메뉴) */
-i.icon-menu-charge {background-image: url(../images/icon_menu/charge.png);}
-i.icon-menu-charge_month {background-image: url(../images/icon_menu/charge_month.png);}
-i.icon-menu-atm {background-image: url(../images/icon_menu/atm.png);}
-i.icon-menu-cad_account {background-image: url(../images/icon_menu/cad_account.png);}
-i.icon-menu-expire {background-image: url(../images/icon_menu/expire.png);}
-i.icon-menu-online {background-image: url(../images/icon_menu/online.png);}
-i.icon-menu-division {background-image: url(../images/icon_menu/division.png);}
-i.icon-menu-date {background-image: url(../images/icon_menu/date.png);}
-i.icon-menu-target {background-image: url(../images/icon_menu/target.png);}
-i.icon-menu-money_big {background-image: url(../images/icon_menu/money_big.png);}
-i.icon-menu-withdraw {background-image: url(../images/icon_menu/withdraw.png);}
-i.icon-menu-date2 {background-image: url(../images/icon_menu/date2.png);}
-i.icon-menu-online_p {background-image: url(../images/icon_menu/online_p.png);}
-
-/* - 아이콘(글로벌) */
-.icon-global-spot {background-image: url(../images/icon_product/global_spot.png);}
-.icon-global-bank {background-image: url(../images/icon_product/global_bank.png);}
-.icon-global-withdraw {background-image: url(../images/icon_product/global_withdraw.png);}
-
-/* - 아이콘(svg) */
-i.icon-tel {background: url(../images/icon/tel_gray.png) 50% 56% no-repeat; background-size: 100% auto;}
-i.icon-fax {background: url(../images/icon/print_gray.png) 50% 56% no-repeat; background-size: 100% auto;}
-i.icon-time {background: url(../images/icon/time_gray.png) 50% 56% no-repeat; background-size: 100% auto;}
-i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no-repeat; background-size: 100% auto;}
-
-
-/* 카드타입 정렬 */
-.card-wrap {width: 100%; margin-top: 0.4rem; display: inline-block;}
-.card-wrap + .card-wrap {margin-top: 1.2rem;}
-.card-wrap .card-type1,
-.card-wrap .card-type2,
-.card-wrap .card-type4 {margin-top: 1.2rem;}
-.card-wrap .card-type3 {margin-top: 0.8rem;}
-.modal__contents .card-wrap {margin-top: 0;}
-
-/* 캐나다 하나은행 내 이체 (타이틀 + 카드목록) */
-.confirm-wrap .page-tit + .card-wrap {margin-top: 1.6rem;}
-
-/* 카드타입 */
-/* - 카드 타입1 : all case */
-.card-type1 {width: 100%; padding: 2.4rem 2rem; border-radius: 1.2rem; box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.05); background: #fff; position: relative;}
-.card-type1.active {background: #dddee4;}
-.card-type1 .top-right-area {min-width: 5rem; display: inline-block; text-align: right; position: absolute; top: 2.4rem; right: 2rem; z-index: 1;}
-.card-type1 .top-right-area button {vertical-align: top;}
-.card-type1 .card-cont {width: 100%; display: flex;}
-.card-type1 .card-cont .left-img-area {width: 5.6rem;}
-.card-type1 .card-cont .left-img-area img {width: 4rem; height: 4rem; overflow: hidden; border-radius: 50%; background: url(../images/country/flag-def.png) 50% 50% no-repeat; background-size: 100% auto; display: block; font-size: 0;}
-.card-type1 .card-box {flex:1;}
-.card-type1 .card {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end;}
-.card-type1 .card dl {max-width: calc(100% - 5rem); display: inline-block; flex: 1 1 auto;}
-.card-type1 .card dl > dt {margin-bottom: 0.4rem; display: block;}
-.card-type1 .card dl > dd {width: 100%; overflow: hidden;}
-.card-type1 .card dl > dd p {vertical-align: top;}
-.card-type1 .card-box .date {margin-bottom: 1.6rem; font-size: 1.4rem; color: #666;}
-.card-type1 .card-box .tit {font-size: 1.8rem; color: #171a1a; font-weight: 600; word-break: keep-all; word-wrap: break-word;}
-.card-type1 .card-box .tit.tit-type2 {font-size: 1.5rem; color: #2f3333;}
-.card-type1 .card-box .txt {font-size: 1.4rem; line-height: 2rem; color: #666;}
-.card-type1 .card-box .txt + .txt {margin-top: 0.2rem;}
-.card-type1 .card-box .txt > span {font-size: 1.4rem; color: #666; display: inline-block;}
-.card-type1 .card-box .account-num {font-size: 1.4rem; line-height: 2rem; vertical-align: top;}
-.card-type1 .card-box .txt-right {padding-top: 2rem; line-height: 2rem; display: inline-block; text-align: right; flex: 1 1 auto;}
-.card-type1 .card-box .txt-right .price {display: inline-block; line-height: 2rem; font-size: 1.8rem; font-weight: 600; color: #171a1a;}
-.card-type1 .card-box i {width: 1.6rem; height: 1.6rem; margin: 0.2rem 0; vertical-align: top;}
-.card-type1 .btn-wrap {margin: 2rem 0 0; text-align: center;}
-.card-type1 .memo-area {padding-top: 1.2rem; position: relative;}
-.card-type1 .memo-area::before {content: ''; width: 0; height: 0; display: inline-block; border: 0.8rem solid transparent; border-bottom: 0.7rem solid #f7fafa; position: absolute; top: 0; left: 1.2rem; overflow: hidden;}
-.card-type1 .memo-area .memo {padding: 0.7rem 1.6rem; background: #f7fafa; font-size: 1.4rem; color: #666; border-radius: 0.8rem;}
-.card-type1 .bottom-area {margin-top: 1.6rem; padding-top: 1.6rem; border-top: 0.1rem solid #dddee4;}
-.card-type1 .bottom-area .txt {color: #666; font-size: 1.4rem;}
-.card-type1 .btn-wrap:last-child,
-.card-type1 .memo-area:last-child {margin-bottom: -0.4rem;}
-.card-type1.no-account .tit,
-.card-type1.no-account .tit.tit-type2,
-.card-type1.no-account .txt {color: #666;}
-.card-type1 .btn-wrap {display: none;}
-.card-type1.no-account .btn-wrap {display: block;}
-.card-type1.no-account .top-right-area {display: none;}
-.card-type1 .card-full dd {margin-top: 0.4rem}
-
-/* card-type1 disabled */
-.card-type1.disabled {position: relative;}
-.card-type1.disabled::before {content: ''; display: block; position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; background-color: #fff; border-radius: 1.2rem; opacity: 0.6;}
-.card-type1.disabled.active {background-color: #fff;}
-
-/* 카드 타입 : 공통 버튼 */
-.btn-star {display: inline-block;}
-.btn-star {width: 2rem; height: 2rem; font-size: 0; display: inline-block; background: url(../images/icon/favorit.png) 0 0 no-repeat; background-size: 2rem auto;}
-.btn-star.on {background: url(../images/icon/favorit_active.png) 0 0 no-repeat;}
-
+/* 뱃지 스타일 */
 .badge {height: 2rem; padding: 0.1rem 0.6rem; display: inline-block; font-size: 1.2rem; border-radius: 0.4rem; overflow: hidden;}
+
+/* - 뱃지 : 상품 */
 .badge.type-value1 {background: #eaedf6; color: #455896;} /* 입출금 */
 .badge.type-value2 {background: #e3f6ff; color: #147eac;} /* 예금 */
 .badge.type-value3 {background: #e6f6f6; color: #009591;} /* 적금 */
@@ -461,62 +331,10 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .badge.type-disabled {background: #9ca6a6; color: #f7fafa;}
 
 
-/* 상세(결과) */
-.detail-card .tit {font-size: 2.4rem; font-weight: 700; color: #171a1a;}
-.detail-card .txt {margin-top: 0.2rem; font-size: 1.6rem;  color: #666;}
-.detail-card .card-bottom {display: flex; margin-top: 4.4rem; align-items: center; justify-content: space-between;}
-.detail-card .card-bottom .left-area {width: auto;}
-.detail-card .card-bottom .right-area {width: 100%; flex: 1; text-align: right;}
-.detail-card .price {font-size: 2.4rem; font-weight: 600; color: #171a1a;}
-.detail-card .btn-wrap {margin-top: 3.2rem;}
-.detail-card .memo-wrap + .btn-wrap {margin-top: 1.6rem;}
-.detail-card .card-bottom + .memo-wrap {margin-top: 0.8rem;}
-.detail-card .btn-group-flex {margin-top: 3.2rem;}
-.detail-area .detail-list {margin-top: 3.2rem; padding-top: 3.2rem; border-top: 0.1rem solid #dddee4;}
-.detail-list .card-wrap {margin-top: 0;}
-.detail-list .page-tit + .card-wrap {margin-top: 1.6rem;}
-
-.memo-wrap {position: relative; padding-top: 1.6rem;}
-.memo-wrap::before {content: ''; width: 0; height: 0; display: inline-block; border: 0.8rem solid transparent; border-bottom: 0.8rem solid #f5f6fa; position: absolute; top: 0; left: 1.6rem; overflow: hidden;}
-.memo-wrap .text {padding: 1.2rem 1.6rem; background-color: #f5f6fa; border-radius: 0.8rem 0.8rem; font-size: 1.4rem; color: #666;}
-
-/* 버튼형 토글 */
-.btn-toggle-wrap {margin-top: 3.2rem;}
-.btn-toggle-list .top .btn.gray::after {content: ''; width: 1.6rem; height: 1.2rem; margin: 0 0 0 0.4rem; display: inline-block; background: url(../images/icon/dropdown_open_black.png) 50% 50% no-repeat; background-size: 1.6rem auto;}
-.btn-toggle-list .top .btn.gray:hover, 
-.btn-toggle-list .top .btn.gray:active, 
-.btn-toggle-list .top .btn.gray:focus {background: #fff;}
-.btn-toggle-list .top.is-active .btn::after {transform: rotate(-180deg);}
-.btn-toggle-list .con {margin-top: -13px;}
-.btn-toggle-list .lgreen-box-wrap.type02 {padding-top: 3rem;}
-
-/* 박스형 배너 */
-.banner-box {margin-top: 3.2rem; padding: 3.2rem 2rem 2.9rem; color: #fff; border-radius: 1.2rem; box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.05); text-align: center;}
-.banner-box p {margin-top: 0.4rem; font-size: 1.4rem;}
-.banner-box::before {content: ''; width: 4rem; height: 4rem; margin-bottom: 0.2rem; display: inline-block; border-radius: 50%; overflow: hidden;}
-.banner-box .tit {font-size: 2rem; font-weight: 700;}
-.banner-box .sub-tit {font-size: 1.6rem; font-weight: 600;}
-.banner-box.ban-success {background: #30bfba;}
-.banner-box.ban-success::before {background: url(../images/icon/check_30bfba.png) 50% 50% no-repeat #fff; background-size: 2.4rem auto;}
-.banner-box.ban-try {background: #4d5980;}
-.banner-box.ban-try::before {background: url(../images/icon/kebab_menu_4d5980.png) -0.2rem 50% no-repeat #fff; background-size: 2.4rem auto; transform: rotate(-90deg);}
-.banner-box.ban-try .tit,
-.banner-box.ban-try .sub-tit {color: #fff;}
-.banner-box.ban-try p {color: rgba(255, 255, 255, 0.7);}
-
-/* 레이어 팝업(투명한 지점 팝업) */
-.popup-wrap.branch-layer-wrap {height: 0; bottom: 0; left: 0; z-index: 100 !important; -webkit-transition: height .3s ease-in-out; transition: height .3s ease-in-out;}
-.popup-wrap.branch-layer-wrap:before {display: none;}
-.popup-wrap.branch-layer-wrap.is-open {height: calc(100vh - 34.2rem); top: inherit;}
-.popup-wrap.branch-layer-wrap .modal__container {height: auto; min-height: 4.4rem; max-height: 100%; padding: 0; bottom: 0; right: 0; left: 0; background: #fff; border-radius: 2.4rem 2.4rem 0 0; box-shadow: 0 -0.5rem 1rem 0 rgba(0, 0, 0, 0.03);}
-.popup-wrap.branch-layer-wrap .modal__contents {height: 0; padding: 0; color: #171a1a; overflow: hidden;}
-.popup-wrap.branch-layer-wrap.is-open .modal__contents {height: auto; max-height: 100%;}
-.popup-wrap.branch-layer-wrap .modal__btn-bar {width: 100%; height: 4.4rem; line-height: 4.4rem; position: absolute; top: 0; left: 0; z-index: 1; cursor: none;}
-.popup-wrap.branch-layer-wrap .modal__btn-bar::before {content: ''; width: 3.2rem; height: 0.4rem; margin-top: 1.2rem; border-radius: 0.2rem; display: inline-block; background: #d0d9d9; vertical-align: top;}
-.popup-wrap.branch-layer-wrap .modal__btn--open {z-index: 1;}
-.popup-wrap.branch-layer-wrap .modal__btn--close {z-index: -1;}
-.popup-wrap.branch-layer-wrap.is-open .modal__btn--open {z-index: -1;}
-.popup-wrap.branch-layer-wrap.is-open .modal__btn--close {z-index: 1;}
+/* 토글레이어 */
+.tg--area .tg--layer {display: none !important;}
+.tg--area .tg--layer.open {display: block !important;}
+.tg--area .tg-text-cont .txt {font-size: 14px; font-weight: 300; color: #333;}
 
 
 /* 상품선택 */
@@ -560,10 +378,8 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 /* 지점(직원)검색 */
 .branch-result-wrap {padding: 0 2.4rem;}
 .branch-result-wrap .accordion-list-wrap {margin-top: 0.8rem;}
-/* .branch-result-wrap .accordion-list-wrap {width: calc(100% + 4.8rem); margin: 1.6rem -2.4rem 0;} */
-/* .branch-result-wrap .accordion-list .top {padding: 2.4rem 4.8rem 2.4rem 2.4rem;} */
 .branch-result-wrap .accordion-list .top:before {right: 2.4rem;}
-/* .branch-result-wrap .accordion-list .con {padding: 1.6rem 2.4rem; background: #f9f9fb;} */
+
 .check-list .checkbox-wrap label {display: flex;}
 .check-list.align-justify .checkbox-wrap label {justify-content: space-between;}
 .check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
@@ -588,7 +404,6 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 
 /* 본인확인(신분증) */
 .id-card-wrap {padding-top: 33.5rem; background: url(../images/png/icon-id-card@3x.png) top 1.6rem right 3.4rem no-repeat; background-size: 17.5rem 25.4rem;}
-
 .app-main.full-video {padding: 0;}
 .app-main.full-video .container {width: 100%; height: 100%; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
 .app-main.full-video .container .video-area {width: 100%; height: 100vh; background: transparent;}
@@ -605,7 +420,7 @@ i.icon-equal2-gray {background: url(../images/icon/equal2_9ca6a6.png) 50% 50% no
 .video-layer-wrap .video-info-wrap .video-info-link {width: 100%; position: absolute; bottom: 4.8rem; left:0; z-index: 5; text-align: center;}
 .video-layer-wrap .video-info-wrap .video-info-link .txt_underline {font-size: 1.3rem; color: #fff;}
 
-/* 신분증 진위확인 실패 (상세 안내코드 토글) */
+/* 모달 : 신분증 진위확인 실패 (상세 안내코드 토글) */
 .code-info-wrap {margin-top: 2rem;}
 .code-info-wrap .tg-text-cont {margin-top: 1.2rem;}
 
