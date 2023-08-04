@@ -19,9 +19,11 @@
 .new-password-wrap .tg-text {margin-top: 1.6rem;}
 
 /* 전자금융 */
-.select-result-box {padding: 2rem 0; border-bottom: 1px solid #e7e9ee;}
+.select-result-box {padding: 1.6rem 0; border-bottom: 1px solid #e7e9ee;}
 .select-result-box .title {color: #333; font-weight: 500;}
 .select-result-box .sub-text {color: #666; font-weight: 500;}
+
+.select-result-box + .form-underbtn-wrap {margin-top: 0.8rem;}
 
 .account-ck-wrap {margin: 3rem 0;}
 .account-ck-wrap .checkbox-wrap.all label {font-size: 1.8rem;}
@@ -142,6 +144,8 @@
 }
 .complete-step.toast-popup-wrap .txt {font-size: 1.4rem;}
 
+.stepper-wrap .step:first-child::before {border-top: none;}
+
 .banner-stock-wrap .icon-wrap {display: flex;}
 .banner-stock-wrap .text-wrap {padding-left: 0.6rem;}
 .banner-stock-wrap .stock-name .name {margin-left: 0.6rem;}
@@ -161,16 +165,10 @@
 .edit-con-wrap .accordion-list {border-top: 1px solid #e7e9ee;}
 .edit-con-wrap .con .inbox .list-wrap {padding: 0; border-bottom: none;} 
 
-/* 
-
-.stepper-wrap .step .text::after {content: ''; display: block; position: absolute; left: -1.5rem; top: 0.6rem; width: 2rem; height: auto; border-top: 2px dotted #dddee4;}
-.stepper-wrap .step.end .text::after {border-top: 2px solid #262b45;}
-.stepper-wrap .step.ing .text::after {border-top: 2px solid #262b45;}
- */
-
-
-.stepper-wrap .step:first-child::before {border-top: none;}
-
+/* 주택청약종합저축 */
+.use-coupon-wrap .list-wrap.type01 {padding: 2.4rem 0 1.4rem;}
+.use-coupon-wrap .list-wrap.type01 .point dd {font-size: 1.7rem;}
+.use-coupon-wrap .list-wrap.type01 dl + dl {margin-top: 0.7rem;}
 
 /* common */
 .mt10 {margin-top: 1rem !important;}

@@ -384,9 +384,10 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .tab-radio-rd input {position: absolute; left:0; top:0; clip: unset; width: 100%; height: 100%; margin: -1px; overflow: hidden;}
 
 /* -- 폼 (form) : 체크박스 (checkbox) */
-.checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 500; color: #000; line-height: 2.2rem;}
+.checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 400; color: #000; line-height: 2.2rem;}
 .checkbox-wrap.chk-type2 label {font-weight: 400; color: #333;}
 .checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.1rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
+.checkbox-wrap input:checked + label {font-weight: 500;}
 .checkbox-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png);}
 .checkbox-wrap input:disabled + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-disabled.png);}
 .checkbox-wrap.tp-green label {color: #009591;}
