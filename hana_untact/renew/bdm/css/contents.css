@@ -11,7 +11,7 @@
 /* 예금 */
 .account-num-wrap {display: flex; align-items: center;}
 .new-password-wrap {margin-top: 2rem;}
-.new-password-wrap .checkbox-wrap label {font-size: 1.6rem; color: #666; font-weight: 400;}
+.new-password-wrap .checkbox-wrap label {font-size: 1.6rem; font-weight: 400;}
 .new-password-wrap .checkbox-wrap .text-sub {display: block; margin-top: 0.4rem; padding-left: 2.8rem; font-size: 1.4rem;}
 
 .new-password-wrap .chk-tg .chk-tg-cont {margin-left: 2.4rem; padding-top: 0;}
