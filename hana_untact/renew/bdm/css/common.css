@@ -167,7 +167,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .stepper > ul > li + li {margin-left: 0.4rem}
 .step-header .stepper .stepper__step {width: 1rem; height: 1rem; display: inline-block; font-size: 0; background: #262b45; border-radius: 50%; text-align: center; font-family: 'roboto';}
 .step-header .stepper .stepper__step.on ~ .stepper__step {background: #929292;}
-.step-header .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; line-height: 1.6; background-color: #262b45; font-size: 1.1rem; color: #fff; text-align: center; vertical-align: top;}
+.step-header .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; padding: 0.25rem 0; line-height: 1.1; background-color: #262b45; font-size: 1.1rem; color: #fff; text-align: center; vertical-align: top;}
 .scroll--up .step-header .stepper,
 .scroll--down .step-header .stepper {box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);}
 .scroll--top .step-header .stepper {box-shadow: none;}
