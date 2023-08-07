@@ -66,12 +66,11 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input--disabled + .bar + .input + .bar,
 .input.input--on + .bar + .input + .bar,
 .input.input--on + .bar + .input + .bar + .input {display: block;}
-.input.only-pw input {text-align: center;}
-/* .input input[type='password'] {font-family: Verdana; letter-spacing: 0.2rem;} */
 
 .id-photo-form .input__wrap .bar,
 .id-photo-form .input__wrap .input {display: block;}
 .id-photo-form .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem; white-space: nowrap;}
+.id-photo-form .input.only-pw input {text-align: center;}
 
 .pass-dot-wrap {display: flex; align-items: center; margin-top: 0.1rem;}
 .pass-dot-wrap .pass-dot {width: 1.6rem; height: 1.6rem; margin: 0 0.1rem; border-radius: 50%; background: #666;}
