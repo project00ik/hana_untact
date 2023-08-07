@@ -432,6 +432,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .id-photo-info .txt {flex: 1; word-break: keep-all; word-wrap: break-word; color: #333; font-size: 1.6rem;}
 .id-photo-info .btn {margin-left: 2rem;}
 .id-photo-wrap .page-tit-sub {margin-top: 2rem;}
+.id-photo-form .form-area:first-child {margin-top: 2rem;}
 
 /* 본인확인(신분증) - 신분증 확인페이지 */
 .checking-wrap {margin-top: 4rem;}
