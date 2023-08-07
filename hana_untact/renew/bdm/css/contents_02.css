@@ -67,7 +67,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input--on + .bar + .input + .bar,
 .input.input--on + .bar + .input + .bar + .input {display: block;}
 .input.only-pw input {text-align: center;}
-.input input[type='password'] {height: 5.9rem; font-family: Verdana; letter-spacing: -0.2rem; font-size: 3.6rem !important;}
+.input input[type='password'] {font-family: Verdana; letter-spacing: -0.2rem;}
 
 .id-photo-form .input__wrap .bar,
 .id-photo-form .input__wrap .input {display: block;}
