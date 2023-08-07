@@ -604,6 +604,7 @@ var hanaUI = {
         }
 
         $('.btn__form-next-depth').hide();
+        $('.btn__form-next').show();
     
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
@@ -613,7 +614,8 @@ var hanaUI = {
         // 셀렉트 포커스
         if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
             inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
-            inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+            if(inputArr.eq(inputArrIndex).find('.form__move').eq(0).attr("disabled") == undefined)
+            	inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
         } else { 
             inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
         }
@@ -664,7 +666,8 @@ var hanaUI = {
                 // 셀렉트 포커스
                 if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
-                    inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
+                    if(inputArr.eq(inputArrIndex).find('.form__move').eq(0).attr("disabled") == undefined)
+                    	inputArr.eq(inputArrIndex).find('.form__move').eq(0).trigger('click');
                 } else { 
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').removeClass('select--on');
                 }
