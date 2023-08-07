@@ -37,7 +37,7 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit">신분증 정보를<br>확인해 주세요</p>
+                        <p class="page-tit">촬영한 신분증을<br>확인해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -52,12 +52,26 @@
                             <!-- 안내문구 -->
                             <div class="id-photo-info">
                                 <p class="txt">빛 반사가 있거나 흔들린 경우 재촬영 해주세요</p>
-                                <button type="button" class="btn btn-refresh">재촬영</button>
+                                <button type="button" class="btn btn-refresh">다시 촬영</button>
                             </div>
                             <!--// 안내문구 -->
 
-                            <p class="page-tit-sub">정보가 틀린 경우, 수정해 주세요.</p>
-                            <div class="id-photo-form">
+                            <p class="page-tit-sub">인식된 신분증정보가 다른 경우 수정해 주세요.</p>
+                            <div class="id-photo-form">                                
+                                <div class="form-area mt20"><!-- D: 에러일 때 : class="form-area input--error" -->
+                                    <div class="input__wrap">
+                                        <div class="form-item input input--on">
+                                            <div class="input__inner">
+                                                <label for="inputText03" class="input__label" aria-hidden="true">이름</label>
+                                                <input type="text" class="input__element form__move" id="inputText03" title="이름 입력" value="김하나">
+                                                <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 에러메세지 -->
+                                    <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                </div>
+
                                 <div class="form-area">
                                     <div class="input__wrap">
                                         <div class="form-item input input--on input--disabled">

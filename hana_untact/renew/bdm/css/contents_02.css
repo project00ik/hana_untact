@@ -450,9 +450,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 /* 사업자등록증 촬영 */
 .business-photo-wrap {margin-top: 1rem;}
 .business-photo-wrap .business-photo-info .txt {font-size: 16px; font-weight: 500; color: #666; word-break: keep-all; word-wrap: break-word;}
-.business-photo-cont {padding-top: 37.7rem; background: url(../images/png/bg_business-photo.png) top 3.2rem left 50% no-repeat; background-size: 23.4rem auto;}
-.business-photo-cont .business-box {padding: 1.3rem; border-radius: 0.9rem; background: rgba(231, 233, 238, 0.5); text-align: center; color: #333; font-size: 1.4rem; font-weight: 500;}
-.business-photo-wrap .dot-list  {margin-top: 2rem;}
+.business-photo-cont {padding-top: 39.9rem; background: url(../images/png/bg_business-photo.png) top 5.4rem left 50% no-repeat; background-size: 23.4rem auto;}
+.business-photo-cont .business-box {padding: 1.3rem 2.4rem; border-radius: 0.9rem; background: rgba(231, 233, 238, 0.5);}
+.business-photo-wrap .bul-bar-wrap {margin-top: 1rem;}
+.business-photo-wrap .id-photo-info + .bul-bar-wrap {margin-top: 2.4rem;}
 .business-photo-wrap .id-photo {margin-top: 3rem;}
 
 /* 얼굴인식 */
