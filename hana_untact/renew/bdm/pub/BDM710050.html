@@ -49,12 +49,12 @@
                     </div>
                     <!--// 타이틀 -->
 
-                    <div class="cont-wrap">
-                        <div class="code-wrap">
+                    <div class="cont-wrap cont-form--animate">
+                        <div class="code-wrap form-area">
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element" id="inputText01" title="계좌 개설용 첫번째 숫자 입력">
+                                        <input type="number" class="input__element form__move" id="inputText01" title="계좌 개설용 첫번째 숫자 입력">
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element" id="inputText02" title="계좌 개설용 두번째 숫자 입력">
+                                        <input type="number" class="input__element form__move" id="inputText02" title="계좌 개설용 두번째 숫자 입력">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="number" class="input__element" id="inputText03" title="계좌 개설용 세번째 숫자 입력">
+                                        <input type="number" class="input__element form__move" id="inputText03" title="계좌 개설용 세번째 숫자 입력">
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,9 @@
                 if( inputNextVal != null && inputNextVal.length == 1 ) {
                     $('.code-wrap .input__wrap input').eq(inputNextIdx+1).focus();
                 }   
-            });           
+            });     
+            
+            hanaUI.formFocusEvent(0, false, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));        
 
         });
         

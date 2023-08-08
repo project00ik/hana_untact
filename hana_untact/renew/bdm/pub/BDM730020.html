@@ -15,7 +15,7 @@
         <!-- header -->
         <div id="header" class="app-header">
             <button class="btn-back" title="이전 화면"></button>
-            <p class="page-tit">추가확인</p>
+            <p class="page-tit">추가인증</p>
             <button class="btn-close" title="닫기"></button>
         </div>
         <!-- //header -->
@@ -50,7 +50,7 @@
                         </p>
                     </div>
 
-                    <div class="cont-wrap">
+                    <div class="cont-wrap cont-form--animate">
 
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="input__wrap">
@@ -88,16 +88,10 @@
                         </div> 
                         -->
 
-                        <ul class="dot-list type03 mt40">
-                            <li>
-                                해당 금융기관의 <span class="tp-green">전자금융(인터넷/스마트폰/폰뱅킹/ATM)을 통한 이체가</span> 가능한 계좌만 입력해 주세요.
-                            </li>
-                            <li>
-                                <span class="tp-green">토스, 카카오페이 등 간편 송금 서비스</span>를 통한 이체는 <span class="tp-green">확인 불가</span>함으로 유의해주세요.
-                            </li>
-                            <li>
-                                예/적금 가입시에는 신규금액으로 이체금액이 고정되며, 이외에는 1만원 이상 만원 단위로 입력할 수 있습니다.
-                            </li>
+                        <p class="info-title">이용안내</p>
+                        <ul class="dot-list type03">
+                            <li>토스, 카카오페이 등 간편송금을 통한 이체는 확인할 수 없습니다.</li>
+<li>예적금 가입 시에는 가입금액으로 이체금액이 고정되며, 이외에는 1만원 이상, 만원 단위로 입력할 수 있습니다.</li>
                         </ul>
                     </div>
                 </div>
@@ -127,7 +121,7 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            // hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
+            hanaUI.formFocusEvent(0, false, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
             // hanaUI.formFocusEvent(index); 
             
         });

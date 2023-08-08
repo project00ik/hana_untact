@@ -15,7 +15,7 @@
         <!-- header -->
         <div id="header" class="app-header">
             <button class="btn-back" title="이전 화면"></button>
-            <p class="page-tit">추가확인</p>
+            <p class="page-tit">추가인증</p>
             <button class="btn-close" title="닫기"></button>
         </div>
         <!-- //header -->
@@ -50,7 +50,7 @@
                         </p>
                     </div>
 
-                    <div class="cont-wrap">
+                    <div class="cont-wrap cont-form--animate">
 
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="input__wrap">
@@ -127,11 +127,13 @@
         <div class="modal__container" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__contents">
-                <p class="con-title">유의하세요!</p>
-                <p class="text-sub txt-align-l">
-                    <strong class="font-medium">토스, 카카오페이</strong> 등 <span class="tp-red">간편 송금 서비스</span>를 통한 이체는 확인되지 않으므로, 
-                    반드시 <strong class="font-medium">은행 및 증권사 금융기관</strong>의 <span class="tp-red">전자금융(인터넷/스마트폰/폰뱅킹/ATM)을 통해 이체</span>해 주셔야 합니다.
-                </p>                
+                <p class="con-title">가상계좌이체 전 확인해 주세요! </p>                
+                <p class="text-sub txt-align-l mt30">
+                    <span class="tp-green">토스, 카카오페이 등</span> 간편송금으로 이체하면 이체 확인이 되지 않습니다.
+                </p>              
+                <p class="text-sub txt-align-l mt30">
+                    <span class="tp-green">은행/증권사의 전자금융(인터넷뱅킹/스마트폰뱅킹/폰뱅킹/ATM)</span>을 통해 이체해 주세요. 
+                </p>                             
             </div>
             <div class="btn-wrap">
                 <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
@@ -144,9 +146,8 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            //hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
-            // hanaUI.formFocusEvent(index); 
-           modalOpen('modalAlertTitle2'); 
+            hanaUI.formFocusEvent(0, false, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
+            modalOpen('modalAlertTitle2'); 
         });
         
 
