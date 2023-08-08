@@ -38,11 +38,11 @@
                     <!-- 타이틀 -->
                     
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">우편물 받을 곳을<br>선택해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">직장 전화번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">직장 주소를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">%홍길동%님의 사업자 정보를<br>확인해주세요</p>
-                        <p class="page-tit label__tit tit--active" aria-hidden="false">%홍길동%님의 사업자 정보를<br>확인해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">우편물 받을 곳을<br>선택해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">직장전화번호를<br>입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">직장주소를<br>입력 해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">%홍길동% 님의<br>사업자정보를 확인해 주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">%홍길동% 님의<br>사업자정보를 확인해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -58,11 +58,11 @@
 							<div class="form-item select-wrap">
 								<div class="select">
 									<div class="select__inner">
-										<button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideBtn02" title="우편물 수령처 선택">
+										<button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideBtn02" title="우편물 받을 곳 선택">
 											<span></span> 
 										</button>
 									</div>
-									<div class="select-label">우편물 수령처</div>
+									<div class="select-label">우편물 받을 곳</div>
 								</div>
 								<p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
 							</div>
@@ -73,8 +73,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <label for="inputText03" class="input__label" aria-hidden="true">직장 전화번호</label>
-                                        <input type="text" class="input__element form__move" id="inputText03" title="직장 전화번호 입력">
+                                        <label for="inputText03" class="input__label" aria-hidden="true">직장전화번호</label>
+                                        <input type="text" class="input__element form__move" id="inputText03" title="직장전화번호 입력">
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                             <div class="form-item search-btn-wrap">
 								<div class="input-search-btn">
 									<div class="input-search__inner">
-										<div class="search-label">주소</div>
+										<div class="search-label">직장주소</div>
 										<button type="button" class="button button-search__btn form__move" data-element="modal__open" data-target="#modalSearch01" title="주소검색 열기">
 											
 										</button>
@@ -150,8 +150,8 @@
                                 <div class="input__wrap">
                                     <div class="form-item input input--on">
                                         <div class="input__inner">
-                                            <label for="inputText05" class="input__label" aria-hidden="true">개업연월일</label>
-                                            <input type="text" class="input__element form__move" id="inputText05" title="개업연월일 입력" value="2019.01.01">
+                                            <label for="inputText05" class="input__label" aria-hidden="true">개업일</label>
+                                            <input type="text" class="input__element form__move" id="inputText05" title="개업일 입력" value="2019.01.01">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                         </div>
                                     </div>
@@ -162,9 +162,9 @@
                             <div class="form-area">
                                 <div class="form-item select-wrap btn-date select--active">
                                     <div class="select">
-                                        <div class="select-label">개업연월일</div>
+                                        <div class="select-label">개업일</div>
                                         <div class="select__inner">
-                                            <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#slideCalendar03" id="dialOpenBtn3" title="개업연월일 선택">
+                                            <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#slideCalendar03" id="dialOpenBtn3" title="개업일 선택">
                                                 <span>2019.01.01</span> 
                                             </button>
                                         </div>
@@ -212,7 +212,9 @@
                                 <!-- 에러메세지 -->
                                 <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                 <!-- 가이드 텍스트 -->
-                                <p class="input__guide-txt input__note">행정안전부 &#34;공공 마이데이터&#34;를 통해 국세청의 사업자등록증명 정보를 조회하실 수 있습니다.</p>
+                                <p class="input__guide-txt input__note">
+                                    행정안전부 '공공 마이데이터'를 통해 국세청의 사업자등록증명 정보를 조회할 수 있습니다.
+                                </p>
                             </div>
                             
                             <!-- select -->
@@ -267,7 +269,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">주소검색</h1>
+                <h1 class="title">주소 검색</h1>
             </div>
             <div class="modal__contents btn-none">
                 <!-- 팝업 내용 -->
@@ -300,13 +302,13 @@
                     <div class="address-result-wrap">
                         <ul class="address-dot-list">
                             <li>도로명 + 건물 번호
-                                <span class="sub-txt">(예 : 송파대로570)</span>
+                                <span class="sub-txt">(예: 송파대로570)</span>
                             </li>
                             <li>동/읍/면/리 + 번지
-                                <span class="sub-txt">(예 : 신천동 7-30)</span>
+                                <span class="sub-txt">(예: 신천동 7-30)</span>
                             </li>
                             <li>건물명, 아파트명
-                                <span class="sub-txt">(예 : 반포자이아파트)</span>
+                                <span class="sub-txt">(예: 반포자이아파트)</span>
                             </li>
                         </ul>
                     </div>
@@ -314,7 +316,7 @@
                 <!--// 주소 검색 전 -->
                 <!-- 주소 검색 후 -->
                 <div class="address-result-wrap" style="display: none;">
-                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span></p>
                     <ul class="address-list">
                         <li>
                             <a href="#">
@@ -362,7 +364,7 @@
                 <!-- 주소 검색 결과 없음 -->
                 <div class="address-result-wrap" style="display: none;">
                     <div class="no-data">
-                        <p class="txt">검색된 주소가 없습니다.</p>
+                        <p class="txt">검색 결과가 없어요.</p>
                     </div>
                 </div>
                 <!--// 주소 검색 결과 없음 -->
@@ -378,7 +380,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">업종검색</h1>
+                <h1 class="title">업종 검색</h1>
             </div>
             <div class="modal__contents btn-none">
                 <!-- 팝업 내용 -->
@@ -411,7 +413,7 @@
                     <div class="address-result-wrap">
                         <ul class="address-dot-list">
                             <li>업종명, 키워드명
-                                <span class="sub-txt">(예 : 서비스, 음식점, 가구, 도매, 소매, 농업 등)</span>
+                                <span class="sub-txt">(예: 서비스, 음식점, 가구, 도매, 소매, 농업 등)</span>
                             </li>
                         </ul>
                     </div>
@@ -419,7 +421,7 @@
                 <!--// 업종검색 전 -->
                 <!-- 업종검색 후 -->
                 <div class="address-result-wrap" style="display: none;">
-                    <p class="result-total-text">전체 <span class="tp-green">2건</span>이 검색되었습니다.</p>
+                    <p class="result-total-text">전체 <span class="tp-green">2건</span></p>
                     <ul class="address-list">
                         <li>
                             <a href="#">
@@ -451,7 +453,7 @@
                 <!-- 업종검색 결과 없음 -->
                 <div class="address-result-wrap" style="display: none;">
                     <div class="no-data">
-                        <p class="txt">검색된 결과가 없습니다.</p>
+                        <p class="txt">검색 결과가 없어요.</p>
                     </div>
                 </div>
                 <!--// 업종검색 결과 없음 -->
@@ -463,11 +465,11 @@
     <!-- //모달레이어 - 주소검색(검색 전) -->
 
     <!-- 모달레이어 - 슬라이드 버튼X -->
-    <!-- 우편물 수령처 선택 -->
+    <!-- 우편물 받을 곳 선택 -->
     <div id="modalSlideBtn02" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__header">
-                <h1 class="title">우편물 수령처</h1>
+                <h1 class="title">우편물 받을 곳</h1>
             </div>
             <div class="modal__contents btn-none">                        
                 <ul class="modal-select-list">
@@ -495,11 +497,11 @@
         </div>
     </div>
     <!-- //모달레이어 - 슬라이드 버튼X -->
-    <!-- 모달레이어 - 개업연월일 -->
+    <!-- 모달레이어 - 개업일 -->
     <div id="slideCalendar03" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__header">
-                <h1 class="title">개업연월일 선택</h1>
+                <h1 class="title">개업일 선택</h1>
             </div>
             <div class="modal__contents modal__contents--inner-tab">
                 <!-- D: 간편설정이 없어야 하는경우 initIndex :1 로 설정하면 탭이 사라집니다. -->
@@ -552,7 +554,7 @@
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
         </div>
     </div>
-    <!--// 모달레이어 - 개업연월일 -->
+    <!--// 모달레이어 - 개업일 -->
     
     <script>
         

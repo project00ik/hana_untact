@@ -30,15 +30,20 @@
                             <li class="stepper__step">3</li>
                             <li class="stepper__step">4</li>
                             <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
                         </ul>
                     </div>
                 </div>
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">자녀 휴대폰번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">주소를<br>입력해주세요</p>
-                        <p class="page-tit label__tit tit--active" aria-hidden="false">이메일 주소를<br>입력해주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">자녀 휴대폰번호를<br>입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">통신사를<br>선택해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">주소를<br>입력해 주세요</p>
+                        <!-- D: 14세 미만의 경우 대리인이 자녀의 정보 수집
+                            <p class="page-tit label__tit" aria-hidden="true">자녀 이메일을<br>입력해 주세요</p>
+                        -->
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">이메일을<br>입력해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
 
@@ -56,8 +61,20 @@
                             <!-- 에러메세지 -->
                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                             <!-- 가이드 텍스트 -->
-                            <p class="input__guide-txt input__note">입력하신 휴대폰 번호로 자녀의 손님 정보가 등록됩니다.</p>
+                            <p class="input__guide-txt input__note">입력한 휴대폰번호가 자녀의 개인정보로 등록됩니다. </p>
                         </div>
+						<div class="form-area">
+							<div class="form-item select-wrap">
+								<div class="select">
+                                    <div class="select-label">통신사</div>
+									<div class="select__inner"><button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSlideSelect" title="통신사 선택">
+											<span>SKT</span> 
+										</button>
+									</div>
+								</div>
+								<p class="input__error" aria-live="assertive">오류메세지 노출</p>
+							</div>
+						</div>
                         <div class="form-area"><!-- D: 에러일 때 : class="form-area input--error" -->
                             <div class="form-item search-btn-wrap">
 								<div class="input-search-btn">
@@ -72,7 +89,7 @@
 								<!-- 에러 메시지 -->
 								<p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>
 							</div>
-                            <div class="form-item input">
+                            <div class="form-item input input--on">
 								<div class="input__inner">
 									<input type="text" id="inputText02" class="input__element" title="상세주소 입력폼" placeholder="상세주소">
 									<button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
@@ -126,7 +143,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">주소검색</h1>
+                <h1 class="title">주소 검색</h1>
             </div>
             <div class="modal__contents btn-none">
                 <!-- 팝업 내용 -->
@@ -159,13 +176,13 @@
                     <div class="address-result-wrap">
                         <ul class="address-dot-list">
                             <li>도로명 + 건물 번호
-                                <span class="sub-txt">(예 : 송파대로570)</span>
+                                <span class="sub-txt">(예: 송파대로570)</span>
                             </li>
                             <li>동/읍/면/리 + 번지
-                                <span class="sub-txt">(예 : 신천동 7-30)</span>
+                                <span class="sub-txt">(예: 신천동 7-30)</span>
                             </li>
                             <li>건물명, 아파트명
-                                <span class="sub-txt">(예 : 반포자이아파트)</span>
+                                <span class="sub-txt">(예: 반포자이아파트)</span>
                             </li>
                         </ul>
                     </div>
@@ -173,7 +190,7 @@
                 <!--// 주소 검색 전 -->
                 <!-- 주소 검색 후 -->
                 <div class="address-result-wrap">
-                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span></p>
                     <ul class="address-list">
                         <li>
                             <a href="#">
@@ -221,7 +238,7 @@
                 <!-- 주소 검색 결과 없음 -->
                 <div class="address-result-wrap" style="display: none;">
                     <div class="no-data">
-                        <p class="txt">검색된 주소가 없습니다.</p>
+                        <p class="txt">검색 결과가 없어요.</p>
                     </div>
                 </div>
                 <!--// 주소 검색 결과 없음 -->
