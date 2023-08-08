@@ -456,6 +456,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .business-photo-cont .business-box {padding: 1.3rem 2.4rem; border-radius: 0.9rem; background: rgba(231, 233, 238, 0.5);}
 .business-photo-wrap .bul-bar-wrap {margin-top: 1rem;}
 .business-photo-wrap .id-photo-info + .bul-bar-wrap {margin-top: 2.4rem;}
+.business-photo-wrap .btn-center-wrap {margin: 2.4rem 0;}
 .business-photo-wrap .id-photo {margin-top: 3rem;}
 
 /* 얼굴인식 */

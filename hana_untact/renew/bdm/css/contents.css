@@ -37,6 +37,7 @@
 
 /* 본인인증 */
 .title-under-wrap {margin-top: 1rem;}
+.title-under-wrap .text {font-weight: 500;}
 
 .bank-account-wrap {display: flex; align-items: center;}
 .bank-account-wrap .bank {margin-left: 0.8rem; font-size: 1.8rem; color: #000;}
@@ -55,13 +56,16 @@
 .bank-list-wrap li .btn-bank img {margin-top: 1.5rem; display: block; width: 2.4rem; height: 2.4rem;}
 .bank-list-wrap li .btn-bank .text {display: flex; align-items: center; height: 100%; font-size: 1.3rem; color: #000; font-weight: 500;}
 
-.code-wrap {display: flex; justify-content: center;}
+.code-wrap {display: flex !important; justify-content: center;}
 .code-wrap .input__wrap {display: block; margin: 0 1rem 0; width: 3rem;}
 .code-wrap .input__wrap input {text-align: center; font-size: 2.4rem; font-weight: 700;}
 .code-wrap .input__wrap .input:before {border-bottom: 1px solid #333;}
 .code-wrap .input__wrap .input--focus:before {border-bottom: 1px solid #30bfba;}
 
-.text-arrow {padding: 2.2rem 0 5.6rem; color: #333; text-align: center; background: url(../images/icon/expand-less@3x.png) center 10rem no-repeat; background-size: 2.6rem 1.6rem;}
+.text-arrow {padding: 2.2rem 0 5.6rem; color: #333; background: url(../images/icon/expand-less@3x.png) center bottom 1.6rem no-repeat; background-size: 2.6rem 1.6rem;}
+
+.text-arrow .bul-star-list {margin-top: 1.6rem;}
+.text-arrow .bul-star {margin-top: 0.6rem; font-size: 1.3rem;}
 
 /* 결과페이지 */
 .result-wrap {margin-top: 4rem; text-align: center;}
@@ -175,9 +179,14 @@
 .loding-wrap .title {font-size: 2rem; color: #000; font-weight: 500;}
 .loding-img-wrap {width: 17rem; height: 17rem; margin: 6.4rem auto 0;}
 
+/* 이용안내 title */
+.info-title {margin-top: 4rem; font-size: 1.4rem; color: #333;}
+.info-title + .dot-list {margin-top: 1rem;}
+
 /* common */
 .mt10 {margin-top: 1rem !important;}
 .mt12 {margin-top: 1.2rem !important;}
+.mt30 {margin-top: 3rem !important;}
 
 /* font-size */
 .font-sm {font-size: 1.3rem;}
@@ -271,7 +280,7 @@
 .card-box .btn-box-arrow {padding: 2.4rem; display: block; width: 100%; background: url(../images/icon/ico-system-arrow-right-m.png) top 2.6rem right 2.4rem no-repeat; background-size: 1.6rem 1.6rem; color: #333; font-weight: 700; text-align: left;}
 .card-box .btn-card-delete {width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) right 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 2.4rem; right: 2.4rem;}
 
-.card-box-green {border-radius: 1.8rem; border: 1px solid #009591; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
+.card-box-green {border-radius: 1.8rem; border: 2px solid #009591; box-shadow: 2px 3px 10px 0 rgba(0, 0, 0, 0.06);}
 .card-box-green .inbox {padding: 2.4rem;}
 
 /* btn */
