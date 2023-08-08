@@ -170,6 +170,11 @@
 .use-coupon-wrap .list-wrap.type01 .point dd {font-size: 1.7rem;}
 .use-coupon-wrap .list-wrap.type01 dl + dl {margin-top: 0.7rem;}
 
+/* loding */
+.loding-wrap {margin-top: 2.4rem; text-align: center;}
+.loding-wrap .title {font-size: 2rem; color: #000; font-weight: 500;}
+.loding-img-wrap {width: 17rem; height: 17rem; margin: 6.4rem auto 0;}
+
 /* common */
 .mt10 {margin-top: 1rem !important;}
 .mt12 {margin-top: 1.2rem !important;}
