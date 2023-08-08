@@ -798,7 +798,6 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #bbb; text-align: left; position: relative; z-index: 1; opacity: 0;}
 .select-wrap .select .button-select__item span {max-width: 100%; display: inline-block; line-height: 1.2; vertical-align: top; font-size: 1.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .select-wrap .select .button-select__item span a {font-size: inherit;}
-.select-wrap.btn-date .select::after {display: none;}
 .select-wrap.btn-date .select .button-select__item {padding: 2.8rem 0 0.4rem;}
 .form-flex-wrap .select-wrap .select .button-select__item span {vertical-align: bottom;}
 .select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left: 0; top: 4rem; z-index: 0; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
