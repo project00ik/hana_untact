@@ -37,11 +37,11 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">증권사 통보용 휴대폰번호를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">증권사 통보용 주소를<br>입력해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">증권사 증권사 우편물 받을 곳곳을<br>선택해주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">증권저축계좌	&#40;제휴증권사<br>국내/해외주식&#41;를 만들게요</p>
-                        <p class="page-tit label__tit tit--active" aria-hidden="false">증권저축계좌	&#40;제휴증권사<br>국내/해외주식&#41;를 만들게요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">증권사에 공유할<br>휴대폰번호를 입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">증권사에 공유할<br>주소를 입력해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">증권사 우편물 받을 곳을<br>선택해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">증권저축계좌를<br>만들게요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">증권저축계좌를<br>만들게요</p>
                         <!-- <p class="page-tit label__tit tit--active" aria-hidden="false">증권저축계좌<br>%한국투자증권%<br>해외주식을 만들게요</p> -->
                     </div>
                     <!--// 타이틀 -->
@@ -88,7 +88,7 @@
                             <div class="form-item search-btn-wrap">
 								<div class="input-search-btn">
 									<div class="input-search__inner">
-										<div class="search-label">%집% 주소(증권사 통보용)</div>
+										<div class="search-label">집주소</div>
 										<button type="button" class="button button-search__btn form__move" data-element="modal__open" data-target="#modalSearch01" title="주소검색 열기"></button>
 										<button type="submit" class="btn-search" aria-label="검색">검색</button>
 									</div>
@@ -126,8 +126,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="password" class="input__element form__move" id="inputText03" title="계좌 비밀번호 확인 입력" placeholder="숫자 4자리 입력" >
-                                        <label for="inputText03" class="input__label" aria-hidden="true">계좌 비밀번호 확인</label>
+                                        <input type="password" class="input__element form__move" id="inputText03" title="계좌비밀번호 확인 입력" placeholder="숫자 4자리 입력" >
+                                        <label for="inputText03" class="input__label" aria-hidden="true">계좌비밀번호 확인</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -140,8 +140,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <input type="password" class="input__element form__move" id="inputText01" title="증권계좌 비밀번호 입력" placeholder="숫자 4자리 입력" >
-                                        <label for="inputText01" class="input__label" aria-hidden="true">증권계좌 비밀번호</label>
+                                        <input type="password" class="input__element form__move" id="inputText01" title="계좌비밀번호 입력" placeholder="숫자 4자리 입력" >
+                                        <label for="inputText01" class="input__label" aria-hidden="true">계좌비밀번호</label>
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -152,13 +152,13 @@
                         <div class="info-wrap">
                             <div class="tg-text tg--area">
                                 <div class="tg-btn" role="button" aria-expanded="false" onclick="toggleLayer(this);">
-                                    <button type="button">알아두세요</button>
+                                    <button type="button">이용안내</button>
                                 </div>
                                 <div class="tg-text-cont tg--layer">
                                     <ul class="bul-bar-wrap">
-                                        <li>숫자 4자리로 입력하세요.</li>
+                                        <li>숫자 4자리를 입력해 주세요.</li>
                                         <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
-                                        <li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다. (ex. 1111, 1234)</li>
+                                        <li>동일하거나 연속된 숫자는 등록할 수 없습니다.(예. 1111, 1234)</li>
                                     </ul>
                                 </div>
                             </div>
@@ -221,7 +221,7 @@
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
-                <h1 class="title">주소검색</h1>
+                <h1 class="title">주소 검색</h1>
             </div>
             <div class="modal__contents btn-none">
                 <!-- 팝업 내용 -->
@@ -254,13 +254,13 @@
                     <div class="address-result-wrap">
                         <ul class="address-dot-list">
                             <li>도로명 + 건물 번호
-                                <span class="sub-txt">(예 : 송파대로570)</span>
+                                <span class="sub-txt">(예: 송파대로570)</span>
                             </li>
                             <li>동/읍/면/리 + 번지
-                                <span class="sub-txt">(예 : 신천동 7-30)</span>
+                                <span class="sub-txt">(예: 신천동 7-30)</span>
                             </li>
                             <li>건물명, 아파트명
-                                <span class="sub-txt">(예 : 반포자이아파트)</span>
+                                <span class="sub-txt">(예: 반포자이아파트)</span>
                             </li>
                         </ul>
                     </div>
@@ -268,7 +268,7 @@
                 <!--// 주소 검색 전 -->
                 <!-- 주소 검색 후 -->
                 <div class="address-result-wrap" style="display: none;">
-                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                    <p class="result-total-text">전체 <span class="tp-green">NNN건</span></p>
                     <ul class="address-list">
                         <li>
                             <p class="post-num">07780</p>
@@ -308,7 +308,7 @@
                 <!-- 주소 검색 결과 없음 -->
                 <div class="address-result-wrap" style="display: none;">
                     <div class="no-data">
-                        <p class="txt">검색된 주소가 없습니다.</p>
+                        <p class="txt">검색 결과가 없어요.</p>
                     </div>
                 </div>
                 <!--// 주소 검색 결과 없음 -->
