@@ -756,9 +756,9 @@ var hanaUI = {
         setTimeout(function(){
             inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
             
-            $('.btn__form-next').hide();
-            $('.btn__form-next-depth').show();
         }, 100)
+        $('.btn__form-next').hide();
+        $('.btn__form-next-depth').show();
         
         // 셀렉트 포커스
         if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
@@ -1687,7 +1687,12 @@ function toggleLayer(obj) {
             
             if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
-            } 
+            }
+            
+            // [v] 계좌 비밀번호 등록 (선택) : new-password-wrap일때 정순 포커스 추가
+            if (tgChkBtn.closest('.tg--area').parent().hasClass('new-password-wrap')) {
+                hanaUI.formDepthEvent(0);
+            }
             
         } else { 
             tgChkBtn.removeClass('tg--on');
@@ -1695,6 +1700,13 @@ function toggleLayer(obj) {
             tgly.removeClass('open');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            
+            // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 버튼 교체
+            if (tgChkBtn.closest('.tg--area').parent().hasClass('new-password-wrap')) {
+                console.log('new-password-wrap 있음');
+                $('.btn__form-next-depth').hide();
+                $('.btn__form-next').show();
+            }
         }
         
     } else { 
