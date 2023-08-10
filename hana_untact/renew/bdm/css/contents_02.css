@@ -109,8 +109,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input__remove-button {display: none; max-width: 1.6rem; width: 1.6rem; height: 1.6rem; margin: 0 0 0.8rem 1rem; background: url(../images/icon/ico-system-input-close.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
 /* 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정 */
+.input--focus .input__remove-button {display: none;}
 .textarea--on .input__remove-button,
-.input--on .input__remove-button {display: inline-block;}
+.input--on .input__remove-button
+.input--focus.input--on .input__remove-button {display: inline-block;}
 .input--on .input__element:disabled + .input__remove-button,
 .input--on .input__element:read-only + .input__remove-button {display: none;}
 
@@ -140,7 +142,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--focus .input__element::placeholder {color: #d0d9d9; font-weight: 600;}
 
 .input--focus .input__optional {display: block;}
-.input--focus .input__remove-button {display: inline-block;}
+/* .input--focus .input__remove-button {display: inline-block;} */
 .input--focus .input__label, 
 .input--on .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem; white-space: nowrap;}
 
