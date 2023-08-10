@@ -14,7 +14,7 @@
 	.table {position: relative; display: flex; flex-wrap: wrap; width: 100%; border-top: 2px solid #ccc;}
 	.table::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: 0;}
 	.table .cell {position: relative; flex:1 1 50%; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; margin-top: -1px;}
-	.table .cell-data {display: flex;}
+	.table .cell-data {display: flex; max-width: 50vw;}
 	.table .cell-data .item {padding: 0 10px; word-wrap: break-word; white-space: normal; word-break: break-all; border-right: 1px solid #e7e9ee;}
 	.table .cell-data .item:nth-child(1) {width: 35%; font-weight: bold;}
 	.table .cell-data .item:nth-child(2) {width: 30%;}
@@ -28,21 +28,30 @@
 	.table .cell.full {flex: 1 1 100%;}
 	.table .cell.full::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; top: -1px;}
 	.table .cell.full::after {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: -1px;}
-	.table .cell.full .cell-data {width: 50%;}
-	.table .cell.inType01:nth-child(even) {padding-left: 20px; background: yellow;}
-	.table .cell.inType02:nth-child(even) {padding-left: 40px; background: green;}
-	.table .cell.inType03:nth-child(even) {padding-left: 60px; background: red;}
-	.table .cell.inType04:nth-child(even) {padding-left: 80px; background: blue;}
+	/* .table .cell.full .cell-data {width: 50%;} */
+	.table .cell.inType01:nth-child(even) {padding-left: 20px;  background: yellow;}
+	.table .cell.inType02:nth-child(even) {padding-left: 40px;  background: green;}
+	.table .cell.inType03:nth-child(even) {padding-left: 60px;  background: red;}
+	.table .cell.inType04:nth-child(even) {padding-left: 80px;  background: blue;}
+	.table .cell.inType01:nth-child(even) .cell-data {width: calc(50vw - 20px);}
+	.table .cell.inType02:nth-child(even) .cell-data {width: calc(50vw - 40px);}
+	.table .cell.inType03:nth-child(even) .cell-data {width: calc(50vw - 60px);}
+	.table .cell.inType04:nth-child(even) .cell-data {width: calc(50vw - 80px);}
 	.table .cell.inType01:nth-child(odd),
 	.table .cell.inType02:nth-child(odd),
 	.table .cell.inType03:nth-child(odd),
 	.table .cell.inType04:nth-child(odd) {padding-left: 0; background: none;}
 
-	.table .cell.inType01.full {flex: 1 1 100%; padding-left: 20px; background: yellow;}
-	.table .cell.inType02.full {flex: 1 1 100%; padding-left: 40px; background: green;}
-	.table .cell.inType03.full {flex: 1 1 100%; padding-left: 60px; background: red;}
-	.table .cell.inType04.full {flex: 1 1 100%; padding-left: 80px; background: blue;}
+	.table .cell.inType01.full {flex: 1 1 100%; padding-left: 20px; }
+	.table .cell.inType02.full {flex: 1 1 100%; padding-left: 40px; }
+	.table .cell.inType03.full {flex: 1 1 100%; padding-left: 60px; }
+	.table .cell.inType04.full {flex: 1 1 100%; padding-left: 80px; }
 	
+	.table .cell.inType01.full .cell-data {width: calc(50vw - 20px);}
+	.table .cell.inType02.full .cell-data {width: calc(50vw - 40px);}
+	.table .cell.inType03.full .cell-data {width: calc(50vw - 60px);}
+	.table .cell.inType04.full .cell-data {width: calc(50vw - 80px);}
+
 	/* .table .cell[class*=inType]:nth-child(2n+1) .item:nth-child(4) {border-right: none;}
 	.table .cell.full .item:nth-child(4) {border-right: none;}
 	
