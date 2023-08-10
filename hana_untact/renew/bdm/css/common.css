@@ -138,6 +138,45 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 	}
 }
 
+@-webkit-keyframes btnChangeIn {
+	0% {
+		width:calc(100% - 3rem);
+	}
+	100% {
+		width:4.3125rem;
+	}
+}
+@-webkit-keyframes btnHideIn {
+	0% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@-webkit-keyframes btnChange {
+	0% {
+		width:4.3125rem;
+	}
+	100% {
+		width:calc(100% - 3rem);
+		z-index:10;
+	}
+}
+@-webkit-keyframes btnHide {
+	0% {
+		opacity:1;
+	}
+	99% {
+		visibility: visible;
+	}
+	100% {
+		visibility: hidden;
+		opacity:0;
+	}
+}
+
 
 /* - 레이아웃 : 컨텐츠 영역 (contents) */
 .app-main {position: relative; z-index: 1;
@@ -206,7 +245,33 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .page-tit-wrap .label__tit.tit--active {display: block;}
 
 .cont-form--animate .form-area {display: none;}
-.cont-form--animate .form-area.form--active {display: block;}
+.cont-form--animate .form-area.form--active:last-child {animation: none;}
+.cont-form--animate .form-area.form--active {
+    display: block;
+	animation: formAreaShow 0.5s ease-in-out forwards;
+}
+@keyframes formAreaShow {
+	0% {
+        margin-top: 6rem;
+		opacity: 0;
+	}
+	100% {
+        margin-top: 4rem;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes formAreaShow {
+	0% {
+        margin-top: 6rem;
+		opacity: 0;
+	}
+	100% {
+        margin-top: 4rem;
+		opacity: 1;
+	}
+}
+
+
 .cont-form--animate .form-area .tab-box-wrap .form-area {display: block;}
 .cont-form--animate .form-area .form-area {display: block;}
 .form-area .btn-tooltip {display: block; width: 1.7rem; height: 1.6rem; background: url(../images/icon/ico-system-tooltip.png) 50% 50% no-repeat; background-size: 1.7rem 1.6rem;}
@@ -220,6 +285,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 .cont-form--animate .form-hide-wrap .form-area {display: block;}
 .formHide {display:none !important;}
+
 
 /* 컨텐츠 상단 양쪽정렬 영역 */
 .cont-top-wrap {display: flex; align-items: center; justify-content: space-between;}
