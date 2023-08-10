@@ -1985,9 +1985,9 @@ function findNextFocusIndex(id) {
  * @param id		요소의 id값
  * @return boolean  활성화 된 항목 중 마지막 항목이면 true 아니면 false */
 function isLastActiveObj(id) {
-	var formActiveList = $(".cont-form--animate").find(">.form--active").get().reverse();
+	var formActiveList = $(".cont-form--animate").find(">.form--active, >.formHide").get().reverse();
 	var currentIndex = inputIdIndex(id);
-	return $(formActiveList).last().is($(formActiveList).eq(currentIndex));
+	return $(formActiveList).filter(".form--active").last().is($(formActiveList).eq(currentIndex));
 }
 
 /**

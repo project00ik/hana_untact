@@ -345,7 +345,7 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
 
         $el.find('.list-section').each(function(){
             var scrollContainer = $(this);      
-            var isMultiple = scrollContainer.parent().is('.col-3');
+            var isMultiple = scrollContainer.parent().is('.col-2, .col-3');
             var orgTargetIdx = 0;
             //스크롤시 이벤트
             scrollContainer.off('scroll').on('scroll',function(){
@@ -837,6 +837,406 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
             });
         })
     }
+    init(obj);
+};
+
+hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
+	
+    var $el = null;
+    var dialModal = {
+        scrollWrapper : [
+            /*{
+                $el : null,
+                cols:0,
+                itemHeight : 0,
+                isActive : false,
+                scrollItems:[],
+                scrollTop : 0,
+                val: null
+            }*/
+        ],
+        //setDate : "EE",
+        groupIdx : 0, //dial group의 인덱스 저장
+        min : 0, //최소 가입기간
+        max : 0, //최대 가입기간(만기일)
+        tabs : null,
+        minDate : null,
+        maxDate : null,
+        $callBtn : null,
+        $confirmBtn: null,
+        $cancleBtn: null,
+        $selectBtn: null,
+        _callBackFn : null,
+        onlyMulti:false
+    };
+
+    var itemTemplate = '\
+        <li class="list-wrap__item list-button-wrap list-button-wrap--small" data-option-value="{{value}}" aria-label="{{value}}">\
+            <button type="button" class="list-wrap__anchor">\
+                <span class="list-wrap__box">\
+                    <strong class="list-wrap__title list-wrap__title--value">{{value}}</strong>\
+                </span>\
+            </button>\
+        </li>';
+    
+    function init(obj){
+        var me = $(obj);
+        if(!me.length){ return false;}
+        var o = new Object(dialModal);            
+        var container, items;
+
+        o.tabs = me.find('.tab-wrap__menu');
+        o.$callBtn = $('button[data-target="#'+me.get(0).id+'"]');
+        o.$confirmBtn = me.find('.md.button--positive');
+        o.$cancleBtn = me.find('.md.btn-cancle');
+        o.$selectBtn = me.find('.btn-group-flex.btn-date-wrap');
+        o._callBackFn = cfn;
+        
+        function scrollWrapperExtend(obj, container, items){
+            var colsType = parseInt(items.attr('class').split('col-')[1].slice(0,1));
+            obj.groupIdx = (colsType > 1) ? 1 : 0;
+            obj.scrollWrapper.push({
+                $el : container,
+                cols: colsType,
+                itemHeight : 0,
+                isActive : false,
+                scrollItems: items,
+                scrollTop : 0,
+                val: null,
+                selYY : '',
+                selMM : ''
+            });
+            return obj;
+        }
+        
+        if(typeof param.length == 'number'){ //single
+            container = me.find('.modal__contents');
+            items = container.find('.container__panel');// .list-section
+            o = scrollWrapperExtend(o, container, items);
+            o.items = param;
+        }else{
+            o.items = param.items;
+            if(!!o.tabs.length){//탭이 있다면
+                o.onlyMulti = me.find('.modal__contents--inner-tab [data-element=tab]').data('options').initIndex;
+                if(o.onlyMulti){
+                    o.tabs.parent().hide();
+                }
+                
+                me.find('.pualugin-tab__panel').each(function(){
+                    container = $(this);
+                    items = container.find('.container__panel');
+                    o = scrollWrapperExtend(o, container, items);
+                    
+                    o.min = param.min;
+                    o.max = param.max;
+                })
+            }else{
+                container = me.find('.modal__contents--multiple');
+                items = container.find('.container__panel');// .list-section
+                o = scrollWrapperExtend(o, container, items);
+                o.min = param.min;
+                o.max = param.max;
+            }
+        }
+        //동적 생성
+        createslide(o);
+        event(me, o);
+        
+        $('body').data('plugin_modal').open(obj);
+    }
+
+    //윤년 관련 함수
+    function dateChk(yyyy, m){
+        var lastDay = new Date(yyyy,m,0).getDate();
+        return lastDay;
+    }
+
+    function createslide(o){
+        if(typeof param.length != 'number'){
+            var dateObj = calcPeriod(o.min, o.max);
+            o.dateObj = dateObj.distance;      
+            o.minDate = dateObj.min;              
+            o.maxDate = dateObj.max;
+            if(!!o.tabs.length){//탭이 있다면
+                createYY(o, "년");
+                createMM(o, Object.keys(dateObj.distance)[0], "월");
+                createDD(o, o.scrollWrapper[o.groupIdx].selYY, parseInt(o.dateObj[o.scrollWrapper[o.groupIdx].selYY][0]), "일");
+            }   
+        }
+        if(!o.onlyMulti){
+            singleCreateMM(o);
+        }
+    }
+
+    function rtArrayNum(num){
+        var arr = new Array(num);
+        for(var i = 0; i < num; i++){
+            arr[i] = ((i+1)+"").padStart(2, "0");
+        };
+        return arr;
+    }
+
+    /*
+     calcPeriod : 최소 최대기간 사이의 년 월 배열이 담긴 객체 리턴 
+    */
+   
+     function distance(mm){//인자값 개월수
+        var b = new Date();
+        b.setMonth(b.getMonth() + mm);
+        return b;
+    }
+
+    function calcPeriod(oMin, oMax){
+        var dateObj = {};
+        var a = distance(oMin);
+        var b = distance(oMax);
+        var min = a.getMonth() + 1;
+        var max = b.getMonth() + 1;
+        var len = b.getFullYear() - a.getFullYear() + 1;
+        
+        for(var i=0; i<len; i++){
+            dateObj[a.getFullYear() + i] = rtArrayNum(12);
+        }
+        dateObj[b.getFullYear()] = dateObj[b.getFullYear()].slice(0, max);
+        dateObj[a.getFullYear()] = dateObj[a.getFullYear()].slice(min-1);
+
+        return {
+            distance : dateObj,
+            min : a,
+            max : b
+        }
+    }
+
+    function createYY(o, unitText){
+        var dateObj = o.dateObj;
+        var resultStr = '<ul class="list-wrap">';
+        for(var key in dateObj){
+            resultStr += itemTemplate.replace(/{{value}}/g, key+unitText);
+        }
+        resultStr += '</ul>';
+
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).html(resultStr);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+        
+        // 웹접근성 스크린리더 관련 추가
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
+            "role": "radio",
+            "aria-checked" : true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
+            "role": "radio",
+            "aria-checked" : false
+        });
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
+        
+    }
+
+    function createMM(o, selYear, unitText){
+
+        var dateObj = o.dateObj;
+        var resultStr = '<ul class="list-wrap">';
+        for(var key in dateObj[selYear]){
+            resultStr += itemTemplate.replace(/{{value}}/g, dateObj[selYear][key]+unitText);
+        }
+        resultStr += '</ul>';
+        o.scrollWrapper[o.groupIdx].selYY = selYear;
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).html(resultStr);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+        
+        // 웹접근성 스크린리더 관련 추가
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
+            "role": "radio",
+            "aria-checked" : true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
+            "role": "radio",
+            "aria-checked" : false
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
+    }
+
+    function createDD(o, selYear, selMonth, unitText){
+
+        var arrDay = rtArrayNum(31);
+        var limitMinDate = o.minDate.getDate();
+        var limitMaxDate = o.maxDate.getDate();
+        
+        arrDay = arrDay.slice(0, dateChk(selYear, selMonth));
+
+        if(o.minDate.getFullYear() == parseInt(selYear) && (o.minDate.getMonth()+1) == parseInt(selMonth)){//최소 가입일 적용
+            arrDay = arrDay.slice(limitMinDate-1);
+        }
+        if(o.maxDate.getFullYear() == parseInt(selYear) && (o.maxDate.getMonth()+1) == parseInt(selMonth)){//최대 만기일 적용
+            arrDay = arrDay.slice(0, limitMaxDate);
+        }
+            
+        var resultStr = '<ul class="list-wrap">';
+        for(var i=0; i<arrDay.length; i++){
+            resultStr += itemTemplate.replace(/{{value}}/g, arrDay[i] + unitText);
+        }
+        resultStr += '</ul>';
+
+        o.scrollWrapper[o.groupIdx].selMM = selMonth;
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).html(resultStr);
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+        
+        // 웹접근성 스크린리더 관련 추가
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('role', 'radiogroup');
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
+            "role": "radio",
+            "aria-checked" : true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
+            "role": "radio",
+            "aria-checked" : false
+        });
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
+        
+        return arrDay;
+    }
+    
+    function singleCreateMM(o) {
+        var resultStr = '<ul class="list-wrap">';
+        for(var i=0; i<o.items.length; i++){            
+            resultStr += itemTemplate.replace(/{{value}}/g, o.items[i]['codeName']);
+        }
+        resultStr += '</ul>';
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).html(resultStr);
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).scrollTop(0).find('.list-wrap__item').eq(0).addClass('active-item');
+        
+        // 웹접근성 스크린리더 관련 추가
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
+            "role": "radio",
+            "aria-checked" : true
+        });
+        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
+            "role": "radio",
+            "aria-checked" : false
+        });
+        $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
+    }
+    
+    function event($el, o){
+        var $callBtn = o.$callBtn;
+
+        //2022-10-17 이전 다음항목 클릭시
+        $el.on('click', '.modal__contents .list-section .list-wrap__item', function (e) {//2022-10-17 update
+            var _this = $(this);
+            var scrollContainer = _this.parents('.list-section');
+            var scrTop = scrollContainer.scrollTop();
+            if(_this.is('.active-item')) { return false;}
+            if(_this.next('.active-item').length){//이전항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop - 55
+                }, 100);
+            }
+            if(_this.prev('.active-item').length){//다음항목이라면
+                scrollContainer.animate({
+                    scrollTop:scrTop + 55
+                }, 100);
+            } 
+        });
+        
+        //모달내부 지정 날짜 버튼 이벤트
+        o.$selectBtn.off('click').on('click', function(e) {
+        	var btnName = e.target.textContent;
+            var now = new Date();
+            var _selectVal = '';
+            var _rtnVal = {};
+            var noLimit = true;
+            
+        	if ( btnName == '6개월' ) {
+        		_selectVal = new Date(now.setMonth(now.getMonth() + 6));
+        	} else if ( btnName == '1년' ) {
+        		_selectVal = new Date(now.setFullYear(now.getFullYear() + 1));
+        	} else if ( btnName == '2년' ) {
+        		_selectVal = new Date(now.setFullYear(now.getFullYear() + 2));
+        	} else {
+        		_rtnVal.dates = '9999.12.31';
+        		noLimit = false;
+        	}
+        	
+        	if ( noLimit ) {
+        		_rtnVal.dates = _selectVal.toISOString().substring(0, 10).replaceAll("-", ".");
+        	}
+        	
+            o._callBackFn(_rtnVal);
+            $callBtn.closest('.form-item').addClass('select--active');
+            $callBtn.closest('.form-item').removeClass('select--on');
+            $('body').data('plugin_modal').close(obj);
+        });
+
+        //모달내부 신청함 버튼 이벤트        
+        o.$confirmBtn.off('click').on('click', function(){
+            var _selectVal = '';
+            var _rtnVal = {};
+            var selContent = o.scrollWrapper[1].$el.find('.list-section .list-wrap .active-item').text();
+            
+            _selectVal = selContent.replace(/ /g, '');
+        	_rtnVal.dates = _selectVal.replace(/[ㄱ-힣]/g, '.').slice(0, -1);
+            o._callBackFn(_rtnVal);
+            $('body').data('plugin_modal').close(obj);
+        });
+
+        $el.find('.list-section').each(function(){
+            var scrollContainer = $(this);      
+            var isMultiple = scrollContainer.parent().is('.col-3');
+            var orgTargetIdx = 0;
+            //스크롤시 이벤트
+            scrollContainer.off('scroll').on('scroll',function(){
+                var me = $(this);
+                var items = me.find('.list-wrap__item');
+                var _height = 55;// items.height() + margin;
+                var scrTop = this.scrollTop + (_height/2);
+                var activeTargetIdx =  (Math.floor(scrTop/_height));
+                if(activeTargetIdx > items.length -1) {
+                    activeTargetIdx = items.length -1;
+                }
+                //년도가 변할경우 월 데이터 갱신
+                if(isMultiple && scrollContainer.index() === 0){//년
+                    if(orgTargetIdx != activeTargetIdx){
+                        
+                        createMM(o, Object.keys(o.dateObj)[activeTargetIdx], "월");
+                        if(typeof yearChangeCb == "function") {
+                        	yearChangeCb();
+                        }
+                    }
+                }
+                if(isMultiple && scrollContainer.index() === 1){//월
+                    if(orgTargetIdx != activeTargetIdx){
+                        
+                        createDD(o, o.scrollWrapper[o.groupIdx].selYY, parseInt(o.dateObj[o.scrollWrapper[o.groupIdx].selYY][activeTargetIdx]),  "일");
+                        if(typeof monthChangeCb == "function") {
+                        	monthChangeCb();
+                        }
+                        
+                    }
+                }
+                if(orgTargetIdx != activeTargetIdx && window.navigator.vibrate){
+                    window.navigator.vibrate(100);
+                }
+                
+                items.eq(activeTargetIdx).addClass('active-item').siblings().removeClass('active-item');
+                // 웹접근성 스크린리더 관련 추가
+                items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
+                items.eq(activeTargetIdx).attr({
+                    "role": "radio",
+                    "aria-checked" : true
+                });
+                items.eq(activeTargetIdx).siblings().attr({
+                    "role": "radio",
+                    "aria-checked" : false
+                });
+                items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
+                
+                orgTargetIdx = activeTargetIdx;
+            })
+        });        
+    }
+
     init(obj);
 };
 
