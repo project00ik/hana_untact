@@ -33,7 +33,7 @@
 .account-ck-wrap .checkbox-wrap.sm input:checked + label .account-num-wrap {color: #666;}
 
 .checkbox-notice-wrap {margin-top: 4rem;}
-.checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 2.8rem;}
+.checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 0;}
 
 /* 본인인증 */
 .title-under-wrap {margin-top: 1rem;}
