@@ -84,8 +84,10 @@ legend, hr {font-size:0; height:1px; left:-10000%; line-height:0; overflow:hidde
 .blind, caption {position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; overflow: hidden;}
 
 input::placeholder, textarea::placeholder {-webkit-text-fill-color: #929292; -webkit-opacity: 1; color: #929292; font-weight: 700; font-size: 1.8rem;}
-input:disabled, textarea:disabled, input:disabled::placeholder, textarea:disabled::placeholder,
-input:read-only, textarea:read-only, input:read-only::placeholder, textarea:read-only::placeholder {-webkit-text-fill-color: #666; -webkit-opacity: 1; color: #666;}
+input:disabled, textarea:disabled, 
+input:read-only, textarea:read-only  {-webkit-text-fill-color: #666; -webkit-opacity: 1; color: #666;}
+input:disabled::placeholder, textarea:disabled::placeholder,
+input:read-only::placeholder, textarea:read-only::placeholder {-webkit-text-fill-color: #929292; -webkit-opacity: 1; color: #929292;}
 
 @media (max-width: 374px) {
     html {font-size: 9px;}

@@ -103,8 +103,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element:not(:readonly):focus ~ .input__label {color: #666; top: 1.0625rem; font-size: 0.8125rem; left: 0.875rem;}
 .input__element::-webkit-input-placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
 .input__element::placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
-.input--on .input__element::-webkit-input-placeholder {color: #bbb;}
-.input--on .input__element::placeholder {color: #bbb;}
+.input--on .input__element::-webkit-input-placeholder {color: #929292;}
+.input--on .input__element::placeholder {color: #929292;}
 .input__element--right {text-align: right; padding-right: 0;}
 .input__element--right ~ .input__optional {padding-left: 0.25rem; padding-top: 1.3125rem; line-height: 1.2;}
 .input__element--right.input__no-label + .input__optional {margin-top: 0.25rem;}
@@ -113,9 +113,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element.input-price {text-align: right;}
 
 .input__element.input__no-label::-webkit-input-placeholder,
-.input__element.input-price::-webkit-input-placeholder {color: #d0d9d9; font-size: 1.8rem; font-weight: 700;}
+.input__element.input-price::-webkit-input-placeholder {color: #929292; font-size: 1.8rem; font-weight: 700;}
 .input__element.input__no-label::placeholder,
-.input__element.input-price::placeholder {color: #d0d9d9; font-size: 1.8rem; font-weight: 700;}
+.input__element.input-price::placeholder {color: #929292; font-size: 1.8rem; font-weight: 700;}
 
 .input__remove-button {display: none; max-width: 1.6rem; width: 1.6rem; height: 1.6rem; margin: 0 0 0.8rem 1rem; background: url(../images/icon/ico-system-input-close.png) 50% 50% no-repeat; background-size: 100% auto; font-size: 0; line-height: 1.2;}
 /* 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정 */
@@ -148,8 +148,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 /* .input--focus:before {border-color: #009591;} */
 .input--focus .input__element {color: #009591;}
-.input--focus .input__element::-webkit-input-placeholder {color: #d0d9d9; font-weight: 600;}
-.input--focus .input__element::placeholder {color: #d0d9d9; font-weight: 600;}
+.input--focus .input__element::-webkit-input-placeholder {color: #929292; font-weight: 600;}
+.input--focus .input__element::placeholder {color: #929292; font-weight: 600;}
 
 .input--focus .input__optional {display: block;}
 /* .input--focus .input__remove-button {display: inline-block;} */
@@ -158,8 +158,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .input.readonly .input__element {color: #2f3333;}
 .input.readonly:before {border-color: #dddee4 !important; color: #2f3333 !important; font-weight: 400; box-shadow: none !important;}
-.input.readonly::-webkit-input-placeholder {color: #bbb; font-weight: 300;}
-.input.readonly::placeholder {color: #bbb; font-weight: 300;}
+.input.readonly::-webkit-input-placeholder {color: #929292; font-weight: 300;}
+.input.readonly::placeholder {color: #929292; font-weight: 300;}
 
 .input--disabled:before {background: none; border-color: #dddee4 !important;}
 .input--disabled .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
@@ -182,7 +182,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input-box:focus {border-color: #009591;}
 .input-box-wrap.error .input-box {border-color: #e53a4c;}
 .input-box::placeholder,
-.input-box::-webkit-input-placeholder {color: #d0d9d9; font-size: 2rem;}
+.input-box::-webkit-input-placeholder {color: #929292; font-size: 2rem;}
 .input-box + .input__error {display: none;}
 .input-box-wrap.error .input__error {display: block;}
 .input-box.w56 {width: 5.6rem;}
@@ -200,8 +200,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input-search::after {display: none;}
 .input.input-search .input__inner .input__element,
 .input.input-search .input__element {opacity: 1; min-height: 6rem; padding: 1.8rem 0 1.8rem 1.6rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #000; font-weight: 400;}
-.input.input-search .input__element::placeholder {color: #757575; font-weight: 400;}
-.input.input-search .input__element::-webkit-placeholder {color: #757575; font-weight: 400;}
+.input.input-search .input__element::placeholder {color: #929292; font-weight: 400;}
+.input.input-search .input__element::-webkit-placeholder {color: #929292; font-weight: 400;}
 .input.input-search .input__inner {padding-right: 5rem; position: relative;}
 .input .btn-search {width: 5rem; height: 5.8rem; margin-left: 1.2rem; display: inline-block; font-size: 0; background: url(../images/icon/ico-system-input-interactive-search.png) top 50% right 1.8rem no-repeat; background-size: 2rem auto; align-self: flex-end;}
 .input.input-search .btn-search {margin-left: 0; position: absolute; top: 0; right: 0; z-index: 1; align-self: unset;background-position: top 50% right 1.6rem; background-size: 2.4rem auto;}
@@ -292,7 +292,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .form-area .textarea.textarea--disabled .form__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 .form-area .textarea .textarea__element {width: 100%; flex: 1; padding: 2.8rem 0 0.4rem 0; outline: none; line-height: 2.4rem; background: none; position: relative; text-align: left; font-size: 1.8rem; font-weight: 700; color: #009591; z-index: 1; opacity: 0; overflow: hidden;}
 .form-area .textarea .textarea__element::placeholder,
-.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #d0d9d9; font-weight: 600;}
+.form-area .textarea .textarea__element::-webkit-input-placeholder {color: #929292; font-weight: 600;}
 .form-area .textarea.textarea--disabled .textarea__element:disabled,
 .form-area .textarea.textarea--disabled .textarea__element:read-only {color: #666;}
 .form-area .textarea.textarea--disabled .textarea__element,
