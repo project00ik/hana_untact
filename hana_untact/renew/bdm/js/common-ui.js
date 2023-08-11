@@ -661,6 +661,7 @@ var hanaUI = {
             if(inputArr.length > inputArrIndex) {
                 
                 // 폼 포커스
+                // inputArr.eq(inputArrIndex).stop().slideDown(300, 'linear');
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
                 // 셀렉트 포커스
@@ -787,6 +788,7 @@ var hanaUI = {
             if(inputArr.length > inputArrIndex) {
                 
                 // 폼 포커스
+                // inputArr.eq(inputArrIndex).stop().slideDown(300, 'linear');
                 inputArr.eq(inputArrIndex).addClass('form--active');
                 inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
                 // 셀렉트 포커스
