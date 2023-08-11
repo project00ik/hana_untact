@@ -226,6 +226,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .search-btn-wrap.search--on .input-search-btn::before {border-color: #009591;}
 .search-btn-wrap.search--on .input-search-btn {color: #009591; opacity: 1;}
 .search-btn-wrap.search--active .button-search__btn {color: #009591; opacity: 1;}
+.search-btn-wrap.search--disabled .input-search__inner {pointer-events: none;}
 .search-btn-wrap.search--disabled .button-search__btn {color: #666; opacity: 1; pointer-events: none;}
 .search-btn-wrap.search--disabled .btn-search {display: none;}
 .search-btn-wrap.search--error .button-search__btn {opacity: 1;}
@@ -250,13 +251,15 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 /* .input__wrap .input.input--focus .input__inner .input__label:not(.font-inherit), 
 .input__wrap.input--on .input .input__inner .input__label:not(.font-inherit) {font-size: 1.6rem; top: 0.8rem;} */
 .input__inner .btn,
-.input__wrap .input .btn {margin: 0 0 0.3rem 0.8rem; white-space: nowrap;}
+.input__wrap .input .btn {margin: 0 0 0.3rem 1.2rem; white-space: nowrap;}
 .input__wrap .input .btn {display: none; min-width: auto;}
-.input__wrap .input .time {display: none; margin: 0 0 0.3rem 0.8rem; white-space: nowrap; font-size: 1.3rem; line-height: 1.2; color: #757575;}
+.input__wrap .input .time {display: none; margin: 0 0 0.8rem 0.8rem; white-space: nowrap; font-size: 1.3rem; line-height: 1.2; color: #757575;}
 .input__wrap .input.input--on .btn, 
 .input__wrap .input.input--on .time,
 .input__wrap .input.input--focus .btn, 
 .input__wrap .input.input--focus .time {display: block;}
+
+.input__wrap .input .time + .input__remove-button {margin-left: 0.4rem;}
 
 .input__wrap .input + .input {margin-top: 0; margin-left: 1.6rem;}
 .input__calendar-button {width: 2rem; height: 2rem; min-width: 2rem; max-width: 2rem; margin:1.1rem 0 0 1.6rem; background: url(../images/icon/calendar.png) 50% 50% no-repeat; background-size: 100% auto;}
@@ -368,9 +371,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 
 .list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
 .list-txt-area .txt {font-size: 1.4rem; color: #000; line-height: 1.2;}
-.product-join-wrap {}
-.product-join-list {margin-top: 0.4rem; border-top: 0.1rem solid #e7e9ee;}
-.product-join-list > li {padding: 1.4rem 2rem 1.4rem 0; border-bottom: 0.1rem solid #e7e9ee; font-size: 0; position: relative;}
+.product-join-wrap {padding-top: 2.5rem;}
+.product-join-list {margin-top: 0.4rem; padding-bottom: 2rem; border-top: 0.1rem solid #e7e9ee; border-bottom: 0.1rem solid #e7e9ee;}
+.product-join-list > li {margin-top: 2rem; padding: 0 2rem 0 0; font-size: 0; position: relative;}
 .product-join-list .badge {margin-right: 0.4rem; display: inline-block; vertical-align: middle;}
 .product-join-list .txt {font-size: 1.4rem; font-weight: 500; color: #000; display: inline-block; line-height: 2rem; vertical-align: middle;}
 .product-join-list .btn-del {width: 1.6rem; height: 1.6rem; margin-top: -0.8rem; display: inline-block; background: url(../images/icon/ico-system-close-s.png) 50% 50% no-repeat; background-size: 100% auto; position: absolute; top: 50%; right:0;}
