@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- Content -->
+        <div id="content" class="app-main user-guide-wrap"> 
+            <div class="app-content">
+                <div class="container">
+                    <div class="ci-wrap">
+                        <img src="../images/ci/group-20@3x.png" alt="하나은행">
+                    </div>
+                    <p class="user-guide-title">비대면 실명 확인이<br>필요해요</p>
+                    
+                    <div class="box-gray-list">
+                        <div class="box-gray">
+                            <div class="text-wrap">
+                                <p class="title">신분증</p>
+                                <p class="text-sub">주민등록증 또는 운전면허증</p>
+                            </div>
+                        </div>
+                        <div class="box-gray">
+                            <div class="text-wrap">
+                                <p class="title">휴대폰</p>
+                                <p class="text-sub">본인 명의 기기</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="guide-notice-wrap">
+                        <button type="button" class="btn-notice" title="신분증 진위확인 서비스 일시 중단 안내 팝업 이동" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 진위확인 서비스 일시 중단 안내</button>
+                    </div>
+                    <div class="accordion-list-wrap">
+                        <ul class="accordion-list" data-element="accordion">
+                            <li data-element="accordion__item">
+                                <div class="top" data-element="accordion__anchor">
+                                    <p class="title">
+                                        서비스 이용시간 : <span class="tp-green">매일 00:10~23:50</span>
+                                    </p>
+                                </div>
+                                <div class="con" data-element="accordion__panel">
+                                    <p class="con-text">하나은행 고객센터 (1599-1111) 이용시간</p>
+                                    <p class="con-text-sub">- 상담 및 문의 : 평일 09:00~18:00 (영업일 기준)</p>
+                                    <p class="con-text-sub">- 신청 처리 (영상통화) : 평일 09:00~17:30 (영업일 기준)</p>
+                                    <button type="button" class="btn-text-arrow" title="서비스 가이드 자세히보기 이동">서비스 가이드 자세히보기</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- // accordion-list-wrap -->
+                </div>
+            </div>
+            <div class="app-footer">
+                <div class="btn-group-wrap">
+                    <button type="button" class="btn" title="시작하기" >시작하기</button>
+                </div>
+            </div>
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script src="../js/slick.js"></script>
+    <script src="../js/touch-dnd.js"></script>
+    <script src="../js/pualugin.js"></script>
+    <script src="../js/common-ui.js"></script>
+
+   
+    <!-- 모달레이어 - 신분증 진위확인 서비스 일시중단 안내 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">신분증 진위확인 서비스 일시중단 안내</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="modal-text-wrap pb12">
+                    <div class="guide-text-wrap">
+                        <p>
+                            중단일시<br>
+                            YYYY년 MM월 DD일(목) 19:00<br>~ YYYY년 MM월 DD일(목) (NN시간)
+                        </p>
+                        <p>중단사유 금융결제원 신분증 진위확인 정보중게업무 서버 점검 서비스 영향도 주민등록증 및 운전면허증을 이용한 신분증 확인 서비스</p>
+                        <p>
+                            ※ 모바일 운전면허증은 계속 이용이 가능합니다.<br>
+                            ※ 중단 시간은 작업 진행에 따라 변경될 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="닫기">닫기</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+</body>
+</html>
