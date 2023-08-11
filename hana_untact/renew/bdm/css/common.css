@@ -694,7 +694,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 
 .modal__btn--close {position: absolute; left: 1.9rem; top: 1.6rem; z-index: 102; width: 2.7rem; height: 2.7rem; border: 0; background: 0;}
 .modal__btn--close:before { content: ''; display: block; width: 2.7rem; height: 2.7rem; background: url(../images/icon/ico-system-close.png) 50% 50% no-repeat; background-size: 100% auto; }
-.popup-wrap.modal--slide .modal__header .title {height: 5.8rem; padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5;}
+.popup-wrap.modal--slide .modal__header .title {padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5;}
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
 .popup-wrap.modal--slide .btn-wrap .btn {width: auto;}
