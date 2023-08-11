@@ -1299,7 +1299,7 @@
 }
 
 .modal--slide .modal__contents--tabscroll .pualugin-tab__panel {
-    min-height: 191px;
+    /* min-height: 191px; */
     /* max-height: calc(100% - 12.6rem); */
     overflow-x: hidden;
     overflow-y: auto;
@@ -1344,7 +1344,7 @@
 .modal--slide.multiple-date-slide.modal_detail_date .modal__contents--no-spacer .list-wrap .list-wrap__item { scroll-snap-align: center; } 
 .modal--slide.multiple-date-slide.modal_detail_date .modal__contents--no-spacer .list-wrap__anchor { text-align:center;}
 
-.modal--slide.multiple-date-slide .modal__contents--multiple {min-height: 310px; max-height: 310px; padding-bottom:0rem;}
+.modal--slide.multiple-date-slide .modal__contents--multiple {max-height: 310px; padding-bottom:0rem;}
 .modal--slide .pualugin-tab__panel .modal__contents--multiple {min-height: auto; max-height: auto; padding-bottom:0;}
 .modal--slide.multiple-date-slide .modal__contents { padding-bottom:0;}
 .modal__contents--multiple .container__panel {
@@ -1528,7 +1528,7 @@
 .modal--slide .modal__container--interval .list-wrap--line {padding-top: 0.125rem;}
 
 /* 자동이체 팝업 */
-.direct-debit-slide {}
+.multiple-date-slide .modal__contents--multiple .container__panel.direct-debit-slide {margin: 3rem 0 1.2rem;}
 .direct-debit-slide .direct-debit-btn {width:calc(100% / 2);}
 .direct-debit-slide .direct-debit-btn .list-section {
     width:100%;

@@ -90,7 +90,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
     width: 100%;
     -webkit-transition: width .8s linear; transition: width .2s linear; transition-delay: .1s;
 }
-.chk-tg .input::after {bottom: -0.2rem;}
+.chk-tg .input::after {bottom: -0.1rem;}
 
 .input__inner {display: -webkit-box; display: flex; position: relative; padding: 0; align-items: flex-end;}
 .input__inner .input__optional:first-child {padding-left: 0;}

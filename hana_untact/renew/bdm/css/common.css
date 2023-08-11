@@ -210,7 +210,8 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .scroll--up .step-header .stepper,
 .scroll--down .step-header .stepper {box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);}
 .scroll--top .step-header .stepper {box-shadow: none;}
-.step-header + .container {padding-top: 4.3rem;}
+.step-header + .container,
+.prd-content {padding-top: 4.3rem;}
 
 /* - 레이아웃  : 컨텐츠 역순 배열 */
 .cont-revers {display: flex; flex-direction: column;}
@@ -452,9 +453,9 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .tab-radio-rd input {position: absolute; left:0; top:0; clip: unset; width: 100%; height: 100%; margin: -1px; overflow: hidden;}
 
 /* -- 폼 (form) : 체크박스 (checkbox) */
-.checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 400; color: #000; line-height: 2.2rem;}
+.checkbox-wrap label {display: inline-block; position: relative; padding-left: 2.8rem; font-size: 1.6rem; font-weight: 400; color: #000; line-height: 2rem;}
 .checkbox-wrap.chk-type2 label {font-weight: 400; color: #333;}
-.checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.1rem; width: 2.2rem; height: 2.2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2.2rem 2.2rem;} 
+.checkbox-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 0.1rem; width: 2rem; height: 2rem; background: url(../images/icon/ico-system-form-check-1-depth-default.png) 0 0 no-repeat; background-size: 2rem 2rem;} 
 .checkbox-wrap input:checked + label {font-weight: 500;}
 .checkbox-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png);}
 .checkbox-wrap input:disabled + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-disabled.png);}
@@ -463,7 +464,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .checkbox-wrap label .info-txt-l {margin-top: 0.4rem; display: block; font-size: 1.6rem; font-weight: 500; letter-spacing: -0.11rem;}
 
 .checkbox-wrap.sm label {padding-left: 2.2rem; font-size: 14px; line-height: 2rem; color: #757575; font-weight: 400;}
-.checkbox-wrap.sm label::before {width: 1.8rem; height: 1.8rem; background: url(../images/icon/ico-system-form-check-2-depth-default.png) 0 0 no-repeat; background-size: 1.8rem 1.8rem; top: 0.2rem;} 
+.checkbox-wrap.sm label::before {width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-form-check-2-depth-default.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem; top: 0.2rem;} 
 .checkbox-wrap.sm input:checked + label {color: #333; font-weight: 700;}
 .checkbox-wrap.sm input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-2-depth-active.png);}
 .checkbox-wrap.sm input:disabled + label::before {opacity: 0.8;}
@@ -480,7 +481,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 /* -- 폼 (form) : 라디오 (radio) */
 .radio-wrap label {display: inline-block; position: relative; padding-left: 3rem;}
-.radio-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -1.1rem; width: 2rem; height: 2rem; background: url(../images/icon/ico-system-form-radio-1-depth-default.png) 0 0 no-repeat; background-size: 2rem auto;} 
+.radio-wrap label::before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -1rem; width: 2rem; height: 2rem; background: url(../images/icon/ico-system-form-radio-1-depth-default.png) 0 0 no-repeat; background-size: 2rem auto;} 
 .radio-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-radio-1-depth-active.png);}
 .radio-wrap input:disabled + label::before{background-image: url(../images/icon/ico-system-form-radio-1-depth-default.png); opacity: 0.8;}
 
@@ -686,6 +687,9 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll {min-height: 0; max-height: none; overflow: visible;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .tab-list-wrap .tab-con {max-height: calc(60vh - 4.8rem); overflow-x: hidden; overflow-y: auto;}
+.modal__contents--tabscroll .tab-list-wrap {margin: 0 0 1.2rem;}
+.modal__contents--tabscroll .tab-list-wrap .modal__contents--multiple {margin-top: 3rem;}
+.modal__contents .btn-date-wrap + .modal__contents--multiple {margin-top: 2rem;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con {padding: 1.6rem 2rem;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con .pop-tab-wrap {position: relative; padding-bottom: 1.6rem;}
 .modal__contents--tabscroll .tab-list-wrap .tab-con .pop-tab-wrap.is-btn {padding-bottom: 8.8rem;}
@@ -724,6 +728,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 
 /* -- popup - date */
 .btn-date-wrap {margin-top: 1rem;}
+.modal__contents .btn-date-wrap {margin-bottom: 2rem;}
 
 /* -- popup 예금 가입 확인 */
 .modal__contents .inbox {padding: 3rem 0;}
@@ -996,7 +1001,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .chk-tg .chk-tg-btn input[type="checkbox"],
 .chk-tg .chk-tg-btn input[type="radio"] {clip: unset;}
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
-.chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 2.2rem;}
+.chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 0;}
 .phone-agree-wrap {padding-top: 3rem;}
 .phone-agree-wrap .inner-box {padding-bottom: 2rem;}
 
