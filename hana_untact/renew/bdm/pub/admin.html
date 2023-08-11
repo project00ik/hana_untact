@@ -11,160 +11,47 @@
 	* {margin: 0; padding: 0; box-sizing: border-box; color: #333;}
 	
 	.table-title {padding: 15px 10px; width: 100%; font-size: 24px; color: #000; font-weight: bold;}
-	.table {position: relative; display: flex; flex-wrap: wrap; width: 100%; border-top: 2px solid #ccc;}
+	.table {position: relative; display: flex; flex-wrap: wrap; border-top: 2px solid #ccc;}
 	.table::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: 0;}
-	.table .cell {position: relative; flex:1 1 50%; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; margin-top: -1px;}
-	.table .cell-data {display: flex; max-width: 50vw;}
+
+	.table .cell {position: relative; width: 50%; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; margin-top: -1px;}
+    .table .cell.right .item:last-child {border-right: none;}
+
+	.table .cell-data {display: flex;}
 	.table .cell-data .item {padding: 0 10px; word-wrap: break-word; white-space: normal; word-break: break-all; border-right: 1px solid #e7e9ee;}
 	.table .cell-data .item:nth-child(1) {width: 35%; font-weight: bold;}
 	.table .cell-data .item:nth-child(2) {width: 30%;}
 	.table .cell-data .item:nth-child(3) {width: 13%;}
 	.table .cell-data .item:nth-child(4) {width: 22%; font-size: 0;}
-		
 	.table .cell-data .item input {width: 100%; font-size: 16px;}
-	.table .cell-data .item .btn {min-width: 30px; height: 20px; line-height: 20px; margin-right: 5px; font-size: 12px;}
+	.table .cell-data .item .btn {min-width: 30px; height: 20px; line-height: 20px; margin-right: 5px; font-size: 12px; margin-top: 1px;}
+    
+	.table .cell.full {position: relative; width: 100%;}
+	.table .cell.full .cell-data {width: 50%;}
 
-	/* .table .cell.full {position: relative; width: 100%;} */
-	.table .cell.full {flex: 1 1 100%;}
-	.table .cell.full::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; top: -1px;}
-	.table .cell.full::after {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: -1px;}
-	/* .table .cell.full .cell-data {width: 50%;} */
-	.table .cell.inType01:nth-child(even) {padding-left: 20px;  background: yellow;}
-	.table .cell.inType02:nth-child(even) {padding-left: 40px;  background: green;}
-	.table .cell.inType03:nth-child(even) {padding-left: 60px;  background: red;}
-	.table .cell.inType04:nth-child(even) {padding-left: 80px;  background: blue;}
-	.table .cell.inType01:nth-child(even) .cell-data {width: calc(50vw - 20px);}
-	.table .cell.inType02:nth-child(even) .cell-data {width: calc(50vw - 40px);}
-	.table .cell.inType03:nth-child(even) .cell-data {width: calc(50vw - 60px);}
-	.table .cell.inType04:nth-child(even) .cell-data {width: calc(50vw - 80px);}
-	.table .cell.inType01:nth-child(odd),
-	.table .cell.inType02:nth-child(odd),
-	.table .cell.inType03:nth-child(odd),
-	.table .cell.inType04:nth-child(odd) {padding-left: 0; background: none;}
+	.table [class*=inType].left {margin-right: 0;}
+	.table [class*=inType].right {margin-left: 0;}
+    .table [class*=inType].full {margin-right: 20px;}
+    .table [class*=inType] .item {font-size: 14px;}
+    .table [class*=inType] .item:nth-child(1) {display: flex;}
+    
+	.table .inType01 {margin-left: 20px; width: calc(50% - 20px);}
+	.table .inType01.left {margin-left: 20px;}
+    .table .inType01.full {width: calc(100% - 40px);}
 
-	.table .cell.inType01.full {flex: 1 1 100%; padding-left: 20px; }
-	.table .cell.inType02.full {flex: 1 1 100%; padding-left: 40px; }
-	.table .cell.inType03.full {flex: 1 1 100%; padding-left: 60px; }
-	.table .cell.inType04.full {flex: 1 1 100%; padding-left: 80px; }
+	.table .inType02 {margin-left: 40px; width: calc(50% - 30px);}
+	.table .inType02.left {margin-left: 40px;}
+    .table .inType02.full {width: calc(100% - 40px);}
+
+	.table .inType03 {margin-left: 60px; width: calc(50% - 40px);}
+	.table .inType03.left {margin-left: 60px;}
+    .table .inType03.full {width: calc(100% - 80px);}
+
+	.table .inType04 {margin-left: 80px; width: calc(50% - 50px);}
+	.table .inType04.left {margin-left: 80px;}
+    .table .inType04.full {width: calc(100% - 100px);}
+    
 	
-	.table .cell.inType01.full .cell-data {width: calc(50vw - 20px);}
-	.table .cell.inType02.full .cell-data {width: calc(50vw - 40px);}
-	.table .cell.inType03.full .cell-data {width: calc(50vw - 60px);}
-	.table .cell.inType04.full .cell-data {width: calc(50vw - 80px);}
-
-	/* .table .cell[class*=inType]:nth-child(2n+1) .item:nth-child(4) {border-right: none;}
-	.table .cell.full .item:nth-child(4) {border-right: none;}
-	
-	.table .cell[class*=inType]:nth-child(2n+1) {margin-right: 20px; background-color: #fff;}
-	.table .cell[class*=inType] .cell-data .item {font-size: 14px;}
-	.table .cell[class*=inType] .cell-data .item:nth-child(1) {display: flex; align-items: center;}
-	
-	.table .cell[class*=inType].full {margin-right: 20px !important;} */
-
-	/* .table .inType01 {width: calc(50% - 20px);} */
-	/* .table .inType01 {margin-left: 20px; background: yellow;} */
-	
-	/* .table .inType02.full {width: calc(100% - 40px); margin-left: 40px;}
-	.table .inType02 {width: calc(50% - 30px);} */
-	/* .table .inType02:nth-child(2n) {margin-left: 40px; background: green;}  */
-	
-	/* .table .inType03.full {width: calc(100% - 60px); margin-left: 60px;}
-	.table .inType03 {width: calc(50% - 40px);} */
-	/* .table .inType03:nth-child(2n) {margin-left: 60px; background: red;}  */
-	
-	/* .table .inType04.full {width: calc(100% - 80px); margin-left: 80px;}
-	.table .inType04 {width: calc(50% - 50px);} */
-	/* .table .inType04:nth-child(2n) {margin-left: 80px; background: blue;}  */
-
-
-/* 	
-
-	.table .cell.inType01:nth-child(2n+1) .item:nth-child(1) {border-right: 1px solid #e7e9ee;}
-	.table .cell.inType01:nth-child(2n) .item:nth-child(1) {border-right: none;}	
-	.table .cell.inType02:nth-child(2n+1) .item:nth-child(1) {border-right: 1px solid #e7e9ee;}
-	.table .cell.inType02:nth-child(2n) .item:nth-child(1) {border-right: none;}	 */
-
-
-	/* .table .cell:nth-child(2n+1) {margin-left: 4%; background-color: red;} */
-
-
-
-/* 
-	.table .cell.inType01 .cell-data .item:nth-child(1) {display: flex; align-items: center;}
-	.table .cell.inType01 .cell-data .item {font-size: 14px;} */
-
-/* 	
-	.table .cell.inType02 .cell-data .item:nth-child(1) {display: flex; align-items: center;}
-	.table .cell.inType02:nth-child(2n+1) {margin-right: 20px;}
-	.table .cell.inType02 .cell-data .item {font-size: 14px;} */
-
-
-	
-	
-/* 
-	.no-effect {position: relative; display: flex; flex-wrap: wrap; padding: 0 20px;}
-	.no-effect::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: 0;}
-	.no-effect .cell-loop-header {border-bottom: 1px solid #e7e9ee; margin: 0 -20px; width: calc(100% + 40px);}
-	.no-effect .cell-loop-header .cell-data {width: 50%; font-size: 16px;}
-	 */
-	
-
-
-/* 		
-.table {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.no-effect {
-	display: contents;
-}
-
-.cell {
-	width: 50%;
-	box-sizing: border-box;
-}
-
-.cell-data div {
-	float: left;
-}
-
-.cell-loop-header {
-	width: 100%;
-	box-sizing: border-box;
-}
-
-.cell-loop-temp {
-	width: 5%;
-}
-
-.cell-loop {
-	width: 45%;
-	box-sizing: border-box;
-}
-
-.cell-loop-data div {
-	float: left;
-}
-
-.table-style {
-	margin-bottom: 1rem;
-	background-color: transparent;
-	border-collapse: collapse;
-}
-
-.cell-header-style {
-	font-size: 1.5rem;
-	border: 1px solid #dee2e6;
-}
-
-.cell-data-style {
-	font-size: .9rem;
-	border: 1px solid #dee2e6;
-	padding-left: 5px;
-	word-wrap: break-word;
-	white-space: normal;
-} */
 </style>
 </head>
 <body>
@@ -172,7 +59,7 @@
 
 		<p class="table-title">BIZ.QRG0001.IN(하나원큐 플러스 회원가입)</p>        
 		<div class="table">
-			<div class="cell">
+			<div class="cell left">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">휴대전화사업자구분코드</div>
@@ -182,7 +69,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell">
+			<div class="cell right">
 				<div class="cell-data">
 					<div class="item">MBPH_ENPR_DV_CD</div>
 					<div class="item">고객정보제공동의여부</div>
@@ -192,7 +79,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell">
+			<div class="cell left">
 				<div class="cell-data">
 					<div class="item">MACH_UNQ_NO</div>
 					<div class="item">기기고유번호</div>
@@ -201,8 +88,8 @@
 						<input type="text" class="k-textbox">
 					</div>
 				</div>
-			</div>
-			<div class="cell">
+			</div> 
+			<div class="cell right">
 				<div class="cell-data">
 					<div class="item">CRYP_SESS_KEY</div>
 					<div class="item">하나원큐 플러스 회원가입</div>
@@ -213,7 +100,7 @@
 				</div>
 			</div>
 			<div class="cell full">
-				<div class="cell-data">
+				<div class="cell-data left">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">플러스 회원가입</div>
 					<div class="item">data</div>
@@ -222,7 +109,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType01">
+			<div class="cell left inType01">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -236,7 +123,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType01">
+			<div class="cell right inType01">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -250,7 +137,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType01">
+			<div class="cell left inType01">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -264,9 +151,49 @@
 					</div>
 				</div>
 			</div>
+			<div class="cell right inType01">
+				<div class="cell-data">
+					<div class="item">
+						<button type="button" class="btn">삭제</button>
+						CUST_INFO_OFFR_AGRM_YN
+					</div>
+					<div class="item">C2DM등록ID명</div>
+					<div class="item">data</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
 			
-		
-			<div class="cell inType02 full">
+					</div>
+				</div>
+			</div>
+			<div class="cell left inType01">
+				<div class="cell-data">
+					<div class="item">
+						<button type="button" class="btn">삭제</button>
+						CUST_INFO_OFFR_AGRM_YN
+					</div>
+					<div class="item">앱ID일련번호</div>
+					<div class="item">data</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+			
+					</div>
+				</div>
+			</div>
+			<div class="cell right inType01">
+				<div class="cell-data">
+					<div class="item">
+						<button type="button" class="btn">삭제</button>
+						CUST_INFO_OFFR_AGRM_YN
+					</div>
+					<div class="item">C2DM등록ID명</div>
+					<div class="item">data</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+			
+					</div>
+				</div>
+			</div>
+			<div class="cell full inType02">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">앱ID일련번호</div>
@@ -276,7 +203,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType02">
+			<div class="cell left inType02">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -290,7 +217,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType02">
+			<div class="cell right inType02">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -304,7 +231,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType02">
+			<div class="cell left inType02">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -318,7 +245,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType03 full">
+			<div class="cell full inType03">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">앱ID일련번호</div>
@@ -328,7 +255,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType03">
+			<div class="cell left inType03">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -342,7 +269,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType03">
+			<div class="cell right inType03">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -356,7 +283,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType03">
+			<div class="cell left inType03">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -370,7 +297,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType04 full">
+			<div class="cell full inType04">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">앱ID일련번호</div>
@@ -380,7 +307,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType04">
+			<div class="cell left inType04">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -394,7 +321,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell inType04">
+			<div class="cell right inType04">
 				<div class="cell-data">
 					<div class="item">
 						<button type="button" class="btn">삭제</button>
@@ -408,42 +335,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="cell">
-				<div class="cell-data">
-					<div class="item">MBPH_ENPR_DV_CD</div>
-					<div class="item">고객정보제공동의여부</div>
-					<div class="item">X(2)</div>
-					<div class="item">
-						<input type="text" class="k-textbox">
-					</div>
-				</div>
-			</div>
-			<div class="cell">
-				<div class="cell-data">
-					<div class="item">MBPH_ENPR_DV_CD</div>
-					<div class="item">고객정보제공동의여부</div>
-					<div class="item">X(2)</div>
-					<div class="item">
-						<input type="text" class="k-textbox">
-					</div>
-				</div>
-			</div>
-			<div class="cell">
-				<div class="cell-data">
-					<div class="item">MBPH_ENPR_DV_CD</div>
-					<div class="item">고객정보제공동의여부</div>
-					<div class="item">X(2)</div>
-					<div class="item">
-						<input type="text" class="k-textbox">
-					</div>
-				</div>
-			</div>
-		
-		</div>
-		
-		<p class="table-title">BIZ.QRG0001.IN(하나원큐 플러스 회원가입)</p>        
-		<div class="table">
-			<div class="cell">
+			<div class="cell left">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
 					<div class="item">휴대전화사업자구분코드</div>
@@ -453,6 +345,27 @@
 					</div>
 				</div>
 			</div>
+			<div class="cell right">
+				<div class="cell-data">
+					<div class="item">MBPH_ENPR_DV_CD</div>
+					<div class="item">고객정보제공동의여부</div>
+					<div class="item">X(2)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+			<div class="cell left">
+				<div class="cell-data">
+					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+					<div class="item">휴대전화사업자구분코드</div>
+					<div class="item">X(4000)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+		
 		</div>
         
 	</div>
