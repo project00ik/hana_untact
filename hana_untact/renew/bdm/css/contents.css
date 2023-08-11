@@ -94,9 +94,9 @@
 
 /* intro 계좌 개설 절차 */
 .intro-start-wrap {padding: 0 2.4rem;}
-.intro-title {margin-top: 4.4rem; font-size: 3.2rem; color: #000;}
-.intro-step-list {margin-top: 6.4rem;}
-.intro-step-list li {position: relative; font-size: 1.6rem; color: #000; font-weight: 500;}
+.intro-title {margin-top: 2.4rem; font-size: 2rem; color: #000; font-weight: 500;}
+.intro-step-list {margin-top: 4rem;}
+.intro-step-list li {position: relative; font-size: 1.6rem; color: #000; font-weight: 500; line-height: 2.4rem;}
 .intro-step-list li + li {padding-top: 3.2rem;}
 .intro-step-list li + li::before {content: ''; display: block; position: absolute; left: 1.1rem; top: 0; width: 0.1rem; height: 3.2rem; border-left: 1px dotted #b3b3b3;}
 .intro-step-list .num {display: inline-block; margin-right: 1.6rem; width: 2.4rem; height: 2.4rem; line-height: 2.4rem; font-size: 1.3rem; color: #fff; font-weight: 500; text-align: center; background-color: #262b45; border-radius: 50% 50%;}
