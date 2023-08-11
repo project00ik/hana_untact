@@ -197,7 +197,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input-search.input--focus::before,
 .input.input-search.input--focus.input--error::before {box-shadow: 0 0 8px 0 rgba(0, 149, 145, 0.25); border: solid 0.2rem #009591 !important;}
 .input.input-search label {display: none;}
-.input.input-search .input__element {min-height: 6rem; padding: 1.8rem 0 1.8rem 1.6rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #000; font-weight: 400;}
+.input.input-search::after {display: none;}
+.input.input-search .input__inner .input__element,
+.input.input-search .input__element {opacity: 1; min-height: 6rem; padding: 1.8rem 0 1.8rem 1.6rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #000; font-weight: 400;}
 .input.input-search .input__element::placeholder {color: #757575; font-weight: 400;}
 .input.input-search .input__element::-webkit-placeholder {color: #757575; font-weight: 400;}
 .input.input-search .input__inner {padding-right: 5rem; position: relative;}
