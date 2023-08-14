@@ -747,7 +747,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 /* 토스트 팝업 */
 .popup-wrap .toast-popup-wrap {
     opacity: 0; position: absolute; top: 10rem; left: 50%; z-index: -1; transform: translateX(-50%);
-    animation-name: toastPopup; animation-duration: 3s; animation-delay: 0.3s; animation-iteration-count: 1; animation-fill-mode: forwards;
+    animation-name: toastPopup; animation-duration: 1s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
 .toast-popup-wrap .toast-popup {margin-top: -4.1rem; padding: 1.1rem 1.2rem 1.3rem; white-space: nowrap; color: #fff; font-size: 1.4rem; background: #262b45; border-radius: 1rem; position: relative;}
 .toast-popup-wrap .toast-popup::after {content: ''; width: 0; height: 0; display: inline-block; border: 0.6rem solid transparent; border-top: 0.9rem solid #262b45; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); overflow: hidden;}
@@ -755,7 +755,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .form-area .toast__label {z-index: 4;}
 .form-area .toast__label .toast-popup-wrap {
     opacity: 0; position: absolute; top: 0; left: 0; z-index: -1; display: none;
-    animation-name: inputToastPopup; animation-duration: 2s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
+    animation-name: inputToastPopup; animation-duration: 3s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
 .form-area .input--focus .toast__label .toast-popup-wrap {z-index: 21; display: inline-block;}
 /* .form-area .checkbox-wrap input:checked + .toast__label .toast-popup-wrap {z-index: 21; display: inline-block;} */
@@ -766,7 +766,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .page-tit.toast__label {position: relative; z-index: 21; margin-top: 4.9rem;}
 .page-tit.toast__label .toast-popup-wrap {
     opacity: 0; position: absolute; top: 0; left: 0; z-index: -1; display: none;
-    animation-name: inputToastPopup; animation-duration: 2s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
+    animation-name: inputToastPopup; animation-duration: 3s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
 .page-tit.toast__label .toast-popup-wrap {z-index: 21; display: inline-block;}
 .page-tit.toast__label .toast-popup-wrap .toast-popup::after {left: 2rem; transform: none;}
@@ -777,13 +777,18 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
         z-index: -1;
         opacity: 0;
     }
-    10%{
-        top: 0;
+    44%{
+        top: 10rem;
+        opacity: 0;
     }
-    20%{
-        top: 0;
+    64%{
+        top: -1rem;
         opacity: 1;
         z-index: 1;
+    }
+    80%{
+        top: 0;
+        opacity: 1;
     }
     100%{
         top: 0;
@@ -796,13 +801,18 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
         z-index: -1;
         opacity: 0;
     }
-    10%{
-        top: 0;
+    44%{
+        top: 10rem;
+        opacity: 0;
     }
-    20%{
-        top: 0;
+    64%{
+        top: -1rem;
         opacity: 1;
         z-index: 1;
+    }
+    80%{
+        top: 0;
+        opacity: 1;
     }
     100%{
         top: 0;
@@ -815,18 +825,26 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
         opacity: 0;
         z-index: -1;
     }
-    20%{
-        top: -4.5rem;
+    14%{
+        top: 0;
+        opacity: 0;
+    }
+    24%{
+        top: -5.5rem;
         opacity: 1;
         z-index: 21;
     }
-    90%{
+    30%{
+        top: -4.5rem;
+        opacity: 1;
+    }
+    97%{
         top: -4.5rem;
         opacity: 1;
     }
     100%{
-        top: 0;
         opacity: 0;
+        top: -4.5rem;
         z-index: -1;
     }
 }
@@ -836,18 +854,26 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
         opacity: 0;
         z-index: -1;
     }
-    20%{
-        top: -4.5rem;
+    14%{
+        top: 0;
+        opacity: 0;
+    }
+    24%{
+        top: -5.5rem;
         opacity: 1;
         z-index: 21;
     }
-    90%{
+    30%{
+        top: -4.5rem;
+        opacity: 1;
+    }
+    97%{
         top: -4.5rem;
         opacity: 1;
     }
     100%{
-        top: 0;
         opacity: 0;
+        top: -4.5rem;
         z-index: -1;
     }
 }

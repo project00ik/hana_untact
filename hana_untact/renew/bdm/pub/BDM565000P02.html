@@ -165,10 +165,10 @@
                     <div class="tab-wrap">
                         <ul class="tab-wrap__menu">
                             <li class="tab-wrap__item" data-element="tab__list">
-                                <a href="#" class="tab-wrap__button is-active" aria-selected="true" data-element="tab__anchor"><span>지점명검색</span></a>
+                                <a href="#" class="tab-wrap__button is-active" aria-selected="true" data-element="tab__anchor"><span>영업점</span></a>
                             </li>
                             <li class="tab-wrap__item" data-element="tab__list">
-                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직원이름검색</span></a>
+                                <a href="#" class="tab-wrap__button" data-element="tab__anchor"><span>직원</span></a>
                             </li>
                         </ul>
                     </div>
@@ -184,7 +184,7 @@
                                 -->
                                 <!-- // input -->
                                 <div class="input__inner">
-                                    <input type="text" id="searchInput" class="input__element input--search" title="지점명 또는 지점코드 검색어 입력폼" placeholder="지점명 또는 지점코드 입력">
+                                    <input type="text" id="searchInput" class="input__element input--search" title="영업점명 또는 영업점코드 검색어 입력폼" placeholder="영업점명 또는 영업점코드">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="submit" class="btn-search" aria-label="검색">검색</button>
                                 </div>
@@ -200,7 +200,7 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">전체 <span class="tp-green">NNN</span>건이 검색되었습니다.</p>
                             <div class="accordion-list-wrap">
                                 <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
                                     <li data-element="accordion__item">
@@ -214,15 +214,15 @@
                                                 <ul class="check-list align-justify">
                                                     <li class="big-chk">
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_1" title="">
+                                                            <input type="radio" name="branchCheckbox01" id="branchCheckbox01_1" title="">
                                                             <label for="branchCheckbox01_1">
-                                                                <span class="branch-txt">지점으로 선택</span>
+                                                                <span class="branch-txt">영업점으로 선택</span>
                                                             </label>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_2" title="">
+                                                            <input type="radio" name="branchCheckbox01" id="branchCheckbox01_2" title="">
                                                             <label for="branchCheckbox01_2">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -231,7 +231,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_3" title="">
+                                                            <input type="radio" name="branchCheckbox01" id="branchCheckbox01_3" title="">
                                                             <label for="branchCheckbox01_3">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">홍길동(1010163)</span>
@@ -240,7 +240,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox01" id="branchCheckbox01_4" title="">
+                                                            <input type="radio" name="branchCheckbox01" id="branchCheckbox01_4" title="">
                                                             <label for="branchCheckbox01_4">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -262,15 +262,15 @@
                                                 <ul class="check-list align-justify">
                                                     <li class="big-chk">
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_1" title="">
+                                                            <input type="radio" name="branchCheckbox02" id="branchCheckbox02_1" title="">
                                                             <label for="branchCheckbox02_1">
-                                                                <span class="branch-txt">지점으로 선택</span>
+                                                                <span class="branch-txt">영업점으로 선택</span>
                                                             </label>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_2" title="">
+                                                            <input type="radio" name="branchCheckbox02" id="branchCheckbox02_2" title="">
                                                             <label for="branchCheckbox02_2">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -279,7 +279,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_3" title="">
+                                                            <input type="radio" name="branchCheckbox02" id="branchCheckbox02_3" title="">
                                                             <label for="branchCheckbox02_3">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">홍길동(1010163)</span>
@@ -288,7 +288,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox02" id="branchCheckbox02_4" title="">
+                                                            <input type="radio" name="branchCheckbox02" id="branchCheckbox02_4" title="">
                                                             <label for="branchCheckbox02_4">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -310,15 +310,15 @@
                                                 <ul class="check-list align-justify">
                                                     <li class="big-chk">
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_1" title="">
+                                                            <input type="radio" name="branchCheckbox03" id="branchCheckbox03_1" title="">
                                                             <label for="branchCheckbox03_1">
-                                                                <span class="branch-txt">지점으로 선택</span>
+                                                                <span class="branch-txt">영업점으로 선택</span>
                                                             </label>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_2" title="">
+                                                            <input type="radio" name="branchCheckbox03" id="branchCheckbox03_2" title="">
                                                             <label for="branchCheckbox03_2">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -327,7 +327,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_3" title="">
+                                                            <input type="radio" name="branchCheckbox03" id="branchCheckbox03_3" title="">
                                                             <label for="branchCheckbox03_3">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">홍길동(1010163)</span>
@@ -336,7 +336,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox03" id="branchCheckbox03_4" title="">
+                                                            <input type="radio" name="branchCheckbox03" id="branchCheckbox03_4" title="">
                                                             <label for="branchCheckbox03_4">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -358,15 +358,15 @@
                                                 <ul class="check-list align-justify">
                                                     <li class="big-chk">
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_1" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_1" title="">
                                                             <label for="branchCheckbox04_1">
-                                                                <span class="branch-txt">지점으로 선택</span>
+                                                                <span class="branch-txt">영업점으로 선택</span>
                                                             </label>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_2" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_2" title="">
                                                             <label for="branchCheckbox04_2">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -375,7 +375,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_3" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_3" title="">
                                                             <label for="branchCheckbox04_3">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">홍길동(1010163)</span>
@@ -384,7 +384,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_4" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_4" title="">
                                                             <label for="branchCheckbox04_4">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -393,7 +393,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_5" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_5" title="">
                                                             <label for="branchCheckbox04_5">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -411,7 +411,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_7" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_7" title="">
                                                             <label for="branchCheckbox04_7">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -420,7 +420,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_8" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_8" title="">
                                                             <label for="branchCheckbox04_8">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -429,7 +429,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_9" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_9" title="">
                                                             <label for="branchCheckbox04_9">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">홍길동(1010163)</span>
@@ -438,7 +438,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_10" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_10" title="">
                                                             <label for="branchCheckbox04_10">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김하나(1010164)</span>
@@ -447,7 +447,7 @@
                                                     </li>
                                                     <li>
                                                         <div class="checkbox-wrap sm">
-                                                            <input type="checkbox" name="branchCheckbox04" id="branchCheckbox04_11" title="">
+                                                            <input type="radio" name="branchCheckbox04" id="branchCheckbox04_11" title="">
                                                             <label for="branchCheckbox04_11">
                                                                 <span class="branch-name">두산타워</span>
                                                                 <span class="staff-name">김경훈(1010162)</span>
@@ -483,7 +483,7 @@
                                 -->
                                 <!-- // input -->
                                 <div class="input__inner">
-                                    <input type="text" id="searchInput2" class="input__element input--search" title="직원이름 검색어 입력폼" placeholder="직원이름 입력">
+                                    <input type="text" id="searchInput2" class="input__element input--search" title="직원 이름 검색어 입력폼" placeholder="직원 이름">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="submit" class="btn-search" aria-label="검색">검색</button>
                                 </div>
@@ -499,20 +499,20 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">전체 <span class="tp-green">NNN</span>건이 검색되었습니다.</p>
                             <div class="staff-list-wrap">
                                 <ul class="line-check-list align-justify">
                                     <li>
                                         <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_1" title="">
+                                            <input type="radio" name="staffCheckbox01" id="staffCheckbox01_1" title="">
                                             <label for="staffCheckbox01_1">
-                                                <span class="branch-txt">지점으로 선택</span>
+                                                <span class="branch-txt">영업점으로 선택</span>
                                             </label>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_2" title="">
+                                            <input type="radio" name="staffCheckbox01" id="staffCheckbox01_2" title="">
                                             <label for="staffCheckbox01_2">
                                                 <span class="branch-name">분당PB센터</span>
                                                 <span class="staff-name">김하나(1010164)</span>
@@ -521,7 +521,7 @@
                                     </li>
                                     <li>
                                         <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_3" title="">
+                                            <input type="radio" name="staffCheckbox01" id="staffCheckbox01_3" title="">
                                             <label for="staffCheckbox01_3">
                                                 <span class="branch-name">화서역</span>
                                                 <span class="staff-name">김하나(1010164)</span>
@@ -530,7 +530,7 @@
                                     </li>
                                     <li>
                                         <div class="checkbox-wrap sm">
-                                            <input type="checkbox" name="staffCheckbox01" id="staffCheckbox01_4" title="">
+                                            <input type="radio" name="staffCheckbox01" id="staffCheckbox01_4" title="">
                                             <label for="staffCheckbox01_4">
                                                 <span class="branch-name">원주혁신도시</span>
                                                 <span class="staff-name">김하나(1010164)</span>
