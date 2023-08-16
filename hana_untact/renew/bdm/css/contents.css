@@ -36,7 +36,8 @@
 .checkbox-notice-wrap .input__guide-txt {margin: 1.6rem 0 0 0;}
 
 /* 본인인증 */
-.title-under-wrap {margin-top: 1rem;}
+.title-under-wrap {margin-top: 1rem;  overflow: hidden;}
+.title-under-wrap .bank-account-wrap {margin-top: 0.6rem;}
 .title-under-wrap .text {font-weight: 500;}
 
 .bank-account-wrap {display: flex; align-items: center;}
