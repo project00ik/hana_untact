@@ -199,6 +199,57 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .softkey-up .app-main {padding-bottom: 0rem;}
 .softkey-up .app-content {height: auto; padding-bottom: 0rem;}
 
+/* - 로딩바 */
+.loading_page_area {position: fixed; left: 0; top: 0; z-index: 1000; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
+.loading_page_area img{width: 6rem;}
+.loading_center{position: relative; width: 6rem; height: 3rem;}
+.loading_center span{position: absolute; left: 50%; bottom: 0; display: inline-block; border-radius: 50%; width: 1.2rem; height: 1.2rem; background: #33cccc; transform: translateX(-50%);}
+.loading_center span:first-child{-webkit-animation: center_dot01; -webkit-animation-direction: 3.16s; -webkit-animation-timing-function: linear; animation-name: center_dot01; animation-duration: 3.16s; animation-timing-function: linear; animation-iteration-count: infinite}
+@keyframes center_dot01 {
+    0%{bottom: 0%;}
+    8%{left: 10%;}
+    15%{left: 10%; bottom: 0%; background: #33cccc;}
+    22%{bottom: 60%;}
+    29%{bottom: 0%; background: #6633ff;}
+
+    53%{bottom: 0%; background: #6633ff;}
+    60%{bottom: 60%;}
+    67%{bottom: 0%; background: #33cccc;}
+    74%{left: 10%;}
+    86%{left: 10%; bottom: 0%;}
+    93%{left: 50%;}
+}
+.loading_center span:nth-child(2){-webkit-animation: center_dot03; -webkit-animation-direction: 3.16s; -webkit-animation-timing-function: linear; animation-name: center_dot03; animation-duration: 3.16s; animation-timing-function: linear; animation-iteration-count: infinite}
+@keyframes center_dot03 {
+    0%{bottom: 0%;}
+    23%{background: #33cccc;}
+    22.5%{bottom: 0%;;}
+    29.5%{bottom: 60%;}
+    36.5%{bottom: 0%; background: #6633ff;}
+
+    58%{bottom: 0%; background: #6633ff;}
+    65%{bottom: 60%;}
+    72%{bottom: 0%; background: #33cccc;}
+    93%{bottom: 0%;}
+}
+.loading_center span:last-child{-webkit-animation: center_dot02; -webkit-animation-direction: 3.16s; -webkit-animation-timing-function: linear; animation-name: center_dot02; animation-duration: 3.16s; animation-timing-function: linear; animation-iteration-count: infinite}
+@keyframes center_dot02 {
+    0%{bottom: 0%;}
+    8%{left: 0%;}
+    15%{left: 90%;}
+    23%{left: 90%; background: #33cccc;}
+    30%{bottom: 0%;;}
+    37%{bottom: 60%;}
+    44%{bottom: 0%; background: #6633ff;}
+
+    63%{bottom: 0%; background: #6633ff;}
+    70%{bottom: 60%;}
+    77%{bottom: 0%; background: #33cccc;}
+    84%{left: 90%;}
+    93%{left: 90%; bottom: 0%;}
+    100%{left: 50%;}
+}
+
 /* - 레이아웃  : step */
 .step-header {width: 100%; margin-bottom: 0; position: sticky; top: 5.6rem; left:0; top: calc(5.6rem + env(safe-area-inset-top)); z-index: 20; }
 .step-header .stepper {width: 100%; height: 3rem; padding: 0 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fbfcfc;}
