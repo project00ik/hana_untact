@@ -184,17 +184,20 @@
 .info-title + .dot-list {margin-top: 1rem;}
 
 /* 준비물 안내 */
-.user-guide-wrap.app-main {
+.img-ci {display: inline-block; width: 7.6rem; height: 2rem; vertical-align: middle;}
+/* .user-guide-wrap.app-main {
     padding-top: calc(3rem); 
     padding-top: calc(3rem + constant(safe-area-inset-top)); 
     padding-top: calc(3rem + env(safe-area-inset-top)); 
-}
+} */
 .user-guide-wrap .container {padding: 0 2.4rem;}
+/*
 .user-guide-wrap .ci-wrap {text-align: center;}
 .user-guide-wrap .ci-wrap img {display: inline-block; width: 7.5rem; height: 2rem;}
-.user-guide-title {margin-top: 4rem; font-size: 2.2rem; color: #000; font-weight: 500; text-align: center;}
-.box-gray-list {margin-top: 4.8rem;}
-.box-gray {display: flex; align-items: center; padding: 2.4rem 0; background-color: #f2f5f7; border-radius: 18px;}
+*/
+.user-guide-title {margin-top: 3.2rem; font-size: 2.2rem; color: #000; font-weight: 500; text-align: center;}
+.box-gray-list {margin-top: 4rem;}
+.box-gray {display: flex; align-items: center; padding: 2.4rem 0; background-color: #f2f5f7; border-radius: 1.8rem;}
 .box-gray .text-wrap {padding-left: 7.2rem;}
 .box-gray .text-wrap .title {color: #333; font-weight: 500;}
 .box-gray .text-wrap .text-sub {font-size: 1.4rem;}
@@ -203,16 +206,17 @@
 .box-gray:nth-child(2) .text-wrap {background: url(../images/icon/group-6@3x.png) 3.4rem center no-repeat; background-size: 2rem 3.2rem;}
 
 .user-guide-wrap .box-gray + .box-gray {margin-top: 1.6rem;}
-
-.guide-notice-wrap {margin-top: 3.6rem; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee;}
-.guide-notice-wrap .btn-notice {
-    width: 100%; text-align: left; padding: 1.7rem 0 1.7rem 2.2rem; font-size: 1.4rem; font-weight: 500;
+.guide-notice-wrap {margin-top: 4rem;}
+.notice-wrap {border-top: 1px solid #e7e9ee;}
+.notice-wrap .btn-notice {
+    width: 100%; text-align: left; padding: 1.7rem 0 1.7rem 2.2rem; font-size: 1.4rem; color: #333; font-weight: 500;
     background-image: url(../images/icon/group-10@3x.png), url(../images/icon/ico-system-arrow-right-m.png); 
     background-position: 0 2rem, right center;
     background-repeat:no-repeat;
-    background-size: 1.2rem 1.5rem, 1.6rem 1.6rem;
+    background-size: 1.2rem 1.5rem, 1.6rem 1.6rem;    
 }
 
+.user-guide-wrap .accordion-list {border-top: 1px solid #e7e9ee;}
 .user-guide-wrap .accordion-list > li {border-bottom: none;}
 .user-guide-wrap .accordion-list .top .title,
 .user-guide-wrap .accordion-list .top .title .tp-green {font-size: 1.6rem; font-weight: 500;}

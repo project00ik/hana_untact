@@ -13,14 +13,22 @@
 </head>
 <body>
     <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <!-- <button class="btn-back" title="이전 화면"></button> -->
+            <p class="page-tit"><img src="../images/ci/group-20@3x.png" alt="하나은행" class="img-ci"></p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
         <!-- Content -->
         <div id="content" class="app-main user-guide-wrap"> 
             <div class="app-content">
                 <div class="container">
-                    <div class="ci-wrap">
+                    <!-- <div class="ci-wrap">
                         <img src="../images/ci/group-20@3x.png" alt="하나은행">
-                    </div>
-                    <p class="user-guide-title">비대면 실명 확인이<br>필요해요</p>
+                    </div> -->
+
+                    <p class="user-guide-title">비대면 실명 확인을 위해<br>준비해 주세요</p>
                     
                     <div class="box-gray-list">
                         <div class="box-gray">
@@ -38,26 +46,28 @@
                     </div>
 
                     <div class="guide-notice-wrap">
-                        <button type="button" class="btn-notice" title="신분증 진위확인 서비스 일시 중단 안내 팝업 이동" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 진위확인 서비스 일시 중단 안내</button>
+                        <div class="notice-wrap">
+                            <button type="button" class="btn-notice" title="신분증 진위확인 서비스 일시 중단 안내 팝업 이동" data-element="modal__open" data-target="#modalSlide01" aria-controls="#modalSlide01">신분증 진위확인 서비스 일시 중단 안내</button>
+                        </div>
+                        <div class="accordion-list-wrap">
+                            <ul class="accordion-list" data-element="accordion">
+                                <li data-element="accordion__item">
+                                    <div class="top" data-element="accordion__anchor">
+                                        <p class="title">
+                                            서비스 이용시간 : <span class="tp-green">매일 00:10~23:50</span>
+                                        </p>
+                                    </div>
+                                    <div class="con" data-element="accordion__panel">
+                                        <p class="con-text">하나은행 고객센터 (1599-1111) 이용시간</p>
+                                        <p class="con-text-sub">- 상담 및 문의 : 평일 09:00~18:00 (영업일 기준)</p>
+                                        <p class="con-text-sub">- 신청 처리 (영상통화) : 평일 09:00~17:30 (영업일 기준)</p>
+                                        <button type="button" class="btn-text-arrow" title="서비스 가이드 자세히보기 이동">서비스 가이드 자세히보기</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- // accordion-list-wrap -->
                     </div>
-                    <div class="accordion-list-wrap">
-                        <ul class="accordion-list" data-element="accordion">
-                            <li data-element="accordion__item">
-                                <div class="top" data-element="accordion__anchor">
-                                    <p class="title">
-                                        서비스 이용시간 : <span class="tp-green">매일 00:10~23:50</span>
-                                    </p>
-                                </div>
-                                <div class="con" data-element="accordion__panel">
-                                    <p class="con-text">하나은행 고객센터 (1599-1111) 이용시간</p>
-                                    <p class="con-text-sub">- 상담 및 문의 : 평일 09:00~18:00 (영업일 기준)</p>
-                                    <p class="con-text-sub">- 신청 처리 (영상통화) : 평일 09:00~17:30 (영업일 기준)</p>
-                                    <button type="button" class="btn-text-arrow" title="서비스 가이드 자세히보기 이동">서비스 가이드 자세히보기</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- // accordion-list-wrap -->
                 </div>
             </div>
             <div class="app-footer">
