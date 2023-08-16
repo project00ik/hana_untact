@@ -2009,6 +2009,7 @@
 
         setTimeout(function(){
           plugin.unfixedContents();
+          hanaUI.scrollEvent(); // 스크롤 시 fixed 관련 이벤트
         }, 0)
         
 
