@@ -50,8 +50,8 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .pd-none {padding: 0 !important;}
 .pdt-none {padding-top: 0 !important;}
 .pdb-none {padding-bottom: 0 !important;}
-.pdt32 {padding-top: 3.2rem !important;}
 .pt15 {padding-top: 1.5rem !important;}
+.pt36 {padding-top: 3.6rem !important;}
 .pb12 {padding-bottom: 1.2rem !important;}
 
 /* - 텍스트 : 간격 margin reset */
