@@ -991,7 +991,8 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 }
 
 /* - 모달 팝업 : 텍스트 스타일 */
-.modal-text-wrap {padding-top: 3rem;}
+.modal-text-wrap {padding-top: 3rem; padding-bottom: 1.2rem;}
+.modal-text-wrap
 .modal-text-wrap .text-bold {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 500; color: #000; word-break: keep-all; word-wrap: break-word;}
 .modal-text-wrap .text-center {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 400; color: #333; word-break: keep-all; word-wrap: break-word; text-align: center;}
 
