@@ -10,26 +10,26 @@
     <style>
 	* {margin: 0; padding: 0; box-sizing: border-box; color: #333;}
 	
-	.table-title {padding: 15px 10px; width: 100%; font-size: 24px; color: #000; font-weight: bold;}
-	.table {margin: 0 ; position: relative; display: flex; flex-wrap: wrap; border-top: 2px solid #ccc;}
+	.table-title {padding: 8px 10px; width: 100%; font-size: 18px; color: #000; font-weight: bold;} /* 가운데 정렬 하고 싶을 시 text-align: center; */
+	.table {position: relative; display: flex; flex-wrap: wrap; border-top: 2px solid #e7e9ee;}
 	.table::before {content: ''; display: block; width: 100%; height: 1px; background-color: #e7e9ee; position: absolute; left: 0; bottom: 0;}
+	.table-header {display: flex; font-weight: bold; border-top: 2px solid #e7e9ee;}
+	.table-header + .table {margin-top: -1px;}
+	
+	.cell {position: relative; width: 50%; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; margin-top: -1px;}
+    .cell.right .item:last-child {border-right: none;}
 
-	.table .cell {position: relative; width: 50%; border-top: 1px solid #e7e9ee; border-bottom: 1px solid #e7e9ee; margin-top: -1px;}
-    .table .cell.right .item:last-child {border-right: none;}
-	.table > .cell:nth-child(1) .item {font-weight: bold; font-size: 16px;}
-	.table > .cell:nth-child(2) .item {font-weight: bold;}
-
-	.table .cell-data {display: flex; height: 100%;}
-	.table .cell-data .item {padding: 0 10px; word-wrap: break-word; white-space: normal; word-break: break-all; border-right: 1px solid #e7e9ee;}
-	.table .cell-data .item:nth-child(1) {width: 35%; font-weight: bold;}
-	.table .cell-data .item:nth-child(2) {width: 30%;}
-	.table .cell-data .item:nth-child(3) {width: 13%;}
-	.table .cell-data .item:nth-child(4) {width: 22%;}
-	.table .cell-data .item input {width: 100%; font-size: 16px;}
-	.table .cell-data .item .btn {min-width: 30px; height: 20px; line-height: 20px; margin-right: 5px; font-size: 12px; margin-top: 1px;}
+	.cell-data {display: flex; height: 100%;}
+	.cell-data .item {padding: 0 10px; word-wrap: break-word; white-space: normal; word-break: break-all; border-right: 1px solid #e7e9ee;}
+	.cell-data .item:nth-child(1) {width: 35%; font-weight: bold;}
+	.cell-data .item:nth-child(2) {width: 30%;}
+	.cell-data .item:nth-child(3) {width: 13%;}
+	.cell-data .item:nth-child(4) {width: 22%;}
+	.cell-data .item input {width: 100%; font-size: 16px;}
+	.cell-data .item .btn {min-width: 30px; height: 20px; line-height: 20px; margin-right: 5px; font-size: 12px; margin-top: 1px;}
     
-	.table .cell.full {position: relative; width: 100%;}
-	.table .cell.full .cell-data {width: 50%;}
+	.cell.full {position: relative; width: 100%;}
+	.cell.full .cell-data {width: 50%;}
 
 	.table .depth {display: flex; flex-wrap: wrap; margin-left: 20px;}
 	.table .depth .cell-data .item {font-size: 14px;}
@@ -40,9 +40,9 @@
 <body>
     <div id="wrap" class="wrap">
 
-		<p class="table-title">BIZ.QRG0001.IN(하나원큐 플러스 회원가입)</p>      
-		<div class="table">
-			
+		<p class="table-title">BIZ.QRG0001.IN(하나원큐 플러스 회원가입)</p>
+		
+		<div class="table-header">
 			<div class="cell left">
 				<div class="cell-data">
 					<div class="item">name</div>
@@ -59,6 +59,209 @@
 					<div class="item">name</div>
 				</div>
 			</div>
+		</div>
+		<div class="table">		
+			<div class="cell left">
+				<div class="cell-data">
+					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+					<div class="item">휴대전화사업자구분코드</div>
+					<div class="item">X(4000)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>	
+			<div class="cell right">
+				<div class="cell-data">
+					<div class="item">MBPH_ENPR_DV_CD</div>
+					<div class="item">고객정보제공동의여부</div>
+					<div class="item">X(2)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+			<div class="cell left">
+				<div class="cell-data">
+					<div class="item">MACH_UNQ_NO</div>
+					<div class="item">기기고유번호</div>
+					<div class="item">X(50)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div> 
+			<div class="cell right">
+				<div class="cell-data">
+					<div class="item">CRYP_SESS_KEY</div>
+					<div class="item">하나원큐 플러스 회원가입</div>
+					<div class="item">X(2000)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+			<div class="depth">
+				<div class="cell full">
+					<div class="cell-data">
+						<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+						<div class="item">플러스 회원가입</div>
+						<div class="item">data</div>
+						<div class="item">
+							<button type="button" class="btn">추가</button>
+						</div>
+					</div>
+				</div>
+				<div class="cell left">
+					<div class="cell-data">
+						<div class="item">
+							<button type="button" class="btn">삭제</button>
+							CUST_INFO_OFFR_AGRM_YN
+						</div>
+						<div class="item">texttext</div>
+						<div class="item">data</div>
+						<div class="item">
+							<input type="text" class="k-textbox">
+				
+						</div>
+					</div>
+				</div>
+				<div class="cell right">
+					<div class="cell-data">
+						<div class="item">
+							<button type="button" class="btn">삭제</button>
+							CUST_INFO_OFFR_AGRM_YN
+						</div>
+						<div class="item">texttext</div>
+						<div class="item">data</div>
+						<div class="item">
+							<input type="text" class="k-textbox">
+				
+						</div>
+					</div>
+				</div>
+				<div class="cell left">
+					<div class="cell-data">
+						<div class="item">
+							<button type="button" class="btn">삭제</button>
+							CUST_INFO_OFFR_AGRM_YN
+						</div>
+						<div class="item">식별번호</div>
+						<div class="item">data</div>
+						<div class="item">
+							<input type="text" class="k-textbox">
+						</div>
+					</div>
+				</div>
+				
+				<div class="depth">
+					<div class="cell full">
+						<div class="cell-data">
+							<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+							<div class="item">플러스 회원가입</div>
+							<div class="item">data</div>
+							<div class="item">
+								<button type="button" class="btn">추가</button>
+							</div>
+						</div>
+					</div>
+					<div class="cell left">
+						<div class="cell-data">
+							<div class="item">
+								<button type="button" class="btn">삭제</button>
+								CUST_INFO_OFFR_AGRM_YN
+							</div>
+							<div class="item">texttext</div>
+							<div class="item">data</div>
+							<div class="item">
+								<input type="text" class="k-textbox">
+					
+							</div>
+						</div>
+					</div>
+					<div class="cell right">
+						<div class="cell-data">
+							<div class="item">
+								<button type="button" class="btn">삭제</button>
+								CUST_INFO_OFFR_AGRM_YN
+							</div>
+							<div class="item">texttext</div>
+							<div class="item">data</div>
+							<div class="item">
+								<input type="text" class="k-textbox">
+					
+							</div>
+						</div>
+					</div>
+					<div class="cell left">
+						<div class="cell-data">
+							<div class="item">
+								<button type="button" class="btn">삭제</button>
+								CUST_INFO_OFFR_AGRM_YN
+							</div>
+							<div class="item">식별번호</div>
+							<div class="item">data</div>
+							<div class="item">
+								<input type="text" class="k-textbox">
+							</div>
+						</div>
+					</div>
+					
+					<div class="depth">
+						<div class="cell full">
+							<div class="cell-data">
+								<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+								<div class="item">플러스 회원가입</div>
+								<div class="item">data</div>
+								<div class="item">
+									<button type="button" class="btn">추가</button>
+								</div>
+							</div>
+						</div>
+						<div class="cell left">
+							<div class="cell-data">
+								<div class="item">
+									<button type="button" class="btn">삭제</button>
+									CUST_INFO_OFFR_AGRM_YN
+								</div>
+								<div class="item">texttext</div>
+								<div class="item">data</div>
+								<div class="item">
+									<input type="text" class="k-textbox">
+						
+								</div>
+							</div>
+						</div>
+						<div class="cell right">
+							<div class="cell-data">
+								<div class="item">
+									<button type="button" class="btn">삭제</button>
+									CUST_INFO_OFFR_AGRM_YN
+								</div>
+								<div class="item">texttext</div>
+								<div class="item">data</div>
+								<div class="item">
+									<input type="text" class="k-textbox">
+						
+								</div>
+							</div>
+						</div>
+						<div class="cell left">
+							<div class="cell-data">
+								<div class="item">
+									<button type="button" class="btn">삭제</button>
+									CUST_INFO_OFFR_AGRM_YN
+								</div>
+								<div class="item">식별번호</div>
+								<div class="item">data</div>
+								<div class="item">
+									<input type="text" class="k-textbox">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="cell left">
 				<div class="cell-data">
 					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
@@ -69,6 +272,42 @@
 					</div>
 				</div>
 			</div>
+			<div class="cell right">
+				<div class="cell-data">
+					<div class="item">MBPH_ENPR_DV_CD</div>
+					<div class="item">고객정보제공동의여부</div>
+					<div class="item">X(2)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+			<div class="cell left">
+				<div class="cell-data">
+					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+					<div class="item">휴대전화사업자구분코드</div>
+					<div class="item">X(4000)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>
+		
+		</div>
+        
+		<p class="table-title">BIZ.QRG0001.IN(하나원큐 플러스 회원가입)</p>
+		
+		<div class="table">		
+			<div class="cell left">
+				<div class="cell-data">
+					<div class="item">CUST_INFO_OFFR_AGRM_YN</div>
+					<div class="item">휴대전화사업자구분코드</div>
+					<div class="item">X(4000)</div>
+					<div class="item">
+						<input type="text" class="k-textbox">
+					</div>
+				</div>
+			</div>	
 			<div class="cell right">
 				<div class="cell-data">
 					<div class="item">MBPH_ENPR_DV_CD</div>
