@@ -52,13 +52,14 @@ var hanaUI = {
                 $('body').css('height', windowHeight + 'px');
             }
             $('.app-content').css('min-height', containerHeight + 'px');
-            $('.popup-wrap').css('max-height', windowHeight + 'px');
-            $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
-            $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
             
-            if ($('body').is('.ios')) { 
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.popup-wrap').css('max-height', windowHeight + 'px');
+                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
+                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
                 $('body').css('background', 'yellow');
             }
+            
     
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -74,9 +75,11 @@ var hanaUI = {
                 var innerPopHeightResize = windowHeightResize - 60;
                 $('body').css('min-height', windowHeightResize + 'px');
                 $('.app-content').css('min-height', containerHeightResize + 'px');
-                $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+                    $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+                    $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
+                    $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                }
             });
         },
     header : function(obj){
