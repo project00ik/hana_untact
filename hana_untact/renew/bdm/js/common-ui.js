@@ -55,6 +55,10 @@ var hanaUI = {
             $('.popup-wrap').css('max-height', windowHeight + 'px');
             $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
             $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
+            
+            if ($('body').is('.ios')) { 
+                $('body').css('background', 'yellow');
+            }
     
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
