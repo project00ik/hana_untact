@@ -1877,6 +1877,8 @@
 
         // 모달이 이미 열려 있는 경우 return
         if ( $(target).hasClass('is-open') ) return;
+        // 키보드가 올라와 있는데 모달이 열리는 경우 return 
+        if ( $('body').hasClass('softkey-up') ) return;
 
         // 단일 모달, 다중 모달에 따른 분기 처리
 				// if ( plugin.options.closeExisting ) {
