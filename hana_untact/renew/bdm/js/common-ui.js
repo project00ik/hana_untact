@@ -315,7 +315,7 @@ var hanaUI = {
                             
                         } else { 
                             // 접근성 관련 : 인풋 삭제 버튼 value값이 있을 때 고정으로 삭제 후 css 처리
-                            // $target.closest($el).find('.input__remove-button').show();
+                            $target.closest($el).find('.input__remove-button').show();
                         }
                     }
                     
@@ -814,8 +814,9 @@ var hanaUI = {
         }
         
         // 계속 버튼
-        $('.btn__form-next-depth').on('click', function(){
+        $('.btn__form-next-depth').on('click', function () {
             formNextDepth();
+            
         });
         
 
@@ -1670,7 +1671,7 @@ function toggleLayer(obj) {
     var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
 
     // 탭 처럼 쓰일 때
-    if ($('.tg--area').closest('.form-radio-list').hasClass('tg--wrap')) {
+    if (toggleBtn.closest('.form-radio-list').hasClass('tg--wrap')) {
         var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');
         tgTabBtn.removeClass('tg--on');
         tgTabBtn.attr('aria-checked', tgTabBtn.attr('aria-checked').replace(true, false));
@@ -1689,26 +1690,24 @@ function toggleLayer(obj) {
             
             if (tgly.find('.input__element').length > 0) {
                 tgly.find('.input__element').eq(0).focus();
+                
+                // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 포커스
+                // $('.btn__form-next').hide();
+                // $('.btn__form-next-depth').show();
+                // hanaUI.formDepthEvent(0);
             }
-            
-            // [v] 계좌 비밀번호 등록 (선택) : new-password-wrap일때 정순 포커스 추가
-            if (tgChkBtn.closest('.tg--area').parent().hasClass('new-password-wrap')) {
-                hanaUI.formDepthEvent(0);
-            }
-            
+
         } else { 
             tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input').prop('checked', false);
             tgly.removeClass('open');
             toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
-            
+
             // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 버튼 교체
-            if (tgChkBtn.closest('.tg--area').parent().hasClass('new-password-wrap')) {
-                console.log('new-password-wrap 있음');
-                $('.btn__form-next-depth').hide();
-                $('.btn__form-next').show();
-            }
+            // $('.btn__form-next').show();
+            // $('.btn__form-next-depth').hide();
+
         }
         
     } else { 
