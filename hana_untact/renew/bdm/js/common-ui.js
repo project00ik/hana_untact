@@ -1689,7 +1689,8 @@ function toggleLayer(obj) {
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
             if (tgly.find('.input__element').length > 0) {
-                tgly.find('.input__element').eq(0).focus();
+                // 가상키보드 관련 주석처리
+                // tgly.find('.input__element').eq(0).focus();
                 
                 // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 포커스
                 // $('.btn__form-next').hide();
