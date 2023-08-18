@@ -176,9 +176,9 @@
 .use-coupon-wrap .list-wrap.type01 dl + dl {margin-top: 0.7rem;}
 
 /* loding */
-.loding-wrap {margin-top: 2.4rem; text-align: center;}
+.loding-wrap {margin-top: 6.8rem; text-align: center;}
 .loding-wrap .title {font-size: 2rem; color: #000; font-weight: 500;}
-.loding-img-wrap {width: 17rem; height: 17rem; margin: 6.4rem auto 0;}
+.loding-img-wrap {width: 8rem; height: 8rem; margin: 5.6rem auto 0;}
 
 /* 이용안내 title */
 .info-title {margin-top: 4rem; font-size: 1.4rem; color: #333;}
