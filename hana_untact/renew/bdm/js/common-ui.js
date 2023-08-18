@@ -58,7 +58,7 @@ var hanaUI = {
                 $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
                 $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
                 // $('body').css('background', 'yellow');
-            }
+            } 
             
     
             let vh = window.innerHeight * 0.01;
@@ -80,6 +80,10 @@ var hanaUI = {
                     $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
                     $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
                 }
+            });
+            window.addEventListener('touchend', () => {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
             });
         },
     header : function(obj){
