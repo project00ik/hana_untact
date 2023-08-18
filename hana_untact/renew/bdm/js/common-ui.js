@@ -57,7 +57,7 @@ var hanaUI = {
                 $('.popup-wrap').css('max-height', windowHeight + 'px');
                 $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
                 $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
-                $('body').css('background', 'yellow');
+                // $('body').css('background', 'yellow');
             }
             
     
