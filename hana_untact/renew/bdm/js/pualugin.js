@@ -1981,15 +1981,6 @@
             setTimeout(function(){
               aggreeScroll($target);
             }, 200);
-          
-            if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-              $target.css({
-                  "position": "fixed",
-                  "width": "100%",
-                  "height": "100vh",
-                  "overflow": "hidden"
-              });
-            } 
 
         }else{
           $target.addClass(plugin.options.activeClassName);
