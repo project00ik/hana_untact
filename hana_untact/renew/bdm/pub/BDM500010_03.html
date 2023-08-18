@@ -5,10 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KEB하나은행 - 비대면 계좌개설</title>
     <!-- 공통 css -->
     <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <script>
+            window.addEventListener("load", function() {
+            setTimeout(function() {
+                window.scrollTo(0, 1);
+            }, 0);
+            });
+    </script>
 </head>
 <body>
     <div id="wrap" class="wrap"> 
@@ -588,13 +597,11 @@
                 });
             });
             // modalOpen('slideCalendar03');
-            // 모바일 웹 주소창 숨기기
-                window.addEventListener('load', function() {
-                // body의 height를 살짝 늘리는 코드
-                document.body.style.height = (document.documentElement.clientHeight + 5) + 'px';
-                // scroll를 제어 하는 코드
-                setTimeout(scrollTo, 0, 0, 1);
-                }, false);
+            
+            
+            
+
+                
 
 
         });
