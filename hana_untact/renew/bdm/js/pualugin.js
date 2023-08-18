@@ -1976,13 +1976,21 @@
 
             //슬라이드팝업내 탭이 있는 경우
             if($slideLayer.find('.tab-list-wrap').length || $slideLayer.find('[data-element=tab]').length){
-              $slideLayer.find('.modal__contents').addClass('modal__contents--tabscroll');
-          }
-          setTimeout(function(){
-            aggreeScroll($target);
-          },200);
-            
+                $slideLayer.find('.modal__contents').addClass('modal__contents--tabscroll');
+            }
+            setTimeout(function(){
+              aggreeScroll($target);
+            }, 200);
           
+            if (!navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+              $target.css({
+                  "position": "fixed",
+                  "width": "100%",
+                  "height": "100vh",
+                  "overflow": "hidden"
+              });
+            } 
+
         }else{
           $target.addClass(plugin.options.activeClassName);
           $target
