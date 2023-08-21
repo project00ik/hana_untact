@@ -26,11 +26,11 @@
                     <!-- Tab -->
                     <div class="tab-list-wrap" data-element="tab">
                         <ul class="tab-list" role="tablist">
-                            <li class="tab" data-element="tab__list">
-                                <a href="javascript:void();" class="text" aria-selected="false" data-element="tab__anchor"><span>확인사항</span></a>
+                            <li class="tab" data-element="tab__list" >
+                                <a href="javascript:void();" class="text" aria-selected="true" data-element="tab__anchor"><span>확인사항</span></a>
                             </li>                    
                             <li class="tab" data-element="tab__list">
-                                <a href="javascript:void();" class="text is-active" aria-selected="true" data-element="tab__anchor"><span>이용안내</span></a>
+                                <a href="javascript:void();" class="text is-active" aria-selected="false" data-element="tab__anchor"><span>이용안내</span></a>
                             </li>                   
                             <li class="tab" data-element="tab__list">
                                 <a href="javascript:void();" class="text" aria-selected="false" data-element="tab__anchor"><span>가입안내</span></a>
@@ -39,28 +39,96 @@
                         <div class="tab-con" data-element="tab__panel">
                             <!-- accordion-list-wrap -->
                             <div class="accordion-list-wrap">
-                                <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+                                <ul class="accordion-list" data-element="accordion">
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">입출금통장 이용한도</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <p class="text">
+                                                    금융감독원 대포통장 근절 종합대책에 따라 입출금통장의 이용한도가 제한됩니다.
+                                                </p>
+                                                <ul class="dot-list3">
+                                                    <li>영업점: 출금/이체 합산 1일 100만원</li>
+                                                    <li>ATM: 출금/이체 각각 1일 100만원</li>
+                                                    <li>전자금융: 이체 1일 100만원</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </li>
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">한도제한 해제방법</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <ul class="dot-list3">
+                                                    <li>영업점 방문 후 증빙서류 제출(방문 전 사전 문의)</li>
+                                                    <li>대출실행(비대면 입출금통장 연계)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">비대면 실명 확인 신청자격</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>만 14세 이상의 대한민국 거주자인 개인 및 개인사업자 중 아래 거래제한에 해당하지 않는 손님</li>
+                                                </ul>
+                                                <ul class="caution-list">
+                                                    <li>거래제한: 대리인, 만 14세 미만 미성년자, 국외 거주자, 대포통장 명의자, 전화금융사기계좌 명의자, 해외납세 의무자, 단기다수계좌 개설자(입출금통장만 제한) 포함 기타 은행정책으로 인한 거래제한<br>(법인 및 외국인 대상 비대면실명확인 서비스는 별도 운영)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">시작 전 준비물</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>신분증: 주민등록증, 운전면허증, 여권, 모바일 운전면허증 중 선택</li>
+                                                    <li>스마트폰: 본인 명의 휴대폰인증 필수</li>
+                                                </ul>
+                                                <ul class="bul-star-list">
+                                                    <li class="bul-star">개인사업자 계좌 개설 및 기업뱅킹 가입 시 사업자등록증 촬영이 필요할 수 있습니다.</li>
+                                                    <li class="bul-star">일부 거래에서는 여권 사용이 제한될 수 있습니다.</li>
+                                                    <li class="bul-star">모바일운전면허증은 하나원큐앱을 통한 거래에서만 이용 가능합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">이용시간</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">1. 업무신청: 매일 00:10~23:50</p>
+                                                <p class="text">2. 콜센터 (1599-2111) 이용안내</p>
+                                                <ul class="dot-list3">
+                                                    <li>문의, 상담 등: 평일 09:00~18:00(영업일 기준)</li>
+                                                    <li>신청내역 처리(영상통화 포함): 평일 09:00~17:30(영업일 기준)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">유의사항</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>「특정금융거래정보의 보고 및 이용 등에 관한 법률」 준수 및 전기통신금융사기 피해예방을 위해 금융거래목적을 확인합니다.</li>
+                                                    <li>제공 정보의 검증이 불가능한 경우 거래가 지연되거나 거절될 수 있으며, 제공 정보는 「금융실명법」 등 관련 법률에 의해 보호됩니다.</li>
+                                                    <li>신청 업무가 취소된 경우 개인정보는 안전하게 삭제되며, 완료된 건의 증빙자료는 관련 법령에 따라 계좌 해지 후 5년간 보존됩니다.</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </li>
@@ -71,31 +139,116 @@
                         <div class="tab-con is-active" data-element="tab__panel">
                             <!-- accordion-list-wrap -->
                             <div class="accordion-list-wrap">
-                                <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+                                <ul class="accordion-list" data-element="accordion">
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">실명 확인이란?</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <ul class="dot-list3">
+                                                    <li>실명 확인이 필요한 각종 금융서비스를 영업점 방문 없이 스마트폰에서 이용하는 방법입니다.</li>
+                                                    <li><span class="tp-black">하나은행 비대면 실명 확인</span>은 휴대폰인증 → 신분증 촬영 → 영상통화/계좌인증 순서로 진행됩니다. </li>
+                                                </ul>
+                                                <p class="bul-star">하나은행 입출금통장이 있는 경우 예적금, 전자금융 가입 시 계좌인증으로 실명 확인합니다.</p>
                                             </div>
                                         </div>
                                     </li>
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">이용 가능 채널</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <ul class="dot-list3">
+                                                    <li>앱: 하나원큐, 하나머니, 하나원큐 기업, 핀크(Finnq)</li>
+                                                    <li>웹: 하나은행 모바일웹(m.hanabank.com), My브랜치, 각종 제휴사 웹 이용 시 사파리, 인터넷, 크롬 등 자체 브라우저를 이용해 주세요.</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">이용 가능 스마트폰</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">기종 제한은 없으나 운영체제(OS)에 따라 영상통화 신청과 모바일OTP 이용이 제한됩니다.</p>
+                                                <ul class="dot-list3">
+                                                    <li>영상통화: 안드로이드 4.0, iOS 8.0 미만 신청 불가</li>
+                                                    <li>모바일OTP: 안드로이드 4.3, iOS 8.0 미만 이용 불가</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">신분증 촬영 및 제출</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">신분증이 오래되었거나 훼손된 경우, 촬영 시 빛 반사 등으로 인해 식별이 어려운 경우 제대로 인식되지 않을 수 있습니다. 이때 신분증정보를 직접 수정 및 입력할 수 있으며, 잘못 입력한 경우 신분증 진위확인 과정에서 신청이 거절될 수 있으니 입력정보가 정확한지 확인해 주세요.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">신분증 확인</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">촬영 후 제출한 신분증은 발급기관을 통해 실시간으로 진위여부를 확인하며, 신분증 진위확인 결과 불일치인 경우 비대면실명확인 서비스를 이용할 수 없습니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">영상통화 안내</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">영상통화 접수/예약 시 연결 URL이 문자메시지로 발송되며, 접수/예약일 포함 3일(영업일 기준) 이내에 완료하지 않으면 자동 취소됩니다. 영상통화 연결 가능 시간은 평일09:00~17:30(영업일 기준)이며 유효기간 안에 문자메시지의 URL을 누르면 상담원과 연결됩니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">가상계좌이체 안내</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">
+                                                    가상계좌이체 신청일 포함 3일(영업일 기준) 이내에 완료하지 않으면 자동 취소됩니다.
+                                                    선택한 다른 기관 본인 계좌의 인터넷뱅킹/스마트폰뱅킹/폰뱅킹/ATM에서 문자메시지로 받은 가상계좌로 이체하면 계좌 개설 완료 후 해당 금액이 신규 계좌로 입금됩니다.
+                                                </p>
+                                                <p class="bul-star">영업점 창구 및 토스, 카카오페이 등의 간편송금 앱에서는 이체할 수 없습니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">신청 취소</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>신청 중: 휴대폰인증 후 [신청중인 목록]에서 삭제해 취소</li>
+                                                    <li>신청 후 가입 완료 전: 하나은행 고객센터(1599-2111)를 통해 취소</li>
+                                                    <li>가입 완료 후: 영업점 또는 인터넷뱅킹/스마트폰뱅킹에서 해지</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">이어서 신청</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">신청 중 중단한 경우 신청일로부터 7일 동안 신청내용이 보관되며, 휴대폰인증 후 [신청중인 목록]에서 이어서 진행할 수 있습니다. 7일 후에도 완료하지 않으면 자동 취소됩니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>                                    
                                 </ul>
                             </div>
                             <!-- // accordion-list-wrap -->
@@ -103,28 +256,94 @@
                         <div class="tab-con" data-element="tab__panel">
                             <!-- accordion-list-wrap -->
                             <div class="accordion-list-wrap">
-                                <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
+                                <ul class="accordion-list" data-element="accordion">
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">신청가능업무</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <ul class="dot-list3">
+                                                    <li>계좌개설: 입출금통장, 예금, 적금, 외화통장</li>
+                                                    <li>전자금융: 개인뱅킹, 기업뱅킹, 모바일OTP 발급</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </li>
                                     <li data-element="accordion__item">
                                         <div class="top" data-element="accordion__anchor">
-                                            <p class="title">
-                                                아코디언 타이틀
-                                            </p>
+                                            <p class="title">입출금통장 가입제한</p>
                                         </div>
                                         <div class="con" data-element="accordion__panel">
                                             <div class="inbox">
-                                                아코디언 내용
+                                                <p class="text">비대면 한도계좌 기준 1인 1계좌만 가입할 수 있습니다.(이용한도가 해제된 경우에는 비대면 입출금통장 보유 시에도 추가 가입 가능)</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">입출금통장 현금 출금방법</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>하나원큐: 모바일통장 서비스 이용(창구/ATM 출금 가능)</li>
+                                                    <li>하나머니: 하나머니 전환 후 [ATM출금] 서비스 이용</li>
+                                                    <li>핀크(Finnq): [ATM출금 서비스] 이용</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">상품별 가입제한</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <p class="text">상품별 1인 1계좌 가입 제한이 있는 경우, 이미 가입 계좌가 있으면 추가 가입이 제한됩니다.</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">개설계좌번호 확인</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>개설 완료 후 문자메시지로 개설된 계좌번호를 안내해 드립니다.</li>
+                                                    <li>문자메시지를 삭제한 경우 [하나원큐 &#62; 전체계좌]에서 계좌번호를 확인할 수 있습니다.</li>
+                                                    <li>전자금융 가입 손님은 전자금융 로그인 후 [전체계좌]에서 확인할 수 있습니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">전자금융 가입안내</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>하나은행 전자금융에 가입하지 않은 경우 새로 가입할 수 있습니다.</li>
+                                                    <li>하나은행 입출금통장이 있는 경우 전자금융만 가입할 수 있습니다.</li>
+                                                    <li>하나은행 전자금융에 가입하지 않은 손님이 입출금통장에 가입하는 경우 전자금융 동시 가입이 필수로 진행됩니다.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li data-element="accordion__item">
+                                        <div class="top" data-element="accordion__anchor">
+                                            <p class="title">모바일OTP 발급안내</p>
+                                        </div>
+                                        <div class="con" data-element="accordion__panel">
+                                            <div class="inbox">
+                                                <ul class="dot-list3">
+                                                    <li>앱 기반의 하나은행 전용 1회용 비밀번호 생성기입니다.(무료)</li>
+                                                    <li>하나은행 외 다른 금융기관에서는 이용할 수 없습니다.</li>
+                                                    <li>1인당 1개 기기에서만 발급할 수 있습니다.</li>
+                                                    <li>발급 후 3일 이내에 신청확인을 완료하지 않으면 이용할 수 없으며, 이 경우 모바일OTP를 재발급받아야 합니다.</li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </li>

@@ -13,6 +13,7 @@
 .tp-red {color: #e53a4c !important;}
 .tp-dpink {color: #e31e5a !important;}
 .tp-gray {color: #999 !important;}
+.tp-black {color: #000 !important; font-size: inherit;}
 .tpsb-green {color: #009591 !important; font-weight: 700;}
 .tpsb-gray {color: #999 !important; font-weight: 700;}
 .tpsb-dgray02 {color: #333 !important; font-weight: 700;}
