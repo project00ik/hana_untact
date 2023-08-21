@@ -1,0 +1,2720 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="WebRTC code samples" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
+    <meta itemprop="description" content="Client-side WebRTC code samples" />
+    <meta itemprop="name" content="WebRTC code samples" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta id="theme-color" name="theme-color" content="#ffffff" />
+
+    <title>Robiscan</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css?v=20230518"/>
+    <link rel="stylesheet" type="text/css" href="../css/robiscan_2.css?v=20230518"/>
+    <link rel="icon" href="https://fincubeocr.posicube.com/hanabank/favicon.ico" />
+</head>
+
+<body class="scan-body">
+    <!-- scan-container -->
+    <section id="scanContainer" class="scan-container">
+        <video id="scanView" class="scan-view" playsinline muted></video> <!-- help: autoplay 속성 -> muted로 변경 -->
+        <div class="scan-box-wrap">
+            <a class="scan-box__cancel" href="https://fincubeocr.posicube.com/hanabank/">
+                <img src="https://fincubeocr.posicube.com/hanabank/images/cancel_icon.png" alt="닫기" />
+            </a>
+            <div class="scan-box__info-wrap">
+                <p class="scan-box__desc scan-box__tit">주민등록증/운전면허증 촬영</p>
+                <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">사각형에 신분증이 꽉 차도록<br>위치를 맞추면 자동으로 촬영됩니다</p>
+                <!-- <p id="scanBoxDesc" class="scan-box__desc">네모칸 안에 맞추세요.</p> -->
+            </div>
+            <div id="scanBoxMask" class="scan-box__mask--ready"></div>
+            <div id="scanBoxGuide" class="scan-box__guide--ready">
+                <div id="scanBoxLoading" class="scan-box__loading">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="scanBoxPassportPhoto" class="scan-box__passport-photo" style="display: block;"></div>
+                <div id="scanBoxPassportMrz" class="scan-box__passport-mrz" style="display: block;"></div>
+                <div class="scan-box__tip-wrap">
+                    <div class="scan-box__tip video-guide-info">
+                        <!-- <img src="https://fincubeocr.posicube.com/hanabank/images/light_icon.png" alt="" /> -->
+                        <p>사진이 너무 밝을 경우, 빛이 반사됩니다</p>
+                    </div>
+                    <!-- <div class="scan-box__tip">
+                    <img src="https://fincubeocr.posicube.com/hanabank/images/dark_icon.png" alt="" />
+                    <p>어두운 바닥에서 촬영해주세요.</p>
+                    </div> -->
+                </div>
+
+                <div class="video-info-wrap">
+                    <p class="txt">
+                        복사본이 아닌<br>
+                        <span class="tp-green">주민등록증 또는 운전면허증 원본</span>으로 촬영하고<br>
+                        빛이 반사되지 않도록 주의해 주세요.
+                    </p>
+                    <div class="btn-center-wrap">
+                        <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동" data-element="modal__open" data-target="#modalAlert">다른 신분증으로 본인확인하기</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-info-link">
+                <button type="button" class="txt_underline" title="주민등록증/운전면허증 유의사항 보기" data-element="modal__open" data-target="#modalSlide01">신분증 촬영 하기 전, 확인하세요!</button>
+            </div>
+
+            <div class="scan-box__camera-content">
+                <div class="scan-box__camera-auto-wrap">
+                    <button id="autoCameraToggle" class="camera-toggle__auto"></button>
+                    <div class="scan-box__camera-auto-label">
+                        <p>자동</p>
+                        <p>수동</p>
+                    </div>
+                </div>
+                <button id="takeCameraBtn" class="camera-btn__take"></button>
+            </div>
+        </div>
+        <div id="toast" class="toast-wrap" style="display: none">
+            <div class="toast">
+
+            </div>
+        </div>
+    </section>
+    <!--// scan-container -->
+    <!-- result-container -->
+    <section id="resultContainer" class="result-container">
+        <div class="result-canvas-wrap">
+            <canvas id="resultCanvas" class="result-canvas"></canvas> <!-- help: 태그 종료 변경 -->
+        </div>
+        <hr class="result-divider" />
+        <div class="result-box-wrap">
+            <p class="result-box__title">결과값</p>
+            <p id="resultBoxDesc" class="result-box__desc"></p>
+        </div>
+        <div class="result-btn-wrap">
+            <button id="resetBtn" class="result-btn__reset">메인화면</button>
+            <button id="redetectBtn" class="result-btn__redetect">재촬영</button>
+            <button id="sendServerBtn" class="result-btn__reset">서버전송</button>
+        </div>
+
+    </section>
+    <!--// result-container -->
+
+    <script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script> 
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+    
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">주민등록증/운전면허증 유의사항</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-wrap pb12">
+                    <ul class="dot-list2">
+                        <li>하나은행은 『특정금융거래정보의 보고 및 이용 등에 관한 법률』에 의한 고객확인 이행을 위해, 여권 내 정보 (여권번호, 성명, 발급일, 사진정보 등)를 확인하고 외교부를 통해 실명확인 및 신분증 진위확인을 하고 있습니다.</li>
+                        <li>위 내용을 인지하였으며, 진위확인에 동의합니다.  </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">'개인정보 수집 &middot; 이용 동의'에 <br>동의해 주세요.</p>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 서버 이미지 전송을 위한 암호화 스크립트 -->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/blob-util-2.0.2.min.js"></script>
+    <script
+    src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/crypto-js/crypto-js.js"
+    type="text/javascript"
+    ></script>
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/jquery-3.6.1.min.js"></script>
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/jsencrypt/bin/jsencrypt.min.js"></script>
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/vendor/modernizr-3.11.2.min.js"></script>
+
+    <!-- Logging을 위한 class -->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/robi_logger.js?v=20230425_01"></script> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <!-- CardScanner class, WebCamera 객체에서 사용, native scanner control class-->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/cardscanner.js?v=20230425_01"></script> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <!-- WebCamera class, UI연동 및 카메라를 제어하기 위한 class--> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/webcamera.js?v=20230425_01"></script> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <!-- Webassembly scanner class, 로딩시 scanner.data를 자동으로 같이 로딩해 줌 -->
+    <!-- <script src="https://fincubeocr.posicube.com/hanabank/scripts/scanner_simd.js"></script> -->
+    <!-- Webassembly feature를 사용가능한지 확인하는 코드 뭉치-->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/checkvalidation.js?v=20230425_01"></script> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <!-- webRTC OCR Log 서버 전송을 위한 logger 코드-->
+    <script src="https://fincubeocr.posicube.com/hanabank/scripts/logger.js?v=20230322_02"></script> <!-- help: 캐시 갱신을 위한 v 값 변경 -->
+    <script>
+    /* OCR 웹 서비스 실행 */
+    // ====================================================================================================
+    const IS_SERVER_SEND = false; // 서버전송 지원 유무
+    const IS_RETRY = false; // 색상, 빛반사, 얼굴 점수 기준에 따른 재스캔 시도 여부
+    const CaptureEdgeType = {
+        CARD: 0,
+        PASSPORT: 1,
+        A4: 2,
+    };
+    const LOAD_TIMEOUT = 10; // 10 seconds
+
+    let scanBoxWidth = "340px"; // 초기값,
+    
+    var veri_cnt = 0;
+    let vw = Math.max(
+        document.documentElement.clientWidth || 0,
+        window.innerWidth || 0,
+    );
+    let vh = Math.max(
+        document.documentElement.clientHeight || 0,
+        window.innerHeight || 0,
+    );
+    const logger = new RobiLogger(RobiLoggerLevel.ERROR, false, false); // 로그 출력용 객체 생성
+    const webrtc = new WebCamera(logger, 0); // webcamera 객체 생성, 두번째 인자는 timelimit을 통한 수동 모드 권장 값 설정용 파라미터(ms 단위 사용) - 0 : 사용안함
+    const video = document.getElementById("scanView"); // video element 객체 참조
+
+    // vw = video.clientWidth;
+    // vh = video.clientHeight;
+    vw = Math.floor(document.querySelector(":root").getBoundingClientRect().width);
+    vh = Math.floor(document.querySelector(":root").getBoundingClientRect().height);
+
+    let recogTime;
+    let { osSimple, browser, cameraType } = getCameraType();
+    let { scanner = "idcard", capture_edge: captureEdge = "card" } =
+        getUrlParams();
+    let serverScannerType;
+
+
+    let detectRetry = 0;
+    let recogRetry = 0;
+    let faceRetry = 0;
+    let colorRetry = 0;
+    let specRetry = 0;
+    let timeoutRetry = 0;
+    let errorRetry = 0;
+    let lastRetryType = "success";
+    
+    const logManager = new LogManager(
+        "Robi-V Recognizer(webRTC)",
+        "v1.0.0",
+        "WebOCR",
+        "varDeviceId",
+        "varUserId",
+        scanner,
+    );
+
+    let scannerType = getScannerType(scanner);
+    let captureEdgeType = getCaptureEgdeType(captureEdge);
+    let isCameraAuto = true;
+    let {
+        sizeRatio: scanBoxSizeRatio,
+        xposNorm: scanBoxXposNorm,
+        yposNorm: scanBoxYposNorm,
+    } = getScanBoxConfig(scannerType, captureEdgeType); // 스캔 가이드 박스 설정값
+
+    /**
+     * js파일의 위치를 변경하기 위해서 locateFile 수정
+     */
+    /** change Module.locateFile for cutom url */
+    var Module = typeof Module != "undefined" ? Module : {};
+    Module.locateFile = function (path) {
+        var scriptDirectory = "";
+
+        if (typeof document != "undefined" && document.currentScript) {
+        scriptDirectory = document.currentScript.src;
+        }
+        if (scriptDirectory.indexOf("blob:") !== 0) {
+        scriptDirectory = scriptDirectory.substr(
+            0,
+            scriptDirectory.replace(/[?#].*/, "").lastIndexOf("/") + 1,
+        );
+        } else {
+        scriptDirectory = "";
+        }
+        return scriptDirectory + path;
+    };
+    // it will be solve webcamera.js recogInterval to callback
+    //Module.onRuntimeInitialized = function() {}
+    /** end of change Module.locateFile */
+
+    /**
+     * 서비스 시작
+     */
+    window.onload = function () {
+        renderInitUI();
+
+        wasmFeatureDetect.simd().then((simdSupported) => {
+        logger.info("SIMD : " + simdSupported);
+        logger.info("osSimple : " + osSimple);
+        logger.info("browser : " + browser);
+
+        const wasmName = getWasmName(scannerType);
+        if (simdSupported) {
+            loadJS("https://fincubeocr.posicube.com/hanabank/scripts/" + wasmName + "_simd.js?v=20230418_0001");
+        } else {
+            alert("Browser not support SIMD");
+            loadJS("https://fincubeocr.posicube.com/hanabank/scripts/" + wasmName + ".js?v=20230418_0001");
+        }
+        });
+
+        startScanner();
+    };
+
+    /**
+     * 해당 웹페이지 벗어날 때 발생하는 이벤트
+     */
+    window.addEventListener("beforeunload", () => {
+        // must set this code on beforeunload
+        webrtc.closeCamera();
+        webrtc.releaseScanner();
+    });
+
+    /**
+     * 웹페이지 사이즈 변경할 때 발생하는 이벤트
+     */
+    window.addEventListener("resize", () => {
+        vw = Math.floor(document.querySelector(":root").getBoundingClientRect().width);
+        // vw = video.clientWidth;
+        // vw = Math.max(
+        //   document.documentElement.clientWidth || 0,
+        //   window.innerWidth || 0,
+        // );
+
+        resizeScanBoxGuide(vw);
+
+        vh = Math.floor(document.querySelector(":root").getBoundingClientRect().height);
+        // vh = video.clientHeight;
+        // vh = Math.max(
+        //   document.documentElement.clientHeight || 0,
+        //   window.innerHeight || 0,
+        // );
+
+        updateGuideRectRatio();
+    });
+
+    /**
+     * 캡처 가능 유무 토글 버튼 클릭 이벤트
+     */
+    document
+        .getElementById("autoCameraToggle")
+        .addEventListener("click", () => {
+        isCameraAuto = !isCameraAuto;
+
+        if (isCameraAuto) {
+            alert("webrtc.setScanMode(ScanMode.AUTO)");
+            webrtc.setScanMode(ScanMode.AUTO);
+            document.getElementById("autoCameraToggle").style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_auto_toggle.png')";
+            document.getElementById("takeCameraBtn").style.display = "none";
+            webrtc.resetTimeOutTimer(); // 자동촬영에서 수동촬영으로 넘어갈 경우 timer reset.
+        } else {
+            alert("webrtc.setScanMode(ScanMode.MANUAL)");
+            webrtc.setScanMode(ScanMode.MANUAL);
+            document.getElementById("autoCameraToggle").style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle.png')";
+            document.getElementById("takeCameraBtn").style.display = "flex";
+        }
+        });
+
+    /**
+     * 캡처 버튼 클릭 이벤트
+     */
+    document.getElementById("takeCameraBtn").addEventListener("click", () => {
+        renderDetectUI(ScannerStatus.SCAN_COMPLETE);
+
+        let robiImage = webrtc.captureImage(90);
+
+
+        // let encodedstream = robiImage.encodedstream;
+        // let encodedLength = robiImage.encodedsize;
+
+        // // test code for show result image
+        // // base64 encoding
+        // let binaryString = [encodedLength];
+        // while (encodedLength--) {
+        //   binaryString[encodedLength] = String.fromCharCode(
+        //     encodedstream[encodedLength],
+        //   );
+        // }
+        // let encodeddata = binaryString.join("");
+        // let base64 = window.btoa(encodeddata);
+        // // server send image ()
+        // imageData = base64;
+
+        imageData = robiImage.substr(23);
+        //console.log("         base64: ", imageData);
+        let img = new Image();
+        
+        //img.src = "data:image/jpeg;base64," + imageData;
+        img.src = robiImage;
+
+
+        img.onload = function () {
+        let resultCanvasEl = document.getElementById("resultCanvas");
+        let resultCtx = resultCanvasEl.getContext("2d");
+        resultCanvasEl.width = img.width;
+        resultCanvasEl.height = img.height;
+        resultCtx.drawImage(
+            img,
+            0,
+            0,
+            img.width,
+            img.height,
+            0,
+            0,
+            img.width,
+            img.height,
+        );
+        };
+
+        webrtc.closeCamera();
+        webrtc.releaseScanner();
+
+        //서버 전송 호출 시작
+        //ocrSecretKey(); //secretKey 
+        // generateKeys();
+    });
+
+    /**
+     * "처음으로" 버튼 클릭 시 발생하는 이벤트
+     */
+    document.getElementById("resetBtn").addEventListener("click", () => {
+        window.location.href = "https://fincubeocr.posicube.com/hanabank/";
+    });
+
+    /**
+     * "재촬영" 버튼 클릭 시 발생하는 이벤트
+     */
+    document.getElementById("redetectBtn").addEventListener("click", () => {
+        redetect();
+    });
+
+    /**
+     * 재촬영 로직 메소드
+     */
+    function redetect() {
+        const iosVersion = getIosVersion();
+
+        if (iosVersion) {
+        const versionNumber = parseFloat(iosVersion);
+        // ! ios 중에 16.3.x 버전은 카메라 버그가 있어서 화면을 다시 리로드 처리
+        if (versionNumber === 16.3) {
+            location.reload();
+            return;
+        }
+        }
+
+        renderDetectUI(ScannerStatus.SCANNER_INIT);
+        document.getElementById("resultBoxDesc").innerHTML = "";
+        startScanner(true);
+        // UserId 초기화
+        varUserId =
+        CUSTOMER_CODE +
+        "_" +
+        osSimple +
+        "_" +
+        makeid() +
+        "_" +
+        new Date().getTime();
+
+
+        if(IS_SERVER_SEND) {
+        if (colorRetry > 0 || faceRetry > 0 || specRetry > 0 ) {
+            logger.info("[retrycnt] ============> 5");
+            logger.info("[retrycnt] detectRetry : " + detectRetry);
+            logger.info("[retrycnt] recogRetry : " + recogRetry);
+            logger.info("[retrycnt] faceRetry : " + faceRetry);
+            logger.info("[retrycnt] colorRetry : " + colorRetry);
+            logger.info("[retrycnt] specRetry : " + specRetry);
+            logger.info("[retrycnt] timeoutRetry : " + timeoutRetry);
+            logger.info("[retrycnt] errorRetry : " + errorRetry);
+        //renderDetectUI(ScannerStatus.SCAN_DETECT);
+        }
+        }
+    }
+
+    /**
+     * "서버전송" 버튼 클릭 시 발생하는 이벤트
+     */
+    document.getElementById("sendServerBtn").addEventListener("click", () => {
+        alert("서버전송 시작!!!");
+
+        if (isCameraAuto) {
+        console.log(
+            "=====> WebRTC Recog Done! Server Data Send! isCameraAuto : " +
+            isCameraAuto,
+        );
+        // ocrDataUpload();
+        ocrSecretKey(); //secretKey 
+        //ocrDataUploadFd();  //localhost:8093 FD 연동
+        } else {
+        console.log(
+            "=====> Server Recog Start! Server Data Send! isCameraAuto : " +
+            isCameraAuto,
+        );
+        //ocrWebrtcRecognize(); // 이미 수동 캡처를 누른 순간 서버에 ocrWebrtcRecognize() API 호출됨.
+        ocrDataUpload();  //localhost:8093 FD 연동
+        }
+    });
+
+    /**
+     * 조건에 따라 특정 스크립트 로드
+     */
+    function loadJS(file) {
+        let jsElm = document.createElement("script");
+        jsElm.type = "application/javascript";
+        jsElm.src = file;
+        jsElm.body = "console.log('load script~~~~~~~~~~~~~~~');";
+        document.body.appendChild(jsElm);
+        logger.info("SIMD file : " + file);
+    }
+
+    /**
+     * 초기 UI 렌더링
+     */
+    function renderInitUI() {
+        const theme = document.querySelector(":root"); // 가상 클래스 요소 얻기
+
+        if (scannerType === ScannerType.IDCARD_SCANNER) {
+        document.title = "ID Card | " + document.title;
+        document.getElementById("scanBoxDesc").innerText =
+            "신분증을 네모칸 안에 맞추세요.";
+        } else if (scannerType === ScannerType.PASSPORT_SCANNER) {
+        document.title = "Passport | " + document.title;
+        document.getElementById("scanBoxDesc").innerText =
+            "여권을 네모칸 안에 맞추세요.";
+        } else if (scannerType === ScannerType.RESIDENCE_SCANNER) {
+        document.title = "Residence | " + document.title;
+        document.getElementById("scanBoxDesc").innerText =
+            "외국인 등록증을 네모칸 안에 맞추세요.";
+        } else if (scannerType === ScannerType.CAPTURE) {
+        if (captureEdgeType === CaptureEdgeType.CARD) {
+            document.title = "Card Capture | " + document.title;
+            document.getElementById("scanBoxDesc").innerText =
+            "캡처할 카드를 네모칸 안에 맞추세요.";
+        } else if (captureEdgeType === CaptureEdgeType.PASSPORT) {
+            document.title = "Passport Capture | " + document.title;
+            document.getElementById("scanBoxDesc").innerText =
+            "캡처할 여권을 네모칸 안에 맞추세요.";
+        } else if (captureEdgeType === CaptureEdgeType.A4) {
+            document.title = "Passport Capture | " + document.title;
+            document.getElementById("scanBoxDesc").innerText =
+            "캡처할 A4를 네모칸 안에 맞추세요.";
+
+            theme.style.setProperty("--scan-box-width", "240px");
+            scanBoxWidth = "240px";
+        }
+        }
+
+
+        // 기존 신분증 세로값(고정)
+        if (scannerType === ScannerType.RESIDENCE_BACK_SCANNER) {
+        theme.style.setProperty("--scan-box-width", "217px");
+        scanBoxWidth = "217px";
+        } 
+
+        resizeScanBoxGuide(vw);
+        theme.style.setProperty("--scan-box-size-ratio", scanBoxSizeRatio);
+        theme.style.setProperty("--scan-box-xpos-norm", scanBoxXposNorm);
+        theme.style.setProperty("--scan-box-ypos-norm", scanBoxYposNorm);
+
+        if (IS_SERVER_SEND) {
+        document.getElementById("sendServerBtn").style.display =
+            "inline-block";
+        } else {
+        document.getElementById("sendServerBtn").style.display = "none";
+        }
+
+        // iOS 13.3 버전, 카메라 수동 전환 및 토글 비활성화
+        const iosVersion = getIosVersion();
+        const versionNumber = iosVersion && parseFloat(iosVersion);
+        let autoCameraToggle = document.getElementById("autoCameraToggle");
+        let takeCameraBtn = document.getElementById("takeCameraBtn");
+
+        if (versionNumber === 13.3) {
+        alert("This ios version not support ScanMode.AUTO");
+        isCameraAuto = false;
+        webrtc.setScanMode(ScanMode.MANUAL);
+
+        autoCameraToggle.style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle-pressed.png')";
+        autoCameraToggle.disabled = true;
+        takeCameraBtn.style.display = "flex";
+        return;
+        }
+
+        if (isCameraAuto) {
+        autoCameraToggle.style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_auto_toggle.png')";
+        takeCameraBtn.style.display = "none";
+        } else {
+        autoCameraToggle.style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle.png')";
+        takeCameraBtn.style.display = "flex";
+        }
+    }
+
+    /**
+     * 디텍트 상태에 따른 UI를 렌더링
+     */
+    function renderDetectUI(status) {
+        if (!status) return;
+
+        if (status === ScannerStatus.SCANNER_INIT) {
+        document.getElementById("scanBoxMask").className =
+            "scan-box__mask--init";
+
+        document.getElementById("scanBoxGuide").className =
+            "scan-box__guide--init";
+
+        document.getElementById("scanBoxLoading").style.display = "block";
+        document.getElementById("scanContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+
+        if (scannerType === ScannerType.PASSPORT_SCANNER) {
+            document.getElementById("scanBoxPassportPhoto").style.display =
+            "none";
+            document.getElementById("scanBoxPassportMrz").style.display =
+            "none";
+        }
+
+        document.getElementById("resultBoxDesc").innerHTML = "";
+        } else if (status === ScannerStatus.SCANNER_READY) {
+        document.getElementById("scanBoxMask").className =
+            "scan-box__mask--ready";
+
+        document.getElementById("scanBoxGuide").className =
+            "scan-box__guide--ready";
+
+        document.getElementById("scanBoxLoading").style.display = "none";
+        document.getElementById("scanContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+
+        if (scannerType === ScannerType.PASSPORT_SCANNER) {
+            document.getElementById("scanBoxPassportPhoto").style.display =
+            "none";
+            document.getElementById("scanBoxPassportMrz").style.display =
+            "none";
+        }
+        } else if (status === ScannerStatus.SCAN_DETECT) {
+        document.getElementById("scanBoxMask").className =
+            "scan-box__mask--ready";
+        document.getElementById("scanBoxGuide").className =
+            "scan-box__guide--detect";
+
+        document.getElementById("scanBoxLoading").style.display = "none";
+        document.getElementById("scanContainer").style.display = "block";
+        document.getElementById("resultContainer").style.display = "none";
+
+        if (scannerType === ScannerType.PASSPORT_SCANNER) {
+            document.getElementById("scanBoxPassportPhoto").style.display =
+            "block";
+            document.getElementById("scanBoxPassportMrz").style.display =
+            "block";
+        }
+        } else if (status === ScannerStatus.SCAN_COMPLETE) {
+        document.getElementById("scanBoxMask").className =
+            "scan-box__mask--ready";
+        document.getElementById("scanBoxGuide").className =
+            "scan-box__guide--complete";
+
+        document.getElementById("scanBoxLoading").style.display = "none";
+        document.getElementById("scanContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+
+        if (scannerType === ScannerType.PASSPORT_SCANNER) {
+            document.getElementById("scanBoxPassportPhoto").style.display =
+            "none";
+            document.getElementById("scanBoxPassportMrz").style.display =
+            "none";
+        }
+        }
+    }
+
+    function updateGuideRectRatio() {
+        let viewWidth = document
+        .getElementById("scanContainer")
+        .getBoundingClientRect().width;
+        let viewHeight = document
+        .getElementById("scanContainer")
+        .getBoundingClientRect().height;
+
+        let gw = document
+        .getElementById("scanBoxMask")
+        .getBoundingClientRect().width;
+        let gh = document
+        .getElementById("scanBoxMask")
+        .getBoundingClientRect().height;
+
+        let grr = gw / gh;
+        let g_left = document
+        .getElementById("scanBoxMask")
+        .getBoundingClientRect().left;
+        let g_top = document
+        .getElementById("scanBoxMask")
+        .getBoundingClientRect().top;
+        let g_left_ratio = g_left / viewWidth;
+        let g_top_ratio = g_top / viewHeight;
+        let g_left_center_ratio = 0.5 - g_left_ratio;
+        let g_top_center_ratio = 0.5 - g_top_ratio;
+        let gw_ratio = gw / viewWidth;
+        let gh_ratio = gh / viewHeight;
+        
+        let frame_gx =
+        video.videoWidth / 2 -
+        (Math.abs(g_left - viewWidth / 2) / viewWidth) * video.videoWidth;
+        let frame_gy =
+        video.videoHeight / 2 -
+        (Math.abs(g_top - viewHeight / 2) / viewHeight) * video.videoHeight;
+        let frame_gw = 0;
+        let frame_gh = 0;
+
+        let viewRatio = viewWidth / viewHeight;
+        let videoRatio = video.videoWidth / video.videoHeight;
+        if (viewRatio > videoRatio) {
+        // fit width
+        let fh = (video.videoWidth * viewHeight) / viewWidth;
+        frame_gcw = g_left_center_ratio * video.videoWidth;
+        frame_gch = g_top_center_ratio * fh;
+        frame_gx = video.videoWidth/2 - frame_gcw;
+        frame_gy = video.videoHeight/2 - frame_gch;
+        frame_gw = gw_ratio * video.videoWidth;
+        frame_gh = frame_gw / grr;
+        } else {
+        // fit height
+        let fw = (video.videoHeight * viewWidth) / viewHeight;
+        frame_gcw = g_left_center_ratio * fw;
+        frame_gch = g_top_center_ratio * video.videoHeight;
+        frame_gx = video.videoWidth/2 - frame_gcw;
+        frame_gy = video.videoHeight/2 - frame_gch;
+        frame_gh = gh_ratio * video.videoHeight;
+        frame_gw = frame_gh * grr;
+        }
+
+        gx_norm = (frame_gx + frame_gw/2) / video.videoWidth;
+        gy_norm = (frame_gy + frame_gh/2) / video.videoHeight;
+        gw_norm = frame_gw / video.videoWidth;
+        gh_norm = frame_gh / video.videoHeight;
+        
+        // console.log('gx: '+gx+", gy: "+gy+", gw: "+gw+", gh: "+gh);
+        // console.log('frame config, gx_norm: '+gx_norm+", gy_norm: "+gy_norm+", gw_norm: "+gw_norm+", gh_norm: "+gh_norm);
+    }
+
+    /**
+     * 카드 박스 검출 callback
+     */
+    function detectCallback(detection) {
+        //logger.debug("card detection = " + detection);
+        if (detection === 0) {
+
+        detectRetry++;
+        lastRetryType = "detectRetry";
+        logger.info("[retrycnt] detectRetry : " + detectRetry);
+        // 카드 박스 검출 있음
+        renderDetectUI(ScannerStatus.SCAN_DETECT);
+        } else {
+        // 카드 박스 검출 없음
+        renderDetectUI(ScannerStatus.SCANNER_READY);
+        }
+    }
+
+    /**
+     * 카드 인식 과정 및 결과를 전달하는 callback
+     */
+    function resultCallback(status, scanResult) {
+        logger.debug("status = " + status);
+        if (status === ScannerStatus.GET_DEVICE) {
+        // 시스템에서 device 정보를 얻오기 진행
+        } else if (status === ScannerStatus.CAMERA_OPENING) {
+        // 카메라 오픈 진행
+        } else if (status === ScannerStatus.CAMERA_OPENNED) {
+        // 카메라 오픈 완료
+        let width = scanResult.cameraWidth;
+        let height = scanResult.cameraHeight;
+
+        logger.debug("window orientation = " + window.orientation);
+
+        if (window.orientation === 0 || window.orientation === 180) {
+            let temp = width;
+            width = height;
+            height = temp;
+        }
+
+        video.width = vw;
+        video.height = (vw * height) / width;
+
+        logger.debug("resolution info : ");
+        logger.debug("- camera : " + width + " x " + height);
+        logger.debug("- view : " + vw + " x " + vh);
+        logger.debug("- video : " + video.width + " x " + video.height);
+        } else if (status === ScannerStatus.SCANNER_INIT) {
+        // 스캐너 초기화 진행
+
+        renderDetectUI(ScannerStatus.SCANNER_INIT);
+        } else if (status === ScannerStatus.SCANNER_READY) {
+        // 스캐너 로딩 완료
+
+        logger.info("Scanner Ready!!");
+
+        // TODO: capture에서만 width, height입력 필요한지, scan box 에 대한 비율 계산 방법 문의 필요
+        let scanBoxWidthNorm = 0;
+        let scanBoxHeightNorm = 0;
+        if (scannerType === ScannerType.CAPTURE) {
+            scanBoxWidthNorm =
+            document.getElementById("scanBoxGuide").clientWidth / vw;
+            scanBoxHeightNorm =
+            document.getElementById("scanBoxGuide").clientHeight / vh;
+        }
+
+
+        renderDetectUI(ScannerStatus.SCANNER_READY);
+
+        updateGuideRectRatio();
+
+        // setFrame_config(orientation, x, y, gw, gh, scale, flip, verification_cnt = -1)
+        // verification_cnt는 option임 (0: 검증 스킵, 1이상: 검증 횟수)
+        /*
+        * setFrame_config는 renderDetectUI 함수와 updateGuideRectRatio 함수가 순차적으로 불린 이후에 호출되어야 함
+        */
+        webrtc.setFrame_config(
+            0,
+            // scanBoxXposNorm,
+            // scanBoxYposNorm,
+            // scanBoxWidthNorm,
+            // scanBoxHeightNorm,
+            gx_norm,
+            gy_norm,
+            gw_norm,
+            gh_norm,
+            1.0,
+            false,
+            veri_cnt,
+        );
+        } else if (status === ScannerStatus.SCAN_DETECT) {
+        // Card box를 찾음
+        // ! detectCallback 메소드에서 대신 동작함
+        // renderDetectUI(ScannerStatus.SCAN_DETECT);
+        } else if (status === ScannerStatus.SCAN_COMPLETE) {
+        // 스캔이 완료됨
+
+        renderDetectUI(ScannerStatus.SCAN_COMPLETE);
+
+        let warnStatus = 0;
+
+        if (scanResult !== null) {
+
+            recogRetry++;
+            lastRetryType = "recogRetry";
+            logger.info("[retrycnt] recogRetry : " + recogRetry);
+
+            let resultDesc = "";
+            let cardType = "";
+
+
+            /* Threshold check & Retry Scan */
+            let skipRetry = true;
+            if(IS_RETRY) {
+            if (scanResult.faceScore < 0.915) {
+            //alert("warning : FaceScore is lower than the threshold(0.915) : " + scanResult.faceScore);
+            showToast(
+                "warning : FaceScore is lower than the threshold(0.915) : " +
+                scanResult.faceScore,
+            );
+            warnStatus = 1;
+            faceRetry++;
+            lastRetryType = "faceRetry";
+                skipRetry = false;
+            logger.info("[retrycnt] faceRetry : " + faceRetry);
+            } else if ( (scanResult.cardType === ScanCardType.IDCARD && scanResult.colorScore < 0.38) 
+            || (scanResult.cardType === ScanCardType.PASSPORT && scanResult.colorScore < 0.15) ) { // if (scanResult.cardType === ScanCardType.PASSPORT)
+            //alert("warning : ColorScore is lower than the threshold(0.38) : " + scanResult.colorScore);
+            showToast(
+                "warning : ColorScore is lower than the threshold(0.38) : " +
+                scanResult.colorScore,
+            );
+            warnStatus = 2;
+            colorRetry++;
+            lastRetryType = "colorRetry";
+                skipRetry = false;
+            logger.info("[retrycnt] colorRetry : " + colorRetry);
+            } else if (scanResult.specularRatio > 0.01) {
+            // alert("warning : SpecularRatio is higher than the threshold(0.01) : " + scanResult.specularRatio);
+            showToast(
+                "warning : SpecularRatio is higher than the threshold(0.01) : " +
+                scanResult.specularRatio,
+            );
+            warnStatus = 3;
+            specRetry++;
+            lastRetryType = "specRetry";
+                skipRetry = false;
+            logger.info("[retrycnt] specRetry : " + specRetry);
+            } 
+            } 
+
+            if(skipRetry)
+            {
+            logger.result("scan Complete : " + scanResult.cardType);
+
+            // 자동 모드 신분증 인식 후 서버 upload 용 info.json 
+            var idObj = new Object();
+            var logObj = new Object();
+            
+            if (scanResult.cardType === ScanCardType.IDCARD) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("ID Card");
+                logger.result("ID Number : " + scanResult.idNumber);
+                logger.result("Name      : " + scanResult.name);
+                logger.result("IssueDate : " + scanResult.issueDate);
+                logger.result("Issuer    : " + scanResult.issuer);
+                logger.result("Overseas  : " + scanResult.overseas);
+                // amouse add
+                logger.result("Face score : " + scanResult.faceScore);
+                logger.result("Color score : " + scanResult.colorScore);
+                logger.result("Specular ratio : " + scanResult.specularRatio);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "ID Card";
+                resultDesc += `&bull;Scan Type: ID Card<br/>`;
+                resultDesc += `&bull;ID Number: ${scanResult.idNumber}<br/>`;
+                resultDesc += `&bull;Name: ${scanResult.name}<br/>`;
+                resultDesc += `&bull;IssueDate: ${scanResult.issueDate}<br/>`;
+                resultDesc += `&bull;Issuer: ${scanResult.issuer}<br/>`;
+                resultDesc += `&bull;Overseas: ${
+                scanResult.overseas == 0 ? false : true
+                }<br/>`;
+                resultDesc += `&bull;Face Score: ${scanResult.faceScore}<br/>`;
+                resultDesc += `&bull;Color Score: ${scanResult.colorScore}<br/>`;
+                resultDesc += `&bull;Specular Ratio: ${scanResult.specularRatio}<br/>`;
+
+                serverScannerType = "korId";
+                idObj.idType = "korId";
+                idObj.idNumber = scanResult.idNumber;
+                idObj.idName = scanResult.name;
+                idObj.idIssueDate = scanResult.issueDate;
+                idObj.idIssueRegion  = scanResult.issuer;
+                idObj.idOverSeas  = scanResult.overseas;
+            } else if (scanResult.cardType === ScanCardType.DRIVERLICENSE) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("DriverLicense Card");
+                logger.result("ID Number     : " + scanResult.idNumber);
+                logger.result("Name          : " + scanResult.name);
+                logger.result("IssueDate     : " + scanResult.issueDate);
+                logger.result("Issuer        : " + scanResult.issuer);
+                logger.result(
+                "DL Number     : " + scanResult.driverLicenseNumber,
+                );
+                logger.result("DL Aptitude   : " + scanResult.aptitude);
+                // logger.result("DL Type       : " + scanResult.driverLicenseType);
+                logger.result("DL Serial     : " + scanResult.serial);
+                // logger.result("DL LicenseKor : " + scanResult.driverLicenseKor);
+                // amouse add
+                logger.result("Face score : " + scanResult.faceScore);
+                logger.result("Color score : " + scanResult.colorScore);
+                logger.result("Specular ratio : " + scanResult.specularRatio);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "DriverLicense Card";
+                resultDesc += `&bull;Scan Type: DriverLicense Card<br/>`;
+                resultDesc += `&bull;ID Number: ${scanResult.idNumber}<br/>`;
+                resultDesc += `&bull;Name: ${scanResult.name}<br/>`;
+                resultDesc += `&bull;IssueDate: ${scanResult.issueDate}<br/>`;
+                resultDesc += `&bull;Issuer: ${scanResult.issuer}<br/>`;
+                resultDesc += `&bull;DL Number: ${scanResult.driverLicenseNumber}<br/>`;
+                resultDesc += `&bull;DL Aptitude: ${scanResult.aptitude}<br/>`;
+                // resultDesc += `&bull;DL Type: ${scanResult.driverLicenseType}<br/>`;
+                resultDesc += `&bull;DL Serial: ${scanResult.serial}<br/>`;
+                // resultDesc += `&bull;DL LicenseKor: ${scanResult.driverLicenseKor}<br/>`;
+                resultDesc += `&bull;Face Score: ${scanResult.faceScore}<br/>`;
+                resultDesc += `&bull;Color Score: ${scanResult.colorScore}<br/>`;
+                resultDesc += `&bull;Specular Ratio: ${scanResult.specularRatio}<br/>`;
+
+                serverScannerType = "drvId";
+                idObj.idType = "drvId";
+                idObj.idNumber = scanResult.idNumber;
+                idObj.idName = scanResult.name;
+                idObj.idIssueDate = scanResult.issueDate;
+                idObj.idIssueRegion  = scanResult.issuer;
+                idObj.idLicenseNumber = scanResult.driverLicenseNumber;
+                idObj.idSerialNo = scanResult.serial;
+
+            } else if (scanResult.cardType === ScanCardType.RESIDENCE) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("Residence Card");
+                logger.result("ID Number     : " + scanResult.idNumber);
+                logger.result("Name          : " + scanResult.name);
+                logger.result("IssueDate     : " + scanResult.issueDate);
+                logger.result("Issuer        : " + scanResult.issuer);
+                logger.result("Name Eng      : " + scanResult.nameEng);
+                logger.result("Nationality   : " + scanResult.nationality);
+                // amouse add
+                logger.result("Face score : " + scanResult.faceScore);
+                logger.result("Color score : " + scanResult.colorScore);
+                logger.result("Specular ratio : " + scanResult.specularRatio);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "Residence";
+                resultDesc += `&bull;Scan Type: Residence<br/>`;
+                resultDesc += `&bull;ID Number: ${scanResult.idNumber}<br/>`;
+                resultDesc += `&bull;Name: ${scanResult.name}<br/>`;
+                resultDesc += `&bull;IssueDate: ${scanResult.issueDate}<br/>`;
+                resultDesc += `&bull;Issuer: ${scanResult.issuer}<br/>`;
+                resultDesc += `&bull;NameEng: ${scanResult.nameEng}<br/>`;
+                resultDesc += `&bull;Nationality: ${scanResult.nationality}<br/>`;
+                resultDesc += `&bull;Face Score: ${scanResult.faceScore}<br/>`;
+                resultDesc += `&bull;Color Score: ${scanResult.colorScore}<br/>`;
+                resultDesc += `&bull;Specular Ratio: ${scanResult.specularRatio}<br/>`;
+            } else if (scanResult.cardType === ScanCardType.RESIDENCE_BACK) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("Residence Card(Back-side)");
+                logger.result("Serial     : " + scanResult.serial);
+                logger.result("Permission_1 : " + scanResult.permission_1);
+                logger.result("Expiry_1     : " + scanResult.expiry_1);
+                logger.result("Confirm_1    : " + scanResult.confirm_1);
+                logger.result("Permission_2 : " + scanResult.permission_2);
+                logger.result("Expiry_2     : " + scanResult.expiry_2);
+                logger.result("Confirm_2    : " + scanResult.confirm_2);
+                logger.result("Permission_3 : " + scanResult.permission_3);
+                logger.result("Expiry_3     : " + scanResult.expiry_3);
+                logger.result("Confirm_3    : " + scanResult.confirm_3);
+                logger.result("Permission_4 : " + scanResult.permission_4);
+                logger.result("Expiry_4     : " + scanResult.expiry_4);
+                logger.result("Confirm_4    : " + scanResult.confirm_4);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "Residence (Back-size)";
+                resultDesc += `&bull;Scan Type: Residence Back<br/>`;
+                resultDesc += `&bull;Serial: ${scanResult.serial}<br/>`;
+                resultDesc += `&bull;Permission_1: ${scanResult.permission_1}<br/>`;
+                resultDesc += `&bull;Expiry_1: ${scanResult.expiry_1}<br/>`;
+                resultDesc += `&bull;Confirm_1: ${scanResult.confirm_1}<br/>`;
+                resultDesc += `&bull;Permission_2: ${scanResult.permission_2}<br/>`;
+                resultDesc += `&bull;Expiry_2: ${scanResult.expiry_2}<br/>`;
+                resultDesc += `&bull;Confirm_2: ${scanResult.confirm_2}<br/>`;
+                resultDesc += `&bull;Permission_3: ${scanResult.permission_3}<br/>`;
+                resultDesc += `&bull;Expiry_3: ${scanResult.expiry_3}<br/>`;
+                resultDesc += `&bull;Confirm_3: ${scanResult.confirm_3}<br/>`;
+                resultDesc += `&bull;Permission_4: ${scanResult.permission_4}<br/>`;
+                resultDesc += `&bull;Expiry_4: ${scanResult.expiry_4}<br/>`;
+                resultDesc += `&bull;Confirm_4: ${scanResult.confirm_4}<br/>`;
+            } else if (scanResult.cardType === ScanCardType.PASSPORT) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("PASSPORT");
+                logger.result("ID Number     : " + scanResult.idNumber);
+                logger.result("Name          : " + scanResult.name);
+                logger.result("IssueDate     : " + scanResult.issueDate);
+                logger.result("Issuer        : " + scanResult.issuer);
+                logger.result("PassportType  : " + scanResult.passportType);
+                logger.result("PassportNumber: " + scanResult.passportNumber);
+                logger.result("SurName       : " + scanResult.surName);
+                logger.result("GivenName     : " + scanResult.givenName);
+                logger.result("Nationality   : " + scanResult.nationality);
+                logger.result("Date Of Birth : " + scanResult.dateOfBirth);
+                logger.result("Gender        : " + scanResult.gender);
+                logger.result("Expiry Date   : " + scanResult.expiryDate);
+                logger.result("PersonalNumber: " + scanResult.personalNumber);
+                logger.result("Name ENG      : " + scanResult.nameEng);
+                logger.result("MRZ 1         : " + scanResult.mrz1);
+                logger.result("MRZ 2         : " + scanResult.mrz2);
+
+                // amouse add
+                logger.result("Face score : " + scanResult.faceScore);
+                logger.result("Color score : " + scanResult.colorScore);
+                logger.result("Specular ratio : " + scanResult.specularRatio);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "Passport";
+                resultDesc += `&bull;Scan Type: Passposrt<br/>`;
+                resultDesc += `&bull;Name: ${scanResult.name}<br/>`;
+                resultDesc += `&bull;IssueDate: ${scanResult.issueDate}<br/>`;
+                resultDesc += `&bull;Issuer: ${scanResult.issuer}<br/>`;
+                resultDesc += `&bull;PassportType: ${scanResult.passportType}<br/>`;
+                resultDesc += `&bull;PassportNumber: ${scanResult.passportNumber}<br/>`;
+                resultDesc += `&bull;SurName: ${scanResult.surName}<br/>`;
+                resultDesc += `&bull;GivenName: ${scanResult.givenName}<br/>`;
+                resultDesc += `&bull;Nationality: ${scanResult.nationality}<br/>`;
+                resultDesc += `&bull;Date Of Birth: ${scanResult.dateOfBirth}<br/>`;
+                resultDesc += `&bull;Gender: ${scanResult.gender}<br/>`;
+                resultDesc += `&bull;Expiry Date: ${scanResult.expiryDate}<br/>`;
+                resultDesc += `&bull;PersonalNumber: ${scanResult.personalNumber}<br/>`;
+                resultDesc += `&bull;Name ENG: ${scanResult.nameEng}<br/>`;
+                resultDesc += `&bull;MRZ 1: ${scanResult.mrz1.replace(
+                /</gi,
+                "&lt;",
+                )}<br/>`;
+                resultDesc += `&bull;MRZ 2: ${scanResult.mrz2}<br/>`;
+                resultDesc += `&bull;Face Score: ${scanResult.faceScore}<br/>`;
+                resultDesc += `&bull;Color Score: ${scanResult.colorScore}<br/>`;
+                resultDesc += `&bull;Specular Ratio: ${scanResult.specularRatio}<br/>`;
+                
+                serverScannerType = "passport";
+                idObj.idType = "passport";
+                idObj.idPassportNumber = scanResult.idPassportNumber;
+                idObj.idExpiryDate = scanResult.idExpiryDate;
+                idObj.idDayOfBirth = scanResult.dateOfBirth;
+                idObj.idPersonalNumber = scanResult.personalNumber;
+                idObj.idGender = scanResult.gender;
+                idObj.idPassportType = scanResult.passportType;
+                idObj.idNameKor = scanResult.surName;
+                idObj.idNameEng = scanResult.givenName;
+                idObj.idNationality = scanResult.nationality;
+                idObj.idIssuingCountry = scanResult.nationality;
+            } else if (scanResult.cardType === ScanCardType.CAPTURE) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("PaperCapture Complete!!!");
+                logger.result(
+                "=================================================",
+                );
+                cardType = "Capture";
+                resultDesc += `&bull;Scan Type: Capture<br/>`;
+            } else if (scanResult.cardType === ScanCardType.BARCODE) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("Barcode Scan Complete!!!");
+                logger.result("Type : " + scanResult.barcode_type);
+                logger.result("Text : " + scanResult.barcode_text);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "Barcode";
+                resultDesc += `&bull;Scan Type: Barcode<br/>`;
+                resultDesc += `&bull;BarcodeType: ${scanResult.barcode_type}<br/>`;
+                resultDesc += `&bull;BarcodeText: ${scanResult.barcode_text}<br/>`;
+            } else if (scanResult.cardType == ScanCardType.CREDITCARD) {
+                logger.result(
+                "=================================================",
+                );
+                logger.result("CreditCard Scan Complete!!!");
+                logger.result(
+                "CreditCardNumber : " + scanResult.creditCardNumber,
+                );
+                logger.result("expiry : " + scanResult.expiryDate);
+                logger.result("expiry-Year : " + scanResult.expiryYear);
+                logger.result("expiry-Month : " + scanResult.expiryMonth);
+                logger.result(
+                "=================================================",
+                );
+                cardType = "CreditCard";
+                resultDesc += `&bull;Scan Type: CreditCard<br/>`;
+                resultDesc += `&bull;CreditCardNumber: ${scanResult.creditCardNumber}<br/>`;
+                resultDesc += `&bull;Expiry: ${scanResult.expiryDate}<br/>`;
+                resultDesc += `&bull;ExpiryYear: ${scanResult.expiryYear}<br/>`;
+                resultDesc += `&bull;ExpiryMonth: ${scanResult.expiryMonth}<br/>`;
+            }
+
+            document.getElementById("resultBoxDesc").innerHTML = resultDesc;
+            
+            logObj.faceScore = scanResult.faceScore;
+            logObj.colorScore = scanResult.colorScore;
+            logObj.specularScore = scanResult.specularRatio;
+            logObj.operationTime = scanResult.scanTime;
+
+            logObj.detectRetry = detectRetry;
+            logObj.recogRetry = recogRetry;
+            logObj.faceRetry = faceRetry;
+            logObj.colorRetry = colorRetry;
+            logObj.specRetry = specRetry;
+            logObj.timeoutRetry = 0;
+            logObj.errorRetry = 0;
+            logObj.lastRetry = lastRetryType;
+
+            var fullMaskRoiString = webrtc.getFullImageMaskedRoiList();
+            //console.log("maskRoiString : " + fullMaskRoiString);
+            logObj.fullMaskRoi = "[" + fullMaskRoiString + "]";
+
+            var upuloadObj = new Object();
+            upuloadObj.id = idObj;
+            upuloadObj.log = logObj;
+
+            infoJsonData = JSON.stringify(upuloadObj);
+            //console.log("infoJsonData : " + infoJsonData);
+            // 메모리 해제
+            idObj = null;
+            logObj = null;
+            upuloadObj = null;
+
+            lastRetryType = "success";
+            
+            
+            // draw Image
+            let resultCanvasEl = document.getElementById("resultCanvas");
+            let resultCtx = resultCanvasEl.getContext("2d");
+
+            // get image from scanresult
+            // TODO: ScannerType.CAPTURE 에서 scanResult.maskedCardImage 를 적용하면 에러 발생, 확인 필요(신분증 등 다른 곳에서는 scanResult.maskedCardImage 사용)
+            if (
+                // scannerType != ScannerType.RESIDENCE_BACK_SCANNER &&
+                scannerType != ScannerType.BARCODE
+            ) {
+                /***
+                 * 엔진 추출 이미지 종류 / 괄호안 수치 -> jpeg encode quality
+                 * webrtc.getMaskedCropCardImageJPEG(90) //카드만 잘라낸 개인정보 삭제 이미지 객체
+                 * webrtc.getCropCardImageJPEG(90) //카드만 잘라낸 이미지 객체
+                 * webrtc.getFullImageJPEG(90) //전체 프리뷰 이미지 객체
+                 * webrtc.getFaceImageJPEG(90)  //얼굴만 잘라낸 이미지 객체
+                 * webrtc.getFace400ImageJPEG(90)  //400*400(fit center)으로 크기 조정된 얼굴 이미지 객체
+                 * webrtc.getCropCardImageJPEG_600(75) //카드만 잘라낸 이미지 객체, over 600dpi
+                 * webrtc.getCropCardImageWithMarginJPEG(90, 1152, 724, 0.1) //카드만 잘라낸 이미지 객체, 주변 10%의 여백 포함
+                 * webrtc.getMaskedFullImageJPEG(90) //전체 이미지에서 개인정보가 마스킹된 이미지
+                 *
+                 * 받아온 이미지는 사용 후, 반드시 robiImage.release()를 호출해야 함
+                 */
+                let robiImage = webrtc.getMaskedCropCardImageJPEG(90);
+                //let robiImage = webrtc.getCropCardImageJPEG_600(75);
+                //let robiImage = webrtc.getCropCardImageWithMarginJPEG(90, 1152, 724, 0.1);
+                //let robiImage = webrtc.getMaskedFullImageJPEG(90);
+                //logger.error("robiImage info : " + robiImage.width + " x " + robiImage.height);
+                if (scannerType === ScannerType.CAPTURE ||
+                    scannerType === ScannerType.RESIDENCE_BACK_SCANNER) {
+                robiImage = webrtc.getCropCardImageJPEG(90);
+                //robiImage = scanResult.cardImage;
+                console.log(
+                    "robiImage with Capture : " +
+                    robiImage.width +
+                    " x " +
+                    robiImage.height,
+                );
+                }
+
+                let encodedstream = robiImage.encodedstream;
+                let encodedLength = robiImage.encodedsize;
+                //logger.debug("encodedLength : " + encodedLength);
+
+                // test code for show result image
+                // base64 encoding
+                let binaryString = [encodedLength];
+                while (encodedLength--) {
+                binaryString[encodedLength] = String.fromCharCode(
+                    encodedstream[encodedLength],
+                );
+                }
+
+                // must release robiImage after using
+                // robiImage.release();
+
+                let encodeddata = binaryString.join("");
+                let base64 = window.btoa(encodeddata);
+                // server send image ()
+                imageData = base64;
+
+                // load image form base64 buffer
+                let img = new Image();
+                img.src = "data:image/jpeg;base64," + base64;
+                img.onload = function () {
+                resultCanvasEl.width = img.width;
+                resultCanvasEl.height = img.height;
+                resultCtx.drawImage(
+                    img,
+                    0,
+                    0,
+                    img.width,
+                    img.height,
+                    0,
+                    0,
+                    img.width,
+                    img.height,
+                );
+                };
+                img.onerror = function (stuff) {
+                logger.error("img load fail : ", stuff);
+                };
+                // 메모리 해제
+                robiImage.release();
+                encodedstream = null;
+                binaryString = null;
+                encodeddata = "";
+                base64 = "";
+
+                // server send image (자동 모드)
+                // imageData = base64;
+                robiImage = webrtc.getCropCardImageJPEG(90); //cropIdImage.jpg
+                encodedstream = robiImage.encodedstream;
+                encodedLength = robiImage.encodedsize;
+                // test code for show result image
+                // base64 encoding
+                binaryString = [encodedLength];
+                while (encodedLength--) {
+                binaryString[encodedLength] = String.fromCharCode(
+                    encodedstream[encodedLength],
+                );
+                }
+                encodeddata = binaryString.join("");
+                cropIdImageData = window.btoa(encodeddata);
+                // 메모리 해제
+                robiImage.release();
+                encodedstream = null;
+                binaryString = null;
+                encodeddata = "";
+                
+                robiImage = webrtc.getMaskedCropCardImageJPEG(90); //maskedCropIdImage.jpg
+                encodedstream = robiImage.encodedstream;
+                encodedLength = robiImage.encodedsize;
+                // test code for show result image
+                // base64 encoding
+                binaryString = [encodedLength];
+                while (encodedLength--) {
+                binaryString[encodedLength] = String.fromCharCode(
+                    encodedstream[encodedLength],
+                );
+                }
+                encodeddata = binaryString.join("");
+                maskedCropIdImageData = window.btoa(encodeddata);
+                // 메모리 해제
+                robiImage.release();
+                encodedstream = null;
+                binaryString = null;
+                encodeddata = "";
+
+                robiImage = webrtc.getFullImageJPEG(90); //fullFrameIdImage.jpg
+                encodedstream = robiImage.encodedstream;
+                encodedLength = robiImage.encodedsize;
+                // test code for show result image
+                // base64 encoding
+                binaryString = [encodedLength];
+                while (encodedLength--) {
+                binaryString[encodedLength] = String.fromCharCode(
+                    encodedstream[encodedLength],
+                );
+                }
+                encodeddata = binaryString.join("");
+                fullFrameIdImageData = window.btoa(encodeddata);
+                // 메모리 해제
+                robiImage.release();
+                encodedstream = null;
+                binaryString = null;
+                encodeddata = "";
+
+                robiImage = webrtc.getFace400ImageJPEG(90);  //photoIdImage.jpg
+                encodedstream = robiImage.encodedstream;
+                encodedLength = robiImage.encodedsize;
+                // test code for show result image
+                // base64 encoding
+                binaryString = [encodedLength];
+                while (encodedLength--) {
+                binaryString[encodedLength] = String.fromCharCode(
+                    encodedstream[encodedLength],
+                );
+                }
+                encodeddata = binaryString.join("");
+                photoIdImageData = window.btoa(encodeddata);
+                // 메모리 해제
+                robiImage.release();
+                encodedstream = null;
+                binaryString = null;
+                encodeddata = "";
+
+            }
+
+            //logger.info("scanner recog time ====> " + recogTime);
+            // * LogManager에 detect 종료 기능
+            logManager.endDetect(
+                new Date().valueOf(),
+                recogTime,
+                scanResult.faceScore,
+                scanResult.colorScore,
+                scanResult.specularRatio,
+                null,
+            );
+
+            // release wasm native allocation memory
+            scanResult.release();
+            scanResult = null;
+            }
+        }
+        webrtc.closeCamera();
+        // release wasm native allocation memory
+        webrtc.releaseScanner();
+
+        if (warnStatus > 0) {
+            redetect();
+        }
+        } else if (status === ScannerStatus.SCAN_TO_SERVER) {
+        //  amouse add
+
+        logger.info("Scan To Server");
+        // 이미지 추출
+        let encodedStream = scan_result.fullImage;
+        // 전송
+        } else if(status === ScannerStatus.SCANNER_INIT_FAIL) {
+        logger.info("Scanner Initialize timeout");
+        
+        // 초기화 실패 경고
+        alert("초기화에 실패했습니다. 네트워크 상태를 확인하고 다시 시도해주세요.");
+
+        } else if (status === ScannerStatus.SCAN_TIME_OUT ||
+            status == ScannerStatus.SCAN_RECOG_TIME_OUT) {
+        logger.info("Scan Time Out called");
+
+        timeoutRetry++;
+        lastRetryType = "timeoutRetry";
+        logger.info("[retrycnt] timeoutRetry : " + timeoutRetry);
+
+        // will close camera
+        webrtc.closeCamera();
+        webrtc.releaseScanner();
+
+        const isConfirm = confirm(
+            "제한시간이 만료 되었습니다. 메인화면으로 이동하시겠습니까? 취소하면 재활영을 진행합니다.",
+        );
+        if (isConfirm) {
+            window.location.href = "https://fincubeocr.posicube.com/hanabank/";
+        } else {
+            redetect();
+        }
+        } else if (status == ScannerStatus.SCAN_TIMELIMIT_OVER) {
+        // timeLimit over
+        // 수동 모드를 권고해야 함.
+        alert("RobiScanner recommand use Manual mode so change it");
+
+        // 수동 모드 전환
+        webrtc.setScanMode(ScanMode.MANUAL);
+        document.getElementById("autoCameraToggle").style.backgroundImage =
+            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle.png')";
+        document.getElementById("takeCameraBtn").style.display = "flex";
+        } else {
+        logger.error("status = " + status);
+        }
+    }
+
+    /**
+     * 웹카메라로 스케너를 실행
+     */
+    async function startScanner(isRestart = false) {
+        if (!webrtc) return;
+
+        if (isRestart) {
+        webrtc.reset();
+        logManager.reDetect(new Date().valueOf());
+        } else {
+        logManager.startDetect(new Date().valueOf());
+        }
+
+        try {
+        // cameraType: 모바일 카메라의 전면(CameraType.FACING_FRONT)/후면(CameraType.FACING_BACK), PC 테스트시에는 FACING_UNKOWN으로 적용
+        webrtc.open(
+            cameraType,
+            video,
+            scannerType,
+            resultCallback,
+            detectCallback,
+            "diyYU6tsdVeaL72MXmyGgXDGqEzG5nREy4LrMx+jDW0dGVVSWd+c9wIYYMNLS8PC/B3JkgHtQvFWaM7W9V0ujCdn6BKHvGXzc5gktUu+nZpAnXcNa1akVBJG0qlS3KxB",
+            captureEdgeType, // captureEdgeType => CARD_TYPE: 0, PASSPORT: 1, A4: 2
+            30, // timeOut value(seconds), if you don't need timeout then set 0 or negative. default = 0.
+            60, // timeOut for recog(seconds), if you don't need timeout then set 0 or negative. default = 0.
+            LOAD_TIMEOUT // timeout for model initialization(seconds), if you don't need timeout then set 0 or negative. default = 0.
+        );
+        } catch (err) {
+        logger.error("json load fail" + err);
+        }
+    }
+
+    // 화면에 토스트 알림 띄우기
+    function showToast(msg, slot) {
+        let msgTimerId = 0;
+        let toast = $("#toast");
+
+        if (slot === "top") {
+        toast.css("top", "33px");
+        toast.css("bottom", "");
+        } else if (slot === "bottom") {
+        toast.css("top", "");
+        toast.css("bottom", "-13px");
+        } else {
+        toast.css("top", "15%");
+        toast.css("bottom", "");
+        }
+
+        toast.children().html(msg);
+        setTimeout(function () {
+        toast.fadeIn(500, function () {
+            msgTimerId = setTimeout(function () {
+            toast.fadeOut(1000);
+            clearTimeout(msgTimerId);
+            }, 1000);
+        });
+        }, 200);
+    }
+
+    /**
+     * 스캐너 타입 반환
+     */
+    function getScannerType(scanner) {
+        let type = "";
+
+        if (scanner === "idcard") {
+        type = ScannerType.IDCARD_SCANNER;
+        serverScannerType = "id";
+        } else if (scanner === "passport") {
+        type = ScannerType.PASSPORT_SCANNER;
+        serverScannerType = "passport";
+        } else if (scanner === "residence") {
+        type = ScannerType.RESIDENCE_SCANNER;
+        } else if (scanner === "capture") {
+        type = ScannerType.CAPTURE;
+        } else if (scanner === "residence_back") {
+        type = ScannerType.RESIDENCE_BACK_SCANNER;
+        } else if (scanner === "barcode") {
+        type = ScannerType.BARCODE;
+        } else if (scanner === "creditcard") {
+        type = ScannerType.CREDITCARD;
+        }
+
+        return type;
+    }
+
+    /**
+     * 캡처 엣지 타입 반환(CARD_TYPE: 0, PASSPORT: 1, A4: 2)
+     */
+    function getCaptureEgdeType(captureEdge) {
+        let type = CaptureEdgeType.CARD;
+        if (captureEdge === "card") {
+        type = CaptureEdgeType.CARD;
+        } else if (captureEdge === "passport") {
+        type = CaptureEdgeType.PASSPORT;
+        } else if (captureEdge === "a4") {
+        type = CaptureEdgeType.A4;
+        }
+
+        return type;
+    }
+
+    /**
+     * 스캔 박스 설정값 반환
+     */
+    function getScanBoxConfig(scannerType, captureEdgeType) {
+        let sizeRatio = 0.6292;
+        let xposNorm = 0.5;
+        let yposNorm = 0.35;
+
+        if (scannerType === ScannerType.IDCARD_SCANNER) {
+        sizeRatio = 0.6292;
+        xposNorm = 0.5;
+        yposNorm = 0.35;
+        } else if (scannerType === ScannerType.PASSPORT_SCANNER) {
+        sizeRatio = 0.704;
+        xposNorm = 0.5;
+        yposNorm = 0.35;
+        } else if (scannerType === ScannerType.RESIDENCE_SCANNER) {
+        sizeRatio = 0.6292;
+        xposNorm = 0.5;
+        yposNorm = 0.35;
+        } else if (scannerType === ScannerType.RESIDENCE_BACK_SCANNER) {
+        sizeRatio = 1.57;
+        xposNorm = 0.5;
+        yposNorm = 0.38;
+        } else if (scannerType === ScannerType.CAPTURE) {
+        if (captureEdgeType === CaptureEdgeType.CARD) {
+            sizeRatio = 0.6292;
+            xposNorm = 0.5;
+            yposNorm = 0.35;
+        } else if (captureEdgeType === CaptureEdgeType.PASSPORT) {
+            sizeRatio = 0.704;
+            xposNorm = 0.5;
+            yposNorm = 0.35;
+        } else if (captureEdgeType === CaptureEdgeType.A4) {
+            sizeRatio = 1.4143;
+            xposNorm = 0.5;
+            yposNorm = 0.38;
+        }
+        }
+
+        return {
+        sizeRatio,
+        xposNorm,
+        yposNorm,
+        };
+    }
+
+    /**
+     * 실행하는 장비와 카메라 정보 반환
+     */
+    function getCameraType() {
+        let os = "";
+        let ua = navigator.userAgent;
+        let osSimple = "";
+        let browser = "";
+
+        if (ua.match(/Win(dows )?NT 6\.0/)) {
+        os = "Windows Vista";
+        osSimple = "WIN";
+        } else if (ua.match(/Win(dows )?(NT 5\.1|XP)/)) {
+        os = "Windows XP";
+        osSimple = "WIN";
+        } else {
+        if (
+            ua.indexOf("Windows NT 5.1") !== -1 ||
+            ua.indexOf("Windows XP") !== -1
+        ) {
+            os = "Windows XP";
+            osSimple = "WIN";
+        } else if (
+            ua.indexOf("Windows NT 7.0") !== -1 ||
+            ua.indexOf("Windows NT 6.1") !== -1
+        ) {
+            os = "Windows 7";
+            osSimple = "WIN";
+        } else if (
+            ua.indexOf("Windows NT 8.0") !== -1 ||
+            ua.indexOf("Windows NT 6.2") !== -1
+        ) {
+            os = "Windows 8";
+            osSimple = "WIN";
+        } else if (
+            ua.indexOf("Windows NT 8.1") !== -1 ||
+            ua.indexOf("Windows NT 6.3") !== -1
+        ) {
+            os = "Windows 8.1";
+            osSimple = "WIN";
+        } else if (
+            ua.indexOf("Windows NT 10.0") !== -1 ||
+            ua.indexOf("Windows NT 6.4") !== -1
+        ) {
+            os = "Windows 10";
+            osSimple = "WIN";
+        } else if (
+            ua.indexOf("iPad") !== -1 ||
+            ua.indexOf("iPhone") !== -1 ||
+            ua.indexOf("iPod") !== -1
+        ) {
+            os = "Apple iOS";
+            osSimple = "IOS";
+        } else if (ua.indexOf("Android") !== -1) {
+            os = "Android OS";
+            osSimple = "ANDROID";
+        } else if (ua.match(/Win(dows )?NT( 4\.0)?/)) {
+            os = "Windows NT";
+            osSimple = "WIN";
+        } else if (ua.match(/Mac|PPC/)) {
+            os = "Mac OS";
+            osSimple = "MAC";
+        } else if (ua.match(/Linux/)) {
+            os = "Linux";
+            osSimple = "LINUX";
+        } else if (ua.match(/(Free|Net|Open)BSD/)) {
+            os = RegExp.$1 + "BSD";
+        } else if (ua.match(/SunOS/)) {
+            os = "Solaris";
+            osSimple = "SOLARIS";
+        }
+
+        let agent = navigator.userAgent.toLowerCase(),
+            name = navigator.appName;
+        // MS 계열 브라우저를 구분하기 위함.
+        if (
+            name === "Micr	osoft Internet Explorer" ||
+            agent.indexOf("trident") > -1 ||
+            agent.indexOf("edge/") > -1
+        ) {
+            browser = "ie";
+            if (name === "Microsoft Internet Explorer") {
+            // IE old version (IE 10 or Lower)
+            agent = /msie ([0-9]{1,}[\.0-9]{0,})/.exec(agent);
+            browser += parseInt(agent[1]);
+            } else {
+            // IE 11+
+            if (agent.indexOf("trident") > -1) {
+                // IE 11
+                browser += 11;
+            } else if (agent.indexOf("edge/") > -1) {
+                // Edge
+                browser = "edge";
+            }
+            }
+        } else if (agent.indexOf("safari") > -1) {
+            // Chrome or Safari
+            if (agent.indexOf("opr") > -1) {
+            // Opera
+            browser = "opera";
+            } else if (agent.indexOf("samsungbrowser") > -1) {
+            // Chrome
+            browser = "Samsung";
+            } else if (agent.indexOf("chrome") > -1) {
+            // Chrome
+            browser = "chrome";
+            } else {
+            // Safari
+            browser = "safari";
+            }
+        } else if (agent.indexOf("firefox") > -1) {
+            // Firefox
+            browser = "firefox";
+        }
+        }
+
+        let cameraType = -1;
+        if (osSimple === "IOS" || osSimple === "ANDROID") {
+        cameraType = 0;
+        }
+
+        logger.debug("userAgent :: br :" + browser);
+        logger.debug("userAgent :: os :" + os);
+        logger.debug("userAgent :: osSimple :" + osSimple);
+        logger.debug("userAgent :: cameraType :" + cameraType);
+
+        return {
+        osSimple,
+        browser,
+        cameraType,
+        };
+    }
+
+    /**
+     * scanner에 따른 wasm을 호출하기 위한 설정
+     */
+    function getWasmName(scannerType) {
+        let wasmName = "robi_id_scanner";
+        if (scannerType == ScannerType.PASSPORT_SCANNER) {
+        wasmName = "robi_passport_scanner";
+        } else if (scannerType == ScannerType.RESIDENCE_SCANNER) {
+        wasmName = "robi_residence_scanner";
+        } else if (scannerType == ScannerType.RESIDENCE_BACK_SCANNER) {
+        wasmName = "robi_residence_back_scanner";
+        } else if (scannerType == ScannerType.BARCODE) {
+        wasmName = "robi_barcode_scanner";
+        } else if (scannerType == ScannerType.CAPTURE) {
+        wasmName = "robi_capture_scanner";
+        } else if (scannerType == ScannerType.CREDITCARD) {
+        wasmName = "robi_creditcard_scanner";
+        }
+
+        return wasmName;
+    }
+
+    /**
+     * URL Query params를 객체 타입으로 반환
+     */
+    function getUrlParams() {
+        const params = {};
+        window.location.search.replace(
+        /[?&]+([^=&]+)=([^&]*)/gi,
+        (str, key, value) => {
+            params[key] = value;
+        },
+        );
+
+        return params;
+    }
+
+    /**
+     * Scan Box 가이드라인 고정값
+     */
+
+    const SCAN_BOX_CUIDE_SIZE_CONFIG = {
+        // 가로 고정값
+        "340px": {
+        lg: "500px",
+        md: "340px",
+        sm: "300px",
+        xs: "260px",
+        },
+        "240px": {
+        lg: "400px",
+        md: "240px",
+        sm: "200px",
+        xs: "160px",
+        },
+        // 외국민등록증 후면시, 가로 고정값
+        "217px": {
+        lg: "377px",
+        md: "217px",
+        sm: "177px",
+        xs: "137px",
+        },
+    };
+
+    /**
+     * Scan Box 가이드라인 재조정
+     */
+    function resizeScanBoxGuide(vw) {
+        const theme = document.querySelector(":root"); // 가상 클래스 요소 얻기
+        const SCAN_BOX_WIDTH = SCAN_BOX_CUIDE_SIZE_CONFIG[scanBoxWidth];
+
+        if(vw > 600) {
+        theme.style.setProperty("--scan-box-width", SCAN_BOX_WIDTH.lg)
+        } else if (vw <= 600 && vw > 360) {
+        const isIos = isIosDevice();
+        // let ratio = 0.8333;
+        if (isIos) {
+            // ratio = 0.8333;
+            theme.style.setProperty("--scan-box-width", SCAN_BOX_WIDTH.sm);
+        } else {
+            // ratio = 0.9444;
+            theme.style.setProperty("--scan-box-width", SCAN_BOX_WIDTH.md);
+        }
+        // let targetWidth = parseInt(vw * ratio)
+        // let widthProp = targetWidth.toString()+'px';
+        // theme.style.setProperty("--scan-box-width", widthProp);
+        } else if (vw <= 360 && vw > 320) {
+        theme.style.setProperty("--scan-box-width", SCAN_BOX_WIDTH.sm);
+        } else if (vw <= 320) {
+        theme.style.setProperty("--scan-box-width", SCAN_BOX_WIDTH.xs);
+        }
+    }
+
+    /**
+     * 디바이스가 iOS인 경우, iOS의 버전을 반환
+     */
+    function getIosVersion() {
+        const userAgent = navigator.userAgent;
+        const match = userAgent.match(/(iPhone|iPod|iPad).*OS\s([\d_]+)/);
+
+        if (!match) return;
+
+        const version = match[2].replace(/_/g, ".");
+        return version;
+    }
+
+    /**
+     * 디바이스가 iOS인지 체크
+     */
+    function isIosDevice() {
+        const userAgent = navigator.userAgent;
+        const isIOS = /iPad|iPhone|iPod/.test(userAgent);
+        return isIOS;
+    }
+
+    /**
+     * 디바이스가 Android인지 체크
+     */
+    function isAndroidDevice() {
+        const userAgent = navigator.userAgent;
+        const isAndroid = /Android/.test(userAgent);
+        return isAndroid;
+    }
+
+    /* webRTC 신분증 OCR 인식 결과(이미지) 서버 전송 */
+    // ====================================================================================================
+    let Destination = "https://121.133.124.13:8095";
+    // let Destination = "https://52.231.69.255:8095";
+    let URL_SECRET_KEY = Destination + "/ocr/key";
+    let URL_ALT_TOKEN = Destination + "/ocr/alttoken";
+    let URL_OCR_CERT = Destination + "/ocr/cert";
+    let URL_DATA_UPLOAD = Destination + "/ocr/data/upload";
+    let URL_DATA_CONFIRM = Destination + "/ocr/data/confirm";
+    let URL_WEBRTC_RECOGNIZE = Destination + "/ocr/webrtc/recognize";
+    let CUSTOMER_CODE = "JBBANK";
+
+    let CRYPT = null; // RSA Key 생성용
+    let SIGN = null; // SIGNATURE 생성
+    let VERIFY = null; // SIGNATURE 검증
+
+    let privateKey = null; // RSA PrivateKey
+    let publicKey = null; // RSA PublicKey
+
+    let varTimeStamp = null; // TimeStamp
+    let varUserId =
+        CUSTOMER_CODE +
+        "_" +
+        osSimple +
+        "_" +
+        makeid() +
+        "_" +
+        new Date().getTime(); // UserID (userId min=24, max=128 )
+    
+    let varDeviceId = "0123456789abcdef01234567890abcdef"; // DeviceID (고객사 설정)
+    let varRandom = null; // Random value
+    let varSecretId = "client-KBBank-release-recognizer-clientId2022101201002440"; //SecretId (고객사 설정)
+
+    let signature = null; // SIGNATURE
+
+    let resStatus = null;
+    let errorThrow = null;
+
+    let CONSTANT_CTTT = "application/json";
+    let CONSTANT_APPID = "com.kbbank_ocr_webrtc";
+    let CONSTANT_METHOD = "POST";
+    let CONSTANT_JSON = "json";
+    let CONSTANT_IMAGE_TYPE = "jpg";
+
+    // webRTC 자동모드 인식 후 서버 전송 mf 데이터
+    let cropIdImageData = "";
+    let maskedCropIdImageData = "";
+    let fullFrameIdImageData = "";
+    let photoIdImageData = "";
+    let infoJsonData = "";
+    let editInfoJsonData = "";
+    let fullFrameIdImageMaskRoi = "";
+    
+    // ====================================================================================================
+    let resSecretKeyHref = null; // ocrSecretKey Response URL
+    let resSecretKey = null; // ocrSecretKey Response SecretKey
+    let resSecretKeyTimeStamp = null; // ocrSecretKey Response TimeStamp
+
+    // API 호출 : Secret Key (해당 API는 alttoken 하기 전에 수행 하고 결과 secretKey값을 웹페이지에 매번 갱신해야 한다. signature 생성인자값. 서버에서 체크 로직에 의한 검증 수행)
+    function ocrSecretKey() {
+        varTimeStamp = new Date().getTime();
+
+        let params = {
+        userId: varUserId,
+        timeStamp: varTimeStamp
+        //timeStamp: 0 // test InvalidInputException
+        };
+
+        let jsonInfo = JSON.stringify(params);
+
+        $.ajax({
+        url:      URL_SECRET_KEY,
+        type:     CONSTANT_METHOD,
+        datatype: CONSTANT_JSON,
+        data:     jsonInfo,
+        headers: {
+            "Content-type": CONSTANT_CTTT
+        },
+        success: function (responseDto) {
+            resSecretKeyHref = responseDto.data.href;
+            resSecretKey = responseDto.data.secretKey;
+            resSecretKeyTimeStamp = responseDto.data.timeStamp;
+            console.log(
+            "### ocrSecretKey() completed. resSecretKey : " + resSecretKey,
+            );
+
+            generateKeys(); // alttoken signature 생성을 위한 RSA 키 발급 호출
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+            resStatus = textStatus;
+            errorThrow = errorThrown;
+            alert("!!! ocrSecretKey() fail : " + resStatus);
+        },
+        });
+    }
+
+    // RSA Key 발급
+    function generateKeys() {
+        CRYPT = new JSEncrypt({ default_key_size: 2048 });
+
+        CRYPT.getKey();
+
+        privateKey = CRYPT.getPrivateKey();
+        publicKey = CRYPT.getPublicKey();
+
+        varTimeStamp = new Date().getTime();
+        varRandom = makeid();
+
+        // signature 생성을 위한 message (순서 중요)
+        let message = varTimeStamp + varUserId + varDeviceId
+        + varSecretId //secret Id (client/server fixed. APP & WEBRTC 동일-전북은행)
+        + varRandom
+        + resSecretKey; //secret Key (server 로 부터 수신 하여 웹페이지에 매번 갱신)
+
+        //console.log("signature - varSercretId : " + varSecretId);
+        //console.log("signature - resSecretKey : " + resSecretKey);  // test logging (삭제 필요)
+        generateSignature(message);
+    }
+
+    // SIGNATURE 발급
+    function generateSignature(sigstr) {
+        SIGN = new JSEncrypt();
+        SIGN.setPrivateKey(privateKey);
+        signature = SIGN.sign(sigstr, CryptoJS.SHA256, "sha256");
+
+        VERIFY = new JSEncrypt();
+        VERIFY.setPublicKey(publicKey);
+
+        let verified = VERIFY.verify(sigstr, signature, CryptoJS.SHA256);
+
+        if (verified) {
+        ocrAltToken();
+        } else {
+        alert("Something went wrong....");
+        }
+    }
+
+    // ====================================================================================================
+    let resAltHref = null; // AltToken Response URL
+    let resAltAltToken = null; // AltToken Response Token
+    let resAltTimeStamp = null; // AltToken Response TimeStamp
+
+    // API 호출 : Alt Token
+    function ocrAltToken() {
+        publicKey = publicKey.replace("-----BEGIN PUBLIC KEY-----\n", "");
+        publicKey = publicKey.replace("\n-----END PUBLIC KEY-----", "");
+
+        let params = {
+        appId: CONSTANT_APPID,
+        userId: varUserId,
+        deviceId: varDeviceId,
+        timeStamp: varTimeStamp,
+        random: varRandom,
+        content: publicKey,
+        signature: signature,
+        };
+
+        let jsonInfo = JSON.stringify(params);
+
+        $.ajax({
+        url:      URL_ALT_TOKEN,
+        type:     CONSTANT_METHOD,
+        datatype: CONSTANT_JSON,
+        data:     jsonInfo,
+        headers: {
+            "Content-type":   CONSTANT_CTTT,
+            "Authorization":  signature
+        },
+        success: function (responseDto) {
+            resAltHref = responseDto.data.href;
+            resAltAltToken = responseDto.data.altToken;
+            resAltTimeStamp = responseDto.data.timeStamp;
+            console.log(
+            "### ocrAltToken() completed. resAltAltToken : " + resAltAltToken,
+            );
+
+            ocrCert();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+            resStatus = textStatus;
+            errorThrow = errorThrown;
+            alert("!!! ocrAltToken() fail : " + resStatus);
+        },
+        });
+    }
+
+    // ====================================================================================================
+    let resCertHref = null; // OCR Cert Response URL
+    let resCertContent = null; // OCR Cert Response Content
+    let resCertTimeStamp = null; // AltToken Response TimeStamp
+
+    // API 호출 : OCR CERT
+    function ocrCert() {
+        let params = {
+        appId: CONSTANT_APPID,
+        userId: varUserId,
+        deviceId: varDeviceId,
+        };
+
+        let jsonInfo = JSON.stringify(params);
+
+        $.ajax({
+        url:      URL_OCR_CERT,
+        type:     CONSTANT_METHOD,
+        datatype: CONSTANT_JSON,
+        data:     jsonInfo,
+        headers: {
+            "Content-type":   CONSTANT_CTTT,
+            "Authorization":  resAltAltToken
+        },
+        success: function (responseDto) {
+            resCertHref = responseDto.data.href;
+            resCertContent = responseDto.data.content;
+            resCertTimeStamp = responseDto.data.timeStamp;
+            console.log("### ocrCert() completed." + resCertContent);
+            if (isCameraAuto) {
+            console.log(
+                "=====> WebRTC Recog Done! Server Data Send! isCameraAuto : " +
+                isCameraAuto,
+            );
+            ocrDataUpload();
+            } else {
+            console.log(
+                "=====> Server Recog Start! Server Data Send! isCameraAuto : " +
+                isCameraAuto,
+            );
+            ocrWebrtcRecognize();
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            resStatus = textStatus;
+            errorThrow = errorThrown;
+            alert("!!! ocrCert() fail : " + resStatus);
+        },
+        });
+    }
+
+    // ====================================================================================================
+    let encryptedIv = null; // Encrypted IV     (RSA Encrypt)
+    let encryptedKey = null; // Encrypted Key    (RSA Encrypt)
+    
+    let encCropIdImage = null; // Encrypted cropIdImage  (AES Encrype)
+    let encMaskedCropIdImage = null; // Encrypted maskedCropIdImage  (AES Encrype)
+    let encFullFrameIdImage = null; // Encrypted fullFrameIdImage   (AES Encrype)
+    let encPhotoIdImage = null; // Encrypted photoIdImage   (AES Encrype)
+    let encInfoJson = null; // Encrypted info.json   (AES Encrype)
+
+    let aes256Key = null;
+    let aes256Iv = null;
+    let aes256EncodeData = null;
+    let aes256DecodeData = null;
+    let imageName = null;
+    let imageData = null;
+
+    // let resOcrUploadURL = null;
+
+    // API 호출 : OCR DATA UPLOAD
+    function ocrDataUpload() {
+        aes256Iv = getIv(); //"0123456789abcdef";
+        aes256Key = getAesKey(); //"0123456789abcdef0123456789abcdef"; //
+
+        let RSAEncrypt = new JSEncrypt(); 
+        RSAEncrypt.setKey(resCertContent);
+
+
+        xImage="/9j/4AAQSkZJRgABAQAASABIAAD/4QCARXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAAUgEoAAMAAAABAAIAAIdpAAQAAAABAAAAWgAAAAAAAABIAAAAAQAAAEgAAAABAAKgAgAEAAAAAQAAABSgAwAEAAAAAQAAABQAAAAA/+0AOFBob3Rvc2hvcCAzLjAAOEJJTQQEAAAAAAAAOEJJTQQlAAAAAAAQ1B2M2Y8AsgTpgAmY7PhCfv/iB9hJQ0NfUFJPRklMRQABAQAAB8hhcHBsAiAAAG1udHJSR0IgWFlaIAfZAAIAGQALABoAC2Fjc3BBUFBMAAAAAGFwcGwAAAAAAAAAAAAAAAAAAAAAAAD21gABAAAAANMtYXBwbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC2Rlc2MAAAEIAAAAb2RzY20AAAF4AAAFimNwcnQAAAcEAAAAOHd0cHQAAAc8AAAAFHJYWVoAAAdQAAAAFGdYWVoAAAdkAAAAFGJYWVoAAAd4AAAAFHJUUkMAAAeMAAAADmNoYWQAAAecAAAALGJUUkMAAAeMAAAADmdUUkMAAAeMAAAADmRlc2MAAAAAAAAAFEdlbmVyaWMgUkdCIFByb2ZpbGUAAAAAAAAAAAAAABRHZW5lcmljIFJHQiBQcm9maWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABtbHVjAAAAAAAAAB8AAAAMc2tTSwAAACgAAAGEZGFESwAAACQAAAGsY2FFUwAAACQAAAHQdmlWTgAAACQAAAH0cHRCUgAAACYAAAIYdWtVQQAAACoAAAI+ZnJGVQAAACgAAAJoaHVIVQAAACgAAAKQemhUVwAAABIAAAK4a29LUgAAABYAAALKbmJOTwAAACYAAALgY3NDWgAAACIAAAMGaGVJTAAAAB4AAAMocm9STwAAACQAAANGZGVERQAAACwAAANqaXRJVAAAACgAAAOWc3ZTRQAAACYAAALgemhDTgAAABIAAAO+amFKUAAAABoAAAPQZWxHUgAAACIAAAPqcHRQTwAAACYAAAQMbmxOTAAAACgAAAQyZXNFUwAAACYAAAQMdGhUSAAAACQAAARadHJUUgAAACIAAAR+ZmlGSQAAACgAAASgaHJIUgAAACgAAATIcGxQTAAAACwAAATwcnVSVQAAACIAAAUcZW5VUwAAACYAAAU+YXJFRwAAACYAAAVkAFYBYQBlAG8AYgBlAGMAbgD9ACAAUgBHAEIAIABwAHIAbwBmAGkAbABHAGUAbgBlAHIAZQBsACAAUgBHAEIALQBwAHIAbwBmAGkAbABQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6AByAGkAYwBDHqUAdQAgAGgA7ABuAGgAIABSAEcAQgAgAEMAaAB1AG4AZwBQAGUAcgBmAGkAbAAgAFIARwBCACAARwBlAG4A6QByAGkAYwBvBBcEMAQzBDAEOwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAFIARwBCAFAAcgBvAGYAaQBsACAAZwDpAG4A6QByAGkAcQB1AGUAIABSAFYAQgDBAGwAdABhAGwA4QBuAG8AcwAgAFIARwBCACAAcAByAG8AZgBpAGyQGnUoAFIARwBCgnJfaWPPj/DHfLwYACAAUgBHAEIAINUEuFzTDMd8AEcAZQBuAGUAcgBpAHMAawAgAFIARwBCAC0AcAByAG8AZgBpAGwATwBiAGUAYwBuAP0AIABSAEcAQgAgAHAAcgBvAGYAaQBsBeQF6AXVBeQF2QXcACAAUgBHAEIAIAXbBdwF3AXZAFAAcgBvAGYAaQBsACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAEEAbABsAGcAZQBtAGUAaQBuAGUAcwAgAFIARwBCAC0AUAByAG8AZgBpAGwAUAByAG8AZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvZm6QGgBSAEcAQmPPj/Blh072TgCCLAAgAFIARwBCACAw1zDtMNUwoTCkMOsDkwO1A70DuQO6A8wAIAPAA8EDvwPGA68DuwAgAFIARwBCAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDpAHIAaQBjAG8AQQBsAGcAZQBtAGUAZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAZQBsDkIOGw4jDkQOHw4lDkwAIABSAEcAQgAgDhcOMQ5IDicORA4bAEcAZQBuAGUAbAAgAFIARwBCACAAUAByAG8AZgBpAGwAaQBZAGwAZQBpAG4AZQBuACAAUgBHAEIALQBwAHIAbwBmAGkAaQBsAGkARwBlAG4AZQByAGkBDQBrAGkAIABSAEcAQgAgAHAAcgBvAGYAaQBsAFUAbgBpAHcAZQByAHMAYQBsAG4AeQAgAHAAcgBvAGYAaQBsACAAUgBHAEIEHgQxBEkEOAQ5ACAEPwRABD4ERAQ4BDsETAAgAFIARwBCAEcAZQBuAGUAcgBpAGMAIABSAEcAQgAgAFAAcgBvAGYAaQBsAGUGRQZEBkEAIAYqBjkGMQZKBkEAIABSAEcAQgAgBicGRAY5BicGRQAAdGV4dAAAAABDb3B5cmlnaHQgMjAwNyBBcHBsZSBJbmMuLCBhbGwgcmlnaHRzIHJlc2VydmVkLgBYWVogAAAAAAAA81IAAQAAAAEWz1hZWiAAAAAAAAB0TQAAPe4AAAPQWFlaIAAAAAAAAFp1AACscwAAFzRYWVogAAAAAAAAKBoAABWfAAC4NmN1cnYAAAAAAAAAAQHNAABzZjMyAAAAAAABDEIAAAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbP/AABEIABQAFAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2wBDABwcHBwcHDAcHDBEMDAwRFxEREREXHRcXFxcXHSMdHR0dHR0jIyMjIyMjIyoqKioqKjExMTExNzc3Nzc3Nzc3Nz/2wBDASIkJDg0OGA0NGDmnICc5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ub/3QAEAAL/2gAMAwEAAhEDEQA/ALMstzaXJkkO5W/Ij+mKludRXYFtzlmHX0/+vRqNym026gMx6+3/ANes9ElspUllTIPPP+etZN20R6EIKSUpLX8zYtI7lIQJGwewIyQKs7Zf7w/L/wCvSxSpMgkQ5BqStLHJKcru6/A//9DWjtIUuWkA5GCB2BNWpYkmQpIMg0i/61voP61LSRrOT5k79inbW0KQjjOeSTU/kxf3RRD/AKpfpUlJIc5y5nqf/9k=";
+        console.log("upload lastRetryType : " + lastRetryType);
+        if (lastRetryType != "success") {
+        cropIdImageData = xImage
+        maskedCropIdImageData = xImage;
+        fullFrameIdImageData = imageData;
+        photoIdImageData = xImage;
+        }
+
+
+        encryptedIv = RSAEncrypt.encrypt(aes256Iv);
+        encryptedKey = RSAEncrypt.encrypt(aes256Key);
+        encCropIdImage = aes256Encode(aes256Key, aes256Iv, cropIdImageData);
+        encMaskedCropIdImage = aes256Encode(aes256Key, aes256Iv, maskedCropIdImageData);
+        encFullFrameIdImage = aes256Encode(aes256Key, aes256Iv, fullFrameIdImageData);
+        encPhotoIdImage = aes256Encode(aes256Key, aes256Iv, photoIdImageData);
+        encInfoJson = aes256Encode(aes256Key, aes256Iv, infoJsonData);
+
+        // 메모리 해제
+        cropIdImageData = "";
+        maskedCropIdImageData = "";
+        fullFrameIdImageData = "";
+        photoIdImageData = "";
+        // console.log("encryptedIv : " + encryptedIv);
+        // console.log("encryptedKey : " + encryptedKey);
+        // console.log("encCropIdImage : " + encCropIdImage);
+        // console.log("encMaskedCropIdImage : " + encMaskedCropIdImage);
+        // console.log("encFullFrameIdImage : " + encFullFrameIdImage);
+        // console.log("encPhotoIdImage : " + encPhotoIdImage);
+        // console.log("encInfoJson : " + encInfoJson);
+
+        // let params = {
+        //   dataIv: encryptedIv,
+        //   dataKey: encryptedKey,
+        //   cropIdImage: encCropIdImage,
+        //   maskedCropIdImage: encMaskedCropIdImage,
+        //   fullFrameIdImage: encFullFrameIdImage,
+        //   photoIdImage: encPhotoIdImage,
+        //   infoJson: encInfoJson,
+        // };
+        // let jsonInfo = JSON.stringify(params);
+        // console.log("jsonInfo = " + jsonInfo);
+
+
+        var blobIv = new Blob([encryptedIv], { type: 'text/plain' });
+        var blobKey = new Blob([encryptedKey], { type: 'text/plain' });
+        var blobCropIdImage = new Blob([encCropIdImage], { type: 'image/jpg' });
+        var blobMaskedCropIdImage = new Blob([encMaskedCropIdImage], { type: 'image/jpg' });
+        var blobFullFrameIdImage = new Blob([encFullFrameIdImage], { type: 'image/jpg' });
+        var blobPhotoIdImage = new Blob([encPhotoIdImage], { type: 'image/jpg' });
+        var blobInfo = new Blob([encInfoJson], { type: 'text/plain' });
+
+        // console.log("blob infoJsonData : " + blobInfo);
+
+        var formData = new FormData();
+        formData.append('data', blobIv, 'data.iv');  //iv
+        formData.append('data', blobKey, 'data.key');  //key
+        formData.append('data', blobCropIdImage, 'cropIdImage.jpg');  //data cropIdImage
+        formData.append('data', blobMaskedCropIdImage, 'maskedCropIdImage.jpg');  //data maskedCropIdImage
+        formData.append('data', blobFullFrameIdImage, 'fullFrameIdImage.jpg');  //data fullFrameIdImage
+        formData.append('data', blobPhotoIdImage, 'photoIdImage.jpg');  //data photoIdImage
+        formData.append('data', blobInfo, 'info.json');  //info 
+
+        console.log("isCameraAuto = " + isCameraAuto);
+        var isWebManFlag = isCameraAuto?false:true;
+        console.log("isWebManFlag = " + isWebManFlag);
+
+        $.ajax({
+            url:          URL_DATA_UPLOAD,
+            enctype:      'multipart/form-data',    
+            type:         CONSTANT_METHOD,
+            datatype:     CONSTANT_JSON,
+            data:         formData,   
+            processData:  false,    
+            contentType:  false,    
+            cache:        false, 
+            headers: {
+                "Authorization":    resAltAltToken,
+                "userId":           varUserId,
+                "deviceId":         varDeviceId,
+                "idType":           serverScannerType,
+                "appType":          'WebRtc',
+                "originCode":       'WebRtc_Reserved_For_JBBank',
+                "savePath":         'https://fincubeocr.posicube.com/hanabank/webrtc',
+                "dataKey":          varUserId + "_" + varTimeStamp,
+                "timestamp":        varTimeStamp,
+                "fdFlag":           true,
+                "encFlag":          false,
+                "webManFlag":       isWebManFlag
+            },
+            
+            success: function (responseDto) {
+            const obj = JSON.parse(responseDto.data.infoJson);
+            let jsonInfo = JSON.stringify(obj);
+            const obj2 = JSON.parse(jsonInfo);
+            
+            console.log("#### responseDto.data.infoJson = " + responseDto.data.infoJson);
+
+
+            if (obj2.id.idType != "unknown") {
+                detectRetry = 0;
+                recogRetry = 0;
+                faceRetry = 0;
+                colorRetry = 0;
+                specRetry = 0;
+                timeoutRetry = 0;
+                errorRetry = 0;
+                lastRetryType = "success";
+
+            console.log("### ocrDataUpload() completed. FD Reusult : " + responseDto.data.fdResult);
+            alert("FD Result : " + responseDto.data.fdResult + " \n(fdConfidence="+responseDto.data.fdConfidence +")");
+            
+            // Server FullFrameImage masking 확인
+                console.log("responseDto.data.fullFrameIdImage = " + responseDto.data.fullFrameIdImage);
+                // let finalFullFrameIdImage = responseDto.data.fullFrameIdImage.substr(23);
+                // console.log("finalFullFrameIdImage 1 : " + finalFullFrameIdImage);
+                // finalFullFrameIdImage = window.btoa(finalFullFrameIdImage);
+                // console.log("finalFullFrameIdImage 2 : " + finalFullFrameIdImage);
+                let img = new Image();
+                img.src = "data:image/jpeg;base64," + responseDto.data.fullFrameIdImage;
+                //img.src = "data:image/jpeg;base64," + finalFullFrameIdImage;
+                img.onload = function () {
+                let resultCanvasEl = document.getElementById("resultCanvas");
+                let resultCtx = resultCanvasEl.getContext("2d");
+                resultCanvasEl.width = img.width;
+                resultCanvasEl.height = img.height;
+                resultCtx.drawImage(
+                    img,
+                    0,
+                    0,
+                    img.width,
+                    img.height,
+                    0,
+                    0,
+                    img.width,
+                    img.height,
+                );
+                };
+            
+                //ocrDataConfirm();
+            } else {
+                alert("OCR인식 실패에 대한 업로드 성공!\n메인화면으로 이동합니다.");
+                window.location.href = "https://fincubeocr.posicube.com/hanabank/";
+            }
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                resStatus   = textStatus;
+                errorThrow  = errorThrown;
+                alert("!!! ocrDataUpload() fail : " + resStatus);
+            },
+            beforeSend: function () {
+            var width = 0;
+            var height = 0;
+            var left = 0;
+            var top = 0;
+
+            width = 50;
+            height = 50;
+
+            top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+            left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+
+            if($("#div_ajax_load_image").length != 0) {
+                $("#div_ajax_load_image").css({
+                top: top + "px",
+                left: left + "px",
+                });
+                $("#div_ajax_load_image").show();
+            } else {
+            $("body").append(
+                '<div id="div_ajax_load_image" style="position:absolute; top:' +
+                top +
+                "px; left:" +
+                left +
+                "px; width:" +
+                width +
+                "px; height:" +
+                height +
+                'px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="https://fincubeocr.posicube.com/hanabank/images/ajax_loader.gif" style="width:50px; height:50px;"></div>',
+            );
+            }
+        },
+        complete: function () {
+            $("#div_ajax_load_image").hide();
+        },
+        });
+    }
+
+    // ====================================================================================================
+    // API 호출 : OCR DATA CONFIRM
+    function ocrDataConfirm() {
+        aes256Iv = getIv(); //"0123456789abcdef";
+        aes256Key = getAesKey(); //"0123456789abcdef0123456789abcdef"; //
+
+        let RSAEncrypt = new JSEncrypt(); 
+        RSAEncrypt.setKey(resCertContent);
+
+        encryptedIv = RSAEncrypt.encrypt(aes256Iv);
+        encryptedKey = RSAEncrypt.encrypt(aes256Key);
+        editInfoJsonData = infoJsonData;  // 인식결과 웹 화면에서 수정 완료 Data를 server로 전송(/ocr/data/confirm) : 개발 단계에서는 인식결과와 동일한 데이터 전송
+        encInfoJson = aes256Encode(aes256Key, aes256Iv, editInfoJsonData);
+
+
+        console.log("encryptedIv : " + encryptedIv);
+        console.log("encryptedKey : " + encryptedKey);
+        console.log("encInfoJson : " + encInfoJson);
+
+        let params = {
+        encX:       encryptedIv,
+        encY:       encryptedKey,
+        content:    encInfoJson,
+        timeStamp:  varTimeStamp,
+        confirm:    '',
+        };
+
+        let jsonInfo = JSON.stringify(params);
+
+        $.ajax({
+            url:          URL_DATA_CONFIRM,
+            type:         CONSTANT_METHOD,
+            datatype:     CONSTANT_JSON,
+            data:         jsonInfo, 
+            headers: {
+            "Content-type":     CONSTANT_CTTT,
+                "Authorization":    resAltAltToken,
+                "userId":           varUserId,
+                "deviceId":         varDeviceId,
+                "idType":           serverScannerType,
+                "appType":          'WebRtc',
+                "originCode":       'WebRtc_Reserved_For_JBBank',
+                "savePath":         'https://fincubeocr.posicube.com/hanabank/webrtc',
+                "dataKey":          varUserId + "_" + varTimeStamp,
+                "timestamp":        varTimeStamp
+            },
+            
+            success: function (responseDto) {
+            console.log("### ocrDataConfirm() completed. " + responseDto);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                resStatus   = textStatus;
+                errorThrow  = errorThrown;
+                alert("!!! ocrDataConfirm() fail : " + resStatus);
+            }
+        });
+    }
+
+    // ====================================================================================================
+    // API 호출 : OCR WEBRTC RECOGNIZE
+    function ocrWebrtcRecognize() {
+        aes256Iv = getIv(); //"0123456789abcdef";
+        aes256Key = getAesKey(); //"0123456789abcdef0123456789abcdef"; //
+
+        let RSAEncrypt = new JSEncrypt();
+        RSAEncrypt.setKey(resCertContent);
+
+        encryptedIv = RSAEncrypt.encrypt(aes256Iv);
+        encryptedKey = RSAEncrypt.encrypt(aes256Key);
+        console.log("imageData(capture) : " + imageData);
+        encryptedData = aes256Encode(aes256Key, aes256Iv, imageData);
+
+        let params = {
+        appId:      CONSTANT_APPID,
+        encX:       encryptedIv,
+        encY:       encryptedKey,
+        content:    encryptedData,
+        timeStamp:  varTimeStamp,
+        };
+
+        let jsonInfo = JSON.stringify(params);
+
+        $.ajax({
+        url:      URL_WEBRTC_RECOGNIZE,
+        type:     CONSTANT_METHOD,
+        datatype: CONSTANT_JSON,
+        data:     jsonInfo,
+        headers: {
+            "Content-type":   CONSTANT_CTTT,
+            "Authorization":  resAltAltToken,
+            "userId":         varUserId,
+            "deviceId":       varDeviceId,
+            "idType":         serverScannerType,
+            "appType":        'WebRtc',
+            "originCode":     'WebRtc_Reserved_For_JBBank',
+            "savePath":       'https://fincubeocr.posicube.com/hanabank/webrtc',
+            "dataKey":        varUserId + "_" + varTimeStamp,
+            "timestamp":      varTimeStamp,
+            "imgType":        CONSTANT_IMAGE_TYPE
+        },
+
+        success: function (responseDto) {
+            console.log(
+            "### ocrWebrtcRecognize() completed. " + responseDto.code,
+            );
+            //console.log("Server Recognize Result : " + responseDto.data);
+            
+            if (responseDto.code == "200"){
+            const obj = JSON.parse(responseDto.data);
+            //console.log("encB64Json : " + obj);
+            const encAES256Data = obj.encData;
+            //console.log("encAES256Data : " + encAES256Data);
+
+            let decryptedData = aes256Decode(
+                aes256Key,
+                aes256Iv,
+                encAES256Data,
+            );
+            //console.log("Server Upload decryptResult : " + decryptedData);
+
+            alert("Image Upload & Recognize Success !!!");
+            resultDisplay(decryptedData); //서버에서 수신한 인식 결과(데이터+이미지) 웹에 출력
+            } else {
+            // 200 - Operation successful 아닌 경우(서버 Exception 발생 아님. 정상 케이스)
+            alert("신분증 인식 실패 : " + responseDto.message);
+            }
+
+            //uploadConfirm();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            resStatus = textStatus;
+            errorThrow = errorThrown;
+            alert("!!! ocrWebrtcRecognize() fail : " + resStatus);
+        },
+            beforeSend: function () {
+            var width = 0;
+            var height = 0;
+            var left = 0;
+            var top = 0;
+
+            width = 50;
+            height = 50;
+
+            top = ( $(window).height() - height ) / 2 + $(window).scrollTop();
+            left = ( $(window).width() - width ) / 2 + $(window).scrollLeft();
+
+            if($("#div_ajax_load_image").length != 0) {
+                $("#div_ajax_load_image").css({
+                        "top": top+"px",
+                        "left": left+"px"
+                });
+                $("#div_ajax_load_image").show();
+            } else {
+            $("body").append(
+                '<div id="div_ajax_load_image" style="position:absolute; top:' +
+                top +
+                "px; left:" +
+                left +
+                "px; width:" +
+                width +
+                "px; height:" +
+                height +
+                'px; z-index:9999; background:#f0f0f0; filter:alpha(opacity=50); opacity:alpha*0.5; margin:auto; padding:0; "><img src="https://fincubeocr.posicube.com/hanabank/images/ajax_loader.gif" style="width:50px; height:50px;"></div>',
+            );
+            }
+        },
+        complete: function () {
+            $("#div_ajax_load_image").hide();
+        },
+        });
+    }
+
+    // ====================================================================================================
+    function aes256Encode(secretKey, Iv, data) {
+        // console.log("");
+        // console.log("[aes256Encode] : [start]");
+        // console.log("[secretKey] : " + secretKey);
+        // console.log("[Iv] : " + Iv);
+        // console.log("[data] : " + data);
+        const cipher = CryptoJS.AES.encrypt(
+        data,
+        CryptoJS.enc.Utf8.parse(secretKey),
+        {
+            iv: CryptoJS.enc.Utf8.parse(Iv),
+            padding: CryptoJS.pad.Pkcs7,
+            mode: CryptoJS.mode.CBC,
+        },
+        );
+
+        aes256EncodeData = cipher.toString();
+        // console.log("");
+        // console.log("[aes256Encode] : [encode]");
+        // console.log("[data] : " + aes256EncodeData);
+        // console.log("");
+
+        return aes256EncodeData;
+    }
+
+    function aes256Decode(secretKey, Iv, data){
+        // console.log("");
+        // console.log("[aes256Decode] : [start]");
+        // console.log("[secretKey] : " + secretKey);
+        // console.log("[Iv] : " + Iv);
+        // console.log("[data] : " + data);
+
+        const cipher = CryptoJS.AES.decrypt(
+        data,
+        CryptoJS.enc.Utf8.parse(secretKey),
+        {
+            iv: CryptoJS.enc.Utf8.parse(Iv),
+            padding: CryptoJS.pad.Pkcs7,
+            mode: CryptoJS.mode.CBC,
+        },
+        );
+
+        aes256DecodeData = cipher.toString(CryptoJS.enc.Utf8);
+        console.log("");
+        console.log("[aes256Decode] : [decode]");
+        console.log("[data] : " + aes256DecodeData);
+        console.log("");
+
+        return aes256DecodeData;
+    }
+
+    function getIv() {
+        function s4() {
+        return (((1 + Math.random()) * 0x10000) | 0)
+            .toString(16)
+            .substring(1);
+        }
+
+        return (s4() + s4() + s4() + s4()).toString(16);
+    }
+
+    function getAesKey() {
+        function s4() {
+        return (((1 + Math.random()) * 0x10000) | 0)
+            .toString(16)
+            .substring(1);
+        }
+
+        return (s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4()).toString(
+        32,
+        );
+    }
+
+    function makeid() {
+        let result = "";
+        let characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let charactersLength = characters.length;
+        for (let i = 0; i < 16; i++) {
+        result += characters.charAt(
+            Math.floor(Math.random() * charactersLength),
+        );
+        }
+        console.log("random : " + result);
+        return result;
+    }
+
+    /** web platform: blob. */
+    const b64toBlob = (
+        b64Data,
+        contentType = "application/octet-stream",
+        sliceSize = 512,
+    ) => {
+        const byteCharacters = atob(b64Data);
+        const byteArrays = [];
+
+        for (
+        let offset = 0;
+        offset < byteCharacters.length;
+        offset += sliceSize
+        ) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            const byteNumbers = new Array(slice.length);
+            for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            const byteArray = new Uint8Array(byteNumbers);
+            byteArrays.push(byteArray);
+        }
+
+        const blob = new Blob(byteArrays, {type: contentType});
+        return blob;
+    };
+    
+    // function toBytesInt32 (num) {
+    //   arr = new ArrayBuffer(4); // an Int32 takes 4 bytes
+    //   view = new DataView(arr);
+    //   view.setUint32(0, num, false); // byteOffset = 0; litteEndian = false
+    //   return arr;
+    // }
+    // function concatenate(resultConstructor, ...arrays) {
+    //   let totalLength = 0;
+    //   for (const arr of arrays) {
+    //       totalLength += arr.length;
+    //   }
+    //   const result = new resultConstructor(totalLength);
+    //   let offset = 0;
+    //   for (const arr of arrays) {
+    //       result.set(arr, offset);
+    //       offset += arr.length;
+    //   }
+    //   return result;
+    // }
+    
+    // ====================================================================================================
+
+
+    function resultDisplay(json) {
+        document.getElementById("scanBoxMask").className =
+        "scan-box__mask--ready";
+        document.getElementById("scanBoxGuide").className =
+        "scan-box__guide--complete";
+        document.getElementById("scanBoxLoading").style.display = "none";
+        document.getElementById("scanContainer").style.display = "none";
+        document.getElementById("resultContainer").style.display = "block";
+
+        const obj = JSON.parse(json);
+        // console.log("obj : " + obj.idData.idType);
+        let resultDesc = "";
+        if (obj.idData.idType === 'korId') {
+            cardType = "ID Card";
+            resultDesc += `&bull;Scan Type: ID Card<br/>`;
+            resultDesc += `&bull;ID Number: ${obj.idData.idNumber}<br/>`;
+            resultDesc += `&bull;Name: ${obj.idData.idName}<br/>`;
+            resultDesc += `&bull;IssueDate: ${obj.idData.idIssueDate}<br/>`;
+            resultDesc += `&bull;Issuer: ${obj.idData.idIssueRegion}<br/>`;
+            resultDesc += `&bull;Overseas: ${obj.idData.idOverSeas}<br/>`;
+            resultDesc += `&bull;Face Score: ${obj.logData.faceScore}<br/>`;
+            resultDesc += `&bull;Color Score: ${obj.logData.colorScore}<br/>`;
+            resultDesc += `&bull;Specular Ratio: ${obj.logData.specularScore}<br/>`;
+        } else if (obj.idData.idType == 'drvId') {
+            cardType = "DriverLicense Card";
+            resultDesc += `&bull;Scan Type: DriverLicense Card<br/>`;
+            resultDesc += `&bull;ID Number: ${obj.idData.idNumber}<br/>`;
+            resultDesc += `&bull;Name: ${obj.idData.idName}<br/>`;
+            resultDesc += `&bull;IssueDate: ${obj.idData.idIssueDate}<br/>`;
+            resultDesc += `&bull;Issuer: ${obj.idData.idIssueRegion}<br/>`;
+            resultDesc += `&bull;DL Number: ${obj.idData.idLicenseNumber}<br/>`;
+            resultDesc += `&bull;Face Score: ${obj.logData.faceScore}<br/>`;
+            resultDesc += `&bull;Color Score: ${obj.logData.colorScore}<br/>`;
+            resultDesc += `&bull;Specular Ratio: ${obj.logData.specularScore}<br/>`;
+        } else if (obj.idData.idType == 'passport' || obj.idData.idType == 'PASSPORT') {
+            console.log("obj PASSPORT ==========> ");
+            cardType = "Passport";
+            resultDesc += `&bull;Scan Type: Passport<br/>`;
+            resultDesc += `&bull;Name: ${obj.idData.idNameKor}<br/>`;
+            resultDesc += `&bull;IssueDate: ${obj.idData.idIssueDate}<br/>`;
+            resultDesc += `&bull;Issuer: ${obj.idData.idIssueRegion}<br/>`;
+            resultDesc += `&bull;PassportType: ${obj.idData.idPassportType}<br/>`;
+            resultDesc += `&bull;PassportNumber: ${obj.idData.idPassportNumber}<br/>`;
+            resultDesc += `&bull;SurName: ${obj.idData.idSurName}<br/>`;
+            resultDesc += `&bull;GivenName: ${obj.idData.idGivenName}<br/>`;
+            resultDesc += `&bull;Nationality: ${obj.idData.idNationality}<br/>`;
+            resultDesc += `&bull;Date Of Birth: ${obj.idData.idDayOfBirthDay}<br/>`;
+            resultDesc += `&bull;Gender: ${obj.idData.idGender}<br/>`;
+            resultDesc += `&bull;Expiry Date: ${obj.idData.idExpiryDate}<br/>`;
+            resultDesc += `&bull;PersonalNumber: ${obj.idData.idPersonalNumber}<br/>`;
+            resultDesc += `&bull;Name ENG: ${obj.idData.idNameEng}<br/>`;
+            resultDesc += `&bull;MRZ 1: ${obj.idData.idMrz1.replace(/</gi, '&lt;')}<br/>`;
+            resultDesc += `&bull;MRZ 2: ${obj.idData.idMrz2}<br/>`;
+            resultDesc += `&bull;Face Score: ${obj.logData.faceScore}<br/>`;
+            resultDesc += `&bull;Color Score: ${obj.logData.colorScore}<br/>`;
+            resultDesc += `&bull;Specular Ratio: ${obj.logData.specularScore}<br/>`;
+        }
+
+        document.getElementById("resultBoxDesc").innerHTML = resultDesc;
+        resultDesc = "";
+
+        console.log("recog - cropIdImage : " + obj.cropIdImage);
+        cropIdImageData = obj.cropIdImage;
+        console.log("recog - maskedCropIdImage : " + obj.maskedCropIdImage);
+        maskedCropIdImageData = obj.maskedCropIdImage;
+        console.log("recog - fullFrameIdImage : " + obj.fullFrameIdImage);
+        fullFrameIdImageData = obj.fullFrameIdImage;
+        console.log("recog - photoIdImage : " + obj.photoIdImage);
+        photoIdImageData = obj.photoIdImage;
+
+        // 수동 모드 신분증 인식을 서버에서 결과 받아 display 한 후 서버 upload 용 info.json 
+        var idObj = new Object();
+            idObj.idType = obj.idData.idType;
+            idObj.idNumber = obj.idData.idNumber;
+            idObj.idName = obj.idData.idName;
+            idObj.idIssueDate = obj.idData.issueDate;
+            idObj.idIssueRegion  = obj.idData.idIssueRegion;
+            idObj.idOverSeas  = obj.idData.idOverSeas;
+            idObj.idLicenseNumber = obj.idData.idLicenseNumber;
+        var logObj = new Object();
+        // alert( parseFloat(obj.logData.faceScore.toFixed(5)) );
+        //alert( parseFloat("0.00000") );
+        var modFaceScore =
+            obj.logData.faceScore === 1 ? 1.0001 : obj.logData.faceScore;
+            modFaceScore = obj.logData.faceScore === 0 ? 0.0001 : modFaceScore;
+        var modColorScore =
+            obj.logData.colorScore === 1 ? 1.0001 : obj.logData.colorScore;
+            modColorScore = obj.logData.colorScore === 0 ? 0.0001 : modColorScore;
+            logObj.faceScore = modFaceScore;
+            logObj.colorScore = modColorScore;
+            logObj.specularScore = obj.logData.specularScore;
+            logObj.operationTime = 0;
+            logObj.detectRetry = 0;
+            logObj.recogRetry = 0;
+            logObj.faceRetry = 0;
+            logObj.colorRetry = 0;
+            logObj.specRetry = 0;
+            logObj.timeoutRetry = 0;
+            logObj.errorRetry = 0;
+            logObj.lastRetry = obj.logData.lastRetry;
+            logObj.fullMaskRoi = obj.logData.fullMaskRoi;
+
+        var upuloadObj = new Object();
+            upuloadObj.id = idObj;
+            upuloadObj.log = logObj;
+
+            infoJsonData = JSON.stringify(upuloadObj);
+            console.log("recog - info.json : " + infoJsonData);
+        
+        let img = new Image();
+        // img.src = "data:image/jpeg;base64," + obj.maskedCropIdImage;
+        img.src = "data:image/jpeg;base64," + obj.fullFrameIdImage;
+        img.onload = function () {
+            let resultCanvasEl = document.getElementById("resultCanvas");
+            let resultCtx = resultCanvasEl.getContext("2d");
+            resultCanvasEl.width = img.width;
+            resultCanvasEl.height = img.height;
+            resultCtx.drawImage(
+                img,
+                0,
+                0,
+                img.width,
+                img.height,
+                0,
+                0,
+                img.width,
+                img.height,
+            );
+        };
+    }
+    </script>
+</body>
+</html>
