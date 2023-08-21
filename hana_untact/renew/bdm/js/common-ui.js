@@ -40,7 +40,7 @@ var hanaUI = {
     /****************************
         Common UI
     *****************************/
-        layout: function () { 
+		layout: function () { 
             var windowHeight = $(window).innerHeight();
             var headerHeight = $('.app-header').innerHeight();
             var footerHeight = $('.app-footer').outerHeight();
@@ -1720,13 +1720,12 @@ function toggleLayer(obj) {
             toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
             if (tgly.find('.input__element').length > 0) {
-                // 가상키보드 관련 주석처리
                 // tgly.find('.input__element').eq(0).focus();
                 
                 // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 포커스
+                // hanaUI.formDepthEvent(0);
                 // $('.btn__form-next').hide();
                 // $('.btn__form-next-depth').show();
-                // hanaUI.formDepthEvent(0);
             }
 
         } else { 
@@ -1738,7 +1737,7 @@ function toggleLayer(obj) {
 
             // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 버튼 교체
             // $('.btn__form-next').show();
-            // $('.btn__form-next-depth').hide();
+            // $('.btn__form-next-depth').hide(); 
 
         }
         
@@ -2036,6 +2035,7 @@ function allActiveObj(type) {
 	
 	if(type){
 		$(".cont-form--animate").find(">:not('.formHide')").addClass("form--active");
+		$(".cont-form--animate").find(">:not('.formHide')").find(".form-item").removeClass("input--focus"); 
 		$('.btn-last-wrap').hide();
         $('.btn-next-wrap').show();
 	}else{
