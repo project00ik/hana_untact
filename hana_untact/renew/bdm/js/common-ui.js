@@ -56,9 +56,9 @@ var hanaUI = {
             }
             $('.app-content').css('min-height', containerHeight + 'px');
             
-            $('.popup-wrap').css('max-height', windowHeight + 'px');
-            $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
-            $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
+            // $('.popup-wrap').css('max-height','auto');
+            // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
+            // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', 'auto');
         
 
     
@@ -81,9 +81,9 @@ var hanaUI = {
                 $('body').css('min-height', windowHeightResize + 'px');
                 $('.app-content').css('min-height', containerHeightResize + 'px');
                 
-                $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                // $('.popup-wrap').css('max-height', 'auto');
+                // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
+                // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', 'auto');
                 
             });
             window.addEventListener('touchend', () => {
@@ -99,9 +99,9 @@ var hanaUI = {
                     $('body').css('min-height', windowHeightResize + 'px');
                     $('.app-content').css('min-height', containerHeightResize + 'px');
                     
-                    $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-                    $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-                    $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                    // $('.popup-wrap').css('max-height', 'auto');
+                    // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
+                    // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', 'auto');
                 }
 
             });
