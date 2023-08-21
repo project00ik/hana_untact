@@ -738,7 +738,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.alert .modal__btn--close {top: 2.4rem;}
 
 /* - 모달 팝업 : 슬라이드 팝업 (slide) */
-.popup-wrap.modal--slide {width: 100%; height: 100vh;}
+.popup-wrap.modal--slide {width: 100%; height: 100%; height: 100svh;}
 @supports (-webkit-touch-callout: none) { 
     .popup-wrap.modal--slide {width: 100%; height: 100%;}
 }
