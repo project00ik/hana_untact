@@ -50,15 +50,15 @@ var hanaUI = {
             
             // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
             // } 
-            $('body').css('min-height', windowHeight + 'px');
-            if ($('body').hasClass('scan-body')) { 
-                $('body').css('height', windowHeight + 'px');
-            }
+            // $('body').css('min-height', windowHeight + 'px');
+            // if ($('body').hasClass('scan-body')) { 
+            //     $('body').css('height', windowHeight + 'px');
+            // }
             $('.app-content').css('min-height', containerHeight + 'px');
             
-            $('.popup-wrap').css('max-height', windowHeight + 'px');
-            $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
-            $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
+            // $('.popup-wrap').css('max-height', windowHeight + 'px');
+            // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
+            // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
         
 
     
@@ -78,12 +78,12 @@ var hanaUI = {
                 // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
                     
                 // }
-                $('body').css('min-height', windowHeightResize + 'px');
-                $('.app-content').css('min-height', containerHeightResize + 'px');
+                // $('body').css('min-height', windowHeightResize + 'px');
+                // $('.app-content').css('min-height', containerHeightResize + 'px');
                 
-                $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                // $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+                // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
+                // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
                 
             });
             window.addEventListener('touchend', () => {
