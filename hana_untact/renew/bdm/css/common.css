@@ -710,15 +710,13 @@ label.asswitch-wrap input:checked + span::after {content:''; left: 1.9rem;}
 /* - 모달 팝업 : 공통 */
 body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overflow-scrolling: auto; }
 /* body.modal-open .app-footer {position: relative;} */
-.modal { display: none; position: absolute; z-index: -1; background-color: blue;}
+.modal { display: none; position: absolute; z-index: -1;}
 .modal .container { margin-top: 0; }
 .modal .container + .container { margin-top: 0.875rem; }
 .modal.is-open { display: block; position: fixed; top: 0; left: 0; z-index: 100;  display: flex; align-items: flex-end;}
 .modal__container { position: absolute; background: #fff; }
 .modal__contents { -webkit-transition: all .5s ease-in-out; transition: all .5s ease-in-out; position: relative; }
 .modal-scroll {max-height: 44.7rem; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch;}
-.popup-wrap.modal-full .modal__container {height: calc(100% - 5.6rem);}
-.popup-wrap.modal--slide.modal-full .modal__contents {height: 100% !important;}
 
 .popup-wrap {position: absolute; width: 100%; height: -webkit-fill-available; height: fill-available; padding-top: 0.1rem; padding-top: calc(0.1rem + constant(safe-area-inset-top)); padding-top: calc(0.1rem + env(safe-area-inset-top));}
 .popup-wrap:before { content: ''; display: none; width: 100%; height: 100%; background: #000; opacity: .5; }
@@ -761,7 +759,8 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
 .popup-wrap.modal--slide .btn-wrap .btn {width: auto;}
-.popup-wrap.modal--slide.modal-full .modal__contents {height: calc(100vh - 12rem); height: 100vh;}
+.popup-wrap.modal-full .modal__container {height: calc(100% - 5.6rem);}
+.popup-wrap.modal--slide.modal-full .modal__contents {height: 100% !important;}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
 .popup-wrap.modal--slide .btn-none .modal-select-list {padding-bottom: 1.8rem;}
