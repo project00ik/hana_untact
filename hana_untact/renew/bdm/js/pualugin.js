@@ -2089,8 +2089,8 @@
           // window.addEventListener("resize", () => {
           //   $('body').css('height', windowHeight + 'px').css('min-height', windowHeight + 'px');
 
-            // var windowHeightResize = $(window).innerHeight();
-            // $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+          //   // var windowHeightResize = $(window).innerHeight();
+          //   // $('.popup-wrap').css('max-height', windowHeightResize + 'px');
           // });
 
         //plugin.$win.scrollTop(0);

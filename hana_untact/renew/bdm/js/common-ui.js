@@ -5,7 +5,7 @@
     *****************************/
 
     /* Common UI */
-    //hanaUI.layout();
+    hanaUI.layout();
     hanaUI.header('.app-header, .modal__header, .main__header'); //헤더공통
     hanaUI.footer('.app-footer'); //푸터공통
     //hanaUI.resizeDelay(id, time, callback) //윈도우 리사이즈 딜레이
@@ -40,72 +40,72 @@ var hanaUI = {
     /****************************
         Common UI
     *****************************/
-        // layout: function () { 
-        //     var windowHeight = $(window).innerHeight();
-        //     var headerHeight = $('.app-header').innerHeight();
-        //     var footerHeight = $('.app-footer').outerHeight();
-        //     var containerHeight = windowHeight - headerHeight - footerHeight;
-        //     var innerSlidePopHeight = windowHeight - 120;
-        //     var innerPopHeight = windowHeight - 60;
+        layout: function () { 
+            var windowHeight = $(window).innerHeight();
+            var headerHeight = $('.app-header').innerHeight();
+            var footerHeight = $('.app-footer').outerHeight();
+            var containerHeight = windowHeight - headerHeight - footerHeight;
+            var innerSlidePopHeight = windowHeight - 120;
+            var innerPopHeight = windowHeight - 60;
             
-        //     // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-        //     // } 
-        //     $('body').css('min-height', windowHeight + 'px');
-        //     if ($('body').hasClass('scan-body')) { 
-        //         $('body').css('height', windowHeight + 'px');
-        //     }
-        //     $('.app-content').css('min-height', containerHeight + 'px');
+            // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+            // } 
+            $('body').css('min-height', windowHeight + 'px');
+            if ($('body').hasClass('scan-body')) { 
+                $('body').css('height', windowHeight + 'px');
+            }
+            $('.app-content').css('min-height', containerHeight + 'px');
             
-        //     $('.popup-wrap').css('max-height', windowHeight + 'px');
-        //     $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
-        //     $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
+            $('.popup-wrap').css('max-height', windowHeight + 'px');
+            $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
+            $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
         
 
     
-        //     let vh = window.innerHeight * 0.01;
-        //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
     
-        //     window.addEventListener("resize", () => {
-        //         console.log("resize");
-        //         let vh = window.innerHeight * 0.01;
-        //         document.documentElement.style.setProperty("--vh", `${vh}px`);
+            window.addEventListener("resize", () => {
+                console.log("resize");
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty("--vh", `${vh}px`);
     
-        //         var windowHeightResize = $(window).innerHeight();
-        //         var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
-        //         var innerSlidePopHeightResize = windowHeightResize - 120;
-        //         var innerPopHeightResize = windowHeightResize - 60;
+                var windowHeightResize = $(window).innerHeight();
+                var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
+                var innerSlidePopHeightResize = windowHeightResize - 120;
+                var innerPopHeightResize = windowHeightResize - 60;
 
-        //         // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+                // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
                     
-        //         // }
-        //         $('body').css('min-height', windowHeightResize + 'px');
-        //         $('.app-content').css('min-height', containerHeightResize + 'px');
+                // }
+                $('body').css('min-height', windowHeightResize + 'px');
+                $('.app-content').css('min-height', containerHeightResize + 'px');
                 
-        //         $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-        //         $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-        //         $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
+                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
                 
-        //     });
-        //     window.addEventListener('touchend', () => {
-        //         let vh = window.innerHeight * 0.01;
-        //         document.documentElement.style.setProperty('--vh', `${vh}px`);
+            });
+            window.addEventListener('touchend', () => {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-        //         var windowHeightResize = $(window).innerHeight();
-        //         var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
-        //         var innerSlidePopHeightResize = windowHeightResize - 120;
-        //         var innerPopHeightResize = windowHeightResize - 60;
+                var windowHeightResize = $(window).innerHeight();
+                var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
+                var innerSlidePopHeightResize = windowHeightResize - 120;
+                var innerPopHeightResize = windowHeightResize - 60;
 
-        //         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
-        //             $('body').css('min-height', windowHeightResize + 'px');
-        //             $('.app-content').css('min-height', containerHeightResize + 'px');
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+                    $('body').css('min-height', windowHeightResize + 'px');
+                    $('.app-content').css('min-height', containerHeightResize + 'px');
                     
-        //             $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-        //             $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-        //             $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
-        //         }
+                    $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+                    $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
+                    $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
+                }
 
-        //     });
-        // },
+            });
+        },
     header : function(obj){
         var $el = null;
         var $title = null;
