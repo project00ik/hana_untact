@@ -199,7 +199,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .content-area {margin-top: 4rem;}
 
 .softkey-up .app-main {padding-bottom: 0rem;}
-.softkey-up .app-content {height: auto; padding-bottom: 0rem;}
+.softkey-up .app-content { padding-bottom: 0rem;}/* height: auto; */
 
 /* - 로딩바 */
 .loading_page_area {position: fixed; left: 0; top: 0; z-index: 1000; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;}
