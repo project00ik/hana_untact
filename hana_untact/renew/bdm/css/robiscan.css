@@ -452,6 +452,8 @@ body {
 .scan-box__passport-mrz,
 .scan-box__mask--init,
 .scan-box__mask--ready{margin-top: 4rem; border: 0; border-radius: 18px;}
+.scan-box__passport-photo,
+.scan-box__passport-mrz{margin-top: 0; }
 .scan-box__guide--init::after,
 .scan-box__guide--ready::after,
 .scan-box__guide--detect::after,
