@@ -48,17 +48,17 @@ var hanaUI = {
             var innerSlidePopHeight = windowHeight - 120;
             var innerPopHeight = windowHeight - 60;
             
-            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-                $('body').css('min-height', windowHeight + 'px');
-                if ($('body').hasClass('scan-body')) { 
-                    $('body').css('height', windowHeight + 'px');
-                }
-                $('.app-content').css('min-height', containerHeight + 'px');
-                
-                $('.popup-wrap').css('max-height', windowHeight + 'px');
-                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
-                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
-            } 
+            // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+            // } 
+            $('body').css('min-height', windowHeight + 'px');
+            if ($('body').hasClass('scan-body')) { 
+                $('body').css('height', windowHeight + 'px');
+            }
+            $('.app-content').css('min-height', containerHeight + 'px');
+            
+            $('.popup-wrap').css('max-height', windowHeight + 'px');
+            $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeight + 'px');
+            $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeight + 'px');
         
 
     
@@ -75,15 +75,15 @@ var hanaUI = {
                 var innerSlidePopHeightResize = windowHeightResize - 120;
                 var innerPopHeightResize = windowHeightResize - 60;
 
-                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
-                    $('body').css('min-height', windowHeightResize + 'px');
-                    $('.app-content').css('min-height', containerHeightResize + 'px');
+                // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
                     
-                    $('.popup-wrap').css('max-height', windowHeightResize + 'px');
-                    $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
-                    $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
-
-                }
+                // }
+                $('body').css('min-height', windowHeightResize + 'px');
+                $('.app-content').css('min-height', containerHeightResize + 'px');
+                
+                $('.popup-wrap').css('max-height', windowHeightResize + 'px');
+                $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', innerSlidePopHeightResize + 'px');
+                $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', innerPopHeightResize + 'px');
                 
             });
             window.addEventListener('touchend', () => {
