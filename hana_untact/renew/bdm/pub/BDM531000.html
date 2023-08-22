@@ -40,6 +40,7 @@
                         <p class="page-tit label__tit" aria-hidden="true">전자금융 출금계좌로<br>등록해 주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">전자금융 출금계좌로<br>등록해 주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">%글로벌페이전용통장(원화+외화)%을<br>만들게요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">%글로벌페이전용통장(원화+외화)%을<br>만들게요</p>
                         <p class="page-tit label__tit tit--active" aria-hidden="false">%글로벌페이전용통장(원화+외화)%을<br>만들게요</p>
                     </div> 
                     <!--// 타이틀 -->
@@ -87,7 +88,7 @@
                             <!-- 에러메세지 -->
                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                         </div>
-                        <div class="form-area">
+                        <div class="form-area">                            
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
@@ -116,8 +117,9 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="input__wrap mt40">
+                        </div>
+                        <div class="form-area">                            
+                            <div class="input__wrap">
                                 <div class="form-item input input--disabled">
                                     <div class="input__inner">
                                         <label for="pw01" class="input__label" aria-hidden="true">기본통화</label>
@@ -274,7 +276,7 @@
         }
         function formFocusEvent03(){
             setTimeout(function(){
-                hanaUI.formFocusEvent(3, true, true);
+                hanaUI.formFocusEvent(4, true, true);
             },100);
         }
 
