@@ -733,14 +733,14 @@ var hanaUI = {
                 }
 
                 // 마지막 폼에서 버튼교체(계속)
-                $('.btn-last-wrap').hide();
-                $('.btn-next-wrap').show();
+                $('.btn-last-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+                $('.btn-next-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
                 // $('.btn__form-next').data('inputindex', inputArrIndex);
                 
             } else {
                 // 마지막 폼에서 버튼교체(확인)
-                $('.btn-next-wrap').hide();
-                $('.btn-last-wrap').show();
+                $('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+                $('.btn-last-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
                 if($('.label__tit').hasClass('last__tit')){
                     $('.label__tit').removeClass('tit--active');
                     $('.label__tit.last__tit').addClass('tit--active');
