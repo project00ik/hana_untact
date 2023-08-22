@@ -741,7 +741,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 /* - 모달 팝업 : 슬라이드 팝업 (slide) */
 .popup-wrap.modal--slide {width: 100%; height: 100%; background-color: pink;}
 .popup-wrap.modal--slide .modal__container {height: auto; max-height: calc(100% - 5.6rem); right: 0; left: 0; z-index: 101; border-radius: 2.4rem 2.4rem 0 0; padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
-.popup-wrap.modal--slide .modal__contents { max-height: calc(100vh); padding: 0 2.4rem; padding-bottom: 9.2rem; padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom)); overflow-y: auto; overflow-x: hidden;}
+.popup-wrap.modal--slide .modal__contents { max-height: calc(var(--vh, 1vh) * 100 - 12rem); padding: 0 2.4rem; padding-bottom: 9.2rem; padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom)); overflow-y: auto; overflow-x: hidden;}
 .popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll {min-height: 0; max-height: none; overflow: visible;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .tab-list-wrap .tab-con {max-height: calc(60vh - 4.8rem); overflow-x: hidden; overflow-y: auto;}
