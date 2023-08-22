@@ -59,13 +59,17 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .bar + .input {display: none;}
 .input.input--disabled + .bar,
 .input.input--focus + .bar,
+.input.input--fix + .bar,
 .input.input--on + .bar {display: block;}
 .input.input--disabled + .bar + .input,
 .input.input--focus + .bar + .input,
+.input.input--fix + .bar + .input,
 .input.input--on + .bar + .input {display: block;}
 .input.input--disabled + .bar + .input + .bar,
 .input.input--on + .bar + .input + .bar,
-.input.input--on + .bar + .input + .bar + .input {display: block;}
+.input.input--fix + .bar + .input + .bar,
+.input.input--on + .bar + .input + .bar + .input,
+.input.input--fix + .bar + .input + .bar + .input {display: block;}
 
 .id-photo-form .input__wrap .bar,
 .id-photo-form .input__wrap .input {display: block;}
@@ -104,7 +108,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__element:not(:readonly):focus ~ .input__label {color: #666; top: 1.0625rem; font-size: 0.8125rem; left: 0.875rem;}
 .input__element::-webkit-input-placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
 .input__element::placeholder {color: transparent; -webkit-transition: color ease-in-out .1s; transition: color ease-in-out .1s; font-weight: 700;}
+.input--fix .input__element::-webkit-input-placeholder,
 .input--on .input__element::-webkit-input-placeholder {color: #929292;}
+.input--fix .input__element::placeholder,
 .input--on .input__element::placeholder {color: #929292;}
 .input__element--right {text-align: right; padding-right: 0;}
 .input__element--right ~ .input__optional {padding-left: 0.25rem; padding-top: 1.3125rem; line-height: 1.2;}
@@ -123,9 +129,13 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--focus .input__remove-button {display: none;}
 .textarea--on .input__remove-button,
 .input--on .input__remove-button,
-.input--focus.input--on .input__remove-button {display: inline-block;}
+.input--fix .input__remove-button,
+.input--focus.input--on .input__remove-button,
+.input--focus.input--fix .input__remove-button {display: inline-block;}
 .input--on .input__element:disabled + .input__remove-button,
-.input--on .input__element:read-only + .input__remove-button {display: none;}
+.input--on .input__element:read-only + .input__remove-button,
+.input--fix .input__element:disabled + .input__remove-button,
+.input--fix .input__element:read-only + .input__remove-button {display: none;}
 
 /* .input--on .input__label + .input__element + .input__remove-button {display: inline-block;} */
 
@@ -146,8 +156,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input-date-error .input.error:before {border-bottom: 0.1rem solid #e53a4c;}
 .input-date-error .input.error .input__element {color: #e53a4c;}
 
-.input--on .input__label {color: #666; font-size: 1.6rem;}
-.input--on .input__optional {display: block;}
+.input--on .input__label,
+.input--fix .input__label {color: #666; font-size: 1.6rem;}
+.input--on .input__optional,
+.input--fix .input__optional {display: block;}
 /* .input--on.input--focus .input__remove-button {display: inline-block;} */
 
 /* .input--focus:before {border-color: #009591;} */
@@ -158,6 +170,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--focus .input__optional {display: block;}
 /* .input--focus .input__remove-button {display: inline-block;} */
 .input--focus .input__label, 
+.input--fix .input__label, 
 .input--on .input__label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem; white-space: nowrap;}
 
 .input.readonly .input__element {color: #2f3333;}
@@ -262,6 +275,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .input .time {display: none; margin: 0 0 0.8rem 0.8rem; white-space: nowrap; font-size: 1.3rem; line-height: 1.2; color: #757575;}
 .input__wrap .input.input--on .btn, 
 .input__wrap .input.input--on .time,
+.input__wrap .input.input--fix .btn,
+.input__wrap .input.input--fix .time,
 .input__wrap .input.input--focus .btn, 
 .input__wrap .input.input--focus .time {display: block;}
 
@@ -276,6 +291,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input__wrap .input.w30 .input__inner .input__element {text-align: center;}
 .input.no-label .input__inner .input__element,
 .input.input--on .input__inner .input__element,
+.input.input--fix .input__inner .input__element,
 .input.input--focus .input__inner .input__element {opacity: 1;}
 .input-item-left {margin: 2rem 1.2rem 0 0; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
 .input-item-right {margin: 1.3rem 0 0 1.2rem; font-size: 1.8rem; font-weight: 600; color: #666; white-space: nowrap;}
