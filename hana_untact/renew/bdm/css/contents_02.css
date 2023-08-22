@@ -171,6 +171,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--disabled .input__optional {color: #666;}
 
 .input__guide-txt {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
+.input__guide-txt.tp-green {color: #757575 !important; font-size: 1.3rem;}
 .input__guide-txt.input__note {padding-left: 2rem; background: url(../images/icon/ico-system-caution.png) 0 0 no-repeat; background-size: 1.6rem auto;}
 .input__guide-txt.input__note span {font-size: 1.3rem;}
 .input__guide-txt.input__error {margin-top: 0.9rem;}
