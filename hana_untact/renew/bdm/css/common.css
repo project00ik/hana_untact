@@ -997,7 +997,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .modal-text-wrap {padding-top: 3rem; padding-bottom: 1.2rem;}
 .modal-text-wrap
 .modal-text-wrap .text-bold {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 500; color: #000; word-break: keep-all; word-wrap: break-word;}
-.modal-text-wrap .text-center {margin-bottom: 2rem; font-size: 1.6rem; font-weight: 400; color: #333; word-break: keep-all; word-wrap: break-word; text-align: center;}
+.modal-text-wrap .text-center {font-size: 1.6rem; font-weight: 400; color: #333; word-break: keep-all; word-wrap: break-word; text-align: center;}
 
 /* select */
 .select-wrap .select {width: 100%; min-height: 5.9rem; position: relative;}
