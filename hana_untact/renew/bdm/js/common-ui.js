@@ -740,7 +740,11 @@ var hanaUI = {
             } else {
                 // 마지막 폼에서 버튼교체(확인)
                 $('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
-                $('.btn-last-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
+                if ($('.btn-last-wrap').find('.btn').hasClass('rd')) {
+                    $('.btn-last-wrap').removeClass('ft-btn-hide').show();
+                } else { 
+                    $('.btn-last-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
+                }
                 if($('.label__tit').hasClass('last__tit')){
                     $('.label__tit').removeClass('tit--active');
                     $('.label__tit.last__tit').addClass('tit--active');
