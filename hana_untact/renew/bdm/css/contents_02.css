@@ -396,7 +396,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .product-chk-list .checkbox-wrap label {width: 100%;}
 
 .list-txt-area .tit {margin-bottom: 0.4rem; font-size: 16px; font-weight: 500; color: #000;}
-.list-txt-area .txt {font-size: 1.4rem; color: #000; line-height: 1.2;}
+.list-txt-area .txt {font-size: 1.4rem; color: #666; line-height: 1.2;}
 .product-join-wrap {padding-top: 2.5rem;}
 .product-join-list {margin-top: 0.4rem; padding-bottom: 2rem; border-top: 0.1rem solid #e7e9ee; border-bottom: 0.1rem solid #e7e9ee;}
 .product-join-list > li {margin-top: 2rem; padding: 0 2rem 0 0; font-size: 0; position: relative;}
