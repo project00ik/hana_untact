@@ -183,9 +183,9 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input--disabled .input__remove-button {display: none !important;}
 .input--disabled .input__optional {color: #666;}
 
-.input__guide-txt {margin-top: 1.1rem; font-size: 1.3rem; color: #666;}
-.input__guide-txt.tp-green {color: #757575 !important; font-size: 1.3rem;}
-.input__guide-txt.input__note {padding-left: 2rem; background: url(../images/icon/ico-system-caution.png) 0 0 no-repeat; background-size: 1.6rem auto;}
+.input__guide-txt {margin-top: 1.1rem; font-size: 1.3rem; color: #757575;}
+.input__guide-txt.tp-green {font-size: 1.3rem;}
+.input__guide-txt.input__note {padding-left: 2rem; background: url(../images/icon/ico-system-caution.png) 0 0 no-repeat; background-size: 1.6rem auto; color: #666;}
 .input__guide-txt.input__note span {font-size: 1.3rem;}
 .input__guide-txt.input__error {margin-top: 0.9rem;}
 .input__wrap .checkbox-wrap > label {vertical-align: top; margin-top: 2.1rem;}
@@ -552,11 +552,11 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 .intro-wrap .intro-text .logo .img-ci {width: 100%; height: auto;}
 .intro-wrap .intro-text .title {
 	margin-top: 4.06rem; font-size: 3.6rem; line-height: 1.25; color: #333; opacity: 0;
-	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.1s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
+	animation-name: introTxt; animation-duration: 0.7s; animation-delay: 0.1s; animation-timing-function: ease-out; animation-fill-mode:forwards;
 }
 .intro-wrap .intro-text .title .point {
 	font-size: inherit; font-weight: 700; color: #009591; display: block; opacity: 0;
-	animation-name: introSubTxt; animation-duration: 0.5s; animation-delay: 0.3s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
+	animation-name: introSubTxt; animation-duration: 0.8s; animation-delay: 0.3s; animation-timing-function: ease-out; animation-fill-mode:forwards;
 }
 
 @keyframes intro {
@@ -587,6 +587,9 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 		opacity: 0;
 		margin-left: -3rem;
 	}
+	30%{
+		opacity: 0.3;
+	}
 	100% {
 		opacity: 1;
 		margin-left: 0;
@@ -597,15 +600,8 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 		opacity: 0;
 		margin-left: -3rem;
 	}
-	100% {
-		opacity: 1;
-		margin-left: 0;
-	}
-}
-@keyframes introSubTxt {
-	0% {
-		opacity: 0;
-		margin-left: -1.5rem;
+	30%{
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 1;
@@ -616,6 +612,22 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 	0% {
 		opacity: 0;
 		margin-left: -1.5rem;
+	}
+	30%{
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+		margin-left: 0;
+	}
+}
+@keyframes introSubTxt {
+	0% {
+		opacity: 0;
+		margin-left: -1.5rem;
+	}
+	30%{
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 1;
