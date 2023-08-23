@@ -162,15 +162,15 @@
 }
 
 .uface-content .video-box .video-box-inner .guideline-box {z-index: 105; position: absolute; top: 0; left: 0; width: 300px; height: 300px;}
-.uface-content .video-box .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 122px 150px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.uface-content .video-box .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: auto 198px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 .uface-content .video-box .video-box-inner .guideline-box .face.success {background-image: url(../images/face_guideline_success.svg);}
 .uface-content .video-box .video-box-inner .guideline-box .face.fail {background-image: url(../images/face_guideline_fail.svg);}
 
-.uface-content .video-box.faceL .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline_left.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 122px 150px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.uface-content .video-box.faceL .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline_left.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size:  auto 198px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 .uface-content .video-box.faceL .video-box-inner .guideline-box .face.success {background-image: url(../images/face_guideline_left_success.svg);}
 .uface-content .video-box.faceL .video-box-inner .guideline-box .face.fail {background-image: url(../images/face_guideline_left_fail.svg);}
 
-.uface-content .video-box.faceR .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline_right.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size: 122px 150px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.uface-content .video-box.faceR .video-box-inner .guideline-box .face {background-image: url(../images/face_guideline_right.svg); background-repeat: no-repeat; background-position: 50% 50%; background-size:  auto 198px; width: 200px; height: 200px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 .uface-content .video-box.faceR .video-box-inner .guideline-box .face.success {background-image: url(../images/face_guideline_right_success.svg);}
 .uface-content .video-box.faceR .video-box-inner .guideline-box .face.fail {background-image: url(../images/face_guideline_right_fail.svg);}
 
