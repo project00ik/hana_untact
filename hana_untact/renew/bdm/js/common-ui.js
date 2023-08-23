@@ -1898,7 +1898,6 @@ function aggreePageScroll() {
 function modalOpen(target) {
     var plugin_modal = $('body').data('plugin_modal');
 	plugin_modal.open('#'+ target);
-    console.log(target)
 }
 
 // 모달 닫기 js
