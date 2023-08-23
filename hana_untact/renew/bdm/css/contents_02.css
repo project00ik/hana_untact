@@ -420,7 +420,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .love-document-bottom .icon-pet {background: url(../images/icon/ico-love-pet.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
 
 /* 지점(직원)검색 */
-.branch-result-wrap {padding: 0 2.4rem 2.4rem; background-color: red;}
+.branch-result-wrap {padding: 0 2.4rem 2.4rem;}
 .branch-result-wrap .accordion-list-wrap {margin-top: 0.8rem;}
 .branch-result-wrap .accordion-list .top:before {right: 2.4rem;}
 

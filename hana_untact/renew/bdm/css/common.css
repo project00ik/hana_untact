@@ -740,7 +740,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 
 /* - 모달 팝업 : 슬라이드 팝업 (slide) */
 .popup-wrap.modal--slide {width: 100%; height: 100%;}
-.popup-wrap.modal--slide .modal__container { background-color: red;height: auto; max-height: calc(100% - 6rem); right: 0; left: 0; z-index: 101; border-radius: 2.4rem 2.4rem 0 0; padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
+.popup-wrap.modal--slide .modal__container {height: auto; max-height: calc(100% - 6rem); right: 0; left: 0; z-index: 101; border-radius: 2.4rem 2.4rem 0 0; padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents { max-height: calc(var(--vh, 1vh) * 100 - 11.8rem); padding: 0 2.4rem; padding-bottom: 9.2rem; padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom)); overflow-y: auto; overflow-x: hidden;}
 .popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll {min-height: 0; max-height: none; overflow: visible;}
@@ -760,7 +760,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
 .popup-wrap.modal--slide .btn-wrap .btn {width: auto;}
-.popup-wrap.modal-full .modal__container {height: calc(100% - 6rem); background-color: green;}
+.popup-wrap.modal-full .modal__container {height: calc(100% - 6rem);}
 .popup-wrap.modal--slide.modal-full .modal__contents {height: 100% !important;}
 .popup-wrap.modal--slide.modal-full .btn-wrap {background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
 .popup-wrap.modal--slide .tab-list-wrap .tab-list {padding: 0 2rem;}
