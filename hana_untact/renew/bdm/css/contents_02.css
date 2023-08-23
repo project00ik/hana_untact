@@ -552,11 +552,11 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 .intro-wrap .intro-text .logo .img-ci {width: 100%; height: auto;}
 .intro-wrap .intro-text .title {
 	margin-top: 4.06rem; font-size: 3.6rem; line-height: 1.25; color: #333; opacity: 0;
-	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.1s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
+	animation-name: introTxt; animation-duration: 0.7s; animation-delay: 0.1s; animation-timing-function: ease-out; animation-fill-mode:forwards;
 }
 .intro-wrap .intro-text .title .point {
 	font-size: inherit; font-weight: 700; color: #009591; display: block; opacity: 0;
-	animation-name: introSubTxt; animation-duration: 0.5s; animation-delay: 0.3s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
+	animation-name: introSubTxt; animation-duration: 0.8s; animation-delay: 0.3s; animation-timing-function: ease-out; animation-fill-mode:forwards;
 }
 
 @keyframes intro {
@@ -587,6 +587,9 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 		opacity: 0;
 		margin-left: -3rem;
 	}
+	30%{
+		opacity: 0.3;
+	}
 	100% {
 		opacity: 1;
 		margin-left: 0;
@@ -597,15 +600,8 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 		opacity: 0;
 		margin-left: -3rem;
 	}
-	100% {
-		opacity: 1;
-		margin-left: 0;
-	}
-}
-@keyframes introSubTxt {
-	0% {
-		opacity: 0;
-		margin-left: -1.5rem;
+	30%{
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 1;
@@ -616,6 +612,22 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 	0% {
 		opacity: 0;
 		margin-left: -1.5rem;
+	}
+	30%{
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+		margin-left: 0;
+	}
+}
+@keyframes introSubTxt {
+	0% {
+		opacity: 0;
+		margin-left: -1.5rem;
+	}
+	30%{
+		opacity: 0.3;
 	}
 	100% {
 		opacity: 1;
