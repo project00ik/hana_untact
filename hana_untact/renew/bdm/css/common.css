@@ -306,8 +306,8 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .cont-form--animate .form-area {display: none;}
 .cont-form--animate .form-area.form--active:last-child {animation: none;}
 .cont-form--animate .form-area.form--active {
-    display: block;
-	animation: formAreaShow 0.3s linear forwards;
+    display: block; margin-bottom: 0;
+	animation: formAreaShow 0.3s linear;
 }
 @keyframes formAreaShow {
 	0% {
