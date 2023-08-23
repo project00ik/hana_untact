@@ -552,33 +552,33 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 .intro-wrap .intro-text .logo .img-ci {width: 100%; height: auto;}
 .intro-wrap .intro-text .title {
 	margin-top: 4.06rem; font-size: 3.6rem; line-height: 1.25; color: #333; opacity: 0;
-	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.1s; animation-timing-function: linear; animation-fill-mode:forwards;
+	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.1s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
 }
 .intro-wrap .intro-text .title .point {
 	font-size: inherit; font-weight: 700; color: #009591; display: block; opacity: 0;
-	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.6s; animation-timing-function: linear; animation-fill-mode:forwards;
+	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.25s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
 }
 
 @keyframes intro {
 	0% {
-		top: -1rem;
+		top: -0.7rem;
 	}
 	50% {
-		top: 1rem;
+		top: 0.7rem;
 	}
 	100% {
-		top: -1rem;
+		top: -0.7rem;
 	}
 }
 @keyframes intro {
 	0% {
-		top: -1rem;
+		top: -0.7rem;
 	}
 	50% {
-		top: 1rem;
+		top: 0.7rem;
 	}
 	100% {
-		top: -1rem;
+		top: -0.7rem;
 	}
 }
 
