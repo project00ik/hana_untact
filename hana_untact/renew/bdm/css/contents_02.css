@@ -556,7 +556,7 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 }
 .intro-wrap .intro-text .title .point {
 	font-size: inherit; font-weight: 700; color: #009591; display: block; opacity: 0;
-	animation-name: introTxt; animation-duration: 0.5s; animation-delay: 0.25s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
+	animation-name: introSubTxt; animation-duration: 0.5s; animation-delay: 0.3s; animation-timing-function: ease-in-out; animation-fill-mode:forwards;
 }
 
 @keyframes intro {
@@ -596,6 +596,26 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 	0% {
 		opacity: 0;
 		margin-left: -3rem;
+	}
+	100% {
+		opacity: 1;
+		margin-left: 0;
+	}
+}
+@keyframes introSubTxt {
+	0% {
+		opacity: 0;
+		margin-left: -1.5rem;
+	}
+	100% {
+		opacity: 1;
+		margin-left: 0;
+	}
+}
+@keyframes introSubTxt {
+	0% {
+		opacity: 0;
+		margin-left: -1.5rem;
 	}
 	100% {
 		opacity: 1;
