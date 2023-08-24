@@ -2080,6 +2080,8 @@
             "overflow": "hidden"
           })
           .scrollTop(plugin.currentScrollTop);
+          
+          $('body').addClass('modal-open');
         
           // 팝업 열림 시 주소창 높이 대응
           // var windowHeight = $(window).innerHeight();

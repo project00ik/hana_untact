@@ -81,7 +81,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .wrap {min-height: 100%; vertical-align: top;} /* min-height: 100vh; */
 
 /* - 레이아웃 : 헤더 (header) */
-.app-header {width: 100%; height: 5.6rem; height: calc(5.6rem + env(safe-area-inset-top)); height: calc(5.6rem + constant(safe-area-inset-top)); display: flex; align-items: center; justify-content: center;  padding: 0; padding: calc(constant(safe-area-inset-top)) 0 0; padding: calc(env(safe-area-inset-top)) 0 0; position: fixed; top: 0; left: 0; z-index: 20; background: #fbfcfc;}
+.app-header {width: 100%; height: 5.6rem; height: calc(5.6rem + env(safe-area-inset-top)); height: calc(5.6rem + constant(safe-area-inset-top)); display: flex; align-items: center; justify-content: center;  padding: 0; padding: calc(constant(safe-area-inset-top)) 0 0; padding: calc(env(safe-area-inset-top)) 0 0; position: fixed; top: 0; left: 0; z-index: 20; background: #fbfcfc; display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center;}
 .app-header--transparent { background: transparent; }
 .app-header--transparent.is-active { background-color: #fbfcfc !important; }
 .app-header .btn-back {width: 3.2rem; height: 3.2rem; background: url(../images/icon/ico-header-backbtn.png) left 0 top 50% no-repeat; background-size: 100% auto; font-size: 0; position: absolute; top: 1.2rem; left: 1.4rem; z-index: 1;}
