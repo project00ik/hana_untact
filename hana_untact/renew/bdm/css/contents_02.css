@@ -238,6 +238,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .search-btn-wrap .input-search-btn::before {content: ''; position: absolute; top: 0; left: 0; z-index: 0; width: 100%; height: calc(100% + 0.1rem); border-bottom: 0.1rem solid #dddee4; box-shadow: none;}
 .search-btn-wrap .input-search-btn .input-search__inner {width: 100%; display: flex; align-items: center; position: relative;}
 .search-btn-wrap .input-search-btn .button-search__btn {width: 100%; flex: 1; padding: 2.8rem 0 0.4rem 0; outline: none; line-height: 1.5; background: none; position: relative; text-align: left; font-size: 1.8rem; font-weight: 600; color: #2f3333; z-index: 1; opacity: 0;}
+.search-btn-wrap .input-search-btn .button-search__btn > * {font-size: 1.8rem; font-weight: 600;}
 .search-btn-wrap .input-search-btn .btn-search {width: 2.4rem; height: 5.9rem; display: inline-block; font-size: 0; background: url(../images/icon/ico-system-input-search.svg) bottom 0.9rem right 0 no-repeat; background-size: 1.4rem auto; align-self: flex-end;}
 .search-btn-wrap.search--on .input-search-btn .search-label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
 .search-btn-wrap.search--active .input-search-btn .search-label {font-size: 1.6rem; color: #666; font-weight: 500; top: 0.8rem;}
