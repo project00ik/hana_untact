@@ -100,7 +100,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
     /* transition:all 0.8s ease-in-out; */
 	animation: btnChange 0.3s linear forwards;
 }
-.app-footer .btn-last-wrap {display: none;}
+
 .app-footer .btn-last-wrap.ft-btn-show {
     display: flex !important; opacity: 0;
 	animation: btnChangeIn 0.3s linear forwards;
