@@ -79,12 +79,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- 추가 :(화면설계서 v1.9) 가이드 텍스트  -->
+                            <p class="input__guide-txt input__note">비밀번호를 3회 잘못 입력하면, 해당 계좌인증을 할 수 없습니다. </p>
+                            <!--// 추가 -->
                         </div>
                         
                         <div class="form-area">
                             <div class="form-item select-wrap">
                                 <div class="select">
-                                    <div class="select-label tooltip-label">
+                                    <div class="select-label">출금계좌</div>
+                                    <!-- 삭제(화면설계서 v1.9) 가이드 텍스트로 수정됨 
+                                        <div class="select-label tooltip-label">
                                         <div class="tooltip-wrap">
                                             <p class="tooltip-title">출금계좌</p>
                                             <div class="tooltip" data-tooltip="paragraph">
@@ -92,20 +97,18 @@
                                                 <div class="tooltip-con" data-tooltip-panel="false" >
                                                     <div class="tooltip__column">
                                                         <div class="tooltip__description" data-tooltip="focus">
-                                                            <!-- tooltip 컨텐츠 영역 -->
                                                             <div class="inbox">
                                                                 <p class="text">
                                                                     선택하시는 계좌에 대한 비밀번호를 인증한 경우, 당행계좌 검증으로 추가인증 수단을 대체합니다.
                                                                 </p>
                                                             </div>
-                                                            <!-- // tooltip 컨텐츠 영역 -->
                                                         </div>
                                                     </div>
                                                     <button class="btn-close" data-tooltip-button="close" aria-label="툴팁 닫기" type="button"></button>
                                                 </div>
                                             </div>
                                         </div>                                        
-                                    </div>
+                                    </div> -->
                                     <div class="select__inner">
                                         <button type="button" class="button button-select__item form__move" data-element="modal__open" data-target="#modalSearch01" title="출금계좌 선택">
                                             <span>
@@ -126,6 +129,9 @@
                                     </div>
                                 </div>
                                 <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
+                                <!-- 추가 : 툴팁 삭제(화면설계서 v1.9) 가이드 텍스트로 수정됨  -->
+                                <p class="input__guide-txt input__note">선택한 출금계좌의 계좌비밀번호를 인증한 경우, 하나은행 계좌인증으로 추가인증합니다.</p>
+                                <!--// 추가 -->
                             </div>
                         </div>
 
@@ -134,7 +140,7 @@
                                 <div class="form-item input">
                                     <div class="input__inner">
                                         <label for="inputText09" class="input__label" aria-hidden="true">모바일OTP 비밀번호 확인</label>
-                                        <input type="password" class="input__element form__move" id="inputText09" title="모바일OTP 비밀번호 확인 입력" placeholder="영문,숫자,특수문자 포함 8~16자리" >
+                                        <input type="password" class="input__element form__move" id="inputText09" title="모바일OTP 비밀번호 확인 입력" placeholder="숫자 6자리 입력" >
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -148,7 +154,7 @@
                                 <div class="form-item input">
                                     <div class="input__inner">
                                         <label for="inputText08" class="input__label" aria-hidden="true">모바일OTP 비밀번호</label>
-                                        <input type="password" class="input__element form__move" id="inputText08" title="모바일OTP 비밀번호 입력" placeholder="영문,숫자,특수문자 포함 8~16자리" >
+                                        <input type="password" class="input__element form__move" id="inputText08" title="모바일OTP 비밀번호 입력" placeholder="숫자 6자리 입력" >
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -169,13 +175,16 @@
                                                     <div class="tooltip__column">
                                                         <div class="tooltip__description" data-tooltip="focus">
                                                             <div class="inbox">
-                                                                <p class="title">이용 중인 OTP 선택 </p>
+                                                                <p class="title">이용 중인 OTP</p>
                                                                 <p class="text">
-                                                                    하나은행 또는 타 은행에서 발급받아 사용하고 있는 OTP중 하나를 사용합니다.
+                                                                    하나은행 또는 다른 은행에서 발급받은 OTP 중 1개를 이용해요.
                                                                 </p>
                                                                 <p class="title">모바일 OTP</p>
                                                                 <p class="text">
-                                                                    앱 기반의 하나은행 전용 OTP로 실물이 없는 스마트폰 전용 무료 보안매체입니다. 일회용 비밀번호(숫자6자리) 입력 없이 사용 가능한 자동인증 방식을 지원합니다. (1인 1기기 이용가능)
+                                                                    하나은행 전용 OTP로 실물이 없는 스마트폰 전용 무료 보안매체예요.(앱 기반)
+                                                                </p>
+                                                                <p class="text">
+                                                                    1회용 비밀번호(숫자 6자리) 입력 없이 이용 가능한 자동 인증방식을 지원해요.(1인 1기기)
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -193,19 +202,26 @@
                                 </div>
                                 <p class="input__guide-txt input__error" aria-live="assertive">오류메세지</p>                                
                             </div>
-                            <div class="form-underbtn-wrap">
-                                <button type="button" class="btn sm light-gray" aria-label="모바일 OTP 안내" data-element="modal__open" data-target="#modalSlideInfo01">모바일 OTP 안내</button>
-                            </div>
                             <div class="select-result-box">
                                 <p class="title">미래테크놀로지</p>
                                 <p class="sub-text">01008032104321</p>
+                            </div>
+                            <div class="form-underbtn-wrap">
+                                <button type="button" class="btn sm light-gray" aria-label="모바일 OTP 안내" data-element="modal__open" data-target="#modalSlideInfo01">모바일 OTP 안내</button>
                             </div>
                             
                             <div class="form-move-wrap">
                                 <div class="form-area">
                                     <div class="form-item input input--on">
                                         <div class="input__inner">
-                                            <label for="inputText07" class="input__label" aria-hidden="true">1일 이체한도</label>
+                                            <label for="inputText07" class="input__label toast__label" aria-hidden="true">
+                                                1일 이체한도
+                                                <span class="toast-popup-wrap" aria-hidden="true">
+                                                    <span class="toast-popup">
+                                                        <span class="txt">이체한도를 변경할 수 있어요</span>
+                                                    </span>
+                                                </span>
+                                            </label>
                                             <input type="text" class="input__element form__move" id="inputText07" title="1일 이체한도 입력" placeholder=""  value="50,000,000원">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             <button type="button" class="btn gray sm" title="최대">최대</button>
@@ -217,7 +233,14 @@
                                 <div class="form-area last_form-area">
                                     <div class="form-item input input--on">
                                         <div class="input__inner">
-                                            <label for="inputText06" class="input__label" aria-hidden="true">1회 이체한도</label>
+                                            <label for="inputText06" class="input__label toast__label" aria-hidden="true">
+                                                1회 이체한도
+                                                <span class="toast-popup-wrap" aria-hidden="true">
+                                                    <span class="toast-popup">
+                                                        <span class="txt">이체한도를 변경할 수 있어요</span>
+                                                    </span>
+                                                </span>
+                                            </label>
                                             <input type="text" class="input__element form__move" id="inputText06" title="1회 이체한도 입력" placeholder="" value="10,000,000원">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             <button type="button" class="btn gray sm" title="최대">최대</button>
@@ -226,6 +249,41 @@
                                     <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                     <p class="input__guide-txt tp-green" aria-live="assertive">1,000만원</p>  
                                 </div>
+
+                                <!-- D : 개인뱅킹 일때 노출 -->
+                                <div class="info-wrap">
+                                    <div class="tg-text tg--area">
+                                        <div class="tg-btn" role="button" aria-expanded="false" onclick="toggleLayer(this);">
+                                            <button type="button">이용안내</button>
+                                        </div>
+                                        <div class="tg-text-cont tg--layer">
+                                            <p class="title">보안매체별 이체한도</p>
+                                            <ul class="bul-bar-wrap">
+                                                <li><span class="tp-green">이용 중인 OTP</span><br>1회 1억원, 1일 5억원</li>
+                                                <li><span class="tp-green">모바일 OTP</span><br>1회 1,000만원, 1일 5,000만원</li>
+                                                <li><span class="tp-green">자물쇠카드</span><br>1회 1,000만원, 1일 1,000만원</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--// D : 개인뱅킹 일때 노출 -->
+
+                                <!-- D : 기업뱅킹 일때 노출 -->
+                                <div class="info-wrap">
+                                    <div class="tg-text tg--area">
+                                        <div class="tg-btn" role="button" aria-expanded="false" onclick="toggleLayer(this);">
+                                            <button type="button">이용안내</button>
+                                        </div>
+                                        <div class="tg-text-cont tg--layer">
+                                            <p class="title">보안매체별 이체한도</p>
+                                            <ul class="bul-bar-wrap">
+                                                <li><span class="tp-green">이용 중인 OTP</span><br>1회 10억원, 1일 50억원</li>
+                                                <li><span class="tp-green">모바일 OTP</span><br>1회 1억원, 1일 5억원</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--// D : 기업뱅킹 일때 노출 -->
                             </div>
                         </div>
 
@@ -275,7 +333,14 @@
                                 <div class="form-area">
                                     <div class="form-item input">
                                         <div class="input__inner">
-                                            <label for="inputText07" class="input__label" aria-hidden="true">1일 이체한도</label>
+                                            <label for="inputText07" class="input__label toast__label" aria-hidden="true">
+                                                1일 이체한도
+                                                <span class="toast-popup-wrap" aria-hidden="true">
+                                                    <span class="toast-popup">
+                                                        <span class="txt">이체한도를 변경할 수 있어요</span>
+                                                    </span>
+                                                </span>
+                                            </label>
                                             <input type="text" class="input__element form__move" id="inputText07" title="1일 이체한도 입력" placeholder="" >
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             <button type="button" class="btn gray sm" title="최대">최대</button>
@@ -286,7 +351,14 @@
                                 <div class="form-area last_form-area">
                                     <div class="form-item input">
                                         <div class="input__inner">
-                                            <label for="inputText06" class="input__label" aria-hidden="true">1회 이체한도</label>
+                                            <label for="inputText06" class="input__label toast__label" aria-hidden="true">
+                                                1회 이체한도
+                                                <span class="toast-popup-wrap" aria-hidden="true">
+                                                    <span class="toast-popup">
+                                                        <span class="txt">이체한도를 변경할 수 있어요</span>
+                                                    </span>
+                                                </span>
+                                            </label>
                                             <input type="text" class="input__element form__move" id="inputText06" title="1회 이체한도 입력" placeholder="" >
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             <button type="button" class="btn gray sm" title="최대">최대</button>
@@ -393,7 +465,7 @@
 
                             <div class="checkbox-wrap mt20">
                                 <input type="checkbox" name="" id="checkbox02" title="폰뱅킹 가입(선택)">
-                                <label for="checkbox02" class="font-normal">폰뱅킹 가입(선택)</label>
+                                <label for="checkbox02">폰뱅킹 가입(선택)</label>
                             </div>
 
 						</div>
@@ -427,7 +499,7 @@
                                                     <!-- tooltip 컨텐츠 영역 -->
                                                     <!-- 개인뱅킹 선택 시 노출 -->
                                                     <div class="inbox">
-                                                        <p class="title">전자금융 안내</p>
+                                                        <p class="title-s">전자금융 안내</p>
                                                         <p class="text"><span class="tp-green">개인뱅킹: </span>일반적인 개인 거래</p>
                                                         <p class="text"><span class="tp-green">기업뱅킹: </span>사업자용 인증서 발급, 복수 이용자 지원, 수출입거래 등</p>
                                                         <p class="text">개인사업자는 용도에 따라 개인뱅킹 또는 기업뱅킹을 자유롭게 선택할 수 있어요.</p>
@@ -475,7 +547,7 @@
                     <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
                 </div>
                 <div class="btn-group-wrap btn-last-wrap" style="display: none"><!-- 확인 버튼(.btn-last-wrap) (마지막 폼에서 계속버튼을 눌렀을때 페이지 확인버튼 노출) -->
-                    <button type="button" class="btn" title="확인">확인</button>
+                    <button type="button" class="btn" title="다음">다음</button>
                 </div>
             </div>
         <!-- //footer -->
@@ -495,7 +567,7 @@
     <div id="modalSelect03" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__header">
-                <h1 class="title">보안매체</h1>
+                <h1 class="title">보안매체 선택</h1>
             </div>
             <div class="modal__contents btn-none">
                 <!-- 팝업 내용 -->                     
@@ -592,7 +664,7 @@
     <!-- //모달레이어 - 출금계좌 선택 -->
 
     <!-- 모달레이어 - 이용 중인 OTP 선택  선택 -->
-    <div id="modalSelect04" class="modal popup-wrap modal-full modal--slide" data-element="modal__element">
+    <div id="modalSelect04" class="modal popup-wrap modal--slide" data-element="modal__element">
         <div class="modal__container modal__container--interval" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__header">
