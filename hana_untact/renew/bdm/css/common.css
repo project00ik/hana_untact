@@ -685,7 +685,9 @@ label.asswitch-wrap input:checked + span::after {content:''; left: 1.9rem;}
 .tooltip .tooltip-con .inbox {padding: 1.4rem 1.4rem; font-size: 1.3rem; color: #666; font-weight: 300;}
 .tooltip .tooltip-con .inbox .title {margin-top: 0.8rem; font-size: 1.4rem; color: #009591; font-weight: 500;}
 .tooltip .tooltip-con .inbox .title:first-child {margin-top: 0;}
-.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.3rem; color: #666; font-weight: 300;}
+.tooltip .tooltip-con .inbox .title-s {font-size: 1.3rem; color: #000; line-height: 1.8rem; font-weight: 300;}
+.tooltip .tooltip-con .inbox .text {padding-right: 3.7rem; font-size: 1.3rem; color: #666; font-weight: 300; line-height: 1.8rem;}
+.tooltip .tooltip-con .inbox .text .tp-green {font-weight: 300;}
 .tooltip .tooltip-con .inbox .title + .text {margin-top: 0.1rem;}
 .tooltip .btn-close {position: absolute; right: 1.6rem; top: 1.4rem; display: block; width: 1.6rem; height: 1.6rem; background: url(../images/icon/ico-system-close-s.png) 0 0 no-repeat; background-size: 1.6rem 1.6rem;}
 
@@ -1100,6 +1102,8 @@ body.untact--app .popup-wrap.modal-full .modal__container {height: calc(100vh - 
 .dot-list.type02 > li + li {margin-top: 0.9rem;}
 .dot-list.type03 > li + li {margin-top: 2.1rem;}
 
+/* 이용안내 */
+.info-wrap .title {margin-bottom: 0.8rem; font-size: 14px; font-weight: 300; color: #000;}
 .bul-bar-wrap li {padding-left: 0.6rem; position: relative; font-size: 1.4rem; color: #333; font-weight: 300;}
 .bul-bar-wrap li::before {content: ''; display: block; width: 0.2rem; height: 0.1rem; background: #4b4b55; position: absolute; left: 0; top: 0.8rem;}
 .bul-bar-wrap li + li {margin-top: 0.8rem;}
