@@ -38,7 +38,7 @@
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
                         <p class="page-tit label__tit last" aria-hidden="true">외화적금 필수안내를<br>확인해 주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">만기시 SMS 수신여부를<br>확인해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">만기 안내를<br>받으시겠어요?</p>
                         <p class="page-tit label__tit" aria-hidden="true">만기 해지방법을<br>선택해 주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">자동이체금액을<br>입력해 주세요</p>
                         <p class="page-tit label__tit" aria-hidden="true">자동이체일을<br>선택해 주세요</p>
@@ -184,15 +184,15 @@
                                     </div>
                                     <div class="tg-text-cont tg--layer">
                                         <ul class="bul-bar-wrap">
-                                            <li>이 적금의 적립한도는 USD 1이상이며, 월간 최대 납입한도는 USD 10,000입니다.</li>
-                                            <li>입출금이 자유로운 원화예금에서만 이 적금으로 자동이체가 가능합니다.</li>
-                                            <li>매월 자동이체일에 출금계좌에서 자동이체돼요.</li>
-                                            <li>입출금통장 동시 가입 시에는 해당 계좌에서 처리됩니다.</li>
-                                            <li>자동이체 주기는 &lsquo;일&rsquo;, &lsquo;주&rsquo;, &lsquo;월&rsquo;중 선택할 수 있습니다.</li>
-                                            <li>자동이체는 은행 영업일에만 처리 됩니다.</li>
-                                            <li>해당 납입금액은 &lsquo;외화기준&rsquo;으로 신청하며, 자동이체는 이체지정일 15시 30분 이후에 이체시점에 고시된 전신환매도율이 적용되어 1회 시행됩니다.</li>
-                                            <li>적금 만기 재예치시 자동이체도 자동연장됩니다.</li>
-                                            <li>단, 이체 지정일이 적금 재예치일과 동일한 경우 재예치일 당일에도 자동이체에 의한 적금 납입이 처리됩니다.</li>
+                                            <li>이 적금의 적립한도는 USD 1 이상이며, 월 최대 납입한도는 USD 10,000입니다.</li>
+                                            <li>자유 입출금이 가능한 원화예금에서만 이 적금으로 자동이체할 수 있습니다.</li>
+                                            <li>자동이체는 가입 시 출금계좌로 설정됩니다.</li>
+                                            <li>입출금통장 동시 가입 시, 자동이체는 입출금통장으로 설정됩니다.</li>
+                                            <li>자동이체주기는 매일/매주/매월 중 선택할 수 있습니다.</li>
+                                            <li>자동이체는 은행 영업일에만 가능합니다. </li>
+                                            <li>해당 납입금액은 ‘외화기준’으로 신청하며, 자동이체는 이체 시점 고시된 전신환매도율을 적용해 이체지정일 15:30 이후 1회 진행됩니다.</li>
+                                            <li>적금 만기 재예치 시 자동이체도 자동으로 연장됩니다.</li>
+                                            <li>이체지정일이 적금 재예치일과 동일한 경우 재예치 당일에도 자동이체로 적금이 납입됩니다.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -410,8 +410,8 @@
     <div id="modalAlert" class="modal popup-wrap alert" data-element="modal__element" >
         <div class="modal__container" data-element="modal__element-container">
             <div class="modal__contents">
-                <p class="text-sub txt-align-l">입출금통장과 일달러외화적금을 같이 신규하는 경우 최초 신규 금액은 <span class="tp-green">USD 1</span>만 가능합니다.</p>
-                <p class="text-sub txt-align-l">추가인증(가상계좌이체) 후 남은 잔액은 신규된 하나은행 입출금통장으로 입금됩니다.</p>
+                <p class="text-sub txt-align-l">입출금통장과 일달러 외화적금을 동시 개설하는 경우 가입금액은 <span class="tp-green">USD 1</span>로만 가능합니다. </p>
+                <p class="text-sub txt-align-l">추가인증(가상계좌이체) 후 남은 잔액은 새로 만든 하나은행 입출금통장으로 입금됩니다.</p>
             </div>
             <div class="btn-wrap">
                 <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
@@ -522,13 +522,13 @@
             <div class="modal__contents">
                 <p class="con-title">만기 재예치 동의서</p>
                 <div class="text-sub txt-align-l pt15">
-                    <p>만기 재예치를 신청하시면,</p>
-                    <ul>
-                        <li>1. 만기일에 납입 원금은 전과 동일한 기간으로 자동 재예치 처리합니다.</li>
-                        <li>2. <span class="tp-green">이때 발생한 이자는 재예치 시점의 전신환매입율로 환전 되어 사전에 지정한 본인명의의 입출금이 자유로운 원화예금으로 입금됩니다.<br>(비대면계좌개설로 적금을 개설하신 경우에는 최초납입금이 출금된 원화예금으로 입금)</span></li>
-                        <li>3. 재예치 신청 시 이 적금에 기존에 등록된 <span class="tp-green">자동이체도 자동 연장됩니다.</span></li>
-                        <li>4. 재예치된 적금의 이율은 재예치일 당시 영업점과 인터넷홈페이지에 고시한 자유적립외화적금이율의 가입기간 해당 이율을 적용합니다.</li>
-                        <li>5. 압류 등 법적으로 지급제한이 있거나 만기일 전에 고객이 자동재예치를 해제하는 등 기타 재예치를 할 수 없는 경우에는 재예치 대상에서 제외됩니다.</li>
+                    <ul class="num-list">
+                        <li>만기일에 납입 원금은 이전과 동일한 기간으로 자동 재예치됩니다.</li>
+                        <li>이때 발생한 이자는 재예치 시점의 전신환매입율로 환전되어 사전에 지정한 본인 명의 입출금이 자유로운 원화예금으로 입금됩니다.<br>
+                            (비대면으로 적금을 개설한 경우 최초납입금이 출금된 원화예금으로 입금)</li>
+                        <li>재예치 신청 시, 이 적금에 기존 등록한 자동이체도 자동으로 연장됩니다.</li>
+                        <li>재예치된 적금의 이율은 재예치 시점에 하나은행 영업점과 홈페이지에 고시한 자유적립 외화적금이율을 가입기간에 맞추어 적용합니다.</li>
+                        <li>압류 등 법적 지급제한이 있거나 만기일 전에 만기 재예치를 해제해 재예치를 할 수 없는 경우 재예치가 실행되지 않습니다.</li>
                     </ul>
                 </div>                
             </div>
