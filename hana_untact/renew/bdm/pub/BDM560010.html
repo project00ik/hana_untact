@@ -37,12 +37,12 @@
                 <div class="container">
                     <!-- 타이틀 -->
                     <div class="page-tit-wrap">
-                        <p class="page-tit label__tit" aria-hidden="true">폰 뱅킹 전화번호<br>지정여부를 선택해 주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">폰 뱅킹 전화번호<br>지정여부를 선택해 주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">폰 뱅킹 이체한도를<br>확인해 주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">폰 뱅킹 이체한도를<br>확인해 주세요</p>
-                        <p class="page-tit label__tit" aria-hidden="true">폰 뱅킹 가입을<br>확인해 주세요</p>
-                        <p class="page-tit label__tit tit--active" aria-hidden="false">폰 뱅킹 가입을<br>확인해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">폰뱅킹 전화번호를<br>지정하시겠어요?</p>
+                        <p class="page-tit label__tit" aria-hidden="true">폰뱅킹 전화번호를<br>지정하시겠어요?</p>
+                        <p class="page-tit label__tit" aria-hidden="true">폰뱅킹 이체한도를<br>확인해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">폰뱅킹 이체한도를<br>확인해 주세요</p>
+                        <p class="page-tit label__tit" aria-hidden="true">폰뱅킹 가입정보를<br>확인해 주세요</p>
+                        <p class="page-tit label__tit tit--active" aria-hidden="false">폰뱅킹 가입정보를<br>확인해 주세요</p>
                     </div>
                     <!--// 타이틀 -->
                     <div class="cont-wrap cont-revers cont-form--animate">    <!--  -->
@@ -65,15 +65,15 @@
                         <div class="form-area">
 
                             <div class="form-area">
-                                <p class="page-tit-sub">폰 뱅킹 전화번호</p>
+                                <p class="page-tit-sub">폰뱅킹 전화번호 지정</p>
                                 <div class="tab-radio-wrap">
                                     <div class="tab-radio">
-                                        <input type="radio" name="radio02" id="radio02-01" title="지정안함" onclick="formHideEvent('form-hide-case')">
-                                        <label for="radio02-01">지정안함</label>
+                                        <input type="radio" name="radio02" id="radio02-01" title="지정 안함" onclick="formHideEvent('form-hide-case')">
+                                        <label for="radio02-01">지정 안함</label>
                                     </div>
                                     <div class="tab-radio">
-                                        <input type="radio" name="radio02" id="radio02-02" class="modal-btn__chk" title="지정함" onclick="formShowEvent('form-hide-case');">
-                                        <label for="radio02-02">지정함</label>
+                                        <input type="radio" name="radio02" id="radio02-02" class="modal-btn__chk" title="지정" onclick="formShowEvent('form-hide-case');">
+                                        <label for="radio02-02">지정</label>
                                     </div>
                                 </div>
                                 <p class="input__guide-txt input__error" aria-live="assertive">이미 등록되어 있는 번호입니다.</p>
@@ -92,13 +92,13 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <input type="text" class="input__element form__move" id="inputText07" title="1일 이체한도 입력" placeholder=""  value="50,000,000원">
+                                    <input type="text" class="input__element form__move" id="inputText07" title="1일 이체한도 입력" placeholder=""  value="250,000,000원">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="button" class="btn gray sm" title="최대">최대</button>
                                 </div>
                             </div>
                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
-                            <p class="input__guide-txt tp-green" aria-live="assertive">5,000만원</p>                                   
+                            <p class="input__guide-txt tp-green" aria-live="assertive">2억 5,000만원</p>                                   
                         </div>
 
                         <div class="form-area">
@@ -112,13 +112,13 @@
                                             </span>
                                         </span>
                                     </label>
-                                    <input type="text" class="input__element form__move" id="inputText06" title="1회 이체한도 입력" placeholder="" value="10,000,000원">
+                                    <input type="text" class="input__element form__move" id="inputText06" title="1회 이체한도 입력" placeholder="" value="50,000,000원">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="button" class="btn gray sm" title="최대">최대</button>
                                 </div>
                             </div>
                             <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
-                            <p class="input__guide-txt tp-green" aria-live="assertive">1,000만원</p>  
+                            <p class="input__guide-txt tp-green" aria-live="assertive">5,000만원</p>  
 
                             <div class="info-wrap">
                                 <div class="tg-text tg--area">
@@ -126,10 +126,11 @@
                                         <button type="button">이용안내</button>
                                     </div>
                                     <div class="tg-text-cont tg--layer">
+                                        <p class="title">보안매체별 이체한도</p>
                                         <ul class="bul-bar-wrap">
-                                            <li><span class="tp-green">이용 중인 OTP 선택 </span><br>최대 1회 5천만원, 1일 2.5억원</li>
-                                            <li><span class="tp-green">모바일 OTP</span><br>최대 1회 1천만원, 1일 5천만원</li>
-                                            <li><span class="tp-green">자물쇠카드</span><br>최대 1회 1천만원, 1일 1천만원</li>
+                                            <li><span class="tp-green">이용 중인 OTP</span><br>1회 5,000만원, 1일 2.5억원</li>
+                                            <li><span class="tp-green">모바일 OTP</span><br>1회 1,000만원, 1일 5,000만원</li>
+                                            <li><span class="tp-green">자물쇠카드</span><br>1회 1,000만원, 1일 1,000만원</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -140,8 +141,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <label for="inputText05" class="input__label" aria-hidden="true">폰 뱅킹 비밀번호 확인</label>
-                                        <input type="password" class="input__element form__move" id="inputText05" title="폰 뱅킹 비밀번호 확인 입력" placeholder="숫자 6자리 입력" >
+                                        <label for="inputText05" class="input__label" aria-hidden="true">폰뱅킹 비밀번호 확인</label>
+                                        <input type="password" class="input__element form__move" id="inputText05" title="폰뱅킹 비밀번호 확인 입력" placeholder="숫자 6자리 입력" >
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -154,8 +155,8 @@
                             <div class="input__wrap">
                                 <div class="form-item input">
                                     <div class="input__inner">
-                                        <label for="inputText04" class="input__label" aria-hidden="true">폰 뱅킹 비밀번호</label>
-                                        <input type="password" class="input__element form__move" id="inputText04" title="폰 뱅킹 비밀번호 입력" placeholder="숫자 6자리 입력" >
+                                        <label for="inputText04" class="input__label" aria-hidden="true">폰뱅킹 비밀번호</label>
+                                        <input type="password" class="input__element form__move" id="inputText04" title="폰뱅킹 비밀번호 입력" placeholder="숫자 6자리 입력" >
                                         <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     </div>
                                 </div>
@@ -169,9 +170,8 @@
                                     </div>
                                     <div class="tg-text-cont tg--layer">
                                         <ul class="bul-bar-wrap">
-                                            <li>폰 뱅킹 비밀번호는 숫자 6자리로 구성됩니다.</li>
                                             <li>주민등록번호, 생년월일, 전화번호(휴대폰번호)는 등록할 수 없습니다.</li>
-                                            <li>동일숫자 또는 연속된 숫자는 등록할 수 없습니다. (ex.1111, 1234)</li>
+                                            <li>동일하거나 연속된 숫자는 등록할 수 없습니다.(예. 1111, 1234)</li>
                                         </ul>
                                     </div>
                                 </div>
