@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">계좌정보</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 4단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step on">4</li>
+                            <li class="stepper__step">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    
+                </div>
+            </div>
+            <!-- footer -->
+            <div class="app-footer">
+                <div class="btn-group-sub-wrap btn-next-wrap">
+                    <button type="button" class="btn rd btn__form-next" aria-label="계속">계속</button>
+                    <!-- 2depth 폼 이동 용 버튼 -->
+                    <button type="button" class="btn rd btn__form-next-depth" aria-label="계속">계속</button>
+                </div>
+                <div class="btn-group-wrap btn-last-wrap" style="display: none;">
+                    <button type="button" class="btn" title="다음"  data-element="modal__open" data-target="#modalSlideRate" >다음</button><!-- D: 활성화시 disabled="disabled" 삭제 -->
+                </div>
+            </div>
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 슬라이드 버튼X -->
+    
+    <!-- 모달레이어 - 상품 금리 확인 -->
+    <div id="modalSlideRate" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">이대로 가입하시겠어요?</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="popup-join-con">
+                    <!-- list-wrap type01 -->
+                    <div class="list-wrap type01">
+                        <dl>
+                            <dt>가입금액</dt>
+                            <dd>200,000원</dd>
+                        </dl>
+                        <dl>
+                            <dt>납입회차</dt>
+                            <dd>1회</dd>
+                        </dl>
+                        <dl>
+                            <dt>현재적용금리</dt>
+                            <dd class="tp-green">2.10%</dd>
+                        </dl>
+                        <dl>
+                            <dt>자동이체</dt>
+                            <dd>매월 18일(USD 100)</dd>
+                        </dl>
+                        <dl>
+                            <dt>출금계좌</dt>
+                            <dd>하나은행<br>123-123456-12345</dd>
+                        </dl>
+                    </div>
+                    <!-- // list-wrap -->
+                    <ul class="dot-list3">
+                        <li>신규 비밀번호는 출금계좌 비밀번호와 동일하게 설정됩니다.</li>
+                    </ul>
+                    <div class="checkbox-wrap">
+                        <input type="checkbox" name="" id="checkbox04" checked="">
+                        <label for="checkbox04">가입기간에 따라 최종 적용금리는 달라질 수 있으며, 우대금리는 가입일로부터 2년 이상 유지하여야 적용됨을 충분히 이해하고 확인하였습니다. </label>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="가입">가입</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 상품 금리 확인 -->
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
+            // hanaUI.formFocusEvent(6, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));
+            
+             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalSlideRate');
+        })
+        
+    </script>
+    
+</body>
+</html>
