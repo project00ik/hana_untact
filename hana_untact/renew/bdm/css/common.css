@@ -78,7 +78,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 레이아웃 (layout) --- */
-.wrap {min-height: 100%; vertical-align: top;}
+.wrap {min-height: 100%; vertical-align: top; min-height: 100vh !important; background-color: lightblue;}
 
 /* - 레이아웃 : 헤더 (header) */
 .app-header {
