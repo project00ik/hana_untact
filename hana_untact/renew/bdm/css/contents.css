@@ -247,7 +247,7 @@
 .user-guide-wrap .ci-wrap {text-align: center;}
 .user-guide-wrap .ci-wrap img {display: inline-block; width: 7.5rem; height: 2rem;}
 */
-.user-guide-title {margin-top: 3.2rem; font-size: 2.2rem; color: #000; font-weight: 500; text-align: center;}
+.user-guide-title {padding-top: 3.2rem; font-size: 2.2rem; color: #000; font-weight: 500; text-align: center;}
 .box-gray-list {margin-top: 4rem;}
 .box-gray {display: flex; align-items: center; padding: 2.4rem 0; background-color: #f2f5f7; border-radius: 1.8rem;}
 .box-gray .text-wrap {padding-left: 7.2rem;}
