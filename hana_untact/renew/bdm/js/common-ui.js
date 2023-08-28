@@ -50,11 +50,11 @@ var hanaUI = {
             
             // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
             // } 
-            $('body').css('min-height', windowHeight + 'px');
-            if ($('body').hasClass('scan-body')) { 
-                $('body').css('height', windowHeight + 'px');
-            }
-            $('.app-content').css('min-height', containerHeight + 'px');
+            // $('body').css('min-height', windowHeight + 'px');
+            // if ($('body').hasClass('scan-body')) { 
+            //     $('body').css('height', windowHeight + 'px');
+            // }
+            //$('.app-content').css('min-height', containerHeight + 'px');
             
             // $('.popup-wrap').css('max-height','auto');
             // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
@@ -78,8 +78,8 @@ var hanaUI = {
                 // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
                     
                 // }
-                $('body').css('min-height', windowHeightResize + 'px');
-                $('.app-content').css('min-height', containerHeightResize + 'px');
+                //$('body').css('min-height', windowHeightResize + 'px');
+                //$('.app-content').css('min-height', containerHeightResize + 'px');
                 
                 // $('.popup-wrap').css('max-height', 'auto');
                 // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
