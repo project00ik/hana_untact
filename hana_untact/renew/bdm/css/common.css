@@ -78,7 +78,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 레이아웃 (layout) --- */
-.wrap {min-height: 100%; vertical-align: top; min-height: 100vh !important; background-color: lightblue;}
+.wrap {min-height: 100%; vertical-align: top;}
 
 /* - 레이아웃 : 헤더 (header) */
 .app-header {
@@ -200,6 +200,8 @@ body.softkey-up .button-select__item {pointer-events: none;}
     padding-bottom: calc(9.2rem); 
     padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); 
     padding-bottom: calc(9.2rem  + env(safe-area-inset-bottom));
+    height: 100vh;
+    background-color: lightcoral;
 }
 /* .app-content {height: 100vh; height: calc(var(--vh, 1vh) * 100); } */
 .app-main.footer-none {padding-bottom:0;padding-bottom:constant(safe-area-inset-bottom);padding-bottom:env(safe-area-inset-bottom);}
