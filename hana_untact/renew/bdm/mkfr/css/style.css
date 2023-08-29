@@ -207,7 +207,8 @@
 .uface-content .textguide-box strong {font-weight: 600;}
 .uface-content .textguide-box.left {text-align: left;}
 .uface-content .textguide-box .big {font-size: 24px; display: block; margin-bottom: 16px; font-weight: 600;}
-.uface-content .textguide-box {width: 100%; height: 84px; padding: 0 2.4rem; background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.uface-content .textguide-box {width: 100%; height: 84px; padding: 0 2.4rem; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+.popup-wrap .uface-content .textguide-box {background: #fff;}
 .uface-content .textguide-box .text {color: #333; font-size: 1.6rem;}
 .uface-content .completion-box {text-align: center;}
 .uface-content .completion-box h2 {margin-bottom: 16px;}
