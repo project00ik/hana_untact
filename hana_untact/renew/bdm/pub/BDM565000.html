@@ -66,7 +66,7 @@
                                             관리점/직원 찾기
                                             <span class="toast-popup-wrap" aria-hidden="true">
                                                 <span class="toast-popup type02">
-                                                    <span class="txt">해당 영업점의 추천직원을 입력할 수 있어요</span>
+                                                    <span class="txt">해당 영업점의 직원을 선택할 수 있어요</span>
                                                 </span>
                                             </span>
                                         </label>
@@ -102,7 +102,7 @@
                                             관리점/직원 찾기
                                             <span class="toast-popup-wrap" aria-hidden="true">
                                                 <span class="toast-popup type02">
-                                                    <span class="txt">해당 영업점의 추천직원을 입력할 수 있어요</span>
+                                                    <span class="txt">해당 영업점의 직원을 선택할 수 있어요</span>
                                                 </span>
                                             </span>
                                         </label>
@@ -163,8 +163,8 @@
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
-                                        <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="이용한도 해제 코드 등록(선택)">
-                                        <label for="search_checkbox04" class="tooltip-label">이용한도 해제 코드 등록(선택)</label>
+                                        <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="한도해제코드 등록(선택)">
+                                        <label for="search_checkbox04" class="tooltip-label">한도해제코드 등록(선택)</label>
                                         <!-- 툴팁 -->
                                         <div class="tooltip-wrap tooltip-inline">
                                             <p class="tooltip-title"></p>
@@ -176,7 +176,7 @@
                                                             <!-- tooltip 컨텐츠 영역 -->
                                                             <div class="inbox">
                                                                 <p class="text">
-                                                                    영업점에서 이용한도 해제코드를 부여 받은 경우 체크해서 입력해 주세요
+                                                                    영업점에서 한도해제코드를 받은 경우, 체크 후 코드를 등록해 주세요.
                                                                 </p>
                                                             </div>
                                                             <!-- // tooltip 컨텐츠 영역 -->
@@ -193,7 +193,7 @@
                                     <div class="form-area mt0">
                                         <div class="form-item input no-label">
                                             <div class="input__inner">
-                                                <input type="password" id="inputText01" class="input__element form__move" title="이용한도 해제 코드 등록(선택)" placeholder="이용한도 해제 코드">
+                                                <input type="password" id="inputText01" class="input__element form__move" title="한도해제코드 등록(선택)" placeholder="영문, 숫자 6자리 입력">
                                                 <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             </div>
                                         </div>
@@ -201,7 +201,7 @@
                                         <!-- 에러메세지 -->
                                         <p class="input__guide-txt input__error" aria-live="assertive">에러메세지</p>
                                         <!-- 가이드 텍스트 -->
-                                        <p class="input__guide-txt input__note">영문, 숫자 6자리 입력</p>
+                                        <!-- 삭제 (화면설계 1.9v) <p class="input__guide-txt input__note">영문, 숫자 6자리 입력</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -260,7 +260,7 @@
                                 -->
                                 <!-- // input -->
                                 <div class="input__inner">
-                                    <input type="text" id="searchInput" class="input__element input--search" title="영업점명 또는 영업점코드 검색어 입력폼" placeholder="영업점명 또는 영업점코드 입력">
+                                    <input type="text" id="searchInput" class="input__element input--search" title="영업점명 또는 영업점코드 검색어 입력폼" placeholder="영업점명 또는 영업점코드">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="submit" class="btn-search" aria-label="검색">검색</button>
                                 </div>
@@ -276,7 +276,7 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">총 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="accordion-list-wrap">
                                 <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
                                     <li data-element="accordion__item">
@@ -575,7 +575,7 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">총 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="staff-list-wrap">
                                 <ul class="line-check-list align-justify">
                                     <li>
@@ -667,7 +667,7 @@
                                 -->
                                 <!-- // input -->
                                 <div class="input__inner">
-                                    <input type="text" id="searchInput02" class="input__element input--search" title="영업점명 또는 영업점코드 검색어 입력폼" placeholder="영업점명 또는 영업점코드 입력">
+                                    <input type="text" id="searchInput02" class="input__element input--search" title="영업점명 또는 영업점코드 검색어 입력폼" placeholder="영업점명 또는 영업점코드">
                                     <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                     <button type="submit" class="btn-search" aria-label="검색">검색</button>
                                 </div>
@@ -683,7 +683,7 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">총 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="accordion-list-wrap">
                                 <ul class="accordion-list" data-element="accordion" data-options='{ "isInitActive": true }'>
                                     <li data-element="accordion__item">
@@ -982,7 +982,7 @@
                         <!--// 검색 전 -->
                         <!-- 검색 후 -->
                         <div class="branch-result-wrap">
-                            <p class="result-total-text">전체 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
+                            <p class="result-total-text">총 <span class="tp-green">NNN건</span>이 검색되었습니다.</p>
                             <div class="staff-list-wrap">
                                 <ul class="line-check-list align-justify">
                                     <li>
