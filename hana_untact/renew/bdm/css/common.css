@@ -785,7 +785,7 @@ body.untact--app .popup-wrap.modal-full .modal__container {height: calc(100vh - 
 .popup-wrap.modal--slide .modal-select-list > li .link {padding: 1.8rem 0; font-size: 1.6rem; color: #666; display: block;}
 .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel {height: calc(100% - 19.8rem); margin: 0 -2.4rem; transform: translate3d(0,0,0); -webkit-transform: translateZ(0); -webkit-overflow-scrolling:touch;}
 .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll div[data-element="tab"] {height: calc(var(--vh, 1vh) * 100 - 5.8rem);}
-.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - 10.6rem); margin: 0 -2.4rem;  background-color: blue;}
+.popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - 10.6rem); margin: 0 -2.4rem;}
 .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll .pualugin-tab__panel .search-area {width: 100%;}
 
 .popup-wrap.modal--slide.modal-full-page .modal__header {min-height: 5.6rem;}
