@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">본인확인</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            <div class="app-content">
+                <div class="ste-progress step-header">
+                    <div class="stepper" role="img" aria-label="6단계 중 5단계" tabindex="0">
+                        <ul>
+                            <li class="stepper__step">1</li>
+                            <li class="stepper__step">2</li>
+                            <li class="stepper__step">3</li>
+                            <li class="stepper__step">4</li>
+                            <li class="stepper__step on">5</li>
+                            <li class="stepper__step">6</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- 타이틀 -->
+                    <div class="page-tit-wrap">
+                        <p class="page-tit">본인확인을 위한<br>신분증 촬영을 시작합니다</p>
+                    </div>
+                    <!--// 타이틀 -->
+
+                    <div class="cont-wrap">
+                        <div class="id-card-wrap">
+                            <ul class="card-list-wrap">
+                                <li>
+                                    <div class="card-box">
+                                        <button type="button" class="btn-box-arrow" aria-label="주민등록증/운전면허증">주민등록증/운전면허증</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="id-card-text">
+                            <p class="tit">주민등록증 또는 운전면허증을 준비해주세요.</p>
+                            <p class="txt">복사본이나 사진은 사용할 수 없으며,<br>실제 신분증만 촬영 가능합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer -->
+            <!-- //footer -->
+        </div>
+        <!-- //Content -->
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/slideCalendar.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 모달레이어 - 슬라이드 -->
+    <div id="modalSlide01" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container modal__container--interval" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">여권 진위확인 동의사항</h1>
+            </div>
+            <div class="modal__contents">
+                <div class="modal-text-wrap pb12">
+                    <ul class="dot-list2">
+                        <li>하나은행은 『특정금융거래정보의 보고 및 이용 등에 관한 법률』에 의한 고객확인을 위해 여권정보(여권번호, 이름, 발급일, 사진정보 등)를 확인하고,  외교부를 통해 실명 확인 및 신분증 진위확인을 하고 있습니다.</li>
+                        <li>위 내용을 이해하고 확인했으며, 진위확인에 동의합니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="동의">동의</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드 -->
+
+    <script>
+        
+        $(function(){
+             /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            // modalOpen('modalSlide01');
+        })
+
+    </script>
+    
+
+</body>
+</html>

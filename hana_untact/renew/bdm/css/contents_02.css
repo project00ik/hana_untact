@@ -448,7 +448,10 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .line-check-list > li.big-chk + li {margin-top: 1.6rem;}
 
 /* 본인확인(신분증) */
-.id-card-wrap {padding-top: 33.5rem; background: url(../images/png/icon-id-card@3x.png) top 1.6rem right 3.4rem no-repeat; background-size: 17.5rem 25.4rem;}
+.id-card-wrap {padding-top: 33.5rem; background: url(../images/png/icon-id-card@3x.png) top 5.5rem right 3.4rem no-repeat; background-size: 17.5rem 25.4rem;}
+.id-card-text {margin-top: 2.4rem;}
+.id-card-text .tit {margin-bottom: 1rem; font-size: 1.6rem; line-height: 1.3; font-weight: 400; color: #333;}
+.id-card-text .txt {font-size: 1.4rem; line-height: 1.2; font-weight: 400; color: #666;}
 .app-main.full-video {padding: 0;}
 .app-main.full-video .container {width: 100%; height: 100%; padding: 0; overflow: hidden; position: fixed; -webkit-overflow-scrolling: auto;}
 .app-main.full-video .container .video-area {width: 100%; height: 100vh; background: transparent;}
