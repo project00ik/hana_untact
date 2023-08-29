@@ -1258,7 +1258,8 @@ var hanaUI = {
             function event(){
                 // 웹접근성 관련 footer hide 위반으로 수정
                 // $obj.stop(true).hide();
-                $obj.css('position', 'relative');
+                // $obj.css('position', 'relative');
+                $obj.css('position', 'fixed');
                 $obj.closest('body').addClass('softkey-up');
             }
 
