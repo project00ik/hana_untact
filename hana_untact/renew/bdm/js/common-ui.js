@@ -66,12 +66,20 @@ var hanaUI = {
 
     
             let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty("--vh", `${vh}px`);
+            if (!$('body').hasClass('untact--app')) {
+                document.documentElement.style.setProperty("--vh", `${vh}px`);
+            } else { 
+                return false;
+            }
     
             window.addEventListener("resize", () => {
                 console.log("resize");
                 let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty("--vh", `${vh}px`);
+                if (!$('body').hasClass('untact--app')) {
+                    document.documentElement.style.setProperty("--vh", `${vh}px`);
+                } else { 
+                    return false;
+                }
     
                 var windowHeightResize = $(window).innerHeight();
                 var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
@@ -95,7 +103,11 @@ var hanaUI = {
             });
             window.addEventListener('touchend', () => {
                 let vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
+                if (!$('body').hasClass('untact--app')) {
+                    document.documentElement.style.setProperty("--vh", `${vh}px`);
+                } else { 
+                    return false;
+                }
 
                 var windowHeightResize = $(window).innerHeight();
                 var containerHeightResize = windowHeightResize - headerHeight - footerHeight;
@@ -2061,13 +2073,22 @@ function allActiveObj(type) {
 	        $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
 	        pageTitArr.eq(activeIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
 	    }
-		
-		$('.btn-last-wrap').hide();
-        $('.btn-next-wrap').show();
+		// $('.btn-last-wrap').hide();
+        // $('.btn-next-wrap').show();
+        $('.btn-last-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+        $('.btn-next-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
+        
 	}else{
-		$(".cont-form--animate").find(">.form--active").removeClass("form--active");
-		$('.btn-last-wrap').show();
-		$('.btn-next-wrap').hide();
+        $(".cont-form--animate").find(">.form--active").removeClass("form--active");
+		// $('.btn-last-wrap').show();
+        // $('.btn-next-wrap').hide();
+        $('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+        if ($('.btn-last-wrap').find('.btn').hasClass('rd')) {
+            $('.btn-last-wrap').removeClass('ft-btn-hide').show();
+        } else { 
+            $('.btn-last-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
+        }
+        
 		hanaUI.formFocusEvent(0, true, true);
 	}
 	return;
