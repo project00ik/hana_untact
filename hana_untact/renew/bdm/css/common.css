@@ -78,6 +78,8 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 
 
 /* --- 레이아웃 (layout) --- */
+body.softkey-up {height: 100vh;}
+body.body--ios.softkey-up {height: 100%;}
 .wrap {min-height: 100%; vertical-align: top;}
 
 /* - 레이아웃 : 헤더 (header) */
