@@ -48,14 +48,17 @@ var hanaUI = {
             var innerSlidePopHeight = windowHeight - 120;
             var innerPopHeight = windowHeight - 60;
             
-            // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-            // } 
             $('body').css('min-height', windowHeight + 'px');
             if ($('body').hasClass('scan-body')) { 
                 $('body').css('height', windowHeight + 'px');
             }
             $('.app-content').css('min-height', containerHeight + 'px');
             
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+            	$('body').addClass('body--ios');
+            } else {
+            	$('body').removeClass('body--ios');
+            }
             // $('.popup-wrap').css('max-height','auto');
             // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
             // $('.popup-wrap.modal--slide.modal-full-page').find('.modal__contents').css('max-height', 'auto');
@@ -75,11 +78,15 @@ var hanaUI = {
                 var innerSlidePopHeightResize = windowHeightResize - 120;
                 var innerPopHeightResize = windowHeightResize - 60;
 
-                // if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
-                    
-                // }
+                
                 $('body').css('min-height', windowHeightResize + 'px');
                 $('.app-content').css('min-height', containerHeightResize + 'px');
+                
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+                	$('body').addClass('body--ios');
+                } else {
+                	$('body').removeClass('body--ios');
+                }
                 
                 // $('.popup-wrap').css('max-height', 'auto');
                 // $('.popup-wrap.modal--slide').find('.modal__contents').css('max-height', 'auto');
@@ -739,7 +746,7 @@ var hanaUI = {
                 
             } else {
                 // 마지막 폼에서 버튼교체(확인)
-                $('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+            	$('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
                 if ($('.btn-last-wrap').find('.btn').hasClass('rd')) {
                     $('.btn-last-wrap').removeClass('ft-btn-hide').show();
                 } else { 
@@ -1258,8 +1265,8 @@ var hanaUI = {
             function event(){
                 // 웹접근성 관련 footer hide 위반으로 수정
                 // $obj.stop(true).hide();
-                // $obj.css('position', 'relative');
-                $obj.css('position', 'fixed');
+                $obj.css('position', 'relative');
+                //$obj.css('position', 'fixed');
                 $obj.closest('body').addClass('softkey-up');
             }
 
@@ -1897,7 +1904,7 @@ function aggreePageScroll() {
 
 // 모달 오픈 js
 function modalOpen(target) {
-    var plugin_modal = $('body').data('plugin_modal');
+	var plugin_modal = $('body').data('plugin_modal');
 	plugin_modal.open('#'+ target);
 }
 
@@ -1996,17 +2003,21 @@ function inputIdIndex(id) {
  * 			위쪽항목이 모두 초기화되고 formHide되는 상황이라면 필요함.
  * 
  * @param id		현재 요소의 id값
- * @return number   다음포커스 index  (만약에 다음 포커스가 없으면 -1)*/
+ * @return number   다음포커스 index  (만약에 다음 포커스가 없으면 -1, 존재하지 않는 id를 넘겼을경우 -2)*/
 function findNextFocusIndex(id) {
 	var formList = $(".cont-form--animate").find(">.form-area").get().reverse();
 	var currentIndex = inputIdIndex(id);
 	var nextIndex = currentIndex + 1;
 	
+	if(currentIndex == undefined){
+		return -2;
+	}
+	
 	while( $(formList).eq(nextIndex).is(".formHide")) {
 		nextIndex++;
 	}
 	
-	if(formList.length -1 > nextIndex) {
+	if(formList.length -1 >= nextIndex) {
 		return nextIndex;		// 다음포커스가 있으면 다음 index
 	} else {
 		return -1;				// 다음포커스가 없으면 -1
@@ -2041,6 +2052,16 @@ function allActiveObj(type) {
 	if(type){
 		$(".cont-form--animate").find(">:not('.formHide')").addClass("form--active");
 		$(".cont-form--animate").find(">:not('.formHide')").find(".form-item").removeClass("input--focus"); 
+		
+		// 모든 폼 노출 시 마지막 title show
+		var activeIndex = $(".cont-form--animate").find(">:not('.formHide')").length-1;	// 활성화 인덱스
+		var pageTitArr = $($('.page-tit-wrap > .label__tit').get().reverse()); 			// 타이틀 리스트
+		if ($('.page-tit').hasClass('label__tit')) {
+	        $('.label__tit').not(pageTitArr.eq(activeIndex).addClass('tit--active')).removeClass('tit--active');
+	        $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
+	        pageTitArr.eq(activeIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
+	    }
+		
 		$('.btn-last-wrap').hide();
         $('.btn-next-wrap').show();
 	}else{
