@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 공통 meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KEB하나은행 - 비대면 계좌개설</title>
+    <!-- 공통 css -->
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+</head>
+<body>
+    <div id="wrap" class="wrap"> 
+        <!-- header -->
+        <div id="header" class="app-header">
+            <button class="btn-back" title="이전 화면"></button>
+            <p class="page-tit">약관동의</p>
+            <button class="btn-close" title="닫기"></button>
+        </div>
+        <!-- //header -->
+        <!-- Content -->
+        <div id="content" class="app-main"> 
+            
+        </div>
+        
+	</div>
+	<!-- 공통 script -->
+	<script type="text/javascript" src="../../js/lib/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script type="text/javascript" src="../js/touch-dnd.js"></script>
+    <script type="text/javascript" src="../js/pualugin.js"></script>
+    <script type="text/javascript" src="../js/common-ui.js"></script>
+    
+    <!-- 모달레이어 - alert(단기 다수계좌 개설자) -->
+    <div id="modalAlert02" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub txt-align-l">
+                    손님은 비대면 한도계좌를 보유하고 계십니다. 비대면 한도계좌는 <span class="tp-green">1인당 1계좌만 보유 가능</span>하므로, 확인 후 다시 진행해주세요.
+                </p>
+                <div class="alert-info-list">
+                    <ul class="dot-list3">
+                        <li>자세한 사항은 고객센터(1599-2111)로 문의 바랍니다.</li>
+                        <li>한도 해제를 위해 영업점 방문 시 사전문의 후 증빙서류를 지참해주세요.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" aria-label="확인">확인</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(단기 다수계좌 개설자) -->
+
+    
+
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용)
+            // hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            modalOpen('modalAlert02');
+        });
+
+    </script>
+</body>
+</html>

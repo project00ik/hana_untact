@@ -638,3 +638,6 @@ body.intro-body .app-main .app-content {height: 100%; padding: 0;}
 		margin-left: 0;
 	}
 }
+
+/* 단기 다수계좌 개설자 */
+.alert-info-list {margin-top: 2rem;}
