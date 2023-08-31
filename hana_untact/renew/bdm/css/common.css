@@ -757,7 +757,8 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 .popup-wrap.modal--slide {width: 100%; height: 100%;}
 .popup-wrap.modal--slide .modal__container {height: auto; max-height: calc(100% - 6rem); right: 0; left: 0; z-index: 101; border-radius: 2.4rem 2.4rem 0 0; padding-bottom: 0; padding-bottom: calc(0 + constant(safe-area-inset-bottom)); padding-bottom: calc(0 + env(safe-area-inset-bottom));}
 .popup-wrap.modal--slide .modal__contents { max-height: calc(var(--vh, 1vh) * 100 - 11.8rem); padding: 0 2.4rem; padding-bottom: 9.2rem; padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom)); overflow-y: auto; overflow-x: hidden;}
-.popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0.1rem; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));}
+/* .popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0; padding-bottom: calc(0.1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(0.1rem + env(safe-area-inset-bottom));} */
+.popup-wrap.modal--slide .modal__contents.btn-none {padding-bottom: 0;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll {min-height: 0; max-height: none; overflow: visible;}
 .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .tab-list-wrap .tab-con {max-height: calc(60vh - 4.8rem); overflow-x: hidden; overflow-y: auto;}
 .modal__contents--tabscroll .tab-list-wrap {margin: 0 0 1.2rem;}
@@ -771,7 +772,7 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 
 .modal__btn--close {position: absolute; left: 1.9rem; top: 1.6rem; z-index: 102; width: 2.7rem; height: 2.7rem; border: 0; background: 0;}
 .modal__btn--close:before { content: ''; display: block; width: 2.7rem; height: 2.7rem; background: url(../images/icon/ico-system-close.png) 50% 50% no-repeat; background-size: 100% auto; }
-.popup-wrap.modal--slide .modal__header .title {padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5;}
+.popup-wrap.modal--slide .modal__header .title {padding: 1.7rem 4.6rem 1.7rem; font-size: 1.8rem; color: #000; font-weight: 500; text-align: center; border-bottom: 0.1rem solid #e5e5e5; }
 .popup-wrap.modal--slide .modal__header .title.no-line {border-bottom: 0;}
 .popup-wrap.modal--slide .btn-wrap { position: absolute; bottom: 0; width: 100%; z-index: 10; padding: 1.8rem 2.4rem 2.4rem; padding-bottom: calc(2.4rem + constant(safe-area-inset-bottom)); padding-bottom:calc(2.4rem + env(safe-area-inset-bottom)); background-color: #fff;}
 .popup-wrap.modal--slide .btn-wrap .btn {width: auto;}
@@ -1021,9 +1022,9 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 body.untact--app {height: 100vh; min-height: 100vh;}
 body.untact--app .popup-wrap {height: 100vh;}
 body.untact--app .popup-wrap.modal--slide {height: 100vh;}
-body.untact--app .popup-wrap.modal--slide .modal__header {min-height: 5.8rem; min-height: calc(5.8rem + constant(safe-area-inset-top)); min-height: calc(5.8rem + env(safe-area-inset-top));}
+/* body.untact--app .popup-wrap.modal--slide .modal__header {min-height: 5.8rem; min-height: calc(5.8rem + constant(safe-area-inset-top)); min-height: calc(5.8rem + env(safe-area-inset-top));} */
 body.untact--app .popup-wrap.modal--slide .modal__container {max-height: calc(100vh - 6rem); max-height: calc(100vh - (6rem + env(safe-area-inset-top))); max-height: calc(100vh - (6rem + constant(safe-area-inset-top)));}
-body.untact--app .popup-wrap.modal--slide .modal__contents {max-height: calc(100vh - 11.8rem); max-height: calc(100vh - (11.8rem + env(safe-area-inset-top))); max-height: calc(100vh - (11.8rem + constant(safe-area-inset-top))); }
+/* body.untact--app .popup-wrap.modal--slide .modal__contents {max-height: calc(100vh - 11.8rem); max-height: calc(100vh - (11.8rem + env(safe-area-inset-top))); max-height: calc(100vh - (11.8rem + constant(safe-area-inset-top))); } */
 body.untact--app .popup-wrap.modal-full .modal__container {height: calc(100vh - 6rem); height: calc(100vh - (6rem + env(safe-area-inset-top))); height: calc(100vh - (6rem + constant(safe-area-inset-top)));}
 body.untact--app .popup-wrap.modal--slide.modal-full-page .modal__contents {min-height: calc(100% - 5.6rem); max-height: calc(100vh - 5.6rem); max-height: calc(100vh - (5.6rem + env(safe-area-inset-top))); max-height: calc(100vh - (5.6rem + constant(safe-area-inset-top)));}
 body.untact--app .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll div[data-element="tab"] {height: calc(100vh - 5.8rem); height: calc(100vh - (5.8rem + env(safe-area-inset-top))); height: calc(100vh - (5.8rem + env(safe-area-inset-top)));}
