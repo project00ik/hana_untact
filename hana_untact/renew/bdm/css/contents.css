@@ -221,6 +221,9 @@
 .edit-con-wrap .accordion-list {border-top: 1px solid #e7e9ee;}
 .edit-con-wrap .con .inbox .list-wrap {padding: 0; border-bottom: none;} 
 
+.edit-con-wrap .accordion-list .checkbox-wrap {margin-top: 2.4rem;}
+.edit-con-wrap .accordion-list .btn-center-wrap {margin-top: 1.6rem;}
+
 /* 주택청약종합저축 */
 .use-coupon-wrap .list-wrap.type01 {padding: 2.4rem 0 1.4rem;}
 .use-coupon-wrap .list-wrap.type01 .point dd {font-size: 1.7rem;}
