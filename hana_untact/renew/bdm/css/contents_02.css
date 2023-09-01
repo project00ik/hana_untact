@@ -471,6 +471,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 /* 모달 : 신분증 진위확인 실패 (상세 안내코드 토글) */
 .code-info-wrap {margin-top: 2rem;}
 .code-info-wrap .tg-text-cont {margin-top: 1.2rem;}
+.code-info-wrap .tg-text {text-align: left;}
 
 /* 본인확인(신분증) - 신분증 정보 확인 */
 .id-photo-wrap {margin-top: 3rem;}
