@@ -223,7 +223,8 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
 .input.input-search .input__element::-webkit-placeholder {color: #929292; font-weight: 400;}
 .input.input-search .input__inner {padding-right: 5rem; position: relative;}
 .input .btn-search {width: 5rem; height: 5.9rem; margin-left: 1.2rem; display: inline-block; font-size: 0; background: url(../images/icon/ico-system-input-interactive-search.png) top 50% right 1.8rem no-repeat; background-size: 2rem auto; align-self: flex-end;}
-.input.input-search .btn-search {margin-left: 0; position: absolute; top: 0; right: 0; z-index: 1; align-self: unset;background-position: top 50% right 1.6rem; background-size: 2.4rem auto;}
+.input.input-search .btn-search {margin-left: 0; position: absolute; top: 0; right: 0; z-index: 1; align-self: unset; background-position: top 50% right 1.6rem; background-size: 2.4rem auto;}
+body.body--ios .input.input-search .btn-search {background-position: top 52% right 1.6rem;}
 .input.input-search .input__remove-button {margin: 0; align-self: center;}
 
 .search-area .search-layer {display: none; width: 100%; height: 25.2rem; position: absolute; top: 6.3rem; left: 0; z-index: -1; opacity: 0; overflow: hidden; border: 0.1rem solid #009591; border-radius: 1.2rem; background: #fff; transition-duration: 0.3s; -moz-transition-duration: 0.3s;}
