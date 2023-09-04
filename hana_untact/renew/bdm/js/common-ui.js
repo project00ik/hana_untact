@@ -56,6 +56,9 @@ var hanaUI = {
             
             if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
             	$('body').addClass('body--ios');
+            	if ($('body').hasClass('untact--app')){
+            		
+            	}
             } else {
             	$('body').removeClass('body--ios');
             }
@@ -66,19 +69,21 @@ var hanaUI = {
 
     
             let vh = window.innerHeight * 0.01;
-            if (!$('body').hasClass('untact--app')) {
-                document.documentElement.style.setProperty("--vh", `${vh}px`);
+//            document.documentElement.style.setProperty("--vh", `${vh}px`);
+            if ($('body').hasClass('untact--app')) {
+            	document.documentElement.style.setProperty('min-height', '100vh');
             } else { 
-                return false;
+            	document.documentElement.style.setProperty("--vh", `${vh}px`);
             }
     
             window.addEventListener("resize", () => {
                 console.log("resize");
                 let vh = window.innerHeight * 0.01;
-                if (!$('body').hasClass('untact--app')) {
-                    document.documentElement.style.setProperty("--vh", `${vh}px`);
+//                document.documentElement.style.setProperty("--vh", `${vh}px`);
+                if ($('body').hasClass('untact--app')) {
+                	document.documentElement.style.setProperty('min-height', '100vh');
                 } else { 
-                    return false;
+                	document.documentElement.style.setProperty("--vh", `${vh}px`);
                 }
     
                 var windowHeightResize = $(window).innerHeight();
@@ -103,10 +108,11 @@ var hanaUI = {
             });
             window.addEventListener('touchend', () => {
                 let vh = window.innerHeight * 0.01;
-                if (!$('body').hasClass('untact--app')) {
-                    document.documentElement.style.setProperty("--vh", `${vh}px`);
+//                document.documentElement.style.setProperty("--vh", `${vh}px`);
+                if ($('body').hasClass('untact--app')) {
+                	document.documentElement.style.setProperty('min-height', '100vh');
                 } else { 
-                    return false;
+                	document.documentElement.style.setProperty("--vh", `${vh}px`);
                 }
 
                 var windowHeightResize = $(window).innerHeight();
@@ -2073,22 +2079,20 @@ function allActiveObj(type) {
 	        $('.label__tit').attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(false, true));
 	        pageTitArr.eq(activeIndex).attr('aria-hidden', pageTitArr.attr('aria-hidden').replace(true, false));
 	    }
-		// $('.btn-last-wrap').hide();
-        // $('.btn-next-wrap').show();
-        $('.btn-last-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
-        $('.btn-next-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
-        
-	}else{
-        $(".cont-form--animate").find(">.form--active").removeClass("form--active");
-		// $('.btn-last-wrap').show();
-        // $('.btn-next-wrap').hide();
+
+		// 다음버튼 활성화
         $('.btn-next-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
         if ($('.btn-last-wrap').find('.btn').hasClass('rd')) {
             $('.btn-last-wrap').removeClass('ft-btn-hide').show();
         } else { 
             $('.btn-last-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
         }
-        
+	}else{
+		// 계속버튼 활성화
+        $('.btn-last-wrap').removeClass('ft-btn-show').addClass('ft-btn-hide');
+        $('.btn-next-wrap').removeClass('ft-btn-hide').addClass('ft-btn-show');
+		$(".cont-form--animate").find(">.form--active").removeClass("form--active");
+		
 		hanaUI.formFocusEvent(0, true, true);
 	}
 	return;
