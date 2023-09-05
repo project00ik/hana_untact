@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* 테마 (네이버) */
 .tp-green {color: #09aa5c !important;}
 
@@ -18,7 +20,8 @@
 .checking-txt-area .tit,
 .page-tit .text-point,
 .check-list .checkbox-wrap input:checked + label *,
-.line-check-list .checkbox-wrap input:checked + label * {color: #09aa5c;}
+.line-check-list .checkbox-wrap input:checked + label *,
+.modal__contents--multiple .container__panel .list-section .list-wrap__item.active-item .list-wrap__title {color: #09aa5c;}
 
 .search-btn-wrap.search--disabled .button-search__btn,
 .select-wrap.select--disabled .select .button-select__item, 
@@ -33,7 +36,8 @@
 
 .btn,
 .btn.rd,
-label.asswitch-wrap input:checked + span {background-color: #09aa5c;}
+label.asswitch-wrap input:checked + span,
+.love-document-bottom [class^='icon-']::before {background-color: #09aa5c;}
 
 .btn-refresh {background-color: #eff0f4;}
 
