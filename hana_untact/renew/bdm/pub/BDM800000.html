@@ -184,7 +184,7 @@
                                     </i>
                                     <div class="text-wrap">
                                         <p class="text">외화통장에 보유한 달러로<br>직접 결제하세요</p>
-                                        <button type="button" class="btn-text-arrow" title="밀리언달러 카드 신청하기로 디동">밀리언달러 카드 신청하기</button>
+                                        <button type="button" class="btn-text-arrow" title="밀리언달러 카드 신청하기로 이동"  data-element="modal__open" data-target="#modalSlide01">밀리언달러 카드 신청하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -226,6 +226,178 @@
     <script type="text/javascript" src="../js/touch-dnd.js"></script>
     <script type="text/javascript" src="../js/pualugin.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
+
+    <!-- 밀리언달러 카드 팝업 as-is 230623 버전 비대면 적용 [S] -->
+    <!-- 모달레이어 - 슬라이드(Full type : modal-full) -->
+    <div id="modalSlide01" class="modal popup-wrap modal-full-page modal--slide layerpopup on" data-element="modal__element">
+        <div class="modal__container modal__container--interval layer_91 tab_layer" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title no-line">카드 안내</h1>
+            </div>
+            <div class="modal__contents layer_contents">                
+                <div class="pop_content">
+                    <div class="pop_inner">
+                        <img src="../images/png/card_milldollar_01.jpg" alt="">
+                        <div> 
+                            <!-- <a check-target=".checkpopup04" href="#none"></a> -->
+                            <img src="../images/png/card_milldollar_02.jpg" alt="">
+                            <a href="#none" class="card_link01 j_layer_open join_btn" data-element="modal__open" data-target="#layerpopup01">하나카드 자세히보기</a>
+                        </div>
+                        <div> 
+                            <!-- <a check-target=".checkpopup04" href="#none"></a> -->
+                            <img src="../images/png/card_milldollar_03.jpg" alt="">
+                            <a href="#none" class="card_link02 j_layer_open join_btn"  data-element="modal__open" data-target="#layerpopup02">롯데카드 자세히보기</a>
+                        </div>
+                        <div class="blind">
+                            <p>해외에서 수수료 없이 보유한 달러로 바로 결제되는</p>
+                            <h3>하나 밀리언달러 카드!!</h3>
+                            <p>한 장의 카드로 원화, 외화 결제를 동시에!</p>
+                            <strong>주요혜택</strong>
+                            <ul>
+                                <li>해외 이용수수료 1.3% 면제!</li>
+                                <li>해외 ATM 인출수수료 $3 면제!</li>
+                                <li>사용한 금액 그대로 결제!</li>
+                            </ul>
+                            <p>* 혜택 상세 내용은 상품 약관을 통해 확인 바랍니다.</p>
+                            <h4>해외(외화) 사용시</h4>
+                            <p>결제일에 출금되는 결제방식</p>
+                            <ul>
+                                <li>해외가맹점 0.7% 하나머니 적립</li>
+                                <li>커피/디지털구독 20% 하나머니 적립</li>
+                            </ul>
+                            <dl>
+                                <dt>연회비</dt>
+                                <dd>국내전용/해외겸용 (VISA) 15,000원
+                                    <br />(기본연회비 15,000원/제휴연회비 0원)
+                                </dd>
+                                <dt>브랜드</dt>
+                                <dd>국내전용 Local/국내외겸용 VISA</dd>
+                            </dl>
+                            <p>즉시 출금되는 결제방식</p>
+                            <ul>
+                                <li>해외 온라인 5% 캐쉬백</li>
+                                <li>스트리밍 50% 할인</li>
+                            </ul>
+                            <dl>
+                                <dt>연회비</dt>
+                                <dd>국내전용/해외겸용 (VISA) 15,000원
+                                    <br />(기본연회비 7,000원/제휴연회비 8,000원)
+                                </dd>
+                                <dt>브랜드</dt>
+                                <dd>국내전용 Local/국내외겸용 VISA</dd>
+                            </dl>
+                        </div>
+                        <div class="txt_notice tg--area">
+                            <div class="tg-btn tg--on" role="button" aria-expanded="true" onclick="toggleLayer(this);">
+								<button type="button" class="txt_notice_open ">유의사항</button>
+							</div>
+                            <!-- <button type="button" class="txt_notice_open j_toggle_open">유의사항</button> -->
+                            <div class="txt_notice_cont tg--layer open"  tabindex="0">
+                                <ul class="list_type01">
+                                    <li>본 상품 서비스는 제휴 금융기관 카드사에서 제공합니다.</li>
+                                    <li>카드 발급 시 상품설명서 및 상품약관을 반드시 확인하시기 바랍니다.</li>
+                                    <li>신용카드 신청 이후, 카드 발급 및 이용혜택등의 문의사항은 신청하신 카드사로 문의해 주세요.
+                                        <ul class="sub_list_type01">
+                                            <li>하나카드 고객센터 : 1800-1111</li>
+                                            <li>롯데카드 고객센터 : 1588-8100</li>
+                                        </ul>
+                                    </li>
+                                    <li>하나은행은 하나카드, 롯데카드(주)의 신용카드 회원 모집업무를 대리 &middot; 중개합니다.</li>
+                                    <li>하나은행은 다수의 신용카드사를 대리하거나 중개합니다.</li>
+                                    <li>하나은행은 하나카드, 롯데카드(주)의 금융상품에 대한 계약체결 권한이 없습니다.</li>
+                                    <li>하나은행은 금융관계법률에 따라 하나카드사, 롯데카드(주)와 위탁계약을 체결한 금융상품판매대리 &middot; 중개업자입니다.</li>
+                                    <!-- 230622 추가 공인식 (아래 2개 행) -->
+                                    <li>하나은행은 예금자보호법상 부보금융기관이며, 하나카드는 부보금융기관이 아닙니다.</li>
+                                    <li>하나은행과 하나카드는 상호 채무를 보증하지 않습니다.</li>
+                                    <li>신용카드 발급이 부적정한 경우(개인신용평점 낮음 등) 카드발급이 제한될 수 있습니다.</li>
+                                    <li>카드이용대금과 이에 수반되는 모든 수수료를 지정된 대금결제일에 상환해야 합니다.</li>
+                                    <!-- 230622 수정 공인식 - 문구 수정 (이어지는 1개 행으로 대체)
+                                    <li>금융소비자는 금소법 제19조 제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있습니다.</li> -->
+                                    <li>금융소비자는 해당상품 또는 서비스에 대하여 설명을 받은 권리가 있습니다.</li>
+                                    <li class="t_mi">연체 이자율 : 회원별 &middot; 이용상품별 약정이율+최대3%,법정 최고금리(연20%)이내
+                                        <ul class="sub_list_type01 t_mi">
+                                            <li class="text-sign">※ 단, 연체 발생 시점에 약정비율이 없는 경우 아래와 같이 약정이율을 적용</li>
+                                            <li>일시불 거래 연체 시 : 거래발생 시점의 최소기간(2개월) 유이자 할부금리</li>
+                                            <li>무이자 할부 거래 연체 시 : 거래발생 시점의 동일한 할부계약 기간이 유이자 할부 금리</li>
+                                        </ul>
+                                    </li>
+                                    <!-- 230622 수정 공인식 - 문구 수정 (이어지는 1개 행으로 대체)
+                                    <li class="t_mi">상환능력에 비해 신용카드 사용액이 과도할 경우 귀하의 신용등급 또는 개인신용평점이 하락할 수 있습니다.</li> -->
+                                    <li class="t_mi">상환능력에 비해 신용카드 사용액이 과도할 경우, 귀하의 개인신용평점이 하락할 수 있습니다.</li>
+                                    <li class="t_mi">개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.</li>
+                                    <li class="t_mi">일정기간 원리금을 연체할 경우, 모든 원리금을 변제할 의무가 발생할 수 있습니다.</li>
+                                    <li>본 홍보물은 법령 및 내부통제기준에 따른 절차를 거쳐 제공합니다.</li>
+                                    <!-- 230622 수정 공인식 - 준법 업데이트 (이어지는 4개 행으로 대체)
+                                    <li>본 홍보물은 2023년 6월 30일까지 유효합니다.</li>
+                                    <li>하나은행 준법감시인 심사필 제 2022-광고-5723호(2022.07.15)</li>
+                                    <li>하나카드 여신협회 심의필 제2022-C1h- 05513호 (2022.07.01~2023.06.30)</li>
+                                    <li>롯데카드 여신협회 심의필 제2022-C1h- 05767호 (2022.07.15~2023.07.14)</li> -->
+                                    <li>본 홍보물은 2024년 5월 31일까지 유효합니다.</li>
+                                    <li>하나은행 준법감시인 심의필 제 2023-광고-04009호 (2023.06.13)</li>
+                                    <li>하나카드 여신금융협회 심의필 제 2023-C1h-06323호 (2023.06.09~2024.06.08)</li>
+                                    <!-- 230623 최호정 수정 [S] -->
+                                    <li>롯데카드 여신금융협회 심의필 제 2023-C1h-06745호 (2023.06.22~2024.06.21)</li> <!-- 플랫폼 담당 -->
+                                    <!-- 230623 최호정 수정 [E] -->
+                                </ul>
+                            </div>
+                        </div>
+                <!-- 220811 공인식 수정 (이어지는 2개 행으로 대체)
+                        </div>
+                    </div>
+                </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="닫기">닫기</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 슬라이드(Full type : modal-full) -->
+
+    <!-- 모달레이어 - alert(기본형 예시) -->
+    <div id="layerpopup01" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">카드 신청페이지로<br>이동 하시겠습니까?</p>
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="하나카드 신청 페이지 이동" onclick="location.href='https://m.hanacard.co.kr/MPACMM101M.web?CD_PD_SEQ=14543&ARC=12345678'">이동</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(기본형 예시) -->
+
+
+    <!-- 모달레이어 - alert(기본형 예시) -->
+    <div id="layerpopup02" class="modal popup-wrap alert" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <div class="modal__contents">
+                <p class="text-sub">카드 신청페이지로<br>이동 하시겠습니까?</p>
+            </div>
+            <div class="btn-group-wrap">
+                <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="취소">취소</button>
+                <button type="button" class="btn md" data-element="modal__close" aria-label="롯데카드 신청 페이지 이동" onclick="location.href='https://m.lottecard.co.kr/spa/card/booth?bId=68708&vtCdKndC=P13870-A13870'">이동</button>
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - alert(기본형 예시) -->
+
+    <!-- 밀리언달러 카드 팝업 as-is 230623 버전 비대면 적용 [E] -->
+    
+    <script>
+        
+        $(function(){
+            // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용)
+            // hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));
+
+            /* 모달 열기(alert/슬라이드 팝업 구분없이 사용) : modalOpen('해당레이어팝업 ID값'); */
+            //modalOpen('modalSlide01');
+        });
+
+    </script>
 
 </body>
 </html>
