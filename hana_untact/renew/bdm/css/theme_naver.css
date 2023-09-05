@@ -30,9 +30,12 @@
 .input .pass-dot-wrap .pass-dot, 
 .button-select__item .pass-dot-wrap .pass-dot {background: #09aa5c;}
 
+
 .btn,
 .btn.rd,
 label.asswitch-wrap input:checked + span {background-color: #09aa5c;}
+
+.btn-refresh {background-color: #eff0f4;}
 
 .btn-wrap .btn.btn-cancle.gray,
 .btn-group-wrap .btn.btn-cancle.gray,
