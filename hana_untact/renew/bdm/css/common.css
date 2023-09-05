@@ -1110,6 +1110,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .num-list > li {list-style: decimal; font-size: 1.4rem; color: #9ca7b3;}
 .num-list > li + li {margin-top: 0.8rem;}
 
+.popup-wrap.modal--slide .list-wrap .num-list > li,
 .popup-wrap.alert .text-sub .num-list > li {list-style: decimal; color: #666; letter-spacing: -0.05rem; line-height: 1.3; font-size: 1.6rem;}
 .popup-wrap.alert .text-sub .num-list > li + li {margin-top: 0;}
 
@@ -1205,4 +1206,5 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .phone-agree-wrap {padding-top: 3rem;}
 .phone-agree-wrap .inner-box {padding-bottom: 2rem;}
 .phone-agree-wrap .inner-box iframe {width:100%;}
+
 

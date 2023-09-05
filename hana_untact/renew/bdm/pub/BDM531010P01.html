@@ -514,9 +514,37 @@
     </div>
     <!-- //모달레이어 - 만기 해지방법  -->
 
+    <!-- 모달레이어 - 만기 재예치 동의서 -->
+    <div id="modalAlert02" class="modal popup-wrap modal--slide" data-element="modal__element">
+        <div class="modal__container" data-element="modal__element-container">
+            <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
+            <div class="modal__header">
+                <h1 class="title">만기 재예치 동의서</h1>
+            </div>
+            <div class="modal__contents">
+                <!-- 팝업 내용 -->
+                <div class="list-wrap">
+                    <ul class="num-list">
+                        <li>만기일에 납입 원금은 이전과 동일한 기간으로 자동 재예치됩니다.</li>
+                        <li>이때 발생한 이자는 재예치 시점의 전신환매입율로 환전되어 사전에 지정한 본인 명의 입출금이 자유로운 원화예금으로 입금됩니다.<br>
+                            (비대면으로 적금을 개설한 경우 최초납입금이 출금된 원화예금으로 입금)</li>
+                        <li>재예치 신청 시, 이 적금에 기존 등록한 자동이체도 자동으로 연장됩니다.</li>
+                        <li>재예치된 적금의 이율은 재예치 시점에 하나은행 영업점과 홈페이지에 고시한 자유적립 외화적금이율을 가입기간에 맞추어 적용합니다.</li>
+                        <li>압류 등 법적 지급제한이 있거나 만기일 전에 만기 재예치를 해제해 재예치를 할 수 없는 경우 재예치가 실행되지 않습니다.</li>
+                    </ul>
+                </div>
+                <!--// 팝업 내용 -->
+            </div>
+            
+            <div class="btn-wrap">
+                <button type="button" class="btn md" data-element="modal__close" title="동의">동의</button><!-- D: 비활성화 일 때 : disabled -->
+            </div>
+        </div>
+    </div>
+    <!-- //모달레이어 - 만기 재예치 동의서  -->
 
     <!-- 모달레이어 - alert -->
-    <div id="modalAlert02" class="modal popup-wrap alert only-title" data-element="modal__element">
+    <!-- 삭제 (슬라이드 팝업으로 수정됨)(화면설계 v1.9) <div id="modalAlert02" class="modal popup-wrap alert only-title" data-element="modal__element">
         <div class="modal__container" data-element="modal__element-container">
             <button class="modal__btn--close" type="button" data-element="modal__close" title="닫기"></button>
             <div class="modal__contents">
@@ -533,12 +561,10 @@
                 </div>                
             </div>
             <div class="btn-group-wrap">
-                <!-- 삭제 <button type="button" class="btn md gray btn-cancle" data-element="modal__close" aria-label="신청 안 함" onclick="showReset()">신청 안 함</button>
-                <button type="button" class="btn md" data-element="modal__close" aria-label="신청" onclick="formHideEvent('case01', true);">신청</button> -->
                 <button type="button" class="btn md" data-element="modal__close" aria-label="동의">동의</button>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- //모달레이어 - alert -->
 
     <!-- 모달레이어 - 달력(자동이체 유형) -->
