@@ -1,0 +1,60 @@
+/* 테마 (네이버) */
+.tp-green {color: #09aa5c !important;}
+
+.page-tit .text-point,
+.input__element,
+.input--focus .input__element,
+.form-area .textarea .textarea__element,
+.search-btn-wrap.search--on .input-search-btn,
+.search-btn-wrap.search--active .button-search__btn,
+.select-wrap.select--disabled .select .button-select__item, 
+.select-wrap.select--active .select .button-select__item,
+.checkbox-wrap.tp-green label,
+.address-result-wrap .address-list .address-sub .label,
+.modal-sticky-cont .page b,
+.checkbox-wrap.box input:checked + label .txt_underline-b,
+.tab-radio-rd input:checked + label,
+.tooltip .tooltip-con .inbox .title,
+.checking-txt-area .tit,
+.page-tit .text-point,
+.check-list .checkbox-wrap input:checked + label *,
+.line-check-list .checkbox-wrap input:checked + label * {color: #09aa5c;}
+
+.search-btn-wrap.search--disabled .button-search__btn,
+.select-wrap.select--disabled .select .button-select__item, 
+.select-wrap.select--disabled.select--no-label .select .button-select__item {color: #666;}
+
+.input::after,
+.select-wrap .select::after,
+.bar-list > li.tp-green::before,
+.input .pass-dot-wrap .pass-dot, 
+.button-select__item .pass-dot-wrap .pass-dot {background: #09aa5c;}
+
+.btn,
+.btn.rd,
+label.asswitch-wrap input:checked + span {background-color: #09aa5c;}
+
+.btn-wrap .btn.btn-cancle.gray,
+.btn-group-wrap .btn.btn-cancle.gray,
+.popup-wrap.alert .btn-group-wrap .btn.btn-cancle.gray {background-color: #eef9f3; color: #09aa5c;}
+
+.checkbox-wrap input:checked + label::before {background-image: url(../images/naver/ico-system-form-check-1-depth-active.png);}
+.checkbox-wrap.sm input:checked + label::before {background-image: url(../images/naver/ico-system-form-check-2-depth-active.png);}
+.radio-wrap input:checked + label::before {background-image: url(../images/naver/ico-system-form-radio-1-depth-active.png);}
+.accordion-list .top.is-active:before {background: url(../images/naver/ico-system-accordion-open.png) right 0 no-repeat; background-size: 1.6rem 1.6rem;}
+
+.search-btn-wrap.search--on .input-search-btn::before,
+.card-box-green,
+.card-list-wrap .checkbox-wrap input:checked + label::after,
+.card-list-wrap .radio-wrap input:checked + label::after,
+.tab-radio-rd input:checked + label::after,
+.select-wrap.select--on .select.select-box::before {border-color: #09aa5c;}
+
+.input.input-search.input--focus::before,
+.input.input-search.input--focus.input--error::before {box-shadow: 0 0 8px 0 rgba(9, 170, 92, 0.25); border-color: #09aa5c !important;}
+
+.tab-radio input:checked + label,
+.tab-box-list .tab-box .text.is-active,
+.checkbox-wrap.box input:checked + label {color: #09aa5c; border-color: #09aa5c;}
+
+.form-area .textarea.textarea--focus::before {border-bottom-color: #09aa5c;}
