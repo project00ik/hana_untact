@@ -402,9 +402,10 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 .love-document-cont .txt {font-size: 1.4rem; text-align: center; color: #000;}
 .love-document-cont .date {font-size: 1.4rem; margin-top: 1.6rem; color: #666;}
 .love-document-wrap .love-document-bottom {margin-top: 5rem; display: flex; align-items: center; justify-content: center;}
-.love-document-bottom [class^='icon-'] {flex: 1; padding-top: 3.7rem; font-size: 1.4rem; color: #666; font-weight: 700; line-height: 1.2; text-align: center;}
-.love-document-bottom .icon-name {background: url(../images/icon/ico-love-sign.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
-.love-document-bottom .icon-pet {background: url(../images/icon/ico-love-pet.png) 50% 0 no-repeat; background-size: 3.2rem auto;}
+.love-document-bottom [class^='icon-'] {flex: 1; padding-top: 3.7rem; font-size: 1.4rem; color: #666; font-weight: 700; line-height: 1.2; text-align: center; position: relative;}
+.love-document-bottom [class^='icon-']::before {content: ''; width: 3.2rem; height: 3.2rem; margin-left: -1.6rem; display: inline-block; border-radius: 50%; overflow: hidden; background-color: #52bcc2; background-position: 50% 50%; background-repeat: no-repeat; position: absolute; top: 0; left: 50%;}
+.love-document-bottom .icon-name::before {background-image: url(../images/icon/ico-love-sign.png); background-size: 1.4rem auto;}
+.love-document-bottom .icon-pet::before {background-image: url(../images/icon/ico-love-pet.png); background-size: 1.9rem auto;}
 
 /* 지점(직원)검색 */
 .branch-result-wrap {padding: 0 2.4rem 2.4rem;}
