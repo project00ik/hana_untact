@@ -94,6 +94,7 @@ body.scroll--top .search-con-box + .con-box {padding-top: 5.6rem;}
     width: 100%;
     -webkit-transition: width .8s linear; transition: width .2s linear; transition-delay: .1s;
 }
+.input.input--disabled::after {display: none !important;}
 .chk-tg .input::after {bottom: -0.2rem;}
 .form-radio-list .chk-tg .input::after {bottom: -0.1rem;}
 
