@@ -643,7 +643,6 @@ var hanaUI = {
     
     formFocusEvent: function (num, isReverse, isInitIndex) {  // 폼 포커스(Revers) 직접 지정용
 
-
         var inputArrIndex = num; // 페이지하단에 지정한 숫자
         var inputArr = [];
         var pageTitArr = [];
@@ -665,7 +664,7 @@ var hanaUI = {
     
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
-        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus().click().css('background','red');
+        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
         inputArr.eq(inputArrIndex).addClass('form--active');
         
         // 셀렉트 포커스
@@ -720,7 +719,7 @@ var hanaUI = {
                 // 폼 포커스
                 // inputArr.eq(inputArrIndex).stop().slideDown(300, 'linear');
                 inputArr.eq(inputArrIndex).addClass('form--active');
-                inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus().click();
+                inputArr.eq(inputArrIndex).find('.form__move').eq(0).focus();
                 // 셀렉트 포커스
                 if (inputArr.eq(inputArrIndex).find('.form__move').eq(0).hasClass('button-select__item')) {
                     inputArr.eq(inputArrIndex).find('.form__move').eq(0).closest('.select-wrap').addClass('select--on');
