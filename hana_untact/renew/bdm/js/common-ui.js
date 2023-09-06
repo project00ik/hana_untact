@@ -664,7 +664,9 @@ var hanaUI = {
     
         inputArr.eq(inputArrIndex).addClass('form--active');
         // 폼이 여러개일 때 첫번째에 강제 포커스
-        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+        // inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').focus();
+        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.form__move').trigger('focus');
+        inputArr.eq(inputArrIndex).find('.form-item').eq(0).find('.input__label').trigger('click').css('background','red');
         inputArr.eq(inputArrIndex).addClass('form--active');
         
         // 셀렉트 포커스
