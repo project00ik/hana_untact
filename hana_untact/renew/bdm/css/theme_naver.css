@@ -41,6 +41,7 @@ label.asswitch-wrap input:checked + span,
 
 .btn-refresh {background-color: #eff0f4;}
 
+.btn-wrap .btn.gray,
 .btn-wrap .btn.btn-cancle.gray,
 .btn-group-wrap .btn.btn-cancle.gray,
 .popup-wrap.alert .btn-group-wrap .btn.btn-cancle.gray {background-color: #eef9f3; color: #09aa5c;}

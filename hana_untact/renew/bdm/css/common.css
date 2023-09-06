@@ -1091,7 +1091,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .select-wrap.select--no-label .select .button-select__item {color: #bbb;}
 .select-wrap.select--no-label.select--active .select .button-select__item {color: #333;}
 .select-wrap.select--disabled .select .button-select__item,
-.select-wrap.select--disabled.select--no-label .select .button-select__item{color: #666; cursor: default;}
+.select-wrap.select--disabled.select--no-label .select .button-select__item {color: #666; cursor: default;}
 
 .select-wrap .select.select-box {min-height: auto;}
 .select-wrap .select.select-box::before {height: 5.4rem; border: 0.1rem solid #e7e9ee; border-radius: 0.8rem; background: #fff; position: absolute; top: -1px; left:0;}
@@ -1103,6 +1103,9 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .select-wrap.select--disabled .select.select-box .button-select__item {color: #7d8585;}
 .select-wrap .select.select-box::after {margin-left: 1.2rem; right: 1.8rem;}
 .select-wrap .select.select-box .select-label {display: none;}
+
+.select-wrap.select--disabled .select .select__inner::after,
+.select-wrap.select--disabled.select--no-label .select .select__inner::after {display: none;}
 
 /* bullet */
 /* 넘버형 */
