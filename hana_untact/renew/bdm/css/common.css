@@ -279,7 +279,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .scroll--top .step-header .stepper {box-shadow: none;}
 .step-header + .container,
 .prd-content,
-.step-contaner {padding-top: 4.3rem;}
+.step-container {padding-top: 4.3rem;}
 
 @supports (-webkit-touch-callout: none) { 
     .step-header .stepper .stepper__step.on {padding-top: 0.2rem;}
