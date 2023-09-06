@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동으로 키보드 표시</title>
+</head>
+<body>
+    <!-- 자동으로 포커스를 설정할 입력 필드 -->
+    <input type="text" id="myInputField">
+
+    <script>
+        // 페이지가 로드될 때 자동으로 실행될 함수
+        window.addEventListener('DOMContentLoaded', function () {
+            // 입력 필드를 찾아 포커스를 설정
+            var inputField = document.getElementById('myInputField');
+            inputField.focus();
+        });
+    </script>
+</body>
+</html>
