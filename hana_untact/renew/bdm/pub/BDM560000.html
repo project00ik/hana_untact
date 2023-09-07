@@ -848,7 +848,7 @@
         
         $(function(){
             // D : 계속 버튼 js (역순) (포커스 지정이 필요할 때 사용) 
-            hanaUI.formFocusEvent(0, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
+            hanaUI.formFocusEvent(10, true, true); // hanaUI.formFocusEvent(index, true(역순), true(계속버튼 이벤트));  
            // modalOpen('modalselect');
             $('body').on('click', '.btn-next-wrap .btn', function(){
                 if ($('.form-area.disabled').is(":visible") == true) {
@@ -857,9 +857,15 @@
                     hanaUI.formNextDepth();
                 }
             });
+            
+            var inputObjTop = $('#inputText04').offset().top;
+            console.log('inputObjTop',inputObjTop);
+            // $(window).scrollTop(100);
+            $('body, html').stop().animate({scrollTop : inputObjTop},400);
+            
         });
 
-        
     </script>
+
 </body>
 </html>
