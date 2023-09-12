@@ -1212,6 +1212,6 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .phone-agree-wrap {padding-top: 3rem;}
 .phone-agree-wrap .inner-box {padding-bottom: 2rem;}
 .phone-agree-wrap .inner-box iframe {width:100%;}
-.phone-agree-wrap .inner-box iframe.agreeSingle {height: calc(100vh - 33rem); height: calc((var(--vh, 1vh) * 100) - 33rem);}
-
+.phone-agree-wrap .inner-box iframe.agreeSingle {height: calc(100vh - 30rem); height: calc((var(--vh, 1vh) * 100) - 30rem);}
+body.untact--app.body--ios .phone-agree-wrap .inner-box iframe.agreeSingle {height: calc(100vh - 30rem); height: calc(100vh - 30rem - constant(safe-area-inset-top) - constant(safe-area-inset-bottom)); height: calc(100vh - 30rem - env(safe-area-inset-top) - env(safe-area-inset-bottom));}
 
