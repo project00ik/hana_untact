@@ -161,7 +161,7 @@
 
                         <div class="form-area mt20">
                             <div class="chk-tg tg--area">
-                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" onclick="toggleLayer(this);">
+                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggletestId" onclick="toggleId('toggletestId');">
                                     <div class="checkbox-wrap chk-type2">
                                         <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="한도해제코드 등록(선택)">
                                         <label for="search_checkbox04" class="tooltip-label">한도해제코드 등록(선택)</label>
@@ -1054,8 +1054,37 @@
             // 토글 닫기 toggleLayerClose(id)
             // toggleLayerClose('toggle_test1');
             
-        })
+        });
 
+        // 토글 레이어
+        function toggleId(id) {
+            var toggleBtn = $('#' + id);
+            var tgBtn = toggleBtn.closest('.tg--area').find('>.tg-btn');
+            var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
+            var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
+
+            tgChkBtn.toggleClass('tg--on');
+            if (tgChkBtn.find('input').is(':checked')) {
+                // checked
+                tgChkBtn.addClass('tg--on');
+                tgChkBtn.find('input').prop('checked', true);
+                tgly.addClass('open');
+                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+                
+                if (tgly.find('.input__element').length > 0) {
+                    tgly.find('.input__element').eq(0).focus();
+                }
+            } else {
+                // checked false
+                tgChkBtn.removeClass('tg--on');
+                tgChkBtn.find('input').prop('checked', false);
+                tgly.removeClass('open');
+                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            }
+
+        }
     </script>
     
 
