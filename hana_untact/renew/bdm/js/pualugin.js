@@ -2081,7 +2081,14 @@
           })
           .scrollTop(plugin.currentScrollTop);
           
-          $('body').addClass('modal-open');
+        $('body').addClass('modal-open');
+        
+        // iphonx(ios15이하)일 때 팝업 올라올 시 주소창 고정이 안됨 현상 관련 추가
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) { 
+          $('html').addClass('html--ios');
+        } else {
+          $('html').removeClass('html--ios');
+        }
         
           // 팝업 열림 시 주소창 높이 대응
           // var windowHeight = $(window).innerHeight();
@@ -2115,6 +2122,10 @@
         }
 
         $('body').removeClass('modal-open');
+
+        // iphonx(ios15이하)일 때 팝업 올라올 시 주소창 고정이 안됨 현상 관련 추가
+        $('html').removeClass('html--ios');
+        
 
 				plugin.$wrap
           .css({
