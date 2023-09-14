@@ -22,14 +22,14 @@
     <!-- scan-container -->
     <section id="scanContainer" class="scan-container">
         <video id="scanView" class="scan-view" playsinline muted></video> <!-- help: autoplay 속성 -> muted로 변경 -->
-        <div class="scan-box-wrap">
+        <div class="scan-box-wrap scan-box-wrap__passport"><!-- D: 230914 여권일 때 scan-box-wrap__passport(class) 추가해주세요 -->
             <a class="scan-box__cancel" href="https://fincubeocr.posicube.com/hanabank/">
                 <img src="https://fincubeocr.posicube.com/hanabank/images/cancel_icon.png" alt="닫기" />
             </a>
             <div class="scan-box__info-wrap">
                 <p class="scan-box__desc scan-box__tit">여권을 촬영해 주세요</p>
-                <!-- <p class="scan-box__desc scan-box__tit">주민등록증 또는 운전면허증을<br>촬영해 주세요</p> -->
                 <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">여권을 초록색 선에 맞춰 주세요.</p>
+                <!-- <p class="scan-box__desc scan-box__tit">주민등록증 또는 운전면허증을<br>촬영해 주세요</p> -->
                 <!-- <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">신분증을 초록색 선에 맞춰 주세요.</p> -->
                 <!-- <p id="scanBoxDesc" class="scan-box__desc">네모칸 안에 맞추세요.</p> -->
             </div>
@@ -44,22 +44,28 @@
                 <div id="scanBoxPassportPhoto" class="scan-box__passport-photo" style="display: block;"></div>
                 <div id="scanBoxPassportMrz" class="scan-box__passport-mrz" style="display: block;"></div>
                 <div class="scan-box__tip-wrap">
+                    <!-- D: 230914 여권일 때 문구 -->
                     <div class="scan-box__tip video-guide-info">
-                        <!-- <img src="https://fincubeocr.posicube.com/hanabank/images/light_icon.png" alt="" /> -->
                         <p>너무 밝은 곳에서 촬영하면, 빛 반사가 생길 수 있어요.</p>
                     </div>
-                    <!-- <div class="scan-box__tip">
-                    <img src="https://fincubeocr.posicube.com/hanabank/images/dark_icon.png" alt="" />
+                    
+                    <!-- D: 230914 신분증일 때 문구 -->
+                    <div class="scan-box__tip video-guide-info" style="display: none;">
+                        <p>사진이 너무 밝을 경우, 빛이 반사됩니다</p>
+                    </div>
+
+                    <!-- <div class="scan-box__tip video-guide-info">
                     <p>어두운 바닥에서 촬영해주세요.</p>
                     </div> -->
                 </div>
 
                 <div class="video-info-wrap">
-                    <!-- 삭제 <p class="txt">
-                        복사본이 아닌<br>
+                    <!-- D: 230914 신분증 일 때 노출 문구 -->
+                    <p class="txt" style="display: none;">
                         <span class="tp-green">주민등록증 또는 운전면허증 원본</span>으로 촬영하고<br>
                         빛이 반사되지 않도록 주의해 주세요.
-                    </p> -->
+                    </p>
+                    <!--// D: 230914 신분증 일 때 노출 문구 -->
                     <div class="btn-center-wrap">
                         <button type="button" class="btn sm light-gray arrow" title="다른 신분증으로 본인확인하기 이동" data-element="modal__open" data-target="#modalAlert">다른 신분증으로 본인 확인</button>
                     </div>
