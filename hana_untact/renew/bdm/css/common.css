@@ -115,7 +115,7 @@ body.body--ios.softkey-up {height: calc(var(--vh, 1vh) * 100)}
 }
 
 .app-footer .btn-last-wrap.ft-btn-show {
-    display: flex !important; opacity: 0;
+    display: flex !important; opacity: 0; justify-content: center;
 	animation: btnChangeIn 0.3s linear forwards;
 }
 .app-footer .btn-group-wrap {background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 20%);}
@@ -719,8 +719,7 @@ label.asswitch-wrap input:checked + span::after {content:''; left: 1.9rem;}
 .tooltip-inline {display: inline-flex; align-items: center; vertical-align: middle; position: unset;}
 .tooltip-inline .tooltip {height: 2rem;}
 .tooltip-inline .tooltip .btn-open {position: sticky;}
-.tooltip-inline .tooltip .tooltip-con {top: 2.8rem;}
-.tooltip-inline .tooltip .tooltip-con {width: calc(100vw - 4.8rem);}
+.tooltip-inline .tooltip .tooltip-con {width: calc(100vw - 4.8rem) !important; top: 2.8rem !important; left: 0 !important;}
 
 
 /* --- 모달 팝업 (modal) --- */
@@ -798,39 +797,71 @@ body.modal-open {height: 100vh; position: fixed; overflow: hidden; -webkit-overf
 
 /* 모달 (app) */
 body.untact--app {height: 100vh; min-height: 100vh;}
-body.untact--app.body--ios.modal-open {height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
-body.untact--app.body--ios .popup-wrap.modal--slide {height: 100vh !important;}
-body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {max-height: calc(100vh - 6rem) !important; padding-bottom: 0 !important;}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__container {
-	height: calc(100vh - 6rem) ; height: calc(100vh - (6rem + env(safe-area-inset-top))) !important; 
-	height: calc(100vh - (6rem + constant(safe-area-inset-top))) !important;
-	padding-top: 0; padding-top: calc(0 + constant(safe-area-inset-top)); padding-top: calc(0 + env(safe-area-inset-top));
-}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__container {
-	height: 100vh; height: calc(100vh + env(safe-area-inset-top)); 
-	height: calc(100vh + constant(safe-area-inset-top));
-}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page::before {background: #fff;}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__contents::after,
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__contents::after {content:''; width: 100%; height: 2rem; display: inline-block;}
-body.untact--app.body--ios .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll::after {display: none;}
-body.untact--app.body--ios .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .pualugin-tab__panel::after {content:''; width: 100%; height: 2rem; display: inline-block;}
-body.untact--app.body--ios .popup-wrap.alert .modal__container {padding-bottom: 2.4rem !important;}
-body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {padding-bottom: 0;}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - (10.6rem + constant(safe-area-inset-bottom))); height: calc(100% - (10.6rem + env(safe-area-inset-bottom)));}
-body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__contents {
-	padding-bottom: 9.2rem;
-	padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom));
-}
-
 
 body.untact--app.body--ios .popup-wrap.is-open:before {height: 100vh;}
-body.untact--app.body--ios .popup-wrap.alert .btn-wrap {padding-bottom: 0;}
+body.untact--app.body--ios .popup-wrap.alert .modal__container {padding-bottom: 2.4rem !important;}
+body.untact--app.body--ios .popup-wrap.alert .btn-wrap {padding-bottom: 0 !important;}
 body.untact--app.body--ios .agree-wrap {padding-bottom: 0; padding-bottom: calc(1rem + constant(safe-area-inset-bottom)); padding-bottom: calc(1rem + env(safe-area-inset-bottom));}
 body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bottom: calc(11.6rem + constant(safe-area-inset-bottom)); bottom: calc(11.6rem + env(safe-area-inset-bottom));}
 
+/* iphone8이하  app */
+@media screen and (max-width: 376px) and (max-height: 667px) {
+	/* body.untact--app.body--ios {background: #fdfedc;} */
+	@supports (-webkit-touch-callout: none) { 
+		html.html--ios .popup-wrap.is-open {height: 100% !important;}
+	}
+	body.untact--app.body--ios.modal-open {height: 100vh !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide {height: 100vh !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {max-height: calc(100vh - 6rem) !important; padding-bottom: 0 !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__container {height: 100vh !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__container {height: 100vh !important; max-height: 100vh !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__contents {min-height: calc(100% - 5.6rem); max-height: calc(100% - 5.6rem);}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - 10.6rem); height: calc(100% - 10.6rem);}
+}
+/* iphoneX */
+@media screen and (max-width: 376px) and (max-height: 813px) {
+	/* ios web(iphoenX 주소창 고정 안되는 현상 관련 추가) */
+	@supports (-webkit-touch-callout: none) { 
+	    html {height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
+	    body.body--ios {min-height: 100vh !important; height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
+		html.html--ios {height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
+		html.html--ios .popup-wrap.is-open {height: 100vh;}
+		body.body--ios .app-content {min-height: calc(100vh - 15.2rem) !important;}
+		
+	}
+}
+/* iphoneX 이상 app */
+@media screen and (max-width: 376px) and (min-height: 668px) {
+  	body.untact--app.body--ios.modal-open {height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
+	body.untact--app.body--ios .popup-wrap.modal--slide {height: 100vh !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {max-height: calc(100vh - 6rem) !important; padding-bottom: 0 !important;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__container {
+		height: calc(100vh - 6rem) ; height: calc(100vh - (6rem + env(safe-area-inset-top))) !important; 
+		height: calc(100vh - (6rem + constant(safe-area-inset-top))) !important;
+		padding-top: 0; padding-top: calc(0 + constant(safe-area-inset-top)); padding-top: calc(0 + env(safe-area-inset-top));
+	}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__container {
+		height: 100vh; height: calc(100vh + env(safe-area-inset-top)); 
+		height: calc(100vh + constant(safe-area-inset-top));
+	}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page::before {background: #fff; opacity: 1;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__contents::after,
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__contents::after {content:''; width: 100%; height: 2rem; display: inline-block;}
+	body.untact--app.body--ios .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll::after {display: none;}
+	body.untact--app.body--ios .popup-wrap.modal--slide .modal__contents.modal__contents--tabscroll .pualugin-tab__panel::after {content:''; width: 100%; height: 2rem; display: inline-block;}
+	body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {padding-bottom: 0;}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full .modal__contents--tabscroll.btn-none .pualugin-tab__panel {height: calc(100% - (10.6rem + constant(safe-area-inset-bottom))); height: calc(100% - (10.6rem + env(safe-area-inset-bottom)));}
+	body.untact--app.body--ios .popup-wrap.modal--slide.modal-full-page .modal__contents {
+		padding-bottom: 9.2rem;
+		padding-bottom: calc(9.2rem + constant(safe-area-inset-bottom)); padding-bottom: calc(9.2rem + env(safe-area-inset-bottom));
+	}
+	
+	/* web */
+	body.body--ios .popup-wrap.modal--slide .modal__contents {max-height: calc(100vh - 11.8rem);}
+}
 /* -- 모달 텍스트 타입 컨텐츠 */
 .popup-wrap.modal--slide .pop-text-cont {padding: 3rem 0 1.2rem;}
+
 
 /* -- 모달 텍스트 타입 popup text */
 .modal-text-box {padding: 3rem 0 1.2rem;}
@@ -1182,16 +1213,16 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .popup-wrap.modal--slide .modal__header {position: relative; min-height: 5.8rem;}
 .popup-wrap.modal--slide .modal__header .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 5;}
 .btn-download {width: 2.4rem; height: 2.4rem; display: inline-block; background: url(../images/icon/ico-system-download.png) 50% 50% no-repeat; background-size: 100% auto;}
-.agree-wrap {width:100%; padding-top: 5rem;}
+.agree-wrap {width:100%; padding-top: 50px;}
 .popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
-.agree-img-area {padding-top: 1rem;}
+.agree-img-area {padding-top: 10px;}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
     width: calc(100% + 4.8rem); min-height: 3rem; margin: 0 -2.4rem; padding: 0.5rem 2.4rem; position: absolute; top: 0; left: 0; z-index: 20; background: #fff;
     display: flex; justify-content: space-between; align-items: center;
-    box-shadow: 0 0.5rem 0.8rem -0.1rem rgba(0, 0, 0, 0.06);
+    box-shadow: 0 5px 8px -1px rgba(0, 0, 0, 0.06);
 }
 .modal-sticky-cont .agree-name {flex: 1; font-size: 1.4rem; line-height:1.4; color: #333;}
 .modal-sticky-cont .page {font-size: 1.4rem; font-weight: 500; line-height: 1; color: #999; margin-left: 2rem;}
