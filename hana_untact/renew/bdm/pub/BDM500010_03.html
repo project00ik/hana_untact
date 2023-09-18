@@ -9,10 +9,6 @@
     <title>KEB하나은행 - 비대면 계좌개설</title>
     <!-- 공통 css -->
     <link rel="stylesheet" href="../css/common.css" type="text/css">
-    <style>
-        /* body {height: 100vh; height: -webkit-fill-available; height: fill-available; background-color: lightblue;} */
-        /* .popup-wrap.modal--slide .modal__container {background: yellow !important;} */
-    </style>
 </head>
 <body>
     <div id="wrap" class="wrap"> 
@@ -196,7 +192,16 @@
                                 <div class="input__wrap">
                                     <div class="form-item input">
                                         <div class="input__inner">
-                                            <label for="inputText_test02" class="input__label" aria-hidden="true">사업자번호</label>
+                                            <!-- 230918수정 말풍선(토스트 알림) 추가 -->
+                                            <label for="inputText_test02" class="input__label toast__label" aria-hidden="true">
+                                                사업자번호
+                                                <span class="toast-popup-wrap" aria-hidden="true">
+                                                    <span class="toast-popup">
+                                                        <span class="txt">사업자번호 입력 후 조회 버튼을 눌러주세요</span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                            <!--// 230918수정 말풍선(토스트 알림) 추가 -->
                                             <input type="number" class="input__element form__move" id="inputText_test02" title="사업자번호 입력" value="">
                                             <button type="button" class="input__remove-button" aria-label="텍스트삭제"></button>
                                             <button type="button" class="btn gray sm" title="조회" onclick="formShow()">조회</button>
