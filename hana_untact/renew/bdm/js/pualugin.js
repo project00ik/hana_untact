@@ -1898,8 +1898,11 @@
         // 모달에 타이틀이 없는 경우 (웹접근성 관련 추가)
         if ($target.find('h1').length == 0) { 
           $target.find('.modal__contents').attr({
-            'tabindex' : '-1'
-          })
+            'tabindex': '-1'
+          });
+          $target.find('.modal__contents .text-sub').attr({
+            'data-element' : 'focus'
+          });
         }
 
         // 모달 형제노드 aria-hidden 유무 체크
