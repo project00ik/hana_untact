@@ -323,6 +323,9 @@ body.softkey-up .button-select__item {pointer-events: none;}
     display: block; margin-bottom: 0;
 	animation: formAreaShow 0.3s linear;
 }
+.cont-form--animate .form-area.form--active .form-area.form--active {
+	animation: none;
+} 
 @keyframes formAreaShow {
 	0% {
         margin-bottom: -8rem;
@@ -1216,7 +1219,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .agree-wrap {width:100%; padding-top: 50px;}
 .popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
-.agree-img-area {padding-top: 10px;}
+.agree-img-area {min-height: calc(100vh - 198px); padding-top: 10px;}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
