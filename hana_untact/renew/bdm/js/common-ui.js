@@ -1972,10 +1972,14 @@ function swiperTabSlide(target , num) {
     slidetabBtn.find('.tab').removeAttr('aria-label');
     slidetabBtn.find('.tab').attr('role', 'tab');
     slidetabBtn.find('.tab.swiper-slide-thumb-active').attr('aria-selected', 'true');
+    $('.product-slide-wrap .tab-slide-cont .swiper-slide').attr('aria-hidden', 'true');
+    $('.product-slide-wrap .tab-slide-cont .swiper-slide.swiper-slide-active').attr('aria-hidden', 'false');
 
     $('body').on('click', slideTarget +' .tab--slide_btn .tab', function () {
         $(this).closest('.tab-slide-list').find('.tab').attr('aria-selected', 'false');
         $(this).attr('aria-selected', 'true');
+        $('.product-slide-wrap .tab-slide-cont .swiper-slide').attr('aria-hidden', 'true');
+        $('.product-slide-wrap .tab-slide-cont .swiper-slide.swiper-slide-active').attr('aria-hidden', 'false');
     });
     
     return swiperTabBtn;
