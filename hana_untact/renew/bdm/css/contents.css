@@ -87,7 +87,7 @@
 
 /* 이어하기 */
 .product-join-detail {margin-top: 4rem;}
-.product-join-detail .card-box .date {font-size: 1.4rem; color: #999;}
+.product-join-detail .card-box .date {font-size: 1.4rem; color: #959595;}
 .product-join-detail .card-box .text-wrap {margin-top: 2rem; display: flex; align-items: center;}
 .product-join-detail .card-box .text-wrap + .text-wrap {margin-top: 1rem;}
 .product-join-detail .card-box .text {margin-left: 0.4rem; color: #333;}
