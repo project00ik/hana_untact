@@ -834,7 +834,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 	}
 }
 /* iphoneX 이상 app */
-@media screen and (max-width: 376px) and (min-height: 668px) {
+@media screen and (min-width: 374px) and (min-height: 668px) {
   	body.untact--app.body--ios.modal-open {height: 100vh; height: calc(100vh + env(safe-area-inset-top) + env(safe-area-inset-bottom)); height: calc(100vh + constant(safe-area-inset-top) + constant(safe-area-inset-bottom));}
 	body.untact--app.body--ios .popup-wrap.modal--slide {height: 100vh !important;}
 	body.untact--app.body--ios .popup-wrap.modal--slide .modal__container {max-height: calc(100vh - 6rem) !important; padding-bottom: 0 !important;}
@@ -1215,11 +1215,13 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 /* 약관 */
 .popup-wrap.modal--slide .modal__header {position: relative; min-height: 5.8rem;}
 .popup-wrap.modal--slide .modal__header .btn-download {position: absolute; top: 1.6rem; right: 1.9rem; z-index: 5;}
+/* body.untact--app.body--ios .popup-wrap.modal--slide .modal__header .btn-download {top: 1.6rem; top: calc(1.6rem + env(safe-area-inset-top)); top: calc(1.6rem + constant(safe-area-inset-top));} */
 .btn-download {width: 2.4rem; height: 2.4rem; display: inline-block; background: url(../images/icon/ico-system-download.png) 50% 50% no-repeat; background-size: 100% auto;}
 .agree-wrap {width:100%; padding-top: 50px;}
 .popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
-.agree-img-area {min-height: calc(100vh - 198px); padding-top: 10px;}
+.agree-img-area {min-height: 400px; padding-top: 10px;}
+body.untact--app.body--ios .agree-img-area {min-height: calc(400px + env(safe-area-inset-top) + env(safe-area-inset-bottom)); min-height: calc(400px + constant(safe-area-inset-top) + constant(safe-area-inset-bottom)); padding-top: 10px;}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
