@@ -326,6 +326,9 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .cont-form--animate .form-area.form--active .form-area.form--active {
 	animation: none;
 } 
+.cont-form--animate.modi-form-area .form-area.form--active .form-area.form--active {
+	animation: none;
+} 
 @keyframes formAreaShow {
 	0% {
         margin-bottom: -8rem;
