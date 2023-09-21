@@ -536,7 +536,7 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').prev().attr({
                 "aria-hidden" : false
             });
-            $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').nex().attr({
+            $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').next().attr({
                 "aria-hidden" : false
             });
             
