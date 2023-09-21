@@ -284,11 +284,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked": true,
+            "aria-hidden": false
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked": false,
+            "aria-hidden": true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
+            "aria-hidden": false
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
+            "aria-hidden": false
         });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
     }
