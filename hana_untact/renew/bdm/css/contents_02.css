@@ -426,7 +426,7 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 .check-list .checkbox-wrap label > span {flex: 1; font-size: 1.4rem; color: #757575;}
 .check-list .checkbox-wrap label > span.branch-txt {font-size: 1.6rem; color: #333;}
 .check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
-.check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 500;}
+.check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 700;}
 .check-list > li + li {margin-top: 1.2rem;}
 .check-list > li.big-chk {font-size: 1.6rem; color: #333;}
 .check-list > li.big-chk + li {margin-top: 1.6rem;}
