@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -160,11 +161,15 @@
                         <!--// 영업점과 관리직원 모두 선택 불가 -->
 
                         <div class="form-area mt20">
-                            <div class="chk-tg tg--area">
-                                <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggletestId" onclick="toggleId('toggletestId');">
-                                    <div class="checkbox-wrap chk-type2">
-                                        <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="한도해제코드 등록(선택)">
-                                        <label for="search_checkbox04" class="tooltip-label">한도해제코드 등록(선택)</label>
+                            <div class="chk-tg new-tg--area">
+                                <div class="tg-btn-area">
+                                    <div class="new-chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggletestId" onclick="toggleId('toggletestId');">
+                                        <div class="checkbox-wrap chk-type2">
+                                            <input type="checkbox" name="search_checkbox" id="search_checkbox04" title="한도해제코드 등록(선택)">
+                                            <label for="search_checkbox04">한도해제코드 등록(선택)</label>
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-label">
                                         <!-- 툴팁 -->
                                         <div class="tooltip-wrap tooltip-inline">
                                             <p class="tooltip-title"></p>
@@ -186,10 +191,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!--// 툴팁 -->                                 
+                                        <!--// 툴팁 -->
                                     </div>
                                 </div>
-                                <div class="chk-tg-cont tg--layer">
+                                <div class="chk-tg-cont new-tg--layer">
                                     <div class="form-area mt0">
                                         <div class="form-item input no-label">
                                             <div class="input__inner">
@@ -1058,32 +1063,26 @@
 
         // 토글 레이어
         function toggleId(id) {
-            var toggleBtn = $('#' + id);
-            var tgBtn = toggleBtn.closest('.tg--area').find('>.tg-btn');
-            var tgChkBtn = toggleBtn.closest('.tg--area').find('>.chk-tg-btn');
-            var tgly = toggleBtn.closest('.tg--area').find('>.tg--layer');
-
-            tgChkBtn.toggleClass('tg--on');
-            if (tgChkBtn.find('input').is(':checked')) {
+            var newToggleBtn = $('#' + id);
+            var newTgly = newToggleBtn.closest('.new-tg--area').find('.new-tg--layer');
+            newToggleBtn.toggleClass('new-tg--on');
+            if (newToggleBtn.hasClass('new-tg--on')) {
                 // checked
-                tgChkBtn.addClass('tg--on');
-                tgChkBtn.find('input').prop('checked', true);
-                tgly.addClass('open');
-                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
-                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+                newToggleBtn.find('input').prop('checked', true);
+                newTgly.addClass('open');
+                newToggleBtn.attr('aria-checked', newToggleBtn.attr('aria-checked').replace(false, true));
+                newToggleBtn.attr('aria-expanded', newToggleBtn.attr('aria-expanded').replace(false, true));
                 
-                if (tgly.find('.input__element').length > 0) {
-                    tgly.find('.input__element').eq(0).focus();
+                if (newTgly.find('.input__element').length > 0) {
+                    newTgly.find('.input__element').eq(0).focus();
                 }
             } else {
                 // checked false
-                tgChkBtn.removeClass('tg--on');
-                tgChkBtn.find('input').prop('checked', false);
-                tgly.removeClass('open');
-                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
-                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+                newToggleBtn.find('input').prop('checked', false);
+                newTgly.removeClass('open');
+                newToggleBtn.attr('aria-checked', newToggleBtn.attr('aria-checked').replace(true, false));
+                newToggleBtn.attr('aria-expanded', newToggleBtn.attr('aria-expanded').replace(true, false));
             }
-
         }
     </script>
     
