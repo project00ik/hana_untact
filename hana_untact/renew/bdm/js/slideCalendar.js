@@ -188,11 +188,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).attr('role', 'radiogroup');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked": true,
+            "aria-hidden": false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked": false,
+            "aria-hidden": true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
+            "aria-hidden": false
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
+            "aria-hidden": false
         });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
@@ -260,11 +268,21 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).attr('role', 'radiogroup');
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
-            "aria-checked" : true
+            "aria-checked" : true,
+            "aria-hidden" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
-            "aria-checked" : false
+            "aria-checked": false,
+            "aria-hidden" : true
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).prev().attr({
+            "role": "radio",
+            "aria-hidden" : false
+        });
+        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).next().attr({
+            "role": "radio",
+            "aria-hidden" : false
         });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
@@ -402,11 +420,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).closest('.list-section').attr('role', 'radiogroup');
                 items.eq(activeTargetIdx).attr({
                     "role": "radio",
-                    "aria-checked" : true
+                    "aria-checked" : true,
+                    "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
-                    "aria-checked" : false
+                    "aria-checked": false,
+                    "aria-hidden" : true
+                });
+                items.eq(activeTargetIdx).prev().attr({
+                    "aria-hidden" : false
+                });
+                items.eq(activeTargetIdx).next().attr({
+                    "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
