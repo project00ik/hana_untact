@@ -1358,19 +1358,19 @@ var hanaUI = {
         $('body').on('click', $popOpenBtn, function(){
             var popActiveOpenBtn = $(this);
             if(popActiveOpenBtn.closest('.select-wrap').hasClass('select--on')){
-                return;
+                return false;
             } else {
                 popActiveOpenBtn.closest('.select-wrap').addClass('select--on');
             }
 
             if(popActiveOpenBtn.closest('.search-btn-wrap').hasClass('search--on')){
-                return;
+                return false;
             } else {
                 popActiveOpenBtn.closest('.search-btn-wrap').addClass('search--on');
             }
         });   
 
-        $('body').on('click', $popCloseBtn, function(){
+        $('body').on('click', $popCloseBtn, function () {
             if($('.select-wrap').hasClass('select--on')){
                 $('.select-wrap.select--on').addClass('select--active');
                 $('.select-wrap').removeClass('select--on');
@@ -1384,7 +1384,22 @@ var hanaUI = {
             } else {
                 $('.search-btn-wrap.search--on').removeClass('search--active');
             }
-            
+
+            // select와 search에 텍스트가 없는 경우 active class 처리 추가
+            var activeSelect = $(this).closest('.modal').attr('id');
+            var activeSelectId = $('[data-target="#' + activeSelect + '"]');
+
+            if (activeSelectId.find('span').text() == '') {
+                console.log('없다.')
+                $('.select-wrap').removeClass('select--active');
+                $('.select-wrap').removeClass('select--on');
+                $('.search-btn-wrap').removeClass('search--active');
+                $('.search-btn-wrap').removeClass('search--on');
+            } else { 
+                console.log('있다.')
+                $('.select-wrap.select--on').addClass('select--active');
+                $('.search-btn-wrap.search--on').addClass('search--active');
+            }
         });
 
     },
@@ -1943,6 +1958,19 @@ function modalClose(target){
             var plugin_modal = $('body').data('plugin_modal');
             plugin_modal.close('#' + modalID);
             selectTarget.closest('.select-wrap').removeClass('select--on').addClass('select--active');
+
+            // select와 search에 텍스트가 없는 경우 active class 처리 추가
+            if (selectTarget.find('span').text() == '') {
+                console.log('없다.')
+                $('.select-wrap').removeClass('select--active');
+                $('.select-wrap').removeClass('select--on');
+                $('.search-btn-wrap').removeClass('search--active');
+                $('.search-btn-wrap').removeClass('search--on');
+            } else { 
+                console.log('있다.')
+                $('.select-wrap.select--on').addClass('select--active');
+                $('.search-btn-wrap.search--on').addClass('search--active');
+            }
         }, 0);
     }
 }
