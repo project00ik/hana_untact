@@ -21,13 +21,13 @@
 <body class="scan-body">
     <!-- scan-container -->
     <section id="scanContainer" class="scan-container">
-        <video id="scanView" class="scan-view" playsinline muted></video> <!-- help: autoplay 속성 -> muted로 변경 -->
+        <video id="scanView" class="scan-view" playsinline muted aria-hidden="true"></video> <!-- help: autoplay 속성 -> muted로 변경 -->
         <div class="scan-box-wrap">
             <a class="scan-box__cancel" href="https://fincubeocr.posicube.com/hanabank/">
                 <img src="https://fincubeocr.posicube.com/hanabank/images/cancel_icon.png" alt="닫기" />
             </a>
             <div class="scan-box__info-wrap">
-                <p class="scan-box__desc scan-box__tit">주민등록증 또는 운전면허증을<br>촬영해 주세요</p>
+                <p class="scan-box__desc scan-box__tit" aria-selected="true">주민등록증 또는 운전면허증을<br>촬영해 주세요</p>
                 <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">신분증을 초록색 선에 맞춰 주세요.</p>
                 <!-- <p class="scan-box__desc scan-box__tit">여권을 촬영해 주세요</p> -->
                 <!-- <p class="scan-box__desc scan-box__txt" id="scanBoxDesc">여권을 초록색 선에 맞춰 주세요.</p> -->
