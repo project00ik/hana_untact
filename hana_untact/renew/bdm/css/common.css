@@ -76,6 +76,7 @@ a.txt_underline-b {text-decoration: underline; color: #000; font-weight: 600; cu
 .txt-align-r {text-align: right !important;}
 .txt-align-c {text-align: center !important;}
 
+.ellipsis {max-width: 100%; display:block; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
 
 /* --- 레이아웃 (layout) --- */
 body.softkey-up {height: calc(var(--vh, 1vh) * 100)}
@@ -384,7 +385,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .tab-list .tab .text {height: 100%; position: relative; display: block; font-size: 1.6rem; color: #333; text-align: center;}
 .tab-list .tab .text span {position: relative; display: inline-block; padding: 1.6rem 0.8rem 0.9rem; height: 100%; font-weight: 500; color: #333;}
 .tab-list .tab .text span::before {content: ''; display: block; position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; border-bottom: 1px solid #e7e9ee; z-index: 1;}
-.tab-list .tab .text.is-active span {color: #262b45; background-color: #fff; font-weight: 700;}
+.tab-list .tab .text.is-active span {color: #262b45; font-weight: 700;}
 .tab-list .tab .text.is-active span:before {border-bottom: 3px solid #262b45; border-radius: 12px 12px 0 0; z-index: 1; box-sizing: border-box;}
 .tab-list .tab .text.disabled {pointer-events: none;}
 .tab-list .tab .text.disabled span {color: #959595;}
@@ -1108,7 +1109,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .select-wrap .input__error {display: none; font-size: 1.4rem;}
 .select-wrap.select--error .input__error {display: block;}
 .select-wrap .select .select__inner {width: 100%; position: relative; display: flex; align-items: center;}
-.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #bbb; text-align: left; position: relative; z-index: 1; opacity: 0;}
+.select-wrap .select .button-select__item {width: 100%; min-height: 5.9rem; padding: 2.8rem 2.6rem 0.4rem 0; font-size: 1.8rem; font-weight: 600; color: #929292; text-align: left; position: relative; z-index: 1; opacity: 0;}
 .select-wrap .select .button-select__item span {max-width: 100%; display: inline-block; line-height: 1.2; vertical-align: top; font-size: 1.8rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .select-wrap .select .button-select__item span a {font-size: inherit;}
 .select-wrap.btn-date .select .button-select__item {padding: 2.8rem 0 0.4rem;}
@@ -1224,7 +1225,10 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .popup-wrap .modal-floating-area {position: absolute; bottom: 11.6rem; right: 2.4rem;}
 .popup-wrap .btn-end-agree {width: 5.5rem; height: 5.5rem; background: url(../images/icon/ico-end-agree.png) 50% 50% no-repeat #fff; background-size: 2.8rem auto; border-radius: 50%; box-shadow: 0 0.5rem 1.2rem 0.2rem rgba(0, 0, 0, 0.09);}
 .agree-img-area {min-height: 400px; padding-top: 10px;}
-body.untact--app.body--ios .agree-img-area {min-height: calc(400px + env(safe-area-inset-top) + env(safe-area-inset-bottom)); min-height: calc(400px + constant(safe-area-inset-top) + constant(safe-area-inset-bottom)); padding-top: 10px;}
+.agree-img-area:last-child {min-height: calc((var(--vh, 1vh)) *100 - 18.5rem)}
+body.untact--app .agree-img-area:last-child {min-height: calc(100vh - 17.5rem); background: yellow;}
+body.untact--app.body--ios .agree-img-area {min-height: calc(400px + env(safe-area-inset-top) + env(safe-area-inset-bottom)); min-height: calc(400px + constant(safe-area-inset-top) + constant(safe-area-inset-bottom)); padding-top: 10px; }
+body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 17.5rem);min-height: calc(100vh - (17.5rem + env(safe-area-inset-top)) + env(safe-area-inset-bottom)); min-height: calc(100vh - (17.5rem + constant(safe-area-inset-top) + constant(safe-area-inset-bottom))); background: pink;}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
@@ -1260,3 +1264,7 @@ body.untact--app.body--ios .phone-agree-wrap .inner-box iframe.agreeSingle {heig
 .new-chk-tg-btn {display: inline-block;}
 .new-tg--area .checkbox-wrap {display:inline-block; z-index: -1;}
 .new-tg--area .tooltip-label {width: 2.1rem; display: inline-block;}
+
+/* 보안키패드 테스트 */
+.input input#resRegNo02 {display: block !important; opacity: 1; z-index: 2;}
+.input + .bar + .input {display: block !important;}
