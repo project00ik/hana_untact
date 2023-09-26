@@ -498,7 +498,7 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 /* 사업자등록증 촬영 */
 .business-photo-wrap {margin-top: 1rem;}
 .business-photo-wrap .business-photo-info .txt {font-size: 16px; font-weight: 500; color: #666; word-break: keep-all; word-wrap: break-word;}
-.business-photo-cont {padding-top: 39.9rem; background: url(../images/png/bg_business-photo.png) top 5.4rem left 50% no-repeat; background-size: 23.4rem auto;}
+.business-photo-cont {padding:4rem 0 320px; background: url(../images/png/bg_business-photo.png) bottom 0 left 50% no-repeat; background-size: 20.9rem auto;}
 .business-photo-cont .business-box {padding: 1.3rem 2.4rem; border-radius: 0.9rem; background: rgba(231, 233, 238, 0.5);}
 .business-photo-wrap .bul-bar-wrap {margin-top: 1rem;}
 .business-photo-wrap .id-photo-info + .bul-bar-wrap {margin-top: 2.4rem;}
