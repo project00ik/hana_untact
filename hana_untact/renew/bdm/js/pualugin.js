@@ -1897,8 +1897,12 @@
         }
         // 모달에 타이틀이 없는 경우 (웹접근성 관련 추가)
         if ($target.find('h1').length == 0) { 
-          $target.find('.modal__contents').attr({
-            'tabindex': '-1'
+          // 접근성 관련 삭제
+          // $target.find('.modal__contents').attr({
+          //   'tabindex': '-1'
+          // });
+          $target.find('.modal__contents .con-title').attr({ 
+            'data-element' : 'focus'
           });
           $target.find('.modal__contents .text-sub').attr({
             'data-element' : 'focus'
