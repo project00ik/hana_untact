@@ -265,7 +265,7 @@
 .guide-notice-wrap {margin-top: 4rem;}
 .notice-wrap {border-top: 1px solid #e7e9ee;}
 .notice-wrap .btn-notice {
-    width: 100%; text-align: left; padding: 1.7rem 0 1.7rem 2.2rem; font-size: 1.4rem; color: #333; font-weight: 500;
+    width: 100%; text-align: left; padding: 1.7rem 2.7rem 1.7rem 2.2rem; font-size: 1.4rem; color: #333; font-weight: 500;
     background-image: url(../images/icon/group-10@3x.png), url(../images/icon/ico-system-arrow-right-m.png); 
     background-position: 0 2rem, right center;
     background-repeat:no-repeat;
