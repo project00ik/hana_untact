@@ -486,6 +486,8 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .btn.btn-shadow:focus,
 .btn.btn-shadow:active {background: #fff; color: #9ca7b3;}
 
+.btn.btn-underline {font-size: 1.5rem; font-weight: 500; color: #666; text-decoration: underline; background: none;}
+
 /* - 컨텐츠 : 버튼 (button) 아이콘형 */ 
 .btn [class^="icon"] {padding-left: 2rem; font-weight: 600; vertical-align: top; line-height: 5.6rem;}
 
