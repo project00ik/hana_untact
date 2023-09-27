@@ -12,10 +12,10 @@
 .tp-green {color: #009591 !important; font-size: inherit;}
 .tp-red {color: #e53a4c !important;}
 .tp-dpink {color: #e31e5a !important;}
-.tp-gray {color: #999 !important;}
+.tp-gray {color: #929292 !important;}
 .tp-black {color: #000 !important; font-size: inherit;}
 .tpsb-green {color: #009591 !important; font-weight: 700;}
-.tpsb-gray {color: #999 !important; font-weight: 700;}
+.tpsb-gray {color: #929292 !important; font-weight: 700;}
 .tpsb-dgray02 {color: #333 !important; font-weight: 700;}
 .tpsb-red {color: #e53a4c !important; font-weight: 700;}
 .tpsb-dpink {color: #e31e5a !important; font-weight: 700;}
@@ -670,7 +670,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .info-box-wrap {margin-top: 2.4rem; padding: 1.7rem 2.4rem 2.4rem; border-radius: 1.8rem; border: 0.1rem solid #e7e9ee;}
 .info-box-wrap .tit {margin-bottom: 1rem;}
 .info-box-wrap .txt {}
-.info-txt-s {font-size: 1.2rem; color: #999;}
+.info-txt-s {font-size: 1.2rem; color: #929292;}
 .info-txt-m {font-size: 1.4rem; color: #000; font-weight: 500;}
 .info-txt-l {font-size: 1.6rem; color: #000; font-weight: 500;}
 .info-chk-list {padding: 2.4rem 0 1.6rem;}
@@ -1239,7 +1239,7 @@ body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 
     box-shadow: 0 5px 8px -1px rgba(0, 0, 0, 0.06);
 }
 .modal-sticky-cont .agree-name {flex: 1; font-size: 1.4rem; line-height:1.4; color: #333;}
-.modal-sticky-cont .page {font-size: 1.4rem; font-weight: 500; line-height: 1; color: #999; margin-left: 2rem;}
+.modal-sticky-cont .page {font-size: 1.4rem; font-weight: 500; line-height: 1; color: #929292; margin-left: 2rem;}
 .modal-sticky-cont .page b {font-size: 1.4rem; font-weight: 500; color: #009591;}
 .modal-sticky-cont .page span {font-size: 1.4rem;}
 

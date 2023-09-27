@@ -48,7 +48,7 @@
 
 .bank-account-box {display: flex; align-items: center;}
 .bank-account-box .bank {margin-left: 0.6rem; font-size: 1.6rem; color: #333;}
-.bank-account-box .num {margin-left: 0.6rem; font-size: 1.4rem; color: #999;}
+.bank-account-box .num {margin-left: 0.6rem; font-size: 1.4rem; color: #929292;}
 .bank-account-box .icon-bank {width: 2rem; height: 2rem;}
 
 .bank-list-wrap {display: flex; flex-wrap: wrap; margin: 0.8rem 0 2rem -3.2%; padding: 0 2.4rem; }
@@ -359,17 +359,17 @@
 .card-box .radio-wrap label::before {left: auto; right: 2.4rem;}
 .card-box .radio-wrap .title {display: block; padding-left: 2.6rem; color : #333; background: url(../images/ci/ci-bank-081.png) 0 0 no-repeat; background-size: 2rem 2rem;}
 .card-box .radio-wrap .account-num-wrap {margin-top: 0.5rem; padding-left: 2.6rem; }
-.card-box .radio-wrap .account-num-wrap .num {font-size: 1.4rem; color : #999;}
-.card-box .radio-wrap .account-num-wrap .pass-dot-wrap .pass-dot {width: 1.4rem; height: 1.4rem; background: #999;}
+.card-box .radio-wrap .account-num-wrap .num {font-size: 1.4rem; color : #929292;}
+.card-box .radio-wrap .account-num-wrap .pass-dot-wrap .pass-dot {width: 1.4rem; height: 1.4rem; background: #929292;}
 /*
-.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #999;}
+.card-box .radio-wrap .text {display: block; margin-top: 0.5rem; padding-left: 2.6rem; font-size: 1.4rem; color : #929292;}
 */
 
 .card-box .checkbox-wrap.sm label {padding: 2.1rem 2.1rem 2.1rem 4.8rem; width: 100%; height: 100%;}
 .card-box .checkbox-wrap.sm label::before {left: 2.4rem; top: 50%; margin-top: -0.9rem;}
 .card-box .checkbox-wrap.sm .title {display: inline-block; padding-left: 0.6rem; color : #333;}
 .card-box .checkbox-wrap.sm .icon-bank {width: 2rem; height: 2rem;}
-.card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; font-size: 1.4rem; color : #999;}
+.card-box .checkbox-wrap.sm .text {display: block; margin-top: 0.5rem; font-size: 1.4rem; color : #929292;}
 .card-list-wrap .checkbox-wrap input:checked + label::after {content: ''; display: block; position: absolute; left: 0; top: 0; width: 100%; height: 100%; border: 2px solid #009591; border-radius: 1.8rem 1.8rem; box-sizing: border-box;}
 
 .card-list-wrap li {margin-top: 1.6rem;}
