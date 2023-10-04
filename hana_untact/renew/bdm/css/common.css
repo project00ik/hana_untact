@@ -540,6 +540,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .checkbox-wrap input:checked + label {font-weight: 500;}
 .checkbox-wrap input:checked + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png);}
 .checkbox-wrap input:disabled + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-disabled.png);}
+.checkbox-wrap input:checked:disabled + label::before {background-image: url(../images/icon/ico-system-form-check-1-depth-active.png) !important;}
 .checkbox-wrap.tp-green label {color: #009591;}
 .checkbox-wrap label .info-txt-s {margin-top: 0.4rem; display: block;}
 .checkbox-wrap label .info-txt-l {margin-top: 0.4rem; display: block; font-size: 1.6rem; font-weight: 500; letter-spacing: -0.11rem;}
