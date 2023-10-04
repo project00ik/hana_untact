@@ -202,7 +202,7 @@
 .uface-content .video-box.faceR .textguide-box .side {display: block;}
 .uface-content .video-box.faceR .video-box-inner::before {content: ""; right: 24px; background-image: url(../images/icon_arrow_r.svg);}
 .uface-content .video-box.faceF .textguide-box .front {display: block;}
-.uface-content .video-box.faceF .textguide-box .side {display: none;}
+/* .uface-content .video-box.faceF .textguide-box .side {display: none;} */
 .uface-content .video-box.faceF .face-front span {border: 3px solid #5c96fd;}
 .uface-content .video-box .textguide-box p strong {display: block; font-size: 20px; margin-bottom: 16px;}
 .uface-content .icon-text.ready .item {display: flex; flex-direction: row; margin-top: 24px; color: #333333;}
