@@ -314,7 +314,11 @@
 .list-wrap.type02 dl {width: 100%; display: flex; justify-content: space-between;}
 .list-wrap.type02 dl + dl {margin-top: 0.8rem;}
 .list-wrap.type02 dl > dt {font-size: 1.3rem; color: #757575; flex: 1;}
+.list-wrap.type02 dl > dt > * {font-size: 1.3rem;}
 .list-wrap.type02 dl > dd {font-size: 1.5rem; color: #393939; text-align: right; flex: 2;}
+.list-wrap.type02 dl > dd > * {font-size: 1.5rem;}
+.list-wrap.type02 dl > dd > .btn.sm {font-size: 1.3rem;}
+.list-wrap.type02 dl > dd > .btn.sm > * {font-size: 1.3rem;}
 .list-wrap.type02 .icon-bank {width: 2rem; height: 2rem;}
 
 /* type03 */
