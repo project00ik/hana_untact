@@ -363,7 +363,7 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 .attention-stage.stage3 {background: #f26100;} /* 신중 */
 
 /* 뱃지 스타일 */
-.badge {height: 2rem; padding: 0.1rem 0.6rem; display: inline-block; font-size: 1.2rem; border-radius: 0.4rem; overflow: hidden;}
+.badge {height: 2rem; padding: 0.1rem 0.6rem; line-height: 1.65rem; display: inline-block; font-size: 1.2rem; border-radius: 0.4rem; overflow: hidden;}
 
 /* - 뱃지 : 상품 */
 .badge.type-value1 {background: #eaedf6; color: #455896;} /* 입출금 */
