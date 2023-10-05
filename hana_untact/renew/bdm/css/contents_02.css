@@ -530,7 +530,9 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 .face-progress .stepper > ul {display: flex; align-items: center; justify-content: flex-end;}
 .face-progress .stepper > ul > li + li {margin-left: 0.4rem}
 .face-progress .stepper .stepper__step {width: 1.6rem; height: 1.6rem; display: inline-block; font-size: 0; background: url(../images/icon/stepper-on.svg) 50% 50% #009591 no-repeat; border-radius: 50%; text-align: center; font-family: 'roboto';}
-.face-progress .stepper .stepper__step.on ~ .stepper__step {background: #666;}
+.face-progress .stepper .stepper__step.first {background: #666;}
+.face-progress .stepper .stepper__step ~ .stepper__step {background: #666;}
+.face-progress .stepper .stepper__step + .stepper__step.on {background: url(../images/icon/stepper-on.svg) 50% 50% #009591 no-repeat;}
 .face-progress .stepper .stepper__step.on {width: 1.6rem; height: 1.6rem; line-height: 1; padding: 0.3rem 0.5rem; background: url(../images/icon/stepper-on.svg) 50% 50% #009591 no-repeat;}
 
 
