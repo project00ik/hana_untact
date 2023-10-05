@@ -189,19 +189,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked": true,
-            "aria-hidden": false
+            // "aria-hidden": false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden": true
+            // "aria-hidden": true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden": false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden": false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden": false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden": false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
     }
@@ -223,19 +223,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked": true,
-            "aria-hidden": false
+            // "aria-hidden": false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden": true
+            // "aria-hidden": true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden": false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden": false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden": false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden": false
+        // });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
     }
 
@@ -269,21 +269,21 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true,
-            "aria-hidden" : false
+            // "aria-hidden" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden" : true
+            // "aria-hidden" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).prev().attr({
-            "role": "radio",
-            "aria-hidden" : false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).next().attr({
-            "role": "radio",
-            "aria-hidden" : false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).prev().attr({
+        //     "role": "radio",
+        //     "aria-hidden" : false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).next().attr({
+        //     "role": "radio",
+        //     "aria-hidden" : false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
         return arrDay;
@@ -303,19 +303,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked": true,
-            "aria-hidden": false
+            // "aria-hidden": false
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden": true
+            // "aria-hidden": true
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden": false
-        });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden": false
-        });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden": false
+        // });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden": false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
     }
     
@@ -421,19 +421,19 @@ hanaProdUI.dialSelect = function(obj, param, cfn){
                 items.eq(activeTargetIdx).attr({
                     "role": "radio",
                     "aria-checked" : true,
-                    "aria-hidden" : false
+                    // "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
                     "aria-checked": false,
-                    "aria-hidden" : true
+                    // "aria-hidden" : true
                 });
-                items.eq(activeTargetIdx).prev().attr({
-                    "aria-hidden" : false
-                });
-                items.eq(activeTargetIdx).next().attr({
-                    "aria-hidden" : false
-                });
+                // items.eq(activeTargetIdx).prev().attr({
+                //     "aria-hidden" : false
+                // });
+                // items.eq(activeTargetIdx).next().attr({
+                //     "aria-hidden" : false
+                // });
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 orgTargetIdx = activeTargetIdx;
@@ -526,19 +526,19 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').attr({
                 "role": "radio",
                 "aria-checked" : true,
-                "aria-hidden" : false
+                // "aria-hidden" : false
             });
             $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').siblings().attr({
                 "role": "radio",
                 "aria-checked": false,
-                "aria-hidden" : true
+                // "aria-hidden" : true
             });
-            $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').prev().attr({
-                "aria-hidden" : false
-            });
-            $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').next().attr({
-                "aria-hidden" : false
-            });
+            // $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').prev().attr({
+            //     "aria-hidden" : false
+            // });
+            // $('.direct-debit-btn .list-section').eq(0).find('.list-wrap__item.active-item').next().attr({
+            //     "aria-hidden" : false
+            // });
             
             //스크롤시 이벤트
             scrollContainer.off('scroll').on('scroll',function(){
@@ -563,19 +563,19 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 items.eq(activeTargetIdx).attr({
                     "role": "radio",
                     "aria-checked": true,
-                    "aria-hidden" : false
+                    // "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
                     "aria-checked": false,
-                    "aria-hidden" : true
+                    // "aria-hidden" : true
                 });
-                items.eq(activeTargetIdx).prev().attr({
-                    "aria-hidden" : false
-                });
-                items.eq(activeTargetIdx).next().attr({
-                    "aria-hidden" : false
-                });
+                // items.eq(activeTargetIdx).prev().attr({
+                //     "aria-hidden" : false
+                // });
+                // items.eq(activeTargetIdx).next().attr({
+                //     "aria-hidden" : false
+                // });
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -590,19 +590,19 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                 $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').attr({
                     "role": "radio",
                     "aria-checked": true,
-                    "aria-hidden" : false
+                    // "aria-hidden" : false
                 });
                 $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').siblings().attr({
                     "role": "radio",
                     "aria-checked": false,
-                    "aria-hidden" : true
+                    // "aria-hidden" : true
                 });
-                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').prev().attr({
-                    "aria-hidden" : false
-                });
-                $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').next().attr({
-                    "aria-hidden" : false
-                });
+                // $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').prev().attr({
+                //     "aria-hidden" : false
+                // });
+                // $('.direct-debit-cont .list-section').eq(0).find('.list-wrap__item.active-item').next().attr({
+                //     "aria-hidden" : false
+                // });
                 
                 //스크롤시 이벤트
                 scrollContainer.off('scroll').on('scroll', function () {
@@ -624,19 +624,19 @@ hanaProdUI.directDebitSelect = function (obj, cfn) {
                     items.eq(activeTargetIdx).attr({
                         "role": "radio",
                         "aria-checked": true,
-                        "aria-hidden" : false
+                        // "aria-hidden" : false
                     });
                     items.eq(activeTargetIdx).siblings().attr({
                         "role": "radio",
                         "aria-checked": false,
-                        "aria-hidden" : true
+                        // "aria-hidden" : true
                     });
-                    items.eq(activeTargetIdx).prev().attr({
-                        "aria-hidden" : false
-                    });
-                    items.eq(activeTargetIdx).next().attr({
-                        "aria-hidden" : false
-                    });
+                    // items.eq(activeTargetIdx).prev().attr({
+                    //     "aria-hidden" : false
+                    // });
+                    // items.eq(activeTargetIdx).next().attr({
+                    //     "aria-hidden" : false
+                    // });
                     
                     orgTargetIdx = activeTargetIdx;
                 })
@@ -742,19 +742,19 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
             o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
                 "role": "radio",
                 "aria-checked": true,
-                "aria-hidden": false
+                // "aria-hidden": false
             });
             o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
                 "role": "radio",
                 "aria-checked": false,
-                "aria-hidden": true
+                // "aria-hidden": true
             });
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
-                "aria-hidden": false
-            });
-            o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
-                "aria-hidden": false
-            });
+            // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
+            //     "aria-hidden": false
+            // });
+            // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
+            //     "aria-hidden": false
+            // });
             $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
             
             return arrMonth;
@@ -874,19 +874,19 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
                 items.eq(activeTargetIdx).attr({
                     "role": "radio",
                     "aria-checked" : true,
-                    "aria-hidden" : false
+                    // "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
                     "aria-checked": false,
-                    "aria-hidden" : true
+                    // "aria-hidden" : true
                 });
-                items.eq(activeTargetIdx).prev().attr({
-                    "aria-hidden" : false
-                });
-                items.eq(activeTargetIdx).next().attr({
-                    "aria-hidden" : false
-                });
+                // items.eq(activeTargetIdx).prev().attr({
+                //     "aria-hidden" : false
+                // });
+                // items.eq(activeTargetIdx).next().attr({
+                //     "aria-hidden" : false
+                // });
                 
                 orgTargetIdx = activeTargetIdx;
             })
@@ -916,19 +916,19 @@ hanaProdUI.new_directDebitSelect = function (obj, param, cfn) {
                     items.eq(activeTargetIdx).attr({
                         "role": "radio",
                         "aria-checked": true,
-                        "aria-hidden" : false
+                        // "aria-hidden" : false
                     });
                     items.eq(activeTargetIdx).siblings().attr({
                         "role": "radio",
                         "aria-checked": false,
-                        "aria-hidden" : true
+                        // "aria-hidden" : true
                     });
-                    items.eq(activeTargetIdx).prev().attr({
-                        "aria-hidden" : false
-                    });
-                    items.eq(activeTargetIdx).next().attr({
-                        "aria-hidden" : false
-                    });
+                    // items.eq(activeTargetIdx).prev().attr({
+                    //     "aria-hidden" : false
+                    // });
+                    // items.eq(activeTargetIdx).next().attr({
+                    //     "aria-hidden" : false
+                    // });
                     
                     orgTargetIdx = activeTargetIdx;
                 })
@@ -1121,19 +1121,19 @@ hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true,
-            "aria-hidden" : false
+            // "aria-hidden" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden" : true
+            // "aria-hidden" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden" : false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden" : false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden" : false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden" : false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
     }
@@ -1155,19 +1155,19 @@ hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true,
-            "aria-hidden" : false
+            // "aria-hidden" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden" : true
+            // "aria-hidden" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden" : false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden" : false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden" : false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden" : false
+        // });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(1).find('.list-wrap__item').eq(0).find('.list-wrap__anchor').attr('aria-hidden', true);
     }
 
@@ -1201,19 +1201,19 @@ hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked" : true,
-            "aria-hidden" : false
+            // "aria-hidden" : false
         });
         o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden" : true
+            // "aria-hidden" : true
         });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden" : false
-        });
-        o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden" : false
-        });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden" : false
+        // });
+        // o.scrollWrapper[o.groupIdx].scrollItems.find('.list-section').eq(2).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden" : false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
         
         return arrDay;
@@ -1233,19 +1233,19 @@ hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).attr({
             "role": "radio",
             "aria-checked": true,
-            "aria-hidden" : false
+            // "aria-hidden" : false
         });
         o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).siblings().attr({
             "role": "radio",
             "aria-checked": false,
-            "aria-hidden" : true
+            // "aria-hidden" : true
         });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
-            "aria-hidden" : false
-        });
-        o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
-            "aria-hidden" : false
-        });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).prev().attr({
+        //     "aria-hidden" : false
+        // });
+        // o.scrollWrapper[0].scrollItems.find('.list-section').eq(0).find('.list-wrap__item').eq(0).next().attr({
+        //     "aria-hidden" : false
+        // });
         $('.list-section').find('.list-wrap__item').find('.list-wrap__anchor').attr('aria-hidden', true);
     }
     
@@ -1355,19 +1355,19 @@ hanaProdUI.directDebitSelectAprt = function(obj, param, cfn){
                 items.eq(activeTargetIdx).attr({
                     "role": "radio",
                     "aria-checked" : true,
-                    "aria-hidden" : false
+                    // "aria-hidden" : false
                 });
                 items.eq(activeTargetIdx).siblings().attr({
                     "role": "radio",
                     "aria-checked": false,
-                    "aria-hidden" : true
+                    // "aria-hidden" : true
                 });
-                items.eq(activeTargetIdx).prev().attr({
-                    "aria-hidden" : false
-                });
-                items.eq(activeTargetIdx).next().attr({
-                    "aria-hidden" : false
-                });
+                // items.eq(activeTargetIdx).prev().attr({
+                //     "aria-hidden" : false
+                // });
+                // items.eq(activeTargetIdx).next().attr({
+                //     "aria-hidden" : false
+                // });
                 items.eq(activeTargetIdx).find('.list-wrap__anchor').attr('aria-hidden', true);
                 
                 orgTargetIdx = activeTargetIdx;
