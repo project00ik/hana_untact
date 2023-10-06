@@ -1118,7 +1118,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .select-wrap.btn-date .select .button-select__item {padding: 2.8rem 0 0.4rem;}
 /* .form-flex-wrap .select::before {top: 1px;} */
 /* .form-flex-wrap .select-wrap .select .button-select__item span {vertical-align: bottom;} */
-.select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #bbb; position: absolute; left: 0; top: 4rem; z-index: 0; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
+.select-wrap .select .select-label {font-size: 1.8rem; font-weight: 700; color: #929292; position: absolute; left: 0; top: 4rem; z-index: 0; transform: translateY(-50%); -webkit-transform: translateY(-50%); transition: all 0.3s ease; -webkit-transition: all 0.3s ease;}
 .select-wrap i[class^="icon-country"] {display: none; width: 2.4rem; height: 2.4rem; margin-right: 0.8rem;}
 .select-wrap.select--on .select-label,
 .select-wrap.select--error .select-label,
