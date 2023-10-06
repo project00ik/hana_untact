@@ -1761,8 +1761,13 @@ function toggleLayer(obj) {
             tgChkBtn.addClass('tg--on');
             tgChkBtn.find('input').prop('checked', true);
             tgly.addClass('open');
-            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            toggleBtn.attr({
+                "role": "checkbox",
+                "aria-checked": true,
+                "aria-expanded": true,
+            });
+            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
             
             if (tgly.find('.input__element').length > 0) {
                 // tgly.find('.input__element').eq(0).focus();
@@ -1777,8 +1782,13 @@ function toggleLayer(obj) {
             tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input').prop('checked', false);
             tgly.removeClass('open');
-            toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            toggleBtn.attr({
+                "role": "checkbox",
+                "aria-checked": false,
+                "aria-expanded": false,
+            });
 
             // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 버튼 교체
             // $('.btn__form-next').show();
@@ -1790,10 +1800,21 @@ function toggleLayer(obj) {
         tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
             tgly.addClass('open');
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            toggleBtn.attr({
+                "role": "checkbox",
+                "aria-checked": true,
+                "aria-expanded": true,
+            });
         } else {
             tgly.removeClass('open');
-            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            toggleBtn.attr({
+                "role": "checkbox",
+                "aria-checked": false,
+                "aria-expanded": false,
+            });
+
         }
     }
     
