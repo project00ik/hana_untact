@@ -440,7 +440,7 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 .line-check-list .checkbox-wrap label .staff-name {text-align: right; color: #333;}
 .line-check-list .checkbox-wrap.sm label {padding: 2.4rem 0 2.4rem 2rem;}
 .line-check-list .checkbox-wrap.sm label::before {top: 2.4rem; left: 0;}
-.line-check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 500;}
+.line-check-list .checkbox-wrap input:checked + label * {color: #009591; font-weight: 700;}
 .line-check-list {border-top: 0.1rem solid #e7e9ee;}
 .line-check-list > li {border-bottom: 0.1rem solid #e7e9ee;}
 .line-check-list > li.big-chk {font-size: 1.6rem; color: #333;}
