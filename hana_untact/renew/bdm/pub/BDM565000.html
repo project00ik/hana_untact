@@ -60,9 +60,9 @@
                         <!-- 영업점/직원 찾기 -->
                         <div class="form-area">
                             <div class="chk-tg tg--area">
-                                <div class="chk-tg-btn" role="checkbox" aria-checked="" aria-expanded="" id="toggle_test1" onclick="toggleLayer(this);">
+                                <div class="chk-tg-btn" role="checkbox"  id="toggle_test1" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2 toast-on">
-                                        <input type="checkbox" name="search_checkbox" id="search_checkbox01" title="관리점/직원 찾기">
+                                        <input type="checkbox" name="search_checkbox" id="search_checkbox01" title="관리점/직원 찾기 확장">
                                         <label for="search_checkbox01" class="toast__label">
                                             관리점/직원 찾기
                                             <span class="toast-popup-wrap" aria-hidden="true">
@@ -77,7 +77,7 @@
                                     <div class="form-area mt0">
                                         <div class="form-item search-btn-wrap no-label search--active"><!-- D: disabled시 search--disabled -->
                                             <div class="input-search-btn">
-                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 열기">
+                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 축소">
                                                     <button type="button" class="button button-search__btn">
                                                         영업1부PB센터 권영웅(1010162)
                                                     </button>
@@ -98,7 +98,7 @@
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test2" onclick="toggleLayer(this);">
                                     <div class="checkbox-wrap chk-type2">
-                                        <input type="checkbox" name="search_checkbox" id="search_checkbox02" title="관리점/직원 찾기">
+                                        <input type="checkbox" name="search_checkbox" id="search_checkbox02" title="관리점/직원 찾기 축소">
                                         <label for="search_checkbox02" class="toast__label">
                                             관리점/직원 찾기
                                             <span class="toast-popup-wrap" aria-hidden="true">
@@ -113,7 +113,7 @@
                                     <div class="form-area mt0">
                                         <div class="form-item search-btn-wrap no-label search--active">
                                             <div class="input-search-btn">
-                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch02" title="관리점/직원 찾기 열기">
+                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch02" title="관리점/직원 찾기 축소">
                                                     <button type="button" class="button button-search__btn">
                                                         영업1부PB센터
                                                     </button>
@@ -134,7 +134,7 @@
                             <div class="chk-tg tg--area">
                                 <div class="chk-tg-btn tg--on" role="checkbox" aria-checked="false" aria-expanded="false" id="toggle_test3">
                                     <div class="checkbox-wrap chk-type2">
-                                        <input type="checkbox" name="search_checkbox03" id="search_checkbox03" title="관리점/직원 찾기" disabled="disabled">
+                                        <input type="checkbox" name="search_checkbox03" id="search_checkbox03" title="관리점/직원 찾기 축소" disabled="disabled">
                                         <label for="search_checkbox03">
                                             관리점/직원 찾기
                                         </label>
@@ -1059,6 +1059,14 @@
             // 토글 닫기 toggleLayerClose(id)
             // toggleLayerClose('toggle_test1');
             
+            // 231010 웹접근성 관련 추가
+            $('.tg--area .chk-tg-btn').on('click', function(){
+                if($(this).hasClass('tg--on')){
+                    $(this).find('input:checked').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 확장', '관리점/직원 찾기 축소'));
+                } else {
+                    $(this).find('input').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 축소', '관리점/직원 찾기 확장'));
+                }
+            })
         });
 
         // 토글 레이어

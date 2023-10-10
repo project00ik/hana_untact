@@ -131,41 +131,41 @@
 @-moz-keyframes blinkL {
   0% {
     background-image: url(../images/icon_arrow_l.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
   100% {
     background-image: url(../images/icon_arrow_l_success.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
 }
 @keyframes blinkL {
   0% {
     background-image: url(../images/icon_arrow_l.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
   100% {
     background-image: url(../images/icon_arrow_l_success.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
 }
 @-moz-keyframes blinkR {
   0% {
     background-image: url(../images/icon_arrow_r.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
   100% {
     background-image: url(../images/icon_arrow_r_success.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
 }
 @keyframes blinkR {
   0% {
     background-image: url(../images/icon_arrow_r.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
   100% {
     background-image: url(../images/icon_arrow_r_success.svg);
-    background-repeat: no-repeat; background-position: 0 0/100%;
+    background-repeat: no-repeat; background-position: 0 0;
   }
 }
 

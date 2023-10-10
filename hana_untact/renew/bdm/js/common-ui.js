@@ -1750,8 +1750,12 @@ function toggleLayer(obj) {
     if (toggleBtn.closest('.form-radio-list').hasClass('tg--wrap')) {
         var tgTabBtn = $('.tg--wrap').find('.chk-tg-btn');
         tgTabBtn.removeClass('tg--on');
-        tgTabBtn.attr('aria-checked', tgTabBtn.attr('aria-checked').replace(true, false));
-        tgTabBtn.attr('aria-expanded', tgTabBtn.attr('aria-expanded').replace(true, false));
+        if (tgTabBtn.attr('aria-checked') && tgTabBtn.attr('aria-expanded') !== undefined) {
+            tgTabBtn.attr('aria-checked', tgTabBtn.attr('aria-checked').replace(true, false));
+            tgTabBtn.attr('aria-expanded', tgTabBtn.attr('aria-expanded').replace(true, false));
+        } else { 
+            return false;
+        }
         tgChkBtn.closest('.tg--wrap').find('.tg--layer').removeClass('open');
     }
     
@@ -1761,13 +1765,12 @@ function toggleLayer(obj) {
             tgChkBtn.addClass('tg--on');
             tgChkBtn.find('input').prop('checked', true);
             tgly.addClass('open');
-            toggleBtn.attr({
-                "role": "checkbox",
-                "aria-checked": true,
-                "aria-expanded": true,
-            });
-            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            if (toggleBtn.attr('aria-checked') && toggleBtn.attr('aria-expanded') !== undefined) {
+                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(false, true));
+                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
+            } else { 
+                return false;
+            }
             
             if (tgly.find('.input__element').length > 0) {
                 // tgly.find('.input__element').eq(0).focus();
@@ -1782,13 +1785,13 @@ function toggleLayer(obj) {
             tgChkBtn.removeClass('tg--on');
             tgChkBtn.find('input').prop('checked', false);
             tgly.removeClass('open');
-            // toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
-            toggleBtn.attr({
-                "role": "checkbox",
-                "aria-checked": false,
-                "aria-expanded": false,
-            });
+            if (toggleBtn.attr('aria-checked') && toggleBtn.attr('aria-expanded') !== undefined) {
+                toggleBtn.attr('aria-checked', toggleBtn.attr('aria-checked').replace(true, false));
+                toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
+            } else { 
+                return false;
+            }
+            
 
             // [v] 계좌 비밀번호 등록 (선택) 해제 시 정순 버튼 교체
             // $('.btn__form-next').show();
@@ -1800,21 +1803,10 @@ function toggleLayer(obj) {
         tgBtn.toggleClass('tg--on');
         if (toggleBtn.hasClass('tg--on')) {
             tgly.addClass('open');
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
-            toggleBtn.attr({
-                "role": "checkbox",
-                "aria-checked": true,
-                "aria-expanded": true,
-            });
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(false, true));
         } else {
             tgly.removeClass('open');
-            // toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
-            toggleBtn.attr({
-                "role": "checkbox",
-                "aria-checked": false,
-                "aria-expanded": false,
-            });
-
+            toggleBtn.attr('aria-expanded', toggleBtn.attr('aria-expanded').replace(true, false));
         }
     }
     
@@ -1829,16 +1821,25 @@ function toggleLayerOpen(obj) {
         tglyId.addClass('tg--on');
         tglyId.find('input').prop('checked', true);
         tgIdly.addClass('open');
-        tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
-        tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+        if (tglyId.attr('aria-checked') && tglyId.attr('aria-expanded') !== undefined) {
+            tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
+            tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+        } else { 
+            return false;
+        }
         
         if (tgIdly.find('.input__element').length > 0) {
             tgIdly.find('.input__element').eq(0).focus();
         } 
     } else { 
         tgIdly.addClass('open');
-        tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
-        tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+        if (tglyId.attr('aria-checked') && tglyId.attr('aria-expanded') !== undefined) {
+            tglyId.attr('aria-checked', tglyId.attr('aria-checked').replace(false, true));
+            tglyId.attr('aria-expanded', tglyId.attr('aria-expanded').replace(false, true));
+        } else { 
+            return false;
+        }
+        
     }
 }
 // 토글 레이어 닫기
@@ -1846,9 +1847,12 @@ function toggleLayerClose(obj) {
     var tglyCloseId = $('#' + obj);
     tglyCloseId.removeClass('tg--on');
     tglyCloseId.closest('.tg--area').find('.tg--layer').removeClass('open');
-
-    tglyCloseId.attr('aria-checked', tglyCloseId.attr('aria-checked').replace(false, true));
-    tglyCloseId.attr('aria-expanded', tglyCloseId.attr('aria-expanded').replace(false, true));
+    if (tglyCloseId.attr('aria-checked') && tglyCloseId.attr('aria-expanded') !== undefined) {
+        tglyCloseId.attr('aria-checked', tglyCloseId.attr('aria-checked').replace(false, true));
+        tglyCloseId.attr('aria-expanded', tglyCloseId.attr('aria-expanded').replace(false, true));
+    } else { 
+        return false;
+    }
 }
 
 // 지점 안내 탭 클릭 시 레이어 팝업 비노출
