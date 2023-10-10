@@ -680,6 +680,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .info-chk-list.sub {border-top: 0.1rem solid #e7e9ee;}
 .info-chk-list.sub > li {}
 .info-chk-list.sub > li + li {margin-top: 2.4rem;}
+.info-chk-list .checkbox-wrap.tp-green label {font-size:1.8rem; font-weight: 700;}
 
 /* - 컨텐츠 : 스위치 (Switch) checkbox */
 label.asswitch-wrap {width: 4.4rem; height: 2.8rem; padding:0; display: inline-block; position: relative;}
@@ -1248,9 +1249,11 @@ body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 
 .chk-tg {}
 .chk-tg .chk-tg-btn {}
 
+
 /* 웹접근성 : 체크박스,라디오 토글 버튼으로 사용 시 input hide 처리 */
 .chk-tg .chk-tg-btn input[type="checkbox"],
-.chk-tg .chk-tg-btn input[type="radio"] {clip: unset; z-index: -1;}
+.chk-tg .chk-tg-btn input[type="radio"],
+.chk-type2 input {clip: unset; z-index: -1;}
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 0;}
 
@@ -1271,3 +1274,6 @@ body.untact--app.body--ios .phone-agree-wrap .inner-box iframe.agreeSingle {heig
 /* 보안키패드 테스트 */
 .input input#resRegNo02 {display: block !important; opacity: 1; z-index: 2;}
 .input + .bar + .input {display: block !important;}
+
+/* 얼굴인증팝업 */
+#modalFaceIng {height:100% !important;}
