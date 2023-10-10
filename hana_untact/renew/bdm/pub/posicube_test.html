@@ -332,14 +332,14 @@
             alert("webrtc.setScanMode(ScanMode.AUTO)");
             webrtc.setScanMode(ScanMode.AUTO);
             document.getElementById("autoCameraToggle").style.backgroundImage =
-            "url('https://fincubeocr.posicube.com/hanabank/images/camera_auto_toggle.png')";
+            "url('../images/png/camera_auto_toggle.png')";
             document.getElementById("takeCameraBtn").style.display = "none";
             webrtc.resetTimeOutTimer(); // 자동촬영에서 수동촬영으로 넘어갈 경우 timer reset.
         } else {
             alert("webrtc.setScanMode(ScanMode.MANUAL)");
             webrtc.setScanMode(ScanMode.MANUAL);
             document.getElementById("autoCameraToggle").style.backgroundImage =
-            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle.png')";
+            "url('../images/png/camera_manual_toggle.png')";
             document.getElementById("takeCameraBtn").style.display = "flex";
         }
         });
@@ -565,7 +565,7 @@
         webrtc.setScanMode(ScanMode.MANUAL);
 
         autoCameraToggle.style.backgroundImage =
-            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle-pressed.png')";
+            "url('../images/png/camera_manual_toggle-pressed.png')";
         autoCameraToggle.disabled = true;
         takeCameraBtn.style.display = "flex";
         return;
@@ -573,11 +573,11 @@
 
         if (isCameraAuto) {
         autoCameraToggle.style.backgroundImage =
-            "url('https://fincubeocr.posicube.com/hanabank/images/camera_auto_toggle.png')";
+            "url('../images/png/camera_auto_toggle.png')";
         takeCameraBtn.style.display = "none";
         } else {
         autoCameraToggle.style.backgroundImage =
-            "url('https://fincubeocr.posicube.com/hanabank/images/camera_manual_toggle.png')";
+            "url('../images/png/camera_manual_toggle.png')";
         takeCameraBtn.style.display = "flex";
         }
     }
