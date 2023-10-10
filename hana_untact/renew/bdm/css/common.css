@@ -899,6 +899,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 /* -- popup - 얼굴인증 에러 */
 .popup-wrap.alert .result-wrap {min-height: 24.4rem;}
 .popup-wrap.alert .result-wrap .code-info-wrap {margin-top: 2.4rem;}
+.result-wrap .text-sm {color: #666;}
 
 /* 토스트 팝업 */
 .popup-wrap .toast-popup-wrap {
