@@ -1257,7 +1257,7 @@ body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 
 /* 웹접근성 : 체크박스,라디오 토글 버튼으로 사용 시 input hide 처리 */
 .chk-tg .chk-tg-btn input[type="checkbox"],
 .chk-tg .chk-tg-btn input[type="radio"],
-.chk-type2 input {clip: unset; z-index: -1;}
+.chk-type2 input {clip: unset;}
 .chk-tg .chk-tg-cont {padding-top: 1.6rem;}
 .chk-tg .chk-tg-cont.depth2 {padding: 0.8rem 0 0 0;}
 

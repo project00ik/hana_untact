@@ -77,7 +77,7 @@
                                     <div class="form-area mt0">
                                         <div class="form-item search-btn-wrap no-label search--active"><!-- D: disabled시 search--disabled -->
                                             <div class="input-search-btn">
-                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 축소">
+                                                <div class="input-search__inner" data-element="modal__open" data-target="#modalSearch01" title="관리점/직원 찾기 열기">
                                                     <button type="button" class="button button-search__btn">
                                                         영업1부PB센터 권영웅(1010162)
                                                     </button>
@@ -1062,9 +1062,9 @@
             // 231010 웹접근성 관련 추가
             $('.tg--area .chk-tg-btn').on('click', function(){
                 if($(this).hasClass('tg--on')){
-                    $(this).find('input:checked').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 확장', '관리점/직원 찾기 축소'));
+                    $(this).find('.checkbox-wrap.chk-type2 > input:checked').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 확장', '관리점/직원 찾기 축소'));
                 } else {
-                    $(this).find('input').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 축소', '관리점/직원 찾기 확장'));
+                    $(this).find('.checkbox-wrap.chk-type2 > input').attr('title', $(this).find('input').attr('title').replace('관리점/직원 찾기 축소', '관리점/직원 찾기 확장'));
                 }
             })
         });
