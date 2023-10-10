@@ -1236,7 +1236,7 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 .agree-img-area:last-child {min-height: calc((var(--vh, 1vh)) *100 - 18.5rem)}
 body.untact--app .agree-img-area:last-child {min-height: calc(100vh - 17.5rem); background: yellow;}
 body.untact--app.body--ios .agree-img-area {min-height: calc(400px + env(safe-area-inset-top) + env(safe-area-inset-bottom)); min-height: calc(400px + constant(safe-area-inset-top) + constant(safe-area-inset-bottom)); padding-top: 10px; }
-body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 17.5rem);min-height: calc(100vh - (17.5rem + env(safe-area-inset-top)) + env(safe-area-inset-bottom)); min-height: calc(100vh - (17.5rem + constant(safe-area-inset-top) + constant(safe-area-inset-bottom))); background: pink;}
+body.untact--app.body--ios .agree-img-area:last-child {min-height: calc(100vh - 17.5rem);min-height: calc(100vh - (17.5rem + env(safe-area-inset-top)) + env(safe-area-inset-bottom)); min-height: calc(100vh - (17.5rem + constant(safe-area-inset-top) + constant(safe-area-inset-bottom)));}
 .agree-img-area img {width:100%;}
 .modal-top-sticky {width: 100%; margin-bottom: 0; position: sticky; top: 0; left:0; z-index: 20; transition: all; transition-duration: 0.3s;}
 .modal-top-sticky .modal-sticky-cont {
