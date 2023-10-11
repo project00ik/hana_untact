@@ -221,7 +221,7 @@ body {
 
 .scan-box__camera-auto-wrap {
   position: absolute;
-  bottom: 57px;
+  bottom: 5.7rem;
   left: 24px;
   text-align: center;
   z-index: 120;
@@ -489,6 +489,7 @@ body {
   .scan-box__info-wrap {top: 4rem;}
   .video-info-link {bottom: 4rem;}
   .scan-box__info-wrap .scan-box__tit {font-size: 1.8rem;}
+  .scan-box__camera-auto-wrap {bottom: 1.8rem}
 }
 
 /* 버튼 */
