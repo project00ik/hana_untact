@@ -932,15 +932,18 @@ body.untact--app.body--ios .popup-wrap .modal-floating-area {bottom: 11.6rem; bo
 /* 토스트 팝업 -  1일 이체한도 (BDM560000/BDM560010) */
 .form-area .toast__label-fix-right {width: 100%;}
 .form-area .toast__label-fix-right .toast-popup-wrap {
-    opacity: 0; position: absolute; top: 0; right: 0; z-index: -1; display: inline-block;
+    opacity: 0; position: absolute; top: 0; right: 0; z-index: -1; display: none;
     animation-name: fixRightToastPopup; animation-duration: 3s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
+.form-area .input.input--on .toast__label-fix-right .toast-popup-wrap {display: inline-block;}
+
 /* 토스트 팝업 -  스마트폰뱅킹 1일 이체한도 (BDM561000) */
 .form-area.toast-long-area {margin-top: 5.6rem;}
 .form-area.toast-long-area .toast__label-fix-right .toast-popup-wrap {
-    opacity: 0; position: absolute; top: 0; right: 0; z-index: -1; display: inline-block;
+    opacity: 0; position: absolute; top: 0; right: 0; z-index: -1; display: none;
     animation-name: fixRightToastPopupLong; animation-duration: 3s; animation-delay: 0.1s; animation-iteration-count: 1; animation-fill-mode: forwards;
 }
+.form-area.toast-long-area .input.input--on .toast__label-fix-right .toast-popup-wrap {display: inline-block;}
 .form-area .toast__label-fix-right .toast-popup-wrap .toast-popup::after {
     left: unset; right: 2rem;
     transform: none;
