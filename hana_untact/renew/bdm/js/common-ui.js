@@ -1986,13 +1986,11 @@ function modalClose(target){
 
             // select와 search에 텍스트가 없는 경우 active class 처리 추가
             if (selectTarget.find('span').text() == '') {
-                console.log('없다.')
                 $('.select-wrap').removeClass('select--active');
                 $('.select-wrap').removeClass('select--on');
                 $('.search-btn-wrap').removeClass('search--active');
                 $('.search-btn-wrap').removeClass('search--on');
             } else { 
-                console.log('있다.')
                 $('.select-wrap.select--on').addClass('select--active');
                 $('.search-btn-wrap.search--on').addClass('search--active');
             }
