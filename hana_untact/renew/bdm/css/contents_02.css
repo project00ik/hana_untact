@@ -385,6 +385,7 @@ body.body--ios .input.input-search .btn-search {background-position: top 52% rig
 /* 상품선택 */
 .sticky--wrap.fixed-wrap .tab-slide-cont {padding-top: 4.5rem;}
 .sticky--point.fixed {width: 100%; padding: 0 2.4rem; position: fixed; top: 5.6rem; left:0; z-index: 11; background: #fbfcfc; box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.06);}
+body.untact--app.body--ios .product-slide-wrap .sticky--point.fixed {top: calc(5.6rem + env(safe-area-inset-top)); top: calc(5.6rem + constant(safe-area-inset-top));}
 
 .product-slide-wrap {width: calc(100% + 4.8rem); margin: 4rem -2.4rem 0; padding: 0 2.4rem; overflow: hidden;}
 .product-slide-wrap .tab-slide-wrap .tab-slide-list {height: 4.5rem;}
