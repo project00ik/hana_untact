@@ -524,7 +524,8 @@ body.untact--app.body--ios .product-slide-wrap .sticky--point.fixed {top: calc(5
 .content-area .face-recognition-wrap .toast-popup-wrap .toast-popup {margin-top: 3rem;}
 
 .face-recognition-wrap .face-icon {width: 9.8rem; height: 9.8rem; display: inline-block;}
-.face-recognition-wrap .info-txt {margin-top: 1.6rem; font-size: 1.8rem; color: #666;}
+.face-recognition-wrap .info-txt {margin-top: 1.6rem; font-size: 1.8rem; color: #666; line-height: 1.4; font-weight: 500;}
+.face-recognition-wrap .info-txt .tp-green {font-weight: 500;}
 .face-recognition-wrap .face-loading {background: url(../images/icon/icon_face_loading.svg) 0 0 no-repeat; background-size: 100% auto;}
 .face-recognition-wrap .face-end {background: url(../images/icon/icon_face_end.png) 0 0 no-repeat; background-size: 100% auto;}
 .face-recognition-wrap .face-guide {width: 11.4rem; height: 14rem; background: url(../images/png/face_line.png) 0 0 no-repeat; background-size: auto 14rem; display: inline-block;}
