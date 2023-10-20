@@ -281,6 +281,7 @@ body.softkey-up .button-select__item {pointer-events: none;}
 .step-header + .container,
 .prd-content,
 .step-container {padding-top: 4.3rem;}
+.prd-content .container {padding-top: 0;}
 
 @supports (-webkit-touch-callout: none) { 
     .step-header .stepper .stepper__step.on {padding-top: 0.2rem;}
