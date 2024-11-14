@@ -15,9 +15,9 @@
     <script type="text/javascript" src="../js/pualugin.js"></script>
     <script type="text/javascript" src="../js/common-ui.js"></script>
     <!-- lottie 테스트 -->
-    <script src="../js/lottie/lottie.min.js"></script>
-    <!-- <script src="../js/lottie/non_xhr_lottie.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js"></script> -->
+    <!-- <script src="../js/lottie/lottie.min.js"></script> --><!-- 원큐파일 -->
+    <!-- <script src="../js/lottie/non_xhr_lottie.js"></script> --><!-- 원큐파일(비거래용 로띠JSON 라이브러리) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.9/lottie.min.js"></script>
      
 
     
@@ -78,8 +78,10 @@
 
 		<div class="guide-ly">
 			<div class="guide-con">
-                <h2 class="guide-title">Lottie 테스트</h2>			
-                <div style="width: 100%;height: 180px;" id="lottie-test" class="lottie" onclick="testStart()">클릭 시 lottie 실행</div>
+                <h2 class="guide-title">Lottie 테스트</h2>
+                <p>* 참고 : <a href="https://gigini.tistory.com/111" target="_blank">https://gigini.tistory.com/111</a></p>
+                <a href="https://dev11-mbp.hanabank.com:18080/cont/resource/html/TEMP/TEMP00/index_json.html" target="_blank" style="font-size: 1rem;">원큐 lottie json 모음</a>	
+                <div style="width: 100%;height: 180px; margin-top: 2rem;" id="lottie-test" class="lottie" onclick="testStart()">클릭 시 lottie 실행</div>
                 <script>
                     
                     var lottieAnim = lottie.loadAnimation({
